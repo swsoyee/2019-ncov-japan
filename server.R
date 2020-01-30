@@ -57,28 +57,28 @@ shinyServer(function(input, output, session) {
   
   output$totalConfirmed <- renderValueBox({
     valueBox(value = sum(db[, 2:ncol(db)]), 
-             subtitle = '確認数',
+             subtitle = LABEL_CONFIRMED,
              icon = icon('sad-tear'),
              color = "red")
   })
   
   output$totalSuspicious <- renderValueBox({
     valueBox(value = "？", 
-             subtitle = '観察中',
+             subtitle = LABEL_SUSPICIOUS,
              icon = icon('flushed'),
              color = "orange")
   })
   
   output$totalDeath <- renderValueBox({
     valueBox(value = "0", 
-             subtitle = '死亡',
+             subtitle = LABEL_DEATH,
              icon = icon('dizzy'),
              color = "navy")
   })
   
   output$totalRecovered <- renderValueBox({
     valueBox(value = "1", 
-             subtitle = '完治',
+             subtitle = LABLE_RECOVERTED,
              icon = icon('grin-squint'),
              color = "green")
   })
