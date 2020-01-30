@@ -20,17 +20,21 @@ shinyServer(function(input, output, session) {
   output$confirmedAccumulation <- renderPlotly({
     dataset <- db[, 2:ncol(db)]
     dt <- dataset[, lapply(.SD, sum)]
-    datetime <- as.POSIXct(colnames(dt), format = "%Y%m%d")
+    yData <- cumsum(transpose(dt))
+    xData <- as.POSIXct(colnames(dt), format = "%Y%m%d")
+    
     plot_ly(
-      x =  ~ datetime,
-      y = dt,
-      name = "確認数",
-      type = 'scatter',
-      mode = 'spline'
+      x =  ~ xData,
+      y = ~ yData$V1,
+      name = '確認数',
+      mode = 'spline',
+      fill = 'tozeroy'
     ) %>% layout(
-      xaxis = list(title = "確認日付"),
-      yaxis = list(title = "人数"),
-      showlegend = T
+      xaxis = list(title = '日付'),
+      yaxis = list(title = '人数'),
+      showlegend = T,
+      legend = list(orientation = 'h', y = 1.1, x = 0.9)
     )
   })
+
 })
