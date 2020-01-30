@@ -6,6 +6,11 @@ shinyUI(dashboardPage(
   dashboardHeader(title = "2019-nCov 日本"),
   dashboardSidebar(disable = T),
   dashboardBody(fluidPage(fluidRow(
+    valueBoxOutput(width = 3, "totalConfirmed"),
+    valueBoxOutput(width = 3, "totalSuspicious"),
+    valueBoxOutput(width = 3, "totalDeath"),
+    valueBoxOutput(width = 3, "totalRecovered")
+  ),fluidRow(
     box(
       width = 12,
       status = "primary",
@@ -15,7 +20,7 @@ shinyUI(dashboardPage(
     ),
     box(
       width = 12,
-      status = "info",
+      status = 'info',
       title = "感染症の累積数",
       plotlyOutput("confirmedAccumulation"),
       footer = paste(DATA_SOURCE, '(', UPDATE_TIME, ')')

@@ -47,13 +47,39 @@ shinyServer(function(input, output, session) {
     provinceHasDataset <- db[hasData]
     for (i in 1:nrow(provinceHasDataset)) {
       p <-
-        add_trace(
-          p,
-          x = xData,
-          y = cumsum(transpose(provinceHasDataset[i, 2:ncol(provinceHasDataset)]))$V1,
-          name = provinceHasDataset[i, 1]
-        )
+        add_trace(p,
+                  x = xData,
+                  y = cumsum(transpose(provinceHasDataset[i, 2:ncol(provinceHasDataset)]))$V1,
+                  name = provinceHasDataset[i, 1])
     }
     p
+  })
+  
+  output$totalConfirmed <- renderValueBox({
+    valueBox(value = sum(db[, 2:ncol(db)]), 
+             subtitle = '確認数',
+             icon = icon('sad-tear'),
+             color = "red")
+  })
+  
+  output$totalSuspicious <- renderValueBox({
+    valueBox(value = "？", 
+             subtitle = '観察中',
+             icon = icon('flushed'),
+             color = "orange")
+  })
+  
+  output$totalDeath <- renderValueBox({
+    valueBox(value = "0", 
+             subtitle = '死亡',
+             icon = icon('dizzy'),
+             color = "navy")
+  })
+  
+  output$totalRecovered <- renderValueBox({
+    valueBox(value = "？", 
+             subtitle = '完治',
+             icon = icon('grin-squint'),
+             color = "green")
   })
 })
