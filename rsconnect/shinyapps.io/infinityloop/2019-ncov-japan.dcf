@@ -1,0 +1,12 @@
+name: 2019-ncov-japan
+title: 2019-ncov-japan
+username:
+account: infinityloop
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1732639
+bundleId: 2763570
+url: https://infinityloop.shinyapps.io/2019-ncov-japan/
+when: 1580384065.56978
+asMultiple: FALSE
+asStatic: FALSE
