@@ -77,7 +77,7 @@ shinyServer(function(input, output, session) {
   })
   
   output$totalRecovered <- renderValueBox({
-    valueBox(value = "？", 
+    valueBox(value = "1", 
              subtitle = '完治',
              icon = icon('grin-squint'),
              color = "green")
