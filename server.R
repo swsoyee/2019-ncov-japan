@@ -28,7 +28,7 @@ shinyServer(function(input, output, session) {
       y = ~ yData$V1,
       name = '全国',
       type = "scatter",
-      mode = 'spline',
+      mode = 'lines+markers'
     ) %>% layout(
       xaxis = list(title = '日付'),
       yaxis = list(title = '人数'),
@@ -50,7 +50,8 @@ shinyServer(function(input, output, session) {
         add_trace(p,
                   x = xData,
                   y = cumsum(transpose(provinceHasDataset[i, 2:ncol(provinceHasDataset)]))$V1,
-                  name = provinceHasDataset[i, 1])
+                  name = provinceHasDataset[i, 1],
+                  line = list(dash = 'dot'))
     }
     p
   })
