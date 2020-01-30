@@ -11,14 +11,14 @@ shinyUI(dashboardPage(
       status = "primary",
       title = "新型コロナウイルス感染症マップ",
       plotOutput("map"),
-      footer = "ソース：厚生労働省（2020-01-30 00:00）"
+      footer = paste(DATA_SOURCE, '(', UPDATE_TIME, ')')
     ),
     box(
       width = 12,
       status = "info",
       title = "感染症の累積数",
       plotlyOutput("confirmedAccumulation"),
-      footer = "ソース：厚生労働省（2020-01-30 00:00）"
+      footer = paste(DATA_SOURCE, '(', UPDATE_TIME, ')')
     )
   )))
 ))

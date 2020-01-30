@@ -23,18 +23,37 @@ shinyServer(function(input, output, session) {
     yData <- cumsum(transpose(dt))
     xData <- as.POSIXct(colnames(dt), format = "%Y%m%d")
     
-    plot_ly(
+    p <- plot_ly(
       x =  ~ xData,
       y = ~ yData$V1,
-      name = '確認数',
+      name = '全国',
+      type = "scatter",
       mode = 'spline',
-      fill = 'tozeroy'
     ) %>% layout(
       xaxis = list(title = '日付'),
       yaxis = list(title = '人数'),
       showlegend = T,
-      legend = list(orientation = 'h', y = 1.1, x = 0.9)
+      legend = list(
+        orientation = 'h',
+        y = 1.1,
+        x = 1,
+        xanchor = 'right',
+        yanchor = 'top'
+      )
     )
+    
+    hasData <-
+      db[, .(sum = sum(.SD)), .SDcols = colnames(dt), by = name]$sum > 0
+    provinceHasDataset <- db[hasData]
+    for (i in 1:nrow(provinceHasDataset)) {
+      p <-
+        add_trace(
+          p,
+          x = xData,
+          y = cumsum(transpose(provinceHasDataset[i, 2:ncol(provinceHasDataset)]))$V1,
+          name = provinceHasDataset[i, 1]
+        )
+    }
+    p
   })
-
 })
