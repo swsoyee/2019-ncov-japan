@@ -3,7 +3,7 @@ source(file = "global.R",
        encoding = "UTF-8")
 
 shinyUI(dashboardPage(
-  dashboardHeader(title = "2019-nCov 日本"),
+  dashboardHeader(title = lang[[langCode]][1]), # 2019-nCov 日本
   dashboardSidebar(disable = T),
   dashboardBody(fluidPage(fluidRow(
     valueBoxOutput(width = 3, "totalConfirmed"),
@@ -14,16 +14,18 @@ shinyUI(dashboardPage(
     box(
       width = 12,
       status = "primary",
-      title = "新型コロナウイルス感染症マップ",
+      title = lang[[langCode]][2], # 新型コロナウイルス感染症マップ
       plotOutput("map"),
-      footer = paste(DATA_SOURCE, '(', UPDATE_TIME, ')')
+      footer = paste(lang[[langCode]][5] # ソース：厚生労働省
+                     , '(', UPDATE_TIME, ')')
     ),
     box(
       width = 12,
       status = 'info',
-      title = "感染症の累積数",
+      title = lang[[langCode]][3], # 感染症の累積数
       plotlyOutput("confirmedAccumulation"),
-      footer = paste(DATA_SOURCE, '(', UPDATE_TIME, ')')
+      footer = paste(lang[[langCode]][5] # ソース：厚生労働省
+                     , '(', UPDATE_TIME, ')')
     )
   )))
 ))

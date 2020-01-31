@@ -26,12 +26,14 @@ shinyServer(function(input, output, session) {
     p <- plot_ly(
       x =  ~ xData,
       y = ~ yData$V1,
-      name = '全国',
+      name = lang[[langCode]][4], # 全国
       type = "scatter",
       mode = 'lines+markers'
     ) %>% layout(
-      xaxis = list(title = '日付'),
-      yaxis = list(title = '人数'),
+      # 日付
+      xaxis = list(title = lang[[langCode]][10]),
+      # 人数
+      yaxis = list(title = lang[[langCode]][11]),
       showlegend = T,
       legend = list(
         orientation = 'h',
@@ -58,28 +60,28 @@ shinyServer(function(input, output, session) {
   
   output$totalConfirmed <- renderValueBox({
     valueBox(value = sum(db[, 2:ncol(db)]), 
-             subtitle = LABEL_CONFIRMED,
+             subtitle = lang[[langCode]][9], # 確認数 
              icon = icon('sad-tear'),
              color = "red")
   })
   
   output$totalSuspicious <- renderValueBox({
     valueBox(value = "？", 
-             subtitle = LABEL_SUSPICIOUS,
+             subtitle = lang[[langCode]][8], # 観察中 
              icon = icon('flushed'),
              color = "orange")
   })
   
   output$totalDeath <- renderValueBox({
     valueBox(value = "0", 
-             subtitle = LABEL_DEATH,
+             subtitle = lang[[langCode]][7], # 死亡数 
              icon = icon('dizzy'),
              color = "navy")
   })
   
   output$totalRecovered <- renderValueBox({
     valueBox(value = "1", 
-             subtitle = LABLE_RECOVERTED,
+             subtitle = lang[[langCode]][6], # 完治数 
              icon = icon('grin-squint'),
              color = "green")
   })
