@@ -3,6 +3,7 @@ library(NipponMap)
 library(shinydashboard)
 library(data.table)
 library(plotly)
+library(DT)
 
 db <- fread('./summary.csv', header = T)
 db[is.na(db)] <- 0

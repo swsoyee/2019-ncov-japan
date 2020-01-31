@@ -85,4 +85,17 @@ shinyServer(function(input, output, session) {
              icon = icon('grin-squint'),
              color = "green")
   })
+  
+  output$totalConfirmedByProvince <- renderDataTable({
+    total <- rowSums(db[, 2:ncol(db)])
+    tableDt <- data.table('行政区域' = db$name, # 行政区域
+                          '確認数' = total # 確認数
+                          )
+    datatable(tableDt[order(-確認数)],
+              options = list(dom = 't',
+                             scrollY = '440px',
+                             paging = F,
+                             scrollCollapse = T)
+    )
+  })
 })
