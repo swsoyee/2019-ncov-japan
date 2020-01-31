@@ -11,8 +11,8 @@ shinyUI(dashboardPage(
     fluidRow(
       valueBoxOutput(width = 3, "totalConfirmed"),
       valueBoxOutput(width = 3, "totalSuspicious"),
-      valueBoxOutput(width = 3, "totalDeath"),
-      valueBoxOutput(width = 3, "totalRecovered")
+      valueBoxOutput(width = 3, "totalRecovered"),
+      valueBoxOutput(width = 3, "totalDeath")
     ),
     fluidRow(
       box(
