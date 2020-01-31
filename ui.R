@@ -23,11 +23,15 @@ shinyUI(dashboardPage(skin = "purple",
       dataTableOutput('totalConfirmedByProvince')
     ),
     box(
-      width = 12,
-      title = paste0(lang[[langCode]][3], '*'), # 確認累積数
+      width = 8,
+      title = lang[[langCode]][3], # 確認累積数
       plotlyOutput("confirmedAccumulation"),
       # 無症状病原体保有者を含む
       footer = paste('*', lang[[langCode]][12])
+    ),
+    box(
+      width = 4,
+      dataTableOutput('news')
     )
   )))
 ))

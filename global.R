@@ -11,4 +11,6 @@ db[is.na(db)] <- 0
 lang <- fread('./lang.csv')
 langCode <- 'ja'
 
+news <- fread('./mhlw_houdou.csv')
+
 UPDATE_TIME <- Sys.time()
