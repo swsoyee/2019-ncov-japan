@@ -91,11 +91,17 @@ shinyServer(function(input, output, session) {
     tableDt <- data.table('行政区域' = db$name, # 行政区域
                           '確認数' = total # 確認数
                           )
-    datatable(tableDt[order(-確認数)],
+    # displayData <- tableDt[確認数 > 0][order(-確認数)]
+    displayData <- tableDt[order(-確認数)]
+    datatable(displayData,
               options = list(dom = 't',
                              scrollY = '440px',
                              paging = F,
-                             scrollCollapse = T)
-    )
+                             scrollCollapse = T)) %>%
+              formatStyle(c('確認数'),
+                          background = styleColorBar(range(tableDt[, '確認数']), 'lightblue'),
+                          backgroundSize = '98% 88%',
+                          backgroundRepeat = 'no-repeat',
+                          backgroundPosition = 'center')
   })
 })
