@@ -8,13 +8,16 @@ shinyServer(function(input, output, session) {
     total <- rowSums(db[, 2:ncol(db)])
     colorFunc <-
       colorRampPalette(c("#FFFFFF", "#FFA07A", "#CD5C5C"))
+    
+    breaks <- c(-0.1, 0.5, 1.5, 2.5, 100)
+    breaks.length <- length(breaks) - 1
     names(province) <-
-      colorFunc(3)[as.numeric(cut(total, breaks = c(-0.1, 0.5, 2.5, 100)))]
+      colorFunc(breaks.length)[as.numeric(cut(total, breaks = breaks))]
     plotData <- names(province)
     names(plotData) <- as.character(province)
     par(mar = c(0, 0, 0, 0))
     JapanPrefMap(col = plotData)
-    legend(143, 33, c("0", "1 ~ 2", "> 2"), fill = colorFunc(3))
+    legend(143, 35, c(0, 1, 2, ">2"), fill = colorFunc(breaks.length))
   })
   
   output$confirmedAccumulation <- renderPlotly({
@@ -30,17 +33,14 @@ shinyServer(function(input, output, session) {
       type = "scatter",
       mode = 'lines+markers'
     ) %>% layout(
-      # 日付
-      xaxis = list(title = lang[[langCode]][10]),
       # 人数
       yaxis = list(title = lang[[langCode]][11]),
+      xaxis = list(title = ''),
       showlegend = T,
       legend = list(
         orientation = 'h',
-        y = 1.1,
-        x = 1,
-        xanchor = 'right',
-        yanchor = 'top'
+        y = -0.1,
+        x = 0.1
       )
     )
     
@@ -60,7 +60,7 @@ shinyServer(function(input, output, session) {
   
   output$totalConfirmed <- renderValueBox({
     valueBox(value = sum(db[, 2:ncol(db)]), 
-             subtitle = lang[[langCode]][9], # 確認数 
+             subtitle = paste0(lang[[langCode]][9], '*'), # 確認数 
              icon = icon('sad-tear'),
              color = "red")
   })

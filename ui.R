@@ -22,10 +22,10 @@ shinyUI(dashboardPage(
     box(
       width = 12,
       status = 'info',
-      title = lang[[langCode]][3], # 感染症の累積数
+      title = paste0(lang[[langCode]][3], '*'), # 確認累積数
       plotlyOutput("confirmedAccumulation"),
-      footer = paste(lang[[langCode]][5] # ソース：厚生労働省
-                     , '(', UPDATE_TIME, ')')
+      # 無症状病原体保有者を含む
+      footer = paste('*', lang[[langCode]][12])
     )
   )))
 ))
