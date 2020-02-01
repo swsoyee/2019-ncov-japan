@@ -32,7 +32,8 @@ shinyUI(dashboardPage(
             class = "btn action-button btn-primary",
             HTML('<i class="icon-star"></i>ブロック')
           ) #,
-          # tags$a(align = 'right', href = 'https://www.mhlw.go.jp/index.html', paste(lang[[langCode]][5]), # 厚生労働省
+          # tags$a(href = 'https://www.mhlw.go.jp/index.html',
+          #        paste(lang[[langCode]][5]), # 厚生労働省
           #        '(',
           #        UPDATE_TIME,
           #        ')')
