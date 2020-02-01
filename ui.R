@@ -4,7 +4,7 @@ source(file = "global.R",
 
 shinyUI(dashboardPage(
   skin = "purple",
-  dashboardHeader(title = lang[[langCode]][1]),
+  dashboardHeader(title = lang[[langCode]][1], titleWidth = 450),
   # 2019-nCov 日本
   dashboardSidebar(disable = T),
   dashboardBody(fluidPage(
@@ -18,11 +18,25 @@ shinyUI(dashboardPage(
       box(
         width = 8,
         title = lang[[langCode]][2],
-        # 新型コロナウイルス感染症マップ
-        plotOutput("map"),
-        # plotOutput('blockMap'),
-        footer = paste(lang[[langCode]][5] # ソース：厚生労働省
-                       , '(', UPDATE_TIME, ')')
+        uiOutput('mapWrapper'),
+        footer = tagList(
+          tags$button(
+            id = "normalMapButton",
+            type = "button",
+            class = "btn action-button btn-primary",
+            HTML('<i class="icon-star"></i>標準')
+          ),
+          tags$button(
+            id = "blockMapButton",
+            type = "button",
+            class = "btn action-button btn-primary",
+            HTML('<i class="icon-star"></i>ブロック')
+          ) #,
+          # tags$a(align = 'right', href = 'https://www.mhlw.go.jp/index.html', paste(lang[[langCode]][5]), # 厚生労働省
+          #        '(',
+          #        UPDATE_TIME,
+          #        ')')
+        )
       ),
       box(width = 4,
           dataTableOutput('totalConfirmedByProvince')),

@@ -57,6 +57,22 @@ shinyServer(function(input, output, session) {
       )
   })
   
+  output$mapWrapper <- renderUI({
+    plotOutput("map")
+  })
+  
+  observeEvent(input$normalMapButton, {
+    output$mapWrapper <- renderUI({
+      plotOutput("map")
+    })
+  })
+  
+  observeEvent(input$blockMapButton, {
+    output$mapWrapper <- renderUI({
+      plotOutput("blockMap")
+    })
+  })
+  
   output$confirmedAccumulation <- renderPlotly({
     dataset <- db[, 2:ncol(db)]
     dt <- dataset[, lapply(.SD, sum)]
@@ -150,7 +166,7 @@ shinyServer(function(input, output, session) {
                             rownames = FALSE,
                             options = list(
                               dom = 't',
-                              scrollY = '440px',
+                              scrollY = '455px',
                               scrollCollapse = T,
                               paging = F
                             )
