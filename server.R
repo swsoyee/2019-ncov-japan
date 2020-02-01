@@ -18,6 +18,43 @@ shinyServer(function(input, output, session) {
     par(mar = c(0, 0, 0, 0))
     JapanPrefMap(col = plotData)
     legend(143, 35, c(0, 1, 2, ">2"), fill = colorFunc(breaks.length))
+    p <- recordPlot()
+    p
+  })
+  
+  output$blockMap <- renderPlot({
+    ggplot(province, aes(
+      x = X,
+      y = Y,
+      width = Scale,
+      height = Scale
+    )) +
+      geom_tile(aes(fill = Data), color = "black") +
+      geom_text(
+        aes(label = Prefecture),
+        size = 2.7,
+        color = "black",
+        family = "HiraKakuPro-W3"
+      ) +
+      
+      # Codeをラベルとして表示する場合
+      # geom_text(aes(label = Code), size = 2.7, color = "white") +
+      
+      coord_fixed(ratio = 1) +
+      theme(
+        panel.background = element_blank(),
+        panel.grid = element_blank(),
+        axis.title = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank()
+      ) +
+      # scale_fill_viridis_c(na.value = "#FFFFFF", option = "C", begin = 0, end = 1)
+      scale_fill_gradient2(
+        low = '#FFFFFF',
+        mid = "#FFA07A",
+        high = "#CD5C5C",
+        midpoint = 8
+      )
   })
   
   output$confirmedAccumulation <- renderPlotly({
@@ -104,8 +141,8 @@ shinyServer(function(input, output, session) {
   output$totalConfirmedByProvince <- renderDataTable({
     total <- rowSums(db[, 2:ncol(db)])
     tableDt <- data.table('行政区域' = db$name, # 行政区域
-                          '確認数' = total # 確認数
-                          )
+                          # 確認数
+                          '確認数' = total)
                           # displayData <- tableDt[確認数 > 0][order(-確認数)]
                           displayData <- tableDt[order(-確認数)]
                           datatable(
@@ -127,7 +164,7 @@ shinyServer(function(input, output, session) {
                             )
   })
     
-  output$news <- renderDataTable({
+    output$news <- renderDataTable({
       newsData <-
         data.table(
           paste0(
@@ -154,3 +191,4 @@ shinyServer(function(input, output, session) {
       )
     })
 })
+  

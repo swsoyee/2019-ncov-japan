@@ -20,6 +20,7 @@ shinyUI(dashboardPage(
         title = lang[[langCode]][2],
         # 新型コロナウイルス感染症マップ
         plotOutput("map"),
+        # plotOutput('blockMap'),
         footer = paste(lang[[langCode]][5] # ソース：厚生労働省
                        , '(', UPDATE_TIME, ')')
       ),
