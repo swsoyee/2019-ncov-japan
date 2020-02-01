@@ -18,7 +18,7 @@ shinyUI(dashboardPage(
       box(
         width = 8,
         title = lang[[langCode]][2],
-        uiOutput('mapWrapper'),
+        uiOutput('mapWrapper') %>% withSpinner(),
         footer = tagList(
           tags$button(
             id = "normalMapButton",
@@ -40,17 +40,17 @@ shinyUI(dashboardPage(
         )
       ),
       box(width = 4,
-          dataTableOutput('totalConfirmedByProvince')),
+          dataTableOutput('totalConfirmedByProvince') %>% withSpinner()),
       box(
         width = 8,
         title = lang[[langCode]][3],
         # 確認累積数
-        plotlyOutput("confirmedAccumulation"),
+        plotlyOutput("confirmedAccumulation") %>% withSpinner(),
         # 無症状病原体保有者を含む
         footer = paste('*', lang[[langCode]][12])
       ),
       box(width = 4,
-          dataTableOutput('news'))
+          dataTableOutput('news') %>% withSpinner())
     )
   ))
 ))

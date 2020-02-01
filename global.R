@@ -5,6 +5,7 @@ library(data.table)
 library(plotly)
 library(DT)
 library(ggplot2)
+library(shinycssloaders)
 
 db <- fread('Data/summary.csv', header = T)
 db[is.na(db)] <- 0
@@ -25,3 +26,5 @@ province[, Prefecture := gsub("東京都", "東京", province$Prefecture)]
 province[, Data := rowSums(db[, 2:ncol(db)])]
 
 UPDATE_TIME <- Sys.time()
+GLOABLE_MAIN_COLOR <- '#605ca8'
+options(spinner.color=GLOABLE_MAIN_COLOR)
