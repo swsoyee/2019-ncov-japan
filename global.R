@@ -6,15 +6,15 @@ library(plotly)
 library(DT)
 library(ggplot2)
 
-db <- fread('./summary.csv', header = T)
+db <- fread('Data/summary.csv', header = T)
 db[is.na(db)] <- 0
 
-lang <- fread('./lang.csv')
+lang <- fread('Data/lang.csv')
 langCode <- 'ja'
 
-news <- fread('./mhlw_houdou.csv')
+news <- fread('Data/mhlw_houdou.csv')
 
-province <- fread('./provinceCode.csv', na.strings = NULL)
+province <- fread('Data/provinceCode.csv', na.strings = NULL)
 # Scale設定
 province[, Scale := c(3, rep(1, 46))]
 # 区域名変更
