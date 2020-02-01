@@ -27,4 +27,6 @@ province[, Data := rowSums(db[, 2:ncol(db)])]
 
 UPDATE_TIME <- Sys.time()
 GLOABLE_MAIN_COLOR <- '#605ca8'
+GLOABLE_MAIN_COLOR_RGBVALUE <- paste(as.vector(col2rgb(GLOABLE_MAIN_COLOR)), collapse = ",")
+GLOABLE_MAIN_COLOR_RGBA <- paste0('rgba(', GLOABLE_MAIN_COLOR_RGBVALUE,',0.5)')
 options(spinner.color=GLOABLE_MAIN_COLOR)

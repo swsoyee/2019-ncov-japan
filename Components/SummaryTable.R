@@ -17,7 +17,7 @@ output$totalConfirmedByProvince <- renderDataTable({
   ) %>%
     formatStyle(
       c('確認数'),
-      background = styleColorBar(range(tableDt[, '確認数']), 'lightblue'),
+      background = styleColorBar(range(tableDt[, '確認数']), GLOABLE_MAIN_COLOR_RGBA),
       backgroundSize = '98% 88%',
       backgroundRepeat = 'no-repeat',
       backgroundPosition = 'center'

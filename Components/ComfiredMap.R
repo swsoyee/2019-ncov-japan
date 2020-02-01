@@ -28,7 +28,7 @@ output$blockMap <- renderPlot({
     x = X,
     y = Y,
     width = Scale,
-    height = Scale
+    height = Scale,
   )) +
     geom_tile(aes(fill = Data), color = "black") +
     geom_text(
@@ -47,14 +47,16 @@ output$blockMap <- renderPlot({
       panel.grid = element_blank(),
       axis.title = element_blank(),
       axis.text = element_blank(),
-      axis.ticks = element_blank()
+      axis.ticks = element_blank(),
+      legend.position = c(0.1, 0.8),
     ) +
     # scale_fill_viridis_c(na.value = "#FFFFFF", option = "C", begin = 0, end = 1)
     scale_fill_gradient2(
       low = '#FFFFFF',
       mid = "#FFA07A",
       high = "#CD5C5C",
-      midpoint = 8
+      midpoint = 8,
+      name = ''
     )
 })
 
