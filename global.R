@@ -6,6 +6,7 @@ library(plotly)
 library(DT)
 library(ggplot2)
 library(shinycssloaders)
+library(shinydashboardPlus)
 
 db <- fread('Data/summary.csv', header = T)
 db[is.na(db)] <- 0
