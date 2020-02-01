@@ -24,13 +24,13 @@ shinyUI(dashboardPage(
             id = "normalMapButton",
             type = "button",
             class = "btn action-button btn-primary",
-            HTML('<i class="icon-star"></i>標準')
+            HTML('<i class="icon-star"></i>', lang[[langCode]][15])
           ),
           tags$button(
             id = "blockMapButton",
             type = "button",
             class = "btn action-button btn-primary",
-            HTML('<i class="icon-star"></i>ブロック')
+            HTML('<i class="icon-star"></i>', lang[[langCode]][16])
           ) #,
           # tags$a(href = 'https://www.mhlw.go.jp/index.html',
           #        paste(lang[[langCode]][5]), # 厚生労働省
@@ -39,15 +39,17 @@ shinyUI(dashboardPage(
           #        ')')
         )
       ),
-      box(width = 4,
-          dataTableOutput('totalConfirmedByProvince') %>% withSpinner()),
+      box(
+        width = 4,
+        dataTableOutput('totalConfirmedByProvince') %>% withSpinner()
+      ),
       box(
         width = 8,
         title = lang[[langCode]][3],
         # 確認累積数
         plotlyOutput("confirmedAccumulation") %>% withSpinner(),
         # 無症状病原体保有者を含む
-        footer = paste('*', lang[[langCode]][12])
+        footer = paste('（＊）', lang[[langCode]][12])
       ),
       box(width = 4,
           dataTableOutput('news') %>% withSpinner())
