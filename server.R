@@ -19,5 +19,13 @@ shinyServer(function(input, output, session) {
   source(file = "Components/SummaryTable.R",
          local = TRUE,
          encoding = "UTF-8")
+  # TODO 追加修正待ち
+  observeEvent(input$language, {
+    if(input$language == 'cn') {
+      langCode <- 'cn'
+    } else {
+      langCode <- 'ja'
+    }
+  })
 })
   

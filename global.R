@@ -12,7 +12,9 @@ db <- fread('Data/summary.csv', header = T)
 db[is.na(db)] <- 0
 
 lang <- fread('Data/lang.csv')
+languageSet <- c('ja', 'cn')
 langCode <- 'ja'
+names(languageSet) <- c(lang[[langCode]][25], lang[[langCode]][26])
 
 news <- fread('Data/mhlw_houdou.csv')
 

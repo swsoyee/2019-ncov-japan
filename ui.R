@@ -2,11 +2,19 @@ source(file = "global.R",
        local = TRUE,
        encoding = "UTF-8")
 
-shinyUI(dashboardPage(
+shinyUI(dashboardPagePlus(
   skin = "purple",
-  dashboardHeader(title = lang[[langCode]][1], titleWidth = 450),
-  # 2019-nCov 日本
-  dashboardSidebar(disable = T),
+  header = dashboardHeaderPlus(title = lang[[langCode]][1], 
+                               titleWidth = 350,
+                               enable_rightsidebar = F), # TODO 言語設定の追加
+  sidebar = dashboardSidebar(disable = F),
+  # TODO 追加修正待ち
+  # rightsidebar = rightSidebar(
+  #   background = "dark",
+  #   selectInput(inputId = 'language',
+  #               label = lang[[langCode]][24], # 言語
+  #               choices = languageSet)
+  # ),
   dashboardBody(fluidPage(
     fluidRow(
       widgetUserBox(
@@ -68,6 +76,6 @@ shinyUI(dashboardPage(
       ),
       box(width = 4,
           dataTableOutput('news') %>% withSpinner())
-    )
+    ),
   ))
 ))
