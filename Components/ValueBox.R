@@ -47,9 +47,12 @@ output$totalRecovered <- renderValueBox({
 })
 
 output$compareWithYesterday <- renderUI({
+  # 前日比べの詳細表示ボックスの作成
+  # Retruns:
+  #   box: 前日比べの詳細表示ボックス
   confirmedIncreaseAtTheLastDay <- sum(db[, ncol(db), with = F])
   lastDayConfirmedIncreasePercentage <- round(confirmedIncreaseAtTheLastDay / sum(db[, 2:ncol(db)]), 2) * 100
-  # TODO
+  # TODO データはないのでしばらくベタ書き
   suspiciousIncreaseAtTheLastDay <- '-'
   lastDaySuspiciousIncreasePercentage <- 0
   recoveredIncreaseAtTheLastDay <- '-'

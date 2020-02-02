@@ -9,7 +9,8 @@ library(shinycssloaders)
 library(shinydashboardPlus)
 
 DATA_PATH <- 'Data/'
-IMG_PATH <- 'screenshot/'
+COMPONENT_PATH <- 'Components/'
+PAGE_PATH <- 'Pages/'
 
 db <- fread(paste0(DATA_PATH, 'summary.csv'), header = T)
 db[is.na(db)] <- 0
