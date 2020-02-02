@@ -8,17 +8,20 @@ library(ggplot2)
 library(shinycssloaders)
 library(shinydashboardPlus)
 
-db <- fread('Data/summary.csv', header = T)
+DATA_PATH <- 'Data/'
+IMG_PATH <- 'screenshot/'
+
+db <- fread(paste0(DATA_PATH, 'summary.csv'), header = T)
 db[is.na(db)] <- 0
 
-lang <- fread('Data/lang.csv')
+lang <- fread(paste0(DATA_PATH, 'lang.csv'))
 languageSet <- c('ja', 'cn')
 langCode <- 'ja'
 names(languageSet) <- c(lang[[langCode]][25], lang[[langCode]][26])
 
-news <- fread('Data/mhlw_houdou.csv')
+news <- fread(paste0(DATA_PATH, 'mhlw_houdou.csv'))
 
-province <- fread('Data/provinceCode.csv', na.strings = NULL)
+province <- fread(paste0(DATA_PATH, 'provinceCode.csv'), na.strings = NULL)
 # Scale設定
 province[, Scale := c(3, rep(1, 46))]
 # 区域名変更

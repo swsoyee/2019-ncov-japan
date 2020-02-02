@@ -22,6 +22,7 @@ shinyUI(dashboardPagePlus(
         subtitle = lang[[langCode]][18], # 2019 nCoV
         width = 12,
         type = 2,
+        src = paste0('../www/ncov.jpeg'),
         color = "purple",
         lang[[langCode]][19], # 発熱や上気道症状を引き起こすウイルス...
         footer = tags$a(href = lang[[langCode]][21], # https://www.mhlw.go.jp/stf/...
