@@ -45,3 +45,65 @@ output$totalRecovered <- renderValueBox({
     color = "green"
   )
 })
+
+output$compareWithYesterday <- renderUI({
+  confirmedIncreaseAtTheLastDay <- sum(db[, ncol(db), with = F])
+  lastDayConfirmedIncreasePercentage <- round(confirmedIncreaseAtTheLastDay / sum(db[, 2:ncol(db)]), 2) * 100
+  # TODO
+  suspiciousIncreaseAtTheLastDay <- '-'
+  lastDaySuspiciousIncreasePercentage <- 0
+  recoveredIncreaseAtTheLastDay <- '-'
+  lastDayRecoveredIncreasePercentage <- 0
+  deathIncreaseAtTheLastDay <- '-'
+  lastDayDeathIncreasePercentage <- 0
+  
+  box(
+    title = gsub('%1%', as.POSIXct(colnames(db)[ncol(db)-1], format = '%Y%m%d'),
+                 lang[[langCode]][27]), # 前日比べ
+    width = 12,
+    footer = fluidRow(
+      column(
+        width = 3,
+        descriptionBlock(
+          number = confirmedIncreaseAtTheLastDay,
+          number_color = "red", 
+          number_icon = "fa fa-caret-up",
+          header = paste(lastDayConfirmedIncreasePercentage, '%'), 
+          text = lang[[langCode]][28], # 確認増加数
+        )
+      ),
+      column(
+        width = 3,
+        descriptionBlock(
+          number = suspiciousIncreaseAtTheLastDay,
+          number_color = "red", 
+          # number_icon = "fa fa-caret-up",
+          header = paste(lastDaySuspiciousIncreasePercentage, '%'), 
+          text = lang[[langCode]][29], # 観察中増加数
+        )
+      ),
+      column(
+        width = 3,
+        descriptionBlock(
+          number = lastDayRecoveredIncreasePercentage,
+          number_color = "green", 
+          # number_icon = "fa fa-equals",
+          header = paste(lastDayRecoveredIncreasePercentage, '%'), 
+          text = lang[[langCode]][30], # 完治増加数
+        )
+      ),
+      column(
+        width = 3,
+        descriptionBlock(
+          number = deathIncreaseAtTheLastDay, 
+          number_color = "red", 
+          # number_icon = "fa fa-caret-down",
+          header = paste(lastDayDeathIncreasePercentage, '%'),
+          text = lang[[langCode]][31], # 死亡増加数
+          right_border = FALSE,
+          margin_bottom = FALSE
+        )
+      )
+    )
+  )
+})

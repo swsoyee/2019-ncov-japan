@@ -38,6 +38,9 @@ shinyUI(dashboardPagePlus(
       valueBoxOutput(width = 3, "totalDeath")
     ),
     fluidRow(
+      uiOutput('compareWithYesterday')
+    ),
+    fluidRow(
       box(
         width = 8,
         title = lang[[langCode]][2],
