@@ -6,7 +6,7 @@ shinyUI(
   dashboardPagePlus(
     skin = "purple",
     header = dashboardHeaderPlus(
-      title = lang[[langCode]][1],
+      title = paste0('🦠', lang[[langCode]][1]),
       titleWidth = 350,
       enable_rightsidebar = F
     ),
