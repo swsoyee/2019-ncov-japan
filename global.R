@@ -40,10 +40,14 @@ province[, Prefecture := gsub("東京都", "東京", province$Prefecture)]
 # データ追加
 province[, Data := rowSums(db[, 2:ncol(db)])]
 
+# world <- fread(paste0(DATA_PATH, '2019_nCoV_data.csv'))
+
+# china <- fread('https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/DXYArea.csv')
+
 # ====
 # 定数設定
 # ====
-UPDATE_TIME <- '2020-2-2'
+UPDATE_TIME <- '2020-2-4'
 GLOABLE_MAIN_COLOR <- '#605ca8'
 GLOABLE_MAIN_COLOR_RGBVALUE <-
   paste(as.vector(col2rgb(GLOABLE_MAIN_COLOR)), collapse = ",")

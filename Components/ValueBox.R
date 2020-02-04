@@ -39,7 +39,7 @@ output$totalRecovered <- renderValueBox({
   # Returns:
   #   valueBox: 完治数
   valueBox(
-    value = "1",
+    value = "2",
     subtitle = lang[[langCode]][6],
     icon = icon('grin-squint'),
     color = "green"
@@ -56,7 +56,7 @@ output$compareWithYesterday <- renderUI({
   suspiciousIncreaseAtTheLastDay <- '-'
   lastDaySuspiciousIncreasePercentage <- 0
   recoveredIncreaseAtTheLastDay <- '-'
-  lastDayRecoveredIncreasePercentage <- 0
+  lastDayRecoveredIncreasePercentage <- 1
   deathIncreaseAtTheLastDay <- '-'
   lastDayDeathIncreasePercentage <- 0
   
@@ -91,7 +91,7 @@ output$compareWithYesterday <- renderUI({
           number = lastDayRecoveredIncreasePercentage,
           number_color = "green", 
           # number_icon = "fa fa-equals",
-          header = paste(lastDayRecoveredIncreasePercentage, '%'), 
+          header = paste(50, '%'), 
           text = lang[[langCode]][30], # 完治増加数
         )
       ),
