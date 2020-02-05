@@ -7,7 +7,7 @@ output$map <- renderPlot({
   colorFunc <-
     colorRampPalette(c("#FFFFFF", "#FFA07A", "#CD5C5C"))
   
-  breaks <- c(-0.1, 0.5, 1.5, 2.5, 100)
+  breaks <- c(-0.1, 0.5, 2.5, 5.5, 100)
   breaks.length <- length(breaks) - 1
   names(province) <-
     colorFunc(breaks.length)[as.numeric(cut(total, breaks = breaks))]

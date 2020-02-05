@@ -56,7 +56,7 @@ output$compareWithYesterday <- renderUI({
   suspiciousIncreaseAtTheLastDay <- '-'
   lastDaySuspiciousIncreasePercentage <- 0
   recoveredIncreaseAtTheLastDay <- '-'
-  lastDayRecoveredIncreasePercentage <- 1
+  lastDayRecoveredIncreasePercentage <- 0
   deathIncreaseAtTheLastDay <- '-'
   lastDayDeathIncreasePercentage <- 0
   
@@ -91,7 +91,7 @@ output$compareWithYesterday <- renderUI({
           number = lastDayRecoveredIncreasePercentage,
           number_color = "green", 
           # number_icon = "fa fa-equals",
-          header = paste(50, '%'), 
+          header = paste(lastDayRecoveredIncreasePercentage, '%'), 
           text = lang[[langCode]][30], # 完治増加数
         )
       ),
