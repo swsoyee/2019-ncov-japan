@@ -47,7 +47,7 @@ province[, Data := rowSums(db[, 2:ncol(db)])]
 # ====
 # 定数設定
 # ====
-UPDATE_TIME <- '2020-2-4'
+UPDATE_TIME <- '2020-2-5'
 GLOABLE_MAIN_COLOR <- '#605ca8'
 GLOABLE_MAIN_COLOR_RGBVALUE <-
   paste(as.vector(col2rgb(GLOABLE_MAIN_COLOR)), collapse = ",")
