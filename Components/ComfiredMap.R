@@ -2,8 +2,9 @@ output$map <- renderPlot({
   # 感染状況を日本標準マップで表示する画像を作成
   # Returns:
   #   basePlotObject: 標準マップ
-  province <- db$name
-  total <- rowSums(db[, 2:ncol(db)])
+  dbWithoutShip <- db[db[, name != 'ダイアモンド・プリンセス号'], ]
+  province <- dbWithoutShip$name
+  total <- rowSums(dbWithoutShip[, 2:ncol(dbWithoutShip)])
   colorFunc <-
     colorRampPalette(c("#FFFFFF", "#FFA07A", "#CD5C5C"))
   
