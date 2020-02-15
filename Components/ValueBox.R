@@ -27,7 +27,7 @@ output$totalDeath <- renderValueBox({
   # Returns:
   #   valueBox: 死亡数
   valueBox(
-    value = "0",
+    value = "1",
     subtitle = lang[[langCode]][7],
     icon = icon('dizzy'),
     color = "navy"

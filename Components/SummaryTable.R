@@ -41,6 +41,7 @@ output$news <- renderDataTable({
     newsData[order(-V1)],
     options = list(
       dom = 't',
+      pageLength = nrow(newsData),
       scrollCollapse = T,
       scrollY = '440px'
     ),
