@@ -40,6 +40,19 @@ province[, Prefecture := gsub("東京都", "東京", province$Prefecture)]
 # データ追加
 province[, Data := rowSums(db[, 2:ncol(db)])]
 
+detail <- fread(paste0(DATA_PATH, 'detail.csv'),
+                colClasses = list(
+                  numeric = 1,
+                  factor = c(5, 6, 9:11)
+                  )
+                )
+detailColName <- colnames(detail)
+detail[, comfirmedDay := as.Date(as.character(detail$comfirmedDay), format = "%Y%m%d")]
+detail[, link := as.integer(detail$link)]
+detailMerged <- merge(detail, news, by.x = 'link', by.y = 'id')
+detailMerged[, link := paste0("<a href='", detailMerged$link.y, "'>", detailMerged$title, "</a>")]
+detail <- detailMerged[, detailColName, with = F]
+
 # world <- fread(paste0(DATA_PATH, '2019_nCoV_data.csv'))
 
 # china <- fread('https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/DXYArea.csv')

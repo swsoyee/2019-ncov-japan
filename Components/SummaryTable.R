@@ -7,7 +7,7 @@ output$totalConfirmedByProvince <- renderDataTable({
   displayData <- tableDt[order(-確認数)]
   datatable(
     displayData,
-    rownames = FALSE,
+    rownames = F,
     options = list(
       dom = 't',
       scrollY = '455px',
@@ -45,9 +45,28 @@ output$news <- renderDataTable({
       scrollCollapse = T,
       scrollY = '440px'
     ),
-    rownames = FALSE,
-    colnames = lang[[langCode]][14],
-    # 最新情報
-    escape = FALSE
+    rownames = F,
+    colnames = lang[[langCode]][14], # 最新情報
+    escape = F
   )
+})
+
+output$detail <- renderDataTable({
+  datatable(detail,
+            colnames = lang[[langCode]][37:48],
+            filter = 'top',
+            escape = 12,
+            options = list(
+              scrollCollapse = T,
+              scrollX = T,
+              autoWidth = T,
+              columnDefs = list(
+                list(width = '10px', targets = 0), 
+                list(width = '40px', targets = c(1, 2, 4, 5)), 
+                list(width = '60px', targets = c(3, 7, 8, 11)),
+                list(width = '80px', targets = 9),
+                list(width = '100px', targets = c(6, 10)),
+                list(width = '250px', targets = 12)
+              )
+            ))
 })
