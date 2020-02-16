@@ -40,9 +40,10 @@ province[, Prefecture := gsub("東京都", "東京", province$Prefecture)]
 # データ追加
 province[, Data := rowSums(db[, 2:ncol(db)])]
 
+# 詳細データ
 detail <- fread(paste0(DATA_PATH, 'detail.csv'),
                 colClasses = list(
-                  numeric = 1,
+                  numeric = c(1, 2),
                   factor = c(5, 6, 9:11)
                   )
                 )
@@ -53,6 +54,9 @@ detailMerged <- merge(detail, news, by.x = 'link', by.y = 'id')
 detailMerged[, link := paste0("<a href='", detailMerged$link.y, "'>", detailMerged$title, "</a>")]
 detail <- detailMerged[, detailColName, with = F]
 
+# 詳細データのサマリー
+detailSummary <- detail[, .(count = .N), by = .(gender, age)]
+
 # world <- fread(paste0(DATA_PATH, '2019_nCoV_data.csv'))
 
 # china <- fread('https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/DXYArea.csv')
@@ -60,7 +64,8 @@ detail <- detailMerged[, detailColName, with = F]
 # ====
 # 定数設定
 # ====
-UPDATE_TIME <- '2020-2-16'
+UPDATE_DATE <- '2020-2-16'
+UPDATE_DATETIME <- '2020-2-16 23:30'
 GLOABLE_MAIN_COLOR <- '#605ca8'
 GLOABLE_MAIN_COLOR_RGBVALUE <-
   paste(as.vector(col2rgb(GLOABLE_MAIN_COLOR)), collapse = ",")

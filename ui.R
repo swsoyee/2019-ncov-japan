@@ -16,7 +16,7 @@ shinyUI(
         lang[[langCode]][32],
         # 日本
         tabName = 'japan',
-        badgeLabel = UPDATE_TIME,
+        badgeLabel = UPDATE_DATE,
         badgeColor = 'purple',
         icon = tags$i('🇯🇵')
       ),

@@ -51,6 +51,28 @@ output$news <- renderDataTable({
   )
 })
 
+output$detailSummaryByGenderAndAge <- renderPlotly({
+  plot_ly(
+    x = detailSummary[gender == '男']$age,
+    y = detailSummary[gender == '男']$count,
+    type = 'bar',
+    name = lang[[langCode]][49] # 男性
+  ) %>%
+    add_trace(x = detailSummary[gender == '女']$age,
+              y = detailSummary[gender == '女']$count,
+              name = lang[[langCode]][50] # 女性
+              ) %>%
+    layout(yaxis = list(title = lang[[langCode]][11]), # 人数
+           xaxis = list(title = lang[[langCode]][51]), # 年代
+           legend = list(
+             orientation = 'h',
+             x = 0.5,
+             xanchor = 'center',
+             y = 1.1
+           ),
+           barmode = 'stack')
+})
+
 output$detail <- renderDataTable({
   datatable(detail,
             colnames = lang[[langCode]][37:48],
@@ -61,12 +83,12 @@ output$detail <- renderDataTable({
               scrollX = T,
               autoWidth = T,
               columnDefs = list(
-                list(width = '10px', targets = 0), 
+                list(width = '5px', targets = 0), 
                 list(width = '40px', targets = c(1, 2, 4, 5)), 
-                list(width = '60px', targets = c(3, 7, 8, 11)),
-                list(width = '80px', targets = 9),
-                list(width = '100px', targets = c(6, 10)),
-                list(width = '250px', targets = 12)
+                list(width = '60px', targets = c(3, 7, 8)),
+                list(width = '80px', targets = c(9)),
+                list(width = '100px', targets = c(6, 10, 11)),
+                list(width = '630px', targets = 12)
               )
             ))
 })

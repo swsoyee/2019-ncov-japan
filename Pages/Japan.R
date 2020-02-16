@@ -19,17 +19,18 @@ fluidPage(
     )
   ),
   fluidRow(
-    valueBoxOutput(width = 3, "totalConfirmed"),
-    valueBoxOutput(width = 3, "shipConfirmed"),
-    # valueBoxOutput(width = 3, "totalSuspicious"),
-    valueBoxOutput(width = 3, "totalRecovered"),
-    valueBoxOutput(width = 3, "totalDeath")
+      valueBoxOutput(width = 2, "totalConfirmed"),
+      valueBoxOutput(width = 2, "flightConfirmed"),
+      valueBoxOutput(width = 2, "shipConfirmed"),
+      # valueBoxOutput(width = 3, "totalSuspicious"),
+      valueBoxOutput(width = 3, "totalRecovered"),
+      valueBoxOutput(width = 3, "totalDeath")
   ),
   fluidRow(uiOutput('compareWithYesterday')),
   fluidRow(
     box(
       width = 8,
-      title = lang[[langCode]][2],
+      title = paste(lang[[langCode]][2], '(', UPDATE_DATETIME, ')'),
       uiOutput('mapWrapper') %>% withSpinner(),
       footer = tagList(
         tags$button(
@@ -67,10 +68,21 @@ fluidPage(
         dataTableOutput('news') %>% withSpinner())
   ),
   fluidRow(
-    box(width = 12, 
-        dataTableOutput('detail') %>% withSpinner(),
-        footer = tags$a(href = 'https://www.mhlw.go.jp/stf/newpage_09531.html',
-                        '新型コロナウイルス感染症の現在の状況と厚生労働省の対応について（令和２年２月14日版）より')
-        )
+    box(
+      title = lang[[langCode]][52],
+      # 確認詳細
+      width = 12,
+      tags$p('データの正確性を確保するため、厚生労働省の報道発表資料のみ参照するので、遅れがあります（土日更新しない模様）。'),
+      fluidRow(column(
+        width = 3,
+        plotlyOutput("detailSummaryByGenderAndAge", height = '200px') %>% withSpinner()
+      )),
+      tags$hr(),
+      fluidRow(column(
+        12, dataTableOutput('detail') %>% withSpinner()
+      )),
+      footer = tags$a(href = 'https://www.mhlw.go.jp/stf/newpage_09531.html',
+                      '新型コロナウイルス感染症の現在の状況と厚生労働省の対応について（令和２年２月14日版）より')
+    )
   )
 )
