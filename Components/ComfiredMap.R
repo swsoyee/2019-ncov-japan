@@ -56,7 +56,7 @@ output$blockMap <- renderPlot({
       low = '#FFFFFF',
       mid = "#FFA07A",
       high = "#CD5C5C",
-      midpoint = 8,
+      midpoint = 1,
       name = ''
     )
 })

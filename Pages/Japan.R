@@ -20,7 +20,8 @@ fluidPage(
   ),
   fluidRow(
     valueBoxOutput(width = 3, "totalConfirmed"),
-    valueBoxOutput(width = 3, "totalSuspicious"),
+    valueBoxOutput(width = 3, "shipConfirmed"),
+    # valueBoxOutput(width = 3, "totalSuspicious"),
     valueBoxOutput(width = 3, "totalRecovered"),
     valueBoxOutput(width = 3, "totalDeath")
   ),

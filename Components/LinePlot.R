@@ -1,5 +1,5 @@
 output$confirmedAccumulation <- renderPlotly({
-  dataset <- db[, 2:ncol(db)]
+  dataset <- db[1:47, 2:ncol(db)]
   dt <- dataset[, lapply(.SD, sum)]
   yData <- cumsum(transpose(dt))
   xData <- as.POSIXct(colnames(dt), format = "%Y%m%d")
