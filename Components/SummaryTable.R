@@ -1,13 +1,14 @@
 output$totalConfirmedByProvince <- renderDataTable({
   total <- rowSums(db[, 2:ncol(db)])
-  tableDt <- data.table('行政区域' = db$name, # 行政区域
+  tableDt <- data.table('確認場所' = db$name, # 確認場所
                         # 確認数
                         '確認数' = total)
-  # displayData <- tableDt[確認数 > 0][order(-確認数)]
-  displayData <- tableDt[order(-確認数)]
+  displayData <- tableDt[確認数 > 0][order(-確認数)]
+  # displayData <- tableDt[order(-確認数)]
   datatable(
     displayData,
     rownames = F,
+    selection = 'none',
     options = list(
       dom = 't',
       scrollY = '455px',
@@ -78,6 +79,7 @@ output$detail <- renderDataTable({
             colnames = lang[[langCode]][37:48],
             filter = 'top',
             escape = 12,
+            selection = 'none',
             options = list(
               scrollCollapse = T,
               scrollX = T,
@@ -90,5 +92,10 @@ output$detail <- renderDataTable({
                 list(width = '100px', targets = c(6, 10, 11)),
                 list(width = '630px', targets = 12)
               )
-            ))
+            )) %>%
+    formatStyle(
+      'observationStaus',
+      target = 'row',
+      background = styleEqual('終了', '#CCCCCC'),
+    )
 })
