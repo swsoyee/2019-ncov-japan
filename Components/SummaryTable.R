@@ -77,6 +77,7 @@ output$detailSummaryByGenderAndAge <- renderPlotly({
 output$detail <- renderDataTable({
   datatable(detail,
             colnames = lang[[langCode]][37:48],
+            caption = 'データの正確性を確保するため、厚生労働省の報道発表資料のみ参照するので、遅れがあります（土日更新しない模様）。',
             filter = 'top',
             escape = 12,
             selection = 'none',

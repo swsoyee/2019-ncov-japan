@@ -72,17 +72,19 @@ fluidPage(
       title = lang[[langCode]][52],
       # 確認詳細
       width = 12,
-      tags$p('データの正確性を確保するため、厚生労働省の報道発表資料のみ参照するので、遅れがあります（土日更新しない模様）。'),
       fluidRow(column(
         width = 3,
         plotlyOutput("detailSummaryByGenderAndAge", height = '200px') %>% withSpinner()
       )),
       tags$hr(),
       fluidRow(column(
-        12, dataTableOutput('detail') %>% withSpinner()
+        width = 12, 
+        dataTableOutput('detail') %>% withSpinner()
       )),
-      footer = tags$a(href = 'https://www.mhlw.go.jp/stf/newpage_09531.html',
-                      '新型コロナウイルス感染症の現在の状況と厚生労働省の対応について（令和２年２月14日版）より')
+      tags$li('  旧No.39の患者の「周囲の患者の発生」セル内容につきまして、記述によるとNo.38の妻であるではないかと思うので、「No.29」から「No.38」に修正しました。'),
+      tags$li('  旧No.44の患者の「周囲の患者の発生」セル内容につきまして、正しい数値は「No.43」と思うので、修正しました。'),
+      footer = tags$a(href = 'https://www.mhlw.go.jp/stf/newpage_09571.html',
+                      '新型コロナウイルス感染症の現在の状況と厚生労働省の対応について（令和２年２月17日版）より')
     )
   )
 )
