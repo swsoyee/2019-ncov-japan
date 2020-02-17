@@ -38,3 +38,20 @@ output$confirmedAccumulation <- renderPlotly({
   }
   p
 })
+
+output$recoveredAccumulation <- renderPlotly({
+  dt <- cumsum(rowSums(recovered[, 2:3]))
+  xData <- as.Date(recovered$date, format = "%Y%m%d")
+  p <- plot_ly(x = ~ xData,
+               y = ~ dt,
+               type = 'scatter',
+               line = list(color = '#01A65A'),
+               marker = list(color = '#01A65A'),
+               mode = 'lines+markers') %>% 
+    layout(
+      yaxis = list(title = lang[[langCode]][11]),
+      xaxis = list(title = ''),
+      showlegend = F
+    )
+  p
+})
