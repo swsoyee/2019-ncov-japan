@@ -57,6 +57,11 @@ detail <- detailMerged[, detailColName, with = F]
 # 詳細データのサマリー
 detailSummary <- detail[, .(count = .N), by = .(gender, age)]
 
+# 退院データ
+recovered <- fread(paste0(DATA_PATH, 'recovered.csv'))
+recovered[is.na(recovered)] <- 0
+recovered[, date := as.Date(as.character(recovered$date), format = "%Y%m%d")]
+
 # world <- fread(paste0(DATA_PATH, '2019_nCoV_data.csv'))
 
 # china <- fread('https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/DXYArea.csv')

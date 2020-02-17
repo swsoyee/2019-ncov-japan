@@ -63,7 +63,7 @@ output$totalRecovered <- renderValueBox({
   # Returns:
   #   valueBox: 完治数
   valueBox(
-    value = "12 (1)",
+    value = paste0(sum(recovered[, 2:3]), ' (', sum(recovered[, 3]), ')'),
     subtitle = paste0(lang[[langCode]][6], ' (', lang[[langCode]][36], ')'),
     icon = icon('grin-squint'),
     color = "green"
@@ -79,8 +79,8 @@ output$compareWithYesterday <- renderUI({
   # TODO データはないのでしばらくベタ書き
   suspiciousIncreaseAtTheLastDay <- '-'
   lastDaySuspiciousIncreasePercentage <- 0
-  recoveredIncreaseAtTheLastDay <- '-'
-  lastDayRecoveredIncreasePercentage <- 0
+  recoveredIncreaseAtTheLastDay <- sum(recovered[, ncol(recovered), with = F])
+  lastDayRecoveredIncreasePercentage <- round(recoveredIncreaseAtTheLastDay / sum(recovered[, 2:3]) * 100, 2)
   deathIncreaseAtTheLastDay <- '-'
   lastDayDeathIncreasePercentage <- 0
   
@@ -90,7 +90,7 @@ output$compareWithYesterday <- renderUI({
     width = 12,
     footer = fluidRow(
       column(
-        width = 3,
+        width = 4,
         descriptionBlock(
           number = confirmedIncreaseAtTheLastDay,
           number_color = "red", 
@@ -99,28 +99,28 @@ output$compareWithYesterday <- renderUI({
           text = lang[[langCode]][28], # 確認増加数
         )
       ),
+      # column(
+      #   width = 3,
+      #   descriptionBlock(
+      #     number = suspiciousIncreaseAtTheLastDay,
+      #     number_color = "red", 
+      #     # number_icon = "fa fa-caret-up",
+      #     header = paste(lastDaySuspiciousIncreasePercentage, '%'), 
+      #     text = lang[[langCode]][29], # 観察中増加数
+      #   )
+      # ),
       column(
-        width = 3,
+        width = 4,
         descriptionBlock(
-          number = suspiciousIncreaseAtTheLastDay,
-          number_color = "red", 
-          # number_icon = "fa fa-caret-up",
-          header = paste(lastDaySuspiciousIncreasePercentage, '%'), 
-          text = lang[[langCode]][29], # 観察中増加数
-        )
-      ),
-      column(
-        width = 3,
-        descriptionBlock(
-          number = lastDayRecoveredIncreasePercentage,
+          number = recoveredIncreaseAtTheLastDay,
           number_color = "green", 
-          # number_icon = "fa fa-equals",
+          number_icon = "fa fa-caret-up",
           header = paste(lastDayRecoveredIncreasePercentage, '%'), 
           text = lang[[langCode]][30], # 完治増加数
         )
       ),
       column(
-        width = 3,
+        width = 4,
         descriptionBlock(
           number = deathIncreaseAtTheLastDay, 
           number_color = "red", 
