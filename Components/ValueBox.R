@@ -75,7 +75,7 @@ output$compareWithYesterday <- renderUI({
   # Retruns:
   #   box: 前日比べの詳細表示ボックス
   confirmedIncreaseAtTheLastDay <- sum(db[, ncol(db), with = F])
-  lastDayConfirmedIncreasePercentage <- round(confirmedIncreaseAtTheLastDay / sum(db[, 2:ncol(db)]), 2) * 100
+  lastDayConfirmedIncreasePercentage <- round(confirmedIncreaseAtTheLastDay / sum(db[, 2:ncol(db)]) * 100, 2)
   # TODO データはないのでしばらくベタ書き
   suspiciousIncreaseAtTheLastDay <- '-'
   lastDaySuspiciousIncreasePercentage <- 0
