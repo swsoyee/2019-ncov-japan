@@ -7,6 +7,7 @@ library(DT)
 library(ggplot2)
 library(shinycssloaders)
 library(shinydashboardPlus)
+library(shinyWidgets)
 
 # ====
 # ファイルのパス設定
@@ -77,3 +78,7 @@ GLOABLE_MAIN_COLOR_RGBVALUE <-
 GLOABLE_MAIN_COLOR_RGBA <-
   paste0('rgba(', GLOABLE_MAIN_COLOR_RGBVALUE, ',0.5)')
 options(spinner.color = GLOABLE_MAIN_COLOR)
+
+# TODO Vectorのネーミングなぜかうまくいかないのでとりあえずここに置く
+showOption <- c('showShip', 'showFlight')
+names(showOption) <- c(lang[[langCode]][35], lang[[langCode]][36])

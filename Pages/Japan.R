@@ -54,7 +54,16 @@ fluidPage(
     ),
     box(
       width = 4,
-      dataTableOutput('totalConfirmedByProvince') %>% withSpinner()
+      checkboxGroupButtons(
+        inputId = "showOtherRegion",
+        label = lang[[langCode]][54],
+        choices = showOption,
+        justified = TRUE, status = "primary",
+        checkIcon = list(yes = icon("ok", lib = "glyphicon"),
+                         no = icon("remove", lib = "glyphicon")
+        )
+      ),
+      dataTableOutput('totalConfirmedByProvince') %>% withSpinner(),
     )
   ),
   fluidRow(column(
