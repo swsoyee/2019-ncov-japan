@@ -32,25 +32,25 @@ fluidPage(
       width = 8,
       title = paste(lang[[langCode]][2], '(', UPDATE_DATETIME, ')'),
       uiOutput('mapWrapper') %>% withSpinner(),
-      footer = tagList(
-        tags$button(
-          id = "normalMapButton",
-          type = "button",
-          class = "btn action-button btn-primary",
-          HTML('<i class="icon-star"></i>', lang[[langCode]][15])
-        ),
-        tags$button(
-          id = "blockMapButton",
-          type = "button",
-          class = "btn action-button btn-primary",
-          HTML('<i class="icon-star"></i>', lang[[langCode]][16])
-        ) #,
-        # tags$a(href = 'https://www.mhlw.go.jp/index.html',
-        #        paste(lang[[langCode]][5]), # 厚生労働省
-        #        '(',
-        #        UPDATE_TIME,
-        #        ')')
-      )
+      footer = lang[[langCode]][12],
+      #   tags$button(
+      #     id = "normalMapButton",
+      #     type = "button",
+      #     class = "btn action-button btn-primary",
+      #     HTML('<i class="icon-star"></i>', lang[[langCode]][15])
+      #   ),
+      # tags$button(
+      #   id = "blockMapButton",
+      #   type = "button",
+      #   class = "btn action-button btn-primary",
+      #   HTML('<i class="icon-star"></i>', lang[[langCode]][16])
+      # ),
+      # tags$a(href = 'https://www.mhlw.go.jp/index.html',
+      #        paste(lang[[langCode]][5]), # 厚生労働省
+      #        '(',
+      #        UPDATE_TIME,
+      #        ')')
+      # )
     ),
     box(
       width = 4,

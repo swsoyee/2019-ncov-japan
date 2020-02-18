@@ -11,7 +11,7 @@ output$totalConfirmedByProvince <- renderDataTable({
     selection = 'none',
     options = list(
       dom = 't',
-      scrollY = '455px',
+      scrollY = '440px',
       scrollCollapse = T,
       paging = F
     )
