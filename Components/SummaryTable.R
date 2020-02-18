@@ -3,15 +3,27 @@ output$totalConfirmedByProvince <- renderDataTable({
   tableDt <- data.table('確認場所' = db$name, # 確認場所
                         # 確認数
                         '確認数' = total)
-  displayData <- tableDt[確認数 > 0][order(-確認数)]
+  
+  if (is.null(input$showOtherRegion)) {
+    tableDt <- tableDt[!(確認場所 %in% c('ダイアモンド・プリンセス号', 'チャーター便'))]
+  } else {
+    if (!('showShip' %in% input$showOtherRegion)) {
+      tableDt <- tableDt[確認場所 != 'ダイアモンド・プリンセス号']
+    }
+    if (!('showFlight' %in% input$showOtherRegion)) {
+      tableDt <- tableDt[確認場所 != 'チャーター便']
+    }
+  }
   # displayData <- tableDt[order(-確認数)]
+  displayData <- tableDt[確認数 > 0][order(-確認数)]
+
   datatable(
     displayData,
     rownames = F,
     selection = 'none',
     options = list(
       dom = 't',
-      scrollY = '440px',
+      scrollY = '367px',
       scrollCollapse = T,
       paging = F
     )
