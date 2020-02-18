@@ -79,7 +79,7 @@ output$compareWithYesterday <- renderUI({
   # TODO データはないのでしばらくベタ書き
   suspiciousIncreaseAtTheLastDay <- '-'
   lastDaySuspiciousIncreasePercentage <- 0
-  recoveredIncreaseAtTheLastDay <- sum(recovered[, ncol(recovered), with = F])
+  recoveredIncreaseAtTheLastDay <- sum(recovered[nrow(recovered), 2:3])
   lastDayRecoveredIncreasePercentage <- round(recoveredIncreaseAtTheLastDay / sum(recovered[, 2:3]) * 100, 2)
   deathIncreaseAtTheLastDay <- '-'
   lastDayDeathIncreasePercentage <- 0
