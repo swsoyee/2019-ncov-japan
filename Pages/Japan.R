@@ -6,16 +6,24 @@ fluidPage(
       subtitle = lang[[langCode]][18],
       # 2019 nCoV
       width = 12,
-      type = 2,
-      src = 'https://raw.githubusercontent.com/swsoyee/2019-ncov-japan/master/www/ncov.jpeg',
+      type = NULL,
+      src = 'ncov.jpeg',
       color = "purple",
-      lang[[langCode]][19],
+      collapsible = F,
+      background = T,
+      backgroundUrl = 'ncov_back.jpg',
+      tags$br(),
+      tags$p(lang[[langCode]][19]),
       # 発熱や上気道症状を引き起こすウイルス...
-      footer = tags$a(href = lang[[langCode]][21], # https://www.mhlw.go.jp/stf/...
+      tags$a(href = lang[[langCode]][21], # https://www.mhlw.go.jp/stf/...
                       paste0(lang[[langCode]][20], # 出典
-                             ':', lang[[langCode]][22], # コロナウイルスはどのようなウイルスですか？
+                             '：', lang[[langCode]][22], # コロナウイルスはどのようなウイルスですか？
                              '（', lang[[langCode]][5], # 厚生労働省
-                             '）'))
+                             '）、 ')),
+      tags$a(href = lang[[langCode]][59], # https://phil.cdc.gov/Details.aspx?pid=2871
+             lang[[langCode]][58] # 背景画像
+             ),
+      footer_padding = F
     )
   ),
   fluidRow(
