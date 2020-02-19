@@ -14,7 +14,7 @@
 
 ## スクリーンショット
 
-![index](https://raw.githubusercontent.com/swsoyee/2019-ncov-japan/master/screenshot/index.png)
+![index](https://stg.covid-2019.live/ncov-static/capture.png)
 
 ## 協力者
 
