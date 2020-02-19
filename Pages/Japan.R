@@ -101,14 +101,8 @@ fluidPage(
         width = 12,
         dataTableOutput('detail') %>% withSpinner()
       )),
-      tags$li(
-        '  旧No.39の患者の「周囲の患者の発生」セル内容につきまして、記述によるとNo.38の妻であるではないかと思うので、「No.29」から「No.38」に修正しました。'
-      ),
-      tags$li(
-        '  旧No.44の患者の「周囲の患者の発生」セル内容につきまして、正しい数値は「No.43」と思うので、修正しました。'
-      ),
-      footer = tags$a(href = 'https://www.mhlw.go.jp/stf/newpage_09571.html',
-                      '新型コロナウイルス感染症の現在の状況と厚生労働省の対応について（令和２年２月17日版）より')
+      footer = tags$a(href = 'https://www.mhlw.go.jp/stf/newpage_09605.html',
+                      '新型コロナウイルス感染症の現在の状況と厚生労働省の対応について（令和２年２月1８日版）より')
     )
   )
 )
