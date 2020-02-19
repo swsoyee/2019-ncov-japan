@@ -89,21 +89,21 @@ output$detailSummaryByGenderAndAge <- renderPlotly({
 output$detail <- renderDataTable({
   datatable(detail,
             colnames = lang[[langCode]][37:48],
+            rownames = NULL,
             caption = 'データの正確性を確保するため、厚生労働省の報道発表資料のみ参照するので、遅れがあります（土日更新しない模様）。',
             filter = 'top',
-            escape = 12,
+            escape = 11,
             selection = 'none',
             options = list(
               scrollCollapse = T,
               scrollX = T,
               autoWidth = T,
               columnDefs = list(
-                list(width = '5px', targets = 0), 
-                list(width = '40px', targets = c(1, 2, 4, 5)), 
-                list(width = '60px', targets = c(3, 7, 8)),
-                list(width = '80px', targets = c(9)),
-                list(width = '100px', targets = c(6, 10, 11)),
-                list(width = '630px', targets = 12)
+                list(width = '40px', targets = c(0, 1, 3, 4)),
+                list(width = '60px', targets = c(2, 6, 7)),
+                list(width = '80px', targets = c(8)),
+                list(width = '100px', targets = c(5, 9, 10)),
+                list(width = '630px', targets = 11)
               )
             )) %>%
     formatStyle(

@@ -53,7 +53,7 @@ detail[, comfirmedDay := as.Date(as.character(detail$comfirmedDay), format = "%Y
 detail[, link := as.integer(detail$link)]
 detailMerged <- merge(detail, news, by.x = 'link', by.y = 'id')
 detailMerged[, link := paste0("<a href='", detailMerged$link.y, "'>", detailMerged$title, "</a>")]
-detail <- detailMerged[, detailColName, with = F]
+detail <- detailMerged[, detailColName, with = F][order(id)]
 
 # 詳細データのサマリー
 detailSummary <- detail[, .(count = .N), by = .(gender, age)]
