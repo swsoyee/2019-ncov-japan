@@ -1,7 +1,19 @@
-version: 2.1
-orbs:
-  welcome: circleci/welcome-orb@0.4.1
+version: 2
+jobs:
+  deploy:
+    machine:
+      enabled: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "5f:ca:3d:34:ff:30:1d:cb:ad:2f:e8:0d:e2:1a:3a:02"
+      - run: ssh -p $SSH_PORT $SSH_USER@$SSH_HOST
 workflows:
-  welcome:
+  version: 2
+  build-and-deploy:
     jobs:
-      - welcome/run
+      - deploy:
+          filters:
+            branches:
+              only: master
+	[chroe] C
