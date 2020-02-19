@@ -3,7 +3,7 @@ output$totalConfirmed <- renderValueBox({
   # Returns:
   #   valueBox: 確認数 (国内事例)
   valueBox(
-    value = paste0(sum(db[, 2:ncol(db)]), ' (', sum(db[1:47, 2:ncol(db)]), ')'),
+    value = paste0(sum(db[, 2:ncol(db)]), ' (', sum(db[c(1:47, 50), 2:ncol(db)]), ')'),
     subtitle = paste0(lang[[langCode]][9], ' (', lang[[langCode]][4], ')'),
     icon = icon('sad-tear'),
     color = "red"
