@@ -3,7 +3,7 @@ output$totalConfirmed <- renderValueBox({
   # Returns:
   #   valueBox: 確認数 (国内事例)
   valueBox(
-    value = paste0(sum(db[, 2:ncol(db)]), ' (', sum(db[c(1:47, 50, 51), 2:ncol(db)]), ')'),
+    value = paste0(sum(db[, 2:ncol(db)]), ' (', sum(db[c(1:47, 50), 2:ncol(db)]), ')'),
     subtitle = paste0(lang[[langCode]][9], ' (', lang[[langCode]][57], lang[[langCode]][4], ')'),
     icon = icon('sad-tear'),
     color = "red"
@@ -15,7 +15,7 @@ output$shipConfirmed <- renderValueBox({
   # Returns:
   #   valueBox: ダイアモンド・プリンセス号
   valueBox(
-    value = paste0(sum(db[48, 2:ncol(db)]), ' (', sum(db[51, 2:ncol(db)]), ')'),
+    value = paste0(sum(db[48, 2:ncol(db)]), ' (', sum(db[50, 2:ncol(db)]), ')'),
     subtitle = paste0(lang[[langCode]][35], '（', lang[[langCode]][56], lang[[langCode]][55], ')'),
     icon = icon('ship'),
     color = "red"
