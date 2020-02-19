@@ -33,7 +33,7 @@ news <- fread(paste0(DATA_PATH, 'mhlw_houdou.csv'))
 province <-
   fread(paste0(DATA_PATH, 'provinceCode.csv'), na.strings = NULL)
 # Scale設定
-province[, Scale := c(3, rep(1, 46), 0.5, 0.5, 0.5)]
+province[, Scale := c(3, rep(1, 46), rep(0.5, 4))]
 # 区域名変更
 province[, Prefecture := gsub("県", "", province$Prefecture)]
 province[, Prefecture := gsub("府", "", province$Prefecture)]
