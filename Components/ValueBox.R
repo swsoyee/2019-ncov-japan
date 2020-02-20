@@ -1,14 +1,14 @@
-output$totalConfirmed <- renderValueBox({
-  # 確認数の表示ボックス
-  # Returns:
-  #   valueBox: 確認数 (国内事例)
-  valueBox(
-    value = paste0(sum(db[, 2:ncol(db)]), ' (', sum(db[c(1:47, 50), 2:ncol(db)]), ')'),
-    subtitle = paste0(lang[[langCode]][9], ' (', lang[[langCode]][57], lang[[langCode]][4], ')'),
-    icon = icon('sad-tear'),
-    color = "red"
-  )
-})
+# output$confirmed <- renderValueBox({
+#   # 日本領土内のPCR陽性確認数の表示ボックス
+#   # Returns:
+#   #   valueBox: 日本領土内のPCR陽性数
+#   valueBox(
+#     value = paste0(TOTAL_JAPAN, ' (+', TOTAL_JAPAN_DIFF, ')'),
+#     subtitle = lang[[langCode]][60],
+#     icon = icon('sad-tear'),
+#     color = "red"
+#   )
+# })
 
 output$shipConfirmed <- renderValueBox({
   # 確認数の表示ボックス
@@ -92,23 +92,13 @@ output$compareWithYesterday <- renderUI({
       column(
         width = 4,
         descriptionBlock(
-          number = confirmedIncreaseAtTheLastDay,
+          number = TOTAL_WITHIN_DIFF,
           number_color = "red", 
           number_icon = "fa fa-caret-up",
-          header = paste(lastDayConfirmedIncreasePercentage, '%'), 
+          header = TOTAL_WITHIN, 
           text = lang[[langCode]][28], # 確認増加数
         )
       ),
-      # column(
-      #   width = 3,
-      #   descriptionBlock(
-      #     number = suspiciousIncreaseAtTheLastDay,
-      #     number_color = "red", 
-      #     # number_icon = "fa fa-caret-up",
-      #     header = paste(lastDaySuspiciousIncreasePercentage, '%'), 
-      #     text = lang[[langCode]][29], # 観察中増加数
-      #   )
-      # ),
       column(
         width = 4,
         descriptionBlock(
