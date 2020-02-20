@@ -89,7 +89,7 @@ fluidPage(
                  ),
                  footer_padding = F,
                  footer = tags$small(paste(lang[[langCode]][62], UPDATE_DATETIME))),
-             box(width = 4,
+             boxPlus(width = 4,
                  fluidRow(
                    column(
                      width = 6,
@@ -113,7 +113,9 @@ fluidPage(
                        text = lang[[langCode]][36],
                        right_border = F
                      )
-                   ))),
+                   )),
+                 footer_padding = F,
+                 footer = tags$small(paste(lang[[langCode]][62], RECOVERED_FILE_UPDATE_DATETIME))),
              box(width = 4,
                  '準備中')),
     fluidRow(

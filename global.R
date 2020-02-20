@@ -107,6 +107,7 @@ recovered[, date := as.Date(as.character(recovered$date), format = "%Y%m%d")]
 # 定数設定
 # ====
 UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'summary.csv'))$mtime
+RECOVERED_FILE_UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'recovered.csv'))$mtime
 UPDATE_DATE <- as.Date(UPDATE_DATETIME)
 GLOABLE_MAIN_COLOR <- '#605ca8'
 GLOABLE_MAIN_COLOR_RGBVALUE <-
