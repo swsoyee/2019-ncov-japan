@@ -34,9 +34,23 @@ fluidPage(
         subtitle = lang[[langCode]][60],
         icon = icon('sad-tear'),
         color = "red"
+      ),
+      valueBox(
+        width = 4,
+        value = paste0(CURED_WITHIN, ' (+', CURED_WITHIN_DIFF, ')'),
+        subtitle = lang[[langCode]][6],
+        icon = icon('grin-squint'),
+        color = "green"
+      ),
+      valueBox(
+        width = 4,
+        value = "3 (2)",
+        subtitle = paste0(lang[[langCode]][7], ' (うちクルーズ船)'),
+        icon = icon('dizzy'),
+        color = "navy"
       )
     ),
-    fluidRow(box(width = 4,
+    fluidRow(boxPlus(width = 4,
                  fluidRow(
                    column(
                      width = 4,
@@ -72,16 +86,36 @@ fluidPage(
                        right_border = F
                      )
                    )
-                 ))),
-    fluidRow(
-      valueBoxOutput(width = 2, 'totalSuspicious'),
-      valueBoxOutput(width = 2, "flightConfirmed"),
-      valueBoxOutput(width = 2, "shipConfirmed"),
-      # valueBoxOutput(width = 3, "totalSuspicious"),
-      valueBoxOutput(width = 3, "totalRecovered"),
-      valueBoxOutput(width = 3, "totalDeath")
-    ),
-    fluidRow(uiOutput('compareWithYesterday')),
+                 ),
+                 footer_padding = F,
+                 footer = tags$small(paste(lang[[langCode]][62], UPDATE_DATETIME))),
+             box(width = 4,
+                 fluidRow(
+                   column(
+                     width = 6,
+                     # 国内事例
+                     descriptionBlock(
+                       number = CURED_DOMESTIC_DIFF,
+                       number_color = "green",
+                       number_icon = "fa fa-caret-up",
+                       header = CURED_DOMESTIC,
+                       text = lang[[langCode]][4]
+                     )
+                   ),
+                   column(
+                     width = 6,
+                     # チャーター便
+                     descriptionBlock(
+                       number = CURED_FLIGHT_DIFF,
+                       number_color = "green",
+                       number_icon = "fa fa-caret-up",
+                       header = CURED_FLIGHT,
+                       text = lang[[langCode]][36],
+                       right_border = F
+                     )
+                   ))),
+             box(width = 4,
+                 '準備中')),
     fluidRow(
       box(
         width = 8,
