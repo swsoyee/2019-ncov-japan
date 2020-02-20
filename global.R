@@ -22,6 +22,18 @@ PAGE_PATH <- 'Pages/'
 db <- fread(paste0(DATA_PATH, 'summary.csv'), header = T)
 db[is.na(db)] <- 0
 
+byDate <- fread(paste0(DATA_PATH, 'byDate.csv'), header = T)
+byDate[is.na(byDate)] <- 0
+
+TOTAL_DOMESITC <- sum(byDate[, c(2:48)]) # 日本国内事例のPCR陽性数（クルーズ船関連者除く）
+TOTAL_OFFICER <- sum(byDate$検疫職員) # クルーズ船関連の職員のPCR陽性数
+TOTAL_FLIGHT <- sum(byDate$チャーター便) # チャーター便のPCR陽性数
+TOTAL_WITHIN <- TOTAL_DOMESITC + TOTAL_OFFICER + TOTAL_FLIGHT # 日本国内事例のPCR陽性数
+
+TOTAL_SHIP <- sum(byDate$クルーズ船) # クルーズ船のPCR陽性数
+
+TOTAL_JAPAN <- TOTAL_WITHIN + TOTAL_SHIP # 日本領土内のPCR陽性数
+
 lang <- fread(paste0(DATA_PATH, 'lang.csv'))
 langCode <- 'ja'
 # TODO 言語切り替え機能
