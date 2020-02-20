@@ -1,86 +1,7 @@
-output$totalConfirmed <- renderValueBox({
-  # 確認数の表示ボックス
-  # Returns:
-  #   valueBox: 確認数 (国内事例)
-  valueBox(
-    value = paste0(sum(db[, 2:ncol(db)]), ' (', sum(db[c(1:47, 50), 2:ncol(db)]), ')'),
-    subtitle = paste0(lang[[langCode]][9], ' (', lang[[langCode]][57], lang[[langCode]][4], ')'),
-    icon = icon('sad-tear'),
-    color = "red"
-  )
-})
-
-output$shipConfirmed <- renderValueBox({
-  # 確認数の表示ボックス
-  # Returns:
-  #   valueBox: ダイアモンド・プリンセス号
-  valueBox(
-    value = paste0(sum(db[48, 2:ncol(db)]), ' (', sum(db[50, 2:ncol(db)]), ')'),
-    subtitle = paste0(lang[[langCode]][35], '（', lang[[langCode]][56], lang[[langCode]][55], ')'),
-    icon = icon('ship'),
-    color = "red"
-  )
-})
-
-output$flightConfirmed <- renderValueBox({
-  # 確認数の表示ボックス
-  # Returns:
-  #   valueBox: チャーター便
-  valueBox(
-    value = sum(db[49, 2:ncol(db)]),
-    subtitle = lang[[langCode]][36],
-    icon = icon('plane'),
-    color = "red"
-  )
-})
-
-output$totalSuspicious <- renderValueBox({
-  # 観察中の表示ボックス
-  # Returns:
-  #   valueBox: 観察中
-  valueBox(
-    value = "？",
-    subtitle = lang[[langCode]][8],
-    icon = icon('flushed'),
-    color = "orange"
-  )
-})
-
-output$totalDeath <- renderValueBox({
-  # 死亡数の表示ボックス
-  # Returns:
-  #   valueBox: 死亡数
-  valueBox(
-    value = "3 (2)",
-    subtitle = paste0(lang[[langCode]][7], ' (うちクルーズ船)'),
-    icon = icon('dizzy'),
-    color = "navy"
-  )
-})
-
-output$totalRecovered <- renderValueBox({
-  # 完治数の表示ボックス
-  # Returns:
-  #   valueBox: 完治数
-  valueBox(
-    value = paste0(sum(recovered[, 2:3]), ' (', sum(recovered[, 3]), ')'),
-    subtitle = paste0(lang[[langCode]][6], ' (', lang[[langCode]][36], ')'),
-    icon = icon('grin-squint'),
-    color = "green"
-  )
-})
-
 output$compareWithYesterday <- renderUI({
   # 前日比べの詳細表示ボックスの作成
   # Retruns:
   #   box: 前日比べの詳細表示ボックス
-  confirmedIncreaseAtTheLastDay <- sum(db[, ncol(db), with = F])
-  lastDayConfirmedIncreasePercentage <- round(confirmedIncreaseAtTheLastDay / sum(db[, 2:ncol(db)]) * 100, 2)
-  # TODO データはないのでしばらくベタ書き
-  suspiciousIncreaseAtTheLastDay <- '-'
-  lastDaySuspiciousIncreasePercentage <- 0
-  recoveredIncreaseAtTheLastDay <- sum(recovered[nrow(recovered), 2:3])
-  lastDayRecoveredIncreasePercentage <- round(recoveredIncreaseAtTheLastDay / sum(recovered[, 2:3]) * 100, 2)
   deathIncreaseAtTheLastDay <- '2'
   lastDayDeathIncreasePercentage <- 66.66
   
@@ -92,23 +13,13 @@ output$compareWithYesterday <- renderUI({
       column(
         width = 4,
         descriptionBlock(
-          number = confirmedIncreaseAtTheLastDay,
+          number = TOTAL_WITHIN_DIFF,
           number_color = "red", 
           number_icon = "fa fa-caret-up",
-          header = paste(lastDayConfirmedIncreasePercentage, '%'), 
+          header = TOTAL_WITHIN, 
           text = lang[[langCode]][28], # 確認増加数
         )
       ),
-      # column(
-      #   width = 3,
-      #   descriptionBlock(
-      #     number = suspiciousIncreaseAtTheLastDay,
-      #     number_color = "red", 
-      #     # number_icon = "fa fa-caret-up",
-      #     header = paste(lastDaySuspiciousIncreasePercentage, '%'), 
-      #     text = lang[[langCode]][29], # 観察中増加数
-      #   )
-      # ),
       column(
         width = 4,
         descriptionBlock(
