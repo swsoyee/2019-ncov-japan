@@ -51,8 +51,8 @@ output$totalDeath <- renderValueBox({
   # Returns:
   #   valueBox: 死亡数
   valueBox(
-    value = "1",
-    subtitle = lang[[langCode]][7],
+    value = "3 (2)",
+    subtitle = paste0(lang[[langCode]][7], ' (うちクルーズ船)'),
     icon = icon('dizzy'),
     color = "navy"
   )
@@ -81,8 +81,8 @@ output$compareWithYesterday <- renderUI({
   lastDaySuspiciousIncreasePercentage <- 0
   recoveredIncreaseAtTheLastDay <- sum(recovered[nrow(recovered), 2:3])
   lastDayRecoveredIncreasePercentage <- round(recoveredIncreaseAtTheLastDay / sum(recovered[, 2:3]) * 100, 2)
-  deathIncreaseAtTheLastDay <- '-'
-  lastDayDeathIncreasePercentage <- 0
+  deathIncreaseAtTheLastDay <- '2'
+  lastDayDeathIncreasePercentage <- 66.66
   
   box(
     title = gsub('%1%', as.POSIXct(colnames(db)[ncol(db)-1], format = '%Y%m%d'),
@@ -124,7 +124,7 @@ output$compareWithYesterday <- renderUI({
         descriptionBlock(
           number = deathIncreaseAtTheLastDay, 
           number_color = "red", 
-          # number_icon = "fa fa-caret-down",
+          number_icon = "fa fa-caret-up",
           header = paste(lastDayDeathIncreasePercentage, '%'),
           text = lang[[langCode]][31], # 死亡増加数
           right_border = FALSE,
