@@ -5,9 +5,9 @@ account: infinityloop
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1732639
-bundleId: 2814698
+bundleId: 2815198
 url: https://infinityloop.shinyapps.io/2019-ncov-japan/
-when: 1582200172.07099
+when: 1582212201.11787
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: .RData|LICENSE|README.md

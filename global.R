@@ -25,6 +25,11 @@ db[is.na(db)] <- 0
 byDate <- fread(paste0(DATA_PATH, 'byDate.csv'), header = T)
 byDate[is.na(byDate)] <- 0
 
+# 退院データ
+recovered <- fread(paste0(DATA_PATH, 'recovered.csv'))
+recovered[is.na(recovered)] <- 0
+recovered[, date := as.Date(as.character(recovered$date), format = "%Y%m%d")]
+
 # ====総数基礎集計====
 # 確認
 TOTAL_DOMESITC <- sum(byDate[, c(2:48)]) # 日本国内事例のPCR陽性数（クルーズ船関連者除く）
@@ -93,11 +98,6 @@ detail <- detailMerged[, detailColName, with = F][order(id)]
 
 # 詳細データのサマリー
 detailSummary <- detail[, .(count = .N), by = .(gender, age)]
-
-# 退院データ
-recovered <- fread(paste0(DATA_PATH, 'recovered.csv'))
-recovered[is.na(recovered)] <- 0
-recovered[, date := as.Date(as.character(recovered$date), format = "%Y%m%d")]
 
 # world <- fread(paste0(DATA_PATH, '2019_nCoV_data.csv'))
 
