@@ -45,7 +45,9 @@ shinyUI(
     #               label = lang[[langCode]][24], # 言語
     #               choices = languageSet)
     # ),
-    dashboardBody(tabItems(
+    dashboardBody(
+      tags$head(tags$link(rel = "icon", href = "favicon.ico")),
+      tabItems(
       tabItem(tabName = 'japan',
               source(
                 file = paste0(PAGE_PATH, 'Japan.R'),
