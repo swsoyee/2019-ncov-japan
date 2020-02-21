@@ -47,65 +47,61 @@ TOTAL_DOMESITC <- sum(byDate[, c(2:48)]) # 日本国内事例のPCR陽性数（�
 TOTAL_OFFICER <- sum(byDate$検疫職員) # クルーズ船関連の職員のPCR陽性数
 TOTAL_FLIGHT <- sum(byDate$チャーター便) # チャーター便のPCR陽性数
 TOTAL_WITHIN <- TOTAL_DOMESITC + TOTAL_OFFICER + TOTAL_FLIGHT # 日本国内事例のPCR陽性数
-
 TOTAL_SHIP <- sum(byDate$クルーズ船) # クルーズ船のPCR陽性数
-
 TOTAL_JAPAN <- TOTAL_WITHIN + TOTAL_SHIP # 日本領土内のPCR陽性数
-
 CONFIRMED_PIE_DATA <- data.table(category = c(lang[[langCode]][4], # 国内事例
                                               lang[[langCode]][35], # クルーズ船
                                               lang[[langCode]][36] # チャーター便
                                               ),
-                                 value = c(TOTAL_DOMESITC, TOTAL_SHIP, TOTAL_FLIGHT))
-
+                                 value = c(TOTAL_DOMESITC + TOTAL_OFFICER, TOTAL_SHIP, TOTAL_FLIGHT))
 # 退院
 CURED_DOMESTIC <- sum(recovered[, 2])
 CURED_FLIGHT <- sum(recovered[, 3])
 CURED_WITHIN <- CURED_DOMESTIC + CURED_FLIGHT
-
 CURED_PIE_DATA <- data.table(category = c(lang[[langCode]][4], # 国内事例
                                           lang[[langCode]][36] # チャーター便
                                           ),
                              value = c(CURED_DOMESTIC, CURED_FLIGHT))
-
 # 死亡
 DEATH_DOMESITC <- sum(death[, c(2:48)]) # 日本国内事例の死亡数（クルーズ船関連者除く）
 DEATH_OFFICER <- sum(death[]$検疫職員) # クルーズ船関連の職員の死亡数
 DEATH_FLIGHT <- sum(death$チャーター便) # チャーター便の死亡数
 DEATH_WITHIN <- DEATH_DOMESITC + DEATH_OFFICER + DEATH_FLIGHT # 日本国内事例の死亡数
-
 DEATH_SHIP <- sum(death$クルーズ船) # クルーズ船の死亡数
-
 DEATH_JAPAN <- DEATH_WITHIN + DEATH_SHIP # 日本領土内の死亡数
-
-CURED_PIE_DATA <- data.table(category = c(lang[[langCode]][4], # 国内事例
+DEATH_PIE_DATA <- data.table(category = c(lang[[langCode]][4], # 国内事例
+                                          lang[[langCode]][35], # クルーズ船
                                           lang[[langCode]][36] # チャーター便
                                           ),
-                             value = c(CURED_DOMESTIC, CURED_FLIGHT))
+                             value = c(DEATH_DOMESITC + DEATH_OFFICER, DEATH_SHIP, DEATH_FLIGHT))
 
 # ====本日のデータ====
 # 確認
-byDateToday <- byDate[nrow(byDate), ] # 差分データセット
+byDateToday <- byDate[nrow(byDate), ] # 本日の差分データセット
 todayConfirmed <- unlist(as.list(byDateToday[, 2:(ncol(byDateToday) - 1)]))
-HAS_TODAY_CONFIRMED <- todayConfirmed[todayConfirmed > 0]
+HAS_TODAY_CONFIRMED <- todayConfirmed[todayConfirmed > 0] # 本日変化がある都道府県分類
 
+deathToday <- death[nrow(byDate), ] # 本日の差分データセット
+
+# ====前日比べの基礎集計(差分)====
+# 確認
 TOTAL_DOMESITC_DIFF <- sum(byDateToday[, c(2:48)]) # 日本国内事例のPCR陽性数（クルーズ船関連者除く）
 TOTAL_OFFICER_DIFF <- sum(byDateToday[]$検疫職員) # クルーズ船関連の職員のPCR陽性数
 TOTAL_FLIGHT_DIFF <- sum(byDateToday$チャーター便) # チャーター便のPCR陽性数
 TOTAL_WITHIN_DIFF <- TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF # 日本国内事例のPCR陽性数
-
 TOTAL_SHIP_DIFF <- sum(byDateToday$クルーズ船) # クルーズ船のPCR陽性数
-
 TOTAL_JAPAN_DIFF <- TOTAL_WITHIN_DIFF + TOTAL_SHIP_DIFF # 日本領土内のPCR陽性数
-
-hasDataToday <- c(byDateToday[, 2:ncol(byDateToday)] != 0)
-
-# ====前日比べの基礎集計(差分)====
-
 # 退院
 CURED_DOMESTIC_DIFF <- sum(recovered[nrow(recovered), 2])
 CURED_FLIGHT_DIFF <- sum(recovered[nrow(recovered), 3])
 CURED_WITHIN_DIFF <- CURED_DOMESTIC_DIFF + CURED_FLIGHT_DIFF
+# 死亡
+DEATH_DOMESITC_DIFF <- sum(deathToday[, c(2:48)]) # 日本国内事例のPCR陽性数（クルーズ船関連者除く）
+DEATH_OFFICER_DIFF <- sum(deathToday[]$検疫職員) # クルーズ船関連の職員のPCR陽性数
+DEATH_FLIGHT_DIFF <- sum(deathToday$チャーター便) # チャーター便のPCR陽性数
+DEATH_WITHIN_DIFF <- TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF # 日本国内事例のPCR陽性数
+DEATH_SHIP_DIFF <- sum(deathToday$クルーズ船) # クルーズ船のPCR陽性数
+DEATH_JAPAN_DIFF <- DEATH_WITHIN_DIFF +DEATH_SHIP_DIFF # 日本領土内のPCR陽性数
 
 
 
@@ -148,6 +144,7 @@ detailSummary <- detail[, .(count = .N), by = .(gender, age)]
 # ====
 UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'summary.csv'))$mtime
 RECOVERED_FILE_UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'recovered.csv'))$mtime
+DEATH_FILE_UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'death.csv'))$mtime
 UPDATE_DATE <- as.Date(UPDATE_DATETIME)
 GLOABLE_MAIN_COLOR <- '#605ca8'
 GLOABLE_MAIN_COLOR_RGBVALUE <-

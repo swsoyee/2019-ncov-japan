@@ -23,208 +23,240 @@ fluidPage(
       tags$a(href = lang[[langCode]][59], # https://phil.cdc.gov/Details.aspx?pid=2871
              # 背景画像
              lang[[langCode]][58]),
-             footer_padding = F
-      )
-    ),
-    fluidRow(
-      # 日本領土内のPCR陽性確認数の表示ボックス
-      valueBox(
-        width = 4,
-        value = paste0(TOTAL_JAPAN, ' (+', TOTAL_JAPAN_DIFF, ')'),
-        subtitle = lang[[langCode]][60],
-        icon = icon('sad-tear'),
-        color = "red"
-      ),
-      valueBox(
-        width = 4,
-        value = paste0(CURED_WITHIN, ' (+', CURED_WITHIN_DIFF, ')'),
-        subtitle = lang[[langCode]][6],
-        icon = icon('grin-squint'),
-        color = "green"
-      ),
-      valueBox(
-        width = 4,
-        value = paste0(DEATH_JAPAN, ' (+', 0, ')'),
-        subtitle = lang[[langCode]][7],
-        icon = icon('dizzy'),
-        color = "navy"
-      )
-    ),
-    fluidRow(
-      boxPlus(
-        width = 4,
-        fluidRow(
-          column(
-            width = 4,
-            # 国内事例
-            descriptionBlock(
-              number = TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF,
-              number_color = "red",
-              number_icon = "fa fa-caret-up",
-              header = TOTAL_DOMESITC + TOTAL_OFFICER,
-              text = lang[[langCode]][4]
-            )
-          ),
-          
-          column(
-            width = 4,
-            # チャーター便
-            descriptionBlock(
-              number = TOTAL_FLIGHT_DIFF,
-              number_color = "red",
-              number_icon = "fa fa-caret-up",
-              header = TOTAL_FLIGHT,
-              text = lang[[langCode]][36]
-            )
-          ),
-          column(
-            width = 4,
-            # クルーズ船
-            descriptionBlock(
-              number = TOTAL_SHIP_DIFF,
-              number_color = "red",
-              number_icon = "fa fa-caret-up",
-              header = TOTAL_SHIP,
-              text = lang[[langCode]][35],
-              right_border = F
-            )
-          )
-        ),
-        footer = tagList(fluidRow(
-          column(
-            width = 6,
-            plotlyOutput('confirmedPie', height = '150px') %>% withSpinner()
-          ),
-          column(
-            width = 6,
-            tags$h4(paste0(UPDATE_DATE, lang[[langCode]][64])),
-            uiOutput('todayConfirmed')
-          )
-        ),
-        tags$small(paste(
-          lang[[langCode]][62], UPDATE_DATETIME
-        )))
-      ),
-      boxPlus(
-        width = 4,
-        fluidRow(
-          column(
-            width = 6,
-            # 国内事例
-            descriptionBlock(
-              number = CURED_DOMESTIC_DIFF,
-              number_color = "green",
-              number_icon = "fa fa-caret-up",
-              header = CURED_DOMESTIC,
-              text = lang[[langCode]][4]
-            )
-          ),
-          column(
-            width = 6,
-            # チャーター便
-            descriptionBlock(
-              number = CURED_FLIGHT_DIFF,
-              number_color = "green",
-              number_icon = "fa fa-caret-up",
-              header = CURED_FLIGHT,
-              text = lang[[langCode]][36],
-              right_border = F
-            )
-          )
-        ),
-        footer = tagList(fluidRow(
-          column(
-            width = 6,
-            plotlyOutput('curedPie', height = '150px') %>% withSpinner()
-          ),
-          column(width = 6)
-        ),
-        tags$small(
-          paste(lang[[langCode]][62], RECOVERED_FILE_UPDATE_DATETIME)
-        ))
-      ),
-      box(width = 4,
-          '準備中')
-    ),
-    fluidRow(
-      box(
-        width = 8,
-        title = paste(lang[[langCode]][2], '(', UPDATE_DATETIME, ')'),
-        uiOutput('mapWrapper') %>% withSpinner(),
-        footer = lang[[langCode]][12],
-        #   tags$button(
-        #     id = "normalMapButton",
-        #     type = "button",
-        #     class = "btn action-button btn-primary",
-        #     HTML('<i class="icon-star"></i>', lang[[langCode]][15])
-        #   ),
-        # tags$button(
-        #   id = "blockMapButton",
-        #   type = "button",
-        #   class = "btn action-button btn-primary",
-        #   HTML('<i class="icon-star"></i>', lang[[langCode]][16])
-        # ),
-        # tags$a(href = 'https://www.mhlw.go.jp/index.html',
-        #        paste(lang[[langCode]][5]), # 厚生労働省
-        #        '(',
-        #        UPDATE_TIME,
-        #        ')')
-        # )
-      ),
-      box(
-        width = 4,
-        checkboxGroupButtons(
-          inputId = "showOtherRegion",
-          label = lang[[langCode]][54],
-          choices = showOption,
-          justified = TRUE,
-          status = "primary",
-          checkIcon = list(
-            yes = icon("ok", lib = "glyphicon"),
-            no = icon("remove", lib = "glyphicon")
-          )
-        ),
-        dataTableOutput('totalConfirmedByProvince') %>% withSpinner(),
-      )
-    ),
-    fluidRow(column(
-      width = 8,
-      box(
-        width = 12,
-        title = lang[[langCode]][3],
-        # 確認累積数
-        plotlyOutput("confirmedAccumulation") %>% withSpinner(),
-        # 無症状病原体保有者を含む
-        footer = paste('（＊）', lang[[langCode]][12])
-      ),
-      box(
-        title = lang[[langCode]][53],
-        width = 12,
-        plotlyOutput('recoveredAccumulation') %>% withSpinner()
-      )
-    ),
-    column(
+      footer_padding = F
+    )
+  ),
+  fluidRow(
+    # 日本領土内のPCR陽性確認数の表示ボックス
+    valueBox(
       width = 4,
-      box(width = 12,
-          dataTableOutput('news') %>% withSpinner()),
-    )),
-    fluidRow(
-      box(
-        title = lang[[langCode]][52],
-        # 確認詳細
+      value = paste0(TOTAL_JAPAN, ' (+', TOTAL_JAPAN_DIFF, ')'),
+      subtitle = lang[[langCode]][60],
+      icon = icon('sad-tear'),
+      color = "red"
+    ),
+    valueBox(
+      width = 4,
+      value = paste0(CURED_WITHIN, ' (+', CURED_WITHIN_DIFF, ')'),
+      subtitle = lang[[langCode]][6],
+      icon = icon('grin-squint'),
+      color = "green"
+    ),
+    valueBox(
+      width = 4,
+      value = paste0(DEATH_JAPAN, ' (+', 0, ')'),
+      subtitle = lang[[langCode]][7],
+      icon = icon('dizzy'),
+      color = "navy"
+    )
+  ),
+  fluidRow(
+    boxPlus(
+      width = 4,
+      fluidRow(
+        column(
+          width = 4,
+          # 国内事例
+          descriptionBlock(
+            number = TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF,
+            number_color = "red",
+            number_icon = "fa fa-caret-up",
+            header = TOTAL_DOMESITC + TOTAL_OFFICER,
+            text = lang[[langCode]][4]
+          )
+        ),
+        column(
+          width = 4,
+          # チャーター便
+          descriptionBlock(
+            number = TOTAL_FLIGHT_DIFF,
+            number_color = "red",
+            number_icon = "fa fa-caret-up",
+            header = TOTAL_FLIGHT,
+            text = lang[[langCode]][36]
+          )
+        ),
+        column(
+          width = 4,
+          # クルーズ船
+          descriptionBlock(
+            number = TOTAL_SHIP_DIFF,
+            number_color = "red",
+            number_icon = "fa fa-caret-up",
+            header = TOTAL_SHIP,
+            text = lang[[langCode]][35],
+            right_border = F
+          )
+        )
+      ),
+      footer = tagList(fluidRow(
+        column(
+          width = 6,
+          plotlyOutput('confirmedPie', height = '150px') %>% withSpinner()
+        ),
+        column(width = 6,
+               tags$h4(paste0(UPDATE_DATE, lang[[langCode]][64])),
+               uiOutput('todayConfirmed'))
+      ),
+      tags$small(paste(
+        lang[[langCode]][62], UPDATE_DATETIME
+      )))
+    ),
+    boxPlus(
+      width = 4,
+      fluidRow(
+        column(
+          width = 6,
+          # 国内事例
+          descriptionBlock(
+            number = CURED_DOMESTIC_DIFF,
+            number_color = "green",
+            number_icon = "fa fa-caret-up",
+            header = CURED_DOMESTIC,
+            text = lang[[langCode]][4]
+          )
+        ),
+        column(
+          width = 6,
+          # チャーター便
+          descriptionBlock(
+            number = CURED_FLIGHT_DIFF,
+            number_color = "green",
+            number_icon = "fa fa-caret-up",
+            header = CURED_FLIGHT,
+            text = lang[[langCode]][36],
+            right_border = F
+          )
+        )
+      ),
+      footer = tagList(fluidRow(
+        column(
+          width = 6,
+          plotlyOutput('curedPie', height = '150px') %>% withSpinner()
+        ),
+        column(width = 6)
+      ),
+      tags$small(
+        paste(lang[[langCode]][62], RECOVERED_FILE_UPDATE_DATETIME)
+      ))
+    ),
+    boxPlus(
+      width = 4,
+      fluidRow(
+        column(
+          width = 6,
+          # 国内事例
+          descriptionBlock(
+            number = DEATH_DOMESITC_DIFF + DEATH_OFFICER_DIFF,
+            number_color = "red",
+            number_icon = "fa fa-caret-up",
+            header = DEATH_DOMESITC + DEATH_OFFICER,
+            text = lang[[langCode]][4]
+          )
+        ),
+        column(
+          width = 6,
+          # クルーズ船
+          descriptionBlock(
+            number = DEATH_SHIP_DIFF,
+            number_color = "red",
+            number_icon = "fa fa-caret-up",
+            header = DEATH_SHIP,
+            text = lang[[langCode]][35],
+            right_border = F
+          )
+        )
+      ),
+      footer = tagList(fluidRow(
+        column(
+          width = 6,
+          plotlyOutput('deathPie', height = '150px') %>% withSpinner()
+        ),
+        column(width = 6)
+      ),
+      tags$small(
+        paste(lang[[langCode]][62], DEATH_FILE_UPDATE_DATETIME)
+      ))
+    )
+  ),
+  fluidRow(
+    box(
+      width = 8,
+      title = paste(lang[[langCode]][2], '(', UPDATE_DATETIME, ')'),
+      uiOutput('mapWrapper') %>% withSpinner(),
+      footer = lang[[langCode]][12],
+      #   tags$button(
+      #     id = "normalMapButton",
+      #     type = "button",
+      #     class = "btn action-button btn-primary",
+      #     HTML('<i class="icon-star"></i>', lang[[langCode]][15])
+      #   ),
+      # tags$button(
+      #   id = "blockMapButton",
+      #   type = "button",
+      #   class = "btn action-button btn-primary",
+      #   HTML('<i class="icon-star"></i>', lang[[langCode]][16])
+      # ),
+      # tags$a(href = 'https://www.mhlw.go.jp/index.html',
+      #        paste(lang[[langCode]][5]), # 厚生労働省
+      #        '(',
+      #        UPDATE_TIME,
+      #        ')')
+      # )
+    ),
+    box(
+      width = 4,
+      checkboxGroupButtons(
+        inputId = "showOtherRegion",
+        label = lang[[langCode]][54],
+        choices = showOption,
+        justified = TRUE,
+        status = "primary",
+        checkIcon = list(
+          yes = icon("ok", lib = "glyphicon"),
+          no = icon("remove", lib = "glyphicon")
+        )
+      ),
+      dataTableOutput('totalConfirmedByProvince') %>% withSpinner(),
+    )
+  ),
+  fluidRow(column(
+    width = 8,
+    box(
+      width = 12,
+      title = lang[[langCode]][3],
+      # 確認累積数
+      plotlyOutput("confirmedAccumulation") %>% withSpinner(),
+      # 無症状病原体保有者を含む
+      footer = paste('（＊）', lang[[langCode]][12])
+    ),
+    box(
+      title = lang[[langCode]][53],
+      width = 12,
+      plotlyOutput('recoveredAccumulation') %>% withSpinner()
+    )
+  ),
+  column(
+    width = 4,
+    box(width = 12,
+        dataTableOutput('news') %>% withSpinner()),
+  )),
+  fluidRow(
+    box(
+      title = lang[[langCode]][52],
+      # 確認詳細
+      width = 12,
+      fluidRow(column(
+        width = 3,
+        plotlyOutput("detailSummaryByGenderAndAge", height = '200px') %>% withSpinner()
+      )),
+      tags$hr(),
+      fluidRow(column(
         width = 12,
-        fluidRow(column(
-          width = 3,
-          plotlyOutput("detailSummaryByGenderAndAge", height = '200px') %>% withSpinner()
-        )),
-        tags$hr(),
-        fluidRow(column(
-          width = 12,
-          dataTableOutput('detail') %>% withSpinner()
-        )),
-        footer = tags$a(href = 'https://www.mhlw.go.jp/stf/newpage_09637.html',
-                        '新型コロナウイルス感染症の現在の状況と厚生労働省の対応について（令和２年２月1９日版）より')
-      )
+        dataTableOutput('detail') %>% withSpinner()
+      )),
+      footer = tags$a(href = 'https://www.mhlw.go.jp/stf/newpage_09637.html',
+                      '新型コロナウイルス感染症の現在の状況と厚生労働省の対応について（令和２年２月1９日版）より')
     )
   )
-  
+)

@@ -27,3 +27,18 @@ output$curedPie <- renderPlotly({
           type = 'pie') %>%
     layout(margin = list(t = 0, l = 0, b = 5))
 })
+
+output$deathPie <- renderPlotly({
+  plot_ly(data = DEATH_PIE_DATA,
+          labels = ~category,
+          values = ~value, 
+          textposition = 'inside',
+          textinfo = 'value+percent',
+          showlegend = F,
+          hoverinfo = 'text',
+          text = ~category,
+          marker = list(colors = c('#011E3F', '#34495E'),
+                        line = list(color = '#FFFFFF', width = 1)),
+          type = 'pie') %>%
+    layout(margin = list(t = 0, l = 0, b = 5))
+})
