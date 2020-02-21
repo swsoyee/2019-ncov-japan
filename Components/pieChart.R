@@ -8,6 +8,5 @@ output$confirmedPie <- renderPlotly({
           hoverinfo = 'text',
           text = ~category,
           type = 'pie') %>%
-    layout(grid=list(rows = 1, columns = 2),
-           margin = list(t = 0, l = 0, b = 5))
+    layout(margin = list(t = 0, l = 0, b = 5))
 })

@@ -59,21 +59,31 @@ CURED_DOMESTIC <- sum(recovered[, 2])
 CURED_FLIGHT <- sum(recovered[, 3])
 CURED_WITHIN <- CURED_DOMESTIC + CURED_FLIGHT
 
-# ====前日比べの基礎集計(差分)====
-byDateYesterday <- byDate[nrow(byDate), ] # 差分データセット
-TOTAL_DOMESITC_DIFF <- sum(byDateYesterday[, c(2:48)]) # 日本国内事例のPCR陽性数（クルーズ船関連者除く）
-TOTAL_OFFICER_DIFF <- sum(byDateYesterday[]$検疫職員) # クルーズ船関連の職員のPCR陽性数
-TOTAL_FLIGHT_DIFF <- sum(byDateYesterday$チャーター便) # チャーター便のPCR陽性数
+# ====本日のデータ====
+# 確認
+byDateToday <- byDate[nrow(byDate), ] # 差分データセット
+todayConfirmed <- unlist(as.list(byDateToday[, 2:(ncol(byDateToday) - 1)]))
+HAS_TODAY_CONFIRMED <- todayConfirmed[todayConfirmed > 0]
+
+TOTAL_DOMESITC_DIFF <- sum(byDateToday[, c(2:48)]) # 日本国内事例のPCR陽性数（クルーズ船関連者除く）
+TOTAL_OFFICER_DIFF <- sum(byDateToday[]$検疫職員) # クルーズ船関連の職員のPCR陽性数
+TOTAL_FLIGHT_DIFF <- sum(byDateToday$チャーター便) # チャーター便のPCR陽性数
 TOTAL_WITHIN_DIFF <- TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF # 日本国内事例のPCR陽性数
 
-TOTAL_SHIP_DIFF <- sum(byDateYesterday$クルーズ船) # クルーズ船のPCR陽性数
+TOTAL_SHIP_DIFF <- sum(byDateToday$クルーズ船) # クルーズ船のPCR陽性数
 
 TOTAL_JAPAN_DIFF <- TOTAL_WITHIN_DIFF + TOTAL_SHIP_DIFF # 日本領土内のPCR陽性数
+
+hasDataToday <- c(byDateToday[, 2:ncol(byDateToday)] != 0)
+
+# ====前日比べの基礎集計(差分)====
 
 # 退院
 CURED_DOMESTIC_DIFF <- sum(recovered[nrow(recovered), 2])
 CURED_FLIGHT_DIFF <- sum(recovered[nrow(recovered), 3])
 CURED_WITHIN_DIFF <- CURED_DOMESTIC_DIFF + CURED_FLIGHT_DIFF
+
+
 
 news <- fread(paste0(DATA_PATH, 'mhlw_houdou.csv'))
 
