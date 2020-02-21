@@ -56,10 +56,10 @@ fluidPage(
                      width = 4,
                      # 国内事例
                      descriptionBlock(
-                       number = TOTAL_WITHIN_DIFF,
+                       number = TOTAL_DOMESITC_DIFF,
                        number_color = "red",
                        number_icon = "fa fa-caret-up",
-                       header = TOTAL_WITHIN,
+                       header = TOTAL_DOMESITC,
                        text = lang[[langCode]][4]
                      )
                    ),
@@ -87,8 +87,8 @@ fluidPage(
                      )
                    )
                  ),
-                 footer_padding = F,
-                 footer = tags$small(paste(lang[[langCode]][62], UPDATE_DATETIME))),
+                 footer = tags$small(plotlyOutput('confirmedPie', height = '150px') %>% withSpinner(),
+                                     paste(lang[[langCode]][62], UPDATE_DATETIME))),
              boxPlus(width = 4,
                  fluidRow(
                    column(

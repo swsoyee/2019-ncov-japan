@@ -30,6 +30,13 @@ recovered <- fread(paste0(DATA_PATH, 'recovered.csv'))
 recovered[is.na(recovered)] <- 0
 recovered[, date := as.Date(as.character(recovered$date), format = "%Y%m%d")]
 
+# 文言データ
+lang <- fread(paste0(DATA_PATH, 'lang.csv'))
+langCode <- 'ja'
+# TODO 言語切り替え機能
+# languageSet <- c('ja', 'cn')
+# names(languageSet) <- c(lang[[langCode]][25], lang[[langCode]][26])
+
 # ====総数基礎集計====
 # 確認
 TOTAL_DOMESITC <- sum(byDate[, c(2:48)]) # 日本国内事例のPCR陽性数（クルーズ船関連者除く）
@@ -40,6 +47,12 @@ TOTAL_WITHIN <- TOTAL_DOMESITC + TOTAL_OFFICER + TOTAL_FLIGHT # 日本国内事�
 TOTAL_SHIP <- sum(byDate$クルーズ船) # クルーズ船のPCR陽性数
 
 TOTAL_JAPAN <- TOTAL_WITHIN + TOTAL_SHIP # 日本領土内のPCR陽性数
+
+CONFIRMED_PIE_DATA <- data.table(category = c(lang[[langCode]][4], # 国内事例
+                                              lang[[langCode]][35], # クルーズ船
+                                              lang[[langCode]][36] # チャーター便
+                                              ),
+                                 value = c(TOTAL_DOMESITC, TOTAL_SHIP, TOTAL_FLIGHT))
 
 # 退院
 CURED_DOMESTIC <- sum(recovered[, 2])
@@ -61,13 +74,6 @@ TOTAL_JAPAN_DIFF <- TOTAL_WITHIN_DIFF + TOTAL_SHIP_DIFF # 日本領土内のPCR�
 CURED_DOMESTIC_DIFF <- sum(recovered[nrow(recovered), 2])
 CURED_FLIGHT_DIFF <- sum(recovered[nrow(recovered), 3])
 CURED_WITHIN_DIFF <- CURED_DOMESTIC_DIFF + CURED_FLIGHT_DIFF
-
-
-lang <- fread(paste0(DATA_PATH, 'lang.csv'))
-langCode <- 'ja'
-# TODO 言語切り替え機能
-# languageSet <- c('ja', 'cn')
-# names(languageSet) <- c(lang[[langCode]][25], lang[[langCode]][26])
 
 news <- fread(paste0(DATA_PATH, 'mhlw_houdou.csv'))
 
