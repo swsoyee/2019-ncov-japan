@@ -58,10 +58,10 @@ fluidPage(
             width = 4,
             # 国内事例
             descriptionBlock(
-              number = TOTAL_DOMESITC_DIFF,
+              number = TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF,
               number_color = "red",
               number_icon = "fa fa-caret-up",
-              header = TOTAL_DOMESITC,
+              header = TOTAL_DOMESITC + TOTAL_OFFICER,
               text = lang[[langCode]][4]
             )
           ),
