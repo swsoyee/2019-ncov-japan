@@ -44,8 +44,8 @@ fluidPage(
       ),
       valueBox(
         width = 4,
-        value = "3 (2)",
-        subtitle = paste0(lang[[langCode]][7], ' (うちクルーズ船)'),
+        value = paste0(DEATH_JAPAN, ' (+', 0, ')'),
+        subtitle = lang[[langCode]][7],
         icon = icon('dizzy'),
         color = "navy"
       )

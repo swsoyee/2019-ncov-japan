@@ -30,6 +30,10 @@ recovered <- fread(paste0(DATA_PATH, 'recovered.csv'))
 recovered[is.na(recovered)] <- 0
 recovered[, date := as.Date(as.character(recovered$date), format = "%Y%m%d")]
 
+# 死亡データ
+death <- fread(paste0(DATA_PATH, 'death.csv'))
+death[is.na(death)] <- 0
+
 # 文言データ
 lang <- fread(paste0(DATA_PATH, 'lang.csv'))
 langCode <- 'ja'
@@ -58,6 +62,21 @@ CONFIRMED_PIE_DATA <- data.table(category = c(lang[[langCode]][4], # 国内事�
 CURED_DOMESTIC <- sum(recovered[, 2])
 CURED_FLIGHT <- sum(recovered[, 3])
 CURED_WITHIN <- CURED_DOMESTIC + CURED_FLIGHT
+
+CURED_PIE_DATA <- data.table(category = c(lang[[langCode]][4], # 国内事例
+                                          lang[[langCode]][36] # チャーター便
+                                          ),
+                             value = c(CURED_DOMESTIC, CURED_FLIGHT))
+
+# 死亡
+DEATH_DOMESITC <- sum(death[, c(2:48)]) # 日本国内事例の死亡数（クルーズ船関連者除く）
+DEATH_OFFICER <- sum(death[]$検疫職員) # クルーズ船関連の職員の死亡数
+DEATH_FLIGHT <- sum(death$チャーター便) # チャーター便の死亡数
+DEATH_WITHIN <- DEATH_DOMESITC + DEATH_OFFICER + DEATH_FLIGHT # 日本国内事例の死亡数
+
+DEATH_SHIP <- sum(death$クルーズ船) # クルーズ船の死亡数
+
+DEATH_JAPAN <- DEATH_WITHIN + DEATH_SHIP # 日本領土内の死亡数
 
 CURED_PIE_DATA <- data.table(category = c(lang[[langCode]][4], # 国内事例
                                           lang[[langCode]][36] # チャーター便
