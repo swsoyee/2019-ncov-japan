@@ -65,17 +65,7 @@ fluidPage(
               text = lang[[langCode]][4]
             )
           ),
-          column(
-            width = 4,
-            # クルーズ船
-            descriptionBlock(
-              number = TOTAL_SHIP_DIFF,
-              number_color = "red",
-              number_icon = "fa fa-caret-up",
-              header = TOTAL_SHIP,
-              text = lang[[langCode]][35]
-            )
-          ),
+          
           column(
             width = 4,
             # チャーター便
@@ -84,7 +74,18 @@ fluidPage(
               number_color = "red",
               number_icon = "fa fa-caret-up",
               header = TOTAL_FLIGHT,
-              text = lang[[langCode]][36],
+              text = lang[[langCode]][36]
+            )
+          ),
+          column(
+            width = 4,
+            # クルーズ船
+            descriptionBlock(
+              number = TOTAL_SHIP_DIFF,
+              number_color = "red",
+              number_icon = "fa fa-caret-up",
+              header = TOTAL_SHIP,
+              text = lang[[langCode]][35],
               right_border = F
             )
           )
