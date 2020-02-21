@@ -134,7 +134,8 @@ fluidPage(
           width = 6,
           plotlyOutput('curedPie', height = '150px') %>% withSpinner()
         ),
-        column(width = 6)
+        column(width = 6,
+               tags$h4('準備中'))
       ),
       tags$small(
         paste(lang[[langCode]][62], RECOVERED_FILE_UPDATE_DATETIME)
@@ -172,7 +173,8 @@ fluidPage(
           width = 6,
           plotlyOutput('deathPie', height = '150px') %>% withSpinner()
         ),
-        column(width = 6)
+        column(width = 6,
+               tags$h4('準備中'))
       ),
       tags$small(
         paste(lang[[langCode]][62], DEATH_FILE_UPDATE_DATETIME)
@@ -180,11 +182,15 @@ fluidPage(
     )
   ),
   fluidRow(
-    box(
+    boxPlus(
       width = 8,
-      title = paste(lang[[langCode]][2], '(', UPDATE_DATETIME, ')'),
+      title = lang[[langCode]][2],
       uiOutput('mapWrapper') %>% withSpinner(),
-      footer = lang[[langCode]][12],
+      # footer_padding = F,
+      closable = F,
+      footer = tags$small(paste(
+        lang[[langCode]][62], UPDATE_DATETIME
+      ))
       #   tags$button(
       #     id = "normalMapButton",
       #     type = "button",
