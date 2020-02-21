@@ -21,8 +21,8 @@ fluidPage(
                     '（', lang[[langCode]][5], # 厚生労働省
                     '）、 ')),
       tags$a(href = lang[[langCode]][59], # https://phil.cdc.gov/Details.aspx?pid=2871
-             lang[[langCode]][58] # 背景画像
-             ),
+             # 背景画像
+             lang[[langCode]][58]),
              footer_padding = F
       )
     ),
@@ -50,80 +50,101 @@ fluidPage(
         color = "navy"
       )
     ),
-    fluidRow(boxPlus(width = 4,
-                 fluidRow(
-                   column(
-                     width = 4,
-                     # 国内事例
-                     descriptionBlock(
-                       number = TOTAL_DOMESITC_DIFF,
-                       number_color = "red",
-                       number_icon = "fa fa-caret-up",
-                       header = TOTAL_DOMESITC,
-                       text = lang[[langCode]][4]
-                     )
-                   ),
-                   column(
-                     width = 4,
-                     # クルーズ船
-                     descriptionBlock(
-                       number = TOTAL_SHIP_DIFF,
-                       number_color = "red",
-                       number_icon = "fa fa-caret-up",
-                       header = TOTAL_SHIP,
-                       text = lang[[langCode]][35]
-                     )
-                   ),
-                   column(
-                     width = 4,
-                     # チャーター便
-                     descriptionBlock(
-                       number = TOTAL_FLIGHT_DIFF,
-                       number_color = "red",
-                       number_icon = "fa fa-caret-up",
-                       header = TOTAL_FLIGHT,
-                       text = lang[[langCode]][36],
-                       right_border = F
-                     )
-                   )
-                 ),
-                 footer = tagList(
-                   fluidRow(column(width = 6,
-                                   plotlyOutput('confirmedPie', height = '150px') %>% withSpinner()
-                                   ),
-                            column(width = 6, 
-                                   paste0(UPDATE_DATE, lang[[langCode]][64]),
-                                   uiOutput('todayConfirmed'))),
-                            tags$small(paste(lang[[langCode]][62], UPDATE_DATETIME)))),
-             boxPlus(width = 4,
-                 fluidRow(
-                   column(
-                     width = 6,
-                     # 国内事例
-                     descriptionBlock(
-                       number = CURED_DOMESTIC_DIFF,
-                       number_color = "green",
-                       number_icon = "fa fa-caret-up",
-                       header = CURED_DOMESTIC,
-                       text = lang[[langCode]][4]
-                     )
-                   ),
-                   column(
-                     width = 6,
-                     # チャーター便
-                     descriptionBlock(
-                       number = CURED_FLIGHT_DIFF,
-                       number_color = "green",
-                       number_icon = "fa fa-caret-up",
-                       header = CURED_FLIGHT,
-                       text = lang[[langCode]][36],
-                       right_border = F
-                     )
-                   )),
-                 footer_padding = F,
-                 footer = tags$small(paste(lang[[langCode]][62], RECOVERED_FILE_UPDATE_DATETIME))),
-             box(width = 4,
-                 '準備中')),
+    fluidRow(
+      boxPlus(
+        width = 4,
+        fluidRow(
+          column(
+            width = 4,
+            # 国内事例
+            descriptionBlock(
+              number = TOTAL_DOMESITC_DIFF,
+              number_color = "red",
+              number_icon = "fa fa-caret-up",
+              header = TOTAL_DOMESITC,
+              text = lang[[langCode]][4]
+            )
+          ),
+          column(
+            width = 4,
+            # クルーズ船
+            descriptionBlock(
+              number = TOTAL_SHIP_DIFF,
+              number_color = "red",
+              number_icon = "fa fa-caret-up",
+              header = TOTAL_SHIP,
+              text = lang[[langCode]][35]
+            )
+          ),
+          column(
+            width = 4,
+            # チャーター便
+            descriptionBlock(
+              number = TOTAL_FLIGHT_DIFF,
+              number_color = "red",
+              number_icon = "fa fa-caret-up",
+              header = TOTAL_FLIGHT,
+              text = lang[[langCode]][36],
+              right_border = F
+            )
+          )
+        ),
+        footer = tagList(fluidRow(
+          column(
+            width = 6,
+            plotlyOutput('confirmedPie', height = '150px') %>% withSpinner()
+          ),
+          column(
+            width = 6,
+            tags$h4(paste0(UPDATE_DATE, lang[[langCode]][64])),
+            uiOutput('todayConfirmed')
+          )
+        ),
+        tags$small(paste(
+          lang[[langCode]][62], UPDATE_DATETIME
+        )))
+      ),
+      boxPlus(
+        width = 4,
+        fluidRow(
+          column(
+            width = 6,
+            # 国内事例
+            descriptionBlock(
+              number = CURED_DOMESTIC_DIFF,
+              number_color = "green",
+              number_icon = "fa fa-caret-up",
+              header = CURED_DOMESTIC,
+              text = lang[[langCode]][4]
+            )
+          ),
+          column(
+            width = 6,
+            # チャーター便
+            descriptionBlock(
+              number = CURED_FLIGHT_DIFF,
+              number_color = "green",
+              number_icon = "fa fa-caret-up",
+              header = CURED_FLIGHT,
+              text = lang[[langCode]][36],
+              right_border = F
+            )
+          )
+        ),
+        footer = tagList(fluidRow(
+          column(
+            width = 6,
+            plotlyOutput('curedPie', height = '150px') %>% withSpinner()
+          ),
+          column(width = 6)
+        ),
+        tags$small(
+          paste(lang[[langCode]][62], RECOVERED_FILE_UPDATE_DATETIME)
+        ))
+      ),
+      box(width = 4,
+          '準備中')
+    ),
     fluidRow(
       box(
         width = 8,

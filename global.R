@@ -59,6 +59,11 @@ CURED_DOMESTIC <- sum(recovered[, 2])
 CURED_FLIGHT <- sum(recovered[, 3])
 CURED_WITHIN <- CURED_DOMESTIC + CURED_FLIGHT
 
+CURED_PIE_DATA <- data.table(category = c(lang[[langCode]][4], # 国内事例
+                                          lang[[langCode]][36] # チャーター便
+                                          ),
+                             value = c(CURED_DOMESTIC, CURED_FLIGHT))
+
 # ====本日のデータ====
 # 確認
 byDateToday <- byDate[nrow(byDate), ] # 差分データセット
