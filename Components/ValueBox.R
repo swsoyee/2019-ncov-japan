@@ -49,7 +49,7 @@ output$compareWithYesterday <- renderUI({
 output$todayConfirmed <- renderUI({
   if (length(HAS_TODAY_CONFIRMED) > 0) {
     elements <- list()
-    for (i in range(1:length(HAS_TODAY_CONFIRMED))) {
+    for (i in 1:length(HAS_TODAY_CONFIRMED)) {
       elements[[i]] <- dashboardLabel(paste(names(HAS_TODAY_CONFIRMED[i]), 
                                             '+', 
                                             HAS_TODAY_CONFIRMED[i]), 
