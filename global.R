@@ -9,6 +9,8 @@ library(shinycssloaders)
 library(shinydashboardPlus)
 library(shinyWidgets)
 library(leaflet)
+library(rjson)
+library(htmltools)
 
 # ====
 # ファイルのパス設定
@@ -34,6 +36,9 @@ recovered[, date := as.Date(as.character(recovered$date), format = "%Y%m%d")]
 # 死亡データ
 death <- fread(paste0(DATA_PATH, 'death.csv'))
 death[is.na(death)] <- 0
+
+# 行動歴データ
+activity <- fromJSON(file = paste0(DATA_PATH, 'caseMap.json'),  unexpected.escape = "error")
 
 # 文言データ
 lang <- fread(paste0(DATA_PATH, 'lang.csv'))
