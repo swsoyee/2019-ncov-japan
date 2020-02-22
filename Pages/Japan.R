@@ -184,7 +184,7 @@ fluidPage(
   fluidRow(
     boxPlus(
       width = 8,
-      title = lang[[langCode]][2],
+      title = tagList(icon('map'), lang[[langCode]][2]),
       plotOutput('map') %>% withSpinner(),
       closable = F,
       footer = tags$small(paste(
@@ -212,7 +212,7 @@ fluidPage(
     tabBox(
       width = 12,
       # 感染者数の推移
-      title = lang[[langCode]][3],
+      title = tagList(icon('chart-line'), lang[[langCode]][3]),
       # 国内事例
       tabPanel(title = lang[[langCode]][4], icon = icon('home'),
                plotlyOutput("domesticLine") %>% withSpinner()),
