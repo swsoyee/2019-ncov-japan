@@ -185,30 +185,11 @@ fluidPage(
     boxPlus(
       width = 8,
       title = lang[[langCode]][2],
-      uiOutput('mapWrapper') %>% withSpinner(),
-      # footer_padding = F,
+      plotOutput('map') %>% withSpinner(),
       closable = F,
       footer = tags$small(paste(
         lang[[langCode]][62], UPDATE_DATETIME
       ))
-      #   tags$button(
-      #     id = "normalMapButton",
-      #     type = "button",
-      #     class = "btn action-button btn-primary",
-      #     HTML('<i class="icon-star"></i>', lang[[langCode]][15])
-      #   ),
-      # tags$button(
-      #   id = "blockMapButton",
-      #   type = "button",
-      #   class = "btn action-button btn-primary",
-      #   HTML('<i class="icon-star"></i>', lang[[langCode]][16])
-      # ),
-      # tags$a(href = 'https://www.mhlw.go.jp/index.html',
-      #        paste(lang[[langCode]][5]), # 厚生労働省
-      #        '(',
-      #        UPDATE_TIME,
-      #        ')')
-      # )
     ),
     box(
       width = 4,
@@ -223,7 +204,7 @@ fluidPage(
           no = icon("remove", lib = "glyphicon")
         )
       ),
-      dataTableOutput('totalConfirmedByProvince') %>% withSpinner(),
+      dataTableOutput('confirmedByProvince') %>% withSpinner(),
     )
   ),
   fluidRow(column(

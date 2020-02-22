@@ -1,22 +1,21 @@
-output$totalConfirmedByProvince <- renderDataTable({
-  total <- rowSums(db[, 2:ncol(db)])
-  tableDt <- data.table('確認場所' = db$name, # 確認場所
-                        # 確認数
-                        '確認数' = total)
+output$confirmedByProvince <- renderDataTable({
+  total <- colSums(byDate[, 2:ncol(byDate)])
+  tableDt <- data.table(region = names(total), count = total)
   
   if (is.null(input$showOtherRegion)) {
-    tableDt <- tableDt[!(確認場所 %in% c('ダイアモンド・プリンセス号', 'チャーター便'))]
+    tableDt <- tableDt[!(region %in% lang[[langCode]][35:36])]
   } else {
     if (!('showShip' %in% input$showOtherRegion)) {
-      tableDt <- tableDt[確認場所 != 'ダイアモンド・プリンセス号']
+      tableDt <- tableDt[region != lang[[langCode]][35]] # クルーズ船
     }
     if (!('showFlight' %in% input$showOtherRegion)) {
-      tableDt <- tableDt[確認場所 != 'チャーター便']
+      tableDt <- tableDt[region != lang[[langCode]][36]] # チャーター便
     }
   }
-  # displayData <- tableDt[order(-確認数)]
-  displayData <- tableDt[確認数 > 0][order(-確認数)]
-
+  displayData <- tableDt[count > 0][order(-count)]
+  colnames(displayData) <- c(lang[[langCode]][13], # 確認場所
+                             lang[[langCode]][9]) # 確認数
+  
   datatable(
     displayData,
     rownames = F,
@@ -29,8 +28,9 @@ output$totalConfirmedByProvince <- renderDataTable({
     )
   ) %>%
     formatStyle(
-      c('確認数'),
-      background = styleColorBar(range(tableDt[, '確認数']), GLOABLE_MAIN_COLOR_RGBA),
+      # 確認数
+      c(lang[[langCode]][9]),
+      background = styleColorBar(range(tableDt[, count]), GLOABLE_MAIN_COLOR_RGBA),
       backgroundSize = '98% 88%',
       backgroundRepeat = 'no-repeat',
       backgroundPosition = 'center'

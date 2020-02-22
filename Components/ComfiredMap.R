@@ -1,10 +1,11 @@
+# ====感染状況を日本標準マップで表示する画像を作成====
+# Returns:
+#   basePlotObject: 標準マップ
 output$map <- renderPlot({
-  # 感染状況を日本標準マップで表示する画像を作成
-  # Returns:
-  #   basePlotObject: 標準マップ
-  dbWithoutShip <- db[db[, name != 'ダイアモンド・プリンセス号'], ]
-  province <- dbWithoutShip$name
-  total <- rowSums(dbWithoutShip[, 2:ncol(dbWithoutShip)])
+  dbWithoutShip <- byDate[, 1:(ncol(byDate) - 1)] # クルーズ船以外のデータ
+  province <-
+    colnames(dbWithoutShip)[2:ncol(dbWithoutShip)] # date列を計算外
+  total <- colSums(dbWithoutShip[, 2:ncol(dbWithoutShip)])
   colorFunc <-
     colorRampPalette(c("#FFFFFF", "#FFD700", "#FF9500", '#FF5742'))
   
@@ -21,6 +22,7 @@ output$map <- renderPlot({
   p
 })
 
+# ====感染状況をブロックマップで表示する画像を作成(開発中)====
 output$blockMap <- renderPlot({
   # 感染状況をブロックマップで表示する画像を作成
   # Returns:
