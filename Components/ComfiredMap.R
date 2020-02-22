@@ -22,6 +22,14 @@ output$map <- renderPlot({
   p
 })
 
+# ====事例マップ====
+output$caseMap <- renderLeaflet({
+  leaflet() %>%
+    addTiles() %>%
+    addMarkers(lat = 35.568307, lng = 139.373185, label = '相模原中央病院',
+               clusterOptions = markerClusterOptions())
+})
+
 # ====感染状況をブロックマップで表示する画像を作成(開発中)====
 output$blockMap <- renderPlot({
   # 感染状況をブロックマップで表示する画像を作成

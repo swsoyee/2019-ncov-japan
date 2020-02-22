@@ -8,6 +8,7 @@ library(ggplot2)
 library(shinycssloaders)
 library(shinydashboardPlus)
 library(shinyWidgets)
+library(leaflet)
 
 # ====
 # ファイルのパス設定
