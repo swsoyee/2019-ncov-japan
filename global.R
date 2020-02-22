@@ -156,3 +156,12 @@ options(spinner.color = GLOABLE_MAIN_COLOR)
 # TODO Vectorのネーミングなぜかうまくいかないのでとりあえずここに置く
 showOption <- c('showShip', 'showFlight')
 names(showOption) <- c(lang[[langCode]][35], lang[[langCode]][36])
+
+# ====メゾット====
+getChangeIcon <- function(number) {
+  if (number > 0) {
+    return('fa fa-caret-up')
+  } else {
+    return('fa fa-lock')
+  }
+}

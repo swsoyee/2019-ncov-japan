@@ -35,7 +35,7 @@ output$compareWithYesterday <- renderUI({
         descriptionBlock(
           number = deathIncreaseAtTheLastDay, 
           number_color = "red", 
-          number_icon = "fa fa-caret-up",
+          number_icon = "fa stop-circle",
           header = paste(lastDayDeathIncreasePercentage, '%'),
           text = lang[[langCode]][31], # 死亡増加数
           right_border = FALSE,

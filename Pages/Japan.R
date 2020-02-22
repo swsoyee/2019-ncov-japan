@@ -59,8 +59,8 @@ fluidPage(
           # 国内事例
           descriptionBlock(
             number = TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF,
-            number_color = "red",
-            number_icon = "fa fa-caret-up",
+            number_color = 'red',
+            number_icon = getChangeIcon(TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF),
             header = TOTAL_DOMESITC + TOTAL_OFFICER,
             text = lang[[langCode]][4]
           )
@@ -70,8 +70,8 @@ fluidPage(
           # チャーター便
           descriptionBlock(
             number = TOTAL_FLIGHT_DIFF,
-            number_color = "red",
-            number_icon = "fa fa-caret-up",
+            number_color = 'red',
+            number_icon = getChangeIcon(TOTAL_FLIGHT_DIFF),
             header = TOTAL_FLIGHT,
             text = lang[[langCode]][36]
           )
@@ -81,8 +81,8 @@ fluidPage(
           # クルーズ船
           descriptionBlock(
             number = TOTAL_SHIP_DIFF,
-            number_color = "red",
-            number_icon = "fa fa-caret-up",
+            number_color = 'red',
+            number_icon = getChangeIcon(TOTAL_SHIP_DIFF),
             header = TOTAL_SHIP,
             text = lang[[langCode]][35],
             right_border = F
@@ -110,8 +110,8 @@ fluidPage(
           # 国内事例
           descriptionBlock(
             number = CURED_DOMESTIC_DIFF,
-            number_color = "green",
-            number_icon = "fa fa-caret-up",
+            number_color = 'green',
+            number_icon = getChangeIcon(CURED_DOMESTIC_DIFF),
             header = CURED_DOMESTIC,
             text = lang[[langCode]][4]
           )
@@ -121,8 +121,8 @@ fluidPage(
           # チャーター便
           descriptionBlock(
             number = CURED_FLIGHT_DIFF,
-            number_color = "green",
-            number_icon = "fa fa-caret-up",
+            number_color = 'green',
+            number_icon = getChangeIcon(CURED_FLIGHT_DIFF),
             header = CURED_FLIGHT,
             text = lang[[langCode]][36],
             right_border = F
@@ -149,8 +149,8 @@ fluidPage(
           # 国内事例
           descriptionBlock(
             number = DEATH_DOMESITC_DIFF + DEATH_OFFICER_DIFF,
-            number_color = "red",
-            number_icon = "fa fa-caret-up",
+            number_color = 'black',
+            number_icon = getChangeIcon(DEATH_DOMESITC_DIFF + DEATH_OFFICER_DIFF),
             header = DEATH_DOMESITC + DEATH_OFFICER,
             text = lang[[langCode]][4]
           )
@@ -160,8 +160,8 @@ fluidPage(
           # クルーズ船
           descriptionBlock(
             number = DEATH_SHIP_DIFF,
-            number_color = "red",
-            number_icon = "fa fa-caret-up",
+            number_color = 'black',
+            number_icon = getChangeIcon(DEATH_SHIP_DIFF),
             header = DEATH_SHIP,
             text = lang[[langCode]][35],
             right_border = F
