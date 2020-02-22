@@ -5,6 +5,7 @@ output$domesticLine <- renderPlotly({
   xData <-  as.POSIXct(as.character(byDate$date), format = "%Y%m%d")
   yFlight <- cumsum(byDate$チャーター便)
   yTotal <- yData + yFlight
+  yDiffByDate <- rowSums(dataset)
   plot_ly(type = 'bar') %>%
     add_trace(
       x =  ~ xData,
@@ -12,7 +13,8 @@ output$domesticLine <- renderPlotly({
       # text = yFlight,
       # textposition = 'auto',
       hoverinfo = 'text',
-      hovertemplate = '%{x}<br>累計確認数：%{y}',
+      # %{x}<br>累計確認数：%{y}
+      hovertemplate = lang[[langCode]][66],
       marker = list(color = '#F39C12'),
       # 国内事例
       name = lang[[langCode]][36]
@@ -22,11 +24,25 @@ output$domesticLine <- renderPlotly({
               # text = yData,
               # textposition = 'inside',
               hoverinfo = 'text',
-              hovertemplate = '%{x}<br>累計確認数：%{y}',
+              # %{x}<br>累計確認数：%{y}
+              hovertemplate = lang[[langCode]][66],
               marker = list(color = '#D35400'),
               name = lang[[langCode]][4]) %>%
+    add_trace(x = ~ xData,
+              y = ~ yDiffByDate,
+              yaxis = 'y2',
+              type = 'scatter',
+              name = lang[[langCode]][65], # 新規感染者数(日次)
+              marker = list(color = '#2C3E50'),
+              line = list(color = '#2C3E50'),
+              mode = 'lines+markers') %>%
     layout(yaxis = list(title = ''), 
            xaxis = list(title = '', type = 'date', tickformat = '%m/%d'),
+           yaxis2 = list(side = 'right', 
+                         rangemode = 'tozero',
+                         overlaying = "y",
+                         automargin = T,
+                         range = c(0, 50)),
            barmode = 'stack',
            legend = list(x = 0, y = 1, bgcolor = 'rgba(0,0,0,0)')
            )
