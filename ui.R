@@ -14,28 +14,32 @@ shinyUI(
     # TODO 言語設定の追加
     sidebar = dashboardSidebar(sidebarMenu(
       menuItem(
+        # 感染速報
         lang[[langCode]][32],
-        # 日本
         tabName = 'japan',
-        badgeLabel = UPDATE_DATE,
-        badgeColor = 'purple',
-        icon = tags$i('🇯🇵')
+        badgeLabel = '更新中',
+        badgeColor = 'purple'
       ),
       menuItem(
-        lang[[langCode]][34],
-        # 中国
-        tabName = 'china',
-        badgeLabel = '開発中',
-        badgeColor = 'black',
-        icon = tags$i('🇨🇳')
-      ),
-      menuItem(
+        # 事例マップ
         lang[[langCode]][33],
-        # 世界
-        tabName = 'world',
+        tabName = 'caseMap',
         badgeLabel = '開発中',
-        badgeColor = 'black',
-        icon = tags$i('🗺️')
+        badgeColor = 'black'
+      ),
+      menuItem(
+        # 学術分析
+        lang[[langCode]][34],
+        tabName = 'academic',
+        badgeLabel = '着手中',
+        badgeColor = 'black'
+      ),
+      menuItem(
+        # アプリについて
+        lang[[langCode]][67],
+        tabName = 'about',
+        badgeLabel = '追加中',
+        badgeColor = 'black'
       )
     )),
     # TODO 追加修正待ち
@@ -54,11 +58,13 @@ shinyUI(
                 local = T,
                 encoding = 'UTF-8'
               )$value),
-      tabItem(tabName = 'china',
+      tabItem(tabName = 'caseMap',
               box(title = '準備中', width = 12)),
-      tabItem(tabName = 'world',
-              box(title = '準備中', width = 12))
-
+      tabItem(tabName = 'academic',
+              box(title = '準備中', width = 12)),
+      tabItem(tabName = 'about',
+              fluidRow(column(width = 12,tagList(includeMarkdown('www/about.md'))))
+              )
     ))
   )
 )
