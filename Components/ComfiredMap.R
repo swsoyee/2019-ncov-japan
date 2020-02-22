@@ -22,6 +22,44 @@ output$map <- renderPlot({
   p
 })
 
+# ====事例マップ====
+output$caseMap <- renderLeaflet({
+  map <- leaflet() %>% addTiles()
+  for(i in 1:length(activity)) {
+    lat <- 0
+    lng <- 0
+    id <- as.numeric(names(activity[i]))
+    label <- paste('<b>患者番号：', id, 
+                   '<br/>居住地：', detail[id, ]$residence, 
+                   ' 性別：', detail[id, ]$gender, 
+                   '</b>')
+    for(j in 1:length(activity[[i]])) {
+      label <- paste(sep = '<br/>', label, paste(names(activity[[i]]$process[j]), activity[[i]]$process[[j]]))
+    }
+    label <- paste(sep = '<br/>', label, detail[id, ]$link)
+    for(j in 1:length(activity[[i]])) {
+      currentLat <- activity[[i]]$activity[[j]]$lat
+      currentLng <- activity[[i]]$activity[[j]]$lng
+      if(lat != currentLat && lng != currentLng) {
+        if (lat != 0 && lng != 0) {
+          map <- addPolylines(map, 
+                              lat = c(lat, currentLat), 
+                              lng = c(lng, currentLng))
+        }
+        lat <- currentLat
+        lng <- currentLng
+        map <- addCircleMarkers(map, 
+                                lat = currentLat, 
+                                lng = currentLng, 
+                                radius = activity[[i]]$activity[[j]]$radius, 
+                                popup = HTML(label),
+                                label = HTML(label))
+      }
+    }
+  }
+  map
+})
+
 # ====感染状況をブロックマップで表示する画像を作成(開発中)====
 output$blockMap <- renderPlot({
   # 感染状況をブロックマップで表示する画像を作成
