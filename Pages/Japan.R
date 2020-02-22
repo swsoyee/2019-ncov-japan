@@ -245,8 +245,8 @@ fluidPage(
         width = 12,
         dataTableOutput('detail') %>% withSpinner()
       )),
-      footer = tags$a(href = 'https://www.mhlw.go.jp/stf/newpage_09670.html',
-                      '新型コロナウイルス感染症の現在の状況と厚生労働省の対応について（令和２年２月２０日版）より')
+      footer = tags$a(href = 'https://www.mhlw.go.jp/stf/newpage_09690.html',
+                      '新型コロナウイルス感染症の現在の状況と厚生労働省の対応について（令和２年２月２１日版）より')
     )
   )
 )
