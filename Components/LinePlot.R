@@ -1,3 +1,37 @@
+output$domesticLine <- renderPlotly({
+  # 国内＋職員
+  dataset <- byDate[, c(2:48, 50)]
+  yData <- cumsum(rowSums(dataset[, 2:ncol(dataset)]))
+  xData <-  as.POSIXct(as.character(byDate$date), format = "%Y%m%d")
+  yFlight <- cumsum(byDate$チャーター便)
+  yTotal <- yData + yFlight
+  plot_ly(type = 'bar') %>%
+    add_trace(
+      x =  ~ xData,
+      y = ~ yFlight,
+      # text = yFlight,
+      # textposition = 'auto',
+      hoverinfo = 'text',
+      hovertemplate = '%{x}<br>累計確認数：%{y}',
+      marker = list(color = '#F39C12'),
+      # 国内事例
+      name = lang[[langCode]][36]
+    )  %>%
+    add_trace(x =  ~ xData,
+              y = ~ yData,
+              # text = yData,
+              # textposition = 'inside',
+              hoverinfo = 'text',
+              hovertemplate = '%{x}<br>累計確認数：%{y}',
+              marker = list(color = '#D35400'),
+              name = lang[[langCode]][4]) %>%
+    layout(yaxis = list(title = ''), 
+           xaxis = list(title = '', type = 'date', tickformat = '%m/%d'),
+           barmode = 'stack',
+           legend = list(x = 0, y = 1, bgcolor = 'rgba(0,0,0,0)')
+           )
+})
+
 output$confirmedAccumulation <- renderPlotly({
   dataset <- db[c(1:47, 50), 2:ncol(db)]
   dt <- dataset[, lapply(.SD, sum)]

@@ -209,13 +209,16 @@ fluidPage(
   ),
   fluidRow(column(
     width = 8,
-    box(
+    tabBox(
       width = 12,
+      # 感染者数の推移
       title = lang[[langCode]][3],
-      # 確認累積数
-      plotlyOutput("confirmedAccumulation") %>% withSpinner(),
-      # 無症状病原体保有者を含む
-      footer = paste('（＊）', lang[[langCode]][12])
+      # 国内事例
+      tabPanel(title = lang[[langCode]][4], icon = icon('home'),
+               plotlyOutput("domesticLine") %>% withSpinner()),
+      # クルーズ船
+      tabPanel(title = lang[[langCode]][35], icon = icon('ship'),
+               '準備中')
     ),
     box(
       title = lang[[langCode]][53],
