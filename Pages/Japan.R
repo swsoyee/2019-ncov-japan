@@ -215,10 +215,10 @@ fluidPage(
       title = tagList(icon('chart-line'), lang[[langCode]][3]),
       # 国内事例
       tabPanel(title = lang[[langCode]][4], icon = icon('home'),
-               plotlyOutput("domesticLine") %>% withSpinner()),
+               plotlyOutput('domesticLine') %>% withSpinner()),
       # クルーズ船
       tabPanel(title = lang[[langCode]][35], icon = icon('ship'),
-               '準備中')
+               plotlyOutput('shipLine') %>% withSpinner())
     ),
     box(
       title = lang[[langCode]][53],
