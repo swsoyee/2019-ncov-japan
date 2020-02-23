@@ -37,7 +37,7 @@ output$caseMap <- renderLeaflet({
     label <- paste('<b>患者番号：', id, 
                    '<br/>居住地：', detail[id, ]$residence, 
                    ' 性別：', detail[id, ]$gender, 
-                   '</b>')
+                   '</b><hr/>')
     for(j in 1:length(activity[[i]]$process)) {
       label <- paste(label, 
                      paste('<li><span class="label label-info">', 
@@ -46,7 +46,7 @@ output$caseMap <- renderLeaflet({
                            activity[[i]]$process[[j]], '</li>')
                      )
     }
-    label <- paste(label, '<br/><br/><b>', lang[[langCode]][68], '：', detail[id, ]$link, '</b>')
+    label <- paste(label, '<hr/><b>', lang[[langCode]][68], '：', detail[id, ]$link, '</b>')
     for(j in 1:length(activity[[i]]$process)) {
       currentLat <- position[pos == activity[[i]]$activity[[j]]$pos]$lat
       currentLng <- position[pos == activity[[i]]$activity[[j]]$pos]$lng
