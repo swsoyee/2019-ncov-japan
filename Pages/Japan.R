@@ -55,7 +55,7 @@ fluidPage(
     ),
     valueBox(
       width = 4,
-      value = paste0(DEATH_JAPAN, ' (+', 0, ')'),
+      value = paste0(DEATH_JAPAN, ' (+', DEATH_JAPAN_DIFF, ')'),
       subtitle = lang[[langCode]][7],
       icon = icon('dizzy'),
       color = "navy"
