@@ -222,8 +222,36 @@ output$recoveredAccumulation <- renderPlotly({
     mode = 'lines+markers'
   ) %>%
     layout(
-      yaxis = list(title = lang[[langCode]][11]),
-      xaxis = list(title = ''),
+      yaxis = list(title = '',
+                   automargin = T,
+                   showgrid = F,
+                   showline = T),
+      xaxis = list(title = '',
+                   type = 'date',
+                   tickformat = '%m/%d',
+                   rangeslider = list(type = "date"),
+                   rangeselector = list(
+                     buttons = list(
+                       list(
+                         count = 7,
+                         label = '１週間',
+                         step = 'day',
+                         stepmode = 'backward'),
+                       list(
+                         count = 14,
+                         label = '２週間',
+                         step = 'day',
+                         stepmode = 'backward'),
+                       list(
+                         count = 1,
+                         label = '１ヶ月',
+                         step = 'month',
+                         stepmode = "backward"),
+                       list(label = '全部', step = 'all')))),
+      annotations = list(text = '厚生労働省のサイトにおいて、退院に関する情報は非常に少なく、</br></br>また公表も遅れがあるため、当サイトのデータはご参考まで',
+                        x = 0,
+                        y = 1,
+                        showarrow = F, xref='paper', yref='paper'),
       showlegend = F
     ) %>% config(displayModeBar = F)
   p
