@@ -39,10 +39,11 @@ output$caseMap <- renderLeaflet({
                    ' 性別：', detail[id, ]$gender, 
                    '</b>')
     for(j in 1:length(activity[[i]]$process)) {
-      label <- paste(sep = '<br/>', 
-                     label, 
-                     paste(as.Date(names(activity[[i]]$process[j]), format = '%Y%m%d'), 
-                           activity[[i]]$process[[j]])
+      label <- paste(label, 
+                     paste('<li><span class="label label-info">', 
+                           as.Date(names(activity[[i]]$process[j]), format = '%Y%m%d'), 
+                           '</span>',
+                           activity[[i]]$process[[j]], '</li>')
                      )
     }
     label <- paste(label, '<br/><br/><b>', lang[[langCode]][68], '：', detail[id, ]$link, '</b>')
@@ -73,7 +74,7 @@ output$caseMap <- renderLeaflet({
                                 radius = radius,
                                 color = genderColor[detail[id, ]$gender][[1]],
                                 fillColor = statusColor[activity[[i]]$status][[1]],
-                                weight = 1,
+                                weight = 1, opacity = 1,
                                 popup = HTML(label),
                                 label = HTML(label))
       }
