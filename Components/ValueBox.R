@@ -9,6 +9,6 @@ output$todayConfirmed <- renderUI({
     }
     tagList(elements)
   } else {
-    lang[[langCode]][31] # 新たに確認された感染者はいません。
+    lang[[langCode]][63] # 新たに確認された感染者はいません。
   }
 })

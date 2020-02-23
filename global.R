@@ -150,7 +150,7 @@ detailSummary <- detail[, .(count = .N), by = .(gender, age)]
 # ====
 # 定数設定
 # ====
-UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'summary.csv'))$mtime
+UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'byDate.csv'))$mtime
 RECOVERED_FILE_UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'recovered.csv'))$mtime
 DEATH_FILE_UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'death.csv'))$mtime
 UPDATE_DATE <- as.Date(UPDATE_DATETIME)
