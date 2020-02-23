@@ -230,23 +230,5 @@ fluidPage(
     width = 4,
     box(width = 12,
         dataTableOutput('news') %>% withSpinner()),
-  )),
-  fluidRow(
-    box(
-      title = lang[[langCode]][52],
-      # 確認詳細
-      width = 12,
-      fluidRow(column(
-        width = 3,
-        plotlyOutput("detailSummaryByGenderAndAge", height = '200px') %>% withSpinner()
-      )),
-      tags$hr(),
-      fluidRow(column(
-        width = 12,
-        dataTableOutput('detail') %>% withSpinner()
-      )),
-      footer = tags$a(href = 'https://www.mhlw.go.jp/stf/newpage_09690.html',
-                      '新型コロナウイルス感染症の現在の状況と厚生労働省の対応について（令和２年２月２１日版）より')
-    )
-  )
+  ))
 )
