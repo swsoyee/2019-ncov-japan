@@ -24,10 +24,13 @@ output$map <- renderPlot({
 
 # ====事例マップ====
 output$caseMap <- renderLeaflet({
-  defaultRadius <- 3
+  defaultRadius <- 8
   genderColor <- c('女' = 'red', '男' = 'blue', '不明' = 'grey')
+  statusColor <- c('入院'= 'red', '退院' = 'green', '不明' = 'grey')
   map <- leaflet() %>% addTiles()
   for(i in 1:length(activity)) {
+    xOffset <- runif(1, 0, 0.01)
+    yOffset <- runif(1, 0, 0.01)
     lat <- 0
     lng <- 0
     id <- as.numeric(names(activity[i]))
@@ -35,7 +38,7 @@ output$caseMap <- renderLeaflet({
                    '<br/>居住地：', detail[id, ]$residence, 
                    ' 性別：', detail[id, ]$gender, 
                    '</b>')
-    for(j in 1:length(activity[[i]])) {
+    for(j in 1:length(activity[[i]]$process)) {
       label <- paste(sep = '<br/>', 
                      label, 
                      paste(as.Date(names(activity[[i]]$process[j]), format = '%Y%m%d'), 
@@ -43,15 +46,20 @@ output$caseMap <- renderLeaflet({
                      )
     }
     label <- paste(label, '<br/><br/><b>', lang[[langCode]][68], '：', detail[id, ]$link, '</b>')
-    for(j in 1:length(activity[[i]])) {
+    for(j in 1:length(activity[[i]]$process)) {
       currentLat <- position[pos == activity[[i]]$activity[[j]]$pos]$lat
       currentLng <- position[pos == activity[[i]]$activity[[j]]$pos]$lng
       if(lat != currentLat && lng != currentLng) {
         if (lat != 0 && lng != 0) {
-          map <- addPolylines(map, 
-                              color = genderColor[detail[id, ]$gender][[1]],
-                              lat = c(lat, currentLat), 
-                              lng = c(lng, currentLng))
+          map <- addFlows(map, 
+                          color = genderColor[detail[id, ]$gender][[1]],
+                          lat0 = lat + xOffset, lat1 = currentLat + xOffset,
+                          lng0 = lng + yOffset, lng1 = currentLng + yOffset,
+                          opacity = 0.8,
+                          flow = 1,
+                          maxThickness = 1,
+                          time = as.Date(names(activity[[i]]$activity[j]), format = '%Y%m%d')
+                          )
         }
         lat <- currentLat
         lng <- currentLng
@@ -60,11 +68,12 @@ output$caseMap <- renderLeaflet({
           radius <- position[pos == activity[[i]]$activity[[j]]$pos]$radius
         }
         map <- addCircleMarkers(map, 
-                                lat = currentLat, 
-                                lng = currentLng, 
+                                lat = currentLat + xOffset,  
+                                lng = currentLng + yOffset, 
                                 radius = radius,
                                 color = genderColor[detail[id, ]$gender][[1]],
-                                weight = 2,
+                                fillColor = statusColor[activity[[i]]$status][[1]],
+                                weight = 1,
                                 popup = HTML(label),
                                 label = HTML(label))
       }

@@ -13,7 +13,31 @@
             "20200115" : { "pos" : "神奈川県" }
         },
         "description" : "本人からの報告によれば、武漢市の海鮮市場には立ち寄っていない。中国において、詳細不明の肺炎患者と濃厚接触の可能性がある。",
-        "confirmedLink" : "http://www.pref.kanagawa.jp/docs/ga4/bukanshi/occurrence.html"
+        "confirmedLink" : "http://www.pref.kanagawa.jp/docs/ga4/bukanshi/occurrence.html",
+        "status" : "退院",
+        "credibility" : "確定"
+    },
+    "2" : {
+        "process" : {
+            "20200114" : "発熱あり。",
+            "20200115" : "医療機関を受診し肺炎の診断はなく、経過観察",
+            "20200117" : "医療機関を受診し肺炎の診断はなく、経過観察",
+            "20200119" : "来日（症状は落ち着いていた）",
+            "20200120" : "医療機関を受診し、肺炎の診断なく、経過観察",
+            "20200122" : "発熱、咽頭痛が持続するため、医療機関を受診し、肺炎像を認め、東京都内医療機関に転院し、現在入院中。"
+        },
+        "activity" : {
+            "20200114" : { "pos" : "武漢市" },
+            "20200115" : { "pos" : "武漢市" },
+            "20200117" : { "pos" : "武漢市" },
+            "20200119" : { "pos" : "東京都" },
+            "20200120" : { "pos" : "東京都" },
+            "20200122" : { "pos" : "東京都" }
+        },
+        "description" : "本人からの報告によれば、武漢市の海鮮市場（華南海鮮城）には立ち寄っていない。中国において、肺炎患者との明確な接触は確認できていない。本人は、同行者と別の部屋に宿泊しており、ほぼ常に部屋に滞在していた。なお、移動時にはマスクを着用していたとのこと。",
+        "confirmedLink" : "https://www.mhlw.go.jp/stf/newpage_09079.html",
+        "status" : "退院",
+        "credibility" : "推定"
     },
     "7" : {
         "process" : {
@@ -33,6 +57,8 @@
             "20200128" : { "pos" : "北海道" }
         },
         "description" : "日本に来てからはマスク着用。武漢市の華南海鮮城（海鮮市場）の訪問は無い。",
-        "confirmedLink" : "https://www.mhlw.go.jp/stf/newpage_09158.html"
+        "confirmedLink" : "https://www.mhlw.go.jp/stf/newpage_09158.html",
+        "status" : "退院",
+        "credibility" : "確定"
     }
 }

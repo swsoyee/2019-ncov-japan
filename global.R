@@ -11,6 +11,7 @@ library(shinyWidgets)
 library(leaflet)
 library(rjson)
 library(htmltools)
+library(leaflet.minicharts)
 
 # ====
 # ファイルのパス設定
