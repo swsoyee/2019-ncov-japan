@@ -91,7 +91,7 @@ DEATH_PIE_DATA <- data.table(category = c(lang[[langCode]][4], # 国内事例
 # ====本日のデータ====
 # 確認
 byDateToday <- byDate[nrow(byDate), ] # 本日の差分データセット
-todayConfirmed <- unlist(as.list(byDateToday[, 2:(ncol(byDateToday) - 1)]))
+todayConfirmed <- unlist(as.list(byDateToday[, 2:ncol(byDateToday)]))
 HAS_TODAY_CONFIRMED <- todayConfirmed[todayConfirmed > 0] # 本日変化がある都道府県分類
 
 deathToday <- death[nrow(byDate), ] # 本日の差分データセット
