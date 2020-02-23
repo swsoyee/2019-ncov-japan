@@ -35,13 +35,15 @@ output$caseMap <- renderLeaflet({
     lng <- 0
     id <- as.numeric(names(activity[i]))
     label <- paste('<b>患者番号：', id, 
-                   '<br/>居住地：', detail[id, ]$residence, 
+                   '<span class="label label-info" style="float:right;">',
+                   activity[[i]]$status[2],
+                   '</span><br/>居住地：', detail[id, ]$residence, 
                    ' 性別：', detail[id, ]$gender, 
                    '</b>')
     popup <- paste0(label, '<hr/>')
     for(j in 1:length(activity[[i]]$process)) {
       popup <- paste(popup, 
-                     paste('<li><span class="label label-info">', 
+                     paste('<li><span class="label label-primary">', 
                            as.Date(names(activity[[i]]$process[j]), format = '%Y%m%d'), 
                            '</span>',
                            activity[[i]]$process[[j]], '</li>')
