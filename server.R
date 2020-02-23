@@ -31,5 +31,8 @@ shinyServer(function(input, output, session) {
       langCode <- 'ja'
     }
   })
-})
   
+  observeEvent(input$switchCaseMap, {
+    updateTabItems(session, 'sideBarTab', 'caseMap')
+  })
+})

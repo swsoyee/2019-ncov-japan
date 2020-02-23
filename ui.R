@@ -13,6 +13,7 @@ shinyUI(
     ),
     # TODO 言語設定の追加
     sidebar = dashboardSidebar(sidebarMenu(
+      id = 'sideBarTab',
       menuItem(
         # 感染速報
         lang[[langCode]][32],
@@ -65,6 +66,9 @@ shinyUI(
                         local = T,
                         encoding = 'UTF-8'
                       )$value,
+                        tagList('Help us collecting data: ',
+                                       tags$a(href = 'https://github.com/swsoyee/2019-ncov-japan/blob/master/Data/caseMap.json', 'Github')
+                                       ),
                       closable = F),
               ),
       tabItem(tabName = 'academic',

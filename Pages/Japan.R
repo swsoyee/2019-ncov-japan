@@ -185,7 +185,9 @@ fluidPage(
     boxPlus(
       width = 4,
       title = tagList(icon('map'), lang[[langCode]][2]),
-      plotOutput('map') %>% withSpinner(),
+      plotOutput('map', height = '370px') %>% withSpinner(),
+      actionBttn(inputId = 'switchCaseMap', label = '事例マップへ',
+                 block = T, size ='sm'),
       closable = F,
       footer = tags$small(paste(
         lang[[langCode]][62], UPDATE_DATETIME
