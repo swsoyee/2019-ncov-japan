@@ -95,6 +95,8 @@ todayConfirmed <- unlist(as.list(byDateToday[, 2:(ncol(byDateToday) - 1)]))
 HAS_TODAY_CONFIRMED <- todayConfirmed[todayConfirmed > 0] # 本日変化がある都道府県分類
 
 deathToday <- death[nrow(byDate), ] # 本日の差分データセット
+todayDeath <- unlist(as.list(deathToday[, 2:ncol(deathToday)]))
+HAS_TODAY_DEATH <- todayDeath[todayDeath > 0] # 本日変化がある都道府県分類
 
 # ====前日比べの基礎集計(差分)====
 # 確認
@@ -159,6 +161,7 @@ UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'byDate.csv'))$mtime
 RECOVERED_FILE_UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'recovered.csv'))$mtime
 DEATH_FILE_UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'death.csv'))$mtime
 UPDATE_DATE <- as.Date(UPDATE_DATETIME)
+DEATH_UPDATE_DATE <- as.Date(DEATH_FILE_UPDATE_DATETIME)
 GLOABLE_MAIN_COLOR <- '#605ca8'
 GLOABLE_MAIN_COLOR_RGBVALUE <-
   paste(as.vector(col2rgb(GLOABLE_MAIN_COLOR)), collapse = ",")

@@ -185,7 +185,9 @@ fluidPage(
           plotlyOutput('deathPie', height = '150px') %>% withSpinner()
         ),
         column(width = 6,
-               tags$h4('準備中'))
+               tags$h4(paste0(DEATH_UPDATE_DATE, lang[[langCode]][64])),
+               uiOutput('todayDeath')
+               )
       ),
       tags$small(
         paste(lang[[langCode]][62], DEATH_FILE_UPDATE_DATETIME)
