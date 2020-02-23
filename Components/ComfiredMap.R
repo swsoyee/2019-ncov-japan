@@ -24,6 +24,8 @@ output$map <- renderPlot({
 
 # ====事例マップ====
 output$caseMap <- renderLeaflet({
+  defaultRadius <- 3
+  genderColor <- c('女' = 'red', '男' = 'blue', '不明' = 'grey')
   map <- leaflet() %>% addTiles()
   for(i in 1:length(activity)) {
     lat <- 0
@@ -34,24 +36,35 @@ output$caseMap <- renderLeaflet({
                    ' 性別：', detail[id, ]$gender, 
                    '</b>')
     for(j in 1:length(activity[[i]])) {
-      label <- paste(sep = '<br/>', label, paste(names(activity[[i]]$process[j]), activity[[i]]$process[[j]]))
+      label <- paste(sep = '<br/>', 
+                     label, 
+                     paste(as.Date(names(activity[[i]]$process[j]), format = '%Y%m%d'), 
+                           activity[[i]]$process[[j]])
+                     )
     }
-    label <- paste(sep = '<br/>', label, detail[id, ]$link)
+    label <- paste(label, '<br/><br/><b>', lang[[langCode]][68], '：', detail[id, ]$link, '</b>')
     for(j in 1:length(activity[[i]])) {
-      currentLat <- activity[[i]]$activity[[j]]$lat
-      currentLng <- activity[[i]]$activity[[j]]$lng
+      currentLat <- position[pos == activity[[i]]$activity[[j]]$pos]$lat
+      currentLng <- position[pos == activity[[i]]$activity[[j]]$pos]$lng
       if(lat != currentLat && lng != currentLng) {
         if (lat != 0 && lng != 0) {
           map <- addPolylines(map, 
+                              color = genderColor[detail[id, ]$gender][[1]],
                               lat = c(lat, currentLat), 
                               lng = c(lng, currentLng))
         }
         lat <- currentLat
         lng <- currentLng
+        radius <- defaultRadius
+        if (!is.na(position[pos == activity[[i]]$activity[[j]]$pos]$radius)) {
+          radius <- position[pos == activity[[i]]$activity[[j]]$pos]$radius
+        }
         map <- addCircleMarkers(map, 
                                 lat = currentLat, 
                                 lng = currentLng, 
-                                radius = activity[[i]]$activity[[j]]$radius, 
+                                radius = radius,
+                                color = genderColor[detail[id, ]$gender][[1]],
+                                weight = 2,
                                 popup = HTML(label),
                                 label = HTML(label))
       }

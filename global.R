@@ -39,6 +39,8 @@ death[is.na(death)] <- 0
 
 # 行動歴データ
 activity <- fromJSON(file = paste0(DATA_PATH, 'caseMap.json'),  unexpected.escape = "error")
+# 経度緯度データ
+position <- fread(paste0(DATA_PATH, 'position.csv'))
 
 # 文言データ
 lang <- fread(paste0(DATA_PATH, 'lang.csv'))
