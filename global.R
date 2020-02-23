@@ -22,8 +22,8 @@ PAGE_PATH <- 'Pages/'
 # ====
 # データの読み込み
 # ====
-db <- fread(paste0(DATA_PATH, 'summary.csv'), header = T)
-db[is.na(db)] <- 0
+# db <- fread(paste0(DATA_PATH, 'summary.csv'), header = T)
+# db[is.na(db)] <- 0
 
 byDate <- fread(paste0(DATA_PATH, 'byDate.csv'), header = T)
 byDate[is.na(byDate)] <- 0
@@ -115,16 +115,16 @@ DEATH_JAPAN_DIFF <- DEATH_WITHIN_DIFF +DEATH_SHIP_DIFF # 日本領土内のPCR�
 
 news <- fread(paste0(DATA_PATH, 'mhlw_houdou.csv'))
 
-province <-
-  fread(paste0(DATA_PATH, 'provinceCode.csv'), na.strings = NULL)
-# Scale設定
-province[, Scale := c(3, rep(1, 46), rep(0.5, 3))]
-# 区域名変更
-province[, Prefecture := gsub("県", "", province$Prefecture)]
-province[, Prefecture := gsub("府", "", province$Prefecture)]
-province[, Prefecture := gsub("東京都", "東京", province$Prefecture)]
-# データ追加
-province[, Data := rowSums(db[, 2:ncol(db)])]
+# province <-
+#   fread(paste0(DATA_PATH, 'provinceCode.csv'), na.strings = NULL)
+# # Scale設定
+# province[, Scale := c(3, rep(1, 46), rep(0.5, 3))]
+# # 区域名変更
+# province[, Prefecture := gsub("県", "", province$Prefecture)]
+# province[, Prefecture := gsub("府", "", province$Prefecture)]
+# province[, Prefecture := gsub("東京都", "東京", province$Prefecture)]
+# # データ追加
+# province[, Data := rowSums(db[, 2:ncol(db)])]
 
 # 詳細データ
 detail <- fread(paste0(DATA_PATH, 'detail.csv'),
