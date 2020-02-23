@@ -59,12 +59,14 @@ shinyUI(
                 encoding = 'UTF-8'
               )$value),
       tabItem(tabName = 'caseMap',
-              box(title = '準備中', width = 12,
-                  source(
-                    file = paste0(PAGE_PATH, 'CaseMap.R'),
-                    local = T,
-                    encoding = 'UTF-8'
-                  )$value)),
+              boxPlus(width = 12,
+                      source(
+                        file = paste0(PAGE_PATH, 'CaseMap.R'),
+                        local = T,
+                        encoding = 'UTF-8'
+                      )$value,
+                      closable = F),
+              ),
       tabItem(tabName = 'academic',
               box(title = '準備中', width = 12)),
       tabItem(tabName = 'about',
