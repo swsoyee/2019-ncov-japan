@@ -10,7 +10,7 @@ output$confirmedPie <- renderPlotly({
           marker = list(colors = c('#D35400', '#DD4B38', '#F39C12'),
                         line = list(color = '#FFFFFF', width = 1)),
           type = 'pie') %>%
-    layout(margin = list(t = 0, l = 0, b = 5))
+    layout(margin = list(t = 0, l = 0, b = 5)) %>% config(displayModeBar = F)
 })
 
 output$curedPie <- renderPlotly({
@@ -25,7 +25,7 @@ output$curedPie <- renderPlotly({
           marker = list(colors = c('#00a65a', '#16A085'),
                         line = list(color = '#FFFFFF', width = 1)),
           type = 'pie') %>%
-    layout(margin = list(t = 0, l = 0, b = 5))
+    layout(margin = list(t = 0, l = 0, b = 5)) %>% config(displayModeBar = F)
 })
 
 output$deathPie <- renderPlotly({
@@ -40,5 +40,5 @@ output$deathPie <- renderPlotly({
           marker = list(colors = c('#011E3F', '#34495E'),
                         line = list(color = '#FFFFFF', width = 1)),
           type = 'pie') %>%
-    layout(margin = list(t = 0, l = 0, b = 5))
+    layout(margin = list(t = 0, l = 0, b = 5)) %>% config(displayModeBar = F)
 })

@@ -183,7 +183,7 @@ fluidPage(
   ),
   fluidRow(
     boxPlus(
-      width = 8,
+      width = 4,
       title = tagList(icon('map'), lang[[langCode]][2]),
       plotOutput('map') %>% withSpinner(),
       closable = F,
@@ -205,12 +205,12 @@ fluidPage(
         )
       ),
       dataTableOutput('confirmedByProvince') %>% withSpinner(),
-    )
+    ),
+    box(width = 4, dataTableOutput('news') %>% withSpinner())
   ),
-  fluidRow(column(
-    width = 8,
+  fluidRow(
     tabBox(
-      width = 12,
+      width = 6,
       # 感染者数の推移
       title = tagList(icon('chart-line'), lang[[langCode]][3]),
       # 国内事例
@@ -222,13 +222,8 @@ fluidPage(
     ),
     box(
       title = lang[[langCode]][53],
-      width = 12,
+      width = 6,
       plotlyOutput('recoveredAccumulation') %>% withSpinner()
     )
-  ),
-  column(
-    width = 4,
-    box(width = 12,
-        dataTableOutput('news') %>% withSpinner()),
-  ))
+  )
 )

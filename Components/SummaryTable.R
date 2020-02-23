@@ -56,7 +56,7 @@ output$news <- renderDataTable({
       dom = 't',
       pageLength = nrow(newsData),
       scrollCollapse = T,
-      scrollY = '925px'
+      scrollY = '440px'
     ),
     rownames = F,
     colnames = lang[[langCode]][14], # 最新情報

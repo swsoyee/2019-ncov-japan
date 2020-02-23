@@ -42,22 +42,45 @@ output$domesticLine <- renderPlotly({
       mode = 'lines+markers'
     ) %>%
     layout(
-      yaxis = list(title = ''),
+      yaxis = list(title = '', showline = T),
       xaxis = list(
         title = '',
         type = 'date',
-        tickformat = '%m/%d'
+        tickformat = '%m/%d',
+        rangeslider = list(type = "date"),
+        rangeselector = list(
+          buttons = list(
+            list(
+              count = 7,
+              label = '１週間',
+              step = 'day',
+              stepmode = 'backward'),
+            list(
+              count = 14,
+              label = '２週間',
+              step = 'day',
+              stepmode = 'backward'),
+            list(
+              count = 1,
+              label = '１ヶ月',
+              step = 'month',
+              stepmode = "backward"),
+            list(label = '全部', step = 'all')
+            ))
       ),
       yaxis2 = list(
         side = 'right',
         rangemode = 'tozero',
         overlaying = "y",
         automargin = T,
-        range = c(0, 50)
+        range = c(0, 50),
+        showgrid = F,
+        showline = T
       ),
       barmode = 'stack',
+      margin = list(l = 0, r = 0),
       legend = list(x = 0, y = 1, bgcolor = 'rgba(0,0,0,0)')
-    )
+    ) %>% config(displayModeBar = F)
 })
 
 output$shipLine <- renderPlotly({
@@ -92,18 +115,41 @@ output$shipLine <- renderPlotly({
       xaxis = list(
         title = '',
         type = 'date',
-        tickformat = '%m/%d'
+        tickformat = '%m/%d',
+        rangeslider = list(type = "date"),
+        rangeselector = list(
+          buttons = list(
+            list(
+              count = 7,
+              label = '１週間',
+              step = 'day',
+              stepmode = 'backward'),
+            list(
+              count = 14,
+              label = '２週間',
+              step = 'day',
+              stepmode = 'backward'),
+            list(
+              count = 1,
+              label = '１ヶ月',
+              step = 'month',
+              stepmode = "backward"),
+            list(label = '全部', step = 'all')
+          ))
       ),
-      yaxis = list(title = ''),
+      yaxis = list(title = '', showline = T),
       yaxis2 = list(
         side = 'right',
         rangemode = 'tozero',
         overlaying = "y",
         automargin = T,
-        range = c(0, 200)
+        range = c(0, 200),
+        showgrid = F,
+        showline = T
       ),
+      margin = list(l = 0, r = 0),
       legend = list(x = 0, y = 1, bgcolor = 'rgba(0,0,0,0)')
-    )
+    ) %>% config(displayModeBar = F)
 })
 
 # output$confirmedAccumulation <- renderPlotly({
@@ -179,6 +225,6 @@ output$recoveredAccumulation <- renderPlotly({
       yaxis = list(title = lang[[langCode]][11]),
       xaxis = list(title = ''),
       showlegend = F
-    )
+    ) %>% config(displayModeBar = F)
   p
 })
