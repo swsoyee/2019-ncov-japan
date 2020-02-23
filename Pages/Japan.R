@@ -12,7 +12,18 @@ fluidPage(
       collapsible = F,
       background = T,
       backgroundUrl = 'ncov_back.jpg',
-      tags$br(),
+      # tags$p(dashboardLabel(status = 'danger',  # APIアクセスできなかった
+      #                       style = 'square', 
+      #                       paste(sep = ' | ', lang[[langCode]][71], # ページ閲覧数
+      #                             statics$result$totals$pageviews$all)
+      #                       ),
+      #        dashboardLabel(status = 'success',
+      #                       style = 'square',
+      #                       paste(sep = ' | ', lang[[langCode]][72], # 閲覧者数
+      #                             statics$result$totals$uniques)
+      #        )
+      #        ),
+      tags$p(tags$img(src = 'https://img.shields.io/badge/dynamic/json?url=https://stg.covid-2019.live/ncov-static/stats.json&label=%E9%96%B2%E8%A6%A7%E6%95%B0&query=$.result.totals.pageviews.all&color=orange&style=flat-square')),
       tags$p(lang[[langCode]][19]),
       # 発熱や上気道症状を引き起こすウイルス...
       tags$a(href = lang[[langCode]][21], # https://www.mhlw.go.jp/stf/...
