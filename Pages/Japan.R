@@ -219,7 +219,8 @@ fluidPage(
           no = icon("remove", lib = "glyphicon")
         )
       ),
-      dataTableOutput('confirmedByProvince') %>% withSpinner(),
+      # dataTableOutput('confirmedByProvince') %>% withSpinner(),
+      echarts4rOutput('totalConfirmedByRegionPlot')  %>% withSpinner()
     ),
     box(width = 4, dataTableOutput('news') %>% withSpinner())
   ),
@@ -240,5 +241,13 @@ fluidPage(
       width = 6,
       plotlyOutput('recoveredAccumulation') %>% withSpinner()
     )
-  )
+  ),
+  fluidRow(
+    boxPlus(title = '感染経路ネットワーク',
+            width = 12,
+            closable = F,
+            # collapsed = T,
+            echarts4rOutput('network'),
+            footer = '※開発バージョンです。最終版ではありません')
+    )
 )
