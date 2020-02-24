@@ -1,3 +1,4 @@
+# ====感染確認推移図（国内）（旧）====
 # output$domesticLine <- renderPlotly({
 #   # 国内＋職員
 #   dataset <- byDate[, c(2:48, 50)]
@@ -82,76 +83,77 @@
 #       legend = list(x = 0, y = 1, bgcolor = 'rgba(0,0,0,0)')
 #     ) %>% config(displayModeBar = F)
 # })
+# ====感染確認推移図（クルーズ）（旧）====
+# output$shipLine <- renderPlotly({
+#   # クルーズ船
+#   yData <- cumsum(byDate$クルーズ船)
+#   xData <-  as.POSIXct(as.character(byDate$date), format = "%Y%m%d")
+#   yDiffByDate <- byDate$クルーズ船
+#   
+#   plot_ly(type = 'bar') %>%
+#     add_trace(
+#       x = ~ xData,
+#       y = ~ yDiffByDate,
+#       yaxis = 'y2',
+#       type = 'scatter',
+#       name = lang[[langCode]][65],
+#       # 新規感染者数(日次)
+#       marker = list(color = '#2C3E50'),
+#       line = list(color = '#2C3E50'),
+#       mode = 'lines+markers'
+#     ) %>%
+#     add_trace(
+#       x = ~ xData,
+#       y = ~ yData,
+#       hoverinfo = 'text',
+#       # %{x}<br>累計確認数：%{y}
+#       hovertemplate = lang[[langCode]][66],
+#       marker = list(color = '#DD4B38'),
+#       # クルーズ船
+#       name = lang[[langCode]][35]
+#     ) %>%
+#     layout(
+#       xaxis = list(
+#         title = '',
+#         type = 'date',
+#         tickformat = '%m/%d',
+#         rangeslider = list(type = "date"),
+#         rangeselector = list(
+#           buttons = list(
+#             list(
+#               count = 7,
+#               label = '１週間',
+#               step = 'day',
+#               stepmode = 'backward'),
+#             list(
+#               count = 14,
+#               label = '２週間',
+#               step = 'day',
+#               stepmode = 'backward'),
+#             list(
+#               count = 1,
+#               label = '１ヶ月',
+#               step = 'month',
+#               stepmode = "backward"),
+#             list(label = '全部', step = 'all')
+#           ))
+#       ),
+#       yaxis = list(title = '', showline = T),
+#       yaxis2 = list(
+#         side = 'right',
+#         rangemode = 'tozero',
+#         overlaying = "y",
+#         automargin = T,
+#         range = c(0, 200),
+#         showgrid = F,
+#         showline = T
+#       ),
+#       margin = list(l = 0, r = 0),
+#       legend = list(x = 0, y = 1, bgcolor = 'rgba(0,0,0,0)')
+#     ) %>% config(displayModeBar = F)
+# })
 
-output$shipLine <- renderPlotly({
-  # クルーズ船
-  yData <- cumsum(byDate$クルーズ船)
-  xData <-  as.POSIXct(as.character(byDate$date), format = "%Y%m%d")
-  yDiffByDate <- byDate$クルーズ船
-  
-  plot_ly(type = 'bar') %>%
-    add_trace(
-      x = ~ xData,
-      y = ~ yDiffByDate,
-      yaxis = 'y2',
-      type = 'scatter',
-      name = lang[[langCode]][65],
-      # 新規感染者数(日次)
-      marker = list(color = '#2C3E50'),
-      line = list(color = '#2C3E50'),
-      mode = 'lines+markers'
-    ) %>%
-    add_trace(
-      x = ~ xData,
-      y = ~ yData,
-      hoverinfo = 'text',
-      # %{x}<br>累計確認数：%{y}
-      hovertemplate = lang[[langCode]][66],
-      marker = list(color = '#DD4B38'),
-      # クルーズ船
-      name = lang[[langCode]][35]
-    ) %>%
-    layout(
-      xaxis = list(
-        title = '',
-        type = 'date',
-        tickformat = '%m/%d',
-        rangeslider = list(type = "date"),
-        rangeselector = list(
-          buttons = list(
-            list(
-              count = 7,
-              label = '１週間',
-              step = 'day',
-              stepmode = 'backward'),
-            list(
-              count = 14,
-              label = '２週間',
-              step = 'day',
-              stepmode = 'backward'),
-            list(
-              count = 1,
-              label = '１ヶ月',
-              step = 'month',
-              stepmode = "backward"),
-            list(label = '全部', step = 'all')
-          ))
-      ),
-      yaxis = list(title = '', showline = T),
-      yaxis2 = list(
-        side = 'right',
-        rangemode = 'tozero',
-        overlaying = "y",
-        automargin = T,
-        range = c(0, 200),
-        showgrid = F,
-        showline = T
-      ),
-      margin = list(l = 0, r = 0),
-      legend = list(x = 0, y = 1, bgcolor = 'rgba(0,0,0,0)')
-    ) %>% config(displayModeBar = F)
-})
-
+# ====退院推移図（国内）（旧）====
 output$recoveredAccumulation <- renderPlotly({
   dt <- cumsum(rowSums(recovered[, 2:3]))
   xData <- as.Date(recovered$date, format = "%Y%m%d")
@@ -199,6 +201,7 @@ output$recoveredAccumulation <- renderPlotly({
   p
 })
 
+# ====感染確認推移図====
 output$confirmedLine <- renderEcharts4r({
   # 国内
   domestic <- byDate[, c(2:48)]
@@ -229,6 +232,38 @@ output$confirmedLine <- renderEcharts4r({
     e_bar(ship, name = lang[[langCode]][35], stack = "grp") %>%
     # クルーズ船の新規感染者数（日次）
     e_line(dailyDiffShip, name = lang[[langCode]][76], y_index = 1) %>%
-    e_legend(selected = defaultUnselected) %>%
+    e_legend(selected = defaultUnselected, bottom = '0%') %>% 
+    e_grid(left = '5%', right = '5%', bottom = '20%', top = '5%') %>%
+    e_x_axis(splitLine =  list(show = F)) %>%
+    e_y_axis(splitLine =  list(show = F), index = 1) %>%
+    e_y_axis(splitLine = list(lineStyle = list(type = 'dotted'))) %>%
+    # e_zoom() %>% e_datazoom() %>%
+    e_tooltip(trigger = 'axis')
+})
+
+# ====退院推移図（国内）====
+output$recoveredLine <- renderEcharts4r({
+  yData <- cumsum(rowSums(recovered[, 2:3]))
+  xData <- as.Date(recovered$date, format = "%Y%m%d")
+  dt <- data.table('date' = xData, 
+                   'domestic' = cumsum(recovered[, 2]), 
+                   'domesticDiff' = recovered[, 2],
+                   'flight' = cumsum(recovered[, 3]), 
+                   'flightDiff' = recovered[, 3],
+                   'total' = yData,
+                   'totalDiff' = rowSums(recovered[, 2:3])
+                   )
+  dt %>%
+    e_chart(date) %>%
+    e_line(total, name = lang[[langCode]][6], itemStyle = list(normal = list(color = '#01A65A'))) %>%
+    e_line(totalDiff, name = lang[[langCode]][77], itemStyle = list(normal = list(color = '#068E4C'))) %>%
+    e_x_axis(splitLine =  list(show = F)) %>%
+    e_y_axis(splitLine = list(lineStyle = list(type = 'dotted'))) %>%
+    e_grid(left = '5%', right = '5%', bottom = '20%', top = '5%') %>%
+    e_legend(top = '0%') %>% 
+    e_title(subtext = '厚生労働省のサイトにおいて、退院に関する情報は非常に少なく、\nまた公表も遅れがあるため、当サイトのデータはご参考まで',
+            padding = c(20, 0, 50, 40)) %>%
+    e_zoom() %>%
+    e_datazoom() %>%
     e_tooltip(trigger = 'axis')
 })

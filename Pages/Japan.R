@@ -240,12 +240,14 @@ fluidPage(
       width = 6,
       title = tagList(icon('chart-line'), lang[[langCode]][3]), 
       closable = F,
-      echarts4rOutput('confirmedLine')
+      echarts4rOutput('confirmedLine') %>% withSpinner()
     ),
-    box(
-      title = lang[[langCode]][53],
+    boxPlus(
+      title = tagList(icon('hospital'), lang[[langCode]][53]),
       width = 6,
-      plotlyOutput('recoveredAccumulation') %>% withSpinner()
+      collapsible = F,
+      # plotlyOutput('recoveredAccumulation') %>% withSpinner()
+      echarts4rOutput('recoveredLine') %>% withSpinner()
     )
   ),
   fluidRow(
