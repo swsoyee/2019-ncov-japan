@@ -1,19 +1,3 @@
-# ====確認数扇形図（旧）====
-# output$confirmedPie <- renderPlotly({
-#   plot_ly(data = CONFIRMED_PIE_DATA,
-#           labels = ~category,
-#           values = ~value, 
-#           textposition = 'inside',
-#           textinfo = 'value+percent',
-#           showlegend = F,
-#           hoverinfo = 'text',
-#           text = ~category,
-#           marker = list(colors = c('#D35400', '#DD4B38', '#F39C12'),
-#                         line = list(color = '#FFFFFF', width = 1)),
-#           type = 'pie') %>%
-#     layout(margin = list(t = 0, l = 0, b = 5)) %>% config(displayModeBar = F)
-# })
-
 # ====確認数扇形図====
 output$confirmedPiePlus <- renderEcharts4r({
   CONFIRMED_PIE_DATA %>%
@@ -39,22 +23,6 @@ output$confirmedPiePlus <- renderEcharts4r({
     e_tooltip()
 })
 
-# ====退院数扇形図（旧）====
-# output$curedPie <- renderPlotly({
-#   plot_ly(data = CURED_PIE_DATA,
-#           labels = ~category,
-#           values = ~value, 
-#           textposition = 'inside',
-#           textinfo = 'value+percent',
-#           showlegend = F,
-#           hoverinfo = 'text',
-#           text = ~category,
-#           marker = list(colors = c('#00a65a', '#16A085'),
-#                         line = list(color = '#FFFFFF', width = 1)),
-#           type = 'pie') %>%
-#     layout(margin = list(t = 0, l = 0, b = 5)) %>% config(displayModeBar = F)
-# })
-
 # ====退院数扇形図====
 output$curedPiePlus <- renderEcharts4r({
   CURED_PIE_DATA %>%
@@ -78,21 +46,7 @@ output$curedPiePlus <- renderEcharts4r({
     e_legend(show = F) %>%
     e_tooltip()
 })
-# ====死亡数扇形図（旧）====
-# output$deathPie <- renderPlotly({
-#   plot_ly(data = DEATH_PIE_DATA,
-#           labels = ~category,
-#           values = ~value, 
-#           textposition = 'inside',
-#           textinfo = 'value+percent',
-#           showlegend = F,
-#           hoverinfo = 'text',
-#           text = ~category,
-#           marker = list(colors = c('#011E3F', '#34495E'),
-#                         line = list(color = '#FFFFFF', width = 1)),
-#           type = 'pie') %>%
-#     layout(margin = list(t = 0, l = 0, b = 5)) %>% config(displayModeBar = F)
-# })
+
 # ====死亡数扇形図====
 output$deathPiePlus <- renderEcharts4r({
   DEATH_PIE_DATA %>%
