@@ -55,7 +55,7 @@ output$deathPiePlus <- renderEcharts4r({
       value,
       itemStyle = list(color = '#34495E'),
       minShowLabelAngle = 200,
-      name = lang[[langCode]][6],
+      name = lang[[langCode]][7],
       animationType = 'scale',
       labelLine = list(show = F),
       label = list(position = 'inner', formatter = '{d}%'),
