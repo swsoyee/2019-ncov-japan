@@ -103,7 +103,8 @@ fluidPage(
       footer = tagList(fluidRow(
         column(
           width = 6,
-          plotlyOutput('confirmedPie', height = '150px') %>% withSpinner()
+          # plotlyOutput('confirmedPie', height = '150px') %>% withSpinner()
+          echarts4rOutput('confirmedPiePlus', height = '150px') %>% withSpinner()
         ),
         column(width = 6,
                tags$h4(paste0(UPDATE_DATE, lang[[langCode]][64])),
@@ -143,7 +144,8 @@ fluidPage(
       footer = tagList(fluidRow(
         column(
           width = 6,
-          plotlyOutput('curedPie', height = '150px') %>% withSpinner()
+          # plotlyOutput('curedPie', height = '150px') %>% withSpinner()
+          echarts4rOutput('curedPiePlus', height = '150px') %>% withSpinner()
         ),
         column(width = 6,
                tags$h4('準備中'))
@@ -182,7 +184,8 @@ fluidPage(
       footer = tagList(fluidRow(
         column(
           width = 6,
-          plotlyOutput('deathPie', height = '150px') %>% withSpinner()
+          # plotlyOutput('deathPie', height = '150px') %>% withSpinner()
+          echarts4rOutput('deathPiePlus', height = '150px') %>% withSpinner()
         ),
         column(width = 6,
                tags$h4(paste0(DEATH_UPDATE_DATE, lang[[langCode]][64])),
