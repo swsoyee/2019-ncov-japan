@@ -219,7 +219,8 @@ fluidPage(
           no = icon("remove", lib = "glyphicon")
         )
       ),
-      dataTableOutput('confirmedByProvince') %>% withSpinner(),
+      # dataTableOutput('confirmedByProvince') %>% withSpinner(),
+      echarts4rOutput('totalConfirmedByRegionPlot')  %>% withSpinner()
     ),
     box(width = 4, dataTableOutput('news') %>% withSpinner())
   ),

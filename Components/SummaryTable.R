@@ -1,41 +1,42 @@
-output$confirmedByProvince <- renderDataTable({
-  total <- colSums(byDate[, 2:ncol(byDate)])
-  tableDt <- data.table(region = names(total), count = total)
-  
-  if (is.null(input$showOtherRegion)) {
-    tableDt <- tableDt[!(region %in% lang[[langCode]][35:36])]
-  } else {
-    if (!('showShip' %in% input$showOtherRegion)) {
-      tableDt <- tableDt[region != lang[[langCode]][35]] # クルーズ船
-    }
-    if (!('showFlight' %in% input$showOtherRegion)) {
-      tableDt <- tableDt[region != lang[[langCode]][36]] # チャーター便
-    }
-  }
-  displayData <- tableDt[count > 0][order(-count)]
-  colnames(displayData) <- c(lang[[langCode]][13], # 確認場所
-                             lang[[langCode]][9]) # 確認数
-  
-  datatable(
-    displayData,
-    rownames = F,
-    selection = 'none',
-    options = list(
-      dom = 't',
-      scrollY = '367px',
-      scrollCollapse = T,
-      paging = F
-    )
-  ) %>%
-    formatStyle(
-      # 確認数
-      c(lang[[langCode]][9]),
-      background = styleColorBar(range(tableDt[, count]), GLOABLE_MAIN_COLOR_RGBA),
-      backgroundSize = '98% 88%',
-      backgroundRepeat = 'no-repeat',
-      backgroundPosition = 'center'
-    )
-})
+# ==== 区域ごとの感染確認数 ====
+# output$confirmedByProvince <- renderDataTable({
+#   total <- colSums(byDate[, 2:ncol(byDate)])
+#   tableDt <- data.table(region = names(total), count = total)
+#   
+#   if (is.null(input$showOtherRegion)) {
+#     tableDt <- tableDt[!(region %in% lang[[langCode]][35:36])]
+#   } else {
+#     if (!('showShip' %in% input$showOtherRegion)) {
+#       tableDt <- tableDt[region != lang[[langCode]][35]] # クルーズ船
+#     }
+#     if (!('showFlight' %in% input$showOtherRegion)) {
+#       tableDt <- tableDt[region != lang[[langCode]][36]] # チャーター便
+#     }
+#   }
+#   displayData <- tableDt[count > 0][order(-count)]
+#   colnames(displayData) <- c(lang[[langCode]][13], # 確認場所
+#                              lang[[langCode]][9]) # 確認数
+#   
+#   datatable(
+#     displayData,
+#     rownames = F,
+#     selection = 'none',
+#     options = list(
+#       dom = 't',
+#       scrollY = '367px',
+#       scrollCollapse = T,
+#       paging = F
+#     )
+#   ) %>%
+#     formatStyle(
+#       # 確認数
+#       c(lang[[langCode]][9]),
+#       background = styleColorBar(range(tableDt[, count]), GLOABLE_MAIN_COLOR_RGBA),
+#       backgroundSize = '98% 88%',
+#       backgroundRepeat = 'no-repeat',
+#       backgroundPosition = 'center'
+#     )
+# })
 
 output$news <- renderDataTable({
   newsData <-
