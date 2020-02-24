@@ -225,16 +225,22 @@ fluidPage(
     box(width = 4, dataTableOutput('news') %>% withSpinner())
   ),
   fluidRow(
-    tabBox(
+    # tabBox(
+    #   width = 6,
+    #   # 感染者数の推移
+    #   title = tagList(icon('chart-line'), lang[[langCode]][3]),
+    #   # 国内事例
+    #   tabPanel(title = lang[[langCode]][4], icon = icon('home'),
+    #            plotlyOutput('domesticLine') %>% withSpinner()),
+    #   # クルーズ船
+    #   tabPanel(title = lang[[langCode]][35], icon = icon('ship'),
+    #            plotlyOutput('shipLine') %>% withSpinner())
+    # ),
+    boxPlus(
       width = 6,
-      # 感染者数の推移
-      title = tagList(icon('chart-line'), lang[[langCode]][3]),
-      # 国内事例
-      tabPanel(title = lang[[langCode]][4], icon = icon('home'),
-               plotlyOutput('domesticLine') %>% withSpinner()),
-      # クルーズ船
-      tabPanel(title = lang[[langCode]][35], icon = icon('ship'),
-               plotlyOutput('shipLine') %>% withSpinner())
+      title = tagList(icon('chart-line'), lang[[langCode]][3]), 
+      closable = F,
+      echarts4rOutput('confirmedLine')
     ),
     box(
       title = lang[[langCode]][53],
