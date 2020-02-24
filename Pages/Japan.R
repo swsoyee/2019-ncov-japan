@@ -240,22 +240,26 @@ fluidPage(
       width = 6,
       title = tagList(icon('chart-line'), lang[[langCode]][3]), 
       closable = F,
-      echarts4rOutput('confirmedLine') %>% withSpinner()
+      echarts4rOutput('confirmedLine') %>% withSpinner(),
+      footer = tags$small(paste(
+        lang[[langCode]][62], UPDATE_DATETIME
+      ))
     ),
     boxPlus(
       title = tagList(icon('hospital'), lang[[langCode]][53]),
       width = 6,
       collapsible = F,
       # plotlyOutput('recoveredAccumulation') %>% withSpinner()
-      echarts4rOutput('recoveredLine') %>% withSpinner()
+      echarts4rOutput('recoveredLine') %>% withSpinner(),
+      footer = tags$small('厚生労働省のサイトに公表されている情報が限られているため、ご参考まで。')
     )
   ),
   fluidRow(
-    boxPlus(title = '感染経路ネットワーク',
+    boxPlus(title = tagList(icon('connectdevelop'), '感染経路ネットワーク'),
             width = 12,
             closable = F,
             # collapsed = T,
             echarts4rOutput('network'),
-            footer = '※開発バージョンです。最終版ではありません')
+            footer = tags$small('※開発バージョンです。最終版ではありません'))
     )
 )

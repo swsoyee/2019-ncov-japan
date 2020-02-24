@@ -232,8 +232,8 @@ output$confirmedLine <- renderEcharts4r({
     e_bar(ship, name = lang[[langCode]][35], stack = "grp") %>%
     # クルーズ船の新規感染者数（日次）
     e_line(dailyDiffShip, name = lang[[langCode]][76], y_index = 1) %>%
-    e_legend(selected = defaultUnselected, bottom = '0%') %>% 
-    e_grid(left = '5%', right = '5%', bottom = '20%', top = '5%') %>%
+    e_legend(selected = defaultUnselected, top = '5%', left = '5%', type = 'scroll', orient = 'vertical') %>% 
+    e_grid(left = '5%', right = '5%', bottom = '10%', top = '5%') %>%
     e_x_axis(splitLine =  list(show = F)) %>%
     e_y_axis(splitLine =  list(show = F), index = 1) %>%
     e_y_axis(splitLine = list(lineStyle = list(type = 'dotted'))) %>%
@@ -260,9 +260,7 @@ output$recoveredLine <- renderEcharts4r({
     e_x_axis(splitLine =  list(show = F)) %>%
     e_y_axis(splitLine = list(lineStyle = list(type = 'dotted'))) %>%
     e_grid(left = '5%', right = '5%', bottom = '20%', top = '5%') %>%
-    e_legend(top = '0%') %>% 
-    e_title(subtext = '厚生労働省のサイトにおいて、退院に関する情報は非常に少なく、\nまた公表も遅れがあるため、当サイトのデータはご参考まで',
-            padding = c(20, 0, 50, 40)) %>%
+    e_legend(top = '5%', left = '5%', type = 'scroll', orient = 'vertical') %>% 
     e_zoom() %>%
     e_datazoom() %>%
     e_tooltip(trigger = 'axis')
