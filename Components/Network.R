@@ -8,21 +8,25 @@ output$network <- renderEcharts4r({
                               'subgroup')] # ノット
   confirmedNodes$gender <- as.character(confirmedNodes$gender)
   confirmedNodes$age <- confirmedNodes$age
+  confirmedNodes$effectSize <-
+    sapply(confirmedNodes$relatedConfirmed, function(x) {
+      5 * length(strsplit(x, ',')[[1]])
+    })
   confirmedNodes$label <- paste0(
-    '番号',
     confirmedNodes$id,
-    '(',
+    '番患者 (',
     confirmedNodes$age,
-    ', ',
+    '歳, ',
     confirmedNodes$residence,
-    '在住) | ',
+    '在住)\n\n',
     confirmedNodes$subgroup
   )
   confirmedEdges <- data.frame(character(0), character(0)) # エッジ初期化
   for (i in 1:nrow(confirmedNodes)) {
     relation <-
       strsplit(confirmedNodes$relatedConfirmed[i], ',')[[1]] # 複数関連者対応
-    if (relation[1] == 0 || suppressWarnings(is.na(as.numeric(relation)))) {
+    if (relation[1] == 0 ||
+        suppressWarnings(is.na(as.numeric(relation)))) {
       # 関連者なしの場合、エッジを自分から自分へに設定する
       confirmedEdges <-
         rbind(confirmedEdges,
@@ -58,8 +62,8 @@ output$network <- renderEcharts4r({
     e_graph_nodes(confirmedNodes,
                   names = label,
                   value = age,
-                  size = age) %>%
+                  size = effectSize) %>%
     e_graph_edges(mergeDt, label.x, label.y) %>%
     e_modularity() %>%
-    e_tooltip()
+    e_tooltip(formatter = '{b0}')
 })
