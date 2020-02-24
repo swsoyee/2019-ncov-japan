@@ -240,5 +240,13 @@ fluidPage(
       width = 6,
       plotlyOutput('recoveredAccumulation') %>% withSpinner()
     )
-  )
+  ),
+  fluidRow(
+    boxPlus(title = '感染経路ネットワーク',
+            width = 12,
+            closable = F,
+            # collapsed = T,
+            echarts4rOutput('network'),
+            footer = '※開発バージョンです。最終版ではありません')
+    )
 )

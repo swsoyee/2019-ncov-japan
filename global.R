@@ -12,6 +12,7 @@ library(leaflet)
 library(rjson)
 library(htmltools)
 library(leaflet.minicharts)
+library(echarts4r)
 
 # ====
 # ファイルのパス設定
