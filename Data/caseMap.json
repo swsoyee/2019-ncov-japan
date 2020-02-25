@@ -198,5 +198,17 @@
         "confirmedLink" : ["https://www.mhlw.go.jp/stf/newpage_09548.html", "https://www.risktaisaku.com/articles/-/24550"],
         "status" : [ "確認中", "入院" ],
         "credibility" : "推定"
+    },
+    "86" : {
+        "process" : {
+            "20200201" : "発症。他の詳細は不明"
+        },
+        "activity" : {
+            "20200201" : { "pos" : "東京都" }
+        },
+        "description" : "既に感染が判明した牧田総合病院（大田区）に勤める男性医師の５０代の妻。１月２２日の食事会に共に参加した。",
+        "confirmedLink" : ["https://www.mhlw.go.jp/stf/newpage_09548.html", "https://www.risktaisaku.com/articles/-/24550"],
+        "status" : [ "確認中", "入院" ],
+        "credibility" : "推定"
     }
 }
