@@ -13,7 +13,9 @@
             "20200115" : { "pos" : "神奈川県" }
         },
         "description" : "本人からの報告によれば、武漢市の海鮮市場には立ち寄っていない。中国において、詳細不明の肺炎患者と濃厚接触の可能性がある。",
-        "confirmedLink" : "http://www.pref.kanagawa.jp/docs/ga4/bukanshi/occurrence.html",
+        "confirmedLink" : [
+            "http://www.pref.kanagawa.jp/docs/ga4/bukanshi/occurrence.html"
+        ],
         "status" : [ "20200115", "退院" ],
         "credibility" : "確定"
     },
@@ -35,7 +37,9 @@
             "20200122" : { "pos" : "東京都" }
         },
         "description" : "本人からの報告によれば、武漢市の海鮮市場（華南海鮮城）には立ち寄っていない。中国において、肺炎患者との明確な接触は確認できていない。本人は、同行者と別の部屋に宿泊しており、ほぼ常に部屋に滞在していた。なお、移動時にはマスクを着用していたとのこと。",
-        "confirmedLink" : "https://www.mhlw.go.jp/stf/newpage_09079.html",
+        "confirmedLink" : [
+            "https://www.mhlw.go.jp/stf/newpage_09079.html"
+        ],
         "status" : [ "確認中", "退院" ],
         "credibility" : "推定"
     },
@@ -57,7 +61,9 @@
             "20200128" : { "pos" : "北海道" }
         },
         "description" : "日本に来てからはマスク着用。武漢市の華南海鮮城（海鮮市場）の訪問は無い。",
-        "confirmedLink" : "https://www.mhlw.go.jp/stf/newpage_09158.html",
+        "confirmedLink" : [
+            "https://www.mhlw.go.jp/stf/newpage_09158.html"
+        ],
         "status" : [ "確認中", "退院" ],
         "credibility" : "確定"
     },
@@ -79,7 +85,9 @@
             "20200223" : { "pos" : "那覇市" }
         },
         "description" : "本人からの申告によれば渡航歴なし。",
-        "confirmedLink" : "https://mainichi.jp/articles/20200214/k00/00m/040/364000c",
+        "confirmedLink" : [
+            "https://mainichi.jp/articles/20200214/k00/00m/040/364000c"
+        ],
         "status" : [ "20200223", "退院" ],
         "credibility" : "確定"
     },
@@ -99,7 +107,9 @@
             "20200221" : { "pos" : "中富良野町" }
         },
         "description" : "海外渡航歴無し。行動歴及び濃厚接触者については、現在調査中。",
-        "confirmedLink" : "https://www.mhlw.go.jp/content/10906000/000599286.pdf",
+        "confirmedLink" : [
+            "https://www.mhlw.go.jp/content/10906000/000599286.pdf"
+        ],
         "status" : [ "確認中", "入院" ],
         "credibility" : "確定"
     },
@@ -115,7 +125,9 @@
             "20200221" : { "pos" : "中富良野町" }
         },
         "description" : "海外渡航歴無し。行動歴及び濃厚接触者については、現在調査中。",
-        "confirmedLink" : "https://www.mhlw.go.jp/content/10906000/000599286.pdf",
+        "confirmedLink" : [
+            "https://www.mhlw.go.jp/content/10906000/000599286.pdf"
+        ],
         "status" : [ "確認中", "入院" ],
         "credibility" : "確定"
     },
@@ -133,7 +145,9 @@
             "20200221" : { "pos" : "小樽検疫所千歳空港検疫所支所" }
         },
         "description" : "本人からの申告によれば、海外渡航歴は無し。行動歴及び濃厚接触者については現在調査中。",
-        "confirmedLink" : "https://www.mhlw.go.jp/content/10906000/000599286.pdf",
+        "confirmedLink" : [
+            "https://www.mhlw.go.jp/content/10906000/000599286.pdf"
+        ],
         "status" : [ "確認中", "入院" ],
         "credibility" : "確定"
     },
@@ -157,7 +171,10 @@
             "20200221" : { "pos" : "石川県" }
         },
         "description" : "本人によると、発症前 14 日以内に中国への渡航歴はない",
-        "confirmedLink" : ["https://www.mhlw.go.jp/content/10906000/000599287.pdf", "https://www3.nhk.or.jp/news/html/20200221/k10012296081000.html"],
+        "confirmedLink" : [
+            "https://www.mhlw.go.jp/content/10906000/000599287.pdf", 
+            "https://www3.nhk.or.jp/news/html/20200221/k10012296081000.html"
+        ],
         "status" : [ "確認中", "入院" ],
         "credibility" : "確定"
     },
@@ -183,7 +200,10 @@
             "20200221" : { "pos" : "埼玉県" }
         },
         "description" : "帰国後、幼稚園等には通園していない。濃厚接触者１名。引き続き経過観察。",
-        "confirmedLink" : ["https://www.mhlw.go.jp/content/10906000/000599288.pdf", "https://www3.nhk.or.jp/news/html/20200130/k10012264971000.html"],
+        "confirmedLink" : [
+            "https://www.mhlw.go.jp/content/10906000/000599288.pdf", 
+            "https://www3.nhk.or.jp/news/html/20200130/k10012264971000.html"
+        ],
         "status" : [ "確認中", "入院" ],
         "credibility" : "確定"
     },
@@ -195,7 +215,10 @@
             "20200210" : { "pos" : "東京都" }
         },
         "description" : "５０代のパート女性で、糖尿病とぜんそくの持病があり重篤な状態。渡航歴なし。",
-        "confirmedLink" : ["https://www.mhlw.go.jp/stf/newpage_09548.html", "https://www.risktaisaku.com/articles/-/24550"],
+        "confirmedLink" : [
+            "https://www.mhlw.go.jp/stf/newpage_09548.html", 
+            "https://www.risktaisaku.com/articles/-/24550"
+        ],
         "status" : [ "確認中", "入院" ],
         "credibility" : "推定"
     },
@@ -207,8 +230,52 @@
             "20200201" : { "pos" : "東京都" }
         },
         "description" : "既に感染が判明した牧田総合病院（大田区）に勤める男性医師の５０代の妻。１月２２日の食事会に共に参加した。",
-        "confirmedLink" : ["https://www.mhlw.go.jp/stf/newpage_09548.html", "https://www.risktaisaku.com/articles/-/24550"],
+        "confirmedLink" : [
+            "https://www.mhlw.go.jp/stf/newpage_09548.html", 
+            "https://www.risktaisaku.com/articles/-/24550"
+        ],
         "status" : [ "確認中", "入院" ],
         "credibility" : "推定"
+    },
+    "87" : {
+        "process" : {
+            "20200204" : "発症。他の詳細は不明"
+        },
+        "activity" : {
+            "20200204" : { "pos" : "東京都" }
+        },
+        "description" : "１月２２日の屋形船の新年会に参加し、感染した看護師とともに食事会に参加していました。",
+        "confirmedLink" : [
+            "https://www.mhlw.go.jp/stf/newpage_09548.html", 
+            "https://www.risktaisaku.com/articles/-/24550", 
+            "https://news.tv-asahi.co.jp/news_society/articles/000176925.html"
+        ],
+        "status" : [ "確認中", "入院" ],
+        "credibility" : "推定"
+    },
+    "88" : {
+        "process" : {
+            "20200127" : "別の医療機関に入院",
+            "20200205" : "症状軽快し退院、退院後は自宅療養 PCR 検査を実施したが陰性。",
+            "20200218" : "食欲不振、歩行困難が出現",
+            "20200219" : "救急搬送にて当該医療機関に入院、胸部エックス線画像により肺炎の疑いあり",
+            "20200220" : "ＰＣＲ検査を実施",
+            "20200221" : "当該医療機関に入院継続中"
+        },
+        "activity" : {
+            "20200127" : { "pos": "相模原中央病院" },
+            "20200205" : { "pos": "相模原中央病院" },
+            "20200218" : { "pos": "相模原中央病院" },
+            "20200219" : { "pos": "相模原中央病院" },
+            "20200220" : { "pos": "相模原中央病院" },
+            "20200221" : { "pos": "相模原中央病院" }
+        },
+        "description" : "入院前の渡航歴はなし",
+        "confirmedLink" : [
+            "https://www.mhlw.go.jp/content/10906000/000599291.pdf", 
+            "https://news.tbs.co.jp/newseye/tbs_newseye3911354.html"
+        ],
+        "status" : [ "確認中", "入院" ],
+        "credibility" : "確定"
     }
 }
