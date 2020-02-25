@@ -1,11 +1,11 @@
 output$network <- renderEcharts4r({
   confirmedNodes <-
-    detail[group == '国内事例', c('id',
-                              'age',
-                              'gender',
-                              'residence',
-                              'relatedConfirmed',
-                              'subgroup')] # ノット
+    detail[, c('id',
+               'age',
+               'gender',
+               'residence',
+               'relatedConfirmed',
+               'subgroup')] # ノット
   confirmedNodes$gender <- as.character(confirmedNodes$gender)
   confirmedNodes$age <- confirmedNodes$age
   confirmedNodes$effectSize <-
