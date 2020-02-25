@@ -186,5 +186,17 @@
         "confirmedLink" : ["https://www.mhlw.go.jp/content/10906000/000599288.pdf", "https://www3.nhk.or.jp/news/html/20200130/k10012264971000.html"],
         "status" : [ "確認中", "入院" ],
         "credibility" : "確定"
+    },
+    "85" : {
+        "process" : {
+            "20200210" : "発症。他の詳細は不明"
+        },
+        "activity" : {
+            "20200210" : { "pos" : "東京都" }
+        },
+        "description" : "５０代のパート女性で、糖尿病とぜんそくの持病があり重篤な状態。渡航歴なし。",
+        "confirmedLink" : ["https://www.mhlw.go.jp/stf/newpage_09548.html", "https://www.risktaisaku.com/articles/-/24550"],
+        "status" : [ "確認中", "入院" ],
+        "credibility" : "推定"
     }
 }
