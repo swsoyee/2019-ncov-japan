@@ -2,9 +2,9 @@
 output$confirmedLine <- renderEcharts4r({
   # 国内
   domestic <- byDate[, c(2:48)]
-  domestic <- cumsum(rowSums(domestic[, 2:ncol(domestic)]))
+  domestic <- cumsum(rowSums(domestic[, 1:ncol(domestic)]))
   columnName <- c('date', 'domestic', 'flight', 'officer', 'ship', 'dailyDiff', 'dailyDiffShip')
-  dt <- data.table(lapply(byDate[, 1], function(x){as.Date(as.character(x), format = '%Y%m%d')})$date,
+  dt <- data.table(byDate$date,
                    domestic,
                    cumsum(byDate[, 49]),
                    cumsum(byDate[, 50]),
@@ -31,12 +31,12 @@ output$confirmedLine <- renderEcharts4r({
     # クルーズ船の新規感染者数（日次）
     e_bar(dailyDiffShip, name = lang[[langCode]][76], stack = 'line', y_index = 1) %>%
     e_mark_point(lang[[langCode]][76], data = list(type = "max")) %>%
-    e_legend(selected = defaultUnselected, top = '5%', left = '5%', type = 'scroll', orient = 'vertical') %>% 
-    e_grid(left = '5%', right = '5%', bottom = '10%', top = '5%') %>%
+    e_legend(selected = defaultUnselected, top = '7%', left = '5%', type = 'scroll', orient = 'vertical') %>% 
+    e_grid(left = '5%', right = '5%', bottom = '20%', top = '7%') %>%
     e_x_axis(splitLine =  list(show = F)) %>%
     e_y_axis(splitLine = list(show = F), index = 1, max = 120) %>%
     e_y_axis(splitLine = list(lineStyle = list(type = 'dotted'))) %>%
-    # e_zoom() %>% e_datazoom() %>%
+    e_zoom() %>% e_datazoom() %>%
     e_tooltip(trigger = 'axis')
 })
 
@@ -59,8 +59,8 @@ output$recoveredLine <- renderEcharts4r({
     e_mark_point(lang[[langCode]][77], data = list(type = "max")) %>%
     e_x_axis(splitLine =  list(show = F)) %>%
     e_y_axis(splitLine = list(lineStyle = list(type = 'dotted'))) %>%
-    e_grid(left = '5%', right = '5%', bottom = '20%', top = '5%') %>%
-    e_legend(top = '5%', left = '5%', type = 'scroll', orient = 'vertical') %>% 
+    e_grid(left = '5%', right = '5%', bottom = '20%', top = '7%') %>%
+    e_legend(top = '7%', left = '5%', type = 'scroll', orient = 'vertical') %>% 
     e_zoom() %>%
     e_datazoom() %>%
     e_tooltip(trigger = 'axis')

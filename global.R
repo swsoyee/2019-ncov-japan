@@ -28,6 +28,7 @@ PAGE_PATH <- 'Pages/'
 
 byDate <- fread(paste0(DATA_PATH, 'byDate.csv'), header = T)
 byDate[is.na(byDate)] <- 0
+byDate$date <- lapply(byDate[, 1], function(x){as.Date(as.character(x), format = '%Y%m%d')})
 
 # 退院データ
 recovered <- fread(paste0(DATA_PATH, 'recovered.csv'))
