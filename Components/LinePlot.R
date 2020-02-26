@@ -18,21 +18,23 @@ output$confirmedLine <- renderEcharts4r({
   dt %>% 
     e_charts(date) %>% 
     # 本土
-    e_bar(domestic, name = lang[[langCode]][75], stack = "grp") %>%
+    e_area(domestic, name = lang[[langCode]][75], stack = "grp", itemStyle = list(color = '#9D2A1B')) %>%
     # 検疫/職員
-    e_bar(officer, name = lang[[langCode]][55], stack = "grp") %>%
+    e_area(officer, name = lang[[langCode]][55], stack = "grp") %>%
     # チャーター便
-    e_bar(flight, name = lang[[langCode]][36],stack = "grp") %>%
+    e_area(flight, name = lang[[langCode]][36],stack = "grp", itemStyle = list(color = '#FE7C36')) %>%
     # 新規感染者数（日次、クルーズ船を除く）
-    e_line(dailyDiff, name = lang[[langCode]][77], y_index = 1) %>%
+    e_bar(dailyDiff, name = lang[[langCode]][77], stack = 'line', y_index = 1) %>%
+    e_mark_point(lang[[langCode]][77], data = list(type = "max")) %>%
     # クルーズ船
-    e_bar(ship, name = lang[[langCode]][35], stack = "grp") %>%
+    e_area(ship, name = lang[[langCode]][35], stack = "grp", itemStyle = list(color = '#DD4C3A')) %>%
     # クルーズ船の新規感染者数（日次）
-    e_line(dailyDiffShip, name = lang[[langCode]][76], y_index = 1) %>%
+    e_bar(dailyDiffShip, name = lang[[langCode]][76], stack = 'line', y_index = 1) %>%
+    e_mark_point(lang[[langCode]][76], data = list(type = "max")) %>%
     e_legend(selected = defaultUnselected, top = '5%', left = '5%', type = 'scroll', orient = 'vertical') %>% 
     e_grid(left = '5%', right = '5%', bottom = '10%', top = '5%') %>%
     e_x_axis(splitLine =  list(show = F)) %>%
-    e_y_axis(splitLine =  list(show = F), index = 1) %>%
+    e_y_axis(splitLine = list(show = F), index = 1, max = 120) %>%
     e_y_axis(splitLine = list(lineStyle = list(type = 'dotted'))) %>%
     # e_zoom() %>% e_datazoom() %>%
     e_tooltip(trigger = 'axis')
@@ -52,8 +54,9 @@ output$recoveredLine <- renderEcharts4r({
                    )
   dt %>%
     e_chart(date) %>%
-    e_line(total, name = lang[[langCode]][6], itemStyle = list(normal = list(color = '#01A65A'))) %>%
-    e_line(totalDiff, name = lang[[langCode]][77], itemStyle = list(normal = list(color = '#068E4C'))) %>%
+    e_area(total, name = lang[[langCode]][6], itemStyle = list(normal = list(color = '#01A65A'))) %>%
+    e_bar(totalDiff, name = lang[[langCode]][77], itemStyle = list(normal = list(color = '#068E4C'))) %>%
+    e_mark_point(lang[[langCode]][77], data = list(type = "max")) %>%
     e_x_axis(splitLine =  list(show = F)) %>%
     e_y_axis(splitLine = list(lineStyle = list(type = 'dotted'))) %>%
     e_grid(left = '5%', right = '5%', bottom = '20%', top = '5%') %>%
