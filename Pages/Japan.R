@@ -1,5 +1,21 @@
 fluidPage(
   fluidRow(
+    box(width = 12,
+        solidHeader = T,
+        status = 'info',
+        title = tagList(icon('info'), '通知'),
+        collapsible = T,
+        collapsed = T, 
+        tags$small(
+          paste0(
+            '機能開発もデータの収集も全部ひとりで担当をしているので、',
+            '患者さんの行動歴や厚生労働省が発表しているデータの整理を協力できる有志がございましたら是非Pull Requestを：'
+          ),
+          tags$a(href = 'https://github.com/swsoyee/2019-ncov-japan', 'Github'),
+          '。一人でメンテナンスすることはやはり限度があります。データの更新だけで精一杯であり、機能開発はなかなか着手できませんでした。'
+        ))
+  ),
+  fluidRow(
     widgetUserBox(
       title = lang[[langCode]][17],
       # 新型コロナウイルス
