@@ -60,17 +60,11 @@ shinyUI(
                 encoding = 'UTF-8'
               )$value),
       tabItem(tabName = 'caseMap',
-              boxPlus(width = 12,
-                      source(
-                        file = paste0(PAGE_PATH, 'CaseMap.R'),
-                        local = T,
-                        encoding = 'UTF-8'
-                      )$value,
-                        tagList('Help us collecting data: ',
-                                       tags$a(href = 'https://github.com/swsoyee/2019-ncov-japan/blob/master/Data/caseMap.json', 'Github')
-                                       ),
-                      closable = F),
-              ),
+              source(
+                file = paste0(PAGE_PATH, 'CaseMap.R'),
+                local = T,
+                encoding = 'UTF-8'
+              )$value), 
       tabItem(tabName = 'academic',
               box(title = '準備中', width = 12)),
       tabItem(tabName = 'about',
