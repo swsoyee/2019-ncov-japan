@@ -71,34 +71,3 @@ output$deathPiePlus <- renderEcharts4r({
     e_legend(show = F) %>%
     e_tooltip()
 })
-
-# ====区域ごとの確認数====
-output$totalConfirmedByRegionPlot <- renderEcharts4r({
-  totalConfirmedByRegionData() %>%
-    e_charts(region) %>%
-    e_polar() %>%
-    e_angle_axis(region) %>%
-    e_radius_axis() %>%
-    e_bar(count, 
-          coord_system = "polar", 
-          name = lang[[langCode]][9],
-          label = list(show = T)) %>%
-    e_tooltip()
-})
-
-totalConfirmedByRegionData <- reactive({
-  total <- colSums(byDate[, 2:ncol(byDate)])
-  tableDt <- data.table(region = names(total), count = total)
-
-  if (is.null(input$showOtherRegion)) {
-    tableDt <- tableDt[!(region %in% lang[[langCode]][35:36])]
-  } else {
-    if (!('showShip' %in% input$showOtherRegion)) {
-      tableDt <- tableDt[region != lang[[langCode]][35]] # クルーズ船
-    }
-    if (!('showFlight' %in% input$showOtherRegion)) {
-      tableDt <- tableDt[region != lang[[langCode]][36]] # チャーター便
-    }
-  }
-  tableDt[count > 0][order(-count)]
-})

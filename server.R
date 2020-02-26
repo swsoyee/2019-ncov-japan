@@ -23,6 +23,10 @@ shinyServer(function(input, output, session) {
   source(file = paste0(COMPONENT_PATH, 'SummaryTable.R'),
          local = TRUE,
          encoding = "UTF-8")
+  # BarChartコンポーネント
+  source(file = paste0(COMPONENT_PATH, 'BarChart.R'),
+         local = TRUE,
+         encoding = "UTF-8")
   # ネットワーク系コンポーネント
   source(file = paste0(COMPONENT_PATH, 'Network.R'),
          local = TRUE,
