@@ -29,8 +29,8 @@ output$caseMap <- renderLeaflet({
   statusColor <- c('入院'= 'red', '退院' = 'green', '不明' = 'grey')
   map <- leaflet() %>% addTiles()
   for(i in 1:length(activity)) {
-    xOffset <- runif(1, 0, 0.01)
-    yOffset <- runif(1, 0, 0.01)
+    xOffset <- 0
+    yOffset <- 0
     lat <- 0
     lng <- 0
     id <- as.numeric(names(activity[i]))
