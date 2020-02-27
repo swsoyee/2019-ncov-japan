@@ -1,7 +1,7 @@
 # ====区域ごとの確認数====
 output$totalConfirmedByRegionPlot <- renderEcharts4r({
   dt <- totalConfirmedByRegionData()
-  dt$name <- paste0(totalConfirmedByRegionData()$region, ' (', totalConfirmedByRegionData()$count, ')')
+  dt$name <- paste(totalConfirmedByRegionData()$region, totalConfirmedByRegionData()$count)
   dt %>%
     e_charts(name) %>%
     e_bar(untilToday, 
@@ -11,7 +11,15 @@ output$totalConfirmedByRegionPlot <- renderEcharts4r({
     e_bar(today, 
           stack = '1',
           name = lang[[langCode]][78],
-          label = list(show = T)) %>%
+          label = list(show = T, formatter = htmlwidgets::JS('
+          function(params) {
+            if (params.value[0] > 0) {
+              return params.value[0];
+            } else {
+              return "";
+            }
+          }
+                                                             '))) %>%
     e_grid(left = '20%', right = '5%', bottom = '10%', top = '5%') %>%
     e_x_axis(splitLine = list(show = F)) %>%
     e_y_axis(splitLine = list(show = F)) %>%
