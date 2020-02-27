@@ -45,8 +45,7 @@ confirmedDataByDate <- reactive({
   dt
 })
 
-# ====退院推移図（国内）====
-output$recoveredLine <- renderEcharts4r({
+curedDataByDate <- reactive({
   yData <- cumsum(rowSums(recovered[, 2:3]))
   xData <- as.Date(recovered$date, format = "%Y%m%d")
   dt <- data.table('date' = xData, 
@@ -56,8 +55,13 @@ output$recoveredLine <- renderEcharts4r({
                    'flightDiff' = recovered[, 3],
                    'total' = yData,
                    'totalDiff' = rowSums(recovered[, 2:3])
-                   )
-  dt %>%
+  )
+  dt
+})
+
+# ====退院推移図（国内）====
+output$recoveredLine <- renderEcharts4r({
+  curedDataByDate() %>%
     e_chart(date) %>%
     e_area(total, name = lang[[langCode]][6], itemStyle = list(normal = list(color = '#01A65A'))) %>%
     e_bar(totalDiff, name = lang[[langCode]][77], itemStyle = list(normal = list(color = '#068E4C'))) %>%
