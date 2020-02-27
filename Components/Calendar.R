@@ -3,7 +3,7 @@ output$confirmedCalendar <- renderEcharts4r({
   confirmedDataByDate() %>% 
     e_charts(date) %>% 
     e_calendar(range = c('2020-01-01', '2020-06-30'),
-               top = 30, left = 80,
+               top = 25, left = 80,
                dayLabel = list(nameMap = c('日', '月', '火', '水', '木', '金', '土')),
                monthLabel = list(nameMap = 'cn')) %>% 
     e_heatmap(dailyDiff, coord_system = "calendar", name = lang[[langCode]][82]) %>% 
@@ -24,4 +24,22 @@ output$confirmedCalendar <- renderEcharts4r({
     e_legend_select(name = lang[[langCode]][80], btn = 'allCalendar') %>%
     e_legend_unselect(name = lang[[langCode]][81], btn = 'allCalendar') %>%
     e_legend_unselect(name = lang[[langCode]][82], btn = 'allCalendar')
+})
+
+output$curedCalendar <- renderEcharts4r({
+  maxValue <- max(curedDataByDate()$totalDiff)
+  curedDataByDate() %>%
+  # curedDataByDate %>%
+    e_charts(date) %>% 
+    e_calendar(range = c('2020-01-01', '2020-06-30'),
+               top = 50, left = 80,
+               dayLabel = list(nameMap = c('日', '月', '火', '水', '木', '金', '土')),
+               monthLabel = list(nameMap = 'cn')) %>% 
+    e_heatmap(totalDiff, coord_system = "calendar", name = lang[[langCode]][80]) %>% 
+    e_legend(show = F) %>%
+    e_visual_map(top = '15%', 
+                 max = maxValue, 
+                 inRange = list(color = c('#FFFFFF', '#068E4C')), # scale colors
+    ) %>%
+    e_tooltip()
 })

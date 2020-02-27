@@ -46,16 +46,18 @@ confirmedDataByDate <- reactive({
 })
 
 curedDataByDate <- reactive({
+# curedDataByDate <-({
   yData <- cumsum(rowSums(recovered[, 2:3]))
   xData <- as.Date(recovered$date, format = "%Y%m%d")
-  dt <- data.table('date' = xData, 
-                   'domestic' = cumsum(recovered[, 2]), 
-                   'domesticDiff' = recovered[, 2],
-                   'flight' = cumsum(recovered[, 3]), 
-                   'flightDiff' = recovered[, 3],
-                   'total' = yData,
-                   'totalDiff' = rowSums(recovered[, 2:3])
-  )
+  columnName <- c('date', 'domestic', 'domesticDiff', 'flight', 'flightDiff', 'total', 'totalDiff')
+  dt <- data.table(xData, 
+                   cumsum(recovered[, 2]), 
+                   recovered[, 2],
+                   cumsum(recovered[, 3]), 
+                   recovered[, 3],
+                   yData,
+                   rowSums(recovered[, 2:3]))
+  colnames(dt) <- columnName
   dt
 })
 

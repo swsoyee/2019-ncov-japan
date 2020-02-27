@@ -238,7 +238,6 @@ fluidPage(
           no = icon("remove", lib = "glyphicon")
         )
       ),
-      # dataTableOutput('confirmedByProvince') %>% withSpinner(),
       echarts4rOutput('totalConfirmedByRegionPlot')  %>% withSpinner()
     ),
     box(width = 4, dataTableOutput('news') %>% withSpinner())
@@ -264,7 +263,7 @@ fluidPage(
       actionBttn(inputId = 'withoutShipCalendar', label = lang[[langCode]][82], size = 'xs'),
       actionBttn(inputId = 'shipCalendar', label = lang[[langCode]][81], size = 'xs'),
       actionBttn(inputId = 'allCalendar', label = lang[[langCode]][80], size = 'xs'),
-      echarts4rOutput('confirmedCalendar', height = '200px') %>% withSpinner(),
+      echarts4rOutput('confirmedCalendar', height = '170px') %>% withSpinner(),
       footer = tags$small(paste(
         lang[[langCode]][62], UPDATE_DATETIME
       ))
@@ -273,9 +272,12 @@ fluidPage(
       title = tagList(icon('hospital'), lang[[langCode]][53]),
       width = 6,
       collapsible = F,
-      # plotlyOutput('recoveredAccumulation') %>% withSpinner()
       echarts4rOutput('recoveredLine') %>% withSpinner(),
-      footer = tags$small('厚生労働省のサイトに公表されている情報が限られているため、ご参考まで。')
+      tags$hr(),
+      echarts4rOutput('curedCalendar', height = '196px') %>% withSpinner(),
+      footer = tags$small(
+        paste(lang[[langCode]][62], RECOVERED_FILE_UPDATE_DATETIME)
+      )
     )
   ),
   fluidRow(
