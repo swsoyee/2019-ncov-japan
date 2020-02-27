@@ -7,9 +7,9 @@ output$map <- renderPlot({
     colnames(dbWithoutShip)[2:ncol(dbWithoutShip)] # date列を計算外
   total <- colSums(dbWithoutShip[, 2:ncol(dbWithoutShip)])
   colorFunc <-
-    colorRampPalette(c("#FFFFFF", "#FFD700", "#FF9500", '#FF5742'))
+    colorRampPalette(c("#FFFFFF", "#FFD700", "#FF9500", '#FF5742', '#9E2A1B'))
   
-  breaks <- c(-0.1, 0.5, 1.5, 5.5, 10.5, 100)
+  breaks <- c(-0.1, 0.5, 1.5, 5.5, 10.5, 30.5, 100)
   breaks.length <- length(breaks) - 1
   names(province) <-
     colorFunc(breaks.length)[as.numeric(cut(total, breaks = breaks))]
@@ -17,7 +17,7 @@ output$map <- renderPlot({
   names(plotData) <- as.character(province)
   par(mar = c(0, 0, 0, 0))
   JapanPrefMap(col = plotData)
-  legend(143, 35, c(0, 1, '2~5', '5~10', '>10'), fill = colorFunc(breaks.length))
+  legend(143, 35, c(0, 1, '2~5', '5~10', '10~30', '>30'), fill = colorFunc(breaks.length))
   p <- recordPlot()
   p
 })
