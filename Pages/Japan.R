@@ -260,6 +260,11 @@ fluidPage(
       title = tagList(icon('chart-line'), lang[[langCode]][3]), 
       closable = F,
       echarts4rOutput('confirmedLine') %>% withSpinner(),
+      tags$hr(),
+      actionBttn(inputId = 'withoutShipCalendar', label = lang[[langCode]][82], size = 'xs'),
+      actionBttn(inputId = 'shipCalendar', label = lang[[langCode]][81], size = 'xs'),
+      actionBttn(inputId = 'allCalendar', label = lang[[langCode]][80], size = 'xs'),
+      echarts4rOutput('confirmedCalendar', height = '200px') %>% withSpinner(),
       footer = tags$small(paste(
         lang[[langCode]][62], UPDATE_DATETIME
       ))

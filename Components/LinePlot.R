@@ -1,18 +1,6 @@
 # ====感染確認推移図====
 output$confirmedLine <- renderEcharts4r({
-  # 国内
-  domestic <- byDate[, c(2:48)]
-  domestic <- cumsum(rowSums(domestic[, 1:ncol(domestic)]))
-  columnName <- c('date', 'domestic', 'flight', 'officer', 'ship', 'dailyDiff', 'dailyDiffShip')
-  dt <- data.table(byDate$date,
-                   domestic,
-                   cumsum(byDate[, 49]),
-                   cumsum(byDate[, 50]),
-                   cumsum(byDate[, 51]),
-                   rowSums(byDate[, 2:(ncol(byDate)-1)]),
-                   byDate$クルーズ船
-  )
-  colnames(dt) <- columnName
+  dt <- confirmedDataByDate()
   defaultUnselected <- list(F, F)
   names(defaultUnselected) <- c(lang[[langCode]][35], lang[[langCode]][76])
   dt %>% 
@@ -38,6 +26,23 @@ output$confirmedLine <- renderEcharts4r({
     e_y_axis(splitLine = list(lineStyle = list(type = 'dotted'))) %>%
     e_zoom() %>% e_datazoom() %>%
     e_tooltip(trigger = 'axis')
+})
+
+confirmedDataByDate <- reactive({
+  domestic <- byDate[, c(2:48)]
+  domestic <- cumsum(rowSums(domestic[, 1:ncol(domestic)]))
+  columnName <- c('date', 'domestic', 'flight', 'officer', 'ship', 'dailyDiff', 'dailyDiffShip', 'dailyDiffAll')
+  dt <- data.table(byDate$date,
+                   domestic,
+                   cumsum(byDate[, 49]),
+                   cumsum(byDate[, 50]),
+                   cumsum(byDate[, 51]),
+                   rowSums(byDate[, 2:(ncol(byDate)-1)]),
+                   byDate$クルーズ船,
+                   rowSums(byDate[, 2:(ncol(byDate)-1)]) + byDate$クルーズ船
+  )
+  colnames(dt) <- columnName
+  dt
 })
 
 # ====退院推移図（国内）====
