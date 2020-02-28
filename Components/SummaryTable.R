@@ -15,10 +15,8 @@ output$news <- renderDataTable({
   datatable(
     newsData[order(-V1)],
     options = list(
-      dom = 't',
-      pageLength = nrow(newsData),
-      scrollCollapse = T,
-      scrollY = '440px'
+      dom = 'tp',
+      scrollY = '360px'
     ),
     rownames = F,
     colnames = lang[[langCode]][14], # 感染確認情報
