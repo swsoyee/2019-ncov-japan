@@ -32,7 +32,12 @@ networkData <- reactive({
   confirmedNodes$gender <- as.character(confirmedNodes$gender)
   confirmedNodes$effectSize <-
     sapply(confirmedNodes$relatedConfirmed, function(x) {
-      8 * length(strsplit(x, ',')[[1]])
+      count <- length(strsplit(x, ',')[[1]])
+      K <- 8
+      if (count > 3) {
+        K <- 3
+      }
+      K * count
     })
   # エッジ作成
   confirmedEdges <- data.frame('source' = 0, 'target' = 0) # エッジ初期化
