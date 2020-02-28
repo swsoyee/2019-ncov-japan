@@ -40,8 +40,12 @@ fluidPage(
       #        )
       #        ),
       tags$p(tags$img(src = 'https://img.shields.io/badge/dynamic/json?url=https://stg.covid-2019.live/ncov-static/stats.json&label=%E9%96%B2%E8%A6%A7%E6%95%B0&query=$.result.totals.pageviews.all&color=orange&style=flat-square')),
-      tags$p(lang[[langCode]][19]),
       # 発熱や上気道症状を引き起こすウイルス...
+      tags$p(lang[[langCode]][19]),
+      socialButton(
+        url = "https://github.com/swsoyee/2019-ncov-japan",
+        type = "github"
+      ),
       tags$a(href = lang[[langCode]][21], # https://www.mhlw.go.jp/stf/...
              paste0(lang[[langCode]][20], # 出典
                     '：', lang[[langCode]][22], # コロナウイルスはどのようなウイルスですか？

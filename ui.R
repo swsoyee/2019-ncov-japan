@@ -9,6 +9,17 @@ shinyUI(
     header = dashboardHeaderPlus(
       title = paste0('🦠', lang[[langCode]][1]),
       titleWidth = 350,
+      dropdownMenu(type = 'notifications',
+                   headerText = '',
+                   tags$li(
+                       width = 12,
+                       tags$br(),
+                       boxProfile(
+                         src = "profile.png",
+                         title = tags$a(href = 'https://github.com/swsoyee/2019-ncov-japan', 'Su Wei'),
+                         subtitle = tagList('Front-End Engineer', tags$small('(Bioinformatics)'))
+                      )
+                   )), 
       enable_rightsidebar = F
     ),
     # TODO 言語設定の追加
