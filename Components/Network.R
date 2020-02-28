@@ -1,4 +1,27 @@
 output$network <- renderEcharts4r({
+  data <- networkData()
+  
+  e_charts() %>%
+    e_graph() %>%
+    e_graph_nodes(data$node,
+                  names = id,
+                  value = label,
+                  size = effectSize) %>%
+    e_graph_edges(data$edge, target = target, source = source) %>%
+    e_modularity() %>%
+    e_labels() %>%
+    e_tooltip(
+      formatter = htmlwidgets::JS('function(params) {
+        const label = params.value.split("#")
+        return("<b>" + params.name + "番患者</b><br><br>年齢：" +
+          label[0] + "<br>性別：" + label[1] + "<br>居住地：" + 
+          label[2] + "<br><br>" + label[3])
+      }')
+    )
+})
+
+networkData <- reactive({
+  # ノット作成
   confirmedNodes <-
     detail[, c('id',
                'age',
@@ -7,30 +30,21 @@ output$network <- renderEcharts4r({
                'relatedConfirmed',
                'subgroup')] # ノット
   confirmedNodes$gender <- as.character(confirmedNodes$gender)
-  confirmedNodes$age <- confirmedNodes$age
   confirmedNodes$effectSize <-
     sapply(confirmedNodes$relatedConfirmed, function(x) {
-      5 * length(strsplit(x, ',')[[1]])
+      8 * length(strsplit(x, ',')[[1]])
     })
-  confirmedNodes$label <- paste0(
-    confirmedNodes$id,
-    '番患者 (',
-    confirmedNodes$age,
-    '歳, ',
-    confirmedNodes$residence,
-    '在住)\n\n',
-    confirmedNodes$subgroup
-  )
-  confirmedEdges <- data.frame(character(0), character(0)) # エッジ初期化
+  # エッジ作成
+  confirmedEdges <- data.frame('source' = 0, 'target' = 0) # エッジ初期化
   for (i in 1:nrow(confirmedNodes)) {
     relation <-
       strsplit(confirmedNodes$relatedConfirmed[i], ',')[[1]] # 複数関連者対応
     if (relation[1] == 0 ||
         suppressWarnings(is.na(as.numeric(relation)))) {
       # 関連者なしの場合、エッジを自分から自分へに設定する
+      item <- c(confirmedNodes[i]$id, confirmedNodes[i]$id)
       confirmedEdges <-
-        rbind(confirmedEdges,
-              c(confirmedNodes[i]$id, confirmedNodes[i]$id))
+        rbind(confirmedEdges, item, stringsAsFactors = F)
     } else if (length(relation) > 1) {
       for (j in 1:length(relation)) {
         # 最初に確認された患者をソース源にする
@@ -39,31 +53,38 @@ output$network <- renderEcharts4r({
           c(id, relation[j])
         else
           c(relation[j], confirmedNodes[i]$id)
-        confirmedEdges <- rbind(confirmedEdges, item)
+        confirmedEdges <-
+          rbind(confirmedEdges, item, stringsAsFactors = F)
       }
     } else {
+      item <- c(confirmedNodes[i]$id, relation)
       confirmedEdges <-
-        rbind(confirmedEdges, c(confirmedNodes[i]$id, relation))
+        rbind(confirmedEdges, item, stringsAsFactors = F)
     }
   }
-  confirmedEdges <- data.frame(lapply(confirmedEdges, as.numeric))
-  colnames(confirmedEdges) <- c('source', 'target')
   confirmedEdges <- data.table(confirmedEdges)
-  mergeDt <-
-    merge(confirmedEdges,
-          confirmedNodes,
-          by.x = 'source',
-          by.y = 'id')
-  mergeDt <-
-    merge(mergeDt, confirmedNodes, by.x = 'target', by.y = 'id')
   
-  e_charts() %>%
-    e_graph() %>%
-    e_graph_nodes(confirmedNodes,
-                  names = label,
-                  value = age,
-                  size = effectSize) %>%
-    e_graph_edges(mergeDt, label.x, label.y) %>%
-    e_modularity() %>%
-    e_tooltip(formatter = '{b0}')
+  # 離散のポイントを非表示するか
+  if (input$hideSingle) {
+    filterResult <-
+      confirmedEdges[confirmedEdges$source != confirmedEdges$target]
+    inSource <-
+      sapply(as.character(confirmedNodes$id), function(x) {
+        x %in% filterResult$source
+      })
+    inTarget <-
+      sapply(confirmedNodes$id, function(x) {
+        x %in% filterResult$target
+      })
+    confirmedNodes <-
+      confirmedNodes[rowSums(data.frame(inSource, inTarget)) > 0,]
+  }
+  confirmedNodes$id <- as.character(confirmedNodes$id)
+  confirmedNodes$label <- paste(sep = "#", 
+                                confirmedNodes$age, 
+                                confirmedNodes$gender, 
+                                confirmedNodes$residence,
+                                confirmedNodes$subgroup)
+  # data <- list(node = confirmedNodes, edge = confirmedEdges)
+  return(list(node = confirmedNodes, edge = confirmedEdges))
 })

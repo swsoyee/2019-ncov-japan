@@ -286,6 +286,11 @@ fluidPage(
             closable = F,
             # collapsed = T,
             echarts4rOutput('network'),
+            enable_sidebar = T,
+            sidebar_start_open = F,
+            sidebar_content = tagList(
+              checkboxInput('hideSingle', '離散を非表示', T)
+            ),
             footer = tags$small('※開発バージョンです。最終版ではありません'))
     )
 )
