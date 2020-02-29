@@ -10,7 +10,7 @@ shinyUI(
       title = paste0('🦠', lang[[langCode]][1]),
       titleWidth = 350,
       dropdownMenu(type = 'notifications',
-                   headerText = '',
+                   headerText = '', icon = icon('user-ninja'),
                    tags$li(
                        width = 12,
                        tags$br(),
@@ -28,7 +28,8 @@ shinyUI(
       menuItem(
         # 感染速報
         lang[[langCode]][32],
-        tabName = 'japan',
+        tabName = 'japan', 
+        icon = icon('tachometer-alt'),
         badgeLabel = '更新中',
         badgeColor = 'purple'
       ),
@@ -36,6 +37,7 @@ shinyUI(
         # 事例マップ
         lang[[langCode]][33],
         tabName = 'caseMap',
+        icon = icon('map-marked-alt'),
         badgeLabel = '開発中',
         badgeColor = 'black'
       ),
@@ -43,6 +45,7 @@ shinyUI(
         # 学術分析
         lang[[langCode]][34],
         tabName = 'academic',
+        icon = icon('graduation-cap'),
         badgeLabel = '着手中',
         badgeColor = 'black'
       ),
@@ -50,6 +53,7 @@ shinyUI(
         # アプリについて
         lang[[langCode]][67],
         tabName = 'about',
+        icon = icon('readme'),
         badgeLabel = '追加中',
         badgeColor = 'black'
       )

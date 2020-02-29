@@ -51,11 +51,16 @@ fluidPage(
              # 背景画像
              lang[[langCode]][58]),
       tags$br(),
-      actionButton(inputId = "twitterShare",
-                   label = "Twiiter",
-                   icon = icon("twitter"),
+      actionButton(inputId = 'twitterShare',
+                   label = 'Twiiter',
+                   icon = icon('twitter'),
                    onclick = sprintf("window.open('%s')", twitterUrl)
       ),
+      actionButton(inputId = 'github',
+                   label = 'Github',
+                   icon = icon('github'),
+                   onclick = sprintf("window.open('%s')", 'https://github.com/swsoyee/2019-ncov-japan')
+                   ),
       footer_padding = F
     )
   ),
@@ -277,7 +282,7 @@ fluidPage(
     boxPlus(
       title = tagList(icon('hospital'), lang[[langCode]][53]),
       width = 6,
-      collapsible = F,
+      closable = F,
       echarts4rOutput('recoveredLine') %>% withSpinner(),
       tags$hr(),
       echarts4rOutput('curedCalendar', height = '196px') %>% withSpinner(),
