@@ -49,7 +49,7 @@ output$curedPiePlus <- renderEcharts4r({
 
 # ====死亡数扇形図====
 output$deathPiePlus <- renderEcharts4r({
-  DEATH_PIE_DATA %>%
+  DEATH_PIE_DATA[value != 0] %>%
     e_charts(category) %>%
     e_pie(
       value,
