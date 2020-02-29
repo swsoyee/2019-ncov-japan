@@ -134,7 +134,8 @@ fluidPage(
           echarts4rOutput('confirmedPiePlus', height = '150px') %>% withSpinner()
         ),
         column(width = 6,
-               tags$h4(paste0(UPDATE_DATE, lang[[langCode]][64])),
+               # tags$h4(paste0(UPDATE_DATE, lang[[langCode]][64])),
+               tags$h4(lang[[langCode]][78]),
                uiOutput('todayConfirmed'))
       ),
       tags$small(paste(
@@ -175,7 +176,7 @@ fluidPage(
           echarts4rOutput('curedPiePlus', height = '150px') %>% withSpinner()
         ),
         column(width = 6,
-               tags$h4('準備中'))
+               tags$h4(lang[[langCode]][78]))
       ),
       tags$small(
         paste(lang[[langCode]][62], RECOVERED_FILE_UPDATE_DATETIME)
@@ -215,7 +216,8 @@ fluidPage(
           echarts4rOutput('deathPiePlus', height = '150px') %>% withSpinner()
         ),
         column(width = 6,
-               tags$h4(paste0(DEATH_UPDATE_DATE, lang[[langCode]][64])),
+               # tags$h4(paste0(DEATH_UPDATE_DATE, lang[[langCode]][64])),
+               tags$h4(lang[[langCode]][78]),
                uiOutput('todayDeath')
                )
       ),
