@@ -86,3 +86,65 @@ output$genderBar <- renderEcharts4r({
     e_legend(top = '0%', right = '20%') %>%
     e_grid(top = '0%', bottom = '1%', left = '10%', right = '10%')
 })
+
+# ====感染者割合====
+output$confirmedBar <- renderEcharts4r({
+  dt <- data.table('label' = '感染者',
+                   'domestic' = TOTAL_DOMESITC + TOTAL_OFFICER,
+                   'ship' = TOTAL_SHIP,
+                   'flight' = TOTAL_FLIGHT,
+                   'domesticPer' = round((TOTAL_DOMESITC + TOTAL_OFFICER) / TOTAL_JAPAN * 100, 2),
+                   'shipPer' = round(TOTAL_SHIP / TOTAL_JAPAN * 100, 2),
+                   'flightPer' = round(TOTAL_FLIGHT / TOTAL_JAPAN * 100, 2)
+  )
+  e_charts(dt, label) %>%
+    e_bar(shipPer, name = lang[[langCode]][35], stack = '1', itemStyle = list(color = lightRed)) %>%
+    e_bar(domesticPer, name = lang[[langCode]][4], stack = '1', itemStyle = list(color = middleRed)) %>%
+    e_bar(flightPer, name = lang[[langCode]][36], stack = '1', itemStyle = list(color = lightYellow)) %>%
+    e_y_axis(max = 100, splitLine = list(show = F), show = F) %>%
+    e_x_axis(splitLine = list(show = F), show = F) %>%
+    e_grid(left = '0%', right = '0%', top = '0%', bottom = '0%') %>%
+    e_legend(show = F) %>%
+    e_flip_coords() %>%
+    e_tooltip()
+})
+
+# ====退院者割合====
+output$curedBar <- renderEcharts4r({
+  CURED_TOTAL <- CURED_DOMESTIC + CURED_FLIGHT
+  dt <- data.table('label' = '退院者',
+                   'domestic' = CURED_DOMESTIC,
+                   'flight' = CURED_FLIGHT,
+                   'domesticPer' = round(CURED_DOMESTIC / CURED_TOTAL * 100, 2),
+                   'flightPer' = round(CURED_FLIGHT / CURED_TOTAL * 100, 2)
+                   )
+  e_charts(dt, label) %>%
+    e_bar(domesticPer, name = lang[[langCode]][4], stack = '1', itemStyle = list(color = middleGreen)) %>%
+    e_bar(flightPer, name = lang[[langCode]][36], stack = '1', itemStyle = list(color = darkGreen)) %>%
+    e_y_axis(max = 100, splitLine = list(show = F), show = F) %>%
+    e_x_axis(splitLine = list(show = F), show = F) %>%
+    e_grid(left = '0%', right = '0%', top = '0%', bottom = '0%') %>%
+    e_legend(show = F) %>%
+    e_flip_coords() %>%
+    e_tooltip()
+})
+
+# ====死亡者割合====
+output$deathBar <- renderEcharts4r({
+  DEATH_TOTAL <- DEATH_DOMESITC + DEATH_SHIP
+  dt <- data.table('label' = '死亡者',
+                   'domestic' = DEATH_DOMESITC,
+                   'flight' = DEATH_SHIP,
+                   'domesticPer' = round(DEATH_DOMESITC / DEATH_TOTAL * 100, 2),
+                   'shipPer' = round(DEATH_SHIP / DEATH_TOTAL * 100, 2)
+  )
+  e_charts(dt, label) %>%
+    e_bar(domesticPer, name = lang[[langCode]][4], stack = '1', itemStyle = list(color = lightNavy)) %>%
+    e_bar(shipPer, name = lang[[langCode]][35], stack = '1', itemStyle = list(color = darkNavy)) %>%
+    e_y_axis(max = 100, splitLine = list(show = F), show = F) %>%
+    e_x_axis(splitLine = list(show = F), show = F) %>%
+    e_grid(left = '0%', right = '0%', top = '0%', bottom = '0%') %>%
+    e_legend(show = F) %>%
+    e_flip_coords() %>%
+    e_tooltip()
+})

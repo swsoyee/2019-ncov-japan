@@ -7,11 +7,11 @@ output$confirmedPiePlus <- renderEcharts4r({
       minAngle = 15,
       itemStyle = list(color = '#DD4B38'),
       name = lang[[langCode]][9],
-      animationType = 'scale',
+      # animationType = 'scale',
       labelLine = list(show = F),
       label = list(position = 'inner', formatter = '{d}%'),
-      radius = '85%',
-      animationEasing = 'elasticOut'
+      radius = '80%'#,
+      # animationEasing = 'elasticOut'
     ) %>%
     e_visual_map(
       show = F,
@@ -20,7 +20,7 @@ output$confirmedPiePlus <- renderEcharts4r({
       inRange = list(colorLightness = c(0.3, 1))
     ) %>%
     e_legend(show = F) %>%
-    e_tooltip()
+    e_tooltip(formatter = '{a}%')
 })
 
 # ====退院数扇形図====
