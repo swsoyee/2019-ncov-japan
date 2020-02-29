@@ -19,8 +19,8 @@ output$confirmedLine <- renderEcharts4r({
     # クルーズ船の新規感染者数（日次）
     e_bar(dailyDiffShip, name = lang[[langCode]][76], stack = 'line', y_index = 1) %>%
     e_mark_point(lang[[langCode]][76], data = list(type = "max")) %>%
-    e_legend(selected = defaultUnselected, top = '7%', left = '5%', type = 'scroll', orient = 'vertical') %>% 
-    e_grid(left = '5%', right = '5%', bottom = '20%', top = '7%') %>%
+    e_legend(selected = defaultUnselected, top = '7%', left = '8%', type = 'scroll', orient = 'vertical') %>% 
+    e_grid(left = '8%', right = '8%', bottom = '20%', top = '7%') %>%
     e_x_axis(splitLine =  list(show = F)) %>%
     e_y_axis(splitLine = list(show = F), index = 1, max = 120) %>%
     e_y_axis(splitLine = list(lineStyle = list(type = 'dotted'))) %>%
@@ -49,14 +49,18 @@ curedDataByDate <- reactive({
 # curedDataByDate <-({
   yData <- cumsum(rowSums(recovered[, 2:3]))
   xData <- as.Date(recovered$date, format = "%Y%m%d")
-  columnName <- c('date', 'domestic', 'domesticDiff', 'flight', 'flightDiff', 'total', 'totalDiff')
+  cumSumTotalConfirmed <- cumsum(rowSums(byDate[, 2:(ncol(byDate) - 1)]))
+  columnName <- c('date', 'domestic', 'domesticDiff', 'flight', 'flightDiff', 'total', 
+                  'totalDiff', 'totalConfirmed', 'curedVerseConfirmed')
   dt <- data.table(xData, 
                    cumsum(recovered[, 2]), 
                    recovered[, 2],
                    cumsum(recovered[, 3]), 
                    recovered[, 3],
                    yData,
-                   rowSums(recovered[, 2:3]))
+                   rowSums(recovered[, 2:3]),
+                   cumSumTotalConfirmed,
+                   round(yData / cumSumTotalConfirmed * 100, 2))
   colnames(dt) <- columnName
   dt
 })
@@ -67,11 +71,17 @@ output$recoveredLine <- renderEcharts4r({
     e_chart(date) %>%
     e_area(total, name = lang[[langCode]][6], itemStyle = list(normal = list(color = '#01A65A'))) %>%
     e_bar(totalDiff, name = lang[[langCode]][77], itemStyle = list(normal = list(color = '#068E4C'))) %>%
+    e_line(curedVerseConfirmed, name = lang[[langCode]][83], y_index = 1, itemStyle = list(color = 'orange')) %>%
     e_mark_point(lang[[langCode]][77], data = list(type = "max")) %>%
     e_x_axis(splitLine =  list(show = F)) %>%
     e_y_axis(splitLine = list(lineStyle = list(type = 'dotted'))) %>%
-    e_grid(left = '5%', right = '5%', bottom = '20%', top = '7%') %>%
-    e_legend(top = '7%', left = '5%', type = 'scroll', orient = 'vertical') %>% 
+    e_y_axis(index = 1, formatter = htmlwidgets::JS('
+      function(params) {
+        return(params + "%")
+      }
+                                                    ')) %>%
+    e_grid(left = '8%', right = '8%', bottom = '20%', top = '7%') %>%
+    e_legend(top = '7%', left = '8%', type = 'scroll', orient = 'vertical') %>% 
     e_zoom() %>%
     e_datazoom() %>%
     e_tooltip(trigger = 'axis')
