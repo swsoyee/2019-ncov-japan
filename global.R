@@ -176,7 +176,12 @@ names(showOption) <- c(lang[[langCode]][35], lang[[langCode]][36])
 
 twitterUrl <- paste0('https://twitter.com/intent/tweet?text=新型コロナウイルス感染速報：国内の感染確認',
                      TOTAL_JAPAN,
-                     '人（クルーズ船含む）', 
+                     '人（クルーズ船含む）、',
+                     UPDATE_DATE,
+                     'の現時点で新たに',
+                     TOTAL_JAPAN_DIFF,
+                     '人が確認されました。&hashtags=',
+                     '新型コロナウイルス,新型コロナウイルス速報',
                      '&url=https://covid-2019.live/')
 
 # ====メゾット====

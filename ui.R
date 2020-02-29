@@ -52,12 +52,7 @@ shinyUI(
         tabName = 'about',
         badgeLabel = '追加中',
         badgeColor = 'black'
-      ),
-      actionButton(inputId = "twitterShare",
-                   label = "Twiiter",
-                   icon = icon("twitter"),
-                   onclick = sprintf("window.open('%s')", twitterUrl)
-                   )
+      )
     )),
     # TODO 追加修正待ち
     # rightsidebar = rightSidebar(

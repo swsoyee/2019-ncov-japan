@@ -50,6 +50,12 @@ fluidPage(
       tags$a(href = lang[[langCode]][59], # https://phil.cdc.gov/Details.aspx?pid=2871
              # 背景画像
              lang[[langCode]][58]),
+      tags$br(),
+      actionButton(inputId = "twitterShare",
+                   label = "Twiiter",
+                   icon = icon("twitter"),
+                   onclick = sprintf("window.open('%s')", twitterUrl)
+      ),
       footer_padding = F
     )
   ),
