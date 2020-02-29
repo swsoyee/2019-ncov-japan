@@ -51,7 +51,8 @@ curedDataByDate <- reactive({
   xData <- as.Date(recovered$date, format = "%Y%m%d")
   cumSumTotalConfirmed <- cumsum(rowSums(byDate[, 2:(ncol(byDate) - 1)]))
   columnName <- c('date', 'domestic', 'domesticDiff', 'flight', 'flightDiff', 'total', 
-                  'totalDiff', 'totalConfirmed', 'curedVerseConfirmed')
+                  'totalDiff', 'totalConfirmed', 
+                  'curedVerseConfirmed', 'mildVerseConfirmed', 'severeVerseConfirmed', 'confirmingVerseConfirmed')
   dt <- data.table(xData, 
                    cumsum(recovered[, 2]), 
                    recovered[, 2],
@@ -60,28 +61,39 @@ curedDataByDate <- reactive({
                    yData,
                    rowSums(recovered[, 2:3]),
                    cumSumTotalConfirmed,
-                   round(yData / cumSumTotalConfirmed * 100, 2))
+                   round(yData / cumSumTotalConfirmed * 100, 2),
+                   round((cumsum(recovered$mildDomestic + recovered$mildFlight) / cumSumTotalConfirmed) * 100, 2),
+                   round((cumsum(recovered$severeDomestic + recovered$severeFlight) / cumSumTotalConfirmed) * 100, 2),
+                   round((cumsum(recovered$confirmingDomestic + recovered$confirmingFlight) / cumSumTotalConfirmed) * 100, 2)
+  )
   colnames(dt) <- columnName
   dt
 })
 
 # ====退院推移図（国内）====
 output$recoveredLine <- renderEcharts4r({
+  defaultUnselected <- list(F)
+  names(defaultUnselected) <- c(lang[[langCode]][86])
+  
   curedDataByDate() %>%
+  # dt %>%
     e_chart(date) %>%
-    e_area(total, name = lang[[langCode]][6], itemStyle = list(normal = list(color = '#01A65A'))) %>%
-    e_bar(totalDiff, name = lang[[langCode]][77], itemStyle = list(normal = list(color = '#068E4C'))) %>%
-    e_line(curedVerseConfirmed, name = lang[[langCode]][83], y_index = 1, itemStyle = list(color = 'orange')) %>%
+    e_area(total, name = lang[[langCode]][6], itemStyle = list(normal = list(color = '#2BA84A'))) %>%
+    e_bar(totalDiff, name = lang[[langCode]][77], itemStyle = list(normal = list(color = '#248232'))) %>%
+    e_line(confirmingVerseConfirmed, name = lang[[langCode]][86], stack = '1', y_index = 1, itemStyle = list(color = '#083D77')) %>%
+    e_line(severeVerseConfirmed, name = lang[[langCode]][85], stack = '1', y_index = 1, itemStyle = list(color = '#F95738')) %>%
+    e_line(mildVerseConfirmed, name = lang[[langCode]][84], stack = '1', y_index = 1, itemStyle = list(color = '#EE964B')) %>%
+    e_line(curedVerseConfirmed, name = lang[[langCode]][83], stack = '1', y_index = 1, itemStyle = list(color = '#F4D35E')) %>%
     e_mark_point(lang[[langCode]][77], data = list(type = "max")) %>%
-    e_x_axis(splitLine =  list(show = F)) %>%
+    e_x_axis(splitLine = list(show = F)) %>%
     e_y_axis(splitLine = list(lineStyle = list(type = 'dotted'))) %>%
-    e_y_axis(index = 1, formatter = htmlwidgets::JS('
+    e_y_axis(splitLine = list(show = F), index = 1, max = 100, formatter = htmlwidgets::JS('
       function(params) {
         return(params + "%")
       }
-                                                    ')) %>%
+    ')) %>%
     e_grid(left = '8%', right = '8%', bottom = '20%', top = '7%') %>%
-    e_legend(top = '7%', left = '8%', type = 'scroll', orient = 'vertical') %>% 
+    e_legend(top = '7%', left = '8%', type = 'scroll', orient = 'vertical', selected = defaultUnselected) %>% 
     e_zoom() %>%
     e_datazoom() %>%
     e_tooltip(trigger = 'axis')
