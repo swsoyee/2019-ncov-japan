@@ -174,6 +174,11 @@ options(spinner.color = GLOABLE_MAIN_COLOR)
 showOption <- c('showShip', 'showFlight')
 names(showOption) <- c(lang[[langCode]][35], lang[[langCode]][36])
 
+twitterUrl <- paste0('https://twitter.com/intent/tweet?text=新型コロナウイルス感染速報：国内の感染確認',
+                     TOTAL_JAPAN,
+                     '人（クルーズ船含む）', 
+                     '&url=https://covid-2019.live/')
+
 # ====メゾット====
 getChangeIcon <- function(number) {
   if (number > 0) {
