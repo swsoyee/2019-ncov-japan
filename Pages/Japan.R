@@ -42,10 +42,6 @@ fluidPage(
       tags$p(tags$img(src = 'https://img.shields.io/badge/dynamic/json?url=https://stg.covid-2019.live/ncov-static/stats.json&label=%E9%96%B2%E8%A6%A7%E6%95%B0&query=$.result.totals.pageviews.all&color=orange&style=flat-square')),
       # 発熱や上気道症状を引き起こすウイルス...
       tags$p(lang[[langCode]][19]),
-      socialButton(
-        url = "https://github.com/swsoyee/2019-ncov-japan",
-        type = "github"
-      ),
       tags$a(href = lang[[langCode]][21], # https://www.mhlw.go.jp/stf/...
              paste0(lang[[langCode]][20], # 出典
                     '：', lang[[langCode]][22], # コロナウイルスはどのようなウイルスですか？
@@ -223,7 +219,7 @@ fluidPage(
       title = tagList(icon('map'), lang[[langCode]][2]),
       plotOutput('map', height = '370px') %>% withSpinner(),
       actionBttn(inputId = 'switchCaseMap', label = '事例マップへ',
-                 block = T, size ='sm'),
+                 block = T, size ='xs', style = 'fill'),
       closable = F,
       footer = tags$small(paste(
         lang[[langCode]][62], UPDATE_DATETIME
@@ -264,9 +260,9 @@ fluidPage(
       closable = F,
       echarts4rOutput('confirmedLine') %>% withSpinner(),
       tags$hr(),
-      actionBttn(inputId = 'withoutShipCalendar', label = lang[[langCode]][82], size = 'xs'),
-      actionBttn(inputId = 'shipCalendar', label = lang[[langCode]][81], size = 'xs'),
-      actionBttn(inputId = 'allCalendar', label = lang[[langCode]][80], size = 'xs'),
+      actionBttn(inputId = 'withoutShipCalendar', label = lang[[langCode]][82], size = 'xs', style = 'fill'),
+      actionBttn(inputId = 'shipCalendar', label = lang[[langCode]][81], size = 'xs', style = 'fill'),
+      actionBttn(inputId = 'allCalendar', label = lang[[langCode]][80], size = 'xs', style = 'fill'),
       echarts4rOutput('confirmedCalendar', height = '170px') %>% withSpinner(),
       footer = tags$small(paste(
         lang[[langCode]][62], UPDATE_DATETIME
