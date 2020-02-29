@@ -288,7 +288,7 @@ fluidPage(
   ),
   fluidRow(
     boxPlus(title = tagList(icon('connectdevelop'), '感染経路ネットワーク'),
-            width = 12,
+            width = 8,
             closable = F,
             # collapsed = T,
             echarts4rOutput('network'),
@@ -297,6 +297,12 @@ fluidPage(
             sidebar_content = tagList(
               checkboxInput('hideSingle', '離散を非表示', T)
             ),
-            footer = tags$small('※開発バージョンです。最終版ではありません'))
+            footer = tags$small('※開発バージョンです。最終版ではありません')),
+    boxPlus(title = tagList(icon('venus-mars'), '歳代・性別'),
+            width = 4,
+            echarts4rOutput('genderBar'),
+            closable = F,
+            footer = tags$small('厚生労働省の報道発表のデータに基づいてプロットしたグラフです。多少数値の遅れがあります。')
+            )
     )
 )
