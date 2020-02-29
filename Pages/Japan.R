@@ -70,21 +70,21 @@ fluidPage(
       width = 4,
       value = paste0(TOTAL_JAPAN, ' (+', TOTAL_JAPAN_DIFF, ')'),
       subtitle = lang[[langCode]][60],
-      icon = icon('sad-tear'),
+      icon = icon('procedures'),
       color = "red"
     ),
     valueBox(
       width = 4,
       value = paste0(CURED_WITHIN, ' (+', CURED_WITHIN_DIFF, ')'),
       subtitle = lang[[langCode]][6],
-      icon = icon('grin-squint'),
+      icon = icon('heart'),
       color = "green"
     ),
     valueBox(
       width = 4,
       value = paste0(DEATH_JAPAN, ' (+', DEATH_JAPAN_DIFF, ')'),
       subtitle = lang[[langCode]][7],
-      icon = icon('dizzy'),
+      icon = icon('cross'),
       color = "navy"
     )
   ),
