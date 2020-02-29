@@ -20,7 +20,7 @@ output$totalConfirmedByRegionPlot <- renderEcharts4r({
             }
           }
                                                              '))) %>%
-    e_grid(left = '20%', right = '5%', bottom = '10%', top = '0%') %>%
+    e_grid(left = '20%', right = '5%', bottom = '5%', top = '0%') %>%
     e_x_axis(splitLine = list(show = F)) %>%
     e_y_axis(splitLine = list(show = F)) %>%
     e_legend(orient = 'vertical', top = '5%', right = '5%') %>%
