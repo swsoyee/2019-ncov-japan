@@ -84,14 +84,14 @@ fluidPage(
       width = 3,
       value = paste0(CURED_WITHIN, ' (+', CURED_WITHIN_DIFF, ')'),
       subtitle = lang[[langCode]][6],
-      icon = icon('heart'),
+      icon = icon('thumbs-up'),
       color = "green"
     ),
     valueBox(
       width = 3,
       value = paste0(DEATH_JAPAN, ' (+', DEATH_JAPAN_DIFF, ')'),
       subtitle = lang[[langCode]][7],
-      icon = icon('cross'),
+      icon = icon('bible'),
       color = "navy"
     )
   ),
@@ -109,7 +109,7 @@ fluidPage(
             id = 'linePlot',
             tabPanel(
               # 感染者数の推移
-              title = lang[[langCode]][3], 
+              title = lang[[langCode]][3], icon = icon('procedures'),
               value = 'confirmed',
               fluidRow(column(11.9, offset = 0.1,
                 tags$br(),
@@ -130,7 +130,7 @@ fluidPage(
               ),
             tabPanel(
               # 退院者推移
-              title = lang[[langCode]][89],
+              title = lang[[langCode]][89], icon = icon('thumbs-up'),
               value = 'cured',
               fluidRow(
                 column(width = 12,
