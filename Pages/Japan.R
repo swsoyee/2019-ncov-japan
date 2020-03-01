@@ -67,21 +67,28 @@ fluidPage(
   # バリューボックス
   fluidRow(
     valueBox(
-      width = 4,
+      width = 3,
+      value = 4061 + 2209,
+      subtitle = lang[[langCode]][90],
+      icon = icon('vials'),
+      color = "yellow"
+    ),
+    valueBox(
+      width = 3,
       value = paste0(TOTAL_JAPAN, ' (+', TOTAL_JAPAN_DIFF, ')'),
       subtitle = lang[[langCode]][60],
       icon = icon('procedures'),
       color = "red"
     ),
     valueBox(
-      width = 4,
+      width = 3,
       value = paste0(CURED_WITHIN, ' (+', CURED_WITHIN_DIFF, ')'),
       subtitle = lang[[langCode]][6],
       icon = icon('heart'),
       color = "green"
     ),
     valueBox(
-      width = 4,
+      width = 3,
       value = paste0(DEATH_JAPAN, ' (+', DEATH_JAPAN_DIFF, ')'),
       subtitle = lang[[langCode]][7],
       icon = icon('cross'),
