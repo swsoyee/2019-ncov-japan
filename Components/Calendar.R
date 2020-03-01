@@ -54,12 +54,18 @@ output$curedCalendar <- renderEcharts4r({
 output$renderCalendar <- renderUI({
   if (input$linePlot == 'confirmed') {
     tagList(
-      actionBttn(inputId = 'withoutShipCalendar', 
-                 label = lang[[langCode]][82], size = 'xs', style = 'fill', color = 'danger'),
-      actionBttn(inputId = 'shipCalendar', 
-                 label = lang[[langCode]][81], size = 'xs', style = 'fill', color = 'danger'),
-      actionBttn(inputId = 'allCalendar',
-                 label = lang[[langCode]][80], size = 'xs', style = 'fill', color = 'danger'),
+      actionButton(inputId = 'withoutShipCalendar', 
+                 label = lang[[langCode]][82]# , 
+                 # size = 'xs', style = 'fill', color = 'danger'
+                 ),
+      actionButton(inputId = 'shipCalendar', 
+                 label = lang[[langCode]][81]# ,
+                 # size = 'xs', style = 'fill', color = 'danger'
+                 ),
+      actionButton(inputId = 'allCalendar',
+                 label = lang[[langCode]][80]# ,
+                 #size = 'xs', style = 'fill', color = 'danger'
+                 ),
       echarts4rOutput('confirmedCalendar', height = '130px') 
     )
   } else {
