@@ -7,14 +7,18 @@ output$todayConfirmed <- renderUI({
                                             HAS_TODAY_CONFIRMED[i]), 
                                       status = 'danger', style = 'square')
     }
-    tagList(elements)
+    tagList(tags$b(lang[[langCode]][78]), elements)
   } else {
-    dashboardLabel(lang[[langCode]][63], status = 'danger', style = 'square') # 新たに確認された感染者はいません
+    tagList(tags$b(lang[[langCode]][78]), 
+            dashboardLabel(lang[[langCode]][63], status = 'danger', style = 'square') # なし
+    )
   }
 })
 
 output$todayCured <- renderUI({
-  dashboardLabel(lang[[langCode]][87], status = 'success', style = 'square')
+  tagList(tags$b(lang[[langCode]][78]), 
+          dashboardLabel(lang[[langCode]][87], status = 'success', style = 'square')
+  )
 })
 
 output$todayDeath <- renderUI({
@@ -26,8 +30,10 @@ output$todayDeath <- renderUI({
                                             HAS_TODAY_DEATH[i]), 
                                       status = 'primary', style = 'square')
     }
-    tagList(elements)
+    tagList(tags$b(lang[[langCode]][78]), elements)
   } else {
-    dashboardLabel(lang[[langCode]][73], status = 'primary', style = 'square') # 新た死者は出ていません
+    tagList(tags$b(lang[[langCode]][78]), 
+            dashboardLabel(lang[[langCode]][73], status = 'primary', style = 'square') # なし
+    )
   }
 })

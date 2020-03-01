@@ -146,23 +146,14 @@ fluidPage(
           width = 4,
           tags$b('感染者'),
           echarts4rOutput('confirmedBar', height = '20px') %>% withSpinner(),
-          tagList(tags$b(lang[[langCode]][78])
-                  # , tags$small(UPDATE_DATETIME)
-                  ),
           uiOutput('todayConfirmed'),
           tags$br(),
           tags$b('退院者'),
           echarts4rOutput('curedBar', height = '20px') %>% withSpinner(),
-          tagList(tags$b(lang[[langCode]][78])
-                  # , tags$small(RECOVERED_FILE_UPDATE_DATETIME)
-                  ),
           uiOutput('todayCured'),
           tags$br(),
           tags$b('死亡者'),
           echarts4rOutput('deathBar', height = '20px') %>% withSpinner(),
-          tagList(tags$b(lang[[langCode]][78])
-                  # , tags$small(DEATH_FILE_UPDATE_DATETIME)
-                  ),
           uiOutput('todayDeath'),
           tags$hr(),
           uiOutput('renderCalendar')
