@@ -1,48 +1,51 @@
 # ====感染確認推移図====
 output$confirmedLine <- renderEcharts4r({
   dt <- confirmedDataByDate()
-  defaultUnselected <- list(F, F)
-  names(defaultUnselected) <- c(lang[[langCode]][35], lang[[langCode]][76])
-  dt %>% 
-    e_charts(date) %>% 
-    # 本土
-    e_area(domestic, name = lang[[langCode]][75], stack = "grp", itemStyle = list(color = middleRed)) %>%
-    # 検疫/職員
-    e_area(officer, name = lang[[langCode]][55], stack = "grp", itemStyle = list(color = darkRed)) %>%
-    # チャーター便
-    e_area(flight, name = lang[[langCode]][36],stack = "grp", itemStyle = list(color = lightYellow)) %>%
-    # 新規感染者数（日次、クルーズ船を除く）
-    e_bar(dailyDiff, name = lang[[langCode]][77], stack = 'line', y_index = 1) %>%
-    e_mark_point(lang[[langCode]][77], data = list(type = "max")) %>%
-    # クルーズ船
-    e_area(ship, name = lang[[langCode]][35], stack = "grp", itemStyle = list(color = lightRed)) %>%
-    # クルーズ船の新規感染者数（日次）
-    e_bar(dailyDiffShip, name = lang[[langCode]][76], stack = 'line', y_index = 1) %>%
-    e_mark_point(lang[[langCode]][76], data = list(type = "max")) %>%
-    e_legend(selected = defaultUnselected, top = '7%', left = '8%', type = 'scroll', orient = 'vertical') %>% 
-    e_grid(left = '5%', right = '8%', bottom = '20%', top = '7%') %>%
-    e_x_axis(splitLine =  list(show = F)) %>%
-    e_y_axis(splitLine = list(show = F), index = 1, max = 120) %>%
-    e_y_axis(splitLine = list(show = F)) %>%
-    e_zoom() %>% e_datazoom() %>%
-    e_tooltip(trigger = 'axis')
+
+  e <- dt %>% 
+    e_charts(date) %>%
+    e_grid(left = '10%', right = '8%', bottom = '18%', top = '7%') %>%
+    e_x_axis(splitLine = list(show = F)) %>%
+    e_y_axis(splitLine = list(show = F), index = 0) %>%
+    e_y_axis(splitLine = list(show = F), index = 1) %>%
+    # e_zoom() %>% e_datazoom() %>%
+    e_legend(type = 'scroll', orient = 'vertical', left = '10%', top = '7%') %>%
+    e_tooltip(trigger = 'axis') %>% e_theme("essos") %>% e_color(background = '#FFFFFF')
+
+  for(i in input$regionPicker) {
+    itemTotal <- paste0(i, '合計')
+    itemNew <- paste0(i, '新規')
+    assign(itemTotal, itemTotal)
+    assign(i, i)
+    e <- e %>%
+      e_line_(itemTotal, name = itemTotal, stack = 'total') %>%
+      e_bar_(i, name = paste0(i, '新規'), stack = 'new', y_index = 1)
+  }
+  e
+})
+
+output$confirmedLineWrapper <- renderUI({
+  if(is.null(input$regionPicker)) {
+    tags$p('未選択です。地域を選択してください。')
+  } else {
+    echarts4rOutput('confirmedLine')
+  }
 })
 
 confirmedDataByDate <- reactive({
-  domestic <- byDate[, c(2:48)]
-  domestic <- cumsum(rowSums(domestic[, 1:ncol(domestic)]))
-  columnName <- c('date', 'domestic', 'flight', 'officer', 'ship', 'dailyDiff', 'dailyDiffShip', 'dailyDiffAll')
-  dt <- data.table(byDate$date,
-                   domestic,
-                   cumsum(byDate[, 49]),
-                   cumsum(byDate[, 50]),
-                   cumsum(byDate[, 51]),
-                   rowSums(byDate[, 2:(ncol(byDate)-1)]),
-                   byDate$クルーズ船,
-                   rowSums(byDate[, 2:(ncol(byDate)-1)]) + byDate$クルーズ船
-  )
-  colnames(dt) <- columnName
-  dt
+  dt <- data.frame(byDate)
+  dt$国内 <- rowSums(byDate[, c(2:48)])
+  if(!is.null(input$regionPicker)) {
+    dt <- dt[, c('date', input$regionPicker)]
+    # dt <- dt[, c('date', 'チャーター便', '国内', '検疫職員')] # TEST
+    for (i in 2:ncol(dt)) {
+      indexName <- colnames(dt)[i]
+      dt[, paste0(colnames(dt)[i], '合計')] <- cumsum(dt[, i])
+    }
+    dt
+  } else {
+    dt[1] # 日付のカラムだけを返す
+  }
 })
 
 curedDataByDate <- reactive({

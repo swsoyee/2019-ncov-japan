@@ -116,17 +116,17 @@ fluidPage(
                 pickerInput(
                   inputId = 'regionPicker', 
                   label = '地域選択', 
-                  choices = c('実装中' = 'all'), 
-                  selected = 'all',
+                  choices = regionName, 
+                  selected = c('国内', lang[[langCode]][36], '検疫職員'),
                   options = list(
                     `actions-box` = TRUE, 
                     size = 10,
                     `selected-text-format` = "count > 3"
                   ), 
-                  multiple = T, width = '80%', inline = T
+                  multiple = T, width = '70%', inline = T
                 )
               )),
-              echarts4rOutput('confirmedLine') %>% withSpinner()
+              uiOutput('confirmedLineWrapper') %>% withSpinner()
               ),
             tabPanel(
               # 退院者推移
@@ -156,6 +156,7 @@ fluidPage(
           echarts4rOutput('deathBar', height = '20px') %>% withSpinner(),
           uiOutput('todayDeath'),
           tags$hr(),
+          tags$b('新規（日次）ヒートマップ'),
           uiOutput('renderCalendar')
         )
       ),
