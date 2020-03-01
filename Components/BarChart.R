@@ -104,9 +104,18 @@ output$confirmedBar <- renderEcharts4r({
     e_y_axis(max = 100, splitLine = list(show = F), show = F) %>%
     e_x_axis(splitLine = list(show = F), show = F) %>%
     e_grid(left = '0%', right = '0%', top = '0%', bottom = '0%') %>%
+    e_labels(position = 'inside', formatter = htmlwidgets::JS('
+      function(params) {
+        return(params.value[0] + "%")
+      }
+    ')) %>%
     e_legend(show = F) %>%
     e_flip_coords() %>%
-    e_tooltip()
+    e_tooltip(formatter = htmlwidgets::JS(paste0('
+      function(params) {
+        return(params.seriesName + "：" + Math.round(params.value[0] / 100 * ', TOTAL_JAPAN, ', 0) + "名")
+      }
+    ')))
 })
 
 # ====退院者割合====
@@ -124,9 +133,18 @@ output$curedBar <- renderEcharts4r({
     e_y_axis(max = 100, splitLine = list(show = F), show = F) %>%
     e_x_axis(splitLine = list(show = F), show = F) %>%
     e_grid(left = '0%', right = '0%', top = '0%', bottom = '0%') %>%
+    e_labels(position = 'inside', formatter = htmlwidgets::JS('
+      function(params) {
+        return(params.value[0] + "%")
+      }
+    ')) %>%
     e_legend(show = F) %>%
     e_flip_coords() %>%
-    e_tooltip()
+    e_tooltip(formatter = htmlwidgets::JS(paste0('
+      function(params) {
+        return(params.seriesName + "：" + Math.round(params.value[0] / 100 * ', CURED_TOTAL, ', 0) + "名")
+      }
+    ')))
 })
 
 # ====死亡者割合====
@@ -145,6 +163,15 @@ output$deathBar <- renderEcharts4r({
     e_x_axis(splitLine = list(show = F), show = F) %>%
     e_grid(left = '0%', right = '0%', top = '0%', bottom = '0%') %>%
     e_legend(show = F) %>%
+    e_labels(position = 'inside', formatter = htmlwidgets::JS('
+      function(params) {
+        return(params.value[0] + "%")
+      }
+    ')) %>%
     e_flip_coords() %>%
-    e_tooltip()
+    e_tooltip(formatter = htmlwidgets::JS(paste0('
+      function(params) {
+        return(params.seriesName + "：" + Math.round(params.value[0] / 100 * ', DEATH_TOTAL, ', 0) + "名")
+      }
+    ')))
 })
