@@ -184,6 +184,20 @@ twitterUrl <- paste0('https://twitter.com/intent/tweet?text=新型コロナウ�
                      '新型コロナウイルス,新型コロナウイルス速報',
                      '&url=https://covid-2019.live/')
 
+lightRed <- '#F56954'
+middleRed <- '#DD4B38'
+darkRed <- '#B03C2D'
+lightYellow <- '#F8BF76'
+middleYellow <- '#F39C11'
+darkYellow <- '#DB8B0A'
+lightGreen <- '#00A65A'
+middleGreen <- '#01A65A'
+darkGreen <- '#088448'
+lightNavy <- '#5A6E82'
+middelNavy <- '#001F3F'
+darkNavy <- '#001934'
+lightGrey <- '#F5F5F5'
+
 # ====メゾット====
 getChangeIcon <- function(number) {
   if (number > 0) {

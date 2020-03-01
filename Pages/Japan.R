@@ -64,24 +64,31 @@ fluidPage(
       footer_padding = F
     )
   ),
+  # バリューボックス
   fluidRow(
-    # 日本領土内のPCR陽性確認数の表示ボックス
     valueBox(
-      width = 4,
+      width = 3,
+      value = 4061 + 2209,
+      subtitle = lang[[langCode]][90],
+      icon = icon('vials'),
+      color = "yellow"
+    ),
+    valueBox(
+      width = 3,
       value = paste0(TOTAL_JAPAN, ' (+', TOTAL_JAPAN_DIFF, ')'),
       subtitle = lang[[langCode]][60],
       icon = icon('procedures'),
       color = "red"
     ),
     valueBox(
-      width = 4,
+      width = 3,
       value = paste0(CURED_WITHIN, ' (+', CURED_WITHIN_DIFF, ')'),
       subtitle = lang[[langCode]][6],
       icon = icon('heart'),
       color = "green"
     ),
     valueBox(
-      width = 4,
+      width = 3,
       value = paste0(DEATH_JAPAN, ' (+', DEATH_JAPAN_DIFF, ')'),
       subtitle = lang[[langCode]][7],
       icon = icon('cross'),
@@ -90,32 +97,86 @@ fluidPage(
   ),
   fluidRow(
     boxPlus(
-      width = 4,
+      # 国内状況推移
+      title = tagList(icon('chart-line'), lang[[langCode]][88]),
+      closable = F,
+      collapsible = T,
+      width = 12,
       fluidRow(
         column(
+          width = 8,
+          tabsetPanel(
+            id = 'linePlot',
+            tabPanel(
+              # 感染者数の推移
+              title = lang[[langCode]][3], 
+              value = 'confirmed',
+              fluidRow(column(11.9, offset = 0.1,
+                tags$br(),
+                pickerInput(
+                  inputId = 'regionPicker', 
+                  label = '地域選択', 
+                  choices = c('実装中' = 'all'), 
+                  selected = 'all',
+                  options = list(
+                    `actions-box` = TRUE, 
+                    size = 10,
+                    `selected-text-format` = "count > 3"
+                  ), 
+                  multiple = T, width = '80%', inline = T
+                )
+              )),
+              echarts4rOutput('confirmedLine') %>% withSpinner()
+              ),
+            tabPanel(
+              # 退院者推移
+              title = lang[[langCode]][89],
+              value = 'cured',
+              fluidRow(
+                column(width = 12,
+                  tags$br(),
+                  tags$p('開発バージョンです。最終版ではありません')
+                )
+              ),
+              echarts4rOutput('recoveredLine') %>% withSpinner(),
+            )
+          )
+        ),
+        column(
           width = 4,
+          tags$b('感染者'),
+          echarts4rOutput('confirmedBar', height = '20px') %>% withSpinner(),
+          tagList(tags$b(lang[[langCode]][78]), tags$small(UPDATE_DATETIME)),
+          uiOutput('todayConfirmed'),
+          tags$br(),
+          tags$b('退院者'),
+          echarts4rOutput('curedBar', height = '20px') %>% withSpinner(),
+          tagList(tags$b(lang[[langCode]][78]), tags$small(RECOVERED_FILE_UPDATE_DATETIME)),
+          uiOutput('todayCured'),
+          tags$br(),
+          tags$b('死亡者'),
+          echarts4rOutput('deathBar', height = '20px') %>% withSpinner(),
+          tagList(tags$b(lang[[langCode]][78]), tags$small(DEATH_FILE_UPDATE_DATETIME)),
+          uiOutput('todayDeath'),
+          tags$hr(),
+          uiOutput('renderCalendar')
+        )
+      ),
+      tags$hr(),
+      fluidRow(
+        column(
+          width = 2,
           # 国内事例
           descriptionBlock(
-            number = TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF,
+            number = TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF,
             number_color = 'red',
-            number_icon = getChangeIcon(TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF),
-            header = TOTAL_DOMESITC + TOTAL_OFFICER,
+            number_icon = getChangeIcon(TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF),
+            header = TOTAL_DOMESITC + TOTAL_OFFICER + TOTAL_FLIGHT,
             text = lang[[langCode]][4]
           )
         ),
         column(
-          width = 4,
-          # チャーター便
-          descriptionBlock(
-            number = TOTAL_FLIGHT_DIFF,
-            number_color = 'red',
-            number_icon = getChangeIcon(TOTAL_FLIGHT_DIFF),
-            header = TOTAL_FLIGHT,
-            text = lang[[langCode]][36]
-          )
-        ),
-        column(
-          width = 4,
+          width = 2,
           # クルーズ船
           descriptionBlock(
             number = TOTAL_SHIP_DIFF,
@@ -123,30 +184,10 @@ fluidPage(
             number_icon = getChangeIcon(TOTAL_SHIP_DIFF),
             header = TOTAL_SHIP,
             text = lang[[langCode]][35],
-            right_border = F
           )
-        )
-      ),
-      footer = tagList(fluidRow(
-        column(
-          width = 6,
-          # plotlyOutput('confirmedPie', height = '150px') %>% withSpinner()
-          echarts4rOutput('confirmedPiePlus', height = '150px') %>% withSpinner()
         ),
-        column(width = 6,
-               # tags$h4(paste0(UPDATE_DATE, lang[[langCode]][64])),
-               tags$h4(lang[[langCode]][78]),
-               uiOutput('todayConfirmed'))
-      ),
-      tags$small(paste(
-        lang[[langCode]][62], UPDATE_DATETIME
-      )))
-    ),
-    boxPlus(
-      width = 4,
-      fluidRow(
         column(
-          width = 6,
+          width = 2,
           # 国内事例
           descriptionBlock(
             number = CURED_DOMESTIC_DIFF,
@@ -157,7 +198,7 @@ fluidPage(
           )
         ),
         column(
-          width = 6,
+          width = 2,
           # チャーター便
           descriptionBlock(
             number = CURED_FLIGHT_DIFF,
@@ -165,28 +206,10 @@ fluidPage(
             number_icon = getChangeIcon(CURED_FLIGHT_DIFF),
             header = CURED_FLIGHT,
             text = lang[[langCode]][36],
-            right_border = F
           )
-        )
-      ),
-      footer = tagList(fluidRow(
-        column(
-          width = 6,
-          # plotlyOutput('curedPie', height = '150px') %>% withSpinner()
-          echarts4rOutput('curedPiePlus', height = '150px') %>% withSpinner()
         ),
-        column(width = 6,
-               tags$h4(lang[[langCode]][78]))
-      ),
-      tags$small(
-        paste(lang[[langCode]][62], RECOVERED_FILE_UPDATE_DATETIME)
-      ))
-    ),
-    boxPlus(
-      width = 4,
-      fluidRow(
         column(
-          width = 6,
+          width = 2,
           # 国内事例
           descriptionBlock(
             number = DEATH_DOMESITC_DIFF + DEATH_OFFICER_DIFF,
@@ -197,7 +220,7 @@ fluidPage(
           )
         ),
         column(
-          width = 6,
+          width = 2,
           # クルーズ船
           descriptionBlock(
             number = DEATH_SHIP_DIFF,
@@ -208,24 +231,8 @@ fluidPage(
             right_border = F
           )
         )
-      ),
-      footer = tagList(fluidRow(
-        column(
-          width = 6,
-          # plotlyOutput('deathPie', height = '150px') %>% withSpinner()
-          echarts4rOutput('deathPiePlus', height = '150px') %>% withSpinner()
-        ),
-        column(width = 6,
-               # tags$h4(paste0(DEATH_UPDATE_DATE, lang[[langCode]][64])),
-               tags$h4(lang[[langCode]][78]),
-               uiOutput('todayDeath')
-               )
-      ),
-      tags$small(
-        paste(lang[[langCode]][62], DEATH_FILE_UPDATE_DATETIME)
-      ))
     )
-  ),
+  )),
   fluidRow(
     boxPlus(
       width = 4,
@@ -254,44 +261,6 @@ fluidPage(
       echarts4rOutput('totalConfirmedByRegionPlot')  %>% withSpinner()
     ),
     box(width = 4, dataTableOutput('news') %>% withSpinner())
-  ),
-  fluidRow(
-    # tabBox(
-    #   width = 6,
-    #   # 感染者数の推移
-    #   title = tagList(icon('chart-line'), lang[[langCode]][3]),
-    #   # 国内事例
-    #   tabPanel(title = lang[[langCode]][4], icon = icon('home'),
-    #            plotlyOutput('domesticLine') %>% withSpinner()),
-    #   # クルーズ船
-    #   tabPanel(title = lang[[langCode]][35], icon = icon('ship'),
-    #            plotlyOutput('shipLine') %>% withSpinner())
-    # ),
-    boxPlus(
-      width = 6,
-      title = tagList(icon('chart-line'), lang[[langCode]][3]), 
-      closable = F,
-      echarts4rOutput('confirmedLine') %>% withSpinner(),
-      tags$hr(),
-      actionBttn(inputId = 'withoutShipCalendar', label = lang[[langCode]][82], size = 'xs', style = 'fill'),
-      actionBttn(inputId = 'shipCalendar', label = lang[[langCode]][81], size = 'xs', style = 'fill'),
-      actionBttn(inputId = 'allCalendar', label = lang[[langCode]][80], size = 'xs', style = 'fill'),
-      echarts4rOutput('confirmedCalendar', height = '170px') %>% withSpinner(),
-      footer = tags$small(paste(
-        lang[[langCode]][62], UPDATE_DATETIME
-      ))
-    ),
-    boxPlus(
-      title = tagList(icon('hospital'), lang[[langCode]][53]),
-      width = 6,
-      closable = F,
-      echarts4rOutput('recoveredLine') %>% withSpinner(),
-      tags$hr(),
-      echarts4rOutput('curedCalendar', height = '196px') %>% withSpinner(),
-      footer = tags$small(
-        paste(lang[[langCode]][62], RECOVERED_FILE_UPDATE_DATETIME)
-      )
-    )
   ),
   fluidRow(
     boxPlus(title = tagList(icon('connectdevelop'), '感染経路ネットワーク'),
