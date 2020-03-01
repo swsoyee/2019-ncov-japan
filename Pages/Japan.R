@@ -233,31 +233,25 @@ fluidPage(
   )),
   fluidRow(
     boxPlus(
-      width = 4,
       title = tagList(icon('map'), lang[[langCode]][2]),
-      plotOutput('map', height = '370px') %>% withSpinner(),
-      actionBttn(inputId = 'switchCaseMap', label = '事例マップへ',
-                 block = T, size ='xs', style = 'fill'),
+      width = 8,
+      fluidRow(
+        column(
+          width = 6,
+          plotOutput('map', height = '370px') %>% withSpinner(),
+          actionButton(inputId = 'switchCaseMap', label = '事例マップへ'),
+        ),
+        column(
+          width = 6,
+          boxPad(
+            echarts4rOutput('totalConfirmedByRegionPlot')  %>% withSpinner()
+          )
+        ),
       closable = F,
       footer = tags$small(paste(
         lang[[langCode]][62], UPDATE_DATETIME
-      ))
-    ),
-    box(
-      width = 4,
-      checkboxGroupButtons(
-        inputId = "showOtherRegion",
-        label = lang[[langCode]][54],
-        choices = showOption,
-        justified = TRUE,
-        status = "primary",
-        checkIcon = list(
-          yes = icon("ok", lib = "glyphicon"),
-          no = icon("remove", lib = "glyphicon")
-        )
-      ),
-      echarts4rOutput('totalConfirmedByRegionPlot')  %>% withSpinner()
-    ),
+      )),
+    )),
     box(width = 4, dataTableOutput('news') %>% withSpinner())
   ),
   fluidRow(

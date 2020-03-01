@@ -1,29 +1,60 @@
 # ====区域ごとの確認数====
 output$totalConfirmedByRegionPlot <- renderEcharts4r({
   dt <- totalConfirmedByRegionData()
-  dt$name <- paste(totalConfirmedByRegionData()$region, totalConfirmedByRegionData()$count)
+  # dt$name <- paste(totalConfirmedByRegionData()$region, totalConfirmedByRegionData()$count)
+  dt$minusUntilToday <- 0 - dt$untilToday
+  dt$minusToday <- 0 - dt$today
+  dt$minusTotal <- dt$minusUntilToday + dt$minusToday
   dt %>%
-    e_charts(name) %>%
-    e_bar(untilToday, 
+    e_charts(region) %>%
+    e_bar(minusUntilToday,
           stack = '1',
-          name = lang[[langCode]][79],
-          label = list(show = T)) %>%
-    e_bar(today, 
-          stack = '1',
-          name = lang[[langCode]][78],
-          label = list(show = T, formatter = htmlwidgets::JS('
-          function(params) {
-            if (params.value[0] > 0) {
-              return params.value[0];
-            } else {
-              return "";
+          z = 2,
+          itemStyle = list(color = middleRed),
+          label = list(show = T, position = 'inside', color = '#FFFFFF', formatter = htmlwidgets::JS('
+            function(params) {
+              if (params.value[0] < 0) {
+                return(0 - params.value[0]);
+              } else {
+                return("");
+              }
             }
-          }
-                                                             '))) %>%
-    e_grid(left = '20%', right = '5%', bottom = '5%', top = '0%') %>%
-    e_x_axis(splitLine = list(show = F)) %>%
-    e_y_axis(splitLine = list(show = F)) %>%
-    e_legend(orient = 'vertical', top = '5%', right = '5%') %>%
+          ')),
+          name = lang[[langCode]][79]) %>%
+    e_bar(minusToday,
+          stack = '1',
+          z = 2,
+          itemStyle = list(color = lightNavy),
+          label = list(show = T, position = 'inside', color = '#FFFFFF', formatter = htmlwidgets::JS('
+            function(params) {
+              if (params.value[0] < 0) {
+                return(0 - params.value[0]);
+              } else {
+                return("");
+              }
+            }
+          ')),
+          name = lang[[langCode]][78]) %>%
+    e_bar(minusTotal,
+          z = 1,
+          itemStyle = list(color = darkRed),
+          barGap = '-100%',
+          label = list(show = T, position = 'left', formatter = htmlwidgets::JS('
+            function(params) {
+              if (params.value[0] < 0) {
+                return(params.value[1] + " (" +(0 - params.value[0] + ")"));
+              } else {
+                return("");
+              }
+            }
+          ')),
+          name = '合計') %>%
+    e_grid(right = '0%', bottom = '5%', top = '0%', left = '20%') %>%
+    e_x_axis(splitLine = list(show = F), axisLabel = list(show = F),
+             axisLine = list(show = F)) %>%
+    e_y_axis(splitLine = list(show = F), show = F) %>%
+    e_legend(orient = 'vertical', top = '0%', left = '50%') %>%
+    e_legend_unselect(name = lang[[langCode]][78]) %>%
     e_flip_coords() %>%
     e_tooltip(trigger = 'axis', 
               axisPointer = list(type = 'shadow'))
@@ -48,7 +79,7 @@ totalConfirmedByRegionData <- reactive({
       total <- total[region != lang[[langCode]][36]] # チャーター便
     }
   }
-  total[count > 0][order(-count)]
+  dt <- total[count > 0][order(-count)]
 })
 
 output$genderBar <- renderEcharts4r({
