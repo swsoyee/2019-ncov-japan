@@ -12,6 +12,7 @@ library(rjson)
 library(htmltools)
 library(leaflet.minicharts)
 library(echarts4r)
+library(echarts4r.maps)
 
 # ====
 # ファイルのパス設定
@@ -134,6 +135,7 @@ news <- fread(paste0(DATA_PATH, 'mhlw_houdou.csv'))
 # province[, Prefecture := gsub("東京都", "東京", province$Prefecture)]
 # # データ追加
 # province[, Data := rowSums(db[, 2:ncol(db)])]
+provinceCode <- fread(paste0(DATA_PATH, 'prefectures.csv'))
 
 # 詳細データ
 detail <- fread(paste0(DATA_PATH, 'detail.csv'),

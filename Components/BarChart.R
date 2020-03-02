@@ -1,6 +1,6 @@
 # ====区域ごとの確認数====
 output$totalConfirmedByRegionPlot <- renderEcharts4r({
-  dt <- totalConfirmedByRegionData()
+  dt <- totalConfirmedByRegionData()[count > 0][order(-count)]
   # dt$name <- paste(totalConfirmedByRegionData()$region, totalConfirmedByRegionData()$count)
   dt$minusUntilToday <- 0 - dt$untilToday
   dt$minusToday <- 0 - dt$today
@@ -77,8 +77,7 @@ totalConfirmedByRegionData <- reactive({
       total <- total[region != lang[[langCode]][36]] # チャーター便
     }
   }
-  dt <- total[count > 0][order(-count)]
-  dt
+  total
 })
 
 output$genderBar <- renderEcharts4r({

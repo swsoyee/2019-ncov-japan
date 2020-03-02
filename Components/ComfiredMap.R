@@ -22,6 +22,50 @@ output$map <- renderPlot({
   p
 })
 
+output$echartsMap <- renderEcharts4r({
+  mapDt <- totalConfirmedByRegionData()
+  # mapDt <- total # TEST
+  mapDt <- mapDt[!(region %in% c('クルーズ船', 'チャーター便', '検疫職員'))]
+  mapDt <- merge(x = mapDt, y = provinceCode, by.x = 'region', by.y = 'name-ja', all = T)
+  mapDt[is.na(mapDt)] <- 0
+  mapDt <- mapDt[, .(region, `name-en`, count)]
+  colnames(mapDt) <- c('ja', 'en', 'count')
+  nameMap <- as.list(mapDt$ja)
+  names(nameMap) <- mapDt$en
+  mapDt %>%
+    e_charts(ja) %>%
+    em_map("Japan") %>%
+    e_map(count, map = "Japan",
+          name = '感染確認数', roam = T,
+          nameMap = nameMap,
+          layoutSize = '50%',
+          scaleLimit = list(min = 0.7, max = 5)) %>%
+    e_visual_map(
+      count,
+      top = '5%',
+      left = '5%',
+      inRange = list(color = c('#EEEEEE', middleRed, darkRed)),
+      type = 'piecewise',
+      splitList = list(
+        list(min = 50),
+        list(min = 30, max = 50),
+        list(min = 10, max = 30),
+        list(min = 5, max = 10),
+        list(min = 1, max = 5),
+        list(value = 0)
+      )
+    ) %>% e_color(background = '#FFFFFF') %>%
+    e_tooltip(formatter = htmlwidgets::JS('
+      function(params) {
+        if(params.value) {
+          return(params.name + "：" + params.value)
+        } else {
+          return("");
+        }
+      }
+    '))
+})
+
 # ====事例マップ====
 output$caseMap <- renderLeaflet({
   defaultRadius <- 8

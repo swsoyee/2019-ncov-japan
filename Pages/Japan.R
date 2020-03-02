@@ -240,7 +240,8 @@ fluidPage(
       fluidRow(
         column(
           width = 6,
-          plotOutput('map', height = '370px') %>% withSpinner(),
+          # plotOutput('map', height = '370px') %>% withSpinner(),
+          echarts4rOutput('echartsMap')  %>% withSpinner(),
           actionButton(inputId = 'switchCaseMap', label = '事例マップへ'),
         ),
         column(
@@ -249,11 +250,12 @@ fluidPage(
             echarts4rOutput('totalConfirmedByRegionPlot')  %>% withSpinner()
           )
         ),
-      closable = F,
+      closable = F
+      ),
       footer = tags$small(paste(
-        lang[[langCode]][62], UPDATE_DATETIME
-      )),
-    )),
+        lang[[langCode]][62], UPDATE_DATETIME, '開発＆調整中'
+      ))
+    ),
     box(width = 4, dataTableOutput('news') %>% withSpinner())
   ),
   fluidRow(

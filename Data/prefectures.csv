@@ -1,0 +1,48 @@
+id,name-ja,name-en,regions
+1,北海道,Hokkaido,0
+2,青森,Aomori,1
+3,岩手,Iwate,1
+4,宮城,Miyagi,1
+5,秋田,Akita,1
+6,山形,Yamagata,1
+7,福島,Fukushima,1
+8,茨城,Ibaraki,2
+9,栃木,Tochigi,2
+10,群馬,Gunma,2
+11,埼玉,Saitama,2
+12,千葉,Chiba,2
+13,東京,Tokyo,2
+14,神奈川,Kanagawa,2
+15,新潟,Niigata,3
+16,富山,Toyama,3
+17,石川,Ishikawa Prefecture,3
+18,福井,Fukui Prefecture,3
+19,山梨,Yamanashi,3
+20,長野,Nagano,3
+21,岐阜,Gifu Prefecture,3
+22,静岡,Shizuoka,3
+23,愛知,Aichi,3
+24,三重,Mie Prefecture,4
+25,滋賀,Shiga,4
+26,京都,Kyoto Prefecture,4
+27,大阪,Osaka Prefecture,4
+28,兵庫,Hyogo Prefecture,4
+29,奈良,Nara Prefecture,4
+30,和歌山,Wakayama Prefecture,4
+31,鳥取,Tottori Prefecture,5
+32,島根,Shimane,5
+33,岡山,Okayama Prefecture,5
+34,広島,Hiroshima,5
+35,山口,Yamaguchi,5
+36,徳島,Tokushima Prefecture,6
+37,香川,Kagawa Prefecture,6
+38,愛媛,Ehime Prefecture,6
+39,高知,Kōchi Prefecture,6
+40,福岡,Fukuoka Prefecture,7
+41,佐賀,Saga Prefecture,7
+42,長崎,Nagasaki,7
+43,熊本,Kumamoto,7
+44,大分,Oita,7
+45,宮崎,Miyazaki Prefecture,7
+46,鹿児島,Kagoshima Prefecture,7
+47,沖縄,Okinawa Prefecture,8
