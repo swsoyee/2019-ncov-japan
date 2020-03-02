@@ -1,5 +1,5 @@
 library(shiny)
-library(NipponMap)
+# library(NipponMap)
 library(shinydashboard)
 library(data.table)
 library(DT)
