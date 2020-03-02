@@ -55,9 +55,7 @@ output$totalConfirmedByRegionPlot <- renderEcharts4r({
     e_y_axis(splitLine = list(show = F), show = F) %>%
     e_legend(orient = 'vertical', top = '0%', left = '50%') %>%
     e_legend_unselect(name = lang[[langCode]][78]) %>%
-    e_flip_coords() %>%
-    e_tooltip(trigger = 'axis', 
-              axisPointer = list(type = 'shadow'))
+    e_flip_coords()
 })
 
 totalConfirmedByRegionData <- reactive({
@@ -80,6 +78,7 @@ totalConfirmedByRegionData <- reactive({
     }
   }
   dt <- total[count > 0][order(-count)]
+  dt
 })
 
 output$genderBar <- renderEcharts4r({

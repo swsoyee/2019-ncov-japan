@@ -234,6 +234,8 @@ fluidPage(
   fluidRow(
     boxPlus(
       title = tagList(icon('map'), lang[[langCode]][2]),
+      closable = F,
+      collapsible = T,
       width = 8,
       fluidRow(
         column(
