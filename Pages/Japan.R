@@ -68,7 +68,7 @@ fluidPage(
   fluidRow(
     valueBox(
       width = 3,
-      value = paste0(6674, ' (+96)'),
+      value = paste0(6773, ' (+99)'), # 開発待ち
       subtitle = lang[[langCode]][90],
       icon = icon('vials'),
       color = "yellow"
