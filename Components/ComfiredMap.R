@@ -52,7 +52,7 @@ output$echartsMap <- renderEcharts4r({
     e_visual_map(
       count,
       top = '5%',
-      left = '5%',
+      left = '0%',
       inRange = list(color = c('#EEEEEE', middleRed, darkRed)),
       type = 'piecewise',
       splitList = list(
@@ -64,6 +64,9 @@ output$echartsMap <- renderEcharts4r({
         list(value = 0)
       )
     ) %>% e_color(background = '#FFFFFF') %>%
+    e_timeline_opts(left = '0%', right = '0%', symbol = 'diamond',
+                    playInterval = 1000,
+                    currentIndex = nrow(byDate) - 1) %>%
     e_tooltip(formatter = htmlwidgets::JS('
       function(params) {
         if(params.value) {
