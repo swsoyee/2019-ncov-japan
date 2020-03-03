@@ -30,7 +30,6 @@ PAGE_PATH <- 'Pages/'
 byDate <- fread(paste0(DATA_PATH, 'byDate.csv'), header = T)
 byDate[is.na(byDate)] <- 0
 byDate$date <- lapply(byDate[, 1], function(x){as.Date(as.character(x), format = '%Y%m%d')})
-regionName <- c('国内', names(which(colSums(byDate[, 2:ncol(byDate)]) > 0)))
 
 # 退院データ
 recovered <- fread(paste0(DATA_PATH, 'recovered.csv'))
@@ -121,6 +120,21 @@ DEATH_WITHIN_DIFF <- DEATH_DOMESITC_DIFF + DEATH_OFFICER_DIFF + DEATH_FLIGHT_DIF
 DEATH_SHIP_DIFF <- sum(deathToday$クルーズ船) # クルーズ船のPCR陽性数
 DEATH_JAPAN_DIFF <- DEATH_WITHIN_DIFF +DEATH_SHIP_DIFF # 日本領土内のPCR陽性数
 
+
+# 地域選択に表示する項目名
+regionName <- colSums(byDate[, 2:ncol(byDate)])
+regionNamePref <- regionName[1:47]
+regionNamePref <- sort(regionNamePref[regionNamePref > 0], decreasing = T)
+regionNamePrefName <- paste0(names(regionNamePref), ' (', regionNamePref, ')')
+regionNameOther <- regionName[48:length(regionName)]
+regionNameOtherName <- paste0(names(regionNameOther), ' (', regionNameOther, ')')
+regionName <- c('国内', names(regionNameOther), names(regionNamePref))
+defaultSelectedRegionName <- regionName[1:3]
+
+names(regionName) <- c(paste0('都道府県合計', ' (', TOTAL_DOMESITC, ')'), 
+                       regionNameOtherName, 
+                       regionNamePrefName)
+regionName <- as.list(regionName)
 
 
 news <- fread(paste0(DATA_PATH, 'mhlw_houdou.csv'))

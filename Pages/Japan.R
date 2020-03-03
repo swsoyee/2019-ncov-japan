@@ -117,7 +117,7 @@ fluidPage(
                   inputId = 'regionPicker', 
                   label = '地域選択', 
                   choices = regionName, 
-                  selected = c('国内', lang[[langCode]][36], '検疫職員'),
+                  selected = defaultSelectedRegionName,
                   options = list(
                     `actions-box` = TRUE, 
                     size = 10,
