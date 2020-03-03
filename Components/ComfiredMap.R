@@ -22,18 +22,27 @@
 #   p
 # })
 
+cumSumConfirmedByDateAndRegion <- reactive({
+  dt <- data.frame(date = byDate$date)
+  for(i in 2:ncol(byDate)) {
+    dt[, i] = cumsum(byDate[, i, with = F])
+  }
+  dt <- reshape2::melt(dt, id.vars = 'date')
+  data.table(dt)
+})
+
 output$echartsMap <- renderEcharts4r({
-  mapDt <- totalConfirmedByRegionData()
-  # mapDt <- total # TEST
-  mapDt <- mapDt[!(region %in% c('クルーズ船', 'チャーター便', '検疫職員'))]
-  mapDt <- merge(x = mapDt, y = provinceCode, by.x = 'region', by.y = 'name-ja', all = T)
-  mapDt[is.na(mapDt)] <- 0
-  mapDt <- mapDt[, .(region, `name-en`, count)]
-  colnames(mapDt) <- c('ja', 'en', 'count')
+  mapDt <- cumSumConfirmedByDateAndRegion()
+  # mapDt <- data.table(dt) # TEST
+  mapDt <- mapDt[!(variable %in% c('クルーズ船', 'チャーター便', '検疫職員'))]
+  mapDt <- merge(x = mapDt, y = provinceCode, by.x = 'variable', by.y = 'name-ja', all = T)
+  mapDt <- mapDt[, .(date, variable, `name-en`, value)]
+  colnames(mapDt) <- c('date', 'ja', 'en', 'count')
   nameMap <- as.list(mapDt$ja)
   names(nameMap) <- mapDt$en
   mapDt %>%
-    e_charts(ja) %>%
+    group_by(date) %>% 
+    e_charts(ja, timeline = T) %>%
     em_map("Japan") %>%
     e_map(count, map = "Japan",
           name = '感染確認数', roam = T,
