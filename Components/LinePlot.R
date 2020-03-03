@@ -4,12 +4,13 @@ output$confirmedLine <- renderEcharts4r({
 
   e <- dt %>% 
     e_charts(date) %>%
-    e_grid(left = '10%', right = '8%', bottom = '18%', top = '7%') %>%
+    e_grid(left = '3%') %>%
     e_x_axis(splitLine = list(show = F)) %>%
-    e_y_axis(splitLine = list(show = F), index = 0) %>%
-    e_y_axis(splitLine = list(show = F), index = 1) %>%
+    e_y_axis(splitLine = list(show = F), index = 0, axisLabel = list(inside = T)) %>%
+    e_y_axis(splitLine = list(show = F), index = 1, axisLabel = list(inside = T)) %>%
+    e_title(subtext = paste0(lang[[langCode]][62], UPDATE_DATETIME)) %>%
     # e_zoom() %>% e_datazoom() %>%
-    e_legend(type = 'scroll', orient = 'vertical', left = '10%', top = '7%') %>%
+    e_legend(type = 'scroll', orient = 'vertical', left = '10%', top = '15%') %>%
     e_tooltip(trigger = 'axis') %>% e_theme("essos") %>% e_color(background = '#FFFFFF')
 
   for(i in input$regionPicker) {
@@ -37,7 +38,7 @@ confirmedDataByDate <- reactive({
   dt$国内 <- rowSums(byDate[, c(2:48)])
   if(!is.null(input$regionPicker)) {
     dt <- dt[, c('date', input$regionPicker)]
-    # dt <- dt[, c('date', 'チャーター便', '国内', '検疫職員')] # TEST
+    # dt <- dt[, 1:4] # TEST
     for (i in 2:ncol(dt)) {
       indexName <- colnames(dt)[i]
       dt[, paste0(colnames(dt)[i], '合計')] <- cumsum(dt[, i])

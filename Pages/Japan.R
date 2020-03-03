@@ -115,13 +115,15 @@ fluidPage(
                 tags$br(),
                 pickerInput(
                   inputId = 'regionPicker', 
-                  label = '地域選択', 
+                  label = lang[[langCode]][93], # 地域選択
                   choices = regionName, 
                   selected = defaultSelectedRegionName,
                   options = list(
                     `actions-box` = TRUE, 
                     size = 10,
-                    `selected-text-format` = "count > 3"
+                    `deselect-all-text` = lang[[langCode]][91], # クリア
+                    `select-all-text` = lang[[langCode]][92], # 全部
+                    `selected-text-format` = lang[[langCode]][94] # 三件以上選択されました
                   ), 
                   multiple = T, width = '70%', inline = T
                 )
