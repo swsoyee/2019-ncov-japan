@@ -102,3 +102,31 @@ output$recoveredLine <- renderEcharts4r({
     e_datazoom() %>%
     e_tooltip(trigger = 'axis')
 })
+
+# ====PCR検査数====
+output$pcrLine <- renderEcharts4r({
+  dm <- domesticDailyReport[, .(date, pcr)]
+  fl <- flightDailyReport[, .(date, pcr)]
+  sp <- shipDailyReport[, .(date, pcr)]
+  
+  dt <- merge(x = dm, y = fl, by = 'date', all.x = T)
+  dt <- merge(x = dt, y = sp, by = 'date', all.y = T)
+  setnafill(dt, type = 'locf')
+  dt$date <- as.Date(as.character(dt$date), format = "%Y%m%d")
+  setnafill(dt, fill = 0)
+  
+  dt[ , diffDomestic := pcr.x - shift(pcr.x)]
+  dt[ , diffDomestic := pcr.x - shift(pcr.x)]
+  
+  dt %>%
+    e_chart(date) %>%
+    e_area(pcr, name = 'クルーズ船', stack = '1', itemStyle = list(color = darkYellow)) %>%
+    e_area(pcr.y, name = 'チャーター便', stack = '1', itemStyle = list(color = middleYellow)) %>%
+    e_area(pcr.x, name = '国内', stack = '1', itemStyle = list(color = lightYellow)) %>%
+    e_x_axis(splitLine = list(show = F)) %>%
+    e_y_axis(splitLine = list(show = F), axisLabel = list(inside = T)) %>%
+    e_title(subtext = '厚生労働省の日報のデータを使うため、１日の遅れがあります。') %>%
+    e_grid(left = '5%') %>%
+    e_legend(type = 'scroll', orient = 'vertical', left = '10%', top = '15%') %>%
+    e_tooltip(trigger = 'axis')
+})

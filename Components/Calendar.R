@@ -56,9 +56,13 @@ output$renderCalendar <- renderUI({
     } else {
       echarts4rOutput('confirmedCalendar', height = '130px')
     }
-  } else {
+  } else if (input$linePlot == 'discharged') {
     tagList(
       echarts4rOutput('curedCalendar', height = '130px') 
+    )
+  } else {
+    tagList(
+      tags$p('開発中')
     )
   }
 })

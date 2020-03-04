@@ -68,34 +68,34 @@ fluidPage(
   fluidRow(
     valueBox(
       width = 3,
-      value = paste0(sum(PCR_WITHIN, PCR_FLIGHT, PCR_SHIP), ' (+99)'), # 開発待ち
-      subtitle = lang[[langCode]][90],
+      value = sum(PCR_WITHIN, PCR_FLIGHT, PCR_SHIP), # 開発待ち
+      subtitle = paste0(lang[[langCode]][90], ' (+3835)'),
       icon = icon('vials'),
       color = "yellow"
     ),
     valueBox(
       width = 3,
-      value = paste0(TOTAL_JAPAN, ' (+', TOTAL_JAPAN_DIFF, ')'),
-      subtitle = lang[[langCode]][60],
+      value = TOTAL_JAPAN,
+      subtitle = paste0(lang[[langCode]][60], ' (+', TOTAL_JAPAN_DIFF, ')'),
       icon = icon('procedures'),
       color = "red"
     ),
     valueBox(
       width = 3,
-      value = paste0(DISCHARGE_TOTAL, 
-                     ' (+', 
-                     SYMPTOM_DISCHARGE_FLIGHT$diff + 
-                       SYMPTOM_DISCHARGE_WITHIN$diff + 
-                       SYMPTOMLESS_DISCHARGE_FLIGHT$diff + 
-                       SYMPTOMLESS_DISCHARGE_WITHIN$diff, ')'),
-      subtitle = lang[[langCode]][6],
+      value = DISCHARGE_TOTAL, 
+      subtitle = paste0(lang[[langCode]][6],
+                        ' (+', 
+                        SYMPTOM_DISCHARGE_FLIGHT$diff + 
+                          SYMPTOM_DISCHARGE_WITHIN$diff + 
+                          SYMPTOMLESS_DISCHARGE_FLIGHT$diff + 
+                          SYMPTOMLESS_DISCHARGE_WITHIN$diff, ')'),
       icon = icon('thumbs-up'),
       color = "green"
     ),
     valueBox(
       width = 3,
-      value = paste0(DEATH_JAPAN, ' (+', DEATH_JAPAN_DIFF, ')'),
-      subtitle = lang[[langCode]][7],
+      value = DEATH_JAPAN, 
+      subtitle = paste0(lang[[langCode]][7], ' (+', DEATH_JAPAN_DIFF, ')'),
       icon = icon('bible'),
       color = "navy"
     )
@@ -136,16 +136,28 @@ fluidPage(
               uiOutput('confirmedLineWrapper') %>% withSpinner()
               ),
             tabPanel(
+              # PCR検査数推移
+              title = 'PCR検査数推移', icon = icon('vials'),
+              value = 'pcr',
+              fluidRow(
+                column(width = 12,
+                       tags$br(),
+                       tags$p('開発バージョンです。最終版ではありません')
+                )
+              ),
+              echarts4rOutput('pcrLine') %>% withSpinner()
+            ),
+            tabPanel(
               # 退院者推移
               title = lang[[langCode]][89], icon = icon('thumbs-up'),
-              value = 'cured',
+              value = 'discharged',
               fluidRow(
                 column(width = 12,
                   tags$br(),
                   tags$p('開発バージョンです。最終版ではありません')
                 )
               ),
-              echarts4rOutput('recoveredLine') %>% withSpinner(),
+              echarts4rOutput('recoveredLine') %>% withSpinner()
             )
           )
         ),
