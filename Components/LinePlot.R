@@ -113,20 +113,24 @@ output$pcrLine <- renderEcharts4r({
   dt <- merge(x = dt, y = sp, by = 'date', all.y = T)
   setnafill(dt, type = 'locf')
   dt$date <- as.Date(as.character(dt$date), format = "%Y%m%d")
-  setnafill(dt, fill = 0)
   
   dt[ , diffDomestic := pcr.x - shift(pcr.x)]
-  dt[ , diffDomestic := pcr.x - shift(pcr.x)]
+  dt[ , diffFlight := pcr.y - shift(pcr.y)]
+  dt[ , diffShip := pcr - shift(pcr)]
+  setnafill(dt, fill = 0)
   
   dt %>%
     e_chart(date) %>%
     e_area(pcr, name = 'クルーズ船', stack = '1', itemStyle = list(color = darkYellow)) %>%
     e_area(pcr.y, name = 'チャーター便', stack = '1', itemStyle = list(color = middleYellow)) %>%
     e_area(pcr.x, name = '国内', stack = '1', itemStyle = list(color = lightYellow)) %>%
+    e_bar(diffDomestic, name = '国内新規', stack = '2', y_index = 1, itemStyle = list(color = darkYellow)) %>%
+    e_bar(diffFlight, name = 'チャーター便新規', stack = '2', y_index = 1, itemStyle = list(color = darkYellow)) %>%
+    e_bar(diffShip, name = 'クルーズ船新規', stack = '2', y_index = 1, itemStyle = list(color = darkYellow)) %>%
     e_x_axis(splitLine = list(show = F)) %>%
     e_y_axis(splitLine = list(show = F), axisLabel = list(inside = T)) %>%
-    e_title(subtext = '厚生労働省の日報のデータを使うため、１日の遅れがあります。') %>%
-    e_grid(left = '5%') %>%
+    e_title(subtext = 'PCR検査実施人数については複数の検体・検査を重複してカウントしている\n自治体からの報告は合計に含めていない。また、データ公表がない日に０件扱いします\n（今後適切に修正します）。') %>%
+    e_grid(left = '3%') %>%
     e_legend(type = 'scroll', orient = 'vertical', left = '10%', top = '15%') %>%
     e_tooltip(trigger = 'axis')
 })
