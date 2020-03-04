@@ -169,7 +169,7 @@ output$curedBar <- renderEcharts4r({
     e_bar(flightPer, 
           name = paste0(lang[[langCode]][36], ' (', lang[[langCode]][95], ')'), # チャーター便 （症状あり）
           stack = '1', itemStyle = list(color = darkGreen)) %>%
-    e_bar(flightPer, 
+    e_bar(symtomlessFlightPer, 
           name = paste0(lang[[langCode]][36], ' (', lang[[langCode]][96], ')'), # チャーター便 （無症状）
           stack = '1', itemStyle = list(color = superDarkGreen)) %>%
     e_y_axis(max = 100, splitLine = list(show = F), show = F) %>%
