@@ -19,8 +19,8 @@ output$confirmedLine <- renderEcharts4r({
     assign(itemTotal, itemTotal)
     assign(i, i)
     e <- e %>%
-      e_line_(itemTotal, name = itemTotal, stack = 'total') %>%
-      e_bar_(i, name = paste0(i, '新規'), stack = 'new', y_index = 1)
+      e_line_(itemTotal, name = itemTotal, stack = 'total', areaStyle = list(opacity = 0.4)) %>%
+      e_bar_(i, name = paste0(i, '新規'), stack = 'new', y_index = 1, itemStyle = list(color = middleRed))
   }
   e
 })
@@ -82,7 +82,7 @@ output$recoveredLine <- renderEcharts4r({
   curedDataByDate() %>%
   # dt %>%
     e_chart(date) %>%
-    e_area(total, name = lang[[langCode]][6], itemStyle = list(normal = list(color = '#2BA84A'))) %>%
+    e_line(total, name = lang[[langCode]][6], itemStyle = list(normal = list(color = '#2BA84A')), areaStyle = list(opacity = 0.4)) %>%
     e_bar(totalDiff, name = lang[[langCode]][77], itemStyle = list(normal = list(color = '#248232'))) %>%
     e_line(confirmingVerseConfirmed, name = lang[[langCode]][86], stack = '1', y_index = 1, itemStyle = list(color = '#083D77')) %>%
     e_line(severeVerseConfirmed, name = lang[[langCode]][85], stack = '1', y_index = 1, itemStyle = list(color = '#F95738')) %>%
@@ -121,12 +121,12 @@ output$pcrLine <- renderEcharts4r({
   
   dt %>%
     e_chart(date) %>%
-    e_area(pcr, name = 'クルーズ船', stack = '1', itemStyle = list(color = darkYellow)) %>%
-    e_area(pcr.y, name = 'チャーター便', stack = '1', itemStyle = list(color = middleYellow)) %>%
-    e_area(pcr.x, name = '国内', stack = '1', itemStyle = list(color = lightYellow)) %>%
-    e_bar(diffDomestic, name = '国内新規', stack = '2', y_index = 1, itemStyle = list(color = darkYellow)) %>%
-    e_bar(diffFlight, name = 'チャーター便新規', stack = '2', y_index = 1, itemStyle = list(color = darkYellow)) %>%
-    e_bar(diffShip, name = 'クルーズ船新規', stack = '2', y_index = 1, itemStyle = list(color = darkYellow)) %>%
+    e_line(pcr, name = 'クルーズ船', stack = '1', itemStyle = list(color = darkYellow), areaStyle = list(opacity = 0.4)) %>%
+    e_line(pcr.y, name = 'チャーター便', stack = '1', itemStyle = list(color = middleYellow), areaStyle = list(opacity = 0.4)) %>%
+    e_line(pcr.x, name = '国内', stack = '1', itemStyle = list(color = lightYellow), areaStyle = list(opacity = 0.4)) %>%
+    e_bar(diffDomestic, name = '国内新規', stack = '2', y_index = 1, itemStyle = list(color = middleYellow)) %>%
+    e_bar(diffFlight, name = 'チャーター便新規', stack = '2', y_index = 1, itemStyle = list(color = middleYellow)) %>%
+    e_bar(diffShip, name = 'クルーズ船新規', stack = '2', y_index = 1, itemStyle = list(color = middleYellow)) %>%
     e_x_axis(splitLine = list(show = F)) %>%
     e_y_axis(splitLine = list(show = F), axisLabel = list(inside = T)) %>%
     e_title(subtext = 'PCR検査実施人数については複数の検体・検査を重複してカウントしている\n自治体からの報告は合計に含めていない。また、データ公表がない日に０件扱いします\n（今後適切に修正します）。') %>%
