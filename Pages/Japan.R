@@ -68,7 +68,7 @@ fluidPage(
   fluidRow(
     valueBox(
       width = 3,
-      value = paste0(6773, ' (+99)'), # 開発待ち
+      value = paste0(sum(PCR_WITHIN, PCR_FLIGHT, PCR_SHIP), ' (+99)'), # 開発待ち
       subtitle = lang[[langCode]][90],
       icon = icon('vials'),
       color = "yellow"
@@ -82,7 +82,12 @@ fluidPage(
     ),
     valueBox(
       width = 3,
-      value = paste0(CURED_WITHIN, ' (+', CURED_WITHIN_DIFF, ')'),
+      value = paste0(DISCHARGE_TOTAL, 
+                     ' (+', 
+                     SYMPTOM_DISCHARGE_FLIGHT$diff + 
+                       SYMPTOM_DISCHARGE_WITHIN$diff + 
+                       SYMPTOMLESS_DISCHARGE_FLIGHT$diff + 
+                       SYMPTOMLESS_DISCHARGE_WITHIN$diff, ')'),
       subtitle = lang[[langCode]][6],
       icon = icon('thumbs-up'),
       color = "green"
@@ -190,10 +195,10 @@ fluidPage(
           width = 2,
           # 国内事例
           descriptionBlock(
-            number = CURED_DOMESTIC_DIFF,
+            number = SYMPTOM_DISCHARGE_WITHIN$diff + SYMPTOMLESS_DISCHARGE_WITHIN$diff,
             number_color = 'green',
-            number_icon = getChangeIcon(CURED_DOMESTIC_DIFF),
-            header = CURED_DOMESTIC,
+            number_icon = getChangeIcon(SYMPTOM_DISCHARGE_WITHIN$diff + SYMPTOMLESS_DISCHARGE_WITHIN$diff),
+            header = SYMPTOM_DISCHARGE_WITHIN$final + SYMPTOMLESS_DISCHARGE_WITHIN$final,
             text = lang[[langCode]][4]
           )
         ),
@@ -201,10 +206,10 @@ fluidPage(
           width = 2,
           # チャーター便
           descriptionBlock(
-            number = CURED_FLIGHT_DIFF,
+            number = SYMPTOM_DISCHARGE_FLIGHT$diff + SYMPTOMLESS_DISCHARGE_FLIGHT$diff,
             number_color = 'green',
-            number_icon = getChangeIcon(CURED_FLIGHT_DIFF),
-            header = CURED_FLIGHT,
+            number_icon = getChangeIcon(SYMPTOM_DISCHARGE_FLIGHT$diff + SYMPTOMLESS_DISCHARGE_FLIGHT$diff),
+            header = SYMPTOM_DISCHARGE_FLIGHT$final + SYMPTOMLESS_DISCHARGE_FLIGHT$final,
             text = lang[[langCode]][36],
           )
         ),

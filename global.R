@@ -22,6 +22,14 @@ COMPONENT_PATH <- 'Components/'
 PAGE_PATH <- 'Pages/'
 
 # ====
+# メゾット
+# ====
+getFinalAndDiff <- function(vector) {
+  index <- length(vector)
+  return(list('final' = vector[index], 'diff' = vector[index] - vector[index - 1]))
+}
+
+# ====
 # データの読み込み
 # ====
 # db <- fread(paste0(DATA_PATH, 'summary.csv'), header = T)
@@ -49,6 +57,13 @@ position <- fread(paste0(DATA_PATH, 'position.csv'))
 # statics <- fromJSON(file = 'https://stg.covid-2019.live/ncov-static/stats.json', 
 #                     unexpected.escape = 'error')
 
+# 国内の日報
+domesticDailyReport <- fread(paste0(DATA_PATH, 'domesticDailyReport.csv'))
+# チャーター便の日報
+flightDailyReport <- fread(paste0(DATA_PATH, 'flightDailyReport.csv'))
+# クルーズ船の日報
+shipDailyReport <- fread(paste0(DATA_PATH, 'shipDailyReport.csv'))
+
 # 文言データ
 lang <- fread(paste0(DATA_PATH, 'lang.csv'))
 langCode <- 'ja'
@@ -57,6 +72,12 @@ langCode <- 'ja'
 # names(languageSet) <- c(lang[[langCode]][25], lang[[langCode]][26])
 
 # ====総数基礎集計====
+# PCR
+PCR_WITHIN <- max(domesticDailyReport$pcr, na.rm = T)
+PCR_SHIP <- max(shipDailyReport$pcr, na.rm = T)
+PCR_FLIGHT <- max(flightDailyReport$pcr, na.rm = T)
+
+
 # 確認
 TOTAL_DOMESITC <- sum(byDate[, c(2:48)]) # 日本国内事例のPCR陽性数（クルーズ船関連者除く）
 TOTAL_OFFICER <- sum(byDate$検疫職員) # クルーズ船関連の職員のPCR陽性数
@@ -70,13 +91,29 @@ CONFIRMED_PIE_DATA <- data.table(category = c(lang[[langCode]][4], # 国内事�
                                               ),
                                  value = c(TOTAL_DOMESITC + TOTAL_OFFICER, TOTAL_SHIP, TOTAL_FLIGHT))
 # 退院
-CURED_DOMESTIC <- sum(recovered[, 2])
-CURED_FLIGHT <- sum(recovered[, 3])
-CURED_WITHIN <- CURED_DOMESTIC + CURED_FLIGHT
-CURED_PIE_DATA <- data.table(category = c(lang[[langCode]][4], # 国内事例
-                                          lang[[langCode]][36] # チャーター便
-                                          ),
-                             value = c(CURED_DOMESTIC, CURED_FLIGHT))
+
+SYMPTOMLESS_DISCHARGE_WITHIN <- getFinalAndDiff(domesticDailyReport$symptomlessDischarge)
+SYMPTOM_DISCHARGE_WITHIN <- getFinalAndDiff(domesticDailyReport$symptomDischarge)
+SYMPTOMLESS_DISCHARGE_FLIGHT <- getFinalAndDiff(flightDailyReport$symptomlessDischarge)
+SYMPTOM_DISCHARGE_FLIGHT <- getFinalAndDiff(flightDailyReport$symptomDischarge)
+
+CURED_PIE_DATA <- data.table(
+  category = c(
+    paste0(lang[[langCode]][4], ' (', lang[[langCode]][95], ')'), # 国内事例 （症状あり）
+    paste0(lang[[langCode]][4], ' (', lang[[langCode]][96], ')'), # 国内事例 （無症状）
+    paste0(lang[[langCode]][36], ' (', lang[[langCode]][95], ')'), # チャーター便 （症状あり）
+    paste0(lang[[langCode]][36], ' (', lang[[langCode]][96], ')') # チャーター便 （無症状）
+    ),
+  value = c(
+    SYMPTOM_DISCHARGE_WITHIN$final, 
+    SYMPTOMLESS_DISCHARGE_WITHIN$final,
+    SYMPTOM_DISCHARGE_FLIGHT$final,
+    SYMPTOMLESS_DISCHARGE_FLIGHT$final
+    )
+  )
+
+DISCHARGE_TOTAL <- sum(CURED_PIE_DATA$value)
+
 # 死亡
 DEATH_DOMESITC <- sum(death[, c(2:48)]) # 日本国内事例の死亡数（クルーズ船関連者除く）
 DEATH_OFFICER <- sum(death[]$検疫職員) # クルーズ船関連の職員の死亡数
@@ -108,10 +145,7 @@ TOTAL_FLIGHT_DIFF <- sum(byDateToday$チャーター便) # チャーター便の
 TOTAL_WITHIN_DIFF <- TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF # 日本国内事例のPCR陽性数
 TOTAL_SHIP_DIFF <- sum(byDateToday$クルーズ船) # クルーズ船のPCR陽性数
 TOTAL_JAPAN_DIFF <- TOTAL_WITHIN_DIFF + TOTAL_SHIP_DIFF # 日本領土内のPCR陽性数
-# 退院
-CURED_DOMESTIC_DIFF <- sum(recovered[nrow(recovered), 2])
-CURED_FLIGHT_DIFF <- sum(recovered[nrow(recovered), 3])
-CURED_WITHIN_DIFF <- CURED_DOMESTIC_DIFF + CURED_FLIGHT_DIFF
+
 # 死亡
 DEATH_DOMESITC_DIFF <- sum(deathToday[, c(2:48)]) # 日本国内事例のPCR陽性数（クルーズ船関連者除く）
 DEATH_OFFICER_DIFF <- sum(deathToday[]$検疫職員) # クルーズ船関連の職員のPCR陽性数
@@ -210,6 +244,7 @@ darkYellow <- '#DB8B0A'
 lightGreen <- '#00A65A'
 middleGreen <- '#01A65A'
 darkGreen <- '#088448'
+superDarkGreen <- '#046938'
 lightNavy <- '#5A6E82'
 middelNavy <- '#001F3F'
 darkNavy <- '#001934'

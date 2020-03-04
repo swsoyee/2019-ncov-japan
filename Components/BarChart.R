@@ -149,16 +149,29 @@ output$confirmedBar <- renderEcharts4r({
 
 # ====退院者割合====
 output$curedBar <- renderEcharts4r({
-  CURED_TOTAL <- CURED_DOMESTIC + CURED_FLIGHT
   dt <- data.table('label' = '退院者',
-                   'domestic' = CURED_DOMESTIC,
-                   'flight' = CURED_FLIGHT,
-                   'domesticPer' = round(CURED_DOMESTIC / CURED_TOTAL * 100, 2),
-                   'flightPer' = round(CURED_FLIGHT / CURED_TOTAL * 100, 2)
+                   'domestic' = SYMPTOM_DISCHARGE_WITHIN$final,
+                   'flight' = SYMPTOM_DISCHARGE_FLIGHT$final,
+                   'symtomlessDomestic' = SYMPTOMLESS_DISCHARGE_WITHIN$final,
+                   'symtomlessFlight' = SYMPTOMLESS_DISCHARGE_FLIGHT$final,
+                   'domesticPer' = round(SYMPTOM_DISCHARGE_WITHIN$final / DISCHARGE_TOTAL * 100, 2),
+                   'flightPer' = round(SYMPTOM_DISCHARGE_FLIGHT$final / DISCHARGE_TOTAL * 100, 2),
+                   'symtomlessDomesticPer' = round(SYMPTOMLESS_DISCHARGE_WITHIN$final / DISCHARGE_TOTAL * 100, 2),
+                   'symtomlessFlightPer' = round(SYMPTOMLESS_DISCHARGE_FLIGHT$final / DISCHARGE_TOTAL * 100, 2)
                    )
   e_charts(dt, label) %>%
-    e_bar(domesticPer, name = lang[[langCode]][4], stack = '1', itemStyle = list(color = middleGreen)) %>%
-    e_bar(flightPer, name = lang[[langCode]][36], stack = '1', itemStyle = list(color = darkGreen)) %>%
+    e_bar(domesticPer, 
+          name = paste0(lang[[langCode]][4], ' (', lang[[langCode]][95], ')'), # 国内事例 （症状あり）
+          stack = '1', itemStyle = list(color = middleGreen)) %>%
+    e_bar(symtomlessDomesticPer, 
+          name = paste0(lang[[langCode]][4], ' (', lang[[langCode]][96], ')'), # 国内事例 （無症状）
+          stack = '1', itemStyle = list(color = lightGreen)) %>%
+    e_bar(flightPer, 
+          name = paste0(lang[[langCode]][36], ' (', lang[[langCode]][95], ')'), # チャーター便 （症状あり）
+          stack = '1', itemStyle = list(color = darkGreen)) %>%
+    e_bar(flightPer, 
+          name = paste0(lang[[langCode]][36], ' (', lang[[langCode]][96], ')'), # チャーター便 （無症状）
+          stack = '1', itemStyle = list(color = superDarkGreen)) %>%
     e_y_axis(max = 100, splitLine = list(show = F), show = F) %>%
     e_x_axis(splitLine = list(show = F), show = F) %>%
     e_grid(left = '0%', right = '0%', top = '0%', bottom = '0%') %>%
@@ -171,7 +184,7 @@ output$curedBar <- renderEcharts4r({
     e_flip_coords() %>%
     e_tooltip(formatter = htmlwidgets::JS(paste0('
       function(params) {
-        return(params.seriesName + "：" + Math.round(params.value[0] / 100 * ', CURED_TOTAL, ', 0) + "名")
+        return(params.seriesName + "：" + Math.round(params.value[0] / 100 * ', DISCHARGE_TOTAL, ', 0) + "名")
       }
     ')))
 })
