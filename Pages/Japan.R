@@ -88,7 +88,8 @@ fluidPage(
                         SYMPTOM_DISCHARGE_FLIGHT$diff + 
                           SYMPTOM_DISCHARGE_WITHIN$diff + 
                           SYMPTOMLESS_DISCHARGE_FLIGHT$diff + 
-                          SYMPTOMLESS_DISCHARGE_WITHIN$diff, ')'),
+                          SYMPTOMLESS_DISCHARGE_WITHIN$diff +
+                          DISCHARGE_SHIP$diff, ')'),
       icon = icon('thumbs-up'),
       color = "green"
     ),
@@ -207,22 +208,31 @@ fluidPage(
           width = 2,
           # 国内事例
           descriptionBlock(
-            number = SYMPTOM_DISCHARGE_WITHIN$diff + SYMPTOMLESS_DISCHARGE_WITHIN$diff,
+            number = SYMPTOM_DISCHARGE_WITHIN$diff + 
+              SYMPTOMLESS_DISCHARGE_WITHIN$diff + 
+              SYMPTOM_DISCHARGE_FLIGHT$diff + 
+              SYMPTOMLESS_DISCHARGE_FLIGHT$diff,
             number_color = 'green',
-            number_icon = getChangeIcon(SYMPTOM_DISCHARGE_WITHIN$diff + SYMPTOMLESS_DISCHARGE_WITHIN$diff),
-            header = SYMPTOM_DISCHARGE_WITHIN$final + SYMPTOMLESS_DISCHARGE_WITHIN$final,
+            number_icon = getChangeIcon(SYMPTOM_DISCHARGE_WITHIN$diff + 
+                                          SYMPTOMLESS_DISCHARGE_WITHIN$diff + 
+                                          SYMPTOM_DISCHARGE_FLIGHT$diff + 
+                                          SYMPTOMLESS_DISCHARGE_FLIGHT$diff),
+            header = SYMPTOM_DISCHARGE_WITHIN$final + 
+              SYMPTOMLESS_DISCHARGE_WITHIN$final +
+              SYMPTOM_DISCHARGE_FLIGHT$final + 
+              SYMPTOMLESS_DISCHARGE_FLIGHT$final,
             text = lang[[langCode]][4]
           )
         ),
         column(
           width = 2,
-          # チャーター便
+          # クルーズ船
           descriptionBlock(
-            number = SYMPTOM_DISCHARGE_FLIGHT$diff + SYMPTOMLESS_DISCHARGE_FLIGHT$diff,
+            number = DISCHARGE_SHIP$diff,
             number_color = 'green',
-            number_icon = getChangeIcon(SYMPTOM_DISCHARGE_FLIGHT$diff + SYMPTOMLESS_DISCHARGE_FLIGHT$diff),
-            header = SYMPTOM_DISCHARGE_FLIGHT$final + SYMPTOMLESS_DISCHARGE_FLIGHT$final,
-            text = lang[[langCode]][36],
+            number_icon = getChangeIcon(DISCHARGE_SHIP$diff),
+            header = DISCHARGE_SHIP$final,
+            text = lang[[langCode]][35],
           )
         ),
         column(

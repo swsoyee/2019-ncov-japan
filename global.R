@@ -96,19 +96,22 @@ SYMPTOMLESS_DISCHARGE_WITHIN <- getFinalAndDiff(domesticDailyReport$symptomlessD
 SYMPTOM_DISCHARGE_WITHIN <- getFinalAndDiff(domesticDailyReport$symptomDischarge)
 SYMPTOMLESS_DISCHARGE_FLIGHT <- getFinalAndDiff(flightDailyReport$symptomlessDischarge)
 SYMPTOM_DISCHARGE_FLIGHT <- getFinalAndDiff(flightDailyReport$symptomDischarge)
+DISCHARGE_SHIP <- getFinalAndDiff(shipDailyReport$discharge)
 
 CURED_PIE_DATA <- data.table(
   category = c(
     paste0(lang[[langCode]][4], ' (', lang[[langCode]][95], ')'), # 国内事例 （症状あり）
     paste0(lang[[langCode]][4], ' (', lang[[langCode]][96], ')'), # 国内事例 （無症状）
     paste0(lang[[langCode]][36], ' (', lang[[langCode]][95], ')'), # チャーター便 （症状あり）
-    paste0(lang[[langCode]][36], ' (', lang[[langCode]][96], ')') # チャーター便 （無症状）
+    paste0(lang[[langCode]][36], ' (', lang[[langCode]][96], ')'), # チャーター便 （無症状）
+    lang[[langCode]][35] # クルーズ船
     ),
   value = c(
     SYMPTOM_DISCHARGE_WITHIN$final, 
     SYMPTOMLESS_DISCHARGE_WITHIN$final,
     SYMPTOM_DISCHARGE_FLIGHT$final,
-    SYMPTOMLESS_DISCHARGE_FLIGHT$final
+    SYMPTOMLESS_DISCHARGE_FLIGHT$final,
+    DISCHARGE_SHIP$final
     )
   )
 
