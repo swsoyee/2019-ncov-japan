@@ -58,6 +58,31 @@ output$totalConfirmedByRegionPlot <- renderEcharts4r({
     e_flip_coords()
 })
 
+output$regionTimeSeries <- renderEcharts4r({
+  total <- colSums(byDate[, 2:ncol(byDate)])
+  totalOver0 <- names(total[total > 0])
+  dt <- cumsum(byDate[, 2:ncol(byDate)])
+  dt$date <- byDate$date
+  dt <- melt(dt, measure.vars = 1:50, variable.name = 'region')
+  dt2show <- dt[!region %in% lang[[langCode]][35:36]]
+  dt2show <- dt2show[region %in% totalOver0]
+  
+  dt2show %>%
+    group_by(date) %>%
+    e_chart(region, timeline = T) %>%
+    e_bar(value) %>%
+    e_axis(axisTick =list(show = F), axisLabel = list(interval = 0)) %>%
+    e_x_axis(axisLabel = list(rotate = 90, interval = 0)) %>%
+    e_y_axis(max = max(dt2show$value) + 5) %>%
+    e_grid(bottom = '25%', top = '5%') %>%
+    e_labels(show = T) %>%
+    e_tooltip() %>%
+    e_timeline_opts(left = '0%', right = '0%', symbol = 'diamond',
+                    loop = F,
+                    playInterval = 1000,
+                    currentIndex = nrow(byDate) - 1)
+})
+
 totalConfirmedByRegionData <- reactive({
   total <- colSums(byDate[, 2:ncol(byDate)])
   today <- colSums(byDate[nrow(byDate), 2:ncol(byDate)])
