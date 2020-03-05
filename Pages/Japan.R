@@ -266,28 +266,20 @@ fluidPage(
       closable = F,
       collapsible = T,
       width = 8,
-      tabsetPanel(
-        tabPanel(
-          title = 'マップ',
-          fluidRow(
-            column(
-              width = 6,
-              # plotOutput('map', height = '370px') %>% withSpinner(),
-              echarts4rOutput('echartsMap')  %>% withSpinner(),
-              actionButton(inputId = 'switchCaseMap', label = '事例マップへ'),
-            ),
-            column(
-              width = 6,
-              boxPad(
-                echarts4rOutput('totalConfirmedByRegionPlot')  %>% withSpinner()
-              )
-            ),
+      fluidRow(
+        column(
+          width = 6,
+          # plotOutput('map', height = '370px') %>% withSpinner(),
+          echarts4rOutput('echartsMap')  %>% withSpinner(),
+          actionButton(inputId = 'switchCaseMap', label = '事例マップへ'),
+        ),
+        column(
+          width = 6,
+          boxPad(
+            echarts4rOutput('totalConfirmedByRegionPlot')  %>% withSpinner()
           )
         ),
-        tabPanel(
-          title = '時系列棒グラフ',
-          echarts4rOutput('regionTimeSeries') %>% withSpinner()
-        )
+      closable = F
       ),
       footer = tags$small(paste(
         lang[[langCode]][62], UPDATE_DATETIME, '開発＆調整中'
