@@ -68,8 +68,8 @@ fluidPage(
   fluidRow(
     valueBox(
       width = 3,
-      value = sum(PCR_WITHIN, PCR_FLIGHT, PCR_SHIP), # 開発待ち
-      subtitle = paste0(lang[[langCode]][90], ' (+258)'),
+      value = sum(PCR_WITHIN$final, PCR_FLIGHT$final, PCR_SHIP$final), # 開発待ち
+      subtitle = paste0(lang[[langCode]][90], ' (+', sum(PCR_WITHIN$diff, PCR_FLIGHT$diff, PCR_SHIP$diff), ')'),
       icon = icon('vials'),
       color = "yellow"
     ),

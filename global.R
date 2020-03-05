@@ -73,9 +73,9 @@ langCode <- 'ja'
 
 # ====総数基礎集計====
 # PCR
-PCR_WITHIN <- max(domesticDailyReport$pcr, na.rm = T)
-PCR_SHIP <- max(shipDailyReport$pcr, na.rm = T)
-PCR_FLIGHT <- max(flightDailyReport$pcr, na.rm = T)
+PCR_WITHIN <- getFinalAndDiff(domesticDailyReport$pcr)
+PCR_SHIP <- getFinalAndDiff(shipDailyReport$pcr)
+PCR_FLIGHT <- getFinalAndDiff(flightDailyReport$pcr)
 
 
 # 確認
