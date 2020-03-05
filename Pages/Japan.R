@@ -69,7 +69,7 @@ fluidPage(
     valueBox(
       width = 3,
       value = sum(PCR_WITHIN, PCR_FLIGHT, PCR_SHIP), # 開発待ち
-      subtitle = paste0(lang[[langCode]][90], ' (+3835)'),
+      subtitle = paste0(lang[[langCode]][90], ' (+258)'),
       icon = icon('vials'),
       color = "yellow"
     ),
