@@ -12,6 +12,9 @@ output$network <- renderEcharts4r({
     e_labels() %>%
     e_tooltip(
       formatter = htmlwidgets::JS('function(params) {
+        if (["クルーズ船", "卓球スクール", "ライブハウス", "スポーツジム", "展示会"].includes(params.name)) {
+          return("")
+        }
         const label = params.value.split("#")
         return("<b>" + params.name + "番患者</b><br><br>年齢：" +
           label[0] + "<br>性別：" + label[1] + "<br>居住地：" + 
@@ -21,6 +24,8 @@ output$network <- renderEcharts4r({
 })
 
 networkData <- reactive({
+  # クラスタラベル
+  clusterLabel <- c('クルーズ船', '卓球スクール', 'ライブハウス', 'スポーツジム', '展示会')
   # ノット作成
   confirmedNodes <-
     detail[, c('id',
@@ -34,17 +39,22 @@ networkData <- reactive({
     sapply(confirmedNodes$relatedConfirmed, function(x) {
       count <- length(strsplit(x, ',')[[1]])
       K <- 8
-      if (count > 3) {
-        K <- 3
+      size <- K * count
+      if (size > 32) {
+        size <- 32 + count
       }
-      K * count
+      size
     })
   # エッジ作成
   confirmedEdges <- data.frame('source' = 0, 'target' = 0) # エッジ初期化
   for (i in 1:nrow(confirmedNodes)) {
     relation <-
       strsplit(confirmedNodes$relatedConfirmed[i], ',')[[1]] # 複数関連者対応
-    if (relation[1] == 0 ||
+    # クラスター対応
+    if (relation[1] %in% clusterLabel) {
+      confirmedEdges <-
+        rbind(confirmedEdges, c(confirmedNodes[i]$id, relation[1]), stringsAsFactors = F)
+    } else if (relation[1] == 0 ||
         suppressWarnings(is.na(as.numeric(relation)))) {
       # 関連者なしの場合、エッジを自分から自分へに設定する
       item <- c(confirmedNodes[i]$id, confirmedNodes[i]$id)
@@ -90,6 +100,11 @@ networkData <- reactive({
                                 confirmedNodes$gender, 
                                 confirmedNodes$residence,
                                 confirmedNodes$subgroup)
+  
+  # クラスタ対応
+  for (x in clusterLabel) {
+    confirmedNodes <- rbind(confirmedNodes, list('id' = x, 'label' = x, 'effectSize' = 15), fill = T)
+  }
   # data <- list(node = confirmedNodes, edge = confirmedEdges)
   return(list(node = confirmedNodes, edge = confirmedEdges))
 })
