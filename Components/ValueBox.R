@@ -37,3 +37,15 @@ output$todayDeath <- renderUI({
     )
   }
 })
+
+output$saveArea <- renderUI({
+  if(length(regionZero) > 0 ) {
+    elements <- list()
+    for (i in 1:length(regionZero)) {
+      elements[[i]] <- dashboardLabel(regionZero[i], status = 'info', style = 'square')
+    }
+    tagList(elements)
+  } else {
+    tagList(tags$b('感染者0の地域'), dashboardLabel(lang[[langCode]][73], status = 'info', style = 'square')) # なし
+  }
+})
