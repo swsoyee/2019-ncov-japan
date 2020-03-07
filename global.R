@@ -205,6 +205,75 @@ detail <- detailMerged[, detailColName, with = F][order(id)]
 # 詳細データのサマリー
 detailSummary <- detail[, .(count = .N), by = .(gender, age)]
 
+# 症状進展Sankey
+processData <- data.table('date' = as.Date(x = integer(0), origin = "1970-01-01"),
+                          'source' = character(0),
+                          'target' = character(0),
+                          'value' = numeric(0))
+
+for(i in 1:nrow(domesticDailyReport)) {
+  latestRecord <- domesticDailyReport[i]  
+  data <- data.table('source' = character(0), 'target' = character(0), 'value' = numeric(0))
+  label.pcr <- paste0('PCR検査陽性者\n100.00%')
+  label.symptomless <- paste0('無症状者\n', round(latestRecord$symptomless / latestRecord$positive * 100, 2), '%')
+  label.symptom <- paste0('有症状者\n', round(latestRecord$symptom / latestRecord$positive * 100, 2), '%')
+  label.hospitalized <- paste0('入院治療を要する者\n', 
+                                      round(
+                                        (latestRecord$symptomlesshospitalized + latestRecord$symptomHospitalized) / 
+                                          (latestRecord$positive) * 100, 2), '%')
+  label.discharge <- paste0('退院した者\n', 
+                            round(
+                              (latestRecord$symptomlessDischarge + latestRecord$symptomDischarge) / 
+                                (latestRecord$positive) * 100, 2), '%')
+  label.hospitalizedNow <- paste0('無症状入院中の者\n', 
+                                  round(
+                                    latestRecord$symptomlesshospitalizedNow / 
+                                      latestRecord$positive * 100, 2), '%')
+  label.waiting <- paste0('入院待機中の者\n',
+                          round(
+                            (latestRecord$symptomlesshospitalizedWaiting + latestRecord$waiting) / 
+                              (latestRecord$positive) * 100, 2), '%')
+  label.mild <- paste0('軽〜中等症の者\n',
+                       round(
+                         (latestRecord$mild) / 
+                           (latestRecord$positive) * 100, 2), '%')
+  label.severe <- paste0('人工呼吸又は\nICUに入院している者\n',
+                       round(
+                         (latestRecord$severe) / 
+                           (latestRecord$positive) * 100, 2), '%')
+  label.confirming <- paste0('確認中\n',
+                             round(
+                               (latestRecord$confirming) / 
+                                 (latestRecord$positive) * 100, 2), '%')
+  label.death <- paste0('死亡者\n',
+                        round(
+                          (latestRecord$death) / 
+                            (latestRecord$positive) * 100, 2), '%')
+  label.symptomConfirming <- paste0('症状有無確認中\n',
+                                    round(
+                                      (latestRecord$symtomConfirming) / 
+                                        (latestRecord$positive) * 100, 2), '%')
+  
+  data <- rbind(data, list(label.pcr, label.symptomless, latestRecord$symptomless))
+  data <- rbind(data, list(label.symptomless, label.discharge, latestRecord$symptomlessDischarge))
+  data <- rbind(data, list(label.symptomless, label.hospitalized, latestRecord$symptomlesshospitalized))
+  data <- rbind(data, list(label.hospitalized, label.hospitalizedNow, latestRecord$symptomlesshospitalizedNow))
+  data <- rbind(data, list(label.hospitalized, label.waiting, latestRecord$symptomlesshospitalizedWaiting))
+  data <- rbind(data, list(label.pcr, label.symptom, latestRecord$symptom))
+  data <- rbind(data, list(label.symptom, label.discharge, latestRecord$symptomDischarge))
+  data <- rbind(data, list(label.symptom, label.hospitalized, latestRecord$symptomHospitalized))
+  data <- rbind(data, list(label.hospitalized, label.mild, latestRecord$mild))
+  data <- rbind(data, list(label.hospitalized, label.severe, latestRecord$severe))
+  data <- rbind(data, list(label.hospitalized, label.confirming, latestRecord$confirming))
+  data <- rbind(data, list(label.hospitalized, label.waiting, latestRecord$waiting))
+  data <- rbind(data, list(label.symptom, label.death, latestRecord$death))
+  data <- rbind(data, list(label.pcr, label.symptomConfirming, latestRecord$symtomConfirming))
+  data <- cbind(date = as.Date(as.character(latestRecord$date), '%Y%m%d'), data)
+  
+  processData <- rbind(processData, data)
+}
+
+
 # world <- fread(paste0(DATA_PATH, '2019_nCoV_data.csv'))
 
 # china <- fread('https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/DXYArea.csv')

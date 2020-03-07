@@ -305,7 +305,7 @@ fluidPage(
             width = 8,
             closable = F,
             # collapsed = T,
-            echarts4rOutput('network'),
+            echarts4rOutput('network') %>% withSpinner(),
             enable_sidebar = T,
             sidebar_start_open = F,
             sidebar_content = tagList(
@@ -313,5 +313,14 @@ fluidPage(
             ),
             footer = tags$small('※開発バージョンです。最終版ではありません')),
     boxPlus(width = 4, dataTableOutput('news') %>% withSpinner())
+  ),
+  fluidRow(
+    boxPlus(title = '病気進行',
+            width = 8,
+            closable = F,
+            # collapsed = T,
+            echarts4rOutput('processSankey') %>% withSpinner(),
+            footer = tags$small('※開発バージョンです。最終版ではありません')
+            )
   )
 )
