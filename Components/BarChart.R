@@ -113,8 +113,8 @@ output$genderBar <- renderEcharts4r({
   
   dt %>%
     e_chart(age) %>%
-    e_bar(count.男, stack = '1', name = '男性', itemStyle = list(color = '#2DA0CD')) %>%
-    e_bar(count.女, stack = '1', name = '女性', itemStyle = list(color = '#B73376')) %>%
+    e_bar(count.男, stack = '1', name = '男性', itemStyle = list(color = darkNavy)) %>%
+    e_bar(count.女, stack = '1', name = '女性', itemStyle = list(color = middleRed)) %>%
     e_x_axis(type = 'category') %>%
     e_labels(position = 'inside', formatter = htmlwidgets::JS('
       function(params) {

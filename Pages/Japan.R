@@ -293,7 +293,12 @@ fluidPage(
         lang[[langCode]][62], UPDATE_DATETIME, '開発＆調整中'
       ))
     ),
-    box(width = 4, dataTableOutput('news') %>% withSpinner())
+    boxPlus(title = tagList(icon('venus-mars'), '歳代・性別'),
+            width = 4,
+            echarts4rOutput('genderBar'),
+            closable = F,
+            footer = tags$small('厚生労働省の報道発表のデータに基づいてプロットしたグラフです。多少数値の遅れがあります。')
+    )
   ),
   fluidRow(
     boxPlus(title = tagList(icon('connectdevelop'), '感染経路ネットワーク'),
@@ -307,11 +312,6 @@ fluidPage(
               checkboxInput('hideSingle', '離散を非表示', T)
             ),
             footer = tags$small('※開発バージョンです。最終版ではありません')),
-    boxPlus(title = tagList(icon('venus-mars'), '歳代・性別'),
-            width = 4,
-            echarts4rOutput('genderBar'),
-            closable = F,
-            footer = tags$small('厚生労働省の報道発表のデータに基づいてプロットしたグラフです。多少数値の遅れがあります。')
-            )
-    )
+    boxPlus(width = 4, dataTableOutput('news') %>% withSpinner())
+  )
 )

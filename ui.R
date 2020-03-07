@@ -4,7 +4,7 @@ source(file = 'global.R',
 
 shinyUI(
   dashboardPagePlus(
-    skin = "purple",
+    skin = "red",
     title = lang[[langCode]][1],
     header = dashboardHeaderPlus(
       title = paste0('🦠', lang[[langCode]][1]),
@@ -31,7 +31,7 @@ shinyUI(
         tabName = 'japan', 
         icon = icon('tachometer-alt'),
         badgeLabel = '更新中',
-        badgeColor = 'purple'
+        badgeColor = 'red'
       ),
       menuItem(
         # 事例マップ
