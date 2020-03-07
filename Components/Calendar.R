@@ -29,17 +29,19 @@ output$confirmedCalendar <- renderEcharts4r({
 })
 
 output$curedCalendar <- renderEcharts4r({
-  maxValue <- max(curedDataByDate()$totalDiff)
-  # maxValue <- max(curedDataByDate)
-  curedDataByDate() %>%
-  # curedDataByDate %>%
+  dt <- data.table('date' = domesticDailyReport$date,
+                   'discharge' = domesticDailyReport$symptomlessDischarge + domesticDailyReport$symptomDischarge)
+  dt[, diff := discharge - shift(discharge)]
+  setnafill(dt, fill = 0)
+  maxValue <- max(dt$diff)
+  dt %>%
     e_charts(date) %>% 
     e_calendar(range = c('2020-01-01', '2020-06-30'),
                top = 25, left = 0, cellSize = 15,
                splitLine = list(show = F), itemStyle = list(borderWidth = 2, borderColor = '#FFFFFF'),
                dayLabel = list(nameMap = c('日', '月', '火', '水', '木', '金', '土')),
                monthLabel = list(nameMap = 'cn')) %>% 
-    e_heatmap(totalDiff, coord_system = "calendar", name = lang[[langCode]][80]) %>% 
+    e_heatmap(diff, coord_system = "calendar", name = lang[[langCode]][80]) %>% 
     e_legend(show = F) %>%
     e_visual_map(top = '15%', 
                  max = maxValue, 

@@ -35,7 +35,7 @@ output$confirmedLineWrapper <- renderUI({
 
 confirmedDataByDate <- reactive({
   dt <- data.frame(byDate)
-  dt$国内 <- rowSums(byDate[, c(2:48)])
+  dt$都道府県 <- rowSums(byDate[, c(2:48)])
   if(!is.null(input$regionPicker)) {
     dt <- dt[, c('date', input$regionPicker)]
     # dt <- dt[, 1:4] # TEST
@@ -49,57 +49,23 @@ confirmedDataByDate <- reactive({
   }
 })
 
-curedDataByDate <- reactive({
-# curedDataByDate <-({
-  yData <- cumsum(rowSums(recovered[, 2:3]))
-  xData <- as.Date(recovered$date, format = "%Y%m%d")
-  cumSumTotalConfirmed <- cumsum(rowSums(byDate[, 2:(ncol(byDate) - 1)]))
-  columnName <- c('date', 'domestic', 'domesticDiff', 'flight', 'flightDiff', 'total', 
-                  'totalDiff', 'totalConfirmed', 
-                  'curedVerseConfirmed', 'mildVerseConfirmed', 'severeVerseConfirmed', 'confirmingVerseConfirmed')
-  dt <- data.table(xData, 
-                   cumsum(recovered[, 2]), 
-                   recovered[, 2],
-                   cumsum(recovered[, 3]), 
-                   recovered[, 3],
-                   yData,
-                   rowSums(recovered[, 2:3]),
-                   cumSumTotalConfirmed,
-                   round(yData / cumSumTotalConfirmed * 100, 2),
-                   round((cumsum(recovered$mildDomestic + recovered$mildFlight) / cumSumTotalConfirmed) * 100, 2),
-                   round((cumsum(recovered$severeDomestic + recovered$severeFlight) / cumSumTotalConfirmed) * 100, 2),
-                   round((cumsum(recovered$confirmingDomestic + recovered$confirmingFlight) / cumSumTotalConfirmed) * 100, 2)
-  )
-  colnames(dt) <- columnName
-  dt
-})
-
 # ====退院推移図（国内）====
 output$recoveredLine <- renderEcharts4r({
-  defaultUnselected <- list(F)
-  names(defaultUnselected) <- c(lang[[langCode]][86])
-  
-  curedDataByDate() %>%
-  # dt %>%
+  defaultUnselected <- list(F, F, F)
+  names(defaultUnselected) <- c('軽〜中等症の者', '人工呼吸又はICUに入院している者', '死亡者')
+  domesticDailyReport %>%
     e_chart(date) %>%
-    e_line(total, name = lang[[langCode]][6], itemStyle = list(normal = list(color = '#2BA84A')), areaStyle = list(opacity = 0.4)) %>%
-    e_bar(totalDiff, name = lang[[langCode]][77], itemStyle = list(normal = list(color = '#248232'))) %>%
-    e_line(confirmingVerseConfirmed, name = lang[[langCode]][86], stack = '1', y_index = 1, itemStyle = list(color = '#083D77')) %>%
-    e_line(severeVerseConfirmed, name = lang[[langCode]][85], stack = '1', y_index = 1, itemStyle = list(color = '#F95738')) %>%
-    e_line(mildVerseConfirmed, name = lang[[langCode]][84], stack = '1', y_index = 1, itemStyle = list(color = '#EE964B')) %>%
-    e_line(curedVerseConfirmed, name = lang[[langCode]][83], stack = '1', y_index = 1, itemStyle = list(color = '#F4D35E')) %>%
-    e_mark_point(lang[[langCode]][77], data = list(type = "max")) %>%
+    e_line(positive, name = 'PCR検査陽性者', itemStyle = list(normal = list(color = lightRed)), areaStyle = list(opacity = 0.4)) %>%
+    e_line(symptomlessDischarge, name = '無症状退院者', stack = '1', itemStyle = list(normal = list(color = middleGreen)), areaStyle = list(opacity = 0.4)) %>%
+    e_line(symptomDischarge, name = '有症状退院者', stack = '1', itemStyle = list(normal = list(color = middleGreen)), areaStyle = list(opacity = 0.4)) %>%
+    e_line(mild, name = '軽〜中等症の者', stack = '1', itemStyle = list(normal = list(color = middleYellow)), areaStyle = list(opacity = 0.4)) %>%
+    e_line(severe, name = '人工呼吸又はICUに入院している者', stack = '1', itemStyle = list(normal = list(color = darkRed)), areaStyle = list(opacity = 0.4)) %>%
+    e_line(death, name = '死亡者', stack = '1', itemStyle = list(normal = list(color = darkNavy)), areaStyle = list(opacity = 0.4)) %>%
     e_x_axis(splitLine = list(show = F)) %>%
-    e_y_axis(splitLine = list(lineStyle = list(type = 'dotted'))) %>%
-    e_y_axis(splitLine = list(show = F), index = 1, max = 100, formatter = htmlwidgets::JS('
-      function(params) {
-        return(params + "%")
-      }
-    ')) %>%
-    e_grid(left = '8%', right = '8%', bottom = '20%', top = '7%') %>%
-    e_legend(top = '7%', left = '8%', type = 'scroll', orient = 'vertical', selected = defaultUnselected) %>% 
-    e_zoom() %>%
-    e_datazoom() %>%
+    e_y_axis(splitLine = list(show = F), axisLabel = list(inside = T), axisTick = list(show = F)) %>%
+    e_grid(left = '3%') %>%
+    e_legend(type = 'scroll', orient = 'vertical', left = '10%', top = '15%', selected = defaultUnselected) %>%
+    e_title(subtext = '厚生労働省が毎日１２時にまとめているデータを使用しています（チャーター便除く）。') %>%
     e_tooltip(trigger = 'axis')
 })
 
@@ -111,8 +77,6 @@ output$pcrLine <- renderEcharts4r({
   
   dt <- merge(x = dm, y = fl, by = 'date', all.x = T)
   dt <- merge(x = dt, y = sp, by = 'date', all.y = T)
-  setnafill(dt, type = 'locf')
-  dt$date <- as.Date(as.character(dt$date), format = "%Y%m%d")
   
   dt[ , diffDomestic := pcr.x - shift(pcr.x)]
   dt[ , diffFlight := pcr.y - shift(pcr.y)]

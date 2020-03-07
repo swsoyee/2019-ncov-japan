@@ -40,9 +40,9 @@ byDate[is.na(byDate)] <- 0
 byDate$date <- lapply(byDate[, 1], function(x){as.Date(as.character(x), format = '%Y%m%d')})
 
 # 退院データ
-recovered <- fread(paste0(DATA_PATH, 'recovered.csv'))
-recovered[is.na(recovered)] <- 0
-recovered[, date := as.Date(as.character(recovered$date), format = "%Y%m%d")]
+# recovered <- fread(paste0(DATA_PATH, 'recovered.csv'))
+# recovered[is.na(recovered)] <- 0
+# recovered[, date := as.Date(as.character(recovered$date), format = "%Y%m%d")]
 
 # 死亡データ
 death <- fread(paste0(DATA_PATH, 'death.csv'))
@@ -59,10 +59,16 @@ position <- fread(paste0(DATA_PATH, 'position.csv'))
 
 # 国内の日報
 domesticDailyReport <- fread(paste0(DATA_PATH, 'domesticDailyReport.csv'))
+domesticDailyReport$date <- as.Date(as.character(domesticDailyReport$date), '%Y%m%d')
+setnafill(domesticDailyReport, type = 'locf')
 # チャーター便の日報
 flightDailyReport <- fread(paste0(DATA_PATH, 'flightDailyReport.csv'))
+flightDailyReport$date <- as.Date(as.character(flightDailyReport$date), '%Y%m%d')
+setnafill(flightDailyReport, type = 'locf')
 # クルーズ船の日報
 shipDailyReport <- fread(paste0(DATA_PATH, 'shipDailyReport.csv'))
+shipDailyReport$date <- as.Date(as.character(shipDailyReport$date), '%Y%m%d')
+setnafill(shipDailyReport, type = 'locf')
 
 # 文言データ
 lang <- fread(paste0(DATA_PATH, 'lang.csv'))
@@ -167,7 +173,7 @@ regionNamePref <- sort(regionNamePref[regionNamePref > 0], decreasing = T)
 regionNamePrefName <- paste0(names(regionNamePref), ' (', regionNamePref, ')')
 regionNameOther <- regionName[48:length(regionName)]
 regionNameOtherName <- paste0(names(regionNameOther), ' (', regionNameOther, ')')
-regionName <- c('国内', names(regionNameOther), names(regionNamePref))
+regionName <- c('都道府県', names(regionNameOther), names(regionNamePref))
 defaultSelectedRegionName <- regionName[1:3]
 
 names(regionName) <- c(paste0('都道府県合計', ' (', TOTAL_DOMESITC, ')'), 
@@ -270,7 +276,7 @@ for(i in 1:nrow(domesticDailyReport)) {
   data <- rbind(data, list(label.hospitalized, label.waiting, latestRecord$waiting))
   data <- rbind(data, list(label.symptom, label.death, latestRecord$death))
   data <- rbind(data, list(label.pcr, label.symptomConfirming, latestRecord$symtomConfirming))
-  data <- cbind(date = as.Date(as.character(latestRecord$date), '%Y%m%d'), data)
+  data <- cbind(date = latestRecord$date, data)
   
   processData <- rbind(processData, data)
 }
