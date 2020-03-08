@@ -57,8 +57,9 @@ dischargeData <- reactive({
   dataset <- domesticDailyReport
   if (input$showFlightInDischarge) {
     dataset$positive <- dataset$positive + flightDailyReport$positive
-    dataset$symptomlessDischarge <- dataset$symptomlessDischarge + flightDailyReport$symptomlessDischarge
-    dataset$symptomDischarge <- dataset$symptomDischarge + flightDailyReport$symptomDischarge
+    # dataset$symptomlessDischarge <- dataset$symptomlessDischarge + flightDailyReport$symptomlessDischarge
+    # dataset$symptomDischarge <- dataset$symptomDischarge + flightDailyReport$symptomDischarge
+    dataset$discharge <- dataset$discharge + flightDailyReport$discharge
     dataset$mild <- dataset$mild + flightDailyReport$mild
     dataset$severe <- dataset$severe + flightDailyReport$severe
     dataset$death <- dataset$death + flightDailyReport$death
@@ -67,8 +68,9 @@ dischargeData <- reactive({
     ship <- shipDailyReport[2:nrow(shipDailyReport), ]
     setnafill(ship, fill = 0)
     dataset$positive <- dataset$positive + ship$positive
-    dataset$symptomlessDischarge <- dataset$symptomlessDischarge + ship$symptomlessDischarge
-    dataset$symptomDischarge <- dataset$symptomDischarge + ship$symptomDischarge
+    # dataset$symptomlessDischarge <- dataset$symptomlessDischarge + ship$symptomlessDischarge
+    # dataset$symptomDischarge <- dataset$symptomDischarge + ship$symptomDischarge
+    dataset$discharge <- dataset$discharge + ship$discharge
     dataset$severe <- dataset$severe + ship$severe
     dataset$death <- dataset$death + ship$death
   }
@@ -91,15 +93,8 @@ output$recoveredLine <- renderEcharts4r({
       areaStyle = list(opacity = 0.4)
     ) %>%
     e_line(
-      symptomlessDischarge,
-      name = '無症状退院者',
-      stack = '1',
-      itemStyle = list(normal = list(color = middleGreen)),
-      areaStyle = list(opacity = 0.4)
-    ) %>%
-    e_line(
-      symptomDischarge,
-      name = '有症状退院者',
+      discharge,
+      name = '退院者',
       stack = '1',
       itemStyle = list(normal = list(color = middleGreen)),
       areaStyle = list(opacity = 0.4)
