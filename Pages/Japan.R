@@ -208,6 +208,27 @@ fluidPage(
           fluidRow(
             column(
               width = 8,
+              tags$br(),
+              fluidRow(
+                column(
+                  width = 3,
+                  switchInput(
+                    inputId = "showShipInDischarge",
+                    label = 'クルーズ船',
+                    labelWidth = '80px',
+                    value = F
+                  )
+                ),
+                column(
+                  width = 4,
+                  switchInput(
+                    inputId = "showFlightInDischarge",
+                    label = 'チャーター便',
+                    labelWidth = '100px',
+                    value = T
+                  )
+                )
+              ),
               echarts4rOutput('recoveredLine') %>% withSpinner()
             ),
             column(

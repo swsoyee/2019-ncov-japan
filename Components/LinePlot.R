@@ -49,23 +49,97 @@ confirmedDataByDate <- reactive({
   }
 })
 
-# ====退院推移図（国内）====
+# ====退院推移図データセット====
+dischargeData <- reactive({
+  dt <- domesticDailyReport
+  dt <- merge(x = domesticDailyReport, y = flightDailyReport, by = 'date', all.x = T)
+  dt <- merge(x = dt, y = shipDailyReport, by = 'date', all.x = T)
+  dataset <- domesticDailyReport
+  if (input$showFlightInDischarge) {
+    dataset$positive <- dataset$positive + flightDailyReport$positive
+    dataset$symptomlessDischarge <- dataset$symptomlessDischarge + flightDailyReport$symptomlessDischarge
+    dataset$symptomDischarge <- dataset$symptomDischarge + flightDailyReport$symptomDischarge
+    dataset$mild <- dataset$mild + flightDailyReport$mild
+    dataset$severe <- dataset$severe + flightDailyReport$severe
+    dataset$death <- dataset$death + flightDailyReport$death
+  }
+  if (input$showShipInDischarge) {
+    ship <- shipDailyReport[2:nrow(shipDailyReport), ]
+    setnafill(ship, fill = 0)
+    dataset$positive <- dataset$positive + ship$positive
+    dataset$symptomlessDischarge <- dataset$symptomlessDischarge + ship$symptomlessDischarge
+    dataset$symptomDischarge <- dataset$symptomDischarge + ship$symptomDischarge
+    dataset$severe <- dataset$severe + ship$severe
+    dataset$death <- dataset$death + ship$death
+  }
+  dataset
+})
+
+# ====退院推移図====
 output$recoveredLine <- renderEcharts4r({
+  # dt <- dataset
+  dt <- dischargeData()
   defaultUnselected <- list(F, F, F)
-  names(defaultUnselected) <- c('軽〜中等症の者', '人工呼吸又はICUに入院している者', '死亡者')
-  domesticDailyReport %>%
+  names(defaultUnselected) <-
+    c('軽〜中等症の者', '重症者', '死亡者')
+  dt %>%
     e_chart(date) %>%
-    e_line(positive, name = 'PCR検査陽性者', itemStyle = list(normal = list(color = lightRed)), areaStyle = list(opacity = 0.4)) %>%
-    e_line(symptomlessDischarge, name = '無症状退院者', stack = '1', itemStyle = list(normal = list(color = middleGreen)), areaStyle = list(opacity = 0.4)) %>%
-    e_line(symptomDischarge, name = '有症状退院者', stack = '1', itemStyle = list(normal = list(color = middleGreen)), areaStyle = list(opacity = 0.4)) %>%
-    e_line(mild, name = '軽〜中等症の者', stack = '1', itemStyle = list(normal = list(color = middleYellow)), areaStyle = list(opacity = 0.4)) %>%
-    e_line(severe, name = '人工呼吸又はICUに入院している者', stack = '1', itemStyle = list(normal = list(color = darkRed)), areaStyle = list(opacity = 0.4)) %>%
-    e_line(death, name = '死亡者', stack = '1', itemStyle = list(normal = list(color = darkNavy)), areaStyle = list(opacity = 0.4)) %>%
+    e_line(
+      positive,
+      name = 'PCR検査陽性者',
+      itemStyle = list(normal = list(color = lightRed)),
+      areaStyle = list(opacity = 0.4)
+    ) %>%
+    e_line(
+      symptomlessDischarge,
+      name = '無症状退院者',
+      stack = '1',
+      itemStyle = list(normal = list(color = middleGreen)),
+      areaStyle = list(opacity = 0.4)
+    ) %>%
+    e_line(
+      symptomDischarge,
+      name = '有症状退院者',
+      stack = '1',
+      itemStyle = list(normal = list(color = middleGreen)),
+      areaStyle = list(opacity = 0.4)
+    ) %>%
+    e_line(
+      mild,
+      name = '軽〜中等症の者',
+      stack = '1',
+      itemStyle = list(normal = list(color = middleYellow)),
+      areaStyle = list(opacity = 0.4)
+    ) %>%
+    e_line(
+      severe,
+      name = '重症者',
+      stack = '1',
+      itemStyle = list(normal = list(color = darkRed)),
+      areaStyle = list(opacity = 0.4)
+    ) %>%
+    e_line(
+      death,
+      name = '死亡者',
+      stack = '1',
+      itemStyle = list(normal = list(color = darkNavy)),
+      areaStyle = list(opacity = 0.4)
+    ) %>%
     e_x_axis(splitLine = list(show = F)) %>%
-    e_y_axis(splitLine = list(show = F), axisLabel = list(inside = T), axisTick = list(show = F)) %>%
+    e_y_axis(
+      splitLine = list(show = F),
+      axisLabel = list(inside = T),
+      axisTick = list(show = F)
+    ) %>%
     e_grid(left = '3%') %>%
-    e_legend(type = 'scroll', orient = 'vertical', left = '10%', top = '15%', selected = defaultUnselected) %>%
-    e_title(subtext = '厚生労働省が毎日１２時にまとめているデータを使用しています（チャーター便除く）。') %>%
+    e_legend(
+      type = 'scroll',
+      orient = 'vertical',
+      left = '10%',
+      top = '15%',
+      selected = defaultUnselected
+    ) %>%
+    e_title(subtext = '厚生労働省が毎日１２時にまとめているデータを使用しているため、遅れがあります。') %>%
     e_tooltip(trigger = 'axis')
 })
 
