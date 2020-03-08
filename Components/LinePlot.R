@@ -77,6 +77,7 @@ dischargeData <- reactive({
   dataset
 })
 
+# ====退院タブのサマリー====
 output$dischargeSummary <- renderUI({
   dt <- dischargeData()[nrow(dischargeData())]
   tagList(
@@ -149,31 +150,37 @@ output$recoveredLine <- renderEcharts4r({
     e_tooltip(trigger = 'axis')
 })
 
+# ====PCR検査数の推移図データセット====
+dischargeData <- reactive({
+  dt <- domesticDailyReport
+  dt <- merge(x = domesticDailyReport, y = flightDailyReport, by = 'date', all.x = T)
+  dt <- merge(x = dt, y = shipDailyReport, by = 'date', all.x = T)
+  dataset <- domesticDailyReport
+  if (input$showFlightInPCR) {
+    dataset$pcr <- dataset$pcr + flightDailyReport$pcr
+  }
+  if (input$showShipInPCR) {
+    ship <- shipDailyReport[2:nrow(shipDailyReport), ]
+    setnafill(ship, fill = 0)
+    dataset$pcr <- dataset$pcr + ship$pcr
+  }
+  dataset
+})
+
 # ====PCR検査数====
 output$pcrLine <- renderEcharts4r({
-  dm <- domesticDailyReport[, .(date, pcr)]
-  fl <- flightDailyReport[, .(date, pcr)]
-  sp <- shipDailyReport[, .(date, pcr)]
+  dt <- dischargeData()
   
-  dt <- merge(x = dm, y = fl, by = 'date', all.x = T)
-  dt <- merge(x = dt, y = sp, by = 'date', all.y = T)
-  
-  dt[ , diffDomestic := pcr.x - shift(pcr.x)]
-  dt[ , diffFlight := pcr.y - shift(pcr.y)]
-  dt[ , diffShip := pcr - shift(pcr)]
+  dt[ , diff := pcr - shift(pcr)]
   setnafill(dt, fill = 0)
   
   dt %>%
     e_chart(date) %>%
-    e_line(pcr, name = 'クルーズ船', stack = '1', itemStyle = list(color = darkYellow), areaStyle = list(opacity = 0.4)) %>%
-    e_line(pcr.y, name = 'チャーター便', stack = '1', itemStyle = list(color = middleYellow), areaStyle = list(opacity = 0.4)) %>%
-    e_line(pcr.x, name = '国内', stack = '1', itemStyle = list(color = lightYellow), areaStyle = list(opacity = 0.4)) %>%
-    e_bar(diffDomestic, name = '国内新規', stack = '2', y_index = 1, itemStyle = list(color = middleYellow)) %>%
-    e_bar(diffFlight, name = 'チャーター便新規', stack = '2', y_index = 1, itemStyle = list(color = middleYellow)) %>%
-    e_bar(diffShip, name = 'クルーズ船新規', stack = '2', y_index = 1, itemStyle = list(color = middleYellow)) %>%
+    e_line(pcr, name = '累計', itemStyle = list(color = lightYellow), areaStyle = list(opacity = 0.5)) %>%
+    e_bar(diff, name = '新規（日次）',  y_index = 1, itemStyle = list(color = middleYellow)) %>%
     e_x_axis(splitLine = list(show = F)) %>%
-    e_y_axis(splitLine = list(show = F), axisLabel = list(inside = T)) %>%
-    e_title(subtext = 'PCR検査実施人数については複数の検体・検査を重複してカウントしている\n自治体からの報告は合計に含めていない。また、データ公表がない日に０件扱いします\n（今後適切に修正します）。') %>%
+    e_y_axis(splitLine = list(show = F), axisLabel = list(inside = T), axisTick = list(show = F)) %>%
+    e_y_axis(splitLine = list(show = F), index = 1, axisTick = list(show = F)) %>%
     e_grid(left = '3%') %>%
     e_legend(type = 'scroll', orient = 'vertical', left = '10%', top = '15%') %>%
     e_tooltip(trigger = 'axis')
