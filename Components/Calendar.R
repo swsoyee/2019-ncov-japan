@@ -30,7 +30,7 @@ output$confirmedCalendar <- renderEcharts4r({
 
 output$curedCalendar <- renderEcharts4r({
   dt <- data.table('date' = domesticDailyReport$date,
-                   'discharge' = domesticDailyReport$symptomlessDischarge + domesticDailyReport$symptomDischarge)
+                   'discharge' = dischargeData()$discharge)
   dt[, diff := discharge - shift(discharge)]
   setnafill(dt, fill = 0)
   maxValue <- max(dt$diff)

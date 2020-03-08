@@ -235,6 +235,7 @@ fluidPage(
               width = 4,
               tagList(
                 tags$br(),
+                uiOutput('dischargeSummary'),
                 tags$b('退院者内訳'),
                 echarts4rOutput('curedBar', height = '20px') %>% withSpinner(),
                 uiOutput('todayCured'),
@@ -259,7 +260,7 @@ fluidPage(
               width = 4,
               tagList(
                 tags$br(),
-                tags$b('これまでの主な相談内容（例）'),
+                tags$b('これまでの主な相談内容'),
                 tags$li('現在の症状に対する不安'),
                 tags$li('予防法、消毒、対処法等医療に関する一般的事項'),
                 tags$li('政府の対策についてのご意見'),

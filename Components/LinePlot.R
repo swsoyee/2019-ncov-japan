@@ -77,6 +77,17 @@ dischargeData <- reactive({
   dataset
 })
 
+output$dischargeSummary <- renderUI({
+  dt <- dischargeData()[nrow(dischargeData())]
+  tagList(
+    tags$b(dt$date, 'のサマリー'),
+    tags$li('退院率：', round(dt$discharge / dt$positive * 100, 2), '%'),
+    tags$li('重傷率：', round(dt$sever / dt$positive * 100, 2), '%'),
+    tags$li('死亡率：', round(dt$death / dt$positive * 100, 2), '%'),
+    tags$hr(),
+  )
+})
+
 # ====退院推移図====
 output$recoveredLine <- renderEcharts4r({
   # dt <- dataset

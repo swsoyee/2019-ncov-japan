@@ -32,17 +32,9 @@ getFinalAndDiff <- function(vector) {
 # ====
 # データの読み込み
 # ====
-# db <- fread(paste0(DATA_PATH, 'summary.csv'), header = T)
-# db[is.na(db)] <- 0
-
 byDate <- fread(paste0(DATA_PATH, 'byDate.csv'), header = T)
 byDate[is.na(byDate)] <- 0
 byDate$date <- lapply(byDate[, 1], function(x){as.Date(as.character(x), format = '%Y%m%d')})
-
-# 退院データ
-# recovered <- fread(paste0(DATA_PATH, 'recovered.csv'))
-# recovered[is.na(recovered)] <- 0
-# recovered[, date := as.Date(as.character(recovered$date), format = "%Y%m%d")]
 
 # 死亡データ
 death <- fread(paste0(DATA_PATH, 'death.csv'))
@@ -299,12 +291,11 @@ RECOVERED_FILE_UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'recovered.csv'))$
 DEATH_FILE_UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'death.csv'))$mtime
 UPDATE_DATE <- as.Date(UPDATE_DATETIME)
 DEATH_UPDATE_DATE <- as.Date(DEATH_FILE_UPDATE_DATETIME)
-GLOABLE_MAIN_COLOR <- '#605ca8'
-GLOABLE_MAIN_COLOR_RGBVALUE <-
-  paste(as.vector(col2rgb(GLOABLE_MAIN_COLOR)), collapse = ",")
-GLOABLE_MAIN_COLOR_RGBA <-
-  paste0('rgba(', GLOABLE_MAIN_COLOR_RGBVALUE, ',0.5)')
-options(spinner.color = GLOABLE_MAIN_COLOR)
+# GLOABLE_MAIN_COLOR <- '#605ca8'
+# GLOABLE_MAIN_COLOR_RGBVALUE <-
+#   paste(as.vector(col2rgb(GLOABLE_MAIN_COLOR)), collapse = ",")
+# GLOABLE_MAIN_COLOR_RGBA <-
+#   paste0('rgba(', GLOABLE_MAIN_COLOR_RGBVALUE, ',0.5)')
 
 # TODO Vectorのネーミングなぜかうまくいかないのでとりあえずここに置く
 showOption <- c('showShip', 'showFlight')
@@ -337,6 +328,8 @@ lightGrey <- '#F5F5F5'
 lightBlue <- '#7BD6F5'
 middleBlue <- '#00C0EF'
 darkBlue <- '#00A7D0'
+
+options(spinner.color = middleRed)
 
 # ====メゾット====
 getChangeIcon <- function(number) {
