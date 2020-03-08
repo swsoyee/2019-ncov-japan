@@ -180,15 +180,14 @@ pcrData <- reactive({
     setnafill(ship, fill = 0)
     dataset$pcr <- dataset$pcr + ship$pcr
   }
+  dataset[ , diff := pcr - shift(pcr)]
+  setnafill(dataset, fill = 0)
   dataset
 })
 
 # ====PCR検査数====
 output$pcrLine <- renderEcharts4r({
   dt <- pcrData()
-  
-  dt[ , diff := pcr - shift(pcr)]
-  setnafill(dt, fill = 0)
   
   dt %>%
     e_chart(date) %>%

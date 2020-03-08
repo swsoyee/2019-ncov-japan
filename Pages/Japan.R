@@ -227,7 +227,7 @@ fluidPage(
                 tags$hr(),
                 tags$b('PCR検査数（日次）')
               ),
-              tags$p('開発中')
+              echarts4rOutput('pcrCalendar', height = '130px') %>% withSpinner()
             )
           )
         ),

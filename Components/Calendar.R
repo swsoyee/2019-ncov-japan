@@ -28,6 +28,26 @@ output$confirmedCalendar <- renderEcharts4r({
   }
 })
 
+output$pcrCalendar <- renderEcharts4r({
+  dt <- pcrData()
+  maxValue <- max(dt$diff)
+  dt %>%
+    e_charts(date) %>% 
+    e_calendar(range = c('2020-01-01', '2020-06-30'),
+               top = 25, left = 0, cellSize = 15,
+               splitLine = list(show = F), itemStyle = list(borderWidth = 2, borderColor = '#FFFFFF'),
+               dayLabel = list(nameMap = c('日', '月', '火', '水', '木', '金', '土')),
+               monthLabel = list(nameMap = 'cn')) %>% 
+    e_heatmap(diff, coord_system = "calendar", name = lang[[langCode]][80]) %>% 
+    e_legend(show = F) %>%
+    e_visual_map(top = '15%', 
+                 max = maxValue, 
+                 show = F,
+                 inRange = list(color = c('#FFFFFF', darkYellow)), # scale colors
+    ) %>%
+    e_tooltip()
+})
+
 output$curedCalendar <- renderEcharts4r({
   dt <- data.table('date' = domesticDailyReport$date,
                    'discharge' = dischargeData()$discharge)
