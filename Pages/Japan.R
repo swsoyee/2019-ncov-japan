@@ -395,17 +395,16 @@ fluidPage(
   )),
   fluidRow(
     boxPlus(
-      title = tagList(icon('map'), lang[[langCode]][2]),
+      title = tagList(icon('map-marked-alt'), '各都道府県の状況'),
       closable = F,
       collapsible = T,
       width = 8,
       tabsetPanel(
         tabPanel(
-          title = 'マップ',
+          title = tagList(icon('globe-asia'), '感染状況マップ'),
           fluidRow(
             column(
               width = 6,
-              # plotOutput('map', height = '370px') %>% withSpinner(),
               echarts4rOutput('echartsMap')  %>% withSpinner(),
               actionButton(inputId = 'switchCaseMap', label = '事例マップへ'),
             ),
@@ -418,7 +417,7 @@ fluidPage(
           )
         ),
         tabPanel(
-          title = '時系列棒グラフ',
+          title = tagList(icon('chart-bar'), '時系列棒グラフ'),
           echarts4rOutput('regionTimeSeries') %>% withSpinner()
         )
       ),
@@ -448,7 +447,7 @@ fluidPage(
     boxPlus(width = 4, dataTableOutput('news') %>% withSpinner())
   ),
   fluidRow(
-    boxPlus(title = '病気進行',
+    boxPlus(title = tagList(icon('hospital'), '症状の進行'),
             width = 8,
             closable = F,
             # collapsed = T,

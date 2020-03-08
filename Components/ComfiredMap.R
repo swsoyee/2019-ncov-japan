@@ -27,7 +27,9 @@ output$echartsMap <- renderEcharts4r({
           name = '感染確認数', roam = T,
           nameMap = nameMap,
           layoutSize = '50%',
-          scaleLimit = list(min = 0.7, max = 5)) %>%
+          center = c(137.1374062, 36.8911298),
+          zoom = 1.5,
+          scaleLimit = list(min = 1, max = 4)) %>%
     e_visual_map(
       count,
       top = '5%',
