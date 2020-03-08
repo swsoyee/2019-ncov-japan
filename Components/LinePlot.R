@@ -93,9 +93,13 @@ output$dischargeSummary <- renderUI({
 output$recoveredLine <- renderEcharts4r({
   # dt <- dataset
   dt <- dischargeData()
-  defaultUnselected <- list(F, F, F)
+  
+  dt[ , diff := discharge - shift(discharge)]
+  setnafill(dt, fill = 0)
+
+  defaultUnselected <- list(F, F, F, F)
   names(defaultUnselected) <-
-    c('軽〜中等症の者', '重症者', '死亡者')
+    c('軽〜中等症の者', '新規退院者（日次）', '重症者', '死亡者')
   dt %>%
     e_chart(date) %>%
     e_line(
@@ -108,6 +112,13 @@ output$recoveredLine <- renderEcharts4r({
       discharge,
       name = '退院者',
       stack = '1',
+      itemStyle = list(normal = list(color = middleGreen)),
+      areaStyle = list(opacity = 0.4)
+    ) %>%
+    e_bar(
+      diff,
+      name = '新規退院者（日次）',
+      y_index = 1,
       itemStyle = list(normal = list(color = middleGreen)),
       areaStyle = list(opacity = 0.4)
     ) %>%
@@ -136,6 +147,11 @@ output$recoveredLine <- renderEcharts4r({
     e_y_axis(
       splitLine = list(show = F),
       axisLabel = list(inside = T),
+      axisTick = list(show = F)
+    ) %>%
+    e_y_axis(
+      splitLine = list(show = F), 
+      index = 1,
       axisTick = list(show = F)
     ) %>%
     e_grid(left = '3%') %>%
