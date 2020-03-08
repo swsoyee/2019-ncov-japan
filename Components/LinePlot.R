@@ -1,28 +1,30 @@
 # ====感染確認推移図====
 output$confirmedLine <- renderEcharts4r({
   dt <- confirmedDataByDate()
-
-  e <- dt %>% 
-    e_charts(date) %>%
-    e_grid(left = '3%') %>%
-    e_x_axis(splitLine = list(show = F)) %>%
-    e_y_axis(splitLine = list(show = F), index = 0, axisLabel = list(inside = T)) %>%
-    e_y_axis(splitLine = list(show = F), index = 1, axisLabel = list(inside = T)) %>%
-    e_title(subtext = paste0(lang[[langCode]][62], UPDATE_DATETIME)) %>%
-    # e_zoom() %>% e_datazoom() %>%
-    e_legend(type = 'scroll', orient = 'vertical', left = '10%', top = '15%') %>%
-    e_tooltip(trigger = 'axis') %>% e_theme("essos") %>% e_color(background = '#FFFFFF')
-
-  for(i in input$regionPicker) {
-    itemTotal <- paste0(i, '合計')
-    itemNew <- paste0(i, '新規')
-    assign(itemTotal, itemTotal)
-    assign(i, i)
-    e <- e %>%
-      e_line_(itemTotal, name = itemTotal, stack = 'total', areaStyle = list(opacity = 0.4)) %>%
-      e_bar_(i, name = paste0(i, '新規'), stack = 'new', y_index = 1, itemStyle = list(color = middleRed))
+  if(ncol(dt) > 1) {
+    dt %>%
+      e_charts(date) %>%
+      e_line(
+        total,
+        name = '合計',
+        itemStyle = list(normal = list(color = middleRed)),
+        areaStyle = list(opacity = 0.4)
+      ) %>%
+      e_bar(
+        difference,
+        name = '新規感染者（日次）',
+        y_index = 1,
+        itemStyle = list(normal = list(color = middleRed)),
+        areaStyle = list(opacity = 0.4)
+      ) %>%
+      e_grid(left = '3%') %>%
+      e_x_axis(splitLine = list(show = F)) %>%
+      e_y_axis(splitLine = list(show = F), axisLabel = list(inside = T), axisTick = list(show = F)) %>%
+      e_y_axis(splitLine = list(show = F), index = 1, max = 150, axisTick = list(show = F)) %>%
+      e_title(subtext = paste0(lang[[langCode]][62], UPDATE_DATETIME)) %>%
+      e_legend(type = 'scroll', orient = 'vertical', left = '10%', top = '15%') %>%
+      e_tooltip(trigger = 'axis')
   }
-  e
 })
 
 output$confirmedLineWrapper <- renderUI({
@@ -34,18 +36,17 @@ output$confirmedLineWrapper <- renderUI({
 })
 
 confirmedDataByDate <- reactive({
-  dt <- data.frame(byDate)
+  dt <- data.table(byDate)
   dt$都道府県 <- rowSums(byDate[, c(2:48)])
   if(!is.null(input$regionPicker)) {
-    dt <- dt[, c('date', input$regionPicker)]
-    # dt <- dt[, 1:4] # TEST
-    for (i in 2:ncol(dt)) {
-      indexName <- colnames(dt)[i]
-      dt[, paste0(colnames(dt)[i], '合計')] <- cumsum(dt[, i])
-    }
+    dt <- dt[, c('date', input$regionPicker), with = F]
+    # dt <- dt[, c('date', '北海道', '東京')] # TEST
+    dt$total <- cumsum(rowSums(dt[, 2:ncol(dt)]))
+    dt[ , difference := total - shift(total)]
+    setnafill(dt, fill = 0)
     dt
   } else {
-    dt[1] # 日付のカラムだけを返す
+    dt[, 1, with = F] # 日付のカラムだけを返す
   }
 })
 

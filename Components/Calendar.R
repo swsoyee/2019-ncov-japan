@@ -1,13 +1,7 @@
 output$confirmedCalendar <- renderEcharts4r({
-  # date <- dt$date
-  # dt <- dt[, 2:((ncol(dt) + 1) / 2)]
+  dt <- confirmedDataByDate()
   if(length(confirmedDataByDate()) > 1) {
-    date <- confirmedDataByDate()$date
-    dt <- confirmedDataByDate()[2:((length(confirmedDataByDate()) + 1) / 2)]
-    dt$sum <- rowSums(dt)
-    
-    dt$date <- date
-    maxValue <- max(dt[, 1:ncol(dt) - 1])
+    maxValue <- max(dt$difference)
     dt %>%
       e_charts(date) %>% 
       e_calendar(range = c('2020-01-01', '2020-06-30'),
@@ -15,7 +9,7 @@ output$confirmedCalendar <- renderEcharts4r({
                  splitLine = list(show = F), itemStyle = list(borderWidth = 2, borderColor = '#FFFFFF'),
                  dayLabel = list(nameMap = c('日', '月', '火', '水', '木', '金', '土')),
                  monthLabel = list(nameMap = 'cn')) %>% 
-      e_heatmap(sum, coord_system = "calendar") %>%
+      e_heatmap(difference, coord_system = "calendar") %>%
       e_legend(show = F) %>%
       e_visual_map(top = '2%', 
                    show = F,
