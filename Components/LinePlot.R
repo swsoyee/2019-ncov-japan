@@ -151,7 +151,7 @@ output$recoveredLine <- renderEcharts4r({
 })
 
 # ====PCR検査数の推移図データセット====
-dischargeData <- reactive({
+pcrData <- reactive({
   dt <- domesticDailyReport
   dt <- merge(x = domesticDailyReport, y = flightDailyReport, by = 'date', all.x = T)
   dt <- merge(x = dt, y = shipDailyReport, by = 'date', all.x = T)
@@ -169,7 +169,7 @@ dischargeData <- reactive({
 
 # ====PCR検査数====
 output$pcrLine <- renderEcharts4r({
-  dt <- dischargeData()
+  dt <- pcrData()
   
   dt[ , diff := pcr - shift(pcr)]
   setnafill(dt, fill = 0)

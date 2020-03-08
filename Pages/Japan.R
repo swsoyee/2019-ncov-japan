@@ -190,21 +190,22 @@ fluidPage(
               tags$br(),
               fluidRow(
                 column(
-                  width = 3,
+                  width = 6,
                   switchInput(
                     inputId = "showShipInPCR",
-                    label = 'クルーズ船',
-                    labelWidth = '80px',
-                    value = F
-                  )
-                ),
-                column(
-                  width = 4,
+                    label = icon('ship'), 
+                    offLabel = icon('eye-slash'), 
+                    onLabel = icon('eye'),
+                    value = F,
+                    inline = T
+                  ),
                   switchInput(
                     inputId = "showFlightInPCR",
-                    label = 'チャーター便',
-                    labelWidth = '100px',
-                    value = T
+                    label = icon('plane'),
+                    offLabel = icon('eye-slash'), 
+                    onLabel = icon('eye'),
+                    value = T,
+                    inline = T
                   )
                 )
               ),
@@ -241,21 +242,22 @@ fluidPage(
               tags$br(),
               fluidRow(
                 column(
-                  width = 3,
+                  width = 6,
                   switchInput(
                     inputId = "showShipInDischarge",
-                    label = 'クルーズ船',
-                    labelWidth = '80px',
-                    value = F
-                  )
-                ),
-                column(
-                  width = 4,
+                    label = icon('ship'), 
+                    offLabel = icon('eye-slash'), 
+                    onLabel = icon('eye'),
+                    value = F,
+                    inline = T
+                  ),
                   switchInput(
-                    inputId = "showFlightInDischarge",
-                    label = 'チャーター便',
-                    labelWidth = '100px',
-                    value = T
+                    inputId = "showFlightInDischarge", 
+                    label = icon('plane'),
+                    offLabel = icon('eye-slash'), 
+                    onLabel = icon('eye'),
+                    value = T,
+                    inline = T
                   )
                 )
               ),
