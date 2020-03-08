@@ -122,91 +122,141 @@ fluidPage(
       closable = F,
       collapsible = T,
       width = 12,
-      fluidRow(
-        column(
-          width = 8,
-          tabsetPanel(
-            id = 'linePlot',
-            tabPanel(
-              # 感染者数の推移
-              title = lang[[langCode]][3], icon = icon('procedures'),
-              value = 'confirmed',
-              fluidRow(column(11.9, offset = 0.1,
+      tabsetPanel(
+        id = 'linePlot',
+        tabPanel(
+          # 感染者数の推移
+          title = lang[[langCode]][3], 
+          icon = icon('procedures'),
+          value = 'confirmed',
+          fluidRow(
+            column(
+              width = 8,
+              fluidRow(
                 tags$br(),
                 pickerInput(
-                  inputId = 'regionPicker', 
-                  label = lang[[langCode]][93], # 地域選択
-                  choices = regionName, 
+                  inputId = 'regionPicker',
+                  # 地域選択
+                  label = lang[[langCode]][93],
+                  choices = regionName,
                   selected = defaultSelectedRegionName,
                   options = list(
-                    `actions-box` = TRUE, 
+                    `actions-box` = TRUE,
                     size = 10,
-                    `deselect-all-text` = lang[[langCode]][91], # クリア
-                    `select-all-text` = lang[[langCode]][92], # 全部
-                    `selected-text-format` = lang[[langCode]][94] # 三件以上選択されました
-                  ), 
-                  multiple = T, width = '70%', inline = T
+                    # クリア
+                    `deselect-all-text` = lang[[langCode]][91],
+                    # 全部
+                    `select-all-text` = lang[[langCode]][92],
+                    # 三件以上選択されました
+                    `selected-text-format` = lang[[langCode]][94] 
+                  ),
+                  multiple = T,
+                  width = '70%',
+                  inline = T
                 )
-              )),
+              ),
               uiOutput('confirmedLineWrapper') %>% withSpinner()
-              ),
-            tabPanel(
-              # PCR検査数推移
-              title = 'PCR検査数推移', icon = icon('vials'),
-              value = 'pcr',
-              fluidRow(
-                column(width = 12,
-                       tags$br(),
-                       tags$p('開発バージョンです。最終版ではありません')
-                )
-              ),
-              echarts4rOutput('pcrLine') %>% withSpinner()
             ),
-            tabPanel(
-              # 退院者推移
-              title = lang[[langCode]][89], icon = icon('user-shield'),
-              value = 'discharged',
-              fluidRow(
-                column(width = 12,
-                  tags$br(),
-                  tags$p('開発バージョンです。最終版ではありません')
-                )
-              ),
-              echarts4rOutput('recoveredLine') %>% withSpinner()
-            ),
-            tabPanel(
-              # コールセンターの対応
-              title = 'コールセンターの対応', icon = icon('headset'),
-              value = 'callCenter',
-              fluidRow(
-                column(width = 12,
-                       tags$br(),
-                       tags$p('開発バージョンです。最終版ではありません')
-                )
-              ),
-              echarts4rOutput('callCenter') %>% withSpinner()
+            column(
+              width = 4,
+              tags$br(),
+              tags$b(paste0(
+                lang[[langCode]][97], length(regionZero), ' (', round(length(regionZero) /
+                                                                        47 * 100, 2), '%)'
+              )),
+              uiOutput('saveArea'),
+              tags$br(),
+              tags$b('感染者'),
+              echarts4rOutput('confirmedBar', height = '20px') %>% withSpinner(),
+              uiOutput('todayConfirmed'),
+              tags$br(),
+              tags$b('死亡者'),
+              echarts4rOutput('deathBar', height = '20px') %>% withSpinner(),
+              uiOutput('todayDeath'),
+              tags$hr(),
+              tags$b('感染者確認数（日次）'),
+              uiOutput('renderCalendar')
             )
           )
         ),
-        column(
-          width = 4,
-          tags$b(paste0(lang[[langCode]][97], length(regionZero), ' (', round(length(regionZero)/47 * 100, 2), '%)')),
-          uiOutput('saveArea'),
-          tags$br(),
-          tags$b('感染者'),
-          echarts4rOutput('confirmedBar', height = '20px') %>% withSpinner(),
-          uiOutput('todayConfirmed'),
-          tags$br(),
-          tags$b('退院者'),
-          echarts4rOutput('curedBar', height = '20px') %>% withSpinner(),
-          uiOutput('todayCured'),
-          tags$br(),
-          tags$b('死亡者'),
-          echarts4rOutput('deathBar', height = '20px') %>% withSpinner(),
-          uiOutput('todayDeath'),
-          tags$hr(),
-          tags$b('新規（日次）ヒートマップ'),
-          uiOutput('renderCalendar')
+        tabPanel(
+          # PCR検査数推移
+          title = 'PCR検査数の推移',
+          icon = icon('vials'),
+          value = 'pcr',
+          fluidRow(
+            column(
+              width = 8,
+              echarts4rOutput('pcrLine') %>% withSpinner()
+            ),
+            column(
+              width = 4,
+              tagList(
+                tags$br(),
+                tags$hr(),
+                tags$b('PCR検査数（日次）')
+              ),
+              tags$p('開発中')
+            )
+          )
+        ),
+        tabPanel(
+          # 退院者数の推移
+          title = lang[[langCode]][89], 
+          icon = icon('user-shield'),
+          value = 'discharged',
+          fluidRow(
+            column(
+              width = 8,
+              echarts4rOutput('recoveredLine') %>% withSpinner()
+            ),
+            column(
+              width = 4,
+              tagList(
+                tags$br(),
+                tags$b('退院者内訳'),
+                echarts4rOutput('curedBar', height = '20px') %>% withSpinner(),
+                uiOutput('todayCured'),
+                tags$hr(),
+                tags$b('退院数（日次）')
+              ),
+              echarts4rOutput('curedCalendar', height = '130px') %>% withSpinner()
+            )
+          )
+        ),
+        tabPanel(
+          # コールセンターの対応
+          title = 'コールセンターの対応', 
+          icon = icon('headset'),
+          value = 'callCenter',
+          fluidRow(
+            column(
+              width = 8,
+              echarts4rOutput('callCenter') %>% withSpinner()
+            ),
+            column(
+              width = 4,
+              tagList(
+                tags$br(),
+                tags$b('これまでの主な相談内容（例）'),
+                tags$li('現在の症状に対する不安'),
+                tags$li('予防法、消毒、対処法等医療に関する一般的事項'),
+                tags$li('政府の対策についてのご意見'),
+                tags$li('渡航に関する相談'),
+                tags$li('国内発症例の詳細な行動履歴について'),
+                tags$li('その他'),
+                tags$br(),
+                tags$a(
+                  href = 'https://www.mhlw.go.jp/content/10906000/000601711.pdf',
+                  icon('link'),
+                  '厚生労働省コールセンターの対応状況等について'
+                ),
+                tags$hr(),
+                tags$b('相談を受けた件数（日次）')
+              ),
+              echarts4rOutput('callCenterCanlendar', height = '130px') %>% withSpinner()
+            )
+          )
         )
       ),
       tags$hr(),
