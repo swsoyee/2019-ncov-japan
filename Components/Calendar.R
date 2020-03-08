@@ -62,9 +62,34 @@ output$renderCalendar <- renderUI({
     tagList(
       echarts4rOutput('curedCalendar', height = '130px') 
     )
+  } else if (input$linePlot == 'callCenter') {
+    echarts4rOutput('callCenterCanlendar', height = '130px') 
   } else {
     tagList(
       tags$p('開発中')
     )
   }
+})
+
+output$callCenterCanlendar <- renderEcharts4r({
+  dt <- callCenterDailyReport
+  setnafill(dt, fill = 0)
+  dt <- data.table('date' = dt$date,
+                   'count' = dt$call + dt$mail + dt$fax)
+  maxValue <- max(dt$count)
+  dt %>%
+    e_charts(date) %>% 
+    e_calendar(range = c('2020-01-01', '2020-06-30'),
+               top = 25, left = 0, cellSize = 15,
+               splitLine = list(show = F), itemStyle = list(borderWidth = 2, borderColor = '#FFFFFF'),
+               dayLabel = list(nameMap = c('日', '月', '火', '水', '木', '金', '土')),
+               monthLabel = list(nameMap = 'cn')) %>% 
+    e_heatmap(count, coord_system = "calendar", name = lang[[langCode]][80]) %>% 
+    e_legend(show = F) %>%
+    e_visual_map(top = '15%', 
+                 max = maxValue, 
+                 show = F,
+                 inRange = list(color = c('#FFFFFF', darkBlue)), # scale colors
+    ) %>%
+    e_tooltip()
 })
