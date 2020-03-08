@@ -6,14 +6,14 @@ output$totalConfirmedByRegionPlot <- renderEcharts4r({
   dt$minusToday <- 0 - dt$today
   dt$minusTotal <- dt$minusUntilToday + dt$minusToday
   dt %>%
-    e_charts(region) %>%
+    e_charts(region, x_index = 1) %>%
     e_bar(minusUntilToday,
           stack = '1',
           z = 2,
           itemStyle = list(color = middleRed),
           label = list(show = T, position = 'inside', color = '#FFFFFF', formatter = htmlwidgets::JS('
             function(params) {
-              if (params.value[0] < 0) {
+              if (params.value[0] < -3) {
                 return(0 - params.value[0]);
               } else {
                 return("");
@@ -42,18 +42,18 @@ output$totalConfirmedByRegionPlot <- renderEcharts4r({
           label = list(show = T, position = 'left', formatter = htmlwidgets::JS('
             function(params) {
               if (params.value[0] < 0) {
-                return(params.value[1] + " (" +(0 - params.value[0] + ")"));
+                return(params.value[1] + "：" +(0 - params.value[0]));
               } else {
                 return("");
               }
             }
           ')),
           name = '合計') %>%
-    e_grid(right = '0%', bottom = '5%', top = '0%', left = '20%') %>%
+    e_grid(right = '0%', bottom = '0%', top = '0%', left = '25%') %>%
     e_x_axis(splitLine = list(show = F), axisLabel = list(show = F),
              axisLine = list(show = F)) %>%
     e_y_axis(splitLine = list(show = F), show = F) %>%
-    e_legend(orient = 'vertical', top = '0%', left = '50%') %>%
+    e_legend(orient = 'vertical', top = '0%', left = '25%') %>%
     e_legend_unselect(name = lang[[langCode]][78]) %>%
     e_flip_coords()
 })
@@ -78,8 +78,7 @@ output$regionTimeSeries <- renderEcharts4r({
     e_labels(show = T) %>%
     e_tooltip() %>%
     e_timeline_opts(left = '0%', right = '0%', symbol = 'diamond',
-                    loop = F,
-                    playInterval = 1000,
+                    playInterval = 500,
                     currentIndex = nrow(byDate) - 1)
 })
 
@@ -92,16 +91,17 @@ totalConfirmedByRegionData <- reactive({
                       today = today, 
                       untilToday = untilToday)
   
-  if (is.null(input$showOtherRegion)) {
-    total <- total[!(region %in% lang[[langCode]][35:36])]
-  } else {
-    if (!('showShip' %in% input$showOtherRegion)) {
-      total <- total[region != lang[[langCode]][35]] # クルーズ船
-    }
-    if (!('showFlight' %in% input$showOtherRegion)) {
-      total <- total[region != lang[[langCode]][36]] # チャーター便
-    }
-  }
+  # if (is.null(input$showOtherRegion)) {
+  #   total <- total[!(region %in% lang[[langCode]][35:36])]
+  # } else {
+  #   if (!('showShip' %in% input$showOtherRegion)) {
+  #     total <- total[region != lang[[langCode]][35]] # クルーズ船
+  #   }
+  #   if (!('showFlight' %in% input$showOtherRegion)) {
+  #     total <- total[region != lang[[langCode]][36]] # チャーター便
+  #   }
+  # }
+  total <- total[!(region %in% lang[[langCode]][35:36])]
   total
 })
 
