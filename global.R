@@ -69,6 +69,9 @@ setnafill(flightDailyReport, type = 'locf')
 shipDailyReport <- fread(paste0(DATA_PATH, 'shipDailyReport.csv'))
 shipDailyReport$date <- as.Date(as.character(shipDailyReport$date), '%Y%m%d')
 setnafill(shipDailyReport, type = 'locf')
+# コールセンター
+callCenterDailyReport <- fread(paste0(DATA_PATH, 'callCenter.csv'))
+callCenterDailyReport$date <- as.Date(as.character(callCenterDailyReport$date), '%Y%m%d')
 
 # 文言データ
 lang <- fread(paste0(DATA_PATH, 'lang.csv'))
@@ -329,6 +332,9 @@ lightNavy <- '#5A6E82'
 middelNavy <- '#001F3F'
 darkNavy <- '#001934'
 lightGrey <- '#F5F5F5'
+lightBlue <- '#7BD6F5'
+middleBlue <- '#00C0EF'
+darkBlue <- '#00A7D0'
 
 # ====メゾット====
 getChangeIcon <- function(number) {

@@ -252,3 +252,18 @@ output$deathBar <- renderEcharts4r({
       }
     ')))
 })
+
+# ====コールセンター====
+output$callCenter <- renderEcharts4r({
+  maxCall <- max(callCenterDailyReport$call)
+  callCenterDailyReport %>%
+    e_chart(date) %>%
+    e_bar(call, name = 'コールセンター', stack = '1', itemStyle = list(color = middleBlue)) %>%
+    e_bar(fax, name = 'FAX', stack = '1', itemStyle = list(color = darkBlue)) %>%
+    e_bar(mail, name = 'メール', stack = '1', itemStyle = list(color = lightBlue)) %>%
+    e_grid(left = '3%') %>%
+    e_legend(type = 'scroll', orient = 'vertical', left = '10%', top = '15%') %>%
+    e_x_axis(splitLine = list(show = F)) %>%
+    e_y_axis(splitLine = list(show = F), axisLabel = list(inside = T), axisTick = list(show = F)) %>%
+    e_tooltip(trigger = 'axis')
+})

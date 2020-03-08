@@ -173,6 +173,18 @@ fluidPage(
                 )
               ),
               echarts4rOutput('recoveredLine') %>% withSpinner()
+            ),
+            tabPanel(
+              # コールセンターの対応
+              title = 'コールセンターの対応', icon = icon('headset'),
+              value = 'callCenter',
+              fluidRow(
+                column(width = 12,
+                       tags$br(),
+                       tags$p('開発バージョンです。最終版ではありません')
+                )
+              ),
+              echarts4rOutput('callCenter') %>% withSpinner()
             )
           )
         ),
