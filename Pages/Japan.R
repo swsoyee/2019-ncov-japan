@@ -398,7 +398,7 @@ fluidPage(
       title = tagList(icon('map-marked-alt'), '各都道府県の状況'),
       closable = F,
       collapsible = T,
-      width = 8,
+      width = 12,
       tabsetPanel(
         tabPanel(
           title = tagList(icon('globe-asia'), '感染状況マップ'),
@@ -417,6 +417,24 @@ fluidPage(
           )
         ),
         tabPanel(
+          title = tagList(icon('vials'), 'PCR検査状況'),
+          fluidRow(
+            column(
+              width = 8,
+              tags$br(),
+              tags$a(icon('database'), 'データ提供：@kenmo_economics', 
+                     href = 'https://twitter.com/kenmo_economics'
+              ),
+              echarts4rOutput('regionPCR') %>% withSpinner()
+            ),
+            column(
+              width = 4,
+              '準備中'
+            )
+          )
+
+        ),
+        tabPanel(
           title = tagList(icon('chart-bar'), '時系列棒グラフ'),
           echarts4rOutput('regionTimeSeries') %>% withSpinner()
         )
@@ -425,12 +443,6 @@ fluidPage(
         lang[[langCode]][62], UPDATE_DATETIME, '開発＆調整中'
       ))
     ),
-    boxPlus(title = tagList(icon('venus-mars'), '歳代・性別'),
-            width = 4,
-            echarts4rOutput('genderBar'),
-            closable = F,
-            footer = tags$small('厚生労働省の報道発表のデータに基づいてプロットしたグラフです。多少数値の遅れがあります。')
-    )
   ),
   fluidRow(
     boxPlus(title = tagList(icon('connectdevelop'), '感染経路ネットワーク'),
@@ -444,7 +456,12 @@ fluidPage(
               checkboxInput('hideSingle', '離散を非表示', T)
             ),
             footer = tags$small('※開発バージョンです。最終版ではありません')),
-    boxPlus(width = 4, dataTableOutput('news') %>% withSpinner())
+    boxPlus(title = tagList(icon('venus-mars'), '歳代・性別'),
+            width = 4,
+            echarts4rOutput('genderBar'),
+            closable = F,
+            footer = tags$small('厚生労働省の報道発表のデータに基づいてプロットしたグラフです。多少数値の遅れがあります。')
+    )
   ),
   fluidRow(
     boxPlus(title = tagList(icon('hospital'), '症状の進行'),
@@ -453,6 +470,7 @@ fluidPage(
             # collapsed = T,
             echarts4rOutput('processSankey') %>% withSpinner(),
             footer = tags$small('※開発バージョンです。最終版ではありません')
-            )
+            ),
+    boxPlus(width = 4, dataTableOutput('news') %>% withSpinner())
   )
 )

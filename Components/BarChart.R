@@ -275,3 +275,22 @@ output$callCenter <- renderEcharts4r({
     e_y_axis(splitLine = list(show = F), index = 1, axisTick = list(show = F)) %>%
     e_tooltip(trigger = 'axis')
 })
+
+# ====都道府県PCR====
+output$regionPCR <- renderEcharts4r({
+  dt <- provincePCR[県名 != '全国']
+  dt[, per := round(陽性者数/累積検査数 * 100, 2)]
+  dt %>%
+    group_by(date) %>%
+    e_chart(県名, timeline = T) %>%
+    e_bar(累積検査数) %>%
+    e_axis(axisTick =list(show = F), axisLabel = list(interval = 0)) %>%
+    e_x_axis(axisLabel = list(rotate = 90, interval = 0)) %>%
+    e_y_axis(max = max(dt$累積検査数) + 30, index = 1) %>%
+    e_grid(bottom = '25%', top = '5%', left = '5%', right = '5%') %>%
+    e_labels(show = T) %>%
+    e_tooltip() %>%
+    e_timeline_opts(left = '0%', right = '0%', symbol = 'diamond',
+                    playInterval = 500,
+                    currentIndex = length(unique(dt$date)) - 1)
+})
