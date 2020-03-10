@@ -455,12 +455,12 @@ fluidPage(
             sidebar_content = tagList(
               checkboxInput('hideSingle', '離散を非表示', T)
             ),
-            footer = tags$small('※開発バージョンです。最終版ではありません')),
+            footer = tags$small('3月9日以後に、厚労省のページでは感染者の詳細情報についての発表は中止になり、こちらのデータ更新も止むを得ず中止になりました。')),
     boxPlus(title = tagList(icon('venus-mars'), '歳代・性別'),
             width = 4,
             echarts4rOutput('genderBar'),
             closable = F,
-            footer = tags$small('厚生労働省の報道発表のデータに基づいてプロットしたグラフです。多少数値の遅れがあります。')
+            footer = tags$small('3月9日以後に、厚労省のページでは感染者の詳細情報についての発表は中止になり、こちらのデータ更新も止むを得ず中止になりました。')
     )
   ),
   fluidRow(
