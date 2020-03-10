@@ -19,6 +19,17 @@ output$echartsMap <- renderEcharts4r({
   colnames(mapDt) <- c('date', 'ja', 'en', 'count')
   nameMap <- as.list(mapDt$ja)
   names(nameMap) <- mapDt$en
+  
+  newByDate <- rowSums(byDate[, 2:48])
+  timeSeriesTitle <- lapply(seq_along(byDate$date), function(i) {
+    return(
+      list(
+        text = byDate$date[[i]],
+        subtext = paste0('各都道府県合計新規', newByDate[[i]], '人')
+      )
+    )
+  })
+  
   mapDt %>%
     group_by(date) %>% 
     e_charts(ja, timeline = T) %>%
@@ -32,7 +43,7 @@ output$echartsMap <- renderEcharts4r({
           scaleLimit = list(min = 1, max = 4)) %>%
     e_visual_map(
       count,
-      top = '5%',
+      top = '30%',
       left = '0%',
       inRange = list(color = c('#EEEEEE', middleRed, darkRed)),
       type = 'piecewise',
@@ -46,7 +57,8 @@ output$echartsMap <- renderEcharts4r({
       )
     ) %>% e_color(background = '#FFFFFF') %>%
     e_timeline_opts(left = '0%', right = '0%', symbol = 'diamond',
-                    playInterval = 1000,
+                    playInterval = 500,
+                    loop = F,
                     currentIndex = nrow(byDate) - 1) %>%
     e_tooltip(formatter = htmlwidgets::JS('
       function(params) {
@@ -56,7 +68,10 @@ output$echartsMap <- renderEcharts4r({
           return("");
         }
       }
-    '))
+    ')) %>%
+    e_timeline_serie(
+      title = timeSeriesTitle
+    )
 })
 
 # ====事例マップ====

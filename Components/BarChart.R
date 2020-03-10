@@ -66,6 +66,18 @@ output$regionTimeSeries <- renderEcharts4r({
   dt <- melt(dt, measure.vars = 1:50, variable.name = 'region')
   dt2show <- dt[!region %in% lang[[langCode]][35:36]]
   dt2show <- dt2show[region %in% totalOver0]
+  dt2show <- dt2show[value != 0]
+  setorderv(dt2show, c('date', 'value', 'region'))
+  
+  newByDate <- rowSums(byDate[, c(2:48, 50)])
+  timeSeriesTitle <- lapply(seq_along(byDate$date), function(i) {
+    return(
+      list(
+        text = byDate$date[[i]],
+        subtext = paste0('本日合計新規', newByDate[[i]], '人（検疫職員カテゴリを含む）')
+        )
+      )
+  })
   
   dt2show %>%
     group_by(date) %>%
@@ -74,12 +86,22 @@ output$regionTimeSeries <- renderEcharts4r({
     e_axis(axisTick =list(show = F), axisLabel = list(interval = 0)) %>%
     e_x_axis(axisLabel = list(rotate = 90, interval = 0)) %>%
     e_y_axis(max = max(dt2show$value) + 5) %>%
-    e_grid(bottom = '25%', top = '5%') %>%
+    e_grid(bottom = '25%', left = '5%', right = '5%') %>%
     e_labels(show = T) %>%
+    e_title(formatter = htmlwidgets::JS('
+      function(params) {
+        console.log(params)
+        return("")
+      }
+                                        ')) %>%
     e_tooltip() %>%
     e_timeline_opts(left = '0%', right = '0%', symbol = 'diamond',
                     playInterval = 500,
-                    currentIndex = nrow(byDate) - 1)
+                    loop = F,
+                    currentIndex = nrow(byDate) - 1) %>%
+    e_timeline_serie(
+      title = timeSeriesTitle
+    )
 })
 
 totalConfirmedByRegionData <- reactive({
