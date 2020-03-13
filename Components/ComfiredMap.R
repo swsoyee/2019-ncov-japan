@@ -7,7 +7,9 @@ cumSumConfirmedByDateAndRegion <- reactive({
     dt[, i] = cumsum(byDate[, i, with = F])
   }
   dt <- reshape2::melt(dt, id.vars = 'date')
-  data.table(dt)
+  dt <- data.table(dt)
+  dt <- dt[date >= input$mapDateRange[1] & date <= input$mapDateRange[2]]
+  dt
 })
 
 output$echartsMap <- renderEcharts4r({
@@ -20,42 +22,42 @@ output$echartsMap <- renderEcharts4r({
   nameMap <- as.list(mapDt$ja)
   names(nameMap) <- mapDt$en
   
-  newByDate <- rowSums(byDate[, 2:48])
-  timeSeriesTitle <- lapply(seq_along(byDate$date), function(i) {
+  newByDate <- rowSums(byDate[date >= input$mapDateRange[1] & date <= input$mapDateRange[2], 2:48])
+  dateSeq <- seq.Date(input$mapDateRange[1], input$mapDateRange[2], by = 'day')
+  timeSeriesTitle <- lapply(seq_along(dateSeq), function(i) {
     return(
       list(
-        text = byDate$date[[i]],
-        subtext = paste0('各都道府県合計新規', newByDate[[i]], '人')
+        text = dateSeq[i],
+        subtext = paste0('各都道府県合計新規', newByDate[i], '人')
       )
     )
   })
   
   # provinceCode <- fread(paste0(DATA_PATH, 'prefectures.csv')) # TEST
-  provinceColnames <- colnames(byDate)[2:ncol(byDate)]
-  provinceDiffPopup <- lapply(byDate$date, function(dateItem) {
-    # dateItem <- byDate$date[1]
-    row <- as.matrix(byDate[date == dateItem])[1, 2:48]
-    value <- row[row != "0"]
-    name <- names(value)
-    
-    dateData <- list()
-    for(i in seq_along(value)) {
-      province <- provinceCode[`name-ja` == name[i]]
-      dateData[[i]] <- list(
-        coord = list(province$lng, province$lat), 
-        value = paste0(name[i], '\n', value[i])
+  if(input$showPopupOnMap) {
+    provinceColnames <- colnames(byDate)[2:ncol(byDate)]
+    provinceDiffPopup <- lapply(dateSeq, function(dateItem) {
+      row <- as.matrix(byDate[date == dateItem])[1, 2:48]
+      value <- row[row != "0"]
+      name <- names(value)
+      
+      dateData <- list()
+      for(i in seq_along(value)) {
+        province <- provinceCode[`name-ja` == name[i]]
+        dateData[[i]] <- list(
+          coord = list(province$lng, province$lat), 
+          value = paste0(name[i], '\n', value[i])
+          )
+      }
+        list(
+          data = dateData,
+          itemStyle = list(color = darkYellow),
+          label = list(fontSize = 8),
+          symbol = 'pin',
+          symbolSize = 40
         )
-    }
-    # return(
-      list(
-        data = dateData,
-        itemStyle = list(color = darkYellow),
-        label = list(fontSize = 8),
-        symbol = 'pin',
-        symbolSize = 40
-      )
-    # )
-  })
+    })
+  }
   # provinceColnames <- colnames(byDate)[2:4] # TEST
   # for(i in 1:length(provinceColnames)) {
   #   provinceDiffPopup[[i]] <- lapply(seq_along(byDate$date), function(j) {
@@ -90,7 +92,7 @@ output$echartsMap <- renderEcharts4r({
           name = '感染確認数', roam = T,
           nameMap = nameMap,
           layoutSize = '50%',
-          center = c(137.1374062, 36.8911298),
+          center = c(137.1374062, 36.8951298),
           zoom = 1.5,
           scaleLimit = list(min = 1, max = 4)) %>%
     e_visual_map(
@@ -109,8 +111,9 @@ output$echartsMap <- renderEcharts4r({
       )
     ) %>% e_color(background = '#FFFFFF') %>%
     e_timeline_opts(left = '0%', right = '0%', symbol = 'diamond',
-                    playInterval = 700,
-                    currentIndex = nrow(byDate) - 1) %>%
+                    playInterval = input$mapFrameSpeed * 1000, 
+                    loop = input$replyMapLoop,
+                    currentIndex = length(dateSeq) - 1) %>%
     e_tooltip(formatter = htmlwidgets::JS('
       function(params) {
         if(params.value) {
@@ -122,10 +125,6 @@ output$echartsMap <- renderEcharts4r({
     ')) %>%
     e_timeline_serie(
       title = timeSeriesTitle
-    ) %>%
-    e_timeline_on_serie(
-      markPoint = provinceDiffPopup,
-      serie_index = 1
     )
   
   # for (i in seq_along(provinceDiffPopup)) {
@@ -135,7 +134,16 @@ output$echartsMap <- renderEcharts4r({
   #       index = i + 1
   #     )
   # }
-  map
+
+  if(input$showPopupOnMap) {
+    map %>%
+      e_timeline_on_serie(
+        markPoint = provinceDiffPopup,
+        serie_index = 1
+      )
+  } else {
+    map
+  }
 })
 
 # ====事例マップ====
