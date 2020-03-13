@@ -300,19 +300,42 @@ output$callCenter <- renderEcharts4r({
 
 # ====都道府県PCR====
 output$regionPCR <- renderEcharts4r({
-  dt <- provincePCR[県名 != '全国']
+  dt <- provincePCR[!(県名 %in% c('全国（厚労省）', 'イタリア', 'ロンバルディア', '韓国'))]
   dt[, per := round(陽性者数/累積検査数 * 100, 2)]
+  dt$per[is.nan(dt$per)] <- 0
+  dt[, position := -50]
+  setorder(dt, -累積検査数)
   dt %>%
     group_by(date) %>%
     e_chart(県名, timeline = T) %>%
-    e_bar(累積検査数) %>%
+    e_bar(累積検査数, itemStyle = list(color = middleYellow)) %>%
+    e_bar(陽性者数, z = 2, barGap = '-100%',  itemStyle = list(color = darkRed)) %>%
+    e_scatter(position, size = per, name = '陽性率') %>%
     e_axis(axisTick =list(show = F), axisLabel = list(interval = 0)) %>%
     e_x_axis(axisLabel = list(rotate = 90, interval = 0)) %>%
-    e_y_axis(max = max(dt$累積検査数) + 30, index = 1) %>%
+    e_y_axis(max = max(dt$累積検査数) + 30, 
+             index = 0, min = -50,
+             splitLine = list(show = F)) %>%
     e_grid(bottom = '25%', top = '5%', left = '5%', right = '5%') %>%
-    e_labels(show = T) %>%
-    e_tooltip() %>%
+    e_labels(show = T, fontSize = 8, formatter = htmlwidgets::JS('
+      function(params) {
+        if(params.value[1] > 0) {
+          return(params.value[1])
+        } else {
+          return("")
+        }
+      }
+                                                   ')) %>%
+    e_tooltip(trigger = 'axis', formatter = htmlwidgets::JS('
+      function(params) {
+        return(params[0].name + 
+          "<br>累積検査数：" + params[0].value[1] + 
+          "<br>陽性者数：" + params[1].value[1] +
+          "<br>検査陽性者率：" + params[2].value[2] + "%"
+        )
+      }
+    ')) %>%
     e_timeline_opts(left = '0%', right = '0%', symbol = 'diamond',
-                    playInterval = 500,
+                    playInterval = 500, loop = F,
                     currentIndex = length(unique(dt$date)) - 1)
 })

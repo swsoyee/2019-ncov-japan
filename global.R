@@ -46,7 +46,7 @@ activity <- fromJSON(file = paste0(DATA_PATH, 'caseMap.json'), unexpected.escape
 position <- fread(paste0(DATA_PATH, 'position.csv'))
 
 # 各都道府県のPCR検査数
-provincePCR <- fread(paste0(DATA_PATH, 'provincePCR.csv'), header = T)
+provincePCR <- fread(paste0(DATA_PATH, 'provincePCR.csv'), header = T, na.strings = 'N/A')
 provincePCR$date <- lapply(provincePCR[, 2], function(x) {return(as.Date(x, format = '%m月%e日'))})
 setorderv(provincePCR, c('県名', 'date'))
 # provincePCR[is.na(累積検査数), 累積検査数 := shift(累積検査数), by = .(県名, 日付)]
