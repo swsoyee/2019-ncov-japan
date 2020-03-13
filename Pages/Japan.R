@@ -468,6 +468,13 @@ fluidPage(
             width = 8,
             closable = F,
             # collapsed = T,
+            dateInput(
+              inputId = 'selectProcessDay', 
+              label = '日付選択', 
+              min = domesticDailyReport$date[1], 
+              max = domesticDailyReport$date[nrow(domesticDailyReport)], 
+              value = domesticDailyReport$date[nrow(domesticDailyReport)], language = 'ja'
+            ),
             echarts4rOutput('processSankey') %>% withSpinner(),
             footer = tags$small('※開発バージョンです。最終版ではありません')
             ),

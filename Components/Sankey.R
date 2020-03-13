@@ -11,5 +11,5 @@ output$processSankey <- renderEcharts4r({
 processDataSpecific <- reactive({
   # processData[date = input$processDate]
   # processDataSpecific <-
-    processData[date == max(processData$date)]
+    processData[date == input$selectProcessDay]
 })
