@@ -30,7 +30,59 @@ output$echartsMap <- renderEcharts4r({
     )
   })
   
-  mapDt %>%
+  # provinceCode <- fread(paste0(DATA_PATH, 'prefectures.csv')) # TEST
+  provinceColnames <- colnames(byDate)[2:ncol(byDate)]
+  provinceDiffPopup <- lapply(byDate$date, function(dateItem) {
+    # dateItem <- byDate$date[1]
+    row <- as.matrix(byDate[date == dateItem])[1, 2:48]
+    value <- row[row != "0"]
+    name <- names(value)
+    
+    dateData <- list()
+    for(i in seq_along(value)) {
+      province <- provinceCode[`name-ja` == name[i]]
+      dateData[[i]] <- list(
+        coord = list(province$lng, province$lat), 
+        value = paste0(name[i], '\n', value[i])
+        )
+    }
+    # return(
+      list(
+        data = dateData,
+        itemStyle = list(color = darkYellow),
+        label = list(fontSize = 8),
+        symbol = 'pin',
+        symbolSize = 40
+      )
+    # )
+  })
+  # provinceColnames <- colnames(byDate)[2:4] # TEST
+  # for(i in 1:length(provinceColnames)) {
+  #   provinceDiffPopup[[i]] <- lapply(seq_along(byDate$date), function(j) {
+  #     text <- ''
+  #     subtext <- ''
+  #     left <- 0
+  #     bottom <- 0
+  #     diff <- byDate[[i + 1]][j]
+  #     if (diff > 0) {
+  #       text <- provinceColnames[i]
+  #       subtext <- diff
+  #       element <- provinceCode[`name-ja` == provinceColnames[i]]
+  #       left <- paste0((element$x), '%')
+  #       bottom <- paste0((element$y), '%')
+  #     }
+  #     return(
+  #       list(
+  #         text = paste0(text, '+', subtext),
+  #         textStyle = list(fontSize = 10),
+  #         left = left,
+  #         bottom = bottom
+  #       )
+  #     )
+  #   })
+  # }
+  
+  map <- mapDt %>%
     group_by(date) %>% 
     e_charts(ja, timeline = T) %>%
     em_map("Japan") %>%
@@ -57,8 +109,7 @@ output$echartsMap <- renderEcharts4r({
       )
     ) %>% e_color(background = '#FFFFFF') %>%
     e_timeline_opts(left = '0%', right = '0%', symbol = 'diamond',
-                    playInterval = 500,
-                    loop = F,
+                    playInterval = 700,
                     currentIndex = nrow(byDate) - 1) %>%
     e_tooltip(formatter = htmlwidgets::JS('
       function(params) {
@@ -71,7 +122,20 @@ output$echartsMap <- renderEcharts4r({
     ')) %>%
     e_timeline_serie(
       title = timeSeriesTitle
+    ) %>%
+    e_timeline_on_serie(
+      markPoint = provinceDiffPopup,
+      serie_index = 1
     )
+  
+  # for (i in seq_along(provinceDiffPopup)) {
+  #   map <- map %>%
+  #     e_timeline_serie(
+  #       title = provinceDiffPopup[[i]],
+  #       index = i + 1
+  #     )
+  # }
+  map
 })
 
 # ====事例マップ====
@@ -137,6 +201,3 @@ output$caseMap <- renderLeaflet({
   }
   map
 })
-
-
-colSums(byDate[, 2:ncol(byDate)]) == 0
