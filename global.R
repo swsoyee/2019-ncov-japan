@@ -60,6 +60,8 @@ for (i in 2:nrow(provincePCR)) {
   }
 }
 provincePCR <- provincePCR[!(県名 %in% c('全国（厚労省）', 'イタリア', 'ロンバルディア', '韓国'))]
+maxCheckNumberData <-  dt[dt[, .I[which.max(累積検査数)], by = 県名]$V1]
+maxCheckNumberData[, rank := order(累積検査数, decreasing = T)]
 
 # アプリ情報
 # statics <- fromJSON(file = 'https://stg.covid-2019.live/ncov-static/stats.json', 
