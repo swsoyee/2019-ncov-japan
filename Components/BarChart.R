@@ -305,6 +305,22 @@ output$regionPCR <- renderEcharts4r({
   dt$per[is.nan(dt$per)] <- 0
   dt[, position := -50]
   setorder(dt, -累積検査数)
+  
+  dateSeq <- sort(unique(dt$date))
+  timeSeriesTitle <- lapply(seq_along(dateSeq), function(i) {
+    item <- domesticDailyReport[date == dateSeq[i]]
+    all <- ''
+    if(nrow(item) > 0 ) {
+      all <- paste0('  厚労省集計検査数：', item$pcr)
+    }
+    return(
+      list(
+        text = dateSeq[i],
+        subtext = paste0('都道府県合計検査数：', sum(dt[date == dateSeq[i]]$累積検査数), all)
+        )
+    )
+  })
+  
   dt %>%
     group_by(date) %>%
     e_chart(県名, timeline = T) %>%
@@ -316,7 +332,7 @@ output$regionPCR <- renderEcharts4r({
     e_y_axis(max = max(dt$累積検査数) + 30, 
              index = 0, min = -50,
              splitLine = list(show = F)) %>%
-    e_grid(bottom = '25%', top = '5%', left = '5%', right = '5%') %>%
+    e_grid(bottom = '25%', left = '5%', right = '5%') %>%
     e_labels(show = T, fontSize = 8, formatter = htmlwidgets::JS('
       function(params) {
         if(params.value[1] > 0) {
@@ -337,5 +353,8 @@ output$regionPCR <- renderEcharts4r({
     ')) %>%
     e_timeline_opts(left = '0%', right = '0%', symbol = 'diamond',
                     playInterval = 500, loop = F,
-                    currentIndex = length(unique(dt$date)) - 1)
+                    currentIndex = length(unique(dt$date)) - 1) %>%
+    e_timeline_serie(
+      title = timeSeriesTitle
+    )
 })
