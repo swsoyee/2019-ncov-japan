@@ -298,14 +298,17 @@ output$callCenter <- renderEcharts4r({
     e_tooltip(trigger = 'axis')
 })
 
-# ====都道府県PCR====
-output$regionPCR <- renderEcharts4r({
+regionPCRData <- reactive({
   dt <- provincePCR[!(県名 %in% c('全国（厚労省）', 'イタリア', 'ロンバルディア', '韓国'))]
   dt[, per := round(陽性者数/累積検査数 * 100, 2)]
   dt$per[is.nan(dt$per)] <- 0
   dt[, position := -50]
   setorder(dt, -累積検査数)
-  
+})
+
+# ====都道府県PCR====
+output$regionPCR <- renderEcharts4r({
+  dt <- regionPCRData()
   dateSeq <- sort(unique(dt$date))
   timeSeriesTitle <- lapply(seq_along(dateSeq), function(i) {
     item <- domesticDailyReport[date == dateSeq[i]]
@@ -325,7 +328,7 @@ output$regionPCR <- renderEcharts4r({
     group_by(date) %>%
     e_chart(県名, timeline = T) %>%
     e_bar(累積検査数, itemStyle = list(color = middleYellow)) %>%
-    e_bar(陽性者数, z = 2, barGap = '-100%',  itemStyle = list(color = darkRed)) %>%
+    e_bar(陽性者数, z = 2, barGap = '-100%', itemStyle = list(color = darkRed)) %>%
     e_scatter(position, size = per, name = '陽性率') %>%
     e_axis(axisTick =list(show = F), axisLabel = list(interval = 0)) %>%
     e_x_axis(axisLabel = list(rotate = 90, interval = 0)) %>%
@@ -357,4 +360,22 @@ output$regionPCR <- renderEcharts4r({
     e_timeline_serie(
       title = timeSeriesTitle
     )
+})
+
+# ====個別都道府県のPCRデータ====
+output$singleRegionPCR <- renderEcharts4r({
+  regionName <- input$selectSingleRegionPCR
+  dt <- regionPCRData()[県名 == regionName]
+  setorder(dt, date)
+  dt <- dt[累積検査数 != 0 & 陽性者数 != 0]
+  dt %>%
+    e_chart(date) %>%
+    e_bar(累積検査数, itemStyle = list(color = middleYellow)) %>%
+    e_bar(陽性者数, z = 2, barGap = '-100%', itemStyle = list(color = darkRed)) %>%
+    e_line(per, name = '検査陽性率', y_index = 1) %>%
+    e_x_axis(axisTick =list(show = F), splitLine = list(show = F)) %>%
+    e_y_axis(axisTick =list(show = F), splitLine = list(show = F)) %>%
+    e_y_axis(axisTick =list(show = F), index = 1, splitLine = list(show = F)) %>%
+    e_title(text = regionName) %>%
+    e_tooltip(trigger = 'axis')
 })

@@ -59,6 +59,7 @@ for (i in 2:nrow(provincePCR)) {
     }
   }
 }
+provincePCR <- provincePCR[!(県名 %in% c('全国（厚労省）', 'イタリア', 'ロンバルディア', '韓国'))]
 
 # アプリ情報
 # statics <- fromJSON(file = 'https://stg.covid-2019.live/ncov-static/stats.json', 
