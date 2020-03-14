@@ -299,12 +299,11 @@ output$callCenter <- renderEcharts4r({
 })
 
 regionPCRData <- reactive({
-  dt <- provincePCR
+  dt <- provincePCR[!(県名 %in% c('全国（厚労省）', 'イタリア', 'ロンバルディア', '韓国'))]
   dt[, per := round(陽性者数/累積検査数 * 100, 2)]
   dt$per[is.nan(dt$per)] <- 0
   dt[, position := -50]
   setorder(dt, -累積検査数)
-  dt
 })
 
 # ====都道府県PCR====
@@ -366,13 +365,10 @@ output$regionPCR <- renderEcharts4r({
 # ====個別都道府県のPCRデータ====
 output$singleRegionPCR <- renderEcharts4r({
   regionName <- input$selectSingleRegionPCR
-  data <- regionPCRData()[県名 == regionName]
-  # regionName <- '茨城県' # TEST
-  # data <- dt[県名 == regionName] #TEST
-  setorder(data, date)
-  data <- data[累積検査数 != 0 | 陽性者数 != 0]
-  
-  data %>%
+  dt <- regionPCRData()[県名 == regionName]
+  setorder(dt, date)
+  dt <- dt[累積検査数 != 0 & 陽性者数 != 0]
+  dt %>%
     e_chart(date) %>%
     e_bar(累積検査数, itemStyle = list(color = middleYellow)) %>%
     e_bar(陽性者数, z = 2, barGap = '-100%', itemStyle = list(color = darkRed)) %>%
@@ -380,9 +376,6 @@ output$singleRegionPCR <- renderEcharts4r({
     e_x_axis(axisTick =list(show = F), splitLine = list(show = F)) %>%
     e_y_axis(axisTick =list(show = F), splitLine = list(show = F)) %>%
     e_y_axis(axisTick =list(show = F), index = 1, splitLine = list(show = F)) %>%
-    e_title(
-      text = regionName, 
-      subtext = paste0('累積検査数ランキング：', maxCheckNumberData[県名 == regionName]$rank)
-    ) %>%
+    e_title(text = regionName) %>%
     e_tooltip(trigger = 'axis')
 })
