@@ -23,12 +23,15 @@ output$echartsMap <- renderEcharts4r({
   names(nameMap) <- mapDt$en
   
   newByDate <- rowSums(byDate[date >= input$mapDateRange[1] & date <= input$mapDateRange[2], 2:48])
+  provinceCountByDate <- rowSums(
+    byDate[date >= input$mapDateRange[1] & date <= input$mapDateRange[2], 2:48] != 0
+    )
   dateSeq <- seq.Date(input$mapDateRange[1], input$mapDateRange[2], by = 'day')
   timeSeriesTitle <- lapply(seq_along(dateSeq), function(i) {
     return(
       list(
         text = dateSeq[i],
-        subtext = paste0('各都道府県合計新規', newByDate[i], '人')
+        subtext = paste0('発表がある', provinceCountByDate[i], '都道府県合計新規', newByDate[i], '人')
       )
     )
   })
