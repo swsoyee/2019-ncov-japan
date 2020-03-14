@@ -421,7 +421,7 @@ fluidPage(
                       inputId = 'replyMapLoop', 
                       label = 'ループ再生', 
                       status = "danger", 
-                      value = F
+                      value = T
                     ),
                     dateRangeInput(
                       inputId = 'mapDateRange',
