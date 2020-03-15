@@ -8,6 +8,7 @@ cumSumConfirmedByDateAndRegion <- reactive({
   }
   dt <- reshape2::melt(dt, id.vars = 'date')
   dt <- data.table(dt)
+  # input <- list(mapDateRange = c(as.Date('2020-03-01'), as.Date('2020-03-10')), showPopupOnMap = T) # TEST
   dt <- dt[date >= input$mapDateRange[1] & date <= input$mapDateRange[2]]
   dt
 })
@@ -27,11 +28,37 @@ output$echartsMap <- renderEcharts4r({
     byDate[date >= input$mapDateRange[1] & date <= input$mapDateRange[2], 2:48] != 0
     )
   dateSeq <- seq.Date(input$mapDateRange[1], input$mapDateRange[2], by = 'day')
+  # 日別合計
+  sumByDay <- cumsum(rowSums(byDate[, 2:ncol(byDate)]))
+  sumByDay <- data.table(byDate[, 1], sumByDay)
   timeSeriesTitle <- lapply(seq_along(dateSeq), function(i) {
+    subText <- '各都道府県からの新規報告なし'
+    if (provinceCountByDate[i] > 0) {
+      subText <- paste0('発表がある', provinceCountByDate[i], '都道府県合計新規', newByDate[i], 
+                        '人, 合計', sumByDay[date == dateSeq[i]]$sumByDay, '人')
+    }
     return(
       list(
         text = dateSeq[i],
-        subtext = paste0('発表がある', provinceCountByDate[i], '都道府県合計新規', newByDate[i], '人')
+        subtext = subText
+      )
+    )
+  })
+  
+  timeSeriesTitleSub <- lapply(seq_along(dateSeq), function(i) {
+    columnName <- colnames(byDate)[49:51]
+    item <- ''
+    for(name in columnName) {
+      diff <- byDate[date == dateSeq[i], name, with = F][[1]]
+      if(diff > 0) {
+        item <- paste(item, paste0(name, '新規', diff), ' ')
+      }
+    }
+    return(
+      list(
+        subtext = item,
+        right = '5%',
+        bottom = '10%'
       )
     )
   })
@@ -92,15 +119,15 @@ output$echartsMap <- renderEcharts4r({
     e_charts(ja, timeline = T) %>%
     em_map("Japan") %>%
     e_map(count, map = "Japan",
-          name = '感染確認数', roam = T,
+          name = '感染確認数',
           nameMap = nameMap,
           layoutSize = '50%',
           center = c(137.1374062, 36.8951298),
           zoom = 1.5,
-          scaleLimit = list(min = 1, max = 4)) %>%
+          roam = 'move') %>%
     e_visual_map(
       count,
-      top = '30%',
+      top = '20%',
       left = '0%',
       inRange = list(color = c('#EEEEEE', middleRed, darkRed)),
       type = 'piecewise',
@@ -128,6 +155,10 @@ output$echartsMap <- renderEcharts4r({
     ')) %>%
     e_timeline_serie(
       title = timeSeriesTitle
+    ) %>%
+    e_timeline_serie(
+      title = timeSeriesTitleSub, 
+      index = 2
     )
   
   # for (i in seq_along(provinceDiffPopup)) {
