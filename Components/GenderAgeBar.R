@@ -51,7 +51,7 @@ output$genderBar <- renderEcharts4r({
         '%), 計：', totalCount, '人'),
       textStyle = list(fontSize = 11),
       subtext = '性別、年齢不明および発表なしの感染者が含まれていませんのでご注意ください。',
-      subtextStyle = list(fontSize = 8)
+      subtextStyle = list(fontSize = 9)
     ) %>%
     e_legend(top = '15%', right = '0%', selectedMode = F, orient = 'vertical') %>%
     e_grid(bottom = '0%', right = '0%', left = '0%')

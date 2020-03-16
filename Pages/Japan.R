@@ -513,14 +513,14 @@ fluidPage(
             footer = tags$small('3月9日以後に、厚労省のページでは感染者の詳細情報についての発表は中止になり、こちらのデータ更新も止むを得ず中止になりました。')),
     boxPlus(title = tagList(icon('venus-mars'), '歳代・性別'),
             width = 4,
-            echarts4rOutput('genderBar'),
+            enable_label = T,
+            collapsible = T,
+            label_text = paste('集計時間：', max(as.Date(positiveDetail$発表日, '%m月%d日'))),
+            echarts4rOutput('genderBar') %>% withSpinner(),
             closable = F,
             footer = tags$small('データ提供：', 
                                 tags$a(icon('twitter'), '@kenmo_economics', 
-                                       href = 'https://twitter.com/kenmo_economics'),
-                                '　集計時間：', 
-                                max(as.Date(positiveDetail$発表日, '%m月%d日')), 
-                                'まで。'
+                                       href = 'https://twitter.com/kenmo_economics')
                                 )
             )
   ),
