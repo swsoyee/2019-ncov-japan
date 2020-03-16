@@ -211,6 +211,9 @@ news <- fread(paste0(DATA_PATH, 'mhlw_houdou.csv'))
 # province[, Data := rowSums(db[, 2:ncol(db)])]
 provinceCode <- fread(paste0(DATA_PATH, 'prefectures.csv'))
 
+# 詳細データけんもねずみ
+positiveDetail <- fread(paste0(DATA_PATH, 'positiveDetail.csv'))
+
 # 詳細データ
 detail <- fread(paste0(DATA_PATH, 'detail.csv'),
                 colClasses = list(
