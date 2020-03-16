@@ -22,7 +22,7 @@ output$news <- renderDataTable({
     colnames = lang[[langCode]][14], # 感染確認情報
     escape = F
   )
-})
+}, server = T)
 
 output$detail <- renderDataTable({
   datatable(detail,
@@ -114,5 +114,5 @@ output$summaryByRegion <- renderDataTable({
     #   columns = 'values.y', 
     #   backgroundColor = styleInterval(breaks, colors)
     #   )
-})
+}, server = T)
 
