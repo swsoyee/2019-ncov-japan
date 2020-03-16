@@ -49,7 +49,7 @@ output$detail <- renderDataTable({
       target = 'row',
       background = styleEqual('終了', '#CCCCCC'),
     )
-})
+}, server = T)
 
 output$summaryByRegion <- renderDataTable({
   # setcolorder(mergeDt, c('region', 'count', 'untilToday', 'today', 'diff', 'values'))
