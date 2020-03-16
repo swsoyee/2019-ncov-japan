@@ -20,7 +20,7 @@ output$confirmedLine <- renderEcharts4r({
       e_grid(left = '3%') %>%
       e_x_axis(splitLine = list(show = F)) %>%
       e_y_axis(splitLine = list(show = F), axisLabel = list(inside = T), axisTick = list(show = F)) %>%
-      e_y_axis(splitLine = list(show = F), index = 1, max = 150, axisTick = list(show = F)) %>%
+      e_y_axis(splitLine = list(show = F), index = 1, max = 100, axisTick = list(show = F)) %>%
       e_title(subtext = paste0(lang[[langCode]][62], UPDATE_DATETIME)) %>%
       e_legend(type = 'scroll', orient = 'vertical', left = '10%', top = '15%') %>%
       e_tooltip(trigger = 'axis')

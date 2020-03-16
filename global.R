@@ -1,5 +1,4 @@
 library(shiny)
-# library(NipponMap)
 library(shinydashboard)
 library(data.table)
 library(DT)
@@ -13,6 +12,8 @@ library(htmltools)
 library(leaflet.minicharts)
 library(echarts4r)
 library(echarts4r.maps)
+library(sparkline)
+library(shinyBS)
 
 # ====
 # ファイルのパス設定
@@ -333,7 +334,7 @@ twitterUrl <- paste0('https://twitter.com/intent/tweet?text=新型コロナウ�
                      '&url=https://covid-2019.live/')
 
 lightRed <- '#F56954'
-middleRed <- '#DD4B38'
+middleRed <- '#DD4B39'
 darkRed <- '#B03C2D'
 lightYellow <- '#F8BF76'
 middleYellow <- '#F39C11'

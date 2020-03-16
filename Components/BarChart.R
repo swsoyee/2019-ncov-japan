@@ -105,6 +105,19 @@ output$regionTimeSeries <- renderEcharts4r({
 })
 
 totalConfirmedByRegionData <- reactive({
+  
+  zeroContinuousDay <- stack(lapply(byDate[, 2:ncol(byDate)], function(region) {
+    continuousDay <- 0
+    for (x in region) {
+      if(x == 0){
+        continuousDay <- continuousDay + 1
+      } else {
+        continuousDay <- 0
+      }
+    }
+    return(continuousDay - 1)
+  }))
+  
   total <- colSums(byDate[, 2:ncol(byDate)])
   today <- colSums(byDate[nrow(byDate), 2:ncol(byDate)])
   untilToday <- colSums(byDate[1:nrow(byDate) - 1, 2:ncol(byDate)])
@@ -112,19 +125,29 @@ totalConfirmedByRegionData <- reactive({
                       count = total, 
                       today = today, 
                       untilToday = untilToday)
-  
-  # if (is.null(input$showOtherRegion)) {
-  #   total <- total[!(region %in% lang[[langCode]][35:36])]
-  # } else {
-  #   if (!('showShip' %in% input$showOtherRegion)) {
-  #     total <- total[region != lang[[langCode]][35]] # クルーズ船
-  #   }
-  #   if (!('showFlight' %in% input$showOtherRegion)) {
-  #     total <- total[region != lang[[langCode]][36]] # チャーター便
-  #   }
-  # }
   total <- total[!(region %in% lang[[langCode]][35:36])]
-  total
+  
+  diffSparkline <- sapply(c(2:48, 50), function(i) {
+    value <- byDate[(nrow(byDate) - 15):nrow(byDate), i, with = F][[1]]
+    diff <- spk_chr(
+      values = value, 
+      type = 'bar', 
+      barColor = darkRed,
+      chartRangeMin = 0, 
+      chartRangeMax = max(byDate[, c(2:48, 50)])
+    )
+    return(diff)
+  })
+  sparklineTable <- data.table(
+    region = names(byDate)[c(2:48, 50)],
+    diff = diffSparkline
+    )
+  mergeDt <- merge(x = total, y = sparklineTable, by = 'region', all = T)
+  deathByRegion <- stack(colSums(death[, c(2:48, 50)]))
+  
+  mergeDt <- merge(x = mergeDt, y = deathByRegion, by.x = 'region', by.y = 'ind', all = T)
+  mergeDt <- merge(x = mergeDt, y = zeroContinuousDay, by.x = 'region', by.y = 'ind', all = T)
+  setorder(mergeDt, -count)
 })
 
 # ====感染者割合====
