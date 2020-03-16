@@ -106,48 +106,8 @@ output$regionTimeSeries <- renderEcharts4r({
 
 totalConfirmedByRegionData <- reactive({
   
-  zeroContinuousDay <- stack(lapply(byDate[, 2:ncol(byDate)], function(region) {
-    continuousDay <- 0
-    for (x in region) {
-      if(x == 0){
-        continuousDay <- continuousDay + 1
-      } else {
-        continuousDay <- 0
-      }
-    }
-    return(continuousDay - 1)
-  }))
-  
-  total <- colSums(byDate[, 2:ncol(byDate)])
-  today <- colSums(byDate[nrow(byDate), 2:ncol(byDate)])
-  untilToday <- colSums(byDate[1:nrow(byDate) - 1, 2:ncol(byDate)])
-  total <- data.table(region = names(total), 
-                      count = total, 
-                      today = today, 
-                      untilToday = untilToday)
-  total <- total[!(region %in% lang[[langCode]][35:36])]
-  
-  diffSparkline <- sapply(c(2:48, 50), function(i) {
-    value <- byDate[(nrow(byDate) - 15):nrow(byDate), i, with = F][[1]]
-    diff <- spk_chr(
-      values = value, 
-      type = 'bar', 
-      barColor = darkRed,
-      chartRangeMin = 0, 
-      chartRangeMax = max(byDate[, c(2:48, 50)])
-    )
-    return(diff)
-  })
-  sparklineTable <- data.table(
-    region = names(byDate)[c(2:48, 50)],
-    diff = diffSparkline
-    )
-  mergeDt <- merge(x = total, y = sparklineTable, by = 'region', all = T)
-  deathByRegion <- stack(colSums(death[, c(2:48, 50)]))
-  
-  mergeDt <- merge(x = mergeDt, y = deathByRegion, by.x = 'region', by.y = 'ind', all = T)
-  mergeDt <- merge(x = mergeDt, y = zeroContinuousDay, by.x = 'region', by.y = 'ind', all = T)
-  setorder(mergeDt, -count)
+  dt <- fread(paste0(DATA_PATH, 'resultSummaryTable.csv'), sep = '@')
+  dt
 })
 
 # ====感染者割合====

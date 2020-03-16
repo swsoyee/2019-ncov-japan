@@ -53,7 +53,7 @@ output$detail <- renderDataTable({
 
 output$summaryByRegion <- renderDataTable({
   # setcolorder(mergeDt, c('region', 'count', 'untilToday', 'today', 'diff', 'values'))
-  # dt <- mergeDt[count > 0] # TEST
+  # dt <- dt[count > 0] # TEST
   dt <- totalConfirmedByRegionData()[count > 0]
   columnName <- c('today', 'values.x')
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
