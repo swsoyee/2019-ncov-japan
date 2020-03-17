@@ -66,7 +66,14 @@ shinyUI(
     #               choices = languageSet)
     # ),
     dashboardBody(
-      tags$head(tags$link(rel = "icon", href = "favicon.ico")),
+      tags$head(
+        tags$link(rel = "icon", href = "favicon.ico"),
+        tags$meta(name = 'twitter:card', content = 'summary_large_image'),
+        tags$meta(property = 'og:url', content = 'https://covid-2019.live/'),
+        tags$meta(property = 'og:title', content = '🦠新型コロナウイルス感染速報'),
+        tags$meta(property = 'og:description', content = '日本における新型コロナウイルスの最新感染・罹患情報をいち早く速報・まとめるサイトです。'),
+        tags$meta(property = 'og:image', content = 'https://repository-images.githubusercontent.com/237152814/7dd12480-6867-11ea-92f7-8b816b8014ea')
+        ),
       tabItems(
       tabItem(tabName = 'japan',
               source(
