@@ -35,6 +35,7 @@ fluidRow(
     ),
   column(
     width = 1,
+    id = 'domesticConfirmed', 
     # 国内事例
     descriptionBlock(
       number = TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF,
@@ -43,6 +44,14 @@ fluidRow(
       header = paste(TOTAL_DOMESITC + TOTAL_OFFICER + TOTAL_FLIGHT, ''),
       right_border = F,
       text = '感染者'
+    )
+  ),
+  bsTooltip(
+    id = 'domesticConfirmed', 
+    placement = 'top',
+    title = paste0(
+      '国内事例：', (TOTAL_DOMESITC + TOTAL_OFFICER), ' (+', (TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF),
+      ')<br>チャーター便：', TOTAL_FLIGHT
     )
   ),
   column(
