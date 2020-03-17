@@ -33,6 +33,7 @@ middleBlue <- '#00C0EF'
 darkBlue <- '#00A7D0'
 
 # ====各都道府県のサマリーテーブル====
+# 新規なし継続日数カラム作成
 zeroContinuousDay <- stack(lapply(byDate[, 2:ncol(byDate)], function(region) {
   continuousDay <- 0
   for (x in region) {
@@ -44,17 +45,14 @@ zeroContinuousDay <- stack(lapply(byDate[, 2:ncol(byDate)], function(region) {
   }
   return(continuousDay - 1)
 }))
-
+# 感染確認カラム作成
 total <- colSums(byDate[, 2:ncol(byDate)])
+# 新規カラム作成
 today <- colSums(byDate[nrow(byDate), 2:ncol(byDate)])
+# 昨日までカラム作成
 untilToday <- colSums(byDate[1:nrow(byDate) - 1, 2:ncol(byDate)])
-total <- data.table(region = names(total), 
-                    count = total, 
-                    today = today, 
-                    untilToday = untilToday)
-total <- total[!(region %in% lang[[langCode]][35:36])]
-
-diffSparkline <- sapply(c(2:48, 50), function(i) {
+# 新規推移カラム作成
+diffSparkline <- sapply(2:ncol(byDate), function(i) {
   value <- byDate[(nrow(byDate) - 15):nrow(byDate), i, with = F][[1]]
   diff <- spk_chr(
     values = value,
@@ -65,17 +63,23 @@ diffSparkline <- sapply(c(2:48, 50), function(i) {
   )
   return(diff)
 })
-sparklineTable <- data.table(
-  region = names(byDate)[c(2:48, 50)],
-  diff = diffSparkline
-)
-mergeDt <- merge(x = total, y = sparklineTable, by = 'region', all = T)
-deathByRegion <- stack(colSums(death[, c(2:48, 50)]))
-
-mergeDt <- merge(x = mergeDt, y = deathByRegion, by.x = 'region', by.y = 'ind', all = T)
-mergeDt <- merge(x = mergeDt, y = zeroContinuousDay, by.x = 'region', by.y = 'ind', all = T)
+# 死亡カラム作成
+deathByRegion <- stack(colSums(death[, 2:ncol(byDate)]))
+# テーブル作成
+mergeDt <- data.table(region = names(total), 
+                      count = total, 
+                      today = today, 
+                      untilToday = untilToday,
+                      diff = diffSparkline,
+                      death = deathByRegion$values,
+                      zeroContinuousDay = zeroContinuousDay$values
+                      )
+# オーダー
 setorder(mergeDt, -count)
 # 読み取り時のエラーを回避するため
 mergeDt[, diff := gsub('\\n', '', diff)]
+# クルーズ船とチャーター便データ除外
+mergeDt <- mergeDt[!(region %in% lang[[langCode]][35:36])]
+# テーブル出力
 fwrite(x = mergeDt, file = paste0(DATA_PATH, 'resultSummaryTable.csv'), sep = "@", quote = F)
 

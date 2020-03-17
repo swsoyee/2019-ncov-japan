@@ -53,11 +53,11 @@ output$detail <- renderDataTable({
 
 output$summaryByRegion <- renderDataTable({
   # setcolorder(mergeDt, c('region', 'count', 'untilToday', 'today', 'diff', 'values'))
-  # dt <- dt[count > 0] # TEST
+  # dt <- mergeDt[count > 0] # TEST
   dt <- totalConfirmedByRegionData()[count > 0]
-  columnName <- c('today', 'values.x')
+  columnName <- c('today', 'death')
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
-  dt[, values.y := replace(.SD, .SD <= 0, NA), .SDcols = 'values.y']
+  dt[, zeroContinuousDay := replace(.SD, .SD <= 0, NA), .SDcols = 'zeroContinuousDay']
   # dt[, today := as.character(today)]
   # dt[!is.na(today), today := paste('+', today)]
   
@@ -72,6 +72,7 @@ output$summaryByRegion <- renderDataTable({
       paging = F,
       dom = 't',
       scrollY = '500px',
+      scrollX = T,
       columnDefs = list(
         list(
           className = 'dt-center', 
@@ -99,19 +100,19 @@ output$summaryByRegion <- renderDataTable({
       backgroundRepeat = 'no-repeat',
       backgroundPosition = 'center') %>%
     formatStyle(
-      columns = 'values.x',
-      background = styleColorBar(c(0, max(dt$values.x, na.rm = T)), lightNavy),
+      columns = 'death',
+      background = styleColorBar(c(0, max(dt$death, na.rm = T)), lightNavy),
       backgroundSize = '98% 80%',
       backgroundRepeat = 'no-repeat',
       backgroundPosition = 'center') %>%
     formatStyle(
-      columns = 'values.y',
-      background = styleColorBar(c(0, max(dt$values.y, na.rm = T)), lightBlue, angle = -90),
+      columns = 'zeroContinuousDay',
+      background = styleColorBar(c(0, max(dt$zeroContinuousDay, na.rm = T)), lightBlue, angle = -90),
       backgroundSize = '98% 80%',
       backgroundRepeat = 'no-repeat',
       backgroundPosition = 'center') # %>%
     # formatStyle(
-    #   columns = 'values.y', 
+    #   columns = 'zeroContinuousDay', 
     #   backgroundColor = styleInterval(breaks, colors)
     #   )
 }, server = T)
