@@ -291,7 +291,17 @@ options(spinner.color = middleRed)
 getChangeIcon <- function(number) {
   if (number > 0) {
     return('fa fa-caret-up')
+  } else if (number < 0) {
+    return('fa fa-caret-down')
   } else {
     return('fa fa-lock')
+  }
+}
+
+getDiffValueAndSign <- function(number) {
+  if (number >= 0) {
+    return(paste0('+', number))
+  } else {
+    return(number)
   }
 }

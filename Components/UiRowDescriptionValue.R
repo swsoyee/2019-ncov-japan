@@ -29,7 +29,7 @@ fluidRow(
       '回答を得たものを公表している。なお、国内事例のPCR検査実施人数は、',
       '疑似症報告制度の枠組みの中で報告が上がった数を計上しており、',
       '各自治体で行った全ての検査結果を反映しているものではない（退院時の確認検査などは含まれていない）。',
-      '<hr>国内：', PCR_WITHIN$final, ' (+', PCR_WITHIN$diff,
+      '<hr>国内：', PCR_WITHIN$final, ' (', getDiffValueAndSign(PCR_WITHIN$diff),
       ')<br>チャーター便：', PCR_FLIGHT$final, ' (+', PCR_FLIGHT$diff, ')'
       )
     ),
@@ -122,7 +122,7 @@ fluidRow(
       number_icon = getChangeIcon(PCR_SHIP$diff),
       header = paste(PCR_SHIP$final, ''),
       right_border = F,
-      text = '検査数'
+      text = '検査人数'
     )
   ),
   bsTooltip(

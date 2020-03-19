@@ -45,7 +45,7 @@ fluidRow(
       valueBox(
         width = 6,
         value = sum(PCR_WITHIN$final, PCR_FLIGHT$final, PCR_SHIP$final),
-        subtitle = paste0(lang[[langCode]][90], ' (+', sum(PCR_WITHIN$diff, PCR_FLIGHT$diff, PCR_SHIP$diff), ')'),
+        subtitle = paste0(lang[[langCode]][90], ' (', getDiffValueAndSign(sum(PCR_WITHIN$diff, PCR_FLIGHT$diff, PCR_SHIP$diff)), ')'),
         icon = icon('vials'),
         color = "yellow"
       ),
