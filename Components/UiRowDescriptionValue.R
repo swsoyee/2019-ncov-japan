@@ -18,7 +18,7 @@ fluidRow(
       number_icon = getChangeIcon(PCR_WITHIN$diff + PCR_FLIGHT$diff),
       header = paste(PCR_WITHIN$final + PCR_FLIGHT$final, ''),
       right_border = F,
-      text = '検査数'
+      text = '検査人数'
     )
   ),
   bsTooltip(
