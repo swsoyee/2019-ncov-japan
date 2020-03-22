@@ -171,15 +171,16 @@ output$recoveredLine <- renderEcharts4r({
 pcrData <- reactive({
   dt <- domesticDailyReport
   dt <- merge(x = domesticDailyReport, y = flightDailyReport, by = 'date', all.x = T)
-  dt <- merge(x = dt, y = shipDailyReport, by = 'date', all.x = T)
+  dt <- merge(x = dt, y = airportDailyReport, by = 'date', all.x = T)
+  dt <- merge(x = dt, y = shipDailyReport, by = 'date', all.x = T, suffixes = 'z')
   dataset <- domesticDailyReport
   if (input$showFlightInPCR) {
-    dataset$pcr <- dataset$pcr + flightDailyReport$pcr
+    dataset$pcr <- dataset$pcr + flightDailyReport$pcr + airportDailyReport$pcr
   }
   if (input$showShipInPCR) {
     ship <- shipDailyReport[2:nrow(shipDailyReport), ]
     setnafill(ship, fill = 0)
-    dataset$pcr <- dataset$pcr + ship$pcr
+    dataset$pcr <- dataset$pcr + ship$pcr + airportDailyReport$pcr
   }
   dataset[ , diff := pcr - shift(pcr)]
   setnafill(dataset, fill = 0)

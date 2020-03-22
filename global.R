@@ -78,6 +78,11 @@ flightDailyReport <- fread(paste0(DATA_PATH, 'flightDailyReport.csv'))
 flightDailyReport$date <- as.Date(as.character(flightDailyReport$date), '%Y%m%d')
 flightDailyReport$discharge <- flightDailyReport$symptomDischarge + flightDailyReport$symptomlessDischarge
 setnafill(flightDailyReport, type = 'locf')
+# 空港検疫の日報
+airportDailyReport <- fread(paste0(DATA_PATH, 'airportDailyReport.csv'))
+airportDailyReport$date <- as.Date(as.character(airportDailyReport$date), '%Y%m%d')
+airportDailyReport$discharge <- airportDailyReport$symptomDischarge + airportDailyReport$symptomlessDischarge
+setnafill(airportDailyReport, type = 'locf')
 # クルーズ船の日報
 shipDailyReport <- fread(paste0(DATA_PATH, 'shipDailyReport.csv'))
 shipDailyReport$date <- as.Date(as.character(shipDailyReport$date), '%Y%m%d')
@@ -98,6 +103,7 @@ langCode <- 'ja'
 PCR_WITHIN <- getFinalAndDiff(domesticDailyReport$pcr)
 PCR_SHIP <- getFinalAndDiff(shipDailyReport$pcr)
 PCR_FLIGHT <- getFinalAndDiff(flightDailyReport$pcr)
+PCR_AIRPORT <- getFinalAndDiff(airportDailyReport$pcr)
 
 
 # 確認
@@ -200,16 +206,6 @@ regionName <- as.list(regionName)
 
 news <- fread(paste0(DATA_PATH, 'mhlw_houdou.csv'))
 
-# province <-
-#   fread(paste0(DATA_PATH, 'provinceCode.csv'), na.strings = NULL)
-# # Scale設定
-# province[, Scale := c(3, rep(1, 46), rep(0.5, 3))]
-# # 区域名変更
-# province[, Prefecture := gsub("県", "", province$Prefecture)]
-# province[, Prefecture := gsub("府", "", province$Prefecture)]
-# province[, Prefecture := gsub("東京都", "東京", province$Prefecture)]
-# # データ追加
-# province[, Data := rowSums(db[, 2:ncol(db)])]
 provinceCode <- fread(paste0(DATA_PATH, 'prefectures.csv'))
 
 # 詳細データけんもねずみ
@@ -235,10 +231,6 @@ detailSummary <- detail[, .(count = .N), by = .(gender, age)]
 # 症状の進行テーブルを読み込む
 processData <- fread(input = paste0(DATA_PATH, 'resultProcessData.csv'))
 
-# world <- fread(paste0(DATA_PATH, '2019_nCoV_data.csv'))
-
-# china <- fread('https://raw.githubusercontent.com/BlankerL/DXY-2019-nCoV-Data/master/DXYArea.csv')
-
 # ====
 # 定数設定
 # ====
@@ -247,11 +239,6 @@ RECOVERED_FILE_UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'recovered.csv'))$
 DEATH_FILE_UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'death.csv'))$mtime
 UPDATE_DATE <- as.Date(UPDATE_DATETIME)
 DEATH_UPDATE_DATE <- as.Date(DEATH_FILE_UPDATE_DATETIME)
-# GLOABLE_MAIN_COLOR <- '#605ca8'
-# GLOABLE_MAIN_COLOR_RGBVALUE <-
-#   paste(as.vector(col2rgb(GLOABLE_MAIN_COLOR)), collapse = ",")
-# GLOABLE_MAIN_COLOR_RGBA <-
-#   paste0('rgba(', GLOABLE_MAIN_COLOR_RGBVALUE, ',0.5)')
 
 # TODO Vectorのネーミングなぜかうまくいかないのでとりあえずここに置く
 showOption <- c('showShip', 'showFlight')

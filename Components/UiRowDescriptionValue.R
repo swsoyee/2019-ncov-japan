@@ -13,10 +13,10 @@ fluidRow(
     id = 'domesticPCR',
     # 国内事例
     descriptionBlock(
-      number = PCR_WITHIN$diff + PCR_FLIGHT$diff,
+      number = PCR_WITHIN$diff + PCR_FLIGHT$diff + PCR_AIRPORT$diff,
       number_color = 'yellow',
-      number_icon = getChangeIcon(PCR_WITHIN$diff + PCR_FLIGHT$diff),
-      header = paste(PCR_WITHIN$final + PCR_FLIGHT$final, ''),
+      number_icon = getChangeIcon(PCR_WITHIN$diff + PCR_FLIGHT$diff + PCR_AIRPORT$diff),
+      header = paste(PCR_WITHIN$final + PCR_FLIGHT$final + PCR_AIRPORT$final, ''),
       right_border = F,
       text = '検査人数'
     )
@@ -30,6 +30,7 @@ fluidRow(
       '疑似症報告制度の枠組みの中で報告が上がった数を計上しており、',
       '各自治体で行った全ての検査結果を反映しているものではない（退院時の確認検査などは含まれていない）。',
       '<hr>国内：', PCR_WITHIN$final, ' (', getDiffValueAndSign(PCR_WITHIN$diff),
+      ')<br>空港検疫：', PCR_AIRPORT$final, ' (+', PCR_AIRPORT$diff,
       ')<br>チャーター便：', PCR_FLIGHT$final, ' (+', PCR_FLIGHT$diff, ')'
       )
     ),
