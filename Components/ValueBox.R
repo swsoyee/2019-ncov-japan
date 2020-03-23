@@ -42,7 +42,7 @@ output$saveArea <- renderUI({
   if(length(regionZero) > 0 ) {
     elements <- list()
     for (i in 1:length(regionZero)) {
-      elements[[i]] <- dashboardLabel(regionZero[i], status = 'info', style = 'square')
+      elements[[i]] <- dashboardLabel(regionZero[i], status = 'success', style = 'square')
     }
     tagList(elements)
   } else {

@@ -34,12 +34,6 @@ tabPanel(
     column(
       width = 4,
       tags$br(),
-      tags$b(paste0(
-        lang[[langCode]][97], length(regionZero), ' (', round(length(regionZero) /
-                                                                47 * 100, 2), '%)'
-      )),
-      uiOutput('saveArea'),
-      tags$br(),
       tags$b('感染者'),
       echarts4rOutput('confirmedBar', height = '20px') %>% withSpinner(),
       uiOutput('todayConfirmed'),

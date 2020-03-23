@@ -71,7 +71,7 @@ output$summaryByRegion <- renderDataTable({
     options = list(
       paging = F,
       dom = 't',
-      scrollY = '500px',
+      scrollY = '590px',
       scrollX = T,
       columnDefs = list(
         list(

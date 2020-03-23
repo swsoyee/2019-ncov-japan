@@ -56,6 +56,17 @@ tabPanel(
         ),
       ),
       echarts4rOutput('echartsMap', height = '500px')  %>% withSpinner(),
+      progressBar(
+        id = 'hasConfirmedRegionBar', 
+        value = 47 - length(regionZero), 
+        total = 47, 
+        title = tagList(icon('exclamation-triangle'), '感染者報告あり'),
+        striped = T,
+        status = 'danger',
+        display_pct = T
+        ),
+      tagList(icon('shield-alt'), tags$b(lang[[langCode]][97])),
+      uiOutput('saveArea'),
     ),
     column(
       width = 7,
