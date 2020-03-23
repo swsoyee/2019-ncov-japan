@@ -132,10 +132,10 @@ output$echartsMap <- renderEcharts4r({
       inRange = list(color = c('#EEEEEE', middleRed, darkRed)),
       type = 'piecewise',
       splitList = list(
-        list(min = 50),
-        list(min = 30, max = 50),
-        list(min = 10, max = 30),
-        list(min = 5, max = 10),
+        list(min = 100),
+        list(min = 50, max = 100),
+        list(min = 20, max = 50),
+        list(min = 5, max = 20),
         list(min = 1, max = 5),
         list(value = 0)
       )
