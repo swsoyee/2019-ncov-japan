@@ -50,6 +50,14 @@ middleBlue <- '#00C0EF'
 darkBlue <- '#00A7D0'
 
 # ====各都道府県のサマリーテーブル====
+# ランキングカラムを作成
+# cumDt <- cumsum(byDate[, c(2:48, 50)])
+# rankDt <- data.table(t(apply(-cumDt, 1, function(x){rank(x, ties.method = 'min')})))
+# rankDt[, colnames(rankDt) := shift(.SD, fill = 0) - .SD, .SDcols = colnames(rankDt)]
+# 
+# rankDt[rankDt == 0] <- '-'
+# rankDt[, colnames(rankDt) := ifelse(.SD > 0, paste0('+', .SD), .SD), .SDcols = colnames(rankDt)]
+
 # 新規なし継続日数カラム作成
 zeroContinuousDay <- stack(lapply(byDate[, 2:ncol(byDate)], function(region) {
   continuousDay <- 0
