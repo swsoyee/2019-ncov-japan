@@ -48,21 +48,21 @@ position <- fread(paste0(DATA_PATH, 'position.csv'))
 
 # 各都道府県のPCR検査数
 provincePCR <- fread(paste0(DATA_PATH, 'provincePCR.csv'), header = T, na.strings = 'N/A')
-provincePCR$date <- lapply(provincePCR[, 2], function(x) {return(as.Date(x, format = '%m月%e日'))})
+provincePCR$date <- as.Date(provincePCR$日付)
 setorderv(provincePCR, c('県名', 'date'))
-# provincePCR[is.na(累積検査数), 累積検査数 := shift(累積検査数), by = .(県名, 日付)]
+# provincePCR[is.na(検査数), 検査数 := shift(検査数), by = .(県名, 日付)]
 for (i in 2:nrow(provincePCR)) {
-  if (is.na(provincePCR[i]$累積検査数)) {
+  if (is.na(provincePCR[i]$検査数)) {
     if (provincePCR[i]$県名 == provincePCR[i - 1]$県名) {
-      provincePCR[i]$累積検査数 <- provincePCR[i - 1]$累積検査数
+      provincePCR[i]$検査数 <- provincePCR[i - 1]$検査数
     } else {
-      provincePCR[i]$累積検査数 <- 0
+      provincePCR[i]$検査数 <- 0
     }
   }
 }
 provincePCR <- provincePCR[!(県名 %in% c('全国（厚労省）', 'イタリア', 'ロンバルディア', '韓国'))]
-maxCheckNumberData <-  provincePCR[provincePCR[, .I[which.max(累積検査数)], by = 県名]$V1]
-maxCheckNumberData[, rank := order(累積検査数, decreasing = T)]
+maxCheckNumberData <-  provincePCR[provincePCR[, .I[which.max(検査数)], by = 県名]$V1]
+maxCheckNumberData[, rank := order(検査数, decreasing = T)]
 
 # アプリ情報
 # statics <- fromJSON(file = 'https://stg.covid-2019.live/ncov-static/stats.json', 

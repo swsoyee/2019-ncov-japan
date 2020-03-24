@@ -246,10 +246,10 @@ output$callCenter <- renderEcharts4r({
 
 regionPCRData <- reactive({
   dt <- provincePCR
-  dt[, per := round(陽性者数/累積検査数 * 100, 2)]
+  dt[, per := round(累積陽性者数/検査数 * 100, 2)]
   dt$per[is.nan(dt$per)] <- 0
   dt[, position := -50]
-  setorder(dt, -累積検査数)
+  setorder(dt, -検査数)
   dt
 })
 
@@ -266,7 +266,7 @@ output$regionPCR <- renderEcharts4r({
     return(
       list(
         text = dateSeq[i],
-        subtext = paste0('都道府県合計検査数：', sum(dt[date == dateSeq[i]]$累積検査数), all)
+        subtext = paste0('都道府県合計検査数：', sum(dt[date == dateSeq[i]]$検査数), all)
         )
     )
   })
@@ -274,12 +274,12 @@ output$regionPCR <- renderEcharts4r({
   dt %>%
     group_by(date) %>%
     e_chart(県名, timeline = T) %>%
-    e_bar(累積検査数, itemStyle = list(color = middleYellow)) %>%
-    e_bar(陽性者数, z = 2, barGap = '-100%', itemStyle = list(color = darkRed)) %>%
+    e_bar(検査数, itemStyle = list(color = middleYellow)) %>%
+    e_bar(累積陽性者数, z = 2, barGap = '-100%', itemStyle = list(color = darkRed)) %>%
     e_scatter(position, size = per, name = '陽性率') %>%
     e_axis(axisTick =list(show = F), axisLabel = list(interval = 0)) %>%
     e_x_axis(axisLabel = list(rotate = 90, interval = 0)) %>%
-    e_y_axis(max = max(dt$累積検査数) + 30, 
+    e_y_axis(max = max(dt$検査数) + 30, 
              index = 0, min = -50,
              splitLine = list(show = F)) %>%
     e_grid(bottom = '25%', left = '5%', right = '5%') %>%
@@ -316,12 +316,12 @@ output$singleRegionPCR <- renderEcharts4r({
   # regionName <- '茨城県' # TEST
   # data <- dt[県名 == regionName] #TEST
   setorder(data, date)
-  data <- data[累積検査数 != 0 | 陽性者数 != 0]
+  data <- data[検査数 != 0 | 累積陽性者数 != 0]
   
   data %>%
     e_chart(date) %>%
-    e_bar(累積検査数, itemStyle = list(color = middleYellow)) %>%
-    e_bar(陽性者数, z = 2, barGap = '-100%', itemStyle = list(color = darkRed)) %>%
+    e_bar(検査数, itemStyle = list(color = middleYellow)) %>%
+    e_bar(累積陽性者数, z = 2, barGap = '-100%', itemStyle = list(color = darkRed)) %>%
     e_line(per, name = '検査陽性率', y_index = 1) %>%
     e_x_axis(axisTick =list(show = F), splitLine = list(show = F)) %>%
     e_y_axis(axisTick =list(show = F), splitLine = list(show = F)) %>%
