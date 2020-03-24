@@ -1,3 +1,4 @@
 date,pcr,positive,symptomless,symptomlessDischarge,symptomlessHospitalized,symptomlessHospitalizedNow,symptomlessHospitalizedWaiting,symptom,symptomDischarge,symptomHospitalized,mild,severe,confirming,waiting,death,symtomConfirming
 20200322,1173,16,12,0,12,10,2,4,0,4,4,0,0,0,0,0
 20200323,1189,17,12,0,12,11,1,5,0,5,5,0,0,0,0,0
+20200324,1417,18,13,0,13,13,0,5,1,4,4,0,0,0,0,0
