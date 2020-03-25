@@ -82,7 +82,7 @@ diffSparkline <- sapply(2:ncol(byDate), function(i) {
   diff <- spk_chr(
     values = value,
     type = 'bar',
-    barColor = darkRed,
+    barColor = middleRed,
     chartRangeMin = 0,
     chartRangeMax = max(byDate[, c(2:48, 50)])
   )
