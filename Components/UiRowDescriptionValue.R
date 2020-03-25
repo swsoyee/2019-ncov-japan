@@ -83,8 +83,8 @@ fluidRow(
     title = paste0(
       '国内無症状者：', SYMPTOMLESS_DISCHARGE_WITHIN$final, ' (+', SYMPTOMLESS_DISCHARGE_WITHIN$diff,
       ')<br>国内有症状者：', SYMPTOM_DISCHARGE_WITHIN$final, ' (+', SYMPTOM_DISCHARGE_WITHIN$diff,
-      ')<br>チャーター便無症状者：', SYMPTOMLESS_DISCHARGE_FLIGHT$final, ' (+', SYMPTOMLESS_DISCHARGE_FLIGHT$diff,
-      ')<br>チャーター便有症状者：', SYMPTOM_DISCHARGE_FLIGHT$final, ' (+', SYMPTOM_DISCHARGE_FLIGHT$diff, ')'
+      ')<br><br>チャーター便無症状者：', SYMPTOMLESS_DISCHARGE_FLIGHT$final,
+      '<br>チャーター便有症状者：', SYMPTOM_DISCHARGE_FLIGHT$final, '<br>全員退院済み'
     )
   ),
   column(
