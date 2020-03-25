@@ -99,6 +99,38 @@ fluidPage(
     )
   ),
   fluidRow(
+    boxPlus(title = tagList(icon('venus-mars'), '歳代・性別'),
+            width = 4,
+            enable_label = T,
+            collapsible = T,
+            label_text = paste('集計時間：', max(as.Date(positiveDetail$発表日, '%m月%d日'), na.rm = T)),
+            echarts4rOutput('genderBar') %>% withSpinner(),
+            closable = F,
+            footer = tags$small('データ提供：', 
+                                tags$a(icon('twitter'), '@kenmo_economics', 
+                                       href = 'https://twitter.com/kenmo_economics')
+                                )
+            ),
+    boxPlus(title = tagList(icon('hospital'), '症状の進行'),
+            width = 8,
+            closable = F,
+            collapsible = T,
+            dateInput(
+              inputId = 'selectProcessDay', 
+              label = '日付選択', 
+              min = domesticDailyReport$date[1], 
+              max = domesticDailyReport$date[nrow(domesticDailyReport)], 
+              value = domesticDailyReport$date[nrow(domesticDailyReport)], language = 'ja'
+            ),
+            echarts4rOutput('processSankey') %>% withSpinner(),
+            footer = tags$small('※開発バージョンです。最終版ではありません')
+    ),
+  ),
+  fluidRow(
+    boxPlus(width = 4,
+            collapsed = T, 
+            collapsible = T,
+            dataTableOutput('news') %>% withSpinner()),
     boxPlus(title = tagList(icon('connectdevelop'), '感染経路ネットワーク'),
             width = 8,
             closable = F,
@@ -110,40 +142,6 @@ fluidPage(
             sidebar_content = tagList(
               checkboxInput('hideSingle', '離散を非表示', T)
             ),
-            footer = tags$small('3月9日以後に、厚労省のページでは感染者の詳細情報についての発表は中止になり、こちらのデータ更新も止むを得ず中止になりました。')),
-    boxPlus(title = tagList(icon('venus-mars'), '歳代・性別'),
-            width = 4,
-            enable_label = T,
-            collapsible = T,
-            collapsed = T,
-            label_text = paste('集計時間：', max(as.Date(positiveDetail$発表日, '%m月%d日'))),
-            echarts4rOutput('genderBar') %>% withSpinner(),
-            closable = F,
-            footer = tags$small('データ提供：', 
-                                tags$a(icon('twitter'), '@kenmo_economics', 
-                                       href = 'https://twitter.com/kenmo_economics')
-                                )
-            )
-  ),
-  fluidRow(
-    boxPlus(title = tagList(icon('hospital'), '症状の進行'),
-            width = 8,
-            closable = F,
-            collapsible = T,
-            collapsed = T,
-            dateInput(
-              inputId = 'selectProcessDay', 
-              label = '日付選択', 
-              min = domesticDailyReport$date[1], 
-              max = domesticDailyReport$date[nrow(domesticDailyReport)], 
-              value = domesticDailyReport$date[nrow(domesticDailyReport)], language = 'ja'
-            ),
-            echarts4rOutput('processSankey') %>% withSpinner(),
-            footer = tags$small('※開発バージョンです。最終版ではありません')
-            ),
-    boxPlus(width = 4,
-            collapsed = T, 
-            collapsible = T,
-            dataTableOutput('news') %>% withSpinner())
+            footer = tags$small('3月9日以後に、厚労省のページでは感染者の詳細情報についての発表は中止になり、こちらのデータ更新も止むを得ず中止になりました。'))
   )
 )
