@@ -91,9 +91,13 @@ diffSparkline <- sapply(2:ncol(byDate), function(i) {
 # 死亡カラム作成
 deathByRegion <- stack(colSums(death[, 2:ncol(byDate)]))
 # テーブル作成
+
+totalToday <- paste0(total, '<r ', today, '<r >')
+
 mergeDt <- data.table(region = names(total), 
                       count = total, 
                       today = today, 
+                      totalToday = totalToday,
                       untilToday = untilToday,
                       diff = diffSparkline,
                       death = deathByRegion$values,
