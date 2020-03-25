@@ -61,22 +61,26 @@ output$summaryByRegion <- renderDataTable({
   # dt[, today := as.character(today)]
   # dt[!is.na(today), today := paste('+', today)]
   
-  breaks <- seq(0, 70, 7)
-  colors <- colorRampPalette(c('white', lightGreen))(length(breaks) + 1)
+  breaks <- seq(0, 21, 7)
+  colors <- colorRampPalette(c(lightRed, darkRed))(length(breaks) + 1)
+  
+  upMark <- as.character(icon('caret-up'))
   
   datatable(
-    data = dt,
-    colnames = c('都道府県', '感染確認', '新規', '昨日まで', '新規推移', '死亡', '新規なし継続日数'),
+    data = dt[, c(1, 4, 3, 6:ncol(dt)), with = F],
+    colnames = c('都道府県', '陽性累積数', '新規', '新規推移', '死亡', '新規なし継続日数'),
     escape = F,
+    extensions = c('Responsive'),
     options = list(
       paging = F,
       dom = 't',
       scrollY = '590px',
       scrollX = T,
+      fixedColumns = list(leftColumns = 2),
       columnDefs = list(
         list(
           className = 'dt-center', 
-          targets = '_all'
+          targets = c(1, 3, 5)
           )
         ),
       fnDrawCallback = htmlwidgets::JS('
@@ -88,17 +92,30 @@ output$summaryByRegion <- renderDataTable({
   ) %>% 
     spk_add_deps() %>%
     formatStyle(
-      columns = 'untilToday',
-      background = styleColorBar(range(dt$count), middleRed, angle = -90),
+      columns = 'totalToday',
+      background = htmlwidgets::JS(
+        paste0("'linear-gradient(-90deg, transparent ' + (", 
+          max(dt$count), "- value.split('<r ')[0])/", max(dt$count), 
+          " * 100 + '%, #DD4B39 ' + (", 
+          max(dt$count), "- value.split('<r ')[0])/", max(dt$count), 
+          " * 100 + '% ' + (", max(dt$count), "- value.split('<r ')[0] + Number(value.split('<r ')[1]))/", max(dt$count),
+          " * 100 + '%, #F56954 ' + (", 
+          max(dt$count), "- value.split('<r ')[0] + Number(value.split('<r ')[1]))/", max(dt$count), " * 100 + '%)'")
+      ),
       backgroundSize = '100% 80%',
       backgroundRepeat = 'no-repeat',
       backgroundPosition = 'center') %>%
-    formatStyle(
+    formatCurrency(
       columns = 'today',
-      background = styleColorBar(range(dt$count), darkRed),
-      backgroundSize = '98% 80%',
-      backgroundRepeat = 'no-repeat',
-      backgroundPosition = 'center') %>%
+      currency = paste(as.character(icon('caret-up')), ' '),
+      digits = 0) %>%
+    formatStyle(
+      columns = 'today', 
+      color = styleInterval(breaks, colors),
+      fontWeight = 'bold',
+      backgroundSize = '80% 80%',
+      backgroundPosition = 'center'
+    ) %>%
     formatStyle(
       columns = 'death',
       background = styleColorBar(c(0, max(dt$death, na.rm = T)), lightNavy),
