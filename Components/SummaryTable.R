@@ -61,7 +61,7 @@ output$summaryByRegion <- renderDataTable({
   # dt[, today := as.character(today)]
   # dt[!is.na(today), today := paste('+', today)]
   
-  breaks <- seq(0, 21, 7)
+  breaks <- seq(0, max(dt$today, na.rm = T), 2)
   colors <- colorRampPalette(c(lightRed, darkRed))(length(breaks) + 1)
   
   upMark <- as.character(icon('caret-up'))
