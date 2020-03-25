@@ -102,7 +102,8 @@ fluidPage(
     boxPlus(title = tagList(icon('connectdevelop'), '感染経路ネットワーク'),
             width = 8,
             closable = F,
-            # collapsed = T,
+            collapsible = T,
+            collapsed = T,
             echarts4rOutput('network') %>% withSpinner(),
             enable_sidebar = T,
             sidebar_start_open = F,
@@ -114,6 +115,7 @@ fluidPage(
             width = 4,
             enable_label = T,
             collapsible = T,
+            collapsed = T,
             label_text = paste('集計時間：', max(as.Date(positiveDetail$発表日, '%m月%d日'))),
             echarts4rOutput('genderBar') %>% withSpinner(),
             closable = F,
@@ -127,7 +129,8 @@ fluidPage(
     boxPlus(title = tagList(icon('hospital'), '症状の進行'),
             width = 8,
             closable = F,
-            # collapsed = T,
+            collapsible = T,
+            collapsed = T,
             dateInput(
               inputId = 'selectProcessDay', 
               label = '日付選択', 
@@ -138,6 +141,9 @@ fluidPage(
             echarts4rOutput('processSankey') %>% withSpinner(),
             footer = tags$small('※開発バージョンです。最終版ではありません')
             ),
-    boxPlus(width = 4, dataTableOutput('news') %>% withSpinner())
+    boxPlus(width = 4,
+            collapsed = T, 
+            collapsible = T,
+            dataTableOutput('news') %>% withSpinner())
   )
 )
