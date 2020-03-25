@@ -68,7 +68,7 @@ output$summaryByRegion <- renderDataTable({
   
   datatable(
     data = dt[, c(1, 4, 3, 6:ncol(dt)), with = F],
-    colnames = c('都道府県', '陽性累積数', '新規', '新規推移', '死亡', '新規なし継続日数'),
+    colnames = c('都道府県', 'PCR陽性数', '新規', '新規推移', '死亡', '新規なし継続日数'),
     escape = F,
     extensions = c('Responsive'),
     options = list(
@@ -132,5 +132,5 @@ output$summaryByRegion <- renderDataTable({
     #   columns = 'zeroContinuousDay', 
     #   backgroundColor = styleInterval(breaks, colors)
     #   )
-}, server = T)
+})
 
