@@ -70,7 +70,6 @@ output$summaryByRegion <- renderDataTable({
     data = dt[, c(1, 4, 3, 6:ncol(dt)), with = F],
     colnames = c('都道府県', 'PCR陽性数', '新規', '新規推移', '死亡', '新規なし継続日数'),
     escape = F,
-    plugins = 'natural',
     extensions = c('Responsive'),
     options = list(
       paging = F,
@@ -81,10 +80,6 @@ output$summaryByRegion <- renderDataTable({
         list(
           className = 'dt-center', 
           targets = c(1, 3, 5)
-        ),
-        list(
-          type = 'natural',
-          targets = 2
         )
       ),
       fnDrawCallback = htmlwidgets::JS('
