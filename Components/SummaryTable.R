@@ -133,4 +133,3 @@ output$summaryByRegion <- renderDataTable({
     #   backgroundColor = styleInterval(breaks, colors)
     #   )
 })
-
