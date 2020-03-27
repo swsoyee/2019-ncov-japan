@@ -88,6 +88,33 @@ diffSparkline <- sapply(2:ncol(byDate), function(i) {
   )
   return(diff)
 })
+
+# 新規退院者カラム作成
+detailByRegion <- fread(paste0(DATA_PATH, 'detailByRegion.csv'))
+detailByRegion[, 日付 := as.Date(as.character(日付), '%Y%m%d')]
+detailByRegion[, 都道府県名 := gsub('県', '', 都道府県名)]
+detailByRegion[, 都道府県名 := gsub('府', '', 都道府県名)]
+detailByRegion[, 都道府県名 := gsub('東京都', '東京', 都道府県名)]
+detailByRegion[order(日付), dischargedDiff := 退院者 - shift(退院者), by = 都道府県名]
+detailByRegion[is.na(detailByRegion)] <- 0
+
+# 退院推移
+dischargedDiffSparkline <- sapply(colnames(byDate)[c(2:48, 50)], function(region) {
+  value <- detailByRegion[都道府県名 == region]$dischargedDiff
+  if (length(value) > 0) {
+    diff <- spk_chr(
+      values = value,
+      type = 'bar',
+      barColor = middleGreen,
+      chartRangeMin = 0,
+      chartRangeMax = max(detailByRegion$dischargedDiff, na.rm = T)
+    )
+  } else {
+    diff <- NA
+  }
+  return(diff)
+})
+
 # 死亡カラム作成
 deathByRegion <- stack(colSums(death[, 2:ncol(byDate)]))
 # テーブル作成
@@ -103,6 +130,11 @@ mergeDt <- data.table(region = names(total),
                       death = deathByRegion$values,
                       zeroContinuousDay = zeroContinuousDay$values
                       )
+# lapply(mergeDt$region, function(i) {
+for (i in mergeDt$region) {
+  mergeDt[region == i, dischargeDiff := dischargedDiffSparkline[i][[1]]]
+}
+
 # オーダー
 setorder(mergeDt, -count)
 # 読み取り時のエラーを回避するため

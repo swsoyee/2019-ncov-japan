@@ -68,7 +68,7 @@ output$summaryByRegion <- renderDataTable({
   
   datatable(
     data = dt[, c(1, 3, 4, 6:ncol(dt)), with = F],
-    colnames = c('都道府県', '新規', '感染者数', '新規推移', '死亡', '新規なし継続日数'),
+    colnames = c('都道府県', '新規', '感染者数', '新規感染推移', '新規退院推移', '死亡', '新規なし継続日数'),
     escape = F,
     plugins = 'natural', 
     extensions = c('Responsive'),
