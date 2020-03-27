@@ -210,6 +210,8 @@ provinceCode <- fread(paste0(DATA_PATH, 'prefectures.csv'))
 
 # 詳細データけんもねずみ
 positiveDetail <- fread(paste0(DATA_PATH, 'positiveDetail.csv'))
+selectProvinceOption <- unique(positiveDetail$都道府県)
+selectProvinceOption <- selectProvinceOption[selectProvinceOption != '未']
 
 # 詳細データ
 detail <- fread(paste0(DATA_PATH, 'detail.csv'),
