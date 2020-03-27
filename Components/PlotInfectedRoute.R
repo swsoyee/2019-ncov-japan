@@ -2,6 +2,7 @@ infectedRouteByRegionData <- reactive({
   positiveDetail$announceDate <- as.Date(positiveDetail$発表日, '%m月%d日')
   positiveDetail[`渡航・接触歴` %in% c('', '未'), `渡航・接触歴` := '不明']
   dt <- positiveDetail[!is.na(announceDate), .(count = .N), by = .(都道府県, announceDate, `渡航・接触歴`)]
+  # input <- list(infectedRouteByRegionPicker = c('東京都', '神奈川県'))
   dt <- dt[都道府県 %in% input$infectedRouteByRegionPicker]
   dt[, sum(count), by = .(announceDate, `渡航・接触歴`)]
 })

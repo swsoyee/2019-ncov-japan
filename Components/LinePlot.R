@@ -20,7 +20,10 @@ output$confirmedLine <- renderEcharts4r({
       e_grid(left = '3%') %>%
       e_x_axis(splitLine = list(show = F)) %>%
       e_y_axis(splitLine = list(show = F), axisLabel = list(inside = T), axisTick = list(show = F)) %>%
-      e_y_axis(splitLine = list(show = F), index = 1, max = 100, axisTick = list(show = F)) %>%
+      e_y_axis(splitLine = list(show = F), 
+               index = 1, 
+               max = max(dt$difference, na.rm = T),
+               axisTick = list(show = F)) %>%
       e_title(subtext = paste0(lang[[langCode]][62], UPDATE_DATETIME)) %>%
       e_legend(type = 'scroll', orient = 'vertical', left = '10%', top = '15%') %>%
       e_tooltip(trigger = 'axis')
@@ -40,9 +43,9 @@ confirmedDataByDate <- reactive({
   dt$都道府県 <- rowSums(byDate[, c(2:48)])
   if(!is.null(input$regionPicker)) {
     dt <- dt[, c('date', input$regionPicker), with = F]
-    # dt <- dt[, c('date', '北海道', '東京')] # TEST
+    # dt <- dt[, c('date', '北海道', '東京', '神奈川')] # TEST
     dt$total <- cumsum(rowSums(dt[, 2:ncol(dt)]))
-    dt[ , difference := total - shift(total)]
+    dt[, difference := total - shift(total)]
     setnafill(dt, fill = 0)
     dt
   } else {
