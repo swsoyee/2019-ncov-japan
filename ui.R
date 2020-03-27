@@ -34,11 +34,19 @@ shinyUI(
         badgeColor = 'red'
       ),
       menuItem(
+        # 感染ルート
+        '感染ルート',
+        tabName = 'route',
+        icon = icon('project-diagram'),
+        badgeLabel = '開発中',
+        badgeColor = 'black'
+      ),
+      menuItem(
         # 事例マップ
         lang[[langCode]][33],
         tabName = 'caseMap',
         icon = icon('map-marked-alt'),
-        badgeLabel = '開発中',
+        badgeLabel = '破棄中',
         badgeColor = 'black'
       ),
       menuItem(
@@ -78,6 +86,12 @@ shinyUI(
       tabItem(tabName = 'japan',
               source(
                 file = paste0(PAGE_PATH, 'Japan.R'),
+                local = T,
+                encoding = 'UTF-8'
+              )$value),
+      tabItem(tabName = 'route',
+              source(
+                file = paste0(PAGE_PATH, 'Route.R'),
                 local = T,
                 encoding = 'UTF-8'
               )$value),
