@@ -68,7 +68,7 @@ output$summaryByRegion <- renderDataTable({
   
   datatable(
     data = dt[, c(1, 3, 4, 6:ncol(dt)), with = F],
-    colnames = c('都道府県', '新規', '感染者数', '新規推移', '死亡', '新規なし継続日数'),
+    colnames = c('都道府県', '新規', '感染者数', '新規感染', '新規退院', '死亡', '新規なし継続日数'),
     escape = F,
     plugins = 'natural', 
     extensions = c('Responsive'),
@@ -80,11 +80,11 @@ output$summaryByRegion <- renderDataTable({
       columnDefs = list(
         list(
           className = 'dt-center', 
-          targets = c(1, 3, 5)
+          targets = c(1, 3, 4, 5)
         ),
         list(
           width = '60px',
-          targets = 1
+          targets = c(1, 3, 5)
         ),
         list(
           width = '30px',
@@ -92,7 +92,7 @@ output$summaryByRegion <- renderDataTable({
         ),
         list(
           orderable = F,
-          targets = c(3, 4)
+          targets = 3:5
         )
       ),
       fnDrawCallback = htmlwidgets::JS('
