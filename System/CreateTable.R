@@ -91,16 +91,16 @@ diffSparkline <- sapply(2:ncol(byDate), function(i) {
 
 # 新規退院者カラム作成
 detailByRegion <- fread(paste0(DATA_PATH, 'detailByRegion.csv'))
-detailByRegion[, 日付 := as.Date(as.character(日付), '%Y%m%d')]
-detailByRegion[, 都道府県名 := gsub('県', '', 都道府県名)]
-detailByRegion[, 都道府県名 := gsub('府', '', 都道府県名)]
-detailByRegion[, 都道府県名 := gsub('東京都', '東京', 都道府県名)]
-detailByRegion[order(日付), dischargedDiff := 退院者 - shift(退院者), by = 都道府県名]
+detailByRegion[, `日付` := as.Date(as.character(`日付`), '%Y%m%d')]
+detailByRegion[, `都道府県名` := gsub('県', '', `都道府県名`)]
+detailByRegion[, `都道府県名` := gsub('府', '', `都道府県名`)]
+detailByRegion[, `都道府県名` := gsub('東京都', '東京', `都道府県名`)]
+detailByRegion[order(`日付`), dischargedDiff := `退院者` - shift(`退院者`), by = `都道府県名`]
 detailByRegion[is.na(detailByRegion)] <- 0
 
 # 退院推移
 dischargedDiffSparkline <- sapply(colnames(byDate)[c(2:48, 50)], function(region) {
-  value <- detailByRegion[都道府県名 == region]$dischargedDiff
+  value <- detailByRegion[`都道府県名` == region]$dischargedDiff
   if (length(value) > 0) {
     diff <- spk_chr(
       values = value,
@@ -119,23 +119,23 @@ dischargedDiffSparkline <- sapply(colnames(byDate)[c(2:48, 50)], function(region
 deathByRegion <- stack(colSums(death[, 2:ncol(byDate)]))
 
 # 感染者内訳
-detailSparkLineDt <- detailByRegion[日付 == max(日付)]
-detailSparkLine <- sapply(detailSparkLineDt$都道府県名, function(region) {
+detailSparkLineDt <- detailByRegion[`日付` == max(`日付`)]
+detailSparkLine <- sapply(detailSparkLineDt$`都道府県名`, function(region) {
   # 厚労省の定義は、死亡後に陽性に確認された人は患者数に含まれていないようで、
   # マイナスのデータを防ぐため修正します。
-  fixDiff <- (detailSparkLineDt[都道府県名 == region, 患者数] - 
-                detailSparkLineDt[都道府県名 == region, 入院中] - 
-                detailSparkLineDt[都道府県名 == region, 退院者] - 
-                detailSparkLineDt[都道府県名 == region, 死亡者])
+  fixDiff <- (detailSparkLineDt[`都道府県名` == region, `患者数`] - 
+                detailSparkLineDt[`都道府県名` == region, `入院中`] - 
+                detailSparkLineDt[`都道府県名` == region, `退院者`] - 
+                detailSparkLineDt[`都道府県名` == region, `死亡者`])
   fixConfirmed <- ifelse(fixDiff < 0, 
-                         detailSparkLineDt[都道府県名 == region, 患者数] - fixDiff, 
-                         detailSparkLineDt[都道府県名 == region, 患者数])
+                         detailSparkLineDt[`都道府県名` == region, `患者数`] - fixDiff, 
+                         detailSparkLineDt[`都道府県名` == region, `患者数`])
   spk_chr(type = 'pie', 
           values = c(
             total[names(total) == region][[1]] - fixConfirmed,
-            detailSparkLineDt[都道府県名 == region, 入院中],
-            detailSparkLineDt[都道府県名 == region, 退院者],
-            detailSparkLineDt[都道府県名 == region, 死亡者]
+            detailSparkLineDt[`都道府県名` == region, `入院中`],
+            detailSparkLineDt[`都道府県名` == region, `退院者`],
+            detailSparkLineDt[`都道府県名` == region, `死亡者`]
             ),
           sliceColors = c(middleRed, middleYellow, middleGreen, darkNavy),
           tooltipFormat = '<span style="color: {{color}}">&#9679;</span> {{offset:names}} ({{percent.1}}%)',
