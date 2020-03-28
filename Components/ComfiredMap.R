@@ -63,6 +63,21 @@ output$echartsMap <- renderEcharts4r({
     )
   })
   
+  timeSeriesTitleSource <- lapply(seq_along(dateSeq), function(i) {
+    return(
+      list(
+        subtext = 'マップのソースについて',
+        sublink = 'https://code.highcharts.com/mapdata/',
+        subtextStyle = list(
+          color = '#3c8dbc',
+          fontSize = 10
+        ),
+        left = '0%',
+        top = '8%'
+      )
+    )
+  })
+  
   # provinceCode <- fread(paste0(DATA_PATH, 'prefectures.csv')) # TEST
   if(input$showPopupOnMap) {
     provinceColnames <- colnames(byDate)[2:ncol(byDate)]
@@ -159,6 +174,10 @@ output$echartsMap <- renderEcharts4r({
     e_timeline_serie(
       title = timeSeriesTitleSub, 
       index = 2
+    ) %>%
+    e_timeline_serie(
+      title = timeSeriesTitleSource, 
+      index = 3
     )
   
   # for (i in seq_along(provinceDiffPopup)) {

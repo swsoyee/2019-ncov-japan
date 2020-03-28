@@ -5,7 +5,7 @@ tabPanel(
   ),
   fluidRow(
     column(
-      width = 5,
+      width = 4,
       fluidRow(
         column(
           width = 6,
@@ -48,12 +48,13 @@ tabPanel(
             size = 'sm',
             width = "300px",
             tooltip = tooltipOptions(title = '表示設定')
-          ),
+            
+          )
           # column(
           #   width = 6,
-          #   actionButton(inputId = 'switchCaseMap', label = '事例マップへ')
+          #   # actionButton(inputId = 'switchCaseMap', label = '事例マップへ')
           # )
-        ),
+        )
       ),
       echarts4rOutput('echartsMap', height = '500px')  %>% withSpinner(),
       progressBar(
@@ -69,7 +70,7 @@ tabPanel(
       uiOutput('saveArea'),
     ),
     column(
-      width = 7,
+      width = 8,
       boxPad(
         # echarts4rOutput('totalConfirmedByRegionPlot', height = '600px')  %>% withSpinner()
         dataTableOutput('summaryByRegion') %>% withSpinner()
