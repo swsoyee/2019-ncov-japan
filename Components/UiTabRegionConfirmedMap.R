@@ -72,7 +72,14 @@ tabPanel(
     column(
       width = 7,
       boxPad(
-        dataTableOutput('summaryByRegion') %>% withSpinner()
+        switchInput(
+          inputId = 'switchTableVersion', 
+          value = T,
+          onLabel = 'シンプル', 
+          offLabel = '詳細', 
+        ),
+        # dataTableOutput('summarybyRegionSub') %>% withSpinner()
+        uiOutput('summaryTable') %>% withSpinner()
       )
     ),
   )

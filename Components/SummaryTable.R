@@ -51,6 +51,95 @@ output$detail <- renderDataTable({
     )
 }, server = T)
 
+observeEvent(input$switchTableVersion, {
+  if (input$switchTableVersion) {
+    output$summaryTable <- renderUI({
+      dataTableOutput('summarybyRegionSub')
+    })
+  } else {
+    output$summaryTable <- renderUI({
+      dataTableOutput('summaryByRegion')
+    })
+  }
+})
+
+output$summarybyRegionSub <- renderDataTable({
+
+    dt <- totalConfirmedByRegionData()[count > 0]
+    # dt <- dt[count > 0]
+    columnName <- c('today', 'death')
+    dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
+    
+    breaks <- seq(0, max(ifelse(is.na(dt$today), 0, dt$today), na.rm = T), 2)
+    colors <- colorRampPalette(c(lightRed, darkRed))(length(breaks) + 1)
+    
+    breaksDeath <- seq(0, max(ifelse(is.na(dt$death), 0, dt$death), na.rm = T), 2)
+    colorsDeath <- colorRampPalette(c('white', lightNavy))(length(breaksDeath) + 1)
+    
+    upMark <- as.character(icon('caret-up'))
+    
+    datatable(
+      data = dt[, c(1, 3, 4, 9), with = F],
+      colnames = c('都道府県', '新規', '感染者数', '死亡'),
+      escape = F,
+      plugins = 'natural', 
+      extensions = c('Responsive'),
+      options = list(
+        paging = F,
+        dom = 't',
+        scrollY = '540px',
+        scrollX = T,
+        columnDefs = list(
+          list(
+            className = 'dt-center', 
+            targets = c(1, 3:4)
+          ),
+          list(
+            orderable = F,
+            targets = 3:4
+          )
+        ),
+        fnDrawCallback = htmlwidgets::JS('
+      function() {
+        HTMLWidgets.staticRender();
+      }
+    ')
+      )
+    ) %>% 
+      spk_add_deps() %>%
+      formatStyle(
+        columns = 'totalToday',
+        background = htmlwidgets::JS(
+          paste0("'linear-gradient(-90deg, transparent ' + (", 
+                 max(dt$count), "- value.split('<r ')[0])/", max(dt$count), 
+                 " * 100 + '%, #DD4B39 ' + (", 
+                 max(dt$count), "- value.split('<r ')[0])/", max(dt$count), 
+                 " * 100 + '% ' + (", max(dt$count), "- value.split('<r ')[0] + Number(value.split('<r ')[1]))/", max(dt$count),
+                 " * 100 + '%, #F56954 ' + (", 
+                 max(dt$count), "- value.split('<r ')[0] + Number(value.split('<r ')[1]))/", max(dt$count), " * 100 + '%)'")
+        ),
+        backgroundSize = '100% 80%',
+        backgroundRepeat = 'no-repeat',
+        backgroundPosition = 'center') %>%
+      formatCurrency(
+        columns = 'today',
+        currency = paste(as.character(icon('caret-up')), ' '),
+        digits = 0) %>%
+      formatStyle(
+        columns = 'today', 
+        color = styleInterval(breaks, colors),
+        fontWeight = 'bold',
+        backgroundSize = '80% 80%',
+        backgroundPosition = 'center'
+      ) %>%
+      formatStyle(
+        columns = 'death', 
+        backgroundColor = styleInterval(breaksDeath, colorsDeath),
+        fontWeight = 'bold',
+        backgroundPosition = 'center'
+      )
+})
+
 output$summaryByRegion <- renderDataTable({
   # setcolorder(mergeDt, c('region', 'count', 'untilToday', 'today', 'diff', 'values'))
   # dt <- mergeDt[count > 0] # TEST
@@ -64,6 +153,9 @@ output$summaryByRegion <- renderDataTable({
   breaks <- seq(0, max(ifelse(is.na(dt$today), 0, dt$today), na.rm = T), 2)
   colors <- colorRampPalette(c(lightRed, darkRed))(length(breaks) + 1)
   
+  breaksDeath <- seq(0, max(ifelse(is.na(dt$death), 0, dt$death), na.rm = T), 2)
+  colorsDeath <- colorRampPalette(c('white', lightNavy))(length(breaksDeath) + 1)
+  
   upMark <- as.character(icon('caret-up'))
   
   datatable(
@@ -75,7 +167,7 @@ output$summaryByRegion <- renderDataTable({
     options = list(
       paging = F,
       dom = 't',
-      scrollY = '590px',
+      scrollY = '540px',
       scrollX = T,
       columnDefs = list(
         list(
@@ -130,12 +222,18 @@ output$summaryByRegion <- renderDataTable({
       backgroundSize = '80% 80%',
       backgroundPosition = 'center'
     ) %>%
+    # formatStyle(
+    #   columns = 'death',
+    #   background = styleColorBar(c(0, max(dt$death, na.rm = T)), lightNavy),
+    #   backgroundSize = '98% 80%',
+    #   backgroundRepeat = 'no-repeat',
+    #   backgroundPosition = 'center') %>%
     formatStyle(
-      columns = 'death',
-      background = styleColorBar(c(0, max(dt$death, na.rm = T)), lightNavy),
-      backgroundSize = '98% 80%',
-      backgroundRepeat = 'no-repeat',
-      backgroundPosition = 'center') %>%
+      columns = 'death', 
+      backgroundColor = styleInterval(breaksDeath, colorsDeath),
+      fontWeight = 'bold',
+      backgroundPosition = 'center'
+    ) %>%
     formatStyle(
       columns = 'zeroContinuousDay',
       background = styleColorBar(c(0, max(dt$zeroContinuousDay, na.rm = T)), lightBlue, angle = -90),
