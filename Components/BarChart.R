@@ -143,30 +143,25 @@ output$confirmedBar <- renderEcharts4r({
 # ====退院者割合====
 output$curedBar <- renderEcharts4r({
   dt <- data.table('label' = '退院者',
-                   'domestic' = SYMPTOM_DISCHARGE_WITHIN$final,
-                   'flight' = SYMPTOM_DISCHARGE_FLIGHT$final,
+                   'domestic' = DISCHARGE_WITHIN$final,
+                   'flight' = DISCHARGE_FLIGHT$final,
+                   'airport' = DISCHARGE_AIRPORT$final,
                    'ship' = DISCHARGE_SHIP$final,
-                   'symtomlessDomestic' = SYMPTOMLESS_DISCHARGE_WITHIN$final,
-                   'symtomlessFlight' = SYMPTOMLESS_DISCHARGE_FLIGHT$final,
-                   'domesticPer' = round(SYMPTOM_DISCHARGE_WITHIN$final / DISCHARGE_TOTAL * 100, 2),
-                   'flightPer' = round(SYMPTOM_DISCHARGE_FLIGHT$final / DISCHARGE_TOTAL * 100, 2),
-                   'symtomlessDomesticPer' = round(SYMPTOMLESS_DISCHARGE_WITHIN$final / DISCHARGE_TOTAL * 100, 2),
-                   'symtomlessFlightPer' = round(SYMPTOMLESS_DISCHARGE_FLIGHT$final / DISCHARGE_TOTAL * 100, 2),
+                   'domesticPer' = round(DISCHARGE_WITHIN$final / DISCHARGE_TOTAL * 100, 2),
+                   'flightPer' = round(DISCHARGE_FLIGHT$final / DISCHARGE_TOTAL * 100, 2),
+                   'airportPer' = round(DISCHARGE_AIRPORT$final / DISCHARGE_TOTAL * 100, 2),
                    'shipPer' = round(DISCHARGE_SHIP$final / DISCHARGE_TOTAL * 100, 2)
                    )
   e_charts(dt, label) %>%
     e_bar(domesticPer, 
-          name = paste0(lang[[langCode]][4], ' (', lang[[langCode]][95], ')'), # 国内事例 （症状あり）
+          name = lang[[langCode]][4], # 国内事例
           stack = '1', itemStyle = list(color = lightGreen)) %>%
-    e_bar(symtomlessDomesticPer, 
-          name = paste0(lang[[langCode]][4], ' (', lang[[langCode]][96], ')'), # 国内事例 （無症状）
+    e_bar(airportPer, 
+          name = '空港検疫',
           stack = '1', itemStyle = list(color = middleGreen)) %>%
     e_bar(flightPer, 
-          name = paste0(lang[[langCode]][36], ' (', lang[[langCode]][95], ')'), # チャーター便 （症状あり）
+          name = lang[[langCode]][36], # チャーター便 （症状あり）
           stack = '1', itemStyle = list(color = darkGreen)) %>%
-    e_bar(symtomlessFlightPer, 
-          name = paste0(lang[[langCode]][36], ' (', lang[[langCode]][96], ')'), # チャーター便 （無症状）
-          stack = '1', itemStyle = list(color = superDarkGreen)) %>%
     e_bar(shipPer, 
           name = lang[[langCode]][35], # クルーズ船
           stack = '1', itemStyle = list(color = middleGreen)) %>%

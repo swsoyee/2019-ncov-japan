@@ -61,8 +61,6 @@ dischargeData <- reactive({
   dataset <- domesticDailyReport
   if (input$showFlightInDischarge) {
     dataset$positive <- dataset$positive + flightDailyReport$positive
-    # dataset$symptomlessDischarge <- dataset$symptomlessDischarge + flightDailyReport$symptomlessDischarge
-    # dataset$symptomDischarge <- dataset$symptomDischarge + flightDailyReport$symptomDischarge
     dataset$discharge <- dataset$discharge + flightDailyReport$discharge
     dataset$mild <- dataset$mild + flightDailyReport$mild
     dataset$severe <- dataset$severe + flightDailyReport$severe
@@ -72,8 +70,6 @@ dischargeData <- reactive({
     ship <- shipDailyReport[2:nrow(shipDailyReport), ]
     setnafill(ship, fill = 0)
     dataset$positive <- dataset$positive + ship$positive
-    # dataset$symptomlessDischarge <- dataset$symptomlessDischarge + ship$symptomlessDischarge
-    # dataset$symptomDischarge <- dataset$symptomDischarge + ship$symptomDischarge
     dataset$discharge <- dataset$discharge + ship$discharge
     dataset$severe <- dataset$severe + ship$severe
     dataset$death <- dataset$death + ship$death

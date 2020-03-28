@@ -71,17 +71,14 @@ maxCheckNumberData[, rank := order(検査数, decreasing = T)]
 # 国内の日報
 domesticDailyReport <- fread(paste0(DATA_PATH, 'domesticDailyReport.csv'))
 domesticDailyReport$date <- as.Date(as.character(domesticDailyReport$date), '%Y%m%d')
-domesticDailyReport$discharge <- domesticDailyReport$symptomDischarge + domesticDailyReport$symptomlessDischarge
 setnafill(domesticDailyReport, type = 'locf')
 # チャーター便の日報
 flightDailyReport <- fread(paste0(DATA_PATH, 'flightDailyReport.csv'))
 flightDailyReport$date <- as.Date(as.character(flightDailyReport$date), '%Y%m%d')
-flightDailyReport$discharge <- flightDailyReport$symptomDischarge + flightDailyReport$symptomlessDischarge
 setnafill(flightDailyReport, type = 'locf')
 # 空港検疫の日報
 airportDailyReport <- fread(paste0(DATA_PATH, 'airportDailyReport.csv'))
 airportDailyReport$date <- as.Date(as.character(airportDailyReport$date), '%Y%m%d')
-airportDailyReport$discharge <- airportDailyReport$symptomDischarge + airportDailyReport$symptomlessDischarge
 setnafill(airportDailyReport, type = 'locf')
 # クルーズ船の日報
 shipDailyReport <- fread(paste0(DATA_PATH, 'shipDailyReport.csv'))
@@ -120,30 +117,36 @@ CONFIRMED_PIE_DATA <- data.table(category = c(lang[[langCode]][4], # 国内事�
                                  value = c(TOTAL_DOMESITC + TOTAL_OFFICER, TOTAL_SHIP, TOTAL_FLIGHT))
 # 退院
 
-SYMPTOMLESS_DISCHARGE_WITHIN <- getFinalAndDiff(domesticDailyReport$symptomlessDischarge)
-SYMPTOM_DISCHARGE_WITHIN <- getFinalAndDiff(domesticDailyReport$symptomDischarge)
-SYMPTOMLESS_DISCHARGE_FLIGHT <- getFinalAndDiff(flightDailyReport$symptomlessDischarge)
-SYMPTOM_DISCHARGE_FLIGHT <- getFinalAndDiff(flightDailyReport$symptomDischarge)
+DISCHARGE_WITHIN <- getFinalAndDiff(domesticDailyReport$discharge)
+DISCHARGE_FLIGHT <- getFinalAndDiff(flightDailyReport$discharge)
 DISCHARGE_SHIP <- getFinalAndDiff(shipDailyReport$discharge)
+DISCHARGE_AIRPORT <- getFinalAndDiff(airportDailyReport$discharge)
 
 CURED_PIE_DATA <- data.table(
   category = c(
-    paste0(lang[[langCode]][4], ' (', lang[[langCode]][95], ')'), # 国内事例 （症状あり）
-    paste0(lang[[langCode]][4], ' (', lang[[langCode]][96], ')'), # 国内事例 （無症状）
-    paste0(lang[[langCode]][36], ' (', lang[[langCode]][95], ')'), # チャーター便 （症状あり）
-    paste0(lang[[langCode]][36], ' (', lang[[langCode]][96], ')'), # チャーター便 （無症状）
-    lang[[langCode]][35] # クルーズ船
+    lang[[langCode]][4], # 国内事例
+    lang[[langCode]][36], # チャーター便 （無症状）
+    lang[[langCode]][35], # クルーズ船
+    '空港検疫'
     ),
   value = c(
-    SYMPTOM_DISCHARGE_WITHIN$final, 
-    SYMPTOMLESS_DISCHARGE_WITHIN$final,
-    SYMPTOM_DISCHARGE_FLIGHT$final,
-    SYMPTOMLESS_DISCHARGE_FLIGHT$final,
-    DISCHARGE_SHIP$final
-    )
+    DISCHARGE_WITHIN$final, 
+    DISCHARGE_FLIGHT$final,
+    DISCHARGE_SHIP$final,
+    DISCHARGE_AIRPORT$final
+    ),
+  diff = c(
+    DISCHARGE_WITHIN$diff, 
+    DISCHARGE_FLIGHT$diff,
+    DISCHARGE_SHIP$diff,
+    DISCHARGE_AIRPORT$diff
   )
+)
 
 DISCHARGE_TOTAL <- sum(CURED_PIE_DATA$value)
+DISCHARGE_TOTAL_NO_SHIP <- DISCHARGE_TOTAL - DISCHARGE_SHIP$final
+DISCHARGE_DIFF <- sum(CURED_PIE_DATA$diff)
+DISCHARGE_DIFF_NO_SHIP <- DISCHARGE_DIFF - DISCHARGE_SHIP$diff
 
 # 死亡
 DEATH_DOMESITC <- sum(death[, c(2:48)]) # 日本国内事例の死亡数（クルーズ船関連者除く）

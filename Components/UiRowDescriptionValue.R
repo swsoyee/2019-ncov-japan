@@ -60,19 +60,10 @@ fluidRow(
     id = 'domesticDischarged', 
     # 国内事例
     descriptionBlock(
-      number = SYMPTOM_DISCHARGE_WITHIN$diff + 
-        SYMPTOMLESS_DISCHARGE_WITHIN$diff + 
-        SYMPTOM_DISCHARGE_FLIGHT$diff + 
-        SYMPTOMLESS_DISCHARGE_FLIGHT$diff,
+      number = DISCHARGE_DIFF_NO_SHIP,
       number_color = 'green',
-      number_icon = getChangeIcon(SYMPTOM_DISCHARGE_WITHIN$diff + 
-                                    SYMPTOMLESS_DISCHARGE_WITHIN$diff + 
-                                    SYMPTOM_DISCHARGE_FLIGHT$diff + 
-                                    SYMPTOMLESS_DISCHARGE_FLIGHT$diff),
-      header = paste(SYMPTOM_DISCHARGE_WITHIN$final + 
-                       SYMPTOMLESS_DISCHARGE_WITHIN$final +
-                       SYMPTOM_DISCHARGE_FLIGHT$final + 
-                       SYMPTOMLESS_DISCHARGE_FLIGHT$final, ''),
+      number_icon = getChangeIcon(DISCHARGE_DIFF_NO_SHIP),
+      header = DISCHARGE_TOTAL_NO_SHIP,
       right_border = F,
       text = '退院者'
     )
@@ -81,10 +72,9 @@ fluidRow(
     id = 'domesticDischarged', 
     placement = 'top',
     title = paste0(
-      '国内無症状者：', SYMPTOMLESS_DISCHARGE_WITHIN$final, ' (+', SYMPTOMLESS_DISCHARGE_WITHIN$diff,
-      ')<br>国内有症状者：', SYMPTOM_DISCHARGE_WITHIN$final, ' (+', SYMPTOM_DISCHARGE_WITHIN$diff,
-      ')<br><br>チャーター便無症状者：', SYMPTOMLESS_DISCHARGE_FLIGHT$final,
-      '<br>チャーター便有症状者：', SYMPTOM_DISCHARGE_FLIGHT$final, '<br>全員退院済み'
+      '国内事例：', DISCHARGE_WITHIN$final, ' (+', DISCHARGE_WITHIN$diff,
+      ')<br>空港検疫：', DISCHARGE_AIRPORT$final, ' (+', DISCHARGE_AIRPORT$diff,
+      ')<br>チャーター便：', DISCHARGE_FLIGHT$final, ' (全員退院済み)'
     )
   ),
   column(
