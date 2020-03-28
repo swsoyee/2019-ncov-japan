@@ -86,7 +86,7 @@ output$summaryByRegion <- renderDataTable({
         list(
           className = 'dt-center', 
           width = '30px',
-          targets = 6
+          targets = 6:7
         ),
         list(
           width = '30px',

@@ -5,7 +5,7 @@ tabPanel(
   ),
   fluidRow(
     column(
-      width = 4,
+      width = 5,
       fluidRow(
         column(
           width = 6,
@@ -70,9 +70,8 @@ tabPanel(
       uiOutput('saveArea'),
     ),
     column(
-      width = 8,
+      width = 7,
       boxPad(
-        # echarts4rOutput('totalConfirmedByRegionPlot', height = '600px')  %>% withSpinner()
         dataTableOutput('summaryByRegion') %>% withSpinner()
       )
     ),
