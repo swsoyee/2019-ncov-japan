@@ -1,7 +1,8 @@
-date,pcr,positive,symptomless,symptomlessDischarge,symptomlessHospitalized,symptomlessHospitalizedNow,symptomlessHospitalizedWaiting,symptom,symptomDischarge,symptomHospitalized,mild,severe,confirming,waiting,death,symtomConfirming
-20200322,1173,16,12,0,12,10,2,4,0,4,4,0,0,0,0,0
-20200323,1189,17,12,0,12,11,1,5,0,5,5,0,0,0,0,0
-20200324,1417,18,13,0,13,13,0,5,1,4,4,0,0,0,0,0
-20200325,1426,18,13,0,13,13,0,5,1,4,4,0,0,0,0,0
-20200326,1484,23,13,0,13,13,0,10,1,9,9,0,0,0,0,0
-20200327,1513,23,13,0,13,13,0,10,1,9,9,0,0,0,0,0
+date,pcr,positive,symptom,symptomless,symtomConfirming,hospitalized,mild,severe,confirming,waiting,discharge,death
+20200322,1173,16,4,12,0,16,14,0,0,2,0,0
+20200323,1189,17,5,12,0,17,16,0,0,1,0,0
+20200324,1417,18,5,13,0,17,17,0,0,0,1,0
+20200325,1426,18,5,13,0,17,17,0,0,0,1,0
+20200326,1484,23,10,13,0,22,22,0,0,0,1,0
+20200327,1513,23,10,13,0,22,22,0,0,0,1,0
+20200328,1530,31,15,16,0,30,30,0,0,0,1,0

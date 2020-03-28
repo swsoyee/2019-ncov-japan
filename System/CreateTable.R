@@ -192,23 +192,16 @@ processData <- data.table('date' = as.Date(x = integer(0), origin = "1970-01-01"
 
 for(i in 1:nrow(domesticDailyReport)) {
   latestRecord <- domesticDailyReport[i]  
+  # latestRecord <- domesticDailyReport[nrow(domesticDailyReport)] # TEST
   data <- data.table('source' = character(0), 'target' = character(0), 'value' = numeric(0))
-  label.pcr <- paste0('PCR検査陽性者\n100.00%')
-  label.symptomless <- paste0('無症状者\n', round(latestRecord$symptomless / latestRecord$positive * 100, 2), '%')
-  label.symptom <- paste0('有症状者\n', round(latestRecord$symptom / latestRecord$positive * 100, 2), '%')
-  label.hospitalized <- paste0('入院治療を要する者\n', 
-                               round(
-                                 (latestRecord$symptomlesshospitalized + latestRecord$symptomHospitalized) / 
-                                   (latestRecord$positive) * 100, 2), '%')
-  label.discharge <- paste0('退院した者\n', 
-                            round(
-                              (latestRecord$symptomlessDischarge + latestRecord$symptomDischarge) / 
-                                (latestRecord$positive) * 100, 2), '%')
-  label.hospitalizedNow <- paste0('無症状入院中の者\n', 
-                                  round(
-                                    latestRecord$symptomlesshospitalizedNow / 
-                                      latestRecord$positive * 100, 2), '%')
-  label.waiting <- paste0('入院待機中の者\n',
+  label.pcr <- paste0('PCR検査陽性\n100.00%')
+  label.symptomless <- paste0('無症状\n', round(latestRecord$symptomless / latestRecord$positive * 100, 2), '%')
+  label.symptom <- paste0('有症状\n', round(latestRecord$symptom / latestRecord$positive * 100, 2), '%')
+  label.hospitalized <- paste0('入院治療必要\n', 
+                               round(latestRecord$hospitalize / latestRecord$positive * 100, 2), '%')
+  label.discharge <- paste0('退院\n', 
+                            round(latestRecord$discharge / latestRecord$positive * 100, 2), '%')
+  label.waiting <- paste0('入院待機中\n',
                           round(
                             (latestRecord$symptomlesshospitalizedWaiting + latestRecord$waiting) / 
                               (latestRecord$positive) * 100, 2), '%')
@@ -216,7 +209,7 @@ for(i in 1:nrow(domesticDailyReport)) {
                        round(
                          (latestRecord$mild) / 
                            (latestRecord$positive) * 100, 2), '%')
-  label.severe <- paste0('人工呼吸又は\nICUに入院している者\n',
+  label.severe <- paste0('人工呼吸又は\nICUに入院\n',
                          round(
                            (latestRecord$severe) / 
                              (latestRecord$positive) * 100, 2), '%')
@@ -232,21 +225,21 @@ for(i in 1:nrow(domesticDailyReport)) {
                                     round(
                                       (latestRecord$symtomConfirming) / 
                                         (latestRecord$positive) * 100, 2), '%')
-  
+  # Step1 陽性、症状有無、確認中
   data <- rbind(data, list(label.pcr, label.symptomless, latestRecord$symptomless))
-  data <- rbind(data, list(label.symptomless, label.discharge, latestRecord$symptomlessDischarge))
-  data <- rbind(data, list(label.symptomless, label.hospitalized, latestRecord$symptomlesshospitalized))
-  data <- rbind(data, list(label.hospitalized, label.hospitalizedNow, latestRecord$symptomlesshospitalizedNow))
-  data <- rbind(data, list(label.hospitalized, label.waiting, latestRecord$symptomlesshospitalizedWaiting))
   data <- rbind(data, list(label.pcr, label.symptom, latestRecord$symptom))
-  data <- rbind(data, list(label.symptom, label.discharge, latestRecord$symptomDischarge))
-  data <- rbind(data, list(label.symptom, label.hospitalized, latestRecord$symptomHospitalized))
+  data <- rbind(data, list(label.pcr, label.symptomConfirming, latestRecord$symtomConfirming))
+  # Step2 症状ありのみ入院
+  data <- rbind(data, list(label.symptom, label.discharge, latestRecord$discharge))
+  data <- rbind(data, list(label.symptom, label.hospitalized, latestRecord$hospitalize))
+  data <- rbind(data, list(label.symptom, label.death, latestRecord$death))
+  data <- rbind(data, list(label.symptom, label.waiting, latestRecord$waiting))
+
+  # Step3 入院者の状態
   data <- rbind(data, list(label.hospitalized, label.mild, latestRecord$mild))
   data <- rbind(data, list(label.hospitalized, label.severe, latestRecord$severe))
   data <- rbind(data, list(label.hospitalized, label.confirming, latestRecord$confirming))
-  data <- rbind(data, list(label.hospitalized, label.waiting, latestRecord$waiting))
-  data <- rbind(data, list(label.symptom, label.death, latestRecord$death))
-  data <- rbind(data, list(label.pcr, label.symptomConfirming, latestRecord$symtomConfirming))
+
   data <- cbind(date = latestRecord$date, data)
   
   processData <- rbind(processData, data)

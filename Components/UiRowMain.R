@@ -64,12 +64,7 @@ fluidRow(
         width = 6,
         value = DISCHARGE_TOTAL,
         subtitle = paste0(lang[[langCode]][6],
-                          ' (+',
-                          SYMPTOM_DISCHARGE_FLIGHT$diff +
-                            SYMPTOM_DISCHARGE_WITHIN$diff +
-                            SYMPTOMLESS_DISCHARGE_FLIGHT$diff +
-                            SYMPTOMLESS_DISCHARGE_WITHIN$diff +
-                            DISCHARGE_SHIP$diff, ')'),
+                          ' (+', DISCHARGE_DIFF, ')'),
         icon = icon('user-shield'),
         color = "green"
       ),
