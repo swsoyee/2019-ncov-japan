@@ -117,8 +117,41 @@ dischargedDiffSparkline <- sapply(colnames(byDate)[c(2:48, 50)], function(region
 
 # 死亡カラム作成
 deathByRegion <- stack(colSums(death[, 2:ncol(byDate)]))
-# テーブル作成
 
+# 感染者内訳
+detailSparkLineDt <- detailByRegion[日付 == max(日付)]
+detailSparkLine <- sapply(detailSparkLineDt$都道府県名, function(region) {
+  # 厚労省の定義は、死亡後に陽性に確認された人は患者数に含まれていないようで、
+  # マイナスのデータを防ぐため修正します。
+  fixDiff <- (detailSparkLineDt[都道府県名 == region, 患者数] - 
+                detailSparkLineDt[都道府県名 == region, 入院中] - 
+                detailSparkLineDt[都道府県名 == region, 退院者] - 
+                detailSparkLineDt[都道府県名 == region, 死亡者])
+  fixConfirmed <- ifelse(fixDiff < 0, 
+                         detailSparkLineDt[都道府県名 == region, 患者数] - fixDiff, 
+                         detailSparkLineDt[都道府県名 == region, 患者数])
+  spk_chr(type = 'pie', 
+          values = c(
+            total[names(total) == region][[1]] - fixConfirmed,
+            detailSparkLineDt[都道府県名 == region, 入院中],
+            detailSparkLineDt[都道府県名 == region, 退院者],
+            detailSparkLineDt[都道府県名 == region, 死亡者]
+            ),
+          sliceColors = c(middleRed, middleYellow, middleGreen, darkNavy),
+          tooltipFormat = '<span style="color: {{color}}">&#9679;</span> {{offset:names}} ({{percent.1}}%)',
+          tooltipValueLookups = list(
+            names = list(
+              '0' = '情報待ちの陽性者（無症状を含む）',
+              '1' = '有症状入院者',
+              '2' = '有症状退院者',
+              '3' = '死亡者'
+            )
+          )
+          )
+})
+
+
+# テーブル作成
 totalToday <- paste0(total, '<r ', today, '<r >')
 
 mergeDt <- data.table(region = names(total), 
@@ -128,19 +161,23 @@ mergeDt <- data.table(region = names(total),
                       untilToday = untilToday,
                       diff = diffSparkline,
                       dischargeDiff = '',
+                      detailBullet = '',
                       death = deathByRegion$values,
                       zeroContinuousDay = zeroContinuousDay$values
                       )
-# lapply(mergeDt$region, function(i) {
+
 for (i in mergeDt$region) {
   mergeDt[region == i]$dischargeDiff <- dischargedDiffSparkline[i][[1]]
+  mergeDt[region == i]$detailBullet <- detailSparkLine[i][[1]]
 }
+
 
 # オーダー
 setorder(mergeDt, -count)
 # 読み取り時のエラーを回避するため
 mergeDt[, diff := gsub('\\n', '', diff)]
 mergeDt[, dischargeDiff := gsub('\\n', '', dischargeDiff)]
+mergeDt[, detailBullet := gsub('\\n', '', detailBullet)]
 # クルーズ船とチャーター便データ除外
 mergeDt <- mergeDt[!(region %in% lang[[langCode]][35:36])]
 # テーブル出力

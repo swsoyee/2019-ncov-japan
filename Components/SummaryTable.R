@@ -53,7 +53,7 @@ output$detail <- renderDataTable({
 
 output$summaryByRegion <- renderDataTable({
   # setcolorder(mergeDt, c('region', 'count', 'untilToday', 'today', 'diff', 'values'))
-  # dt <- mergeDt[count > 0] # TEST
+  dt <- mergeDt[count > 0] # TEST
   dt <- totalConfirmedByRegionData()[count > 0]
   columnName <- c('today', 'death')
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
@@ -68,7 +68,7 @@ output$summaryByRegion <- renderDataTable({
   
   datatable(
     data = dt[, c(1, 3, 4, 6:ncol(dt)), with = F],
-    colnames = c('都道府県', '新規', '感染者数', '新規感染', '新規退院', '死亡', '新規なし継続日数'),
+    colnames = c('都道府県', '新規', '感染者数', '新規感染', '新規退院', '内訳', '死亡', '新規なし日数'),
     escape = F,
     plugins = 'natural', 
     extensions = c('Responsive'),
@@ -80,11 +80,13 @@ output$summaryByRegion <- renderDataTable({
       columnDefs = list(
         list(
           className = 'dt-center', 
-          targets = c(1, 3, 4, 5)
+          width = '60px',
+          targets = c(1, 3:5)
         ),
         list(
-          width = '60px',
-          targets = c(1, 3, 5)
+          className = 'dt-center', 
+          width = '30px',
+          targets = 6
         ),
         list(
           width = '30px',
@@ -92,7 +94,7 @@ output$summaryByRegion <- renderDataTable({
         ),
         list(
           orderable = F,
-          targets = 3:5
+          targets = 3:6
         )
       ),
       fnDrawCallback = htmlwidgets::JS('
