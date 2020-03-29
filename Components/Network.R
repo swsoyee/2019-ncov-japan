@@ -109,11 +109,15 @@ networkData <- reactive({
   return(list(node = confirmedNodes, edge = confirmedEdges))
 })
 
+observeEvent(input$sideBarTab, {
+  if (input$sideBarTab == 'route') {
+    print('Loading')
+    signateDetail <- fread(file = paste0(DATA_PATH, 'resultSignateDetail.csv'))
+    signateLink <- fread(file = paste0(DATA_PATH, 'resultSignateLink.csv'))
+  }
+})
+
 clusterData <- reactive({
-  # Refactor needed
-  signateDetail <- fread(file = paste0(DATA_PATH, 'resultSignateDetail.csv'))
-  signateLink <- fread(file = paste0(DATA_PATH, 'resultSignateLink.csv'))
-  
   # フィルター
   prefCode <- input$clusterRegionPicker
   if (length(prefCode) > 0) {

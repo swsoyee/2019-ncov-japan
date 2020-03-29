@@ -86,7 +86,7 @@ fluidPage(
           local = T,
           encoding = 'UTF-8'
         )$value,
-        # コールセンターの対応
+        # 退院数推移
         source(
           file = paste0(COMPONENT_PATH, 'UiTabDischarged.R'),
           local = T,
