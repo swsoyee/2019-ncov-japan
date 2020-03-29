@@ -13,12 +13,10 @@ death[is.na(death)] <- 0
 # 国内の日報
 domesticDailyReport <- fread(paste0(DATA_PATH, 'domesticDailyReport.csv'))
 domesticDailyReport$date <- as.Date(as.character(domesticDailyReport$date), '%Y%m%d')
-domesticDailyReport$discharge <- domesticDailyReport$symptomDischarge + domesticDailyReport$symptomlessDischarge
 setnafill(domesticDailyReport, type = 'locf')
 # チャーター便の日報
 flightDailyReport <- fread(paste0(DATA_PATH, 'flightDailyReport.csv'))
 flightDailyReport$date <- as.Date(as.character(flightDailyReport$date), '%Y%m%d')
-flightDailyReport$discharge <- flightDailyReport$symptomDischarge + flightDailyReport$symptomlessDischarge
 setnafill(flightDailyReport, type = 'locf')
 # クルーズ船の日報
 shipDailyReport <- fread(paste0(DATA_PATH, 'shipDailyReport.csv'))
