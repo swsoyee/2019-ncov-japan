@@ -69,7 +69,7 @@ fluidPage(
       collapsible = T,
       collapsed = T,
       enable_label = T, 
-      label_text = tagList('右の', icon('plus'), 'マークをクリックすると表示されます'), 
+      label_text = tagList('クリックして', icon('hand-point-right')), 
       label_status = 'warning',
       width = 12,
       tabsetPanel(
@@ -141,6 +141,7 @@ fluidPage(
   ),
   fluidRow(
     boxPlus(width = 4,
+            title = tagList(icon('newspaper'), '情報源リンク集'),
             collapsed = T, 
             collapsible = T,
             dataTableOutput('news') %>% withSpinner()),
