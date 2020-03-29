@@ -210,8 +210,6 @@ regionName <- as.list(regionName)
 news <- fread(paste0(DATA_PATH, 'mhlw_houdou.csv'))
 
 provinceCode <- fread(paste0(DATA_PATH, 'prefectures.csv'))
-provinceSelector <- provinceCode$id
-names(provinceSelector) <- provinceCode$`name-ja`
 
 # 詳細データけんもねずみ
 positiveDetail <- fread(paste0(DATA_PATH, 'positiveDetail.csv'))
