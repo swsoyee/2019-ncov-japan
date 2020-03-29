@@ -67,6 +67,10 @@ fluidPage(
       title = tagList(icon('chart-line'), lang[[langCode]][88]),
       closable = F,
       collapsible = T,
+      collapsed = T,
+      enable_label = T, 
+      label_text = tagList('右の', icon('plus'), 'マークをクリックすると表示されます'), 
+      label_status = 'warning',
       width = 12,
       tabsetPanel(
         id = 'linePlot',
@@ -103,6 +107,7 @@ fluidPage(
             width = 4,
             enable_label = T,
             collapsible = T,
+            collapsed = T,
             label_text = paste('集計時間：', max(as.Date(positiveDetail$発表日, '%m月%d日'), na.rm = T)),
             echarts4rOutput('genderBar') %>% withSpinner(),
             closable = F,
@@ -114,7 +119,8 @@ fluidPage(
     boxPlus(title = tagList(icon('hospital'), '症状の進行'),
             width = 8,
             closable = F,
-            collapsible = T,
+            collapsible = T, 
+            collapsed = T,
             dateInput(
               inputId = 'selectProcessDay', 
               label = '日付選択', 
