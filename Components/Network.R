@@ -111,7 +111,6 @@ networkData <- reactive({
 
 observeEvent(input$sideBarTab, {
   if (input$sideBarTab == 'route') {
-    print('Loading')
     signateDetail <- fread(file = paste0(DATA_PATH, 'resultSignateDetail.csv'))
     signateLink <- fread(file = paste0(DATA_PATH, 'resultSignateLink.csv'))
   }
