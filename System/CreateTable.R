@@ -248,18 +248,12 @@ fwrite(x = processData, file = paste0(DATA_PATH, 'resultProcessData.csv'))
 
 # SIGNATE データ処理
 provinceCode <- fread(paste0(DATA_PATH, 'prefectures.csv'))
-svgIcon <- fread(paste0(DATA_PATH, 'svg.csv'))
 # clusterPlace<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 接触場所マスタ.csv'), header = T)
 
 signateDetail<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者.csv'), header = T)
 signateDetail[, 受診都道府県 := gsub('県', '', 受診都道府県)]
 signateDetail[, 受診都道府県 := gsub('府', '', 受診都道府県)]
 signateDetail[, 受診都道府県 := gsub('東京都', '東京', 受診都道府県)]
-signateDetail[, regionId := paste0(都道府県コード, '-', 都道府県別罹患者No)]
-signateDetail[性別 == '男性', symbolIcon := paste0('path://', svgIcon[name == 'male']$svg)]
-signateDetail[性別 == '女性', symbolIcon := paste0('path://', svgIcon[name == 'female']$svg)]
-signateDetail[性別 == '男性' & 年代 %in% c("60 - 69", "70 - 79", "80 - 89", "-90"), symbolIcon := paste0('path://', svgIcon[name == 'grandpa']$svg)]
-signateDetail[性別 == '女性' & 年代 %in% c("60 - 69", "70 - 79", "80 - 89", "-90"), symbolIcon := paste0('path://', svgIcon[name == 'grandma']$svg)]
 signateDetail[, `症状・経過` := gsub('\n', '<br>', `症状・経過`)]
 signateDetail[, `行動歴` := gsub('\n', '<br>', `行動歴`)]
 signateDetail[, label := paste(
@@ -301,13 +295,12 @@ for (i in 1:nrow(signateLink)) {
 fwrite(x = signateDetail, file = paste0(DATA_PATH, 'resultSignateDetail.csv'))
 fwrite(x = signateLink, file = paste0(DATA_PATH, 'resultSignateLink.csv'))
 
-# フィルター
+# # フィルター
 # prefCode <- 23
 # edge <- signateLink[`id1-1` == prefCode | `id2-1` == prefCode]
+# idFilter <-  unique(c(linkFilter$罹患者id1, linkFilter$罹患者id2))
 # node <- signateDetail[罹患者id %in% idFilter | 都道府県コード %in% prefCode]
-# edge <- signateLink # TEST
-# node <- signateDetail # TEST
-#
+# 
 # e_charts() %>%
 #   e_graph(layout = 'force',
 #           roam = T,
@@ -316,17 +309,17 @@ fwrite(x = signateLink, file = paste0(DATA_PATH, 'resultSignateLink.csv'))
 #           focusNodeAdjacency = T) %>%
 #   e_graph_nodes(
 #     node,
-#     names = regionId,
-#     value = label, symbol = symbolIcon) %>%
-#   e_graph_edges(edge, target = 罹患者id2, source = 罹患者id1) %>%
+#     names = label,
+#     value = label) %>%
+#   e_graph_edges(edge, target = targetLabel, source = sourceLabel) %>%
 #   e_labels(formatter = htmlwidgets::JS('
 #     function(params) {
-#       return(params.value.split("|")[0])
+#       return(params.name.split("|")[0])
 #     }
 #   ')) %>%
 #   e_tooltip(formatter = htmlwidgets::JS('
 #     function(params) {
-#       const text = params.value.split("|")
+#       const text = params.name.split("|")
 #       return(`
 #         番号：${text[0]}<br>
 #         公表日：${text[1]}<br>

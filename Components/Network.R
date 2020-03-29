@@ -152,17 +152,17 @@ output$clusterNetwork <- renderEcharts4r({
               focusNodeAdjacency = T) %>%
       e_graph_nodes(
         node,
-        names = regionId,
-        value = label, symbol = symbolIcon) %>%
-      e_graph_edges(edge, target = 罹患者id2, source = 罹患者id1) %>%
+        names = label,
+        value = label) %>%
+      e_graph_edges(edge, target = targetLabel, source = sourceLabel) %>%
       e_labels(formatter = htmlwidgets::JS('
     function(params) {
-      return(params.value.split("|")[0])
+      return(params.name.split("|")[0])
     }
   ')) %>%
       e_tooltip(formatter = htmlwidgets::JS('
     function(params) {
-      const text = params.value.split("|")
+      const text = params.name.split("|")
       return(`
         番号：${text[0]}<br>
         公表日：${text[1]}<br>
