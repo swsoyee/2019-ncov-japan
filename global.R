@@ -281,6 +281,11 @@ darkBlue <- '#00A7D0'
 
 options(spinner.color = middleRed)
 
+GLOBAL_VALUE <- reactiveValues(
+  signateDetail = NULL,
+  signateLink = NULL
+)
+
 # ====メゾット====
 getChangeIcon <- function(number) {
   if (number > 0) {

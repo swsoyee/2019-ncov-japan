@@ -111,8 +111,8 @@ networkData <- reactive({
 
 observeEvent(input$sideBarTab, {
   if (input$sideBarTab == 'route') {
-    signateDetail <- fread(file = paste0(DATA_PATH, 'resultSignateDetail.csv'))
-    signateLink <- fread(file = paste0(DATA_PATH, 'resultSignateLink.csv'))
+    GLOBAL_VALUE$signateDetail <- fread(file = paste0(DATA_PATH, 'resultSignateDetail.csv'))
+    GLOBAL_VALUE$signateLink <- fread(file = paste0(DATA_PATH, 'resultSignateLink.csv'))
   }
 })
 
@@ -120,9 +120,9 @@ clusterData <- reactive({
   # フィルター
   prefCode <- input$clusterRegionPicker
   if (length(prefCode) > 0) {
-    linkFilter <- signateLink[`id1-1` %in% prefCode | `id2-1` %in% prefCode]
+    linkFilter <- GLOBAL_VALUE$signateLink[`id1-1` %in% prefCode | `id2-1` %in% prefCode]
     idFilter <-  unique(c(linkFilter$罹患者id1, linkFilter$罹患者id2))
-    signateDetailFilter <- signateDetail[罹患者id %in% idFilter | 都道府県コード %in% prefCode]
+    signateDetailFilter <- GLOBAL_VALUE$signateDetail[罹患者id %in% idFilter | 都道府県コード %in% prefCode]
     return(list(node = signateDetailFilter, edge = linkFilter))
   } else {
     return(list(node = NULL, edge = NULL))
