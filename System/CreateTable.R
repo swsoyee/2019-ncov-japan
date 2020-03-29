@@ -246,3 +246,92 @@ for(i in 1:nrow(domesticDailyReport)) {
 }
 # テーブル出力
 fwrite(x = processData, file = paste0(DATA_PATH, 'resultProcessData.csv'))
+
+
+# SIGNATE データ処理
+provinceCode <- fread(paste0(DATA_PATH, 'prefectures.csv'))
+# clusterPlace<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 接触場所マスタ.csv'), header = T)
+
+signateDetail<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者.csv'), header = T)
+signateDetail[, 受診都道府県 := gsub('県', '', 受診都道府県)]
+signateDetail[, 受診都道府県 := gsub('府', '', 受診都道府県)]
+signateDetail[, 受診都道府県 := gsub('東京都', '東京', 受診都道府県)]
+signateDetail[, `症状・経過` := gsub('\n', '<br>', `症状・経過`)]
+signateDetail[, `行動歴` := gsub('\n', '<br>', `行動歴`)]
+signateDetail[, label := paste(
+  sep = "|",
+  paste0(受診都道府県, 都道府県別罹患者No), 
+  公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源
+  )]
+
+signateLink<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者関係.csv'), header = T)
+
+for (i in 1:nrow(signateLink)) {
+  pref1 <-  provinceCode[id == signateLink[i]$`id1-1`]$`name-ja`
+  pref2 <-  provinceCode[id == signateLink[i]$`id2-1`]$`name-ja`
+  # if (signateLink[i]$場所 %in% clusterPlace$接触場所) { # クラスター対応予定
+  #   signateLink[i, source := paste0(pref1, 場所)]
+  # } else {
+    signateLink[i, source := paste0(pref1, `id1-2`)]
+    signateLink[i, sourceLabel := paste(sep = '|', 
+                                        paste0(pref1, `id1-2`),
+                                        paste(
+                                          unlist(
+                                            signateDetail[罹患者id == signateLink[i]$罹患者id1, 
+                                                             .(公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源)
+                                                             ]), collapse = '|')
+                                        )]
+  # }
+  signateLink[i, target := paste0(pref2, `id2-2`)]
+  signateLink[i, targetLabel := paste(sep = '|', 
+                                      paste0(pref2, `id2-2`),
+                                      paste(
+                                        unlist(
+                                          signateDetail[罹患者id == signateLink[i]$罹患者id2, 
+                                                           .(公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源)
+                                                           ]), collapse = '|')
+  )]
+}
+
+# テーブル出力
+fwrite(x = signateDetail, file = paste0(DATA_PATH, 'resultSignateDetail.csv'))
+fwrite(x = signateLink, file = paste0(DATA_PATH, 'resultSignateLink.csv'))
+
+# # フィルター
+# prefCode <- 23
+# linkFilter <- signateLink[`id1-1` == prefCode | `id2-1` == prefCode]
+# idFilter <-  unique(c(linkFilter$罹患者id1, linkFilter$罹患者id2))
+# 
+# e_charts() %>%
+#   e_graph(layout = 'force',
+#           roam = T,
+#           draggable = T,
+#           symbolKeepAspect = T,
+#           focusNodeAdjacency = T) %>%
+#   e_graph_nodes(
+#     signateDetail[罹患者id %in% idFilter | 都道府県コード == prefCode],
+#     names = label,
+#     value = label) %>%
+#   e_graph_edges(linkFilter, target = targetLabel, source = sourceLabel) %>%
+#   e_labels(formatter = htmlwidgets::JS('
+#     function(params) {
+#       return(params.name.split("|")[0])
+#     }
+#   ')) %>%
+#   e_tooltip(formatter = htmlwidgets::JS('
+#     function(params) {
+#       const text = params.name.split("|")
+#       return(`
+#         番号：${text[0]}<br>
+#         公表日：${text[1]}<br>
+#         年代：${text[2]}<br>
+#         性別：${text[3]}<br>
+#         職業：${text[4]}<br><hr>
+#         症状・経過:<br><small>${text[5]}</small><br><hr>
+#         行動歴:<br><small>${text[6]}</small><br>
+#         <a href="${text[7]}">情報源</a>
+#       `)
+#     }
+#   ')) %>%
+#   e_modularity()
+# 

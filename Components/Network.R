@@ -108,3 +108,72 @@ networkData <- reactive({
   # data <- list(node = confirmedNodes, edge = confirmedEdges)
   return(list(node = confirmedNodes, edge = confirmedEdges))
 })
+
+clusterData <- reactive({
+  # Refactor needed
+  signateDetail <- fread(file = paste0(DATA_PATH, 'resultSignateDetail.csv'))
+  signateLink <- fread(file = paste0(DATA_PATH, 'resultSignateLink.csv'))
+  
+  # フィルター
+  prefCode <- input$clusterRegionPicker
+  if (length(prefCode) > 0) {
+    linkFilter <- signateLink[`id1-1` %in% prefCode | `id2-1` %in% prefCode]
+    idFilter <-  unique(c(linkFilter$罹患者id1, linkFilter$罹患者id2))
+    signateDetailFilter <- signateDetail[罹患者id %in% idFilter | 都道府県コード %in% prefCode]
+    return(list(node = signateDetailFilter, edge = linkFilter))
+  } else {
+    return(list(node = NULL, edge = NULL))
+  }
+})
+
+output$clusterNetworkWrapper <- renderUI({
+  node <- clusterData()$node
+  if (is.null(node)) {
+    tags$p('少なくとも一個以上の地域を選択してください。')
+  } else {
+    echarts4rOutput('clusterNetwork', height = '600px')
+  }
+})
+
+output$clusterNetwork <- renderEcharts4r({
+  # node <- signateDetailFilter # TEST
+  # edge <- linkFilter # TEST
+  node <- clusterData()$node
+  edge <- clusterData()$edge
+  if (!is.null(node)) {
+    e_charts() %>%
+      e_graph(layout = 'force',
+              roam = T,
+              draggable = T,
+              symbolKeepAspect = T,
+              focusNodeAdjacency = T) %>%
+      e_graph_nodes(
+        signateDetail[罹患者id %in% idFilter | 都道府県コード == prefCode],
+        names = label,
+        value = label) %>%
+      e_graph_edges(linkFilter, target = targetLabel, source = sourceLabel) %>%
+      e_labels(formatter = htmlwidgets::JS('
+    function(params) {
+      return(params.name.split("|")[0])
+    }
+  ')) %>%
+      e_tooltip(formatter = htmlwidgets::JS('
+    function(params) {
+      const text = params.name.split("|")
+      return(`
+        番号：${text[0]}<br>
+        公表日：${text[1]}<br>
+        年代：${text[2]}<br>
+        性別：${text[3]}<br>
+        職業：${text[4]}<br><hr>
+        症状・経過:<br><small>${text[5]}</small><br><hr>
+        行動歴:<br><small>${text[6]}</small><br>
+        <a href="${text[7]}">情報源</a>
+      `)
+    }
+  ')) %>%
+      e_modularity()
+  } else {
+    return()
+  }
+})
