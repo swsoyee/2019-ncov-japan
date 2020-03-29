@@ -148,10 +148,10 @@ output$clusterNetwork <- renderEcharts4r({
               symbolKeepAspect = T,
               focusNodeAdjacency = T) %>%
       e_graph_nodes(
-        signateDetail[罹患者id %in% idFilter | 都道府県コード == prefCode],
+        node,
         names = label,
         value = label) %>%
-      e_graph_edges(linkFilter, target = targetLabel, source = sourceLabel) %>%
+      e_graph_edges(edge, target = targetLabel, source = sourceLabel) %>%
       e_labels(formatter = htmlwidgets::JS('
     function(params) {
       return(params.name.split("|")[0])

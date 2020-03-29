@@ -299,8 +299,9 @@ fwrite(x = signateLink, file = paste0(DATA_PATH, 'resultSignateLink.csv'))
 
 # # フィルター
 # prefCode <- 23
-# linkFilter <- signateLink[`id1-1` == prefCode | `id2-1` == prefCode]
+# edge <- signateLink[`id1-1` == prefCode | `id2-1` == prefCode]
 # idFilter <-  unique(c(linkFilter$罹患者id1, linkFilter$罹患者id2))
+# node <- signateDetail[罹患者id %in% idFilter | 都道府県コード %in% prefCode]
 # 
 # e_charts() %>%
 #   e_graph(layout = 'force',
@@ -309,10 +310,10 @@ fwrite(x = signateLink, file = paste0(DATA_PATH, 'resultSignateLink.csv'))
 #           symbolKeepAspect = T,
 #           focusNodeAdjacency = T) %>%
 #   e_graph_nodes(
-#     signateDetail[罹患者id %in% idFilter | 都道府県コード == prefCode],
+#     node,
 #     names = label,
 #     value = label) %>%
-#   e_graph_edges(linkFilter, target = targetLabel, source = sourceLabel) %>%
+#   e_graph_edges(edge, target = targetLabel, source = sourceLabel) %>%
 #   e_labels(formatter = htmlwidgets::JS('
 #     function(params) {
 #       return(params.name.split("|")[0])

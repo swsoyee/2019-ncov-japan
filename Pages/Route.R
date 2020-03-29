@@ -25,7 +25,8 @@ fluidPage(fluidRow(column(
             # 全部
             `select-all-text` = lang[[langCode]][92],
             # 三件以上選択されました
-            `selected-text-format` = lang[[langCode]][94]
+            `selected-text-format` = lang[[langCode]][94],
+            `max-options` = 5
           ),
           multiple = T,
           inline = T
