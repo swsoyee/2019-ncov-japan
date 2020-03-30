@@ -246,7 +246,7 @@ for(i in 1:nrow(domesticDailyReport)) {
 fwrite(x = processData, file = paste0(DATA_PATH, 'resultProcessData.csv'))
 
 
-# SIGNATE データ処理
+# =====SIGNATE データ処理=====
 provinceCode <- fread(paste0(DATA_PATH, 'prefectures.csv'))
 svgIcon <- fread(paste0(DATA_PATH, 'svg.csv'))
 # clusterPlace<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 接触場所マスタ.csv'), header = T)
@@ -307,7 +307,7 @@ fwrite(x = signateLink, file = paste0(DATA_PATH, 'resultSignateLink.csv'))
 # node <- signateDetail[罹患者id %in% idFilter | 都道府県コード %in% prefCode]
 # edge <- signateLink # TEST
 # node <- signateDetail # TEST
-#
+
 # e_charts() %>%
 #   e_graph(layout = 'force',
 #           roam = T,

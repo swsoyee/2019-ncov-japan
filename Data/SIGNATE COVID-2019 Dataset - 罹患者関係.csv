@@ -164,10 +164,9 @@
 1-151,1-140,,NA,北海道,NA,,,http://www.pref.hokkaido.lg.jp/hf/kth/kak/kisyakaiken0316sapporo.pdf,,1,151,1,140
 1-152,1-143,,NA,北海道,NA,,,http://www.pref.hokkaido.lg.jp/hf/kth/kak/kisyakaiken0316sapporo.pdf,,1,152,1,143
 2-1,2-2,,夫婦,青森県,自宅,,,https://www.pref.aomori.lg.jp/soshiki/kenko/hoken/files/200323press.pdf,,2,1,2,2
-5-3,5-4,,同僚,秋田県,仙台旅行,,,https://www.pref.akita.lg.jp/uploads/public/archive_0000047957_00/R02.03.27%E3%80%80%E5%A0%B1%E9%81%93%E7%99%BA%E8%A1%A8%E8%B3%87%E6%96%99%EF%BC%883%E3%80%814%E4%BB%B6%E7%9B%AE%EF%BC%89.pdf;https://www.pref.akita.lg.jp/uploads/public/archive_0000047957_00/R02.03.28%E3%80%80%E5%A0%B1%E9%81%93%E7%99%BA%E8%A1%A8%E8%B3%87%E6%96%99%EF%BC%883%E3%80%814%E4%BE%8B%E7%9B%AE%EF%BC%9A%E8%BF%BD%E5%8A%A0%EF%BC%89.pdf,,,,,
 7-2,14-51,,ナイル川ツアー同行,福島県,エジプト,,,https://www.pref.fukushima.lg.jp/uploaded/attachment/375483.pdf,,7,2,14,51
 8-11,8-9,,講師と生徒,茨城県,社交ダンス教室,,,https://www.pref.ibaraki.jp/1saigai/2019-ncov/documents/032711.pdf,,8,11,8,9
-8-13,8-12,,入院先の同室者,茨城県,ＪＡとりで総合医療センター,,,https://www.pref.ibaraki.jp/1saigai/2019-ncov/documents/20032801.pdf,,8,13,8,12
+8-13,8-12,,入院先の同室者,茨城県,ＪＡとりで総合医療センター,35.911038,140.068802,https://www.pref.ibaraki.jp/1saigai/2019-ncov/documents/20032801.pdf,,8,13,8,12
 9-2,20-2,,NA,栃木県,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.tochigi.lg.jp/e04/welfare/hoken-eisei/kansen/hp/documents/2reime.pdf,,9,2,20,2
 10-14,10-12,,医師と看護師,群馬県,公立館林厚生病院,36.248579,139.518937,https://www.pref.gunma.jp/07/z87g_00027.html;https://www.jomo-news.co.jp/news/gunma/society/202295,,10,14,10,12
 11-16,11-18,,同居家族,埼玉県,戸田市,35.817794,139.678439,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0312-06.html,,11,16,11,18
@@ -181,17 +180,17 @@
 11-42,11-44,,同居家族,埼玉県,春日部市,,,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0320-01.html,,11,42,11,44
 11-46,11-42,,同僚,埼玉県,会社,,,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0321-01.html,,11,46,11,42
 11-47,11-42,,同僚,埼玉県,会社,,,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0321-01.html,,11,47,11,42
-11-49,11-43,,家族,埼玉県,川口市,,,https://www.city.kawaguchi.lg.jp/material/files/group/86/korona20200322.pdf,,11,49,11,43
-11-50,11-48,,家族,埼玉県,川口市,,,https://www.city.kawaguchi.lg.jp/material/files/group/86/korona20200322.pdf,,11,50,11,48
-11-51,11-48,,家族,埼玉県,川口市,,,https://www.city.kawaguchi.lg.jp/material/files/group/86/korona20200322.pdf,,11,51,11,48
+11-49,11-43,,家族,埼玉県,川口市,35.807738,139.724171,https://www.city.kawaguchi.lg.jp/material/files/group/86/korona20200322.pdf,,11,49,11,43
+11-50,11-48,,家族,埼玉県,川口市,35.807738,139.724171,https://www.city.kawaguchi.lg.jp/material/files/group/86/korona20200322.pdf,,11,50,11,48
+11-51,11-48,,家族,埼玉県,川口市,35.807738,139.724171,https://www.city.kawaguchi.lg.jp/material/files/group/86/korona20200322.pdf,,11,51,11,48
 11-53,11-42,,同僚,埼玉県,会社,,,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0322-01.html,,11,53,11,42
 11-54,11-42,,同僚,埼玉県,会社,,,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0322-01.html,,11,54,11,42
 11-56,11-54,,家族,埼玉県,春日部市,,,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0324-10.html,,11,56,11,54
 11-57,11-58,,同居家族,埼玉県,NA,,,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0324-10.html,,11,57,11,58
 11-63,11-55,,家族,埼玉県,所沢市,,,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0325-07.html,,11,63,11,55
-11-64,11-62,,家族,埼玉県,川口市,,,https://www.city.kawaguchi.lg.jp/material/files/group/86/korona20200326.pdf,,11,64,11,62
-11-65,11-62,,家族,埼玉県,川口市,,,https://www.city.kawaguchi.lg.jp/material/files/group/86/korona20200326.pdf,,11,65,11,62
-11-66,11-59,,家族,埼玉県,戸田市,,,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0326-90.html,,11,66,11,59
+11-64,11-62,,家族,埼玉県,川口市,35.807738,139.724171,https://www.city.kawaguchi.lg.jp/material/files/group/86/korona20200326.pdf,,11,64,11,62
+11-65,11-62,,家族,埼玉県,川口市,35.807738,139.724171,https://www.city.kawaguchi.lg.jp/material/files/group/86/korona20200326.pdf,,11,65,11,62
+11-66,11-59,,家族,埼玉県,戸田市,35.817794,139.678439,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0326-90.html,,11,66,11,59
 12-15,14-23,,別居の親族,千葉県,NA,,,https://www.city.funabashi.lg.jp/kenkou/kansenshou/001/p076945.html,,12,15,14,23
 12-16,13-38,,フィットネスクラブ,千葉県,千葉県市川市のフィットネスクラブ,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200301.html,,12,16,13,38
 12-18,12-24,,勤務する福祉事業所を利用,千葉県,12-18が勤務する福祉事務所,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200310.html,,12,18,12,24
@@ -248,8 +247,8 @@
 13-86,13-87,,工場,東京都,東京都日野市の日野自動車本社に勤務する従業員,,,https://www.netdenjd.com/articles/-/229714,,13,86,13,87
 13-89,13-70,,同僚,東京都,NTTドコモコールセンター,,,https://www.nttdocomo.co.jp/info/news_release/detail/20200312_00_m.html,,13,89,13,70
 13-118,13-70,,同僚,東京都,NTTドコモコールセンター,,,https://mainichi.jp/articles/20200319/k00/00m/040/283000c,,13,118,13,70
-14-56,14-62,,介護職とその勤務病棟の入居者,神奈川県,病院,,,https://www.pref.kanagawa.jp/documents/58277/20200320_yokosuka_corona.pdf,,14,56,14,62
-14-56,14-69,,介護職とその勤務病棟の入居者,神奈川県,要因,,,https://www.pref.kanagawa.jp/documents/58277/20200320_yokosuka_corona.pdf,,14,56,14,69
+14-56,14-62,,介護職とその勤務病棟の入居者,神奈川県,介護老人保健施設「ハートケア湘南・芦名」,,,https://www.pref.kanagawa.jp/documents/58277/20200320_yokosuka_corona.pdf,,14,56,14,62
+14-56,14-69,,介護職とその勤務病棟の入居者,神奈川県,介護老人保健施設「ハートケア湘南・芦名」,,,https://www.pref.kanagawa.jp/documents/58277/20200320_yokosuka_corona.pdf,,14,56,14,69
 14-58,14-8,,同室患者,神奈川県,相模原中央病院,35.568483,139.373601,http://www.kansensho.or.jp/uploads/files/topics/2019ncov/covid19_casereport_200312_4.pdf,,14,58,14,8
 14-87,14-88,,NA,神奈川県,NA,,,https://www.pref.kanagawa.jp/documents/58277/20200325_kawasaki_corona.pdf,,14,87,14,88
 14-90,14-80,,同居家族,神奈川県,神奈川県小田原保健福祉事務所管内（小田原市、南足柄市、中井町、大井町、松田町、山北町、開成町、箱根町、真鶴町、湯河原町）,,,https://www.pref.kanagawa.jp/docs/ga4/bukanshi/occurrence.html,,14,90,14,80
@@ -392,7 +391,7 @@
 23-137,23-107,,NA,愛知県,NA,,,http://www.city.nagoya.jp/kenkofukushi/cmsfiles/contents/0000126/126920/200320kisya.pdf,,23,137,23,107
 23-138,23-90,,NA,愛知県,NA,,,http://www.city.nagoya.jp/kenkofukushi/cmsfiles/contents/0000126/126920/200320kisya.pdf,,23,138,23,90
 23-141,23-140,,家族,愛知県,NA,,,https://www.pref.aichi.jp/site/covid19-aichi/pressrelease-ncov200321.html,,23,141,23,140
-23-142,23-131,,会社の同僚,愛知県,職場,,,https://www.pref.aichi.jp/site/covid19-aichi/pressrelease-ncov200322.html,,23,142,23,131
+23-142,23-131,,会社の同僚(同じラインの対面工程作業者),愛知県,トヨタ自動車高岡工場,,,https://www.pref.aichi.jp/site/covid19-aichi/pressrelease-ncov200322.html;https://global.toyota/jp/newsroom/corporate/32059912.html,,23,142,23,131
 23-143,23-134,,職員と患者,愛知県,八事日赤病院,,,http://www.city.nagoya.jp/kenkofukushi/cmsfiles/contents/0000126/126920/R20322kisya.pdf;https://www.fnn.jp/posts/10858THK,,23,143,23,134
 23-147,23-146,,家族,愛知県,NA,,,https://www.pref.aichi.jp/site/covid19-aichi/pressrelease-ncov200324.html,,23,147,23,146
 23-148,23-134,,妻,愛知県,NA,,,http://www.city.nagoya.jp/kenkofukushi/cmsfiles/contents/0000126/126920/200324happyou.pdf,,23,148,23,134
@@ -595,14 +594,14 @@
 28-11,28-15,,娘,兵庫県,NA,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html; https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200308.pdf,,28,11,28,15
 28-13,27-12,,ライブハウス滞在 (2/18 Live House Rumio),大阪府,LIVE HOUSE Rumio,34.698794,135.5036716,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html; https://www.city.kobe.lg.jp/a57337/kenko/health/corona3reime3hou.html,,28,13,27,12
 28-14,27-2,,ライブハウス滞在 (2/16 大阪京橋ライブハウスArc),大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,14,27,2
-28-17,28-11,,同僚看護師,兵庫県,仁恵病院,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html; https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200308.pdf,,28,17,28,11
-28-18,28-11,,看護師と患者,兵庫県,仁恵病院,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html; https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200310.pdf,,28,18,28,11
+28-17,28-11,,同僚看護師,兵庫県,仁恵病院,34.841407,134.712999,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html; https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200308.pdf,,28,17,28,11
+28-18,28-11,,看護師と患者,兵庫県,仁恵病院,34.841407,134.712999,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html; https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200310.pdf,,28,18,28,11
 28-19,28-10,,スタッフと利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html;https://www.city.amagasaki.hyogo.jp/kurashi/kenko/kansensyo/1020449/1020423.html,,28,19,28,10
 28-20,28-10,,施設利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html;https://www.city.amagasaki.hyogo.jp/kurashi/kenko/kansensyo/1020449/1020424.html,,28,20,28,10
 28-21,28-10,,スタッフと利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html;https://www.nishi.or.jp/kurashi/anshin/infomation/k_00022020111.files/HP5-2.pdf,,28,21,28,10
 28-22,28-10,,施設利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,22,28,10
 28-24,20-2,,NA,兵庫県,Soap opera classics-Umeda,34.6976168,135.503047,https://www.city.kobe.lg.jp/a57337/kenko/health/corona5reime.html,,28,24,20,2
-28-26,28-11,,看護師と患者,兵庫県,仁恵病院,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html; https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200311No6.pdf,,28,26,28,11
+28-26,28-11,,看護師と患者,兵庫県,仁恵病院,34.841407,134.712999,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html; https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200311No6.pdf,,28,26,28,11
 28-27,28-10,,施設利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,27,28,10
 28-28,28-10,,施設利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,28,28,10
 28-29,28-22,,同施設利用者と主たる介護者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,29,28,22
@@ -613,14 +612,14 @@
 28-34,28-16,,保育園園長と勤務者,兵庫県,聖ニコラス天使園,34.717521,135.280803,https://www.jiji.com/jc/article?k=2020031100489&g=soc,,28,34,28,16
 28-35,28-16,,保育園園長と勤務者,兵庫県,聖ニコラス天使園,34.717521,135.280803,https://www.jiji.com/jc/article?k=2020031100489&g=soc,,28,35,28,16
 28-36,28-16,,保育園園長と勤務者,兵庫県,聖ニコラス天使園,34.717521,135.280803,https://www.jiji.com/jc/article?k=2020031100489&g=soc,,28,36,28,16
-28-37,28-11,,看護師と患者,兵庫県,仁恵病院,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html;https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200312No7.pdf,,28,37,28,11
-28-38,28-11,,看護師と患者,兵庫県,仁恵病院,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,38,28,11
-28-39,28-11,,看護師と患者,兵庫県,仁恵病院,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,39,28,11
-28-40,28-11,,看護師と患者,兵庫県,仁恵病院,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,40,28,11
-28-41,28-11,,看護師と患者,兵庫県,仁恵病院,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html;https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/2003128-11.pdf,,28,41,28,11
+28-37,28-11,,看護師と患者,兵庫県,仁恵病院,34.841407,134.712999,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html;https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200312No7.pdf,,28,37,28,11
+28-38,28-11,,看護師と患者,兵庫県,仁恵病院,34.841407,134.712999,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,38,28,11
+28-39,28-11,,看護師と患者,兵庫県,仁恵病院,34.841407,134.712999,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,39,28,11
+28-40,28-11,,看護師と患者,兵庫県,仁恵病院,34.841407,134.712999,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,40,28,11
+28-41,28-11,,看護師と患者,兵庫県,仁恵病院,34.841407,134.712999,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html;https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/2003128-11.pdf,,28,41,28,11
 28-43,28-10,,施設利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,43,28,10
 28-44,28-10,,NA,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,44,28,10
-28-45,28-16,,保育園園長と勤務者,兵庫県,聖ニコラス天使園,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,45,28,16
+28-45,28-16,,保育園園長と勤務者,兵庫県,聖ニコラス天使園,34.717521,135.280803,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,45,28,16
 28-48,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html;https://www.city.kobe.lg.jp/a73576/coronavirus11_16.html,,28,48,27,5
 28-49,28-48,,同居,兵庫県,神戸市,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html;https://www.city.kobe.lg.jp/a73576/coronavirus11_16.html,,28,49,28,48
 28-50,28-48,,施設利用者,兵庫県,神戸市内の介護保険通所事業所,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html;https://www.city.kobe.lg.jp/a73576/coronavirus11_16.html;https://web.pref.hyogo.lg.jp/kk03/corona_kanjyajyokyo.html,,28,50,28,48
@@ -656,10 +655,10 @@
 28-88,28-10,,施設利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo53-100.html,,28,88,28,10
 28-89,28-22,,NA,兵庫県,NA,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo53-100.html,,28,89,28,22
 28-90,28-28,,NA,兵庫県,NA,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo53-100.html,,28,90,28,28
-28-92,28-11,,看護師と患者,兵庫県,仁恵病院,,,https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200319.pdf,,28,92,28,11
+28-92,28-11,,看護師と患者,兵庫県,仁恵病院,34.841407,134.712999,https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200319.pdf,,28,92,28,11
 28-93,28-10,,施設利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo53-100.html,,28,93,28,10
-28-94,28-11,,看護師と患者,兵庫県,仁恵病院,,,https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200320HP.pdf,,28,94,28,11
-28-95,28-11,,看護師と患者,兵庫県,仁恵病院,,,https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200320HP.pdf,,28,95,28,11
+28-94,28-11,,看護師と患者,兵庫県,仁恵病院,34.841407,134.712999,https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200320HP.pdf,,28,94,28,11
+28-95,28-11,,看護師と患者,兵庫県,仁恵病院,34.841407,134.712999,https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200320HP.pdf,,28,95,28,11
 28-96,28-10,,施設利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo53-100.html,,28,96,28,10
 28-97,28-96,,同居人,兵庫県,伊丹健康福祉事務所管内,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo53-100.html;https://web.pref.hyogo.lg.jp/kk03/corona_kanjyajyokyo.html,,28,97,28,96
 28-98,28-10,,施設利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo53-100.html,,28,98,28,10
@@ -668,7 +667,7 @@
 28-101,11-41,,同じ大学の学生,兵庫県,イギリスの大学,,,https://www.city.amagasaki.hyogo.jp/kurashi/kenko/kansensyo/1020449/1020474.html,,28,101,11,41
 28-106,28-10,,施設利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html#corona_hasseijyokyo106,,28,106,28,10
 28-107,28-10,,施設利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html#corona_hasseijyokyo107,,28,107,28,10
-28-108,28-11,,看護師と患者,兵庫県,仁恵病院,,,https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200322hp.pdf;https://web.pref.hyogo.lg.jp/kk03/corona_kanjyajyokyo.html,,28,108,28,11
+28-108,28-11,,看護師と患者,兵庫県,仁恵病院,34.841407,134.712999,https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200322hp.pdf;https://web.pref.hyogo.lg.jp/kk03/corona_kanjyajyokyo.html,,28,108,28,11
 28-109,28-87,,同居,兵庫県,NA,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html#corona_hasseijyokyo109,,28,109,28,87
 28-110,28-10,,施設利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html#corona_hasseijyokyo110,,28,110,28,10
 28-111,28-10,,施設利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html#corona_hasseijyokyo111,,28,111,28,10
@@ -688,17 +687,17 @@
 30-5,30-7,,妻,和歌山県,済生会有田病院,34.046097,135.193406,https://www.pref.wakayama.lg.jp/prefg/041200/d00203387.html,,30,5,30,7
 30-5,30-8,,弟,和歌山県,済生会有田病院,34.046097,135.193406,https://www.pref.wakayama.lg.jp/prefg/041200/d00203387.html,,30,5,30,8
 30-5,30-13,,同僚,和歌山県,済生会有田病院,34.046097,135.193406,https://www.pref.wakayama.lg.jp/prefg/041200/d00203387.html,,30,5,30,13
-34-2,34-3,,同僚,広島県,尾道市,,,https://www.pref.hiroshima.lg.jp/uploaded/attachment/384026.pdf,,34,2,34,3
 35-1,35-2,,家族,山口県,下関市,,,http://www.city.shimonoseki.lg.jp/www/contents/1583381707607/index.html,,35,1,35,2
 35-1,35-3,,家族,山口県,下関市,,,http://www.city.shimonoseki.lg.jp/www/contents/1583381707607/index.html,,35,1,35,3
 35-5,35-6,,家族,山口県,山口市,,,https://www.pref.yamaguchi.lg.jp/cms/a15200/kansensyou/koronahassei.html,,35,5,35,6
-39-1,39-2,,家族,高知県,高知市,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/case-2.pdf,,39,1,39,2
-39-1,39-3,,友人,高知県,高知市,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/teirei0307.pdf,,39,1,39,3
-39-1,39-4,,同僚,高知県,高知市,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/case4-6.pdf,,39,1,39,4
+39-1,39-2,,家族,高知県,大阪市ライブハウス(Arc),34.694861,135.527709,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/case-2.pdf,,39,1,39,2
+39-1,39-3,,友人,高知県,大阪市ライブハウス(Arc),34.694861,135.527709,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/teirei0307.pdf,,39,1,39,3
+39-1,39-4,,同僚,高知県,大阪市ライブハウス(Arc),34.694861,135.527709,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/case4-6.pdf,,39,1,39,4
 39-3,39-5,,家族,高知県,高知市,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/case4-6.pdf,,39,3,39,5
 39-3,39-6,,家族,高知県,高知市,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/case4-6.pdf,,39,3,39,6
 39-3,39-7,,親族,高知県,高知市,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/case-7.pdf; https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/teirei0305.pdf,,39,3,39,7
 39-8,39-10,,親族,高知県,高知市,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/teirei0307.pdf,,39,8,39,10
+39-13,39-14,,家族,高知県,NA,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/file_20203290161349_1.pdf,,39,13,39,14
 40-2,40-1,,妻,福岡県,NA,,,https://www.pref.fukuoka.lg.jp/contents/bukan.html#A1-2-2,,40,2,40,1
 40-5,38-3,,NA,福岡県,イタリア滞在,,,https://www.pref.fukuoka.lg.jp/contents/bukan.html#A1-2-2,,40,5,38,3
 40-9,40-8,,家族,福岡県,NA,,,https://www.pref.fukuoka.lg.jp/contents/bukan.html#A1-2-2,,40,9,40,8
@@ -718,9 +717,92 @@
 44-22,44-14,,NA,大分県,NA,,,http://www.pref.oita.jp/uploaded/attachment/2074679.pdf;https://news.livedoor.com/article/detail/18003925/,,44,22,44,14
 44-24,40-8,,看護師と患者,大分県,大分医療センター,33.252817,131.721763,https://www3.nhk.or.jp/news/html/20200325/k10012349501000.html,,44,24,40,8
 44-25,40-8,,看護師と患者,大分県,大分医療センター,33.252817,131.721763,https://www3.nhk.or.jp/news/html/20200325/k10012349501000.html,,44,25,40,8
-44-15または44-17,44-2,,同病院のスタッフと患者,大分県,大分医療センター,33.252817,131.721763,https://news.livedoor.com/article/detail/18003925/,,44,15,44,2
-44-15または44-17,センターから転院後に感染が判明した８０代男性,,看護師と患者,大分県,大分県立病院,,,https://www.oita-press.co.jp/1010000000/2020/03/23/JD0059080799,,44,17,44,2
-2-3,2-1,,ツアー客,青森県,スペイン旅行ツアー,,,https://www.pref.aomori.lg.jp/soshiki/kenko/hoken/files/200325press.pdf,,2,3,2,1
-2-4,2-1,,ツアー客,青森県,スペイン旅行ツアー,,,https://www.pref.aomori.lg.jp/soshiki/kenko/hoken/files/200325press.pdf,,2,4,2,1
-2-5,2-1,,ツアー客,青森県,スペイン旅行ツアー,,,https://www.pref.aomori.lg.jp/soshiki/kenko/hoken/files/200325press.pdf,,2,5,2,1
-2-6,2-1,,ツアー客,青森県,スペイン旅行ツアー,,,https://www.pref.aomori.lg.jp/soshiki/kenko/hoken/files/200325press.pdf,,2,6,2,1
+47-6,47-7,,NA,沖縄県,NA,,,https://www.pref.okinawa.jp/site/hoken/chiikihoken/kekkaku/press/documents/okinawa-cov0328.pdf,,47,6,47,7
+44-15または44-17,44-2,,同病院のスタッフと患者,大分県,大分医療センター,33.252817,131.721763,https://news.livedoor.com/article/detail/18003925/,,#REF!,,44,2
+44-15または44-17,センターから転院後に感染が判明した８０代男性,,看護師と患者,大分県,大分県立病院,33.206978,131.5989,https://www.oita-press.co.jp/1010000000/2020/03/23/JD0059080799,,#REF!,,センターから転院後に感染が判明した８０代男性,
+12-104,神奈川県相模原市で確認された患者と3月20日に接触。,,,,,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200329-1.html,,,,,
+12-106,12-67,,同居家族,,山武市,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200329-1.html,,,,,
+12-71,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-72,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-73,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-74,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-75,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-76,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-77,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-78,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-79,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-80,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-81,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-82,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-83,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-84,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-85,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-86,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-87,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-88,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-89,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-90,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-91,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-92,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-93,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-94,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-95,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-96,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-97,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-98,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-99,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-100,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-101,12-66,,職員・利用者,千葉県,香取郡東庄町 障害者福祉施設 北総育成園,35.828207,140.650455,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200328-4.html,,,,,
+12-102,東京都で確認された患者の濃厚接触者（3月20日）,,NA,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200329-1.html,,,,,
+13-174,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200325menkai.html,,,,,
+13-175,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200325menkai.html,,,,,
+13-176,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200325menkai.html,,,,,
+13-177,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200325menkai.html,,,,,
+13-178,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200325menkai.html,,,,,
+13-179,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200325menkai.html,,,,,
+13-180,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200325menkai.html,,,,,
+13-181,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200325menkai.html,,,,,
+13-182,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200325menkai.html,,,,,
+13-183,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200325menkai.html,,,,,
+13-184,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200325menkai.html,,,,,
+13-213,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200326menkai.html,,,,,
+13-214,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200326menkai.html,,,,,
+13-215,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200326menkai.html,,,,,
+13-216,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200326menkai.html,,,,,
+13-217,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200326menkai.html,,,,,
+13-218,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200326menkai.html,,,,,
+13-219,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200326menkai.html,,,,,
+13-220,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200326menkai.html,,,,,
+13-221,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200326menkai.html,,,,,
+13-222,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200326menkai.html,,,,,
+11-77,11-83,,別居の親族,埼玉県,川口市,35.807738,139.724171,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0329-01.html,,,,,
+18-10,18-8,,NA,福井県,会食,,,https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200328-1.pdf,,,,,
+18-11,18-7,,NA,福井県,会食,,,https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200328-1.pdf,,,,,
+18-11,18-9,,NA,福井県,会食,,,https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200328-1.pdf,,,,,
+43-9,43-8,,施設利用者,熊本県,ピースフル優祐悠,,,http://www.city.kumamoto.jp/common/UploadFileDsp.aspx?c_id=5&id=26562&sub_id=185&flid=200785,,,,,
+43-10,43-8,,施設利用者,熊本県,ピースフル優祐悠,,,http://www.city.kumamoto.jp/common/UploadFileDsp.aspx?c_id=5&id=26562&sub_id=185&flid=200784,,,,,
+43-11,43-7,,妻,福岡県,熊本市内中央区,,,http://www.city.kumamoto.jp/common/UploadFileDsp.aspx?c_id=5&id=26562&sub_id=186&flid=200787,,,,,
+11-79,11-70,,家族,埼玉県,ときがわ町,36.008808,139.297524,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0326-90.html,,,,,
+11-80,11-70,,親族,埼玉県,ときがわ町,36.008808,139.297524,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0326-90.html,,,,,
+11-72,11-62,,家族,埼玉県,川口市,35.807738,139.724171,https://www.pref.saitama.lg.jp/a0701/covid19/jokyo.html,,,,,
+11-75,11-54,,家族,埼玉県,春日部市,,,https://www.pref.saitama.lg.jp/a0701/covid19/jokyo.html,,,,,
+11-78,11-69,,家族,埼玉県,春日部市 ,35.975401,139.752268,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0328-01.html,,,,,
+5-3,5-4,,同僚,秋田県,仙台旅行,,,https://www.pref.akita.lg.jp/uploads/public/archive_0000047957_00/R02.03.27%E3%80%80%E5%A0%B1%E9%81%93%E7%99%BA%E8%A1%A8%E8%B3%87%E6%96%99%EF%BC%883%E3%80%814%E4%BB%B6%E7%9B%AE%EF%BC%89.pdf;https://www.pref.akita.lg.jp/uploads/public/archive_0000047957_00/R02.03.28%E3%80%80%E5%A0%B1%E9%81%93%E7%99%BA%E8%A1%A8%E8%B3%87%E6%96%99%EF%BC%883%E3%80%814%E4%BE%8B%E7%9B%AE%EF%BC%9A%E8%BF%BD%E5%8A%A0%EF%BC%89.pdf,,,,,
+8-14,8-12,,,茨城県,ＪＡとりで総合医療センター,35.911038,140.068802,https://www.pref.ibaraki.jp/1saigai/2019-ncov/documents/2003281415.pdf,,,,,
+8-15,8-12,,,茨城県,ＪＡとりで総合医療センター,35.911038,140.068802,https://www.pref.ibaraki.jp/1saigai/2019-ncov/documents/2003281415.pdf,,,,,
+10-2,10-1,,保育士と従業員,群馬県,木崎あおぞら保育園（太田市）,36.282147,139.29932,https://www.pref.gunma.jp/contents/100149662.pdf,,,,,
+10-7,10-1,,同居家族,群馬県,木崎あおぞら保育園（太田市）,36.282147,139.29932,https://www.pref.gunma.jp/contents/100149662.pdf,,,,,
+10-4,10-3,,看護師と医師,群馬県,ましも内科・胃腸科（大泉町）,36.258743,139.418484,https://www.pref.gunma.jp/contents/100149662.pdf,,,,,
+10-5,10-3,,NA,群馬県,ましも内科・胃腸科（大泉町）,36.258743,139.418484,https://www.pref.gunma.jp/contents/100149662.pdf,,,,,
+10-6,10-3,,看護師と事務職員,群馬県,ましも内科・胃腸科（大泉町）,36.258743,139.418484,https://www.pref.gunma.jp/contents/100149662.pdf,,,,,
+10-8,10-3,,看護師と運転手,群馬県,ましも内科・胃腸科（大泉町）,36.258743,139.418484,https://www.pref.gunma.jp/contents/100149662.pdf,,,,,
+10-9,10-3,,看護師と事務職員,群馬県,ましも内科・胃腸科（大泉町）,36.258743,139.418484,https://www.pref.gunma.jp/contents/100149662.pdf,,,,,
+10-10,10-3,,看護師と患者,群馬県,ましも内科・胃腸科（大泉町）,36.258743,139.418484,https://www.pref.gunma.jp/contents/100149662.pdf,,,,,
+10-11,10-3,,看護師と患者,群馬県,ましも内科・胃腸科（大泉町）,36.258743,139.418484,https://www.pref.gunma.jp/contents/100149662.pdf,,,,,
+10-15,10-12,,医師と看護師,群馬県,公立館林厚生病院,36.248579,139.518937,https://www.pref.gunma.jp/07/z87g_00029.html,,,,,
+10-17,他県,,NA,群馬県,食事,,,https://www.pref.gunma.jp/07/z87g_00032.html,,,,,
+34-2,34-3,,同僚,広島県,尾道市,34.409323,133.205682,https://www.pref.hiroshima.lg.jp/uploaded/attachment/384026.pdf,,,,,
+2-3,2-1,,ツアー客,青森県,スペイン旅行ツアー,,,https://www.pref.aomori.lg.jp/soshiki/kenko/hoken/files/200325press.pdf,,,,,
+2-4,2-1,,ツアー客,青森県,スペイン旅行ツアー,,,https://www.pref.aomori.lg.jp/soshiki/kenko/hoken/files/200325press.pdf,,,,,
+2-5,2-1,,ツアー客,青森県,スペイン旅行ツアー,,,https://www.pref.aomori.lg.jp/soshiki/kenko/hoken/files/200325press.pdf,,,,,
+2-6,2-1,,ツアー客,青森県,スペイン旅行ツアー,,,https://www.pref.aomori.lg.jp/soshiki/kenko/hoken/files/200325press.pdf,,,,,
