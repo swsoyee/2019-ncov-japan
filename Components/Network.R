@@ -184,3 +184,12 @@ output$clusterNetwork <- renderEcharts4r({
     return()
   }
 })
+
+observeEvent(input$gotoRoutePage, {
+  if(input$gotoRoutePage) {
+    updateTabItems(
+      session = session, 
+      inputId = 'sideBarTab', 
+      selected = 'route')
+  }
+})
