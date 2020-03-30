@@ -11,7 +11,7 @@ tabPanel(
                  'データ提供：', 
                  tags$a(href = 'https://twitter.com/kenmo_economics', icon('twitter'), '@kenmo_economics')
       ),
-      tags$p('こちらは補間法を使用した後のデータになるます。また、個別の市のデータは県に含まれていないので、ご注意してください。データに関する問い合わせは@kenmo_economicsまで。'),
+      tags$p('こちらは補間法を使用した後のデータになります。また、個別の市のデータは県に含まれていないので、ご注意してください。データに関する問い合わせは@kenmo_economicsまで。'),
       echarts4rOutput('regionPCR') %>% withSpinner()
     ),
     column(
