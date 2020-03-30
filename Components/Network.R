@@ -157,22 +157,26 @@ output$clusterNetwork <- renderEcharts4r({
       e_graph_edges(edge, target = 罹患者id2, source = 罹患者id1) %>%
       e_labels(formatter = htmlwidgets::JS('
     function(params) {
-      return(params.value.split("|")[0])
+      if (params.value) {
+        return(params.value.split("|")[0])
+      }
     }
   ')) %>%
       e_tooltip(formatter = htmlwidgets::JS('
     function(params) {
-      const text = params.value.split("|")
-      return(`
-        番号：${text[0]}<br>
-        公表日：${text[1]}<br>
-        年代：${text[2]}<br>
-        性別：${text[3]}<br>
-        職業：${text[4]}<br><hr>
-        症状・経過:<br><small>${text[5]}</small><br><hr>
-        行動歴:<br><small>${text[6]}</small><br>
-        <a href="${text[7]}">情報源</a>
-      `)
+      if (params.value) {
+        const text = params.value.split("|")
+        return(`
+          番号：${text[0]}<br>
+          公表日：${text[1]}<br>
+          年代：${text[2]}<br>
+          性別：${text[3]}<br>
+          職業：${text[4]}<br><hr>
+          症状・経過:<br><small>${text[5]}</small><br><hr>
+          行動歴:<br><small>${text[6]}</small><br>
+          <a href="${text[7]}">情報源</a>
+        `)
+      }
     }
   ')) %>%
       e_modularity()
