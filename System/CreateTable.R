@@ -119,18 +119,24 @@ deathByRegion <- stack(colSums(death[, 2:ncol(byDate)]))
 # 感染者内訳
 detailSparkLineDt <- detailByRegion[日付 == max(日付)]
 detailSparkLine <- sapply(detailSparkLineDt$都道府県名, function(region) {
+  # 2020-03-30 厚労省の発表資料の基準は（無症状を除く、PCR陽性者、累積者）三度も変更が有るため、この部分を破棄します。
   # 厚労省の定義は、死亡後に陽性に確認された人は患者数に含まれていないようで、
   # マイナスのデータを防ぐため修正します。
-  fixDiff <- (detailSparkLineDt[都道府県名 == region, 患者数] - 
-                detailSparkLineDt[都道府県名 == region, 入院中] - 
-                detailSparkLineDt[都道府県名 == region, 退院者] - 
-                detailSparkLineDt[都道府県名 == region, 死亡者])
-  fixConfirmed <- ifelse(fixDiff < 0, 
-                         detailSparkLineDt[都道府県名 == region, 患者数] - fixDiff, 
-                         detailSparkLineDt[都道府県名 == region, 患者数])
+  # region = '千葉' # TEST
+  # fixDiff <- (detailSparkLineDt[都道府県名 == region, 患者数] - 
+  #               detailSparkLineDt[都道府県名 == region, 入院中] - 
+  #               detailSparkLineDt[都道府県名 == region, 退院者] - 
+  #               detailSparkLineDt[都道府県名 == region, 死亡者])
+  # fixConfirmed <- ifelse(fixDiff < 0, 
+  #                        detailSparkLineDt[都道府県名 == region, 患者数] - fixDiff, 
+  #                        detailSparkLineDt[都道府県名 == region, 患者数])
+  # 2020-03-30 対応分
+  confirmed <- ifelse(total[names(total) == region][[1]] > detailSparkLineDt[都道府県名 == region, 患者数],
+                      total[names(total) == region][[1]],
+                      detailSparkLineDt[都道府県名 == region, 患者数])
   spk_chr(type = 'pie', 
           values = c(
-            total[names(total) == region][[1]] - fixConfirmed,
+            confirmed - sum(detailSparkLineDt[都道府県名 == region, .(入院中, 退院者, 死亡者)]),
             detailSparkLineDt[都道府県名 == region, 入院中],
             detailSparkLineDt[都道府県名 == region, 退院者],
             detailSparkLineDt[都道府県名 == region, 死亡者]
@@ -139,9 +145,9 @@ detailSparkLine <- sapply(detailSparkLineDt$都道府県名, function(region) {
           tooltipFormat = '<span style="color: {{color}}">&#9679;</span> {{offset:names}} ({{percent.1}}%)',
           tooltipValueLookups = list(
             names = list(
-              '0' = '情報待ちの陽性者（無症状を含む）',
-              '1' = '有症状入院者',
-              '2' = '有症状退院者',
+              '0' = '累積陽性者（情報まちを含む）',
+              '1' = '入院者',
+              '2' = '退院者',
               '3' = '死亡者'
             )
           )
