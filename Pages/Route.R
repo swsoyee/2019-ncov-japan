@@ -6,7 +6,7 @@ fluidPage(fluidRow(column(
     enable_label = T,
     collapsible = T,
     label_status = 'warning',
-    label_text = 'Beta 0.1', 
+    label_text = 'Beta 0.2', 
     title = tagList(icon('connectdevelop'), 'クラスターネットワーク'),
     footer = tags$small(icon('database'), 
                      'データ提供：', 
@@ -44,6 +44,7 @@ fluidPage(fluidRow(column(
     ),
     column(
       width = 4,
+      uiOutput('clusterProfileSearchBox'),
       uiOutput('profile'),
       boxPlus(
         width = 12,

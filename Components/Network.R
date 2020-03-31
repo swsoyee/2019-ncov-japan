@@ -27,9 +27,37 @@ output$clusterNetworkWrapper <- renderUI({
   }
 })
 
+output$clusterProfileSearchBox <- renderUI({
+  node <- clusterData()$node
+  choicesLabel <- paste0(node$受診都道府県, node$都道府県別罹患者No)
+  choices <- node$罹患者id
+  names(choices) <- choicesLabel
+  selectizeInput(
+    label = tagList(icon('search'), '感染者検索'), 
+    choices = choices, 
+    inputId = 'searchProfileInCluster')
+})
+
+observeEvent(input$clusterNetwork_clicked_data, {
+  updateSelectizeInput(
+    session = session,
+    inputId = 'searchProfileInCluster',
+    selected = input$clusterNetwork_clicked_data$name
+    )
+})
+
 output$profile <- renderUI({
-  if (!is.null(input$clusterNetwork_clicked_data$value)) {
-    profile <- unlist(strsplit(input$clusterNetwork_clicked_data$value[1], '\\|')[[1]])
+  if (!is.null(input$searchProfileInCluster)) {
+    # 検索ボックスで検索する場合
+    patientInfo <- clusterData()$node[罹患者id == input$searchProfileInCluster]
+    
+    # フォーカス感染者
+    echarts4rProxy('clusterNetwork') %>% 
+      e_focus_adjacency_p(seriesIndex = 0, 
+                          index = clusterData()$node[罹患者id == input$searchProfileInCluster, which = T] - 1
+                          )
+
+    profile <- unlist(strsplit(patientInfo$label, '\\|')[[1]])
     
     age <- ifelse(profile[3] != '', profile[3], '未知')
     confirmedDate <- ifelse(profile[2] != '', profile[2], '調査中')

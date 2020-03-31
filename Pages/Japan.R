@@ -151,7 +151,7 @@ fluidPage(
            actionButton(width = '100%',
              inputId = 'gotoRoutePage', 
              style = paste0('color: #fff; background-color: ', middleRed),
-             label = tagList('感染ルート・クラスターへ', dashboardLabel('Beta 0.1', status = 'warning')),
+             label = tagList('感染ルート・クラスターへ', dashboardLabel('Beta 0.2', status = 'warning')),
              icon = icon('connectdevelop'))
            )
     # boxPlus(title = tagList(icon('connectdevelop'), '感染経路ネットワーク'),
