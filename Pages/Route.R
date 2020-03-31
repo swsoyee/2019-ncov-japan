@@ -39,6 +39,7 @@ fluidPage(fluidRow(column(
     ),
     column(
       width = 4,
+      uiOutput('profile'),
       tags$h3('注意事項'),
       tags$p(paste0('当クラスターネットワークは、株式会社SIGNATEが提供したデータセットおよびリンク情報',
                     '（SIGNATE COVID-19 Dataset）をそのまま可視化したものです。',
