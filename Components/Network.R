@@ -50,23 +50,23 @@ output$profile <- renderUI({
         subtitle = gender,
         boxProfileItemList(
           bordered = TRUE,
-          boxProfileItem(title = '年代',
+          boxProfileItem(title = tagList(icon('user-clock'), '年代'),
                          description = age),
-          boxProfileItem(title = '公表日',
+          boxProfileItem(title = tagList(icon('bullhorn'), '公表日'),
                          description = confirmedDate),
-          boxProfileItem(title = '職業',
+          boxProfileItem(title = tagList(icon('user-tie'), '職業'),
                          description = job),
           boxProfileItem(
-            title = '情報源',
-            description = tags$a(href = profile[8], icon('link'), '外部リンク', style = 'float: right!important;')
+            title = tagList(icon('external-link-alt'), '情報源'),
+            description = tags$a(href = profile[8], '外部リンク', style = 'float: right!important;')
           ),
         )
       ),
       footer = tagList(
-        tags$b('症状・経過'),
+        tags$b(icon('procedures'), '症状・経過'),
         tags$p(tags$small(HTML(profile[6]))),
         tags$hr(),
-        tags$b('行動歴'),
+        tags$b(icon('walking'), '行動歴'),
         tags$p(tags$small(HTML(profile[7])))
       )
     )
