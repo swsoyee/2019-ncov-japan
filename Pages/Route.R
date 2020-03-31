@@ -39,6 +39,7 @@ fluidPage(fluidRow(column(
     ),
     column(
       width = 4,
+      uiOutput('profile'),
       tags$h5('注意事項'),
       tags$small(
         tags$li(paste0('当クラスターネットワークは、株式会社SIGNATEが提供したデータセットおよびリンク情報',
