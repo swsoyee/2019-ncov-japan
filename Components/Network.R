@@ -42,43 +42,40 @@ output$profile <- renderUI({
     }
     
     boxPlus(
-      title = tagList(icon('user'), '公開された情報'), 
-      width = 12,
-      status = 'primary',
+      title = tagList(icon('id-card'), '公開された感染者情報'),
+      width = 12, 
+      closable = F,
       boxProfile(
         title = profile[1],
         subtitle = gender,
         boxProfileItemList(
           bordered = TRUE,
-          boxProfileItem(
-            title = '年代',
-            description = age
-          ),
-          boxProfileItem(
-            title = '公表日',
-            description = confirmedDate
-          ),
-          boxProfileItem(
-            title = '職業',
-            description = job
-          ),
+          boxProfileItem(title = '年代',
+                         description = age),
+          boxProfileItem(title = '公表日',
+                         description = confirmedDate),
+          boxProfileItem(title = '職業',
+                         description = job),
           boxProfileItem(
             title = '情報源',
             description = tags$a(href = profile[8], icon('link'), '外部リンク', style = 'float: right!important;')
           ),
         )
-      ), 
+      ),
       footer = tagList(
         tags$b('症状・経過'),
-        tags$p(
-          tags$small(HTML(profile[6]))
-        ),
+        tags$p(tags$small(HTML(profile[6]))),
         tags$hr(),
         tags$b('行動歴'),
-        tags$p(
-          tags$small(HTML(profile[7]))
-        )
+        tags$p(tags$small(HTML(profile[7])))
       )
+    )
+  } else {
+    boxPlus(
+      title = tagList(icon('id-card'), '公開された感染者情報'),
+      width = 12, 
+      closable = F,
+      '左側の感染者アイコンをクリックすると詳細情報が表示されます。'
     )
   }
 })
@@ -107,23 +104,19 @@ output$clusterNetwork <- renderEcharts4r({
       }
     }
   ')) %>%
-  #     e_tooltip(formatter = htmlwidgets::JS('
-  #   function(params) {
-  #     if (params.value) {
-  #       const text = params.value.split("|")
-  #       return(`
-  #         番号：${text[0]}<br>
-  #         公表日：${text[1]}<br>
-  #         年代：${text[2]}<br>
-  #         性別：${text[3]}<br>
-  #         職業：${text[4]}<br><hr>
-  #         症状・経過:<br><small>${text[5]}</small><br><hr>
-  #         行動歴:<br><small>${text[6]}</small><br>
-  #         <a href="${text[7]}">情報源</a>
-  #       `)
-  #     }
-  #   }
-  # ')) %>%
+      e_tooltip(formatter = htmlwidgets::JS('
+    function(params) {
+      if (params.value) {
+        const text = params.value.split("|")
+        return(`
+          番号：${text[0]}<br>
+          公表日：${text[1]}<br>
+          年代：${text[2]}<br>
+          性別：${text[3]}
+        `)
+      }
+    }
+  ')) %>%
       e_modularity()
   } else {
     return()
