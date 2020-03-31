@@ -2,6 +2,11 @@ fluidPage(fluidRow(column(
   width = 12,
   boxPlus(
     width = 12,
+    closable = F,
+    enable_label = T,
+    collapsible = T,
+    label_status = 'warning',
+    label_text = 'Beta 0.1', 
     title = tagList(icon('connectdevelop'), 'クラスターネットワーク'),
     footer = tags$small(icon('database'), 
                      'データ提供：', 
