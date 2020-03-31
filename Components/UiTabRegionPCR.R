@@ -7,12 +7,11 @@ tabPanel(
     column(
       width = 8,
       tags$br(),
-      tags$a(
-        icon('database'), 
-        'データ提供：@kenmo_economics', 
-        href = 'https://twitter.com/kenmo_economics'
+      tags$small(icon('database'), 
+                 'データ提供：', 
+                 tags$a(href = 'https://twitter.com/kenmo_economics', icon('twitter'), '@kenmo_economics')
       ),
-      tags$p('発表なしの日の検査数を0扱いしています（補間法のオプションを追加する予定あり）。また、個別の市のデータは県に含まれていないので、ご注意してください。データに関する問い合わせは@kenmo_economicsまで。'),
+      tags$p('こちらは補間法を使用した後のデータになります。また、個別の市のデータは県に含まれていないので、ご注意してください。データに関する問い合わせは@kenmo_economicsまで。'),
       echarts4rOutput('regionPCR') %>% withSpinner()
     ),
     column(
