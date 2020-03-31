@@ -313,7 +313,7 @@ fwrite(x = signateLink, file = paste0(DATA_PATH, 'resultSignateLink.csv'))
 # node <- signateDetail[罹患者id %in% idFilter | 都道府県コード %in% prefCode]
 # edge <- signateLink # TEST
 # node <- signateDetail # TEST
-
+# 
 # e_charts() %>%
 #   e_graph(layout = 'force',
 #           roam = T,
