@@ -70,7 +70,7 @@ fluidRow(
       valueBox(
         width = 6,
         value = DEATH_JAPAN,
-        subtitle = tagList(lang[[langCode]][7], getChangeIcon_(DISCHARGE_DIFF), DEATH_JAPAN_DIFF),
+        subtitle = tagList(lang[[langCode]][7], getChangeIcon_(DEATH_JAPAN_DIFF), DEATH_JAPAN_DIFF),
         icon = icon('bible'),
         color = "navy"
       )
