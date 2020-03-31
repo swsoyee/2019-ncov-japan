@@ -40,21 +40,45 @@ fluidPage(fluidRow(column(
     column(
       width = 4,
       uiOutput('profile'),
-      tags$h5('注意事項'),
-      tags$small(
-        tags$li(paste0('当クラスターネットワークは、株式会社SIGNATEが提供したデータセットおよびリンク情報',
-                    '（SIGNATE COVID-19 Dataset）をそのまま可視化したものです。',
-                    '感染者数が急速に拡大していて、公表されている情報も限られているため、',
-                    'クラスターネットワークの正確性の保障は一切ないので、予めご了承ください。',
-                    'あくまで参考用です。'
-                    )),
-      tags$li('データセット自身の問題で、ある患者は、多数の患者とリンクがあるとしても、クラスターの中心とはいえませんのでご了承ください。'),
-      tags$li(
-        paste0('本分析に用いたデータセット（SIGNATE COVID-19 Dataset）は、現在、収集途中のものであり、データの正確性を保証するものではありません。',
-        'また、本データセットは基本的に厚労省・自治体等の報道における症例データに基づいて作成されており、', '
-        各種機関が発表している統計データと一致しないことがあります。予めご了承ください。')),
-      tags$li('更新頻度は二三日一回となります。データセットに貢献したい有志はぜひ下記のリンク先でデータの追加や訂正をしてください。'),
-      tags$a(href = 'https://signate.jp/competitions/260/discussions', 'SIGNATE - COVID-19 Chanllenge')
+      boxPlus(
+        width = 12,
+        closable = F,
+        title = tagList(
+          icon('exclamation-circle'),
+          '注意事項'
+        ),
+        accordion(
+          accordionItem(
+            id = 1,
+            title = '1. クラスターネットワークについて',
+            tags$small(
+              tags$li(paste0('当クラスターネットワークは、株式会社SIGNATEが提供したデータセットおよびリンク情報',
+                             '（SIGNATE COVID-19 Dataset）をそのまま可視化したものです。',
+                             '感染者数が急速に拡大していて、公表されている情報も限られているため、',
+                             'クラスターネットワークの正確性の保障は一切ないので、予めご了承ください。',
+                             'あくまで参考用です。'
+              )),
+              tags$li('データセット自身の問題で、ある患者は、多数の患者とリンクがあるとしても、クラスターの中心とはいえませんのでご了承ください。'),
+            )
+          ),
+          accordionItem(
+            id = 2,
+            title = '2. データセットについて',
+            tags$small(
+                paste0('本分析に用いたデータセット（SIGNATE COVID-19 Dataset）は、現在、収集途中のものであり、データの正確性を保証するものではありません。',
+                       'また、本データセットは基本的に厚労省・自治体等の報道における症例データに基づいて作成されており、', 
+                       '各種機関が発表している統計データと一致しないことがあります。予めご了承ください。')
+            )
+          ),
+          accordionItem(
+            id = 3,
+            title = '3. 更新について',
+            tags$small(
+              '更新頻度は二三日一回となります。データセットに貢献したい有志はぜひ下記のリンク先でデータの追加や訂正をしてください。',
+              tags$a(href = 'https://signate.jp/competitions/260/discussions', icon('external-link-alt'), 'SIGNATE - COVID-19 Chanllenge')
+            )
+          )
+        )
       )
     )
     )
