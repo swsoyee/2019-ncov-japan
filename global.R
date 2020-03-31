@@ -304,3 +304,14 @@ getDiffValueAndSign <- function(number) {
     return(number)
   }
 }
+
+getChangeIcon_ <- function(number) {
+  if (number > 0) {
+    return(icon('caret-up'))
+  } else if (number < 0) {
+    return(icon('caret-down'))
+  } else {
+    return(icon('lock'))
+  }
+}
+

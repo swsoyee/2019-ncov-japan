@@ -45,16 +45,16 @@ fluidRow(
       valueBox(
         width = 6,
         value = sum(PCR_WITHIN$final, PCR_FLIGHT$final, PCR_SHIP$final, PCR_AIRPORT$final),
-        subtitle = paste0(lang[[langCode]][90], ' (', 
-                          getDiffValueAndSign(sum(PCR_WITHIN$diff, PCR_FLIGHT$diff, PCR_SHIP$diff, PCR_AIRPORT$diff)),
-                          ')'),
+        subtitle = tagList(lang[[langCode]][90],
+                          getChangeIcon_(sum(PCR_WITHIN$diff, PCR_FLIGHT$diff, PCR_SHIP$diff, PCR_AIRPORT$diff)),
+                          sum(PCR_WITHIN$diff, PCR_FLIGHT$diff, PCR_SHIP$diff, PCR_AIRPORT$diff)),
         icon = icon('vials'),
         color = "yellow"
       ),
       valueBox(
         width = 6,
         value = TOTAL_JAPAN,
-        subtitle = paste0(lang[[langCode]][60], ' (+', TOTAL_JAPAN_DIFF, ')'),
+        subtitle = tagList(lang[[langCode]][60], getChangeIcon_(TOTAL_JAPAN_DIFF), TOTAL_JAPAN_DIFF),
         icon = icon('procedures'),
         color = "red"
       )
@@ -63,15 +63,14 @@ fluidRow(
       valueBox(
         width = 6,
         value = DISCHARGE_TOTAL,
-        subtitle = paste0(lang[[langCode]][6],
-                          ' (+', DISCHARGE_DIFF, ')'),
+        subtitle = tagList(lang[[langCode]][6], getChangeIcon_(DISCHARGE_DIFF), DISCHARGE_DIFF),
         icon = icon('user-shield'),
         color = "green"
       ),
       valueBox(
         width = 6,
         value = DEATH_JAPAN,
-        subtitle = paste0(lang[[langCode]][7], ' (+', DEATH_JAPAN_DIFF, ')'),
+        subtitle = tagList(lang[[langCode]][7], getChangeIcon_(DISCHARGE_DIFF), DEATH_JAPAN_DIFF),
         icon = icon('bible'),
         color = "navy"
       )
