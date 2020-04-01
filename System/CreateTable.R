@@ -280,6 +280,9 @@ signateDetail[性別 == '男性', symbolIcon := paste0('path://', svgIcon[name =
 signateDetail[性別 == '女性', symbolIcon := paste0('path://', svgIcon[name == 'female']$svg)]
 signateDetail[性別 == '男性' & 年代 %in% c('60代', '70代', '80代', '90代'), symbolIcon := paste0('path://', svgIcon[name == 'grandpa']$svg)]
 signateDetail[性別 == '女性' & 年代 %in% c('60代', '70代', '80代', '90代'), symbolIcon := paste0('path://', svgIcon[name == 'grandma']$svg)]
+signateDetail[医療従事者ﾌﾗｸﾞ== 1 & 性別 == '男性', symbolIcon := paste0('path://', svgIcon[name == 'doctorMale']$svg) ]
+signateDetail[医療従事者ﾌﾗｸﾞ== 1 & 性別 == '女性', symbolIcon := paste0('path://', svgIcon[name == 'nurseFemale']$svg) ]
+
 signateDetail[, `症状・経過` := gsub('\n', '<br>', `症状・経過`)]
 signateDetail[, `行動歴` := gsub('\n', '<br>', `行動歴`)]
 signateDetail[, label := paste(

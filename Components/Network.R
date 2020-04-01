@@ -134,6 +134,7 @@ output$clusterNetwork <- renderEcharts4r({
   # node <- signateDetailFilter # TEST
   # edge <- linkFilter # TEST
   node <- clusterData()$node
+  node$size <- 20
   edge <- clusterData()$edge
   if (!is.null(node)) {
     e_charts() %>%
@@ -144,7 +145,7 @@ output$clusterNetwork <- renderEcharts4r({
               focusNodeAdjacency = T) %>%
       e_graph_nodes(
         node,
-        names = regionId,
+        names = regionId, size = size,
         value = label, symbol = symbolIcon) %>%
       e_graph_edges(edge, target = 罹患者id2, source = 罹患者id1) %>%
       e_labels(formatter = htmlwidgets::JS('
