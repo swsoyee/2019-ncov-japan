@@ -29,7 +29,7 @@ output$clusterNetworkWrapper <- renderUI({
 
 output$clusterProfileSearchBox <- renderUI({
   node <- clusterData()$node
-  choicesLabel <- paste0(node$受診都道府県, node$都道府県別罹患者No)
+  choicesLabel <- paste0(node$受診都道府県, node$都道府県別罹患者No, '（', node$年代, node$性別, '）')
   choices <- node$罹患者id
   names(choices) <- choicesLabel
   selectizeInput(
@@ -69,6 +69,14 @@ output$profile <- renderUI({
       gender <- tagList(icon('venus'), profile[4])
     }
     
+    # リンク分割
+    outerLinks <- strsplit(profile[8], split = ';')[[1]]
+    outerLinkTags <- tagList(lapply(1:length(outerLinks), function(i){
+      tags$a(href = outerLinks[i], icon('link'), '外部リンク', style = 'float: right!important;')
+    }))
+    # 行動歴
+    activityLog <- ifelse(profile[7] == '', '詳細なし', profile[7])
+    
     boxPlus(
       title = tagList(icon('id-card'), '公開された感染者情報'),
       width = 12, 
@@ -86,7 +94,7 @@ output$profile <- renderUI({
                          description = job),
           boxProfileItem(
             title = tagList(icon('external-link-alt'), '情報源'),
-            description = tags$a(href = profile[8], '外部リンク', style = 'float: right!important;')
+            description = outerLinkTags
           ),
         )
       ),
@@ -95,7 +103,7 @@ output$profile <- renderUI({
         tags$p(tags$small(HTML(profile[6]))),
         tags$hr(),
         tags$b(icon('walking'), '行動歴'),
-        tags$p(tags$small(HTML(profile[7])))
+        tags$p(tags$small(HTML(activityLog)))
       )
     )
   } else {

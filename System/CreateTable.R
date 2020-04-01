@@ -262,10 +262,20 @@ signateDetail[, 受診都道府県 := gsub('県', '', 受診都道府県)]
 signateDetail[, 受診都道府県 := gsub('府', '', 受診都道府県)]
 signateDetail[, 受診都道府県 := gsub('東京都', '東京', 受診都道府県)]
 signateDetail[, regionId := paste0(都道府県コード, '-', 都道府県別罹患者No)]
+
+oldYear <- c('0 - 9', '10 - 19', '20 - 29', '30 - 39', '40 - 49', '50 - 59', '60 - 69', '70 - 79', '80 - 89', '-90', '非公表', '', NA)
+newYear <- c('10歳未満', '10代', '20代', '30代', '40代', '50代', '60代', '70代', '80代', '90代', '非公表', '調査中', '調査中')
+names(oldYear) <- newYear
+
+for (i in oldYear) {
+  signateDetail[年代 == i, 年代 := names(oldYear[i == oldYear][1])]
+}
+
+
 signateDetail[性別 == '男性', symbolIcon := paste0('path://', svgIcon[name == 'male']$svg)]
 signateDetail[性別 == '女性', symbolIcon := paste0('path://', svgIcon[name == 'female']$svg)]
-signateDetail[性別 == '男性' & 年代 %in% c("60 - 69", "70 - 79", "80 - 89", "-90"), symbolIcon := paste0('path://', svgIcon[name == 'grandpa']$svg)]
-signateDetail[性別 == '女性' & 年代 %in% c("60 - 69", "70 - 79", "80 - 89", "-90"), symbolIcon := paste0('path://', svgIcon[name == 'grandma']$svg)]
+signateDetail[性別 == '男性' & 年代 %in% c('60代', '70代', '80代', '90代'), symbolIcon := paste0('path://', svgIcon[name == 'grandpa']$svg)]
+signateDetail[性別 == '女性' & 年代 %in% c('60代', '70代', '80代', '90代'), symbolIcon := paste0('path://', svgIcon[name == 'grandma']$svg)]
 signateDetail[, `症状・経過` := gsub('\n', '<br>', `症状・経過`)]
 signateDetail[, `行動歴` := gsub('\n', '<br>', `行動歴`)]
 signateDetail[, label := paste(
