@@ -322,9 +322,12 @@ fwrite(x = signateDetail, file = paste0(DATA_PATH, 'resultSignateDetail.csv'))
 fwrite(x = signateLink, file = paste0(DATA_PATH, 'resultSignateLink.csv'))
 
 # フィルター
-# prefCode <- 23
-# edge <- signateLink[`id1-1` == prefCode | `id2-1` == prefCode]
+# prefCode <- 12
+# linkFilter <- signateLink[`id1-1` %in% prefCode | `id2-1` %in% prefCode]
+# idFilter <-  unique(c(linkFilter$罹患者id1, linkFilter$罹患者id2))
+# edge <- linkFilter
 # node <- signateDetail[罹患者id %in% idFilter | 都道府県コード %in% prefCode]
+# 
 # edge <- signateLink # TEST
 # node <- signateDetail # TEST
 # 
@@ -352,10 +355,7 @@ fwrite(x = signateLink, file = paste0(DATA_PATH, 'resultSignateLink.csv'))
 #         公表日：${text[1]}<br>
 #         年代：${text[2]}<br>
 #         性別：${text[3]}<br>
-#         職業：${text[4]}<br><hr>
-#         症状・経過:<br><small>${text[5]}</small><br><hr>
-#         行動歴:<br><small>${text[6]}</small><br>
-#         <a href="${text[7]}">情報源</a>
+#         職業：${text[4]}<br>
 #       `)
 #     }
 #   ')) %>%
