@@ -275,6 +275,8 @@ signateDetail[ステータス == 0, status := '罹患中']
 signateDetail[ステータス == 1, status := '回復']
 signateDetail[ステータス == 2, status := '死亡']
 signateDetail[is.na(ステータス), status := '調査中']
+# アイコンサイズ設定
+signateDetail$size <- 18
 
 signateDetail[性別 == '男性', symbolIcon := paste0('path://', svgIcon[name == 'male']$svg)]
 signateDetail[性別 == '女性', symbolIcon := paste0('path://', svgIcon[name == 'female']$svg)]

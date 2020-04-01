@@ -134,7 +134,6 @@ output$clusterNetwork <- renderEcharts4r({
   # node <- signateDetailFilter # TEST
   # edge <- linkFilter # TEST
   node <- clusterData()$node
-  node$size <- 20
   edge <- clusterData()$edge
   if (!is.null(node)) {
     e_charts() %>%
