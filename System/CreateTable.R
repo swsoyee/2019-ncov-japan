@@ -290,7 +290,7 @@ signateDetail[, `行動歴` := gsub('\n', '<br>', `行動歴`)]
 signateDetail[, label := paste(
   sep = "|",
   paste0(受診都道府県, 都道府県別罹患者No), 
-  公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status
+  公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status, 居住地, 濃厚接触者状況
   )]
 
 signateLink<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者関係.csv'), header = T)
@@ -307,7 +307,7 @@ for (i in 1:nrow(signateLink)) {
                                         paste(
                                           unlist(
                                             signateDetail[罹患者id == signateLink[i]$罹患者id1, 
-                                                             .(公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status)
+                                                             .(公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status, 居住地, 濃厚接触者状況)
                                                              ]), collapse = '|')
                                         )]
   # }
@@ -317,7 +317,7 @@ for (i in 1:nrow(signateLink)) {
                                       paste(
                                         unlist(
                                           signateDetail[罹患者id == signateLink[i]$罹患者id2, 
-                                                           .(公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status)
+                                                           .(公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status, 居住地, 濃厚接触者状況)
                                                            ]), collapse = '|')
   )]
 }

@@ -105,6 +105,8 @@ output$profile <- renderUI({
                            description = confirmedDate),
             boxProfileItem(title = tagList(icon('user-tie'), '職業'),
                            description = job),
+            boxProfileItem(title = tagList(icon('home'), '居住地'),
+                           description = profile[10]),
             boxProfileItem(
               title = tagList(icon('external-link-alt'), '情報源'),
               description = outerLinkTags
@@ -112,6 +114,9 @@ output$profile <- renderUI({
           )
         ),
         footer = tagList(
+          tags$b(icon('handshake'), '濃厚接触者状況'),
+          tags$p(tags$small(HTML(profile[11]))),
+          tags$hr(),
           tags$b(icon('procedures'), '症状・経過'),
           tags$p(tags$small(HTML(profile[6]))),
           tags$hr(),
