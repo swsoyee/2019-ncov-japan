@@ -58,56 +58,68 @@ output$profile <- renderUI({
       e_focus_adjacency_p(seriesIndex = 0, 
                           index = clusterData()$node[罹患者id == input$searchProfileInCluster, which = T] - 1
                           )
-
-    profile <- unlist(strsplit(patientInfo$label, '\\|')[[1]])
-    
-    age <- ifelse(profile[3] != '', profile[3], '未知')
-    confirmedDate <- ifelse(profile[2] != '', profile[2], '調査中')
-    job <- ifelse(profile[5] != '', profile[5], '非公表')
-    gender <- tagList(icon('venus-mars'), profile[4])
-    if (profile[4] == '男性') {
-      gender <- tagList(icon('mars'), profile[4])
-    } else if (profile[4] == '女性') {
-      gender <- tagList(icon('venus'), profile[4])
-    }
-    
-    # リンク分割
-    outerLinks <- strsplit(profile[8], split = ';')[[1]]
-    outerLinkTags <- tagList(lapply(1:length(outerLinks), function(i){
-      tags$a(href = outerLinks[i], icon('link'), '外部リンク', style = 'float: right!important;')
-    }))
-    # 行動歴
-    activityLog <- ifelse(profile[7] == '', '詳細なし', profile[7])
-    
-    boxPlus(
-      title = tagList(icon('id-card'), '公開された感染者情報'),
-      width = 12, 
-      closable = F,
-      boxProfile(
-        title = profile[1],
-        subtitle = gender,
-        boxProfileItemList(
-          bordered = TRUE,
-          boxProfileItem(title = tagList(icon('user-clock'), '年代'),
-                         description = age),
-          boxProfileItem(title = tagList(icon('bullhorn'), '公表日'),
-                         description = confirmedDate),
-          boxProfileItem(title = tagList(icon('user-tie'), '職業'),
-                         description = job),
-          boxProfileItem(
-            title = tagList(icon('external-link-alt'), '情報源'),
-            description = outerLinkTags
-          ),
+    if (length(patientInfo$label) > 0) {
+      profile <- unlist(strsplit(patientInfo$label, '\\|')[[1]])
+  
+      age <- ifelse(profile[3] != '', profile[3], '未知')
+      confirmedDate <- ifelse(profile[2] != '', profile[2], '調査中')
+      job <- ifelse(profile[5] != '', profile[5], '非公表')
+      gender <- tagList(icon('venus-mars'), profile[4])
+      if (profile[4] == '男性') {
+        gender <- tagList(icon('mars'), profile[4])
+      } else if (profile[4] == '女性') {
+        gender <- tagList(icon('venus'), profile[4])
+      }
+      
+      # リンク分割
+      outerLinks <- strsplit(profile[8], split = ';')[[1]]
+      outerLinkTags <- tagList(lapply(1:length(outerLinks), function(i){
+        tags$a(href = outerLinks[i], icon('link'), '外部リンク', style = 'float: right!important;')
+      }))
+      # 行動歴
+      activityLog <- ifelse(profile[7] == '', '詳細なし', profile[7])
+      # ステータス
+      statusBadge <- ''
+      if (profile[9] == '罹患中') {
+        statusBadge <- dashboardLabel(profile[9], status = 'warning')
+      } else if (profile[9] == '回復') {
+        statusBadge <- dashboardLabel(profile[9], status = 'success')
+      } else if (profile[9] == '死亡') {
+        statusBadge <- dashboardLabel(profile[9], status = 'primary')
+      } else {
+        statusBadge <- dashboardLabel(profile[9], status = 'info')
+      }
+      
+      boxPlus(
+        title = tagList(icon('id-card'), '公開された感染者情報'),
+        width = 12, 
+        closable = F,
+        boxProfile(
+          title = profile[1],
+          subtitle = tagList(gender, statusBadge),
+          boxProfileItemList(
+            bordered = TRUE,
+            boxProfileItem(title = tagList(icon('user-clock'), '年代'),
+                           description = age),
+            boxProfileItem(title = tagList(icon('bullhorn'), '公表日'),
+                           description = confirmedDate),
+            boxProfileItem(title = tagList(icon('user-tie'), '職業'),
+                           description = job),
+            boxProfileItem(
+              title = tagList(icon('external-link-alt'), '情報源'),
+              description = outerLinkTags
+            ),
+          )
+        ),
+        footer = tagList(
+          tags$b(icon('procedures'), '症状・経過'),
+          tags$p(tags$small(HTML(profile[6]))),
+          tags$hr(),
+          tags$b(icon('walking'), '行動歴'),
+          tags$p(tags$small(HTML(activityLog)))
         )
-      ),
-      footer = tagList(
-        tags$b(icon('procedures'), '症状・経過'),
-        tags$p(tags$small(HTML(profile[6]))),
-        tags$hr(),
-        tags$b(icon('walking'), '行動歴'),
-        tags$p(tags$small(HTML(activityLog)))
       )
-    )
+    }
   } else {
     boxPlus(
       title = tagList(icon('id-card'), '公開された感染者情報'),

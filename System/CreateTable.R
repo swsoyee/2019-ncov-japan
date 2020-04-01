@@ -263,14 +263,18 @@ signateDetail[, 受診都道府県 := gsub('府', '', 受診都道府県)]
 signateDetail[, 受診都道府県 := gsub('東京都', '東京', 受診都道府県)]
 signateDetail[, regionId := paste0(都道府県コード, '-', 都道府県別罹患者No)]
 
+# 年代変換
 oldYear <- c('0 - 9', '10 - 19', '20 - 29', '30 - 39', '40 - 49', '50 - 59', '60 - 69', '70 - 79', '80 - 89', '-90', '非公表', '', NA)
 newYear <- c('10歳未満', '10代', '20代', '30代', '40代', '50代', '60代', '70代', '80代', '90代', '非公表', '調査中', '調査中')
 names(oldYear) <- newYear
-
 for (i in oldYear) {
   signateDetail[年代 == i, 年代 := names(oldYear[i == oldYear][1])]
 }
-
+# ステータス変換
+signateDetail[ステータス == 0, status := '罹患中']
+signateDetail[ステータス == 1, status := '回復']
+signateDetail[ステータス == 2, status := '死亡']
+signateDetail[is.na(ステータス), status := '調査中']
 
 signateDetail[性別 == '男性', symbolIcon := paste0('path://', svgIcon[name == 'male']$svg)]
 signateDetail[性別 == '女性', symbolIcon := paste0('path://', svgIcon[name == 'female']$svg)]
@@ -281,7 +285,7 @@ signateDetail[, `行動歴` := gsub('\n', '<br>', `行動歴`)]
 signateDetail[, label := paste(
   sep = "|",
   paste0(受診都道府県, 都道府県別罹患者No), 
-  公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源
+  公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status
   )]
 
 signateLink<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者関係.csv'), header = T)
@@ -298,7 +302,7 @@ for (i in 1:nrow(signateLink)) {
                                         paste(
                                           unlist(
                                             signateDetail[罹患者id == signateLink[i]$罹患者id1, 
-                                                             .(公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源)
+                                                             .(公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status)
                                                              ]), collapse = '|')
                                         )]
   # }
@@ -308,7 +312,7 @@ for (i in 1:nrow(signateLink)) {
                                       paste(
                                         unlist(
                                           signateDetail[罹患者id == signateLink[i]$罹患者id2, 
-                                                           .(公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源)
+                                                           .(公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status)
                                                            ]), collapse = '|')
   )]
 }
