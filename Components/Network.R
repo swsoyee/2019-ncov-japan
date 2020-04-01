@@ -29,13 +29,15 @@ output$clusterNetworkWrapper <- renderUI({
 
 output$clusterProfileSearchBox <- renderUI({
   node <- clusterData()$node
-  choicesLabel <- paste0(node$受診都道府県, node$都道府県別罹患者No, '（', node$年代, node$性別, '）')
-  choices <- node$罹患者id
-  names(choices) <- choicesLabel
-  selectizeInput(
-    label = tagList(icon('search'), '感染者検索'), 
-    choices = choices, 
-    inputId = 'searchProfileInCluster')
+  if (!is.null(node) && nrow(clusterData()$node) > 0) {
+    choicesLabel <- paste0(node$受診都道府県, node$都道府県別罹患者No, '（', node$年代, node$性別, '）')
+    choices <- node$罹患者id
+    names(choices) <- choicesLabel
+    selectizeInput(
+      label = tagList(icon('search'), '感染者検索'), 
+      choices = choices, 
+      inputId = 'searchProfileInCluster')
+  }
 })
 
 observeEvent(input$clusterNetwork_clicked_data, {
@@ -47,7 +49,7 @@ observeEvent(input$clusterNetwork_clicked_data, {
 })
 
 output$profile <- renderUI({
-  if (!is.null(input$searchProfileInCluster)) {
+  if (!is.null(input$searchProfileInCluster) && !is.null(clusterData()$node) && nrow(clusterData()$node) > 0) {
     # 検索ボックスで検索する場合
     patientInfo <- clusterData()$node[罹患者id == input$searchProfileInCluster]
     

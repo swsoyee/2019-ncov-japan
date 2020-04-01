@@ -21,7 +21,7 @@ fluidPage(fluidRow(column(
           # 地域選択
           label = lang[[langCode]][93],
           choices = provinceSelector,
-          selected = 23,
+          selected = 1,
           options = list(
             `actions-box` = TRUE,
             size = 10,
