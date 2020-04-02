@@ -80,7 +80,7 @@ shinyUI(
         # tags$meta(property = 'og:url', content = 'https://covid-2019.live/'),
         tags$meta(property = 'og:title', content = '🦠新型コロナウイルス感染速報'),
         tags$meta(property = 'og:description', content = '日本における新型コロナウイルスの最新感染・罹患情報をいち早く速報・まとめるサイトです。'),
-        tags$meta(property = 'og:image', content = 'https://repository-images.githubusercontent.com/237152814/7dd12480-6867-11ea-92f7-8b816b8014ea')
+        tags$meta(property = 'og:image', content = 'https://repository-images.githubusercontent.com/237152814/47b7c400-753a-11ea-8de6-8364c08e37c9')
         ),
       tabItems(
       tabItem(tabName = 'japan',
