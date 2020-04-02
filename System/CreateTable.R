@@ -303,7 +303,7 @@ signateDetail[, `症状・経過` := gsub('\n', '<br>', `症状・経過`)]
 signateDetail[, `行動歴` := gsub('\n', '<br>', `行動歴`)]
 signateDetail[, label := paste(
   sep = "|",
-  paste0(受診都道府県, 都道府県別罹患者No), 
+  paste0(受診都道府県, '-', 都道府県別罹患者No), 
   公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status, 居住地, 濃厚接触者状況
   )]
 
@@ -317,7 +317,7 @@ for (i in 1:nrow(signateLink)) {
   # } else {
     signateLink[i, source := paste0(pref1, `id1-2`)]
     signateLink[i, sourceLabel := paste(sep = '|', 
-                                        paste0(pref1, `id1-2`),
+                                        paste0(pref1, '-',  `id1-2`),
                                         paste(
                                           unlist(
                                             signateDetail[罹患者id == signateLink[i]$罹患者id1, 
@@ -327,7 +327,7 @@ for (i in 1:nrow(signateLink)) {
   # }
   signateLink[i, target := paste0(pref2, `id2-2`)]
   signateLink[i, targetLabel := paste(sep = '|', 
-                                      paste0(pref2, `id2-2`),
+                                      paste0(pref2, '-', `id2-2`),
                                       paste(
                                         unlist(
                                           signateDetail[罹患者id == signateLink[i]$罹患者id2, 

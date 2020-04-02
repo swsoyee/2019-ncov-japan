@@ -155,7 +155,8 @@ output$clusterNetwork <- renderEcharts4r({
       e_labels(formatter = htmlwidgets::JS('
     function(params) {
       if (params.value) {
-        return(params.value.split("|")[0])
+        const id = params.value.split("|")[0].split("-")
+        return(`${id[0].substring(0,1)}${id[1]}`)
       }
     }
   ')) %>%
