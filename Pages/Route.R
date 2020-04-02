@@ -1,5 +1,4 @@
-fluidPage(fluidRow(column(
-  width = 12,
+fluidPage(fluidRow(
   boxPlus(
     width = 12,
     closable = F,
@@ -90,9 +89,8 @@ fluidPage(fluidRow(column(
     )
     )
   )
-)),
-fluidRow(column(
-  width = 12,
+),
+fluidRow(
   boxPlus(
     width = 8,
     title = tagList(icon('project-diagram'), '感染経路'),
@@ -133,4 +131,4 @@ fluidRow(column(
     )),
     echarts4rOutput('infectedRouteByRegion') %>% withSpinner()
   )
-)))
+))
