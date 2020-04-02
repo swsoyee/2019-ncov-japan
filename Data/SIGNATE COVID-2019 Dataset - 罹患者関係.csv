@@ -1,5 +1,5 @@
 罹患者id1,罹患者id2,接触日,関係性,都道府県,場所,場所緯度,場所経度,情報源,,id1-1,id1-2,id2-1,id2-2
-1-3,1-5,2020/02/01,NA,神奈川県,さっぽろ雪まつり,,,http://www.pref.hokkaido.lg.jp/hf/kth/kak/hasseijoukyou.htm#2/20,,1,3,1,5
+1-3,1-5,2020/02/01,NA,北海道,さっぽろ雪まつり,,,http://www.pref.hokkaido.lg.jp/hf/kth/kak/hasseijoukyou.htm#2/20,,1,3,1,5
 1-3,1-5,2020/02/02,NA,北海道,さっぽろ雪まつり,,,http://www.pref.hokkaido.lg.jp/hf/kth/kak/hasseijoukyou.htm#2/20,,1,3,1,5
 1-3,1-5,2020/02/03,NA,北海道,さっぽろ雪まつり,,,http://www.pref.hokkaido.lg.jp/hf/kth/kak/hasseijoukyou.htm#2/20,,1,3,1,5
 1-3,1-5,2020/02/04,NA,北海道,さっぽろ雪まつり,,,http://www.pref.hokkaido.lg.jp/hf/kth/kak/hasseijoukyou.htm#2/20,,1,3,1,5
@@ -83,19 +83,27 @@
 1-151,1-138,,NA,北海道,NA,,,http://www.pref.hokkaido.lg.jp/hf/kth/kak/kisyakaiken0316sapporo.pdf,,1,151,1,138
 1-152,1-143,,NA,北海道,NA,,,http://www.pref.hokkaido.lg.jp/hf/kth/kak/kisyakaiken0316sapporo.pdf,,1,152,1,143
 2-1,2-2,,夫婦,青森県,自宅,,,https://www.pref.aomori.lg.jp/soshiki/kenko/hoken/files/200323press.pdf,,2,1,2,2
-7-2,14-51,,ナイル川ツアー同行,福島県,エジプト,,,https://www.pref.fukushima.lg.jp/uploaded/attachment/375483.pdf,,7,2,14,51
+7-2,11-13,2020/02/24,ナイル川ツアー同行,NA,エジプト,,,https://www.pref.fukushima.lg.jp/uploaded/attachment/375483.pdf,,7,2,11,13
 8-11,8-9,,講師と生徒,茨城県,社交ダンス教室,,,https://www.pref.ibaraki.jp/1saigai/2019-ncov/documents/032711.pdf,,8,11,8,9
 8-13,8-12,,入院先の同室者,茨城県,ＪＡとりで総合医療センター,35.911038,140.068802,https://www.pref.ibaraki.jp/1saigai/2019-ncov/documents/20032801.pdf,,8,13,8,12
-9-2,20-2,,NA,栃木県,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.tochigi.lg.jp/e04/welfare/hoken-eisei/kansen/hp/documents/2reime.pdf,,9,2,20,2
+8-12,8-14,,家族,茨城県,つくばみらい市,,,https://www.pref.ibaraki.jp/1saigai/2019-ncov/documents/2003281415.pdf,,,,,
+8-12,8-15,,入院先の同室者,茨城県,ＪＡとりで総合医療センター,35.911038,140.068802,https://www.pref.ibaraki.jp/1saigai/2019-ncov/documents/2003281415.pdf,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+8-16,8-17,,勤務する施設の入所者,茨城県,アレーテル・つくば,,,,,,,,
+8-12,8-18,,入院先の同一病棟,茨城県,ＪＡとりで総合医療センター,35.911038,140.068802,https://www.pref.ibaraki.jp/1saigai/2019-ncov/documents/03302.pdf,,,,,
+8-12,8-19,,入院先の同一病棟,茨城県,ＪＡとりで総合医療センター,35.911038,140.068802,https://www.pref.ibaraki.jp/1saigai/2019-ncov/documents/03302.pdf,,,,,
+8-12,8-20,,入院先の同一病棟,茨城県,ＪＡとりで総合医療センター,35.911038,140.068802,https://www.pref.ibaraki.jp/1saigai/2019-ncov/documents/03302.pdf,,,,,
+9-2,20-2,2020/02/23,NA,栃木県,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.tochigi.lg.jp/e04/welfare/hoken-eisei/kansen/hp/documents/2reime.pdf,,9,2,20,2
 9-12,38-5,2020/03/23,同じ葬儀に参加,愛媛県,松山市,33.8391894,132.7634582,https://www.pref.ehime.jp/h25500/kansen/documents/0331press.pdf,,9,12,38,5
 9-12,38-6,2020/03/23,同じ葬儀に参加,愛媛県,松山市,33.8391894,132.7634582,https://www.pref.ehime.jp/h25500/kansen/documents/0331press.pdf,,9,12,38,6
 9-12,38-7,2020/03/23,同じ葬儀に参加,愛媛県,松山市,33.8391894,132.7634582,https://www.pref.ehime.jp/h25500/kansen/documents/0331press.pdf,,9,12,38,7
 9-12,38-8,2020/03/23,同じ葬儀に参加,愛媛県,松山市,33.8391894,132.7634582,https://www.pref.ehime.jp/h25500/kansen/documents/0331press.pdf,,9,12,38,8
 10-14,10-12,,医師と看護師,群馬県,公立館林厚生病院,36.248579,139.518937,https://www.pref.gunma.jp/07/z87g_00027.html;https://www.jomo-news.co.jp/news/gunma/society/202295,,10,14,10,12
 11-16,11-18,,同居家族,埼玉県,戸田市,35.817794,139.678439,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0312-06.html,,11,16,11,18
-11-16,11-19,,エジプトに同行,埼玉県,エジプト,,,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0312-06.html,,11,16,11,19
+11-16,11-19,2020/02/23,ナイル川ツアー同行,NA,エジプト,,,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0312-06.html,,11,16,11,19
 11-17,12-17,,同じ職場勤務,埼玉県,NA,,,https://www.city.saitama.jp/002/001/008/006/001/p070442.html,,11,17,12,17
-11-18,11-19,,エジプトに同行,埼玉県,エジプト,,,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0312-06.html,,11,18,11,19
+11-18,11-19,2020/02/23,ナイル川ツアー同行,NA,エジプト,,,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0312-06.html,,11,18,11,19
 11-22,11-23,,同居家族,埼玉県,さいたま市,,,https://www.city.saitama.jp/002/001/008/006/001/p070442.html,,11,22,11,23
 11-22,11-34,,同居家族,埼玉県,さいたま市,,,https://www.city.saitama.jp/002/001/008/006/001/p070442.html,,11,22,11,34
 11-23,11-34,,同居家族,埼玉県,さいたま市,,,https://www.city.saitama.jp/002/001/008/006/001/p070442.html,,11,23,11,34
@@ -124,35 +132,28 @@
 12-30,12-31,,同居家族,千葉県,匝瑳市,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200314.html,,12,30,12,31
 12-30,12-32,,同居家族,千葉県,匝瑳市,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200314.html,,12,30,12,32
 12-31,12-32,,同居家族,千葉県,匝瑳市,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200314.html,,12,31,12,32
-12-46,12-33,,共に日本へ入国,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200323.html,,12,46,12,33
-12-46,12-40,,共に日本へ入国,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200323.html,,12,46,12,40
-12-46,12-41,,共に日本へ入国,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200323.html,,12,46,12,41
-12-46,12-47,,共に日本へ入国,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200323.html,,12,46,12,47
-12-46,12-48,,共に日本へ入国,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200323.html,,12,46,12,48
-12-47,12-33,,共に日本へ入国,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200323.html,,12,47,12,33
-12-47,12-40,,共に日本へ入国,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200323.html,,12,47,12,40
-12-47,12-41,,共に日本へ入国,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200323.html,,12,47,12,41
-12-47,12-48,,共に日本へ入国,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200323.html,,12,47,12,48
-12-48,12-33,,共に日本へ入国,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200323.html,,12,48,12,33
-12-48,12-40,,共に日本へ入国,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200323.html,,12,48,12,40
-12-48,12-41,,共に日本へ入国,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200323.html,,12,48,12,41
+12-46,12-33,2020/03/15,共に日本へ入国,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200323.html,,12,46,12,33
+12-46,12-40,2020/03/15,共に日本へ入国,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200323.html,,12,46,12,40
+12-46,12-41,2020/03/15,共に日本へ入国,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200323.html,,12,46,12,41
+12-46,12-47,2020/03/15,共に日本へ入国,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200323.html,,12,46,12,47
+12-46,12-48,2020/03/15,共に日本へ入国,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200323.html,,12,46,12,48
 12-62,12-63,,NA,千葉県,スペイン,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200327.html,,12,62,12,63
 12-64,12-40,,NA,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200327.html,,12,64,12,40
 12-64,12-42,,NA,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200327.html,,12,64,12,42
 12-64,12-46,,NA,千葉県,NA,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200327.html,,12,64,12,46
 13-5,13-4,,同じ会社勤務,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.jiji.com/jc/article?k=2020021401047&g=soc,,13,5,13,4
-13-6,13-4,,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/14/33.html,,13,6,13,4
-13-7,13-4,,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/16/01.html,,13,7,13,4
-13-8,13-4,,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/16/01.html,,13,8,13,4
-13-9,13-4,,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/16/01.html,,13,9,13,4
-13-10,13-4,,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/16/01.html,,13,10,13,4
-13-11,13-4,,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/16/01.html,,13,11,13,4
-13-12,13-4,,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/16/01.html,,13,12,13,4
-13-13,13-4,,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/16/01.html,,13,13,13,4
+13-6,13-4,2020/03/19,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/14/33.html,,13,6,13,4
+13-7,13-4,2020/03/19,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/16/01.html,,13,7,13,4
+13-8,13-4,2020/03/19,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/16/01.html,,13,8,13,4
+13-9,13-4,2020/03/19,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/16/01.html,,13,9,13,4
+13-10,13-4,2020/03/19,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/16/01.html,,13,10,13,4
+13-11,13-4,2020/03/19,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/16/01.html,,13,11,13,4
+13-12,13-4,2020/03/19,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/16/01.html,,13,12,13,4
+13-13,13-4,2020/03/19,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/16/01.html,,13,13,13,4
 13-16,13-14,,同じ研修を受講,東京都,NA,,,https://www.msn.com/ja-jp/news/national/%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%86%85%E3%81%A7%E6%96%B0%E3%81%9F%E3%81%AB5%E4%BA%BA%E6%84%9F%E6%9F%93%E7%A2%BA%E8%AA%8D-%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%86%85%E3%81%A7%E3%82%82%E3%81%95%E3%82%89%E3%81%AB1%E4%BA%BA/ar-BB103d09,,13,16,13,14
 13-17,13-8,,病院の看護師と医師,東京都,同じ病院に務める同僚と食事,,,https://www3.nhk.or.jp/news/html/20200216/k10012288171000.html,,13,17,13,8
-13-18,13-4,,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/17/30.html,,13,18,13,4
-13-20,13-4,,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/19/30.html,,13,20,13,4
+13-18,13-4,2020/03/19,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/17/30.html,,13,18,13,4
+13-20,13-4,2020/03/19,屋形船,東京都,城南地区の個人タクシー組合支部の新年会（屋形船）,,,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/02/19/30.html,,13,20,13,4
 13-21,13-17,,息子,東京都,NA,,,https://www3.nhk.or.jp/news/html/20200218/k10012290911000.html,,13,21,13,17
 13-23,13-24,,夫婦,東京都,NA,,,https://news.tv-asahi.co.jp/news_society/articles/000176717.html,,13,23,13,24
 13-25,13-20,,夫婦,東京都,NA,,,https://news.tv-asahi.co.jp/news_society/articles/000176717.html,,13,25,13,20
@@ -161,12 +162,12 @@
 13-37,13-20,,病院の看護師と患者,東京都,杉並区佼成病院,35.690169,139.65572,https://www.city.suginami.tokyo.jp/news/r0202/1058791.html,,13,37,13,20
 13-39,13-20,,同室の患者,東京都,杉並区佼成病院,35.690169,139.65572,https://www.city.suginami.tokyo.jp/news/r0203/1058792.html,,13,39,13,20
 13-40,13-46,,祖母,東京都,足立区,,,https://www.city.adachi.tokyo.jp/hodo/juyo/0305juyo.html,,13,40,13,46
-13-42,39-1,,NA,東京都,大阪市ライブハウス(Arc),34.694861,135.527709,https://www.city.setagaya.lg.jp/mokuji/kusei/001/001/004/d00184879.html,,13,42,39,1
-13-44,39-1,,NA,東京都,大阪市ライブハウス(Arc),34.694861,135.527709,https://mainichi.jp/articles/20200306/k00/00m/040/216000c,,13,44,39,1
+13-42,39-1,2020/02/15,NA,東京都,大阪市ライブハウス(Arc),34.694861,135.527709,https://www.city.setagaya.lg.jp/mokuji/kusei/001/001/004/d00184879.html,,13,42,39,1
+13-44,39-1,2020/02/15,NA,東京都,大阪市ライブハウス(Arc),34.694861,135.527709,https://mainichi.jp/articles/20200306/k00/00m/040/216000c,,13,44,39,1
 13-45,13-46,,兄弟,東京都,足立区,,,https://www.city.adachi.tokyo.jp/hodo/juyo/0305juyo.html,,13,45,13,46
 13-47,13-46,,母,東京都,足立区,,,https://www.city.adachi.tokyo.jp/hodo/juyo/0305juyo.html,,13,47,13,46
-13-61,39-1,,NA,東京都,大阪市ライブハウス(Arc),34.694861,135.527709,https://www3.nhk.or.jp/news/html/20200307/k10012319201000.html,,13,61,39,1
-13-67,20-2,,NA,東京都,Soap opera classics-Umeda,34.6976168,135.503047,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/03/10/11.html,,13,67,20,2
+13-61,39-1,2020/02/15,NA,東京都,大阪市ライブハウス(Arc),34.694861,135.527709,https://www3.nhk.or.jp/news/html/20200307/k10012319201000.html,,13,61,39,1
+13-67,20-2,2020/02/23,NA,東京都,Soap opera classics-Umeda,34.6976168,135.503047,https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/03/10/11.html,,13,67,20,2
 13-86,13-87,,工場,東京都,東京都日野市の日野自動車本社に勤務する従業員,,,https://www.netdenjd.com/articles/-/229714,,13,86,13,87
 13-89,13-70,,同僚,東京都,NTTドコモコールセンター,,,https://www.nttdocomo.co.jp/info/news_release/detail/20200312_00_m.html,,13,89,13,70
 13-118,13-70,,同僚,東京都,NTTドコモコールセンター,,,https://mainichi.jp/articles/20200319/k00/00m/040/283000c,,13,118,13,70
@@ -177,14 +178,13 @@
 14-90,14-80,,同居家族,神奈川県,神奈川県小田原保健福祉事務所管内（小田原市、南足柄市、中井町、大井町、松田町、山北町、開成町、箱根町、真鶴町、湯河原町）,,,https://www.pref.kanagawa.jp/docs/ga4/bukanshi/occurrence.html,,14,90,14,80
 14-91,14-82,,同居家族,神奈川県,神奈川県平塚保健福祉事務所管内（平塚市、秦野市、伊勢原市、大磯町、二宮町）,,,https://www.pref.kanagawa.jp/docs/ga4/bukanshi/occurrence.html,,14,91,14,82
 14-92,14-62,,NA,神奈川県,NA,,,https://www.pref.kanagawa.jp/docs/ga4/bukanshi/occurrence.html,,14,92,14,62
-14-98,14-51,,NA,神奈川県,エジプト,,,https://www.pref.kanagawa.jp/docs/ga4/bukanshi/occurrence.html,,14,98,14,51
 15-18,15-7,,保育園職員,新潟県,新潟市立山潟保育園,37.888532,139.071732,https://www.city.niigata.lg.jp/iryo/kenko/yobou_kansen/kansen/2020coronavirus.files/press0317.pdf,,15,18,15,7
 15-19,15-7,,保育園職員,新潟県,新潟市立山潟保育園,37.888532,139.071732,https://www.city.niigata.lg.jp/iryo/kenko/yobou_kansen/kansen/2020coronavirus.files/press0317.pdf,,15,19,15,7
 15-23,15-16,,妻,新潟県,自宅,,,https://www.city.niigata.lg.jp/iryo/kenko/yobou_kansen/kansen/2020coronavirus.files/0319houdou.pdf;https://news.livedoor.com/article/detail/17990213/,,15,23,15,16
 15-24,15-7,,保育園職員と園児,新潟県,新潟市立山潟保育園,37.888532,139.071732,https://www.city.niigata.lg.jp/iryo/kenko/yobou_kansen/kansen/coronavirus.files/press0319.pdf;https://news.livedoor.com/article/detail/17990213/,,15,24,15,7
-19-1,27-15,,ライブハウス滞在 (2/21 americamura FANJ twice),山梨県,Soap opera classics-Umeda,34.6976168,135.503047,https://news.shoninsha.co.jp/strategy/148563,,19,1,27,15
+19-1,27-15,2020/02/21,ライブハウス滞在 (2/21 americamura FANJ twice),山梨県,Soap opera classics-Umeda,34.6976168,135.503047,https://news.shoninsha.co.jp/strategy/148563,,19,1,27,15
 19-3,19-4,,夫婦,山梨県,NA,,,https://www.pref.yamanashi.jp/koucho/coronavirus/documents/200325_case3-4.pdf,,19,3,19,4
-20-2,20-2,,NA,長野県,Soap opera classics-Umeda,34.6976168,135.503047,https://www.pref.nagano.lg.jp/hoken-shippei/happyou/press20200306corona3.html,,20,2,20,2
+20-2,20-2,2020/02/19,NA,長野県,Soap opera classics-Umeda,34.6976168,135.503047,https://www.pref.nagano.lg.jp/hoken-shippei/happyou/press20200306corona3.html,,20,2,20,2
 21-1,21-2,,夫婦,岐阜県,NA,,,https://headlines.yahoo.co.jp/hl?a=20200323-00027437-tokaiv-soci,,21,1,21,2
 21-4,21-6,,夫婦,岐阜県,NA,,,https://www.pref.gifu.lg.jp/kinkyu-juyo-joho/shingata_corona.data/0323_kanjya_kisyasiryou.pdf;https://headlines.yahoo.co.jp/hl?a=20200323-00027437-tokaiv-soci,,21,4,21,6
 21-5,21-7,,夫婦,岐阜県,NA,,,https://www.pref.gifu.lg.jp/kinkyu-juyo-joho/shingata_corona.data/0323-2_kanjya_kisyasiryou.pdf;https://headlines.yahoo.co.jp/hl?a=20200323-00027437-tokaiv-soci,,21,5,21,7
@@ -199,7 +199,7 @@
 21-14,21-5,,合唱団,岐阜県,NA,,,https://www.pref.gifu.lg.jp/kinkyu-juyo-joho/shingata_corona.data/0326_kanjya_kisyasiryou.pdf,,21,14,21,5
 21-14,21-7,,合唱団,岐阜県,NA,,,https://www.pref.gifu.lg.jp/kinkyu-juyo-joho/shingata_corona.data/0326_kanjya_kisyasiryou.pdf,,21,14,21,7
 21-15,21-12,,NA,岐阜県,NA,,,https://www.pref.gifu.lg.jp/kinkyu-juyo-joho/shingata_corona.data/0326-2_kanjya_kisyasiryou.pdf,,21,15,21,12
-23-4,23-3,,NA,愛知県,救急車搬送に付き添う,,,http://www.city.nagoya.jp/kenkofukushi/cmsfiles/contents/0000126/126920/R20215kisya.pdf,,23,4,23,3
+23-4,23-3,2020/02/13,NA,愛知県,救急車搬送に付き添う,,,http://www.city.nagoya.jp/kenkofukushi/cmsfiles/contents/0000126/126920/R20215kisya.pdf,,23,4,23,3
 23-5,23-4,,知人,愛知県,NA,,,https://www.pref.aichi.jp/uploaded/attachment/321683.pdf,,23,5,23,4
 23-6,23-5,,知人,愛知県,自宅,,,https://www.pref.aichi.jp/uploaded/attachment/322088.pdf,,23,6,23,5
 23-7,23-5,,知人,愛知県,自宅,,,https://www.pref.aichi.jp/uploaded/attachment/322235.pdf,,23,7,23,5
@@ -249,7 +249,7 @@
 23-60,23-38,,NA,愛知県,緑区デイサービスB,,,http://www.city.nagoya.jp/kenkofukushi/cmsfiles/contents/0000126/126920/R20306kisya.pdf;https://www.asahi.com/articles/ASN37624HN37OIPE008.html,,23,60,23,38
 23-61,23-38,,NA,愛知県,緑区デイサービスB,,,http://www.city.nagoya.jp/kenkofukushi/cmsfiles/contents/0000126/126920/R20306kisya.pdf;https://www.asahi.com/articles/ASN37624HN37OIPE008.html,,23,61,23,38
 23-62,23-38,,NA,愛知県,緑区デイサービスB,,,http://www.city.nagoya.jp/kenkofukushi/cmsfiles/contents/0000126/126920/R20306kisya.pdf;https://www.asahi.com/articles/ASN37624HN37OIPE008.html,,23,62,23,38
-23-63,23-34,,施術,愛知県,出張マッサージ（整体）（,,,https://www.city.gamagori.lg.jp/unit/hoken/covid-19press.html,,23,63,23,34
+23-63,23-34,,施術,愛知県,出張マッサージ（整体）,,,https://www.city.gamagori.lg.jp/unit/hoken/covid-19press.html,,23,63,23,34
 23-65,23-38,,NA,愛知県,緑区デイサービスB,,,http://www.city.nagoya.jp/kenkofukushi/cmsfiles/contents/0000126/126920/R20307kisya.pdf;https://www.asahi.com/articles/ASN37624HN37OIPE008.html,,23,65,23,38
 23-66,23-38,,NA,愛知県,緑区デイサービスB,,,http://www.city.nagoya.jp/kenkofukushi/cmsfiles/contents/0000126/126920/R20307kisya.pdf;https://www.asahi.com/articles/ASN37624HN37OIPE008.html,,23,66,23,38
 23-67,23-48,,NA,愛知県,名古屋市内福祉施設C,,,http://www.city.nagoya.jp/kenkofukushi/cmsfiles/contents/0000126/126920/R20307kisya.pdf;https://www.chunichi.co.jp/article/feature/coronavirus/list/CK2020031402000209.html,,23,67,23,48
@@ -283,12 +283,9 @@
 23-100,23-48,,NA,愛知県,名古屋市内福祉施設C,,,http://www.city.nagoya.jp/kenkofukushi/cmsfiles/contents/0000126/126920/R20311kisya(kanjya).pdf;https://www.chunichi.co.jp/article/feature/coronavirus/list/CK2020031402000209.html,,23,100,23,48
 23-101,23-48,,NA,愛知県,名古屋市内福祉施設C,,,http://www.city.nagoya.jp/kenkofukushi/cmsfiles/contents/0000126/126920/R20311kisya(kanjya).pdf;https://www.chunichi.co.jp/article/feature/coronavirus/list/CK2020031402000209.html,,23,101,23,48
 23-102,23-56,,NA,愛知県,NA,,,http://www.city.nagoya.jp/kenkofukushi/cmsfiles/contents/0000126/126920/R20311kisya(kanjya).pdf,,23,102,23,56
-23-103,23-34,,施術,愛知県,出張マッサージ（整体）（,,,https://www.city.gamagori.lg.jp/unit/hoken/covid-19press.html,,23,103,23,34
-23-103,23-34,,患者,愛知県,蒲郡市の整体,,,https://www.city.okazaki.lg.jp/1550/1562/1615/p025920.html,,23,103,23,34
+23-103,23-34,,施術,愛知県,出張マッサージ（整体）（,,,https://www.city.gamagori.lg.jp/unit/hoken/covid-19press.html;https://www.city.okazaki.lg.jp/1550/1562/1615/p025920.html,,23,103,23,34
 23-104,23-103,,家族,愛知県,岡崎市,,,https://www.city.gamagori.lg.jp/unit/hoken/covid-19press.html,,23,104,23,103
-23-104,23-103,,家族,愛知県,NA,,,https://www.city.okazaki.lg.jp/1550/1562/1615/p025920.html,,23,104,23,103
-23-105,23-42,,NA,愛知県,NA,,,https://www.city.gamagori.lg.jp/unit/hoken/covid-19press.html,,23,105,23,42
-23-105,23-42,,NA,愛知県,NA,,,https://www.city.toyota.aichi.jp/pressrelease/1036848/1037074.html,,23,105,23,42
+23-105,23-42,,NA,愛知県,NA,,,https://www.city.gamagori.lg.jp/unit/hoken/covid-19press.html;https://www.city.toyota.aichi.jp/pressrelease/1036848/1037074.html,,23,105,23,42
 23-107,23-66,,NA,愛知県,NA,,,http://www.city.nagoya.jp/kenkofukushi/cmsfiles/contents/0000126/126920/R20312kisya(youseikanjya).pdf,,23,107,23,66
 23-108,23-76,,NA,愛知県,NA,,,http://www.city.nagoya.jp/kenkofukushi/cmsfiles/contents/0000126/126920/R20312kisya(youseikanjya).pdf,,23,108,23,76
 23-109,23-90,,NA,愛知県,NA,,,http://www.city.nagoya.jp/kenkofukushi/cmsfiles/contents/0000126/126920/R20312kisya(youseikanjya).pdf,,23,109,23,90
@@ -335,13 +332,13 @@
 23-159,21-13,,同じスポーツジム利用,愛知県,スポーツクラブ,,,https://www.pref.aichi.jp/site/covid19-aichi/pressrelease-ncov200327.html,,23,159,21,13
 23-159,21-16,,同じスポーツジム利用,愛知県,スポーツクラブ,,,https://www.pref.aichi.jp/site/covid19-aichi/pressrelease-ncov200327.html,,23,159,21,16
 23-160,23-134,,同室患者,愛知県,八事日赤病院,,,http://www.city.nagoya.jp/kenkofukushi/cmsfiles/contents/0000126/126920/R20327kisyahappyou.pdf;https://www.nagoya2.jrc.or.jp/shingatakoronauirusukansensyounotaiounituite/,,23,160,23,134
-23-161,23-155,,NA,愛知県,クルーズ船,,,https://www.city.okazaki.lg.jp/houdou/p026022.html,,23,161,23,155
-23-163,23-155,,家族,愛知県,クルーズ船,,,https://www.pref.aichi.jp/site/covid19-aichi/pressrelease-ncov200328.html,,23,163,23,155
-24-3,24-4,,近親者,三重県,Soap opera classics-Umeda,34.6976168,135.503047,https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00016.htm,,24,3,24,4
-24-3,24-5,,近親者,三重県,Soap opera classics-Umeda,34.6976168,135.503047,https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00016.htm,,24,3,24,5
-24-3,24-6,,近親者,三重県,Soap opera classics-Umeda,34.6976168,135.503047,https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00016.htm,,24,3,24,6
-24-3,24-7,,近親者,三重県,Soap opera classics-Umeda,34.6976168,135.503047,https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00016.htm,,24,3,24,7
-24-3,24-8,,近親者,三重県,Soap opera classics-Umeda,34.6976168,135.503047,https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00016.htm,,24,3,24,8
+23-161,23-155,2020/03/04,NA,愛知県,クルーズ船,,,https://www.city.okazaki.lg.jp/houdou/p026022.html,,23,161,23,155
+23-163,23-155,2020/03/04,家族,愛知県,クルーズ船,,,https://www.pref.aichi.jp/site/covid19-aichi/pressrelease-ncov200328.html,,23,163,23,155
+24-3,24-4,2020/02/24,近親者,三重県,Soap opera classics-Umeda,34.6976168,135.503047,https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00016.htm,,24,3,24,4
+24-3,24-5,,近親者,三重県,NA,,,https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00016.htm,,24,3,24,5
+24-3,24-6,2020/02/24,近親者,三重県,Soap opera classics-Umeda,34.6976168,135.503047,https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00016.htm,,24,3,24,6
+24-3,24-7,,近親者,三重県,NA,,,https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00016.htm,,24,3,24,7
+24-3,24-8,,近親者,三重県,NA,,,https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00016.htm,,24,3,24,8
 24-5,20-2,2020/02/24,NA,三重県,Soap opera classics-Umeda,34.6976168,135.503047,https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00014.htm,,24,5,20,2
 24-7,20-2,2020/02/24,NA,三重県,Soap opera classics-Umeda,34.6976168,135.503047,https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000071_00014.htm,,24,7,20,2
 25-2,25-3,,妻,滋賀県,東近江市,,,https://www.pref.shiga.lg.jp/ippan/kenkouiryouhukushi/yakuzi/310735.html,,25,2,25,3
@@ -350,7 +347,7 @@
 26-8,20-2,,NA,京都府,Soap opera classics-Umeda,34.6976168,135.503047,https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#F,,26,8,20,2
 26-8,26-9,,親子,京都府,中丹管内,,,https://www.pref.kyoto.jp/kentai/news/documents/20200309-91011.pdf,,26,8,26,9
 26-8,26-10,,親子,京都府,中丹管内,,,https://www.pref.kyoto.jp/kentai/news/documents/20200309-91011.pdf,,26,8,26,10
-26-8,26-11,,同僚,京都府,大阪市ライブハウス(Arc),34.694861,135.527709,https://www.pref.kyoto.jp/kentai/news/documents/20200309-91011.pdf,,26,8,26,11
+26-8,26-11,,同僚,京都府,NA,,,http://www.pref.kyoto.jp/kentai/corona/hassei1-50.html,,26,8,26,11
 26-8,26-13,,患者,京都府,中丹管内,,,https://www.pref.kyoto.jp/kentai/news/documents/20200310-13.pdf,,26,8,26,13
 26-12,20-2,,NA,京都府,Soap opera classics-Umeda,34.6976168,135.503047,https://mainichi.jp/articles/20200311/k00/00m/040/307000c,,26,12,20,2
 26-15,26-12,,保育士と園児,京都府,京都市南区南保育所,34.978358,135.747735,https://www3.nhk.or.jp/news/html/20200311/k10012326371000.html,,26,15,26,12
@@ -358,139 +355,137 @@
 26-21,26-15,,保護者,京都府,京都市,,,https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#F,,26,21,26,15
 26-23,26-33,,同僚,京都府,京都市,,,https://www.mhlw.go.jp/content/10906000/000613927.pdf,,26,23,26,33
 26-27,26-31,,同居家族,京都府,京都市,,,https://www.mhlw.go.jp/content/10906000/000613044.pdf,,26,27,26,31
-27-1,29-1,,バスガイド(1/12-17),大阪府,ツアーバス,,,http://www.pref.osaka.lg.jp/hodo/index.php?site=fumin&pageId=37147,,27,1,29,1
-27-2,1-39,,共に行動(2/15-17),大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/index.php?site=fumin&pageId=37548,,27,2,1,39
-27-2,39-1,,NA,大阪府,大阪市ライブハウス(Arc),34.694861,135.527709,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/case1-2.pdf,,27,2,39,1
+27-1,29-1,2020/01/12,バスガイド(1/12-17),大阪府,ツアーバス,,,http://www.pref.osaka.lg.jp/hodo/index.php?site=fumin&pageId=37147,,27,1,29,1
+27-2,1-39,2020/02/15,共に行動(2/15-17),大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/index.php?site=fumin&pageId=37548,,27,2,1,39
+27-2,39-1,2020/02/15,NA,大阪府,大阪市ライブハウス(Arc),34.694861,135.527709,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/case1-2.pdf,,27,2,39,1
 27-3,27-2,,同居家族,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/index.php?site=fumin&pageId=37564,,27,3,27,2
 27-4,27-2,,同居家族,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/index.php?site=fumin&pageId=37564,,27,4,27,2
-27-5,1-39,,接触(2/18),大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/index.php?site=fumin&pageId=37593,,27,5,1,39
-27-6,27-2,,ライブハウス滞在 (2/16 大阪京橋ライブハウスArc),大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/index.php?site=fumin&pageId=37593,,27,6,27,2
-27-6,27-5,,接触(2/22),大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/index.php?site=fumin&pageId=37593,,27,6,27,5
-27-7,27-5,,ライブハウス滞在 (Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/index.php?site=fumin&pageId=37614,,27,7,27,5
-27-8,27-2,,ライブハウス滞在 (2/15 大阪京橋ライブハウスArc),大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/index.php?site=fumin&pageId=37614,,27,8,27,2
-27-9,27-2,,"ライブハウス滞在 (2/15,16 大阪京橋ライブハウスArc)",大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,9,27,2
-27-10,27-2,,"ライブハウス滞在 (2/15,16 大阪京橋ライブハウスArc)",大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,10,27,2
+27-5,1-39,2020/02/18,接触(2/18),大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/index.php?site=fumin&pageId=37593,,27,5,1,39
+27-6,27-2,2020/02/16,ライブハウス滞在 (2/16 大阪京橋ライブハウスArc),大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/index.php?site=fumin&pageId=37593,,27,6,27,2
+27-6,27-5,2020/02/22,接触(2/22),大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/index.php?site=fumin&pageId=37593,,27,6,27,5
+27-8,27-2,2020/02/15,ライブハウス滞在 (2/15 大阪京橋ライブハウスArc),大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/index.php?site=fumin&pageId=37614,,27,8,27,2
+27-9,27-2,2020/02/15,"ライブハウス滞在 (2/15,16 大阪京橋ライブハウスArc)",大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,9,27,2
+27-10,27-2,2020/02/15,"ライブハウス滞在 (2/15,16 大阪京橋ライブハウスArc)",大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,10,27,2
 27-11,27-3,,同じ勤務先の職員,大阪府,東大阪市の医療機関,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,11,27,3
 27-12,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,12,20,2
-27-12,27-2,,ライブハウス滞在 (2/16 大阪京橋ライブハウスArc),大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,12,27,2
-27-12,27-5,,接触(2/21)、ライブハウス滞在(2/23 Live House Rumio),大阪府,ライブハウスSoap opera classics -Umeda,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,12,27,5
-27-12,27-5,,"ライブハウス滞在 (2/19,23 Soap opera classics -Umeda)",大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,12,27,5
-27-13,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,13,20,2
-27-13,27-5,,ライブハウス滞在 (2/23 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,13,27,5
+27-12,27-2,2020/02/16,ライブハウス滞在 (2/16 大阪京橋ライブハウスArc),大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,12,27,2
+27-12,27-5,2020/02/21,接触(2/21)、ライブハウス滞在(2/23 Live House Rumio),大阪府,ライブハウスSoap opera classics -Umeda,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,12,27,5
+27-12,27-5,2020/02/19,"ライブハウス滞在 (2/19,23 Soap opera classics -Umeda)",大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,12,27,5
+27-13,20-2,2020/02/23,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,13,20,2
+27-13,27-5,2020/02/23,ライブハウス滞在 (2/23 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,13,27,5
 27-14,27-7,,家族(妻),大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,14,27,7
 27-15,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,15,20,2
-27-15,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda、americamura FANJ twice),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,15,27,5
-27-16,27-5,,ライブハウス滞在 (Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,16,27,5
-27-18,27-2,,ライブハウス滞在 (大阪京橋ライブハウスArc),大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37643_4.pdf,,27,18,27,2
+27-15,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda、americamura FANJ twice),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37633_5.pdf,,27,15,27,5
+27-18,27-2,2020/02/16,ライブハウス滞在 (大阪京橋ライブハウスArc),大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37643_4.pdf,,27,18,27,2
 27-19,27-2,,ライブハウス滞在者の同居家族 (大阪京橋ライブハウスArc),大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,19,27,2
 27-19,27-118,,同居家族,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37802_4.pdf,,27,19,27,118
 27-20,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,20,20,2
-27-20,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,20,27,5
+27-20,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,20,27,5
 27-21,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,21,20,2
-27-21,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,21,27,5
+27-21,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,21,27,5
 27-22,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,22,20,2
-27-22,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,22,27,5
+27-22,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,22,27,5
 27-23,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,23,20,2
-27-23,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,23,27,5
+27-23,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,23,27,5
 27-24,27-15,,同僚,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,24,27,15
 27-25,27-24,,家族,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,25,27,24
 27-26,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,26,20,2
-27-26,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,26,27,5
+27-26,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,26,27,5
 27-27,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,27,20,2
 27-27,27-2,,NA,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,27,27,2
-27-27,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,27,27,5
+27-27,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,27,27,5
 27-28,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,28,20,2
-27-28,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,28,27,5
+27-28,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,28,27,5
 27-29,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,29,20,2
-27-29,27-5,,ライブハウス滞在 (2/23 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,29,27,5
+27-29,27-5,2020/02/23,ライブハウス滞在 (2/23 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,29,27,5
 27-30,27-13,,同居家族,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,30,27,13
 27-31,27-5,,ライブハウス滞在者と接触 (Soap opera classics -Umeda),大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37645_5.pdf,,27,31,27,5
-27-32,27-2,,"ライブハウス滞在 (2/15,16 大阪京橋ライブハウスArc)",大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,32,27,2
-27-32,27-12,,ライブハウス滞在 (Live House Rumio),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,32,27,12
-27-33,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,33,20,2
-27-33,27-2,,"ライブハウス滞在 (2/15,16 大阪京橋ライブハウスArc)",大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,33,27,2
-27-33,27-5,,ライブハウス滞在 (Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,33,27,5
-27-33,27-5,,ライブハウス滞在 (Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,33,27,5
-27-34,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,34,20,2
-27-34,27-2,,"ライブハウス滞在 (2/15,16 大阪京橋ライブハウスArc)",大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,34,27,2
-27-34,27-5,,"ライブハウス滞在 (2/19,23 Soap opera classics -Umeda)",大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,34,27,5
-27-34,27-5,,"ライブハウス滞在 (2/19,23 Soap opera classics -Umeda)",大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,34,27,5
-27-34,27-12,,ライブハウス滞在 (2/18 Live House Rumio),大阪府,LIVE HOUSE Rumio,34.698794,135.5036716,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,34,27,12
-27-35,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,35,20,2
-27-35,27-2,,"ライブハウス滞在 (2/15,16 大阪京橋ライブハウスArc)",大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,35,27,2
+27-32,27-2,2020/02/15,"ライブハウス滞在 (2/15,16 大阪京橋ライブハウスArc)",大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,32,27,2
+27-32,27-12,2020/02/15,ライブハウス滞在 (Arc、Live House Rumio),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,32,27,12
+27-33,20-2,2020/02/15,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,33,20,2
+27-33,27-2,2020/02/15,"ライブハウス滞在 (2/15,16 大阪京橋ライブハウスArc)",大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,33,27,2
+27-33,27-5,2020/02/19,ライブハウス滞在 (Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,33,27,5
+27-33,27-5,2020/02/15,ライブハウス滞在 (Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,33,27,5
+27-34,20-2,2020/02/15,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,34,20,2
+27-34,27-2,2020/02/15,"ライブハウス滞在 (2/15,16 大阪京橋ライブハウスArc)",大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,34,27,2
+27-34,27-5,2020/02/19,"ライブハウス滞在 (2/19,23 Soap opera classics -Umeda)",大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,34,27,5
+27-34,27-5,2020/02/19,"ライブハウス滞在 (2/19,23 Soap opera classics -Umeda)",大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,34,27,5
+27-34,27-12,2020/02/18,ライブハウス滞在 (2/18 Live House Rumio),大阪府,LIVE HOUSE Rumio,34.698794,135.5036716,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,34,27,12
+27-35,20-2,2020/02/15,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,35,20,2
+27-35,27-2,2020/02/15,"ライブハウス滞在 (2/15,16 大阪京橋ライブハウスArc)",大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,35,27,2
 27-35,27-83,,同僚,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,35,27,83
 27-36,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,36,20,2
-27-36,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,36,27,5
+27-36,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,36,27,5
 27-37,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,37,20,2
-27-37,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,37,27,5
+27-37,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,37,27,5
 27-38,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,38,20,2
-27-38,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,38,27,5
+27-38,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,38,27,5
 27-39,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,39,20,2
-27-39,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,39,27,5
+27-39,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,39,27,5
 27-40,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,40,20,2
-27-40,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,40,27,5
+27-40,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,40,27,5
 27-41,27-76,,接触有,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37656_5.pdf,,27,41,27,76
 27-42,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,42,20,2
-27-42,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,42,27,5
+27-42,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,42,27,5
 27-44,27-19,,同居家族,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,44,27,19
 27-44,27-118,,同居家族,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37802_4.pdf,,27,44,27,118
 27-45,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,45,20,2
-27-45,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,45,27,5
+27-45,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,45,27,5
 27-46,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,46,20,2
-27-46,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,46,27,5
+27-46,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,46,27,5
 27-47,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,47,20,2
-27-47,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,47,27,5
+27-47,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,47,27,5
 27-48,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,48,20,2
-27-48,27-5,,"ライブハウス滞在 (2/19,23 Soap opera classics -Umeda)",大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,48,27,5
+27-48,27-5,2020/02/19,"ライブハウス滞在 (2/19,23 Soap opera classics -Umeda)",大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,48,27,5
 27-49,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,49,20,2
-27-49,27-5,,ライブハウス滞在 (Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,49,27,5
+27-49,27-5,2020/02/23,ライブハウス滞在 (Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,49,27,5
 27-50,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,50,20,2
 27-52,27-44,,同居家族,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,52,27,44
 27-52,27-118,,同居家族,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37802_4.pdf,,27,52,27,118
-27-53,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,53,20,2
-27-58,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,58,20,2
-27-58,27-2,,ライブハウス滞在 (2/15 大阪京橋ライブハウスArc),大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,58,27,2
-27-58,27-5,,ライブハウス滞在 (2/24 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,58,27,5
-27-58,27-5,,ライブハウス滞在 (2/24 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,58,27,5
+27-53,20-2,2020/02/19,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37659_5.pdf,,27,53,20,2
+27-58,20-2,2020/02/24,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,58,20,2
+27-58,27-2,2020/02/15,ライブハウス滞在 (2/15 大阪京橋ライブハウスArc),大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,58,27,2
+27-58,27-5,2020/02/24,ライブハウス滞在 (2/24 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,58,27,5
+27-58,27-5,2020/02/24,ライブハウス滞在 (2/24 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,58,27,5
 27-60,27-47,,濃厚接触者,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,60,27,47
 27-61,27-35,,同僚,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,61,27,35
 27-62,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,62,20,2
-27-62,27-5,,ライブハウス滞在 (2/24 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,62,27,5
+27-62,27-5,2020/02/24,ライブハウス滞在 (2/24 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,62,27,5
 27-63,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,63,20,2
-27-63,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,63,27,5
+27-63,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,63,27,5
 27-64,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,64,20,2
-27-64,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,64,27,5
+27-64,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,64,27,5
 27-65,27-55,,濃厚接触者,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,65,27,55
-27-67,27-15,,ライブハウス滞在 (2/21 americamura FANJ twice),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,67,27,15
+27-67,27-15,2020/02/21,ライブハウス滞在 (2/21 americamura FANJ twice),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,67,27,15
 27-72,27-13,,同僚,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,72,27,13
-27-73,27-15,,ライブハウス滞在 (2/21 americamura FANJ twice),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,73,27,15
+27-73,27-15,2020/02/21,ライブハウス滞在 (2/21 americamura FANJ twice),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37680_5.pdf,,27,73,27,15
 27-74,27-21,,濃厚接触者,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37694_4.pdf,,27,74,27,21
 27-76,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37694_4.pdf,,27,76,20,2
-27-76,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37694_4.pdf,,27,76,27,5
+27-76,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37694_4.pdf,,27,76,27,5
 27-76,27-46,,濃厚接触者,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37694_4.pdf,,27,76,27,46
 27-77,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37694_4.pdf,,27,77,20,2
-27-77,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37694_4.pdf,,27,77,27,5
+27-77,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37694_4.pdf,,27,77,27,5
 27-77,27-46,,濃厚接触者,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37694_4.pdf,,27,77,27,46
 27-79,27-47,,濃厚接触者,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37694_4.pdf,,27,79,27,47
 27-80,20-2,,NA,大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37694_4.pdf,,27,80,20,2
-27-80,27-5,,ライブハウス滞在 (2/24 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37694_4.pdf,,27,80,27,5
-27-80,27-12,,ライブハウス滞在 (2/18 Live House Rumio),大阪府,LIVE HOUSE Rumio,34.698794,135.5036716,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37694_4.pdf,,27,80,27,12
+27-80,27-5,2020/02/24,ライブハウス滞在 (2/24 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37694_4.pdf,,27,80,27,5
+27-80,27-12,2020/02/18,ライブハウス滞在 (2/18 Live House Rumio),大阪府,LIVE HOUSE Rumio,34.698794,135.5036716,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37694_4.pdf,,27,80,27,12
 27-81,27-59,,濃厚接触者,大阪府,NA,,,https://www.mhlw.go.jp/content/10906000/000607874.pdf,,27,81,27,59
 27-83,27-61,,同居家族,大阪府,NA,,,https://www.mhlw.go.jp/content/10906000/000607874.pdf,,27,83,27,61
 27-85,27-67,,同居家族,大阪府,NA,,,https://www.mhlw.go.jp/content/10906000/000607874.pdf,,27,85,27,67
 27-86,27-67,,同居家族,大阪府,NA,,,https://www.mhlw.go.jp/content/10906000/000607874.pdf,,27,86,27,67
-27-87,42-1,,イベントスペースで面会(2/21),大阪府,神戸市のイベントスペース,,,https://www.mhlw.go.jp/content/10906000/000607874.pdf;  http://www.pref.osaka.lg.jp/hodo/attach/hodo-37733_4.pdf,,27,87,42,1
+27-87,42-1,2020/02/21,イベントスペースで面会(2/21),大阪府,神戸市のイベントスペース,,,https://www.mhlw.go.jp/content/10906000/000607874.pdf;  http://www.pref.osaka.lg.jp/hodo/attach/hodo-37733_4.pdf,,27,87,42,1
 27-88,27-87,,同居家族,大阪府,NA,,,https://www.mhlw.go.jp/content/10906000/000607874.pdf,,27,88,27,87
 27-89,27-46,,濃厚接触者,大阪府,NA,,,https://www.mhlw.go.jp/content/10906000/000607874.pdf,,27,89,27,46
 27-90,27-41,,濃厚接触者,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37729_4.pdf,,27,90,27,41
 27-96,27-87,,濃厚接触者,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37733_4.pdf,,27,96,27,87
 27-100,27-85,,濃厚接触者,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37733_4.pdf; http://www.pref.osaka.lg.jp/hodo/attach/hodo-37735_4.pdf,,27,100,27,85
-27-103,27-88,,接触有(3/4),大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37735_4.pdf,,27,103,27,88
+27-103,27-88,2020/03/04,接触有(3/4),大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37735_4.pdf,,27,103,27,88
 27-104,27-57,,同居家族,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37735_4.pdf; http://www.pref.osaka.lg.jp/hodo/attach/hodo-37747_4.pdf,,27,104,27,57
 27-106,27-95,,濃厚接触者,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37735_4.pdf,,27,106,27,95
 27-107,27-108,,同居家族,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37747_4.pdf,,27,107,27,108
 27-108,27-96,,濃厚接触者,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37747_4.pdf,,27,108,27,96
-27-109,27-88,,接触有(3/4),大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37758_4.pdf,,27,109,27,88
+27-109,27-88,2020/03/04,接触有(3/4),大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37758_4.pdf,,27,109,27,88
 27-110,27-60,,濃厚接触者,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37758_4.pdf,,27,110,27,60
 27-111,27-12,,同居家族,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37758_4.pdf,,27,111,27,12
 27-112,27-98,,同居家族,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37758_4.pdf,,27,112,27,98
@@ -513,24 +508,24 @@
 27-167,27-194,,同居家族,大阪府,大阪市,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37890_4.pdf,,27,167,27,194
 27-168,27-195,,同僚,大阪府,NA,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37890_4.pdf,,27,168,27,195
 27-192,27-193,,同居家族,大阪府,大阪市,,,http://www.pref.osaka.lg.jp/hodo/attach/hodo-37890_4.pdf,,27,192,27,193
-28-3,27-2,,ライブハウス滞在 (2/15 大阪京橋ライブハウスArc),大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html; https://www.city.kobe.lg.jp/a57337/kenko/health/korona2reime.html,,28,3,27,2
-28-4,27-2,,ライブハウス滞在 (2/15 大阪京橋ライブハウスArc),大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,4,27,2
+28-3,27-2,2020/02/15,ライブハウス滞在 (2/15 大阪京橋ライブハウスArc),大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html; https://www.city.kobe.lg.jp/a57337/kenko/health/korona2reime.html,,28,3,27,2
+28-4,27-2,2020/02/15,ライブハウス滞在 (2/15 大阪京橋ライブハウスArc),大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,4,27,2
 28-5,20-2,,NA,兵庫県,Soap opera classics-Umeda,34.6976168,135.503047,https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200306siryou.pdf,,28,5,20,2
-28-6,27-2,,ライブハウス滞在 (2/15 大阪京橋ライブハウスArc),大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html; https://www.nishi.or.jp/kurashi/anshin/infomation/k_00022020111.files/HP2-2.pdf,,28,6,27,2
+28-6,27-2,2020/02/15,ライブハウス滞在 (2/15 大阪京橋ライブハウスArc),大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html; https://www.nishi.or.jp/kurashi/anshin/infomation/k_00022020111.files/HP2-2.pdf,,28,6,27,2
 28-7,20-2,,NA,兵庫県,Soap opera classics-Umeda,34.6976168,135.503047,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,7,20,2
-28-8,27-5,,ライブハウス滞在 (2/19 americamura FANJ twice),兵庫県,americamura FANJ twice,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,8,27,5
+28-8,27-5,2020/02/19,ライブハウス滞在 (2/19 americamura FANJ twice),兵庫県,americamura FANJ twice,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,8,27,5
 28-9,28-7,,NA,兵庫県,Soap opera classics-Umeda,34.6976168,135.503047,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html; https://www.nishi.or.jp/kurashi/anshin/infomation/k_00022020111.files/HP3-2.pdf,,28,9,28,7
 28-10,28-12,,夫婦,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html;https://www.nishi.or.jp/kurashi/anshin/infomation/k_00022020111.files/HP4-2.pdf;http://www.ryokushinkai.jp/,,28,10,28,12
 28-11,28-15,,娘,兵庫県,NA,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html; https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200308.pdf,,28,11,28,15
-28-13,27-12,,ライブハウス滞在 (2/18 Live House Rumio),大阪府,LIVE HOUSE Rumio,34.698794,135.5036716,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html; https://www.city.kobe.lg.jp/a57337/kenko/health/corona3reime3hou.html,,28,13,27,12
-28-14,27-2,,ライブハウス滞在 (2/16 大阪京橋ライブハウスArc),大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,14,27,2
+28-13,27-12,2020/02/18,ライブハウス滞在 (2/18 Live House Rumio),大阪府,LIVE HOUSE Rumio,34.698794,135.5036716,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html; https://www.city.kobe.lg.jp/a57337/kenko/health/corona3reime3hou.html,,28,13,27,12
+28-14,27-2,2020/02/16,ライブハウス滞在 (2/16 大阪京橋ライブハウスArc),大阪府,大阪京橋ライブハウスArc,34.6983047,135.5249511,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,14,27,2
 28-17,28-11,,同僚看護師,兵庫県,仁恵病院,34.841407,134.712999,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html; https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200308.pdf,,28,17,28,11
 28-18,28-11,,看護師と患者,兵庫県,仁恵病院,34.841407,134.712999,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html; https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200310.pdf,,28,18,28,11
 28-19,28-10,,スタッフと利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html;https://www.city.amagasaki.hyogo.jp/kurashi/kenko/kansensyo/1020449/1020423.html,,28,19,28,10
 28-20,28-10,,施設利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html;https://www.city.amagasaki.hyogo.jp/kurashi/kenko/kansensyo/1020449/1020424.html,,28,20,28,10
 28-21,28-10,,スタッフと利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html;https://www.nishi.or.jp/kurashi/anshin/infomation/k_00022020111.files/HP5-2.pdf,,28,21,28,10
 28-22,28-10,,施設利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,22,28,10
-28-24,20-2,,NA,兵庫県,Soap opera classics-Umeda,34.6976168,135.503047,https://www.city.kobe.lg.jp/a57337/kenko/health/corona5reime.html,,28,24,20,2
+28-24,20-2,2020/02/19,NA,兵庫県,Soap opera classics-Umeda,34.6976168,135.503047,https://www.city.kobe.lg.jp/a57337/kenko/health/corona5reime.html,,28,24,20,2
 28-26,28-11,,看護師と患者,兵庫県,仁恵病院,34.841407,134.712999,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html; https://www.city.himeji.lg.jp/emergencyinfo/cmsfiles/emergency/179/200311No6.pdf,,28,26,28,11
 28-27,28-10,,施設利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,27,28,10
 28-28,28-10,,施設利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,28,28,10
@@ -550,7 +545,7 @@
 28-43,28-10,,施設利用者,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,43,28,10
 28-44,28-10,,NA,兵庫県,介護老人保健施設グリーンアルス伊丹デイケア,34.79077,135.375754,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,44,28,10
 28-45,28-16,,保育園園長と勤務者,兵庫県,聖ニコラス天使園,34.717521,135.280803,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html,,28,45,28,16
-28-48,27-5,,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html;https://www.city.kobe.lg.jp/a73576/coronavirus11_16.html,,28,48,27,5
+28-48,27-5,2020/02/19,ライブハウス滞在 (2/19 Soap opera classics -Umeda),大阪府,Soap opera classics-Umeda,34.6976168,135.503047,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html;https://www.city.kobe.lg.jp/a73576/coronavirus11_16.html,,28,48,27,5
 28-49,28-48,,同居,兵庫県,神戸市,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html;https://www.city.kobe.lg.jp/a73576/coronavirus11_16.html,,28,49,28,48
 28-50,28-48,,施設利用者,兵庫県,神戸市内の介護保険通所事業所,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html;https://www.city.kobe.lg.jp/a73576/coronavirus11_16.html;https://web.pref.hyogo.lg.jp/kk03/corona_kanjyajyokyo.html,,28,50,28,48
 28-52,28-50,,施設利用者,兵庫県,神戸市内の介護保険通所事業所,,,https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html;https://www.city.kobe.lg.jp/a73576/coronavirus11_16.html,,28,52,28,50
@@ -618,20 +613,22 @@
 30-5,30-8,,弟,和歌山県,済生会有田病院,34.046097,135.193406,https://www.pref.wakayama.lg.jp/prefg/041200/d00203387.html,,30,5,30,8
 30-5,30-13,,同僚,和歌山県,済生会有田病院,34.046097,135.193406,https://www.pref.wakayama.lg.jp/prefg/041200/d00203387.html,,30,5,30,13
 30-18,36-3,NA,NA,NA,NA,,,https://www.pref.tokushima.lg.jp/file/attachment/552068.pdf,,30,18,36,3
-30-18,36-3,NA,NA,NA,NA,,,https://www.pref.tokushima.lg.jp/file/attachment/552068.pdf,,30,18,36,3
 35-1,35-2,,家族,山口県,下関市,,,http://www.city.shimonoseki.lg.jp/www/contents/1583381707607/index.html,,35,1,35,2
 35-1,35-3,,家族,山口県,下関市,,,http://www.city.shimonoseki.lg.jp/www/contents/1583381707607/index.html,,35,1,35,3
 35-5,35-6,,家族,山口県,山口市,,,https://www.pref.yamaguchi.lg.jp/cms/a15200/kansensyou/koronahassei.html,,35,5,35,6
 36-2,38-4,2020/03/21,NA,京都府,京都産業大ゼミ卒業祝賀会,,,https://www.pref.tokushima.lg.jp/file/attachment/552067.pdf,,36,2,38,4
 37-2,38-4,2020/03/21,NA,京都府,京都産業大ゼミ卒業祝賀会,,,https://www.pref.kagawa.lg.jp/content/etc/web/upfiles/wazlqj200330235511_f03.pdf,,37,2,38,4
-39-1,39-2,,家族,高知県,大阪市ライブハウス(Arc),34.694861,135.527709,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/case-2.pdf,,39,1,39,2
-39-1,39-3,,友人,高知県,大阪市ライブハウス(Arc),34.694861,135.527709,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/teirei0307.pdf,,39,1,39,3
-39-1,39-4,,同僚,高知県,大阪市ライブハウス(Arc),34.694861,135.527709,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/case4-6.pdf,,39,1,39,4
+39-1,39-2,,家族,高知県,高知市,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/case-2.pdf,,39,1,39,2
+39-1,39-3,,友人,高知県,高知市,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/teirei0307.pdf,,39,1,39,3
+39-1,39-4,,同僚,高知県,高知市,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/case4-6.pdf,,39,1,39,4
 39-3,39-5,,家族,高知県,高知市,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/case4-6.pdf,,39,3,39,5
 39-3,39-6,,家族,高知県,高知市,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/case4-6.pdf,,39,3,39,6
 39-3,39-7,,親族,高知県,高知市,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/case-7.pdf; https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/teirei0305.pdf,,39,3,39,7
 39-8,39-10,,親族,高知県,高知市,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/teirei0307.pdf,,39,8,39,10
 39-13,39-14,,家族,高知県,NA,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/file_20203290161349_1.pdf,,39,13,39,14
+39-13,39-16,2020/03/21,友人,高知県,カラオケ,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/file_20203312175933_1.pdf,,39,13,39,16
+39-13,39-18,2020/03/21,友人,高知県,カラオケ,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/file_2020413164127_1.pdf,,39,13,39,18
+39-17,39-20,,同僚,高知県,NA,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/file_2020413164227_1.pdf,,39,17,39,20
 40-2,40-1,,妻,福岡県,福岡市中央区,33.5893941,130.3930231,https://www.pref.fukuoka.lg.jp/contents/bukan.html#A1-2-2,,40,2,40,1
 40-9,40-8,,家族,福岡県,飯塚市,,,https://www.pref.fukuoka.lg.jp/contents/bukan.html#A1-2-2,,40,9,40,8
 44-2,44-3,,夫婦,大分県,NA,,,https://www3.nhk.or.jp/news/html/20200325/k10012349501000.html,,44,2,44,3
@@ -653,6 +650,18 @@
 47-6,47-7,,NA,沖縄県,NA,,,https://www.pref.okinawa.jp/site/hoken/chiikihoken/kekkaku/press/documents/okinawa-cov0328.pdf,,47,6,47,7
 44-15または44-17,44-2,,同病院のスタッフと患者,大分県,大分医療センター,33.252817,131.721763,https://news.livedoor.com/article/detail/18003925/,,#REF!,,44,2
 44-15または44-17,センターから転院後に感染が判明した８０代男性,,看護師と患者,大分県,大分県立病院,33.206978,131.5989,https://www.oita-press.co.jp/1010000000/2020/03/23/JD0059080799,,#REF!,,センターから転院後に感染が判明した８０代男性,
+9-7,9-6,,妻,栃木県,栃木県安足健康福祉センター管内,,,http://www.pref.tochigi.lg.jp/e04/welfare/hoken-eisei/kansen/hp/documents/200331hasseijyoukyou.pdf,,,,,
+9-8,9-6,,同僚,栃木県,NA,,,http://www.pref.tochigi.lg.jp/e04/welfare/hoken-eisei/kansen/hp/documents/200331hasseijyoukyou.pdf,,,,,
+9-9,9-8,,妻,栃木県,栃木県県西健康福祉センター,,,http://www.pref.tochigi.lg.jp/e04/welfare/hoken-eisei/kansen/hp/documents/200331hasseijyoukyou.pdf,,,,,
+9-10,県外の陽性確定者（3/24 判明）,2020/03/13,会食,NA,NA,,,http://www.pref.tochigi.lg.jp/e04/welfare/hoken-eisei/kansen/hp/documents/10reime.pdf,,,,,
+9-11,9-10,,子供,栃木県,,,,,,,,,
+11-22,11-18,2020/02/23,ナイル川ツアー同行,NA,エジプト,,,https://www.pref.saitama.lg.jp/a0701/covid19/jokyo.html,,,,,
+11-22,11-34,2020/02/23,ナイル川ツアー同行,NA,エジプト,,,https://www.city.saitama.jp/002/001/008/006/001/p070442.html,,,,,
+11-35,11-18,2020/02/23,ナイル川ツアー同行,NA,エジプト,,,,,,,,
+12-30,14-98,2020/02/26,ナイル川ツアー同行,NA,エジプト,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov20200314.html,,,,,
+13-74,11-18,2020/02/23,ナイル川ツアー同行,NA,エジプト,,,https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000068/resource/c2d997db-1450-43fa-8037-ebb11ec28d4c;https://www.bousai.metro.tokyo.lg.jp/taisaku/saigai/1007261/1007474.html;https://www.asahi.com/articles/ASN3D72L3N3DUTIL03X.html,,,,,
+14-56,11-18,2020/02/23,ナイル川ツアー同行,NA,エジプト,,,https://www.pref.kanagawa.jp/documents/58277/20200315_yokosuka_corona.doc;https://www.city.yokosuka.kanagawa.jp/3130/nagekomi/20200316.html;https://www.city.yokosuka.kanagawa.jp/3130/nagekomi/20200317.html,,,,,
+14-51,11-18,2020/02/23,ナイル川ツアー同行,NA,エジプト,,,https://www.pref.kanagawa.jp/docs/ga5/bukanshi/occurrence.html,,,,,
 12-26,12-25,2020/02/22,ナイル川ツアー同行,NA,エジプト,,,https://www.pref.chiba.lg.jp/shippei/press/2019/ncov-index.html,,,,,
 26-18,26-19,2020/02/21,ナイル川ツアー同行,NA,エジプト,,,https://www.pref.kyoto.jp/kentai/news/novelcoronavirus.html#F,,,,,
 39-12,12-25,2020/02/22,ナイル川ツアー同行,NA,エジプト,,,https://www.pref.kochi.lg.jp/soshiki/130401/files/2020022900049/file_2020380164017_1.pdf,,,,,
@@ -685,6 +694,11 @@
 40-27,id不明（第一報では40-27は陽性者の濃厚接触者）,,NA,福岡県,NA,,,https://www.pref.fukuoka.lg.jp/contents/covid-19-portal.html#A1-3-2,,,,,
 40-27,40-28,,家族,福岡県,福岡市南区,33.5615,130.426351,https://www.pref.fukuoka.lg.jp/contents/covid-19-portal.html#A1-3-2,,,,,
 40-34,id不明（第一報では40-34は陽性者の濃厚接触者）,2020/03/24,NA,福岡県,NA,,,https://www.pref.fukuoka.lg.jp/contents/covid-19-portal.html#A1-3-2,,,,,
+40-52,40-25,,NA,福岡県,NA,,,https://www.pref.fukuoka.lg.jp/contents/covid-19-portal.html,,,,,
+40-74,40-75,,夫婦,福岡県,,,,https://www.pref.fukuoka.lg.jp/contents/covid-19-portal.html,,,,,
+40-76,40-35,,家族（親子）,福岡県,糸島市,,,https://www.pref.fukuoka.lg.jp/contents/covid-19-portal.html,,,,,
+40-76,40-77,,家族（夫婦）,福岡県,糸島市,,,https://www.pref.fukuoka.lg.jp/contents/covid-19-portal.html,,,,,
+40-77,40-35,,家族（親子）,福岡県,糸島市,,,https://www.pref.fukuoka.lg.jp/contents/covid-19-portal.html,,,,,
 43-11,43-9,,夫婦,熊本県,熊本市中央区,,,http://www.city.kumamoto.jp/common/UploadFileDsp.aspx?c_id=5&id=26562&sub_id=186&flid=200787,,,,,
 43-12,43-14,,親族,熊本県,熊本市西区,32.776335,130.647519,http://www.city.kumamoto.jp/common/UploadFileDsp.aspx?c_id=5&id=26562&sub_id=195&flid=201039,,,,,
 14-122,14-92,,NA,神奈川県,NA,,,https://www.pref.kanagawa.jp/docs/ga4/bukanshi/occurrence.html,,,,,
@@ -760,6 +774,7 @@
 13-220,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200326menkai.html,,,,,
 13-221,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200326menkai.html,,,,,
 13-222,8-4,,病院,東京都,台東区 永寿総合病院,35.709759,139.779684,http://www.eijuhp.com/news/jyuyo/news_20200326menkai.html,,,,,
+11-14,11-13,2020/02/24,ナイル川ツアー同行,NA,エジプト,,,https://www.pref.saitama.lg.jp/a0701/covid19/jokyo.html,,,,,
 11-77,11-83,,別居の親族,埼玉県,川口市,35.807738,139.724171,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0329-01.html,,,,,
 18-10,18-8,,NA,福井県,会食,,,https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200328-1.pdf,,,,,
 18-11,18-7,,NA,福井県,会食,,,https://www.pref.fukui.lg.jp/doc/kenkou/kansensyo-yobousessyu/corona_d/fil/200328-1.pdf,,,,,
@@ -773,8 +788,8 @@
 11-75,11-54,,家族,埼玉県,春日部市,,,https://www.pref.saitama.lg.jp/a0701/covid19/jokyo.html,,,,,
 11-78,11-69,,家族,埼玉県,春日部市 ,35.975401,139.752268,https://www.pref.saitama.lg.jp/a0001/news/page/2019/0328-01.html,,,,,
 5-3,5-4,,同僚,秋田県,仙台旅行,,,https://www.pref.akita.lg.jp/uploads/public/archive_0000047957_00/R02.03.27%E3%80%80%E5%A0%B1%E9%81%93%E7%99%BA%E8%A1%A8%E8%B3%87%E6%96%99%EF%BC%883%E3%80%814%E4%BB%B6%E7%9B%AE%EF%BC%89.pdf;https://www.pref.akita.lg.jp/uploads/public/archive_0000047957_00/R02.03.28%E3%80%80%E5%A0%B1%E9%81%93%E7%99%BA%E8%A1%A8%E8%B3%87%E6%96%99%EF%BC%883%E3%80%814%E4%BE%8B%E7%9B%AE%EF%BC%9A%E8%BF%BD%E5%8A%A0%EF%BC%89.pdf,,,,,
-8-14,8-12,,,茨城県,ＪＡとりで総合医療センター,35.911038,140.068802,https://www.pref.ibaraki.jp/1saigai/2019-ncov/documents/2003281415.pdf,,,,,
-8-15,8-12,,,茨城県,ＪＡとりで総合医療センター,35.911038,140.068802,https://www.pref.ibaraki.jp/1saigai/2019-ncov/documents/2003281415.pdf,,,,,
+8-14,8-12,,NA,茨城県,ＪＡとりで総合医療センター,35.911038,140.068802,https://www.pref.ibaraki.jp/1saigai/2019-ncov/documents/2003281415.pdf,,,,,
+8-15,8-12,,NA,茨城県,ＪＡとりで総合医療センター,35.911038,140.068802,https://www.pref.ibaraki.jp/1saigai/2019-ncov/documents/2003281415.pdf,,,,,
 10-2,10-1,,保育士と従業員,群馬県,木崎あおぞら保育園（太田市）,36.282147,139.29932,https://www.pref.gunma.jp/contents/100149662.pdf,,,,,
 10-7,10-1,,同居家族,群馬県,木崎あおぞら保育園（太田市）,36.282147,139.29932,https://www.pref.gunma.jp/contents/100149662.pdf,,,,,
 10-4,10-3,,看護師と医師,群馬県,ましも内科・胃腸科（大泉町）,36.258743,139.418484,https://www.pref.gunma.jp/contents/100149662.pdf,,,,,
