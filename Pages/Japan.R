@@ -108,7 +108,7 @@ fluidPage(
             enable_label = T,
             collapsible = T,
             collapsed = T,
-            label_text = paste('集計時間：', max(as.Date(positiveDetail$発表日, '%m月%d日'), na.rm = T)),
+            label_text = paste('集計時間：', max(as.Date(positiveDetail$発表日), na.rm = T)),
             echarts4rOutput('genderBar') %>% withSpinner(),
             closable = F,
             footer = tags$small('データ提供：', 

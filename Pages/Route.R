@@ -99,7 +99,7 @@ fluidRow(column(
     enable_label = T,
     collapsible = T,
     label_text = paste('集計時間：', max(
-      as.Date(positiveDetail$発表日, '%m月%d日'), na.rm = T
+      as.Date(positiveDetail$発表日), na.rm = T
     )),
     closable = F,
     footer = tags$small(
