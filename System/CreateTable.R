@@ -28,6 +28,12 @@ callCenterDailyReport$date <- as.Date(as.character(callCenterDailyReport$date), 
 # 文言データを取得
 lang <- fread(paste0(DATA_PATH, 'lang.csv'))
 langCode <- 'ja'
+# 都道府県人口密度
+provinceAttr <- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 都道府県マスタ.csv'))
+provinceAttr$人口 <- as.numeric(gsub(',', '', provinceAttr$人口))
+provinceAttr[, `都道府県` := gsub('県', '', `都道府県`)]
+provinceAttr[, `都道府県` := gsub('府', '', `都道府県`)]
+provinceAttr[, `都道府県` := gsub('東京都', '東京', `都道府県`)]
 # 色設定
 lightRed <- '#F56954'
 middleRed <- '#DD4B39'
@@ -154,6 +160,12 @@ detailSparkLine <- sapply(detailSparkLineDt$都道府県名, function(region) {
           )
 })
 
+# 感染密度
+# for (i in 1:length(total)) {
+#   provinceAttr[names(total[i]) == 都道府県, millianConfirmed :=
+#     (total[i] / (provinceAttr[都道府県 == names(total[i])]$人口 / 1000000))[[1]]]
+# }
+
 
 # テーブル作成
 totalToday <- paste0(total, '<r ', today, '<r >')
@@ -277,6 +289,8 @@ signateDetail[ステータス == 2, status := '死亡']
 signateDetail[is.na(ステータス), status := '調査中']
 # アイコンサイズ設定
 signateDetail$size <- 18
+# 公表日
+signateDetail$公表日 <- as.Date(signateDetail$公表日)
 
 signateDetail[性別 == '男性', symbolIcon := paste0('path://', svgIcon[name == 'male']$svg)]
 signateDetail[性別 == '女性', symbolIcon := paste0('path://', svgIcon[name == 'female']$svg)]
