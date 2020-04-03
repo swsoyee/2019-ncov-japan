@@ -22,7 +22,7 @@ output$news <- renderDataTable({
     colnames = lang[[langCode]][14], # 感染確認情報
     escape = F
   )
-}, server = T)
+})
 
 output$detail <- renderDataTable({
   datatable(detail,
@@ -49,7 +49,7 @@ output$detail <- renderDataTable({
       target = 'row',
       background = styleEqual('終了', '#CCCCCC'),
     )
-}, server = T)
+})
 
 # observeEvent(input$switchTableVersion, {
 #   if (input$switchTableVersion) {
