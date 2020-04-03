@@ -241,19 +241,37 @@ processData <- fread(input = paste0(DATA_PATH, 'resultProcessData.csv'))
 # ====
 # 定数設定
 # ====
+convertUnit2Ja <- function(x) {
+  x <- as.character(units(x))
+  if (x == 'secs') {
+    return('秒前')
+  } else if (x == 'mins') {
+    return('分前')
+  } else if (x == 'hours') {
+    return('時間前')
+  } else if (x == 'days') {
+    return('日前')
+  } else if (x == 'weeks') {
+    return('週前')
+  } else {
+    return(paste(x, 'ago'))
+  }
+}  
 # Real-time感染数の更新時間
 UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'byDate.csv'))$mtime
 latestUpdateDuration <- difftime(Sys.time(), UPDATE_DATETIME)
-LATEST_UPDATE <- paste(round(latestUpdateDuration[[1]], 0),  units(latestUpdateDuration), 'ago')
+LATEST_UPDATE <- paste0(
+  round(latestUpdateDuration[[1]], 0), 
+  convertUnit2Ja(latestUpdateDuration)
+)
 
 # PCRデータ（厚労省対応）の更新時間
 UPDATE_DATETIME_DOMESTIC_DAILY_REPORT <- file.info(paste0(DATA_PATH, 'domesticDailyReport.csv'))$mtime
 latestUpdateDomesticDailyReportDuration <- difftime(Sys.time(), UPDATE_DATETIME_DOMESTIC_DAILY_REPORT)
-LATEST_UPDATE_DOMESTIC_DAILY_REPORT <- paste(
-  round(latestUpdateDomesticDailyReportDuration[[1]], 0),  
-  units(latestUpdateDomesticDailyReportDuration), 
-  'ago'
-  )
+LATEST_UPDATE_DOMESTIC_DAILY_REPORT <- paste0(
+  round(latestUpdateDomesticDailyReportDuration[[1]], 0), 
+  convertUnit2Ja(latestUpdateDomesticDailyReportDuration)
+)
 
 RECOVERED_FILE_UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'recovered.csv'))$mtime
 DEATH_FILE_UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'death.csv'))$mtime
