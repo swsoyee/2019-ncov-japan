@@ -173,7 +173,11 @@ output$clusterNetwork <- renderEcharts4r({
       }
     }
   ')) %>%
-      e_modularity()
+      e_modularity() %>%
+      e_title(
+        text = paste0('合計：', nrow(node), '人'),
+        subtext = paste0('公表日：', min(as.Date(node$公表日), na.rm = T), ' ~ ', max(as.Date(node$公表日), na.rm = T))
+      )
   } else {
     return()
   }
