@@ -60,7 +60,10 @@ fluidRow(
                         tags$small(paste0('| ', LATEST_UPDATE),
                                    style = 'color:white;font-size:16px;margin-top:10px;margin-right:10px;opacity:0.6')
         ),
-        subtitle = tagList(lang[[langCode]][60], getChangeIcon_(TOTAL_JAPAN_DIFF), TOTAL_JAPAN_DIFF),
+        subtitle = tagList('　', sparklineOutput('confirmedSparkLine'),
+                           tags$span(TOTAL_JAPAN_DIFF, getChangeIcon_(TOTAL_JAPAN_DIFF), '感染者数', 
+                                     style = 'float:right;'),
+                           ),
         icon = icon('procedures'),
         color = "red"
       )
@@ -72,7 +75,7 @@ fluidRow(
                         tags$small(paste0('| ', round(100 * DISCHARGE_TOTAL / TOTAL_JAPAN, 2), '%'), 
                                    style = 'color:white;font-size:16px;margin-top:10px;margin-right:10px;opacity:0.8')
         ),
-        subtitle = tagList(lang[[langCode]][6], getChangeIcon_(DISCHARGE_DIFF), DISCHARGE_DIFF),
+        subtitle = tagList('退院者数', getChangeIcon_(DISCHARGE_DIFF), DISCHARGE_DIFF),
         icon = icon('user-shield'),
         color = "green"
       ),
@@ -82,7 +85,10 @@ fluidRow(
                         tags$small(paste0('| ', round(100 * DEATH_JAPAN / TOTAL_JAPAN, 2), '%'), 
                                    style = 'color:white;font-size:16px;margin-top:10px;margin-right:10px;opacity:0.8')
         ),
-        subtitle = tagList(lang[[langCode]][7], getChangeIcon_(DEATH_JAPAN_DIFF), DEATH_JAPAN_DIFF),
+        subtitle = tagList('　', sparklineOutput('deathSparkLine'),
+                           tags$span(DEATH_JAPAN_DIFF, getChangeIcon_(DEATH_JAPAN_DIFF), '死亡者数',
+                                     style = 'float:right;'
+                           )),
         icon = icon('bible'),
         color = "navy"
       )
