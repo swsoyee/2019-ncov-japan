@@ -42,7 +42,7 @@ death <- fread(paste0(DATA_PATH, 'death.csv'))
 death[is.na(death)] <- 0
 
 # 行動歴データ
-activity <- fromJSON(file = paste0(DATA_PATH, 'caseMap.json'), unexpected.escape = 'error')
+activity <- rjson::fromJSON(file = paste0(DATA_PATH, 'caseMap.json'), unexpected.escape = 'error')
 # 経度緯度データ
 position <- fread(paste0(DATA_PATH, 'position.csv'))
 
@@ -241,7 +241,20 @@ processData <- fread(input = paste0(DATA_PATH, 'resultProcessData.csv'))
 # ====
 # 定数設定
 # ====
+# Real-time感染数の更新時間
 UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'byDate.csv'))$mtime
+latestUpdateDuration <- difftime(Sys.time(), UPDATE_DATETIME)
+LATEST_UPDATE <- paste(round(latestUpdateDuration[[1]], 0),  units(latestUpdateDuration), 'ago')
+
+# PCRデータ（厚労省対応）の更新時間
+UPDATE_DATETIME_DOMESTIC_DAILY_REPORT <- file.info(paste0(DATA_PATH, 'domesticDailyReport.csv'))$mtime
+latestUpdateDomesticDailyReportDuration <- difftime(Sys.time(), UPDATE_DATETIME_DOMESTIC_DAILY_REPORT)
+LATEST_UPDATE_DOMESTIC_DAILY_REPORT <- paste(
+  round(latestUpdateDomesticDailyReportDuration[[1]], 0),  
+  units(latestUpdateDomesticDailyReportDuration), 
+  'ago'
+  )
+
 RECOVERED_FILE_UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'recovered.csv'))$mtime
 DEATH_FILE_UPDATE_DATETIME <- file.info(paste0(DATA_PATH, 'death.csv'))$mtime
 UPDATE_DATE <- as.Date(UPDATE_DATETIME)
@@ -286,6 +299,12 @@ GLOBAL_VALUE <- reactiveValues(
   signateLink = NULL
 )
 
+# =======TEST========
+# library(rjson)
+# library(jsonlite)
+# jsonFile <- fromJSON('https://raw.githubusercontent.com/tokyo-metropolitan-gov/covid19/development/data/data.json')
+# print(jsonFile)
+
 # ====メゾット====
 getChangeIcon <- function(number) {
   if (number > 0) {
@@ -314,4 +333,3 @@ getChangeIcon_ <- function(number) {
     return(icon('lock'))
   }
 }
-

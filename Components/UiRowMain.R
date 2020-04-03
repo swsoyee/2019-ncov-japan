@@ -1,5 +1,5 @@
 fluidRow(
-  column(width = 7, style='padding:0px;',
+  column(width = 6, style='padding:0px;',
          widgetUserBox(
            title = lang[[langCode]][17],
            # 新型コロナウイルス
@@ -40,11 +40,14 @@ fluidRow(
          )
   ),
   column(
-    width = 5,
+    width = 6,
     fluidRow(
       valueBox(
         width = 6,
-        value = sum(PCR_WITHIN$final, PCR_FLIGHT$final, PCR_SHIP$final, PCR_AIRPORT$final),
+        value = tagList(sum(PCR_WITHIN$final, PCR_FLIGHT$final, PCR_SHIP$final, PCR_AIRPORT$final), 
+                        tags$small(paste0('| ', LATEST_UPDATE_DOMESTIC_DAILY_REPORT),
+                                   style = 'color:white;font-size:16px;margin-top:10px;margin-right:10px;opacity:0.6')
+                        ),
         subtitle = tagList(lang[[langCode]][90],
                           getChangeIcon_(sum(PCR_WITHIN$diff, PCR_FLIGHT$diff, PCR_SHIP$diff, PCR_AIRPORT$diff)),
                           sum(PCR_WITHIN$diff, PCR_FLIGHT$diff, PCR_SHIP$diff, PCR_AIRPORT$diff)),
@@ -53,7 +56,10 @@ fluidRow(
       ),
       valueBox(
         width = 6,
-        value = TOTAL_JAPAN,
+        value = tagList(TOTAL_JAPAN,
+                        tags$small(paste0('| ', LATEST_UPDATE),
+                                   style = 'color:white;font-size:16px;margin-top:10px;margin-right:10px;opacity:0.6')
+        ),
         subtitle = tagList(lang[[langCode]][60], getChangeIcon_(TOTAL_JAPAN_DIFF), TOTAL_JAPAN_DIFF),
         icon = icon('procedures'),
         color = "red"
@@ -62,14 +68,20 @@ fluidRow(
     fluidRow(
       valueBox(
         width = 6,
-        value = DISCHARGE_TOTAL,
+        value = tagList(DISCHARGE_TOTAL, 
+                        tags$small(paste0('| ', round(100 * DISCHARGE_TOTAL / TOTAL_JAPAN, 2), '%'), 
+                                   style = 'color:white;font-size:16px;margin-top:10px;margin-right:10px;opacity:0.8')
+        ),
         subtitle = tagList(lang[[langCode]][6], getChangeIcon_(DISCHARGE_DIFF), DISCHARGE_DIFF),
         icon = icon('user-shield'),
         color = "green"
       ),
       valueBox(
         width = 6,
-        value = DEATH_JAPAN,
+        value = tagList(DEATH_JAPAN,
+                        tags$small(paste0('| ', round(100 * DEATH_JAPAN / TOTAL_JAPAN, 2), '%'), 
+                                   style = 'color:white;font-size:16px;margin-top:10px;margin-right:10px;opacity:0.8')
+        ),
         subtitle = tagList(lang[[langCode]][7], getChangeIcon_(DEATH_JAPAN_DIFF), DEATH_JAPAN_DIFF),
         icon = icon('bible'),
         color = "navy"
