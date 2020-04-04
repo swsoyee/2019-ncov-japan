@@ -84,6 +84,10 @@ setnafill(airportDailyReport, type = 'locf')
 shipDailyReport <- fread(paste0(DATA_PATH, 'shipDailyReport.csv'))
 shipDailyReport$date <- as.Date(as.character(shipDailyReport$date), '%Y%m%d')
 setnafill(shipDailyReport, type = 'locf')
+# 日報まとめ
+dailyReport <- fread(paste0(DATA_PATH, 'resultDailyReport.csv'))
+dailyReport$date <- as.Date(as.character(dailyReport$date), '%Y%m%d')
+setnafill(dailyReport, type = 'locf')
 # コールセンター
 callCenterDailyReport <- fread(paste0(DATA_PATH, 'callCenter.csv'))
 callCenterDailyReport$date <- as.Date(as.character(callCenterDailyReport$date), '%Y%m%d')

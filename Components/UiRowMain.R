@@ -48,9 +48,12 @@ fluidRow(
                         tags$small(paste0('| ', LATEST_UPDATE_DOMESTIC_DAILY_REPORT),
                                    style = 'color:white;font-size:16px;margin-top:10px;margin-right:10px;opacity:0.6')
                         ),
-        subtitle = tagList(lang[[langCode]][90],
-                          getChangeIcon_(sum(PCR_WITHIN$diff, PCR_FLIGHT$diff, PCR_SHIP$diff, PCR_AIRPORT$diff)),
-                          sum(PCR_WITHIN$diff, PCR_FLIGHT$diff, PCR_SHIP$diff, PCR_AIRPORT$diff)),
+        subtitle = tagList('　', sparklineOutput('pcrSparkLine'),
+                          tags$span(
+                            dailyReport$pcrDiff[nrow(dailyReport)], 
+                            getChangeIcon_(dailyReport$pcrDiff[nrow(dailyReport)]),
+                            lang[[langCode]][90], style = 'float:right;z-index:999;')
+                          ),
         icon = icon('vials'),
         color = "yellow"
       ),
@@ -62,7 +65,7 @@ fluidRow(
         ),
         subtitle = tagList('　', sparklineOutput('confirmedSparkLine'),
                            tags$span(TOTAL_JAPAN_DIFF, getChangeIcon_(TOTAL_JAPAN_DIFF), '感染者数', 
-                                     style = 'float:right;'),
+                                     style = 'float:right;')
                            ),
         icon = icon('procedures'),
         color = "red"
@@ -75,7 +78,13 @@ fluidRow(
                         tags$small(paste0('| ', round(100 * DISCHARGE_TOTAL / TOTAL_JAPAN, 2), '%'), 
                                    style = 'color:white;font-size:16px;margin-top:10px;margin-right:10px;opacity:0.8')
         ),
-        subtitle = tagList('退院者数', getChangeIcon_(DISCHARGE_DIFF), DISCHARGE_DIFF),
+        subtitle = tagList('　', sparklineOutput('dischargeSparkLine'),
+                           tags$span(
+                             dailyReport$dischargeDiff[nrow(dailyReport)] ,
+                             getChangeIcon_(dailyReport$dischargeDiff[nrow(dailyReport)]),
+                             '退院者数',
+                             style =  'float:right;')
+                           ),
         icon = icon('user-shield'),
         color = "green"
       ),

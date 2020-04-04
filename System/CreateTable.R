@@ -22,6 +22,10 @@ setnafill(flightDailyReport, type = 'locf')
 shipDailyReport <- fread(paste0(DATA_PATH, 'shipDailyReport.csv'))
 shipDailyReport$date <- as.Date(as.character(shipDailyReport$date), '%Y%m%d')
 setnafill(shipDailyReport, type = 'locf')
+# 空港検疫の日報
+airportDailyReport <- fread(paste0(DATA_PATH, 'airportDailyReport.csv'))
+airportDailyReport$date <- as.Date(as.character(airportDailyReport$date), '%Y%m%d')
+setnafill(airportDailyReport, type = 'locf')
 # コールセンター
 callCenterDailyReport <- fread(paste0(DATA_PATH, 'callCenter.csv'))
 callCenterDailyReport$date <- as.Date(as.character(callCenterDailyReport$date), '%Y%m%d')
@@ -52,6 +56,18 @@ lightGrey <- '#F5F5F5'
 lightBlue <- '#7BD6F5'
 middleBlue <- '#00C0EF'
 darkBlue <- '#00A7D0'
+
+# ====日報====
+dailyReport <- domesticDailyReport
+dailyReport <- merge(x = domesticDailyReport, y = flightDailyReport, by = 'date', all.x = T, suffixes = c('.d', '.f'))
+dailyReport <- merge(x = dailyReport, y = airportDailyReport, by = 'date', all.x = T)
+dailyReport <- merge(x = dailyReport, y = shipDailyReport, by = 'date', all.x = T)
+dailyReport[, pcr := rowSums(.SD, na.rm = T), .SDcols = c('pcr.d', 'pcr.f', 'pcr.x', 'pcr.y')]
+dailyReport[, discharge := rowSums(.SD, na.rm = T), .SDcols = c('discharge.d', 'discharge.f', 'discharge.x', 'discharge.y')]
+dailyReport[, pcrDiff := pcr - shift(pcr)]
+dailyReport[, dischargeDiff := discharge - shift(discharge)]
+fwrite(x = dailyReport, file = paste0(DATA_PATH, 'resultDailyReport.csv'))
+
 
 # ====各都道府県のサマリーテーブル====
 # ランキングカラムを作成
@@ -197,7 +213,7 @@ mergeDt[, detailBullet := gsub('\\n', '', detailBullet)]
 # クルーズ船とチャーター便データ除外
 mergeDt <- mergeDt[!(region %in% lang[[langCode]][35:36])]
 # テーブル出力
-fwrite(x = mergeDt, file = paste0(DATA_PATH, 'resultSummaryTable.csv'), sep = "@", quote = F, )
+fwrite(x = mergeDt, file = paste0(DATA_PATH, 'resultSummaryTable.csv'), sep = "@", quote = F)
 
 # ====症状進行テーブル====
 # 症状進展Sankey
