@@ -40,13 +40,9 @@ fluidPage(fluidRow(
         width = 12,
         uiOutput('clusterNetworkWrapper') %>% withSpinner(),
         tags$hr(),
-        # boxPlus(
-        #   width = 12,
-        #   closable = F,
-        #   title = tagList(
-        #     icon('exclamation-circle'),
-        #     '注意事項'
-        #   ),
+        tags$li('番号の枠：公表日が二週間内の事例。'),
+        tags$li('†：死亡者。'),
+        tags$br(),
           accordion(
             accordionItem(
               id = 1,

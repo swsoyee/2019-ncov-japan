@@ -307,6 +307,9 @@ signateDetail[is.na(ステータス), status := '調査中']
 signateDetail$size <- 18
 # 公表日
 signateDetail$公表日 <- as.Date(signateDetail$公表日)
+signateDetail$labelBackground <- ifelse(
+  signateDetail$公表日 > Sys.Date() - 14, 'twoWeeks', 'other'
+)
 
 signateDetail[性別 == '男性', symbolIcon := paste0('path://', svgIcon[name == 'male']$svg)]
 signateDetail[性別 == '女性', symbolIcon := paste0('path://', svgIcon[name == 'female']$svg)]
@@ -317,10 +320,11 @@ signateDetail[医療従事者ﾌﾗｸﾞ== 1 & 性別 == '女性', symbolIcon :
 
 signateDetail[, `症状・経過` := gsub('\n', '<br>', `症状・経過`)]
 signateDetail[, `行動歴` := gsub('\n', '<br>', `行動歴`)]
+
 signateDetail[, label := paste(
   sep = "|",
   paste0(受診都道府県, '-', 都道府県別罹患者No), 
-  公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status, 居住地, 濃厚接触者状況
+  公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status, 居住地, 濃厚接触者状況, labelBackground
   )]
 
 signateLink<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者関係.csv'), header = T)
@@ -337,7 +341,7 @@ for (i in 1:nrow(signateLink)) {
                                         paste(
                                           unlist(
                                             signateDetail[罹患者id == signateLink[i]$罹患者id1, 
-                                                             .(公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status, 居住地, 濃厚接触者状況)
+                                                             .(公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status, 居住地, 濃厚接触者状況, labelBackground)
                                                              ]), collapse = '|')
                                         )]
   # }
@@ -347,7 +351,7 @@ for (i in 1:nrow(signateLink)) {
                                       paste(
                                         unlist(
                                           signateDetail[罹患者id == signateLink[i]$罹患者id2, 
-                                                           .(公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status, 居住地, 濃厚接触者状況)
+                                                           .(公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status, 居住地, 濃厚接触者状況, labelBackground)
                                                            ]), collapse = '|')
   )]
 }
@@ -379,9 +383,14 @@ fwrite(x = signateLink, file = paste0(DATA_PATH, 'resultSignateLink.csv'))
 #   e_graph_edges(edge, target = 罹患者id2, source = 罹患者id1) %>%
 #   e_labels(formatter = htmlwidgets::JS('
 #     function(params) {
-#       return(params.value.split("|")[0])
+#       return(`{a|${params.value.split("|")[0]}}`)
 #     }
-#   ')) %>%
+#   '),
+#   rich = list(
+#     a = list(backgroundColor = 'red', lineHeight = 10),
+#     b = list(backgroundColor = 'black', lineHeight = 10)
+#   )
+#   ) %>%
 #   e_tooltip(formatter = htmlwidgets::JS('
 #     function(params) {
 #       const text = params.value.split("|")

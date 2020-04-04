@@ -140,6 +140,7 @@ output$clusterNetwork <- renderEcharts4r({
   # edge <- linkFilter # TEST
   node <- clusterData()$node
   edge <- clusterData()$edge
+  
   if (!is.null(node)) {
     e_charts() %>%
       e_graph(layout = 'force',
@@ -152,14 +153,20 @@ output$clusterNetwork <- renderEcharts4r({
         names = regionId, size = size,
         value = label, symbol = symbolIcon) %>%
       e_graph_edges(edge, target = 罹患者id2, source = 罹患者id1) %>%
-      e_labels(formatter = htmlwidgets::JS('
+      e_labels(formatter = htmlwidgets::JS(paste0('
     function(params) {
       if (params.value) {
-        const id = params.value.split("|")[0].split("-")
-        return(`${id[0].substring(0,1)}${id[1]}`)
+        const text = params.value.split("|")
+        const id = text[0].split("-")
+        const status = text[8] == "死亡" ? "{death|†}" : ""
+        return(`${status}{${text[11]}|${id[0].substring(0,1)}${id[1]}}`)
       }
     }
-  ')) %>%
+  ')), rich = list(
+    twoWeeks = list(borderColor = 'auto', borderWidth = 2, borderRadius = 2, padding = 3),
+    other = list(borderColor = 'transparent', borderWidth = 2, borderRadius = 2, padding = 3),
+    death = list(borderColor = 'auto', borderWidth = 2, borderRadius = 10, padding = 3)
+  )) %>%
       e_tooltip(formatter = htmlwidgets::JS('
     function(params) {
       if (params.value) {
