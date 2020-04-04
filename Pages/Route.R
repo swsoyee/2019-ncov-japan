@@ -14,11 +14,11 @@ fluidPage(fluidRow(
     fluidRow(column(
       width = 8,
       fluidRow(column(
-        width = 12,
+        width = 6,
         pickerInput(
           inputId = 'clusterRegionPicker',
           # 地域選択
-          label = lang[[langCode]][93],
+          label = '',
           choices = provinceSelector,
           selected = 1,
           options = list(
@@ -35,13 +35,18 @@ fluidPage(fluidRow(
           multiple = T,
           inline = T
         )
-      )),
+      ),
+      column(
+        width = 4,
+        uiOutput('clusterDateRangeSelector')
+      )
+      ),
       fluidRow(column(
         width = 12,
         uiOutput('clusterNetworkWrapper') %>% withSpinner(),
         tags$hr(),
-        tags$li('番号の枠：公表日が二週間内の事例。'),
-        tags$li('†：死亡者。'),
+        tags$li('番号の枠：選択された公表日範囲内の事例。'),
+        tags$li('†マーク：死亡者。'),
         tags$br(),
           accordion(
             accordionItem(

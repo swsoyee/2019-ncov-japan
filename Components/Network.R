@@ -1,5 +1,6 @@
 observeEvent(input$sideBarTab, {
   if (input$sideBarTab == 'route') {
+    # GLOBAL_VALUE <- list(signateDetail = NULL) # TEST
     GLOBAL_VALUE$signateDetail <- fread(file = paste0(DATA_PATH, 'resultSignateDetail.csv'))
     GLOBAL_VALUE$signateLink <- fread(file = paste0(DATA_PATH, 'resultSignateLink.csv'))
   }
@@ -15,6 +16,25 @@ clusterData <- reactive({
     return(list(node = signateDetailFilter, edge = linkFilter))
   } else {
     return(list(node = NULL, edge = NULL))
+  }
+})
+
+output$clusterDateRangeSelector <- renderUI({
+  node <- clusterData()$node
+  if (!is.null(node) && nrow(node) > 0) {
+    dateRangeInput(
+      'clusterDateRange',
+      label = '公表日',
+      start = Sys.Date() - 14, 
+      end = Sys.Date(),
+      min = min(node$公表日, na.rm = T), 
+      max = Sys.Date(),
+      separator = " - ", 
+      format = "yyyy年m月d日",
+      language = 'ja'
+    )
+  } else {
+    tagList(tags$b('該当地域には感染者が確認されていません。またはデータの更新が必要です。'))
   }
 })
 
@@ -159,14 +179,19 @@ output$clusterNetwork <- renderEcharts4r({
         const text = params.value.split("|")
         const id = text[0].split("-")
         const status = text[8] == "死亡" ? "{death|†}" : ""
-        return(`${status}{${text[11]}|${id[0].substring(0,1)}${id[1]}}`)
+        const minDate = Date.parse("', input$clusterDateRange[1], '")
+        const maxDate = Date.parse("', input$clusterDateRange[2], '")
+        const thisDate = Date.parse(text[1])
+        const labelBox = (thisDate >= minDate && thisDate <= maxDate)
+                         ? "inDateRange" : "outDateRange"
+        return(`${status}{${labelBox}|${id[0].substring(0,1)}${id[1]}}`)
       }
     }
   ')), rich = list(
-    twoWeeks = list(borderColor = 'auto', borderWidth = 2, borderRadius = 2, padding = 3),
-    other = list(borderColor = 'transparent', borderWidth = 2, borderRadius = 2, padding = 3),
+    inDateRange = list(borderColor = 'auto', borderWidth = 2, borderRadius = 2, padding = 3, fontSize = 8),
+    outDateRange = list(borderColor = 'transparent', borderWidth = 2, borderRadius = 2, padding = 3, fontSize = 8),
     death = list(borderColor = 'auto', borderWidth = 2, borderRadius = 10, padding = 3)
-  )) %>%
+  ),) %>%
       e_tooltip(formatter = htmlwidgets::JS('
     function(params) {
       if (params.value) {
