@@ -201,6 +201,11 @@ output$hokkaidoConfirmedMap <- renderLeaflet({
       toggleDisplay = TRUE)
 })
 
+observeEvent(input$hokkaidoConfirmedMap_click, { 
+  p <- input$hokkaidoConfirmedMap_marker_click
+  print(p)
+})
+
 output$hokkaidoPatientTable <- renderDataTable({
   data <- hokkaidoData()$patient
   testData <- data
