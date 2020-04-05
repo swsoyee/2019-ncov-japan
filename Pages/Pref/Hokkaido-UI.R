@@ -12,7 +12,8 @@ fluidPage(
              paste0('こちらは北海道の発生状況をまとめたページです。', 
                     '厚労省のまとめより早く状況を把握できますが、',
                     '道の集計時間は厚労省との発表時間も完全に一致していないため、', 
-                    'ライムラグによる数値の違いが生じる可能性もありますので、予めご注意してください。'
+                    'ライムラグによる数値の違いが生じる可能性もありますので、予めご注意してください。',
+                    'また、速報では陰性から再び陽性になった人は再計算しないので、自治体の発表の陽性者数と数値が異なる場合があります。'
                     ),
              footer = tagList(
                tags$small(icon('database'),
@@ -43,7 +44,7 @@ fluidPage(
       boxPlus(
         width = 12, 
         closable = F,
-        echarts4rOutput('hokkaidoSummaryGraph'),
+        echarts4rOutput('hokkaidoSummaryGraph') %>% withSpinner(),
         footer = tags$small(icon('lightbulb'), '凡例クリックすると表示・非表示の切替ができます。')
       )
     ),
@@ -53,9 +54,38 @@ fluidPage(
       boxPlus(
         width = 12, 
         closable = F,
-        echarts4rOutput('hokkaidoStackGraph'),
+        echarts4rOutput('hokkaidoStackGraph') %>% withSpinner(),
         footer = tags$small(icon('lightbulb'), '凡例クリックすると表示・非表示の切替ができます。')
       )
     ),
+  ),
+  fluidRow(
+    boxPlus(
+      width = 12,
+      closable = F, 
+      collapsed = T, 
+      collapsible = T,
+      enable_label = T, 
+      label_text = tagList('クリックして', icon('hand-point-right')), 
+      label_status = 'warning',
+      title = tagList(icon('map-marked-alt'), '道内の感染者'),
+      fluidRow(
+        column(
+          width = 8,
+          leafletOutput('hokkaidoConfirmedMap', height = '500px') %>% withSpinner(),
+          dataTableOutput('hokkaidoPatientTable') %>% withSpinner(),
+        ),
+        column(
+          width = 4,
+          uiOutput('hokkaidoProfile') %>% withSpinner()
+        )
+      )# ,
+      # fluidRow(
+      #   column(
+      #     width = 8,
+      #     dataTableOutput('hokkaidoPatientTable') %>% withSpinner(),
+      #   )
+      # )
+    )
   )
 )

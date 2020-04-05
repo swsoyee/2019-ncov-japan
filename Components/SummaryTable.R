@@ -159,8 +159,8 @@ output$summaryByRegion <- renderDataTable({
   upMark <- as.character(icon('caret-up'))
   
   datatable(
-    data = dt[, c(1, 3, 4, 6:ncol(dt)), with = F],
-    colnames = c('都道府県', '新規', '感染者数', '新規感染', '新規退院', '内訳', '死亡', '新規なし日数'),
+    data = dt[, c(1, 3, 4, 6:9), with = F],
+    colnames = c('都道府県', '新規', '感染者数', '新規感染', '新規退院', '内訳', '死亡'),
     escape = F,
     plugins = 'natural', 
     extensions = c('Responsive'),
@@ -233,13 +233,13 @@ output$summaryByRegion <- renderDataTable({
       backgroundColor = styleInterval(breaksDeath, colorsDeath),
       fontWeight = 'bold',
       backgroundPosition = 'center'
-    ) %>%
-    formatStyle(
-      columns = 'zeroContinuousDay',
-      background = styleColorBar(c(0, max(dt$zeroContinuousDay, na.rm = T)), lightBlue, angle = -90),
-      backgroundSize = '98% 80%',
-      backgroundRepeat = 'no-repeat',
-      backgroundPosition = 'center') # %>%
+    ) #%>%
+    # formatStyle(
+    #   columns = 'zeroContinuousDay',
+    #   background = styleColorBar(c(0, max(dt$zeroContinuousDay, na.rm = T)), lightBlue, angle = -90),
+    #   backgroundSize = '98% 80%',
+    #   backgroundRepeat = 'no-repeat',
+    #   backgroundPosition = 'center') # %>%
     # formatStyle(
     #   columns = 'zeroContinuousDay', 
     #   backgroundColor = styleInterval(breaks, colors)
