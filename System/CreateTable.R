@@ -255,12 +255,12 @@ for(i in 1:nrow(domesticDailyReport)) {
                             (latestRecord$positive) * 100, 2), '%')
   label.symptomConfirming <- paste0('症状有無確認中\n',
                                     round(
-                                      (latestRecord$symtomConfirming) / 
+                                      (latestRecord$sypmtomConfirming) / 
                                         (latestRecord$positive) * 100, 2), '%')
   # Step1 陽性、症状有無、確認中
   data <- rbind(data, list(label.pcr, label.symptomless, latestRecord$symptomless))
   data <- rbind(data, list(label.pcr, label.symptom, latestRecord$symptom))
-  data <- rbind(data, list(label.pcr, label.symptomConfirming, latestRecord$symtomConfirming))
+  data <- rbind(data, list(label.pcr, label.symptomConfirming, latestRecord$symptomConfirming))
   # Step2 症状ありのみ入院
   data <- rbind(data, list(label.symptom, label.discharge, latestRecord$discharge))
   data <- rbind(data, list(label.symptom, label.hospitalized, latestRecord$hospitalize))
