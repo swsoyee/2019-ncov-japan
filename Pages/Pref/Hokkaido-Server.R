@@ -6,6 +6,7 @@ observeEvent(input$sideBarTab, {
     GLOBAL_VALUE$hokkaidoData$date <- as.Date(paste0(GLOBAL_VALUE$hokkaidoData$年, '/', GLOBAL_VALUE$hokkaidoData$月, '/', GLOBAL_VALUE$hokkaidoData$日))
     # data <- GLOBAL_VALUE$hokkaidoData # TEST
     GLOBAL_VALUE$hokkaidoPatients <- fread(file = paste0(DATA_PATH, 'Pref/Hokkaido/patients.csv'))
+    # data <- GLOBAL_VALUE$hokkaidoPatients # TEST
   }
 })
 
@@ -154,3 +155,67 @@ output$hokkaidoStackGraph <- renderEcharts4r({
     e_tooltip(trigger = 'axis') %>%
     e_title(text = '北海道の発生状況（その二）', subtext = paste('更新時刻：', LATEST_UPDATE))
 })
+
+output$hokkaidoConfirmedMap <- renderLeaflet({
+  data <- hokkaidoData()$patient
+  
+  getColor <- function(value) {
+    sapply(value, function(gender) {
+      if(gender == '男性') {
+        return('lightblue')
+      } else if(gender == '女性') {
+        return('red')
+      } else {
+        return('beige')
+      } })
+  }
+  
+  icons <- awesomeIcons(
+    icon = 'plus',
+    iconColor = 'black',
+    library = 'fa',
+    markerColor = unname(getColor(data$性別.x))
+  )
+
+  leaflet(data) %>% 
+    addTiles() %>% 
+    addAwesomeMarkers(lng = ~居住地経度, 
+                      lat = ~居住地緯度, 
+                      icon = icons, 
+                      clusterOptions = markerClusterOptions()
+    ) %>%
+    setView(lng = provinceCode[id == 1]$lng,
+            lat = provinceCode[id == 1]$lat,
+            zoom = 7) %>%
+    addEasyButton(easyButton(
+      icon="fa-crosshairs", title = '自分の位置',
+      onClick=JS("function(btn, map){ map.locate({setView: true}); }"))) %>%
+    addMiniMap(
+      tiles = providers$Esri.WorldStreetMap,
+      toggleDisplay = TRUE)
+})
+
+output$hokkaidoPatientTable <- renderDataTable({
+  data <- hokkaidoData()$patient
+  testData <- data
+  
+  showCols <- c('No', 'リリース日', '居住地.x', '年代.x', '性別.x')
+  dataForShow <- testData[, showCols, with = F]
+  colnames(dataForShow) <- c('自治体番号', '公表日', '居住地', '年代', '性別')
+  dataForShow$公表日 <- as.Date(dataForShow$公表日)
+  DT::datatable(
+    dataForShow,
+    rownames = F,
+    extensions = c('Responsive'),
+    options = list(
+      dom = 't',
+      paging = F,
+      filter = 'top',
+      # scrollCollapse = T,
+      scrollX = T,
+      scrollY = '300px'
+    )
+  )
+})
+
+
