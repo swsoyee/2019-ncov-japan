@@ -6,7 +6,7 @@ observeEvent(input$sideBarTab, {
     GLOBAL_VALUE$hokkaidoData$date <- as.Date(paste0(GLOBAL_VALUE$hokkaidoData$年, '/', GLOBAL_VALUE$hokkaidoData$月, '/', GLOBAL_VALUE$hokkaidoData$日))
     # data <- GLOBAL_VALUE$hokkaidoData # TEST
     GLOBAL_VALUE$hokkaidoPatients <- fread(file = paste0(DATA_PATH, 'Pref/Hokkaido/patients.csv'))
-    # data <- GLOBAL_VALUE$hokkaidoPatients # TEST
+    data <- GLOBAL_VALUE$hokkaidoPatients # TEST
   }
 })
 
@@ -182,8 +182,9 @@ output$hokkaidoConfirmedMap <- renderLeaflet({
 
   leaflet(data) %>% 
     addTiles() %>% 
-    addAwesomeMarkers(lng = ~居住地経度, 
+    addCircleMarkers(lng = ~居住地経度, 
                       lat = ~居住地緯度, 
+                      layerId = ~No,
                       label = mapply(function(No, age, gender) {
                         HTML(sprintf('<b>%s番：</b>%s %s', No, age, gender))},
                         data$No, data$年代.x, data$性別.x, SIMPLIFY = F),
@@ -201,10 +202,73 @@ output$hokkaidoConfirmedMap <- renderLeaflet({
       toggleDisplay = TRUE)
 })
 
-observeEvent(input$hokkaidoConfirmedMap_click, { 
-  p <- input$hokkaidoConfirmedMap_marker_click
-  print(p)
+hokkaidoProfile <- reactive({
+  id <- input$hokkaidoConfirmedMap_marker_click$id
+  data <- hokkaidoData()$patient
+  if (!is.null(data) && !is.null(id)) {
+    return(data[No == id])
+  } else {
+    return(NULL)
+  }
 })
+
+output$hokkaidoProfile <- renderUI({
+  profile <- hokkaidoProfile()
+  if(!is.null(profile)) {
+    # 外部確認リンク
+    outerLinks <- strsplit(profile$情報源, split = ';')[[1]]
+    outerLinkTags <- tagList(lapply(1:length(outerLinks), function(i){
+      tags$a(href = outerLinks[i], icon('link'), '外部リンク', style = 'float: right!important;')
+    }))
+    # 行動歴
+    activityLog <- ifelse(profile$行動歴 == '', '詳細なし', gsub('\n', '<br>', profile$行動歴))
+
+    boxPlus(
+      title = tagList(icon('id-card'), '公開された感染者情報'),
+      width = 12, 
+      closable = F,
+      boxProfile(
+        title = paste0('北海道', profile$No),
+        subtitle = tagList(profile$性別.x),
+        boxProfileItemList(
+          bordered = TRUE,
+          boxProfileItem(title = tagList(icon('user-clock'), '年代'),
+                         description = profile$年代.x),
+          boxProfileItem(title = tagList(icon('bullhorn'), '公表日'),
+                         description = as.Date(profile$リリース日)),
+          boxProfileItem(title = tagList(icon('user-tie'), '職業'),
+                         description = profile$属性),
+          boxProfileItem(title = tagList(icon('home'), '居住地'),
+                         description = profile$居住地.x),
+          boxProfileItem(
+            title = tagList(icon('external-link-alt'), '情報源'),
+            description = outerLinkTags
+          ),
+        )
+      ),
+      footer = tagList(
+        tags$b(icon('handshake'), '濃厚接触者状況'),
+        tags$p(tags$small(HTML(gsub('\n', '<br>', profile$濃厚接触者状況)))),
+        tags$hr(),
+        tags$b(icon('procedures'), '症状・経過'),
+        tags$p(tags$small(HTML(gsub('\n', '<br>', profile$`症状・経過`)))),
+        tags$hr(),
+        tags$b(icon('walking'), '行動歴'),
+        tags$p(tags$small(HTML(activityLog)))
+      )
+    )
+  } else {
+    return(tags$b('マップ上のマークをクリックすると感染者詳細がみれます。'))
+  }
+})
+
+
+# observeEvent(input$hokkaidoConfirmedMap_click, { 
+#   id <- input$hokkaidoConfirmedMap_marker_click$id
+#   data <- hokkaidoData()$patient
+#   profile <- data[No == 1]
+#   
+# })
 
 output$hokkaidoPatientTable <- renderDataTable({
   data <- hokkaidoData()$patient
