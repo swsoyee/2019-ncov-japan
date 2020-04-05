@@ -159,28 +159,34 @@ output$hokkaidoStackGraph <- renderEcharts4r({
 output$hokkaidoConfirmedMap <- renderLeaflet({
   data <- hokkaidoData()$patient
   
-  getColor <- function(value) {
-    sapply(value, function(gender) {
-      if(gender == '男性') {
-        return('lightblue')
-      } else if(gender == '女性') {
-        return('red')
-      } else {
-        return('beige')
-      } })
-  }
-  
-  icons <- awesomeIcons(
-    icon = 'home',
-    iconColor = 'black',
-    library = 'fa',
-    markerColor = unname(getColor(data$性別.x))
-  )
+  # getColor <- function(value) {
+  #   sapply(value, function(gender) {
+  #     if(gender == '男性') {
+  #       return('lightblue')
+  #     } else if(gender == '女性') {
+  #       return('red')
+  #     } else {
+  #       return('beige')
+  #     } })
+  # }
+  # 
+  # icons <- awesomeIcons(
+  #   icon = 'home',
+  #   iconColor = 'black',
+  #   library = 'fa',
+  #   markerColor = unname(getColor(data$性別.x))
+  # )
+  # 
+  # 
+  # testDt <- data # TEST
 
   leaflet(data) %>% 
     addTiles() %>% 
     addAwesomeMarkers(lng = ~居住地経度, 
                       lat = ~居住地緯度, 
+                      label = mapply(function(No, age, gender) {
+                        HTML(sprintf('<b>%s番：</b>%s %s', No, age, gender))},
+                        data$No, data$年代.x, data$性別.x, SIMPLIFY = F),
                       # icon = icons,
                       clusterOptions = markerClusterOptions()
     ) %>%

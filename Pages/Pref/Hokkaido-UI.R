@@ -43,7 +43,7 @@ fluidPage(
       boxPlus(
         width = 12, 
         closable = F,
-        echarts4rOutput('hokkaidoSummaryGraph'),
+        echarts4rOutput('hokkaidoSummaryGraph') %>% withSpinner(),
         footer = tags$small(icon('lightbulb'), '凡例クリックすると表示・非表示の切替ができます。')
       )
     ),
@@ -53,7 +53,7 @@ fluidPage(
       boxPlus(
         width = 12, 
         closable = F,
-        echarts4rOutput('hokkaidoStackGraph'),
+        echarts4rOutput('hokkaidoStackGraph') %>% withSpinner(),
         footer = tags$small(icon('lightbulb'), '凡例クリックすると表示・非表示の切替ができます。')
       )
     ),
@@ -61,8 +61,13 @@ fluidPage(
   fluidRow(
     boxPlus(
       width = 12,
-      closable = F,
-      title = '道内の感染者',
+      closable = F, 
+      collapsed = T, 
+      collapsible = T,
+      enable_label = T, 
+      label_text = tagList('クリックして', icon('hand-point-right')), 
+      label_status = 'warning',
+      title = tagList(icon('map-marked-alt'), '道内の感染者'),
       fluidRow(
         column(
           width = 8,
@@ -72,7 +77,7 @@ fluidPage(
       fluidRow(
         column(
           width = 8,
-          dataTableOutput('hokkaidoPatientTable')
+          dataTableOutput('hokkaidoPatientTable') %>% withSpinner(),
         )
       )
     )
