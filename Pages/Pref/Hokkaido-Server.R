@@ -1,5 +1,5 @@
 observeEvent(input$sideBarTab, {
-  if (input$sideBarTab == 'hokkaido') {
+  if (input$sideBarTab == 'hokkaido' && is.null(GLOBAL_VALUE$hokkaidoData)) {
     # GLOBAL_VALUE <- list(hokkaidoData = NULL, hokkaidoPatients = NULL) # TEST
     GLOBAL_VALUE$hokkaidoData <- fread(file = paste0(DATA_PATH, 'Pref/Hokkaido/covid19_data.csv'))
     GLOBAL_VALUE$hokkaidoDataUpdateTime <- file.info(paste0(DATA_PATH, 'Pref/Hokkaido/covid19_data.csv'))$mtime
@@ -171,7 +171,7 @@ output$hokkaidoConfirmedMap <- renderLeaflet({
   }
   
   icons <- awesomeIcons(
-    icon = 'plus',
+    icon = 'home',
     iconColor = 'black',
     library = 'fa',
     markerColor = unname(getColor(data$性別.x))
@@ -181,15 +181,15 @@ output$hokkaidoConfirmedMap <- renderLeaflet({
     addTiles() %>% 
     addAwesomeMarkers(lng = ~居住地経度, 
                       lat = ~居住地緯度, 
-                      icon = icons, 
+                      # icon = icons,
                       clusterOptions = markerClusterOptions()
     ) %>%
     setView(lng = provinceCode[id == 1]$lng,
             lat = provinceCode[id == 1]$lat,
             zoom = 7) %>%
-    addEasyButton(easyButton(
-      icon="fa-crosshairs", title = '自分の位置',
-      onClick=JS("function(btn, map){ map.locate({setView: true}); }"))) %>%
+    # addEasyButton(easyButton(
+    #   icon = icon('crosshairs'), title = '自分の位置',
+    #   onClick = JS("function(btn, map){ map.locate({setView: true}); }"))) %>%
     addMiniMap(
       tiles = providers$Esri.WorldStreetMap,
       toggleDisplay = TRUE)
