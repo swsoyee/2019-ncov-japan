@@ -318,7 +318,10 @@ options(spinner.color = middleRed)
 
 GLOBAL_VALUE <- reactiveValues(
   signateDetail = NULL,
-  signateLink = NULL
+  signateLink = NULL,
+  hokkaidoData = NULL,
+  hokkaidoDataUpdateTime = NULL,
+  hokkaidoPatients = NULL
 )
 
 # =======TEST========

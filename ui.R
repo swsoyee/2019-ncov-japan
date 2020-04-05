@@ -42,6 +42,17 @@ shinyUI(
         badgeColor = 'black'
       ),
       menuItem(
+        # 自治体状況
+        '自治体状況',
+        tabName = 'prefStatus',
+        icon = icon('city'),
+        menuSubItem(
+          text = '北海道', 
+          tabName = 'hokkaido',
+          icon = icon('fish')
+        )
+      ),
+      menuItem(
         # 事例マップ
         lang[[langCode]][33],
         tabName = 'caseMap',
@@ -92,6 +103,12 @@ shinyUI(
       tabItem(tabName = 'route',
               source(
                 file = paste0(PAGE_PATH, 'Route.R'),
+                local = T,
+                encoding = 'UTF-8'
+              )$value),
+      tabItem(tabName = 'hokkaido',
+              source(
+                file = paste0(PAGE_PATH, 'Pref/Hokkaido-UI.R'),
                 local = T,
                 encoding = 'UTF-8'
               )$value),
