@@ -1,4 +1,4 @@
-date,pcr,positive,symptom,symptomless,symtomConfirming,hospitalize,mild,severe,confirming,waiting,discharge,death
+date,pcr,positive,symptom,symptomless,symptomConfirming,hospitalize,mild,severe,confirming,waiting,discharge,death
 20200206,132,16,16,0,0,9,0,0,3,0,4,0
 20200207,151,16,16,0,0,12,0,0,0,0,4,0
 20200208,,,,,,,,,,,,
