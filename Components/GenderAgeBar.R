@@ -1,5 +1,7 @@
 genderAgeData <- reactive({
   positiveDetail[年齢 == '10歳未満', 年齢 := '00代']
+  positiveDetail[grepl('男', 性別), 性別 := '男性']
+  positiveDetail[grepl('女', 性別), 性別 := '女性']
   dt <- positiveDetail[!年齢 %in% c('', '非公表', '未', '不明', '不明（高齢者）'), .SD, .SDcols = c('性別', '年齢')]
   dt <- dt[, .(count = .N), by = c('性別', '年齢')]
   dt <- reshape(data = dt, idvar = '年齢', timevar = '性別', direction = 'wide')
