@@ -242,9 +242,9 @@ output$hokkaidoPatientTable <- renderDataTable({
   data <- hokkaidoData()$patient
   # testData <- data
   
-  showCols <- c('No', 'リリース日', '居住地.x', '年代.x', '性別.x')
+  showCols <- c('No', 'リリース日', '居住地.x', '年代.x', '性別.x', '濃厚接触者状況')
   dataForShow <- data[, showCols, with = F]
-  colnames(dataForShow) <- c('自治体番号', '公表日', '居住地', '年代', '性別')
+  colnames(dataForShow) <- c('自治体番号', '公表日', '居住地', '年代', '性別', '濃厚接触者状況')
   dataForShow$公表日 <- as.Date(dataForShow$公表日)
   dataForShow$居住地 <- as.factor(dataForShow$居住地)
   dataForShow$年代 <- as.factor(dataForShow$年代)
