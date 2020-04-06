@@ -6,7 +6,7 @@ observeEvent(input$sideBarTab, {
     GLOBAL_VALUE$hokkaidoData$date <- as.Date(paste0(GLOBAL_VALUE$hokkaidoData$年, '/', GLOBAL_VALUE$hokkaidoData$月, '/', GLOBAL_VALUE$hokkaidoData$日))
     # data <- GLOBAL_VALUE$hokkaidoData # TEST
     GLOBAL_VALUE$hokkaidoPatients <- fread(file = paste0(DATA_PATH, 'Pref/Hokkaido/patients.csv'))
-    # data <- GLOBAL_VALUE$hokkaidoPatients # TEST
+    # data <- fread(file = paste0(DATA_PATH, 'Pref/Hokkaido/patients.csv')) # TEST
   }
 })
 
@@ -136,16 +136,21 @@ output$hokkaidoConfirmedMap <- renderLeaflet({
   # 
   # 
   # testDt <- data # TEST
+  Icons <- iconList(
+    '男性' = makeIcon(iconUrl = "www/Icon/male.png", iconRetinaUrl = "www/Icon/male.png", 24, 24),
+    '女性' = makeIcon(iconUrl = "www/Icon/female.png", iconRetinaUrl = "www/Icon/female.png", 24, 24)
+  )
 
   leaflet(data) %>% 
     addTiles() %>% 
-    addCircleMarkers(lng = ~居住地経度, 
+    addProviderTiles(providers$CartoDB.Positron) %>%
+    addMarkers(lng = ~居住地経度, 
                       lat = ~居住地緯度, 
                       layerId = ~No,
                       label = mapply(function(No, age, gender) {
                         HTML(sprintf('<b>%s番：</b>%s %s', No, age, gender))},
-                        data$No, data$年代.x, data$性別.x, SIMPLIFY = F),
-                      # icon = icons,
+                        data$No, data$年代.x, data$性別.y, SIMPLIFY = F),
+                      icon = ~Icons[性別.x],
                       clusterOptions = markerClusterOptions()
     ) %>%
     setView(lng = provinceCode[id == 1]$lng,
@@ -155,7 +160,7 @@ output$hokkaidoConfirmedMap <- renderLeaflet({
     #   icon = icon('crosshairs'), title = '自分の位置',
     #   onClick = JS("function(btn, map){ map.locate({setView: true}); }"))) %>%
     addMiniMap(
-      tiles = providers$Esri.WorldStreetMap,
+      tiles = providers$CartoDB.Positron,
       toggleDisplay = TRUE)
 })
 
