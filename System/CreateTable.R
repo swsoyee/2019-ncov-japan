@@ -282,7 +282,7 @@ fwrite(x = processData, file = paste0(DATA_PATH, 'resultProcessData.csv'))
 
 # =====SIGNATE データ処理=====
 provinceCode <- fread(paste0(DATA_PATH, 'prefectures.csv'))
-svgIcon <- fread(paste0(DATA_PATH, 'svg.csv'))
+# svgIcon <- fread(paste0(DATA_PATH, 'svg.csv'))
 # clusterPlace<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 接触場所マスタ.csv'), header = T)
 
 signateDetail<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者.csv'), header = T)
@@ -307,16 +307,13 @@ signateDetail[is.na(ステータス), status := '調査中']
 signateDetail$size <- 18
 # 公表日
 signateDetail$公表日 <- as.Date(signateDetail$公表日)
-signateDetail$labelBackground <- ifelse(
-  signateDetail$公表日 > Sys.Date() - 14, 'twoWeeks', 'other'
-)
 
-signateDetail[性別 == '男性', symbolIcon := paste0('path://', svgIcon[name == 'male']$svg)]
-signateDetail[性別 == '女性', symbolIcon := paste0('path://', svgIcon[name == 'female']$svg)]
-signateDetail[性別 == '男性' & 年代 %in% c('60代', '70代', '80代', '90代'), symbolIcon := paste0('path://', svgIcon[name == 'grandpa']$svg)]
-signateDetail[性別 == '女性' & 年代 %in% c('60代', '70代', '80代', '90代'), symbolIcon := paste0('path://', svgIcon[name == 'grandma']$svg)]
-signateDetail[医療従事者ﾌﾗｸﾞ== 1 & 性別 == '男性', symbolIcon := paste0('path://', svgIcon[name == 'doctorMale']$svg) ]
-signateDetail[医療従事者ﾌﾗｸﾞ== 1 & 性別 == '女性', symbolIcon := paste0('path://', svgIcon[name == 'nurseFemale']$svg) ]
+# signateDetail[性別 == '男性', symbolIcon := paste0('path://', svgIcon[name == 'male']$svg)]
+# signateDetail[性別 == '女性', symbolIcon := paste0('path://', svgIcon[name == 'female']$svg)]
+# signateDetail[性別 == '男性' & 年代 %in% c('60代', '70代', '80代', '90代'), symbolIcon := paste0('path://', svgIcon[name == 'grandpa']$svg)]
+# signateDetail[性別 == '女性' & 年代 %in% c('60代', '70代', '80代', '90代'), symbolIcon := paste0('path://', svgIcon[name == 'grandma']$svg)]
+# signateDetail[医療従事者ﾌﾗｸﾞ== 1 & 性別 == '男性', symbolIcon := paste0('path://', svgIcon[name == 'doctorMale']$svg) ]
+# signateDetail[医療従事者ﾌﾗｸﾞ== 1 & 性別 == '女性', symbolIcon := paste0('path://', svgIcon[name == 'nurseFemale']$svg) ]
 
 signateDetail[, `症状・経過` := gsub('\n', '<br>', `症状・経過`)]
 signateDetail[, `行動歴` := gsub('\n', '<br>', `行動歴`)]
@@ -324,7 +321,7 @@ signateDetail[, `行動歴` := gsub('\n', '<br>', `行動歴`)]
 signateDetail[, label := paste(
   sep = "|",
   paste0(受診都道府県, '-', 都道府県別罹患者No), 
-  公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status, 居住地, 濃厚接触者状況, labelBackground
+  公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status, 居住地, 濃厚接触者状況
   )]
 
 signateLink<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者関係.csv'), header = T)
@@ -341,7 +338,7 @@ for (i in 1:nrow(signateLink)) {
                                         paste(
                                           unlist(
                                             signateDetail[罹患者id == signateLink[i]$罹患者id1, 
-                                                             .(公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status, 居住地, 濃厚接触者状況, labelBackground)
+                                                             .(公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status, 居住地, 濃厚接触者状況)
                                                              ]), collapse = '|')
                                         )]
   # }
@@ -351,7 +348,7 @@ for (i in 1:nrow(signateLink)) {
                                       paste(
                                         unlist(
                                           signateDetail[罹患者id == signateLink[i]$罹患者id2, 
-                                                           .(公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status, 居住地, 濃厚接触者状況, labelBackground)
+                                                           .(公表日, 年代, 性別, 職業, `症状・経過`, 行動歴, 情報源, status, 居住地, 濃厚接触者状況)
                                                            ]), collapse = '|')
   )]
 }
