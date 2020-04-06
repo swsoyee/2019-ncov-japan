@@ -44,7 +44,7 @@ output$hokkaidoValueBoxes <- renderUI({
       ),
       fluidRow(
         createValueBox(value = tail(data$治療終了累計, n = 1),
-                       subValue = precentage, 
+                       subValue = dischargeRate, 
                        sparkline = createSparklineInValueBox(data, '日治療終了数'), 
                        subtitle = lang[[langCode]][102], 
                        icon = 'user-shield',
@@ -52,7 +52,7 @@ output$hokkaidoValueBoxes <- renderUI({
                        diff = tail(data$日治療終了数 , n = 1)
         ),
         createValueBox(value = tail(data$死亡累計, n = 1),
-                       subValue = precentage, 
+                       subValue = deathRate, 
                        sparkline = createSparklineInValueBox(data, '日死亡数'), 
                        subtitle = lang[[langCode]][103], 
                        icon = 'bible',
@@ -86,7 +86,7 @@ output$hokkaidoSummaryGraph <- renderEcharts4r({
     e_grid(left = '8%', right = '5%', bottom = '10%') %>%
     e_legend(orient = 'vertical', top = '15%', left = '8%') %>%
     e_tooltip(trigger = 'axis') %>%
-    e_title(text = '北海道の発生状況（その一）', subtext = paste('更新時刻：', LATEST_UPDATE))
+    e_title(subtext = paste('更新時刻：', LATEST_UPDATE))
 })
 
 output$hokkaidoStackGraph <- renderEcharts4r({
@@ -110,7 +110,7 @@ output$hokkaidoStackGraph <- renderEcharts4r({
     e_grid(left = '8%', right = '5%', bottom = '10%') %>%
     e_legend(orient = 'vertical', top = '15%', left = '8%') %>%
     e_tooltip(trigger = 'axis') %>%
-    e_title(text = '北海道の発生状況（その二）', subtext = paste('更新時刻：', LATEST_UPDATE))
+    e_title(subtext = paste('更新時刻：', LATEST_UPDATE))
 })
 
 output$hokkaidoConfirmedMap <- renderLeaflet({

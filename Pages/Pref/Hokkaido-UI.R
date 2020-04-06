@@ -31,26 +31,22 @@ fluidPage(
     )
   ),
   fluidRow(
-    column(
-      width = 6,
-      style='padding:0px;',
       boxPlus(
         width = 12, 
+        title = tagList(icon('chart-line'), '北海道の発生状況'),
         closable = F,
-        echarts4rOutput('hokkaidoSummaryGraph') %>% withSpinner(),
+        fluidRow(
+          column(
+            width = 6,
+            echarts4rOutput('hokkaidoSummaryGraph') %>% withSpinner()
+          ),
+          column(
+            width = 6,
+            echarts4rOutput('hokkaidoStackGraph') %>% withSpinner()
+          )
+        ),
         footer = tags$small(icon('lightbulb'), '凡例クリックすると表示・非表示の切替ができます。')
       )
-    ),
-    column(
-      width = 6,
-      style='padding:0px;',
-      boxPlus(
-        width = 12, 
-        closable = F,
-        echarts4rOutput('hokkaidoStackGraph') %>% withSpinner(),
-        footer = tags$small(icon('lightbulb'), '凡例クリックすると表示・非表示の切替ができます。')
-      )
-    ),
   ),
   fluidRow(
     boxPlus(
