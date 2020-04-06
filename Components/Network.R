@@ -163,15 +163,18 @@ output$clusterNetwork <- renderEcharts4r({
   
   if (!is.null(node)) {
     e_charts() %>%
-      e_graph(layout = 'force',
+      e_graph(
+              # layout = 'force',
               roam = T,
               draggable = T,
               symbolKeepAspect = T,
               focusNodeAdjacency = T) %>%
       e_graph_nodes(
         node,
-        names = regionId, size = size,
-        value = label, symbol = symbolIcon) %>%
+        names = regionId, size = size, category = 性別,
+        value = label #, 
+        # symbol = symbolIcon
+        ) %>%
       e_graph_edges(edge, target = 罹患者id2, source = 罹患者id1) %>%
       e_labels(formatter = htmlwidgets::JS(paste0('
     function(params) {
@@ -205,7 +208,7 @@ output$clusterNetwork <- renderEcharts4r({
       }
     }
   ')) %>%
-      e_modularity() %>%
+      # e_modularity() %>%
       e_title(
         text = paste0('合計：', nrow(node), '人'),
         subtext = paste0('公表日：', min(as.Date(node$公表日), na.rm = T), ' ~ ', max(as.Date(node$公表日), na.rm = T))

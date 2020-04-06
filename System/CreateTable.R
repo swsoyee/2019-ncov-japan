@@ -370,38 +370,55 @@ fwrite(x = signateLink, file = paste0(DATA_PATH, 'resultSignateLink.csv'))
 # edge <- signateLink # TEST
 # node <- signateDetail # TEST
 # 
+#
 # e_charts() %>%
-#   e_graph(layout = 'force',
-#           roam = T,
-#           draggable = T,
-#           symbolKeepAspect = T,
-#           focusNodeAdjacency = T) %>%
+#   e_graph(
+#     # layout = 'force',
+#     roam = T,
+#     draggable = T,
+#     symbolKeepAspect = T,
+#     focusNodeAdjacency = T) %>%
 #   e_graph_nodes(
 #     node,
-#     names = regionId,
-#     value = label, symbol = symbolIcon) %>%
-#   e_graph_edges(edge, target = 罹患者id2, source = 罹患者id1) %>%
-#   e_labels(formatter = htmlwidgets::JS('
-#     function(params) {
-#       return(`{a|${params.value.split("|")[0]}}`)
-#     }
-#   '),
-#   rich = list(
-#     a = list(backgroundColor = 'red', lineHeight = 10),
-#     b = list(backgroundColor = 'black', lineHeight = 10)
-#   )
+#     names = regionId, size = size, category = 性別,
+#     value = label #, 
+#     # symbol = symbolIcon
 #   ) %>%
+#   e_graph_edges(edge, target = 罹患者id2, source = 罹患者id1) %>%
+#   e_labels(formatter = htmlwidgets::JS(paste0('
+#     function(params) {
+#       if (params.value) {
+#         const text = params.value.split("|")
+#         const id = text[0].split("-")
+#         const status = text[8] == "死亡" ? "{death|†}" : ""
+#         const minDate = Date.parse("2020-03-25")
+#         const maxDate = Date.parse("2020-04-05")
+#         const thisDate = Date.parse(text[1])
+#         const labelBox = (thisDate >= minDate && thisDate <= maxDate)
+#                          ? "inDateRange" : "outDateRange"
+#         return(`${status}{${labelBox}|${id[0].substring(0,1)}${id[1]}}`)
+#       }
+#     }
+#   ')), rich = list(
+#     inDateRange = list(borderColor = 'auto', borderWidth = 2, borderRadius = 2, padding = 3, fontSize = 8),
+#     outDateRange = list(borderColor = 'transparent', borderWidth = 2, borderRadius = 2, padding = 3, fontSize = 8),
+#     death = list(borderColor = 'auto', borderWidth = 2, borderRadius = 10, padding = 3)
+#   ),) %>%
 #   e_tooltip(formatter = htmlwidgets::JS('
 #     function(params) {
-#       const text = params.value.split("|")
-#       return(`
-#         番号：${text[0]}<br>
-#         公表日：${text[1]}<br>
-#         年代：${text[2]}<br>
-#         性別：${text[3]}<br>
-#         職業：${text[4]}<br>
-#       `)
+#       if (params.value) {
+#         const text = params.value.split("|")
+#         return(`
+#           番号：${text[0]}<br>
+#           公表日：${text[1]}<br>
+#           年代：${text[2]}<br>
+#           性別：${text[3]}
+#         `)
+#       }
 #     }
 #   ')) %>%
-#   e_modularity()
-# 
+#   # e_modularity() %>%
+#   e_title(
+#     text = paste0('合計：', nrow(node), '人'),
+#     subtext = paste0('公表日：', min(as.Date(node$公表日), na.rm = T), ' ~ ', max(as.Date(node$公表日), na.rm = T))
+#   )
