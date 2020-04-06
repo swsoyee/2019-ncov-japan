@@ -160,14 +160,24 @@ output$hokkaidoConfirmedMap <- renderLeaflet({
 })
 
 hokkaidoProfile <- reactive({
-  id <- input$hokkaidoConfirmedMap_marker_click$id
-  data <- hokkaidoData()$patient
+  id <- hokkaidoValue$profileId
   if (!is.null(data) && !is.null(id)) {
+    data <- hokkaidoData()$patient
     return(data[No == id])
   } else {
     return(NULL)
   }
 })
+
+hokkaidoValue <- reactiveValues(profileId = NULL)
+
+observeEvent(input$hokkaidoConfirmedMap_marker_click$id, {
+  hokkaidoValue$profileId <- input$hokkaidoConfirmedMap_marker_click$id
+})
+observeEvent(input$hokkaidoPatientTable_rows_selected, {
+  hokkaidoValue$profileId <- input$hokkaidoPatientTable_rows_selected
+})
+
 
 output$hokkaidoProfile <- renderUI({
   profile <- hokkaidoProfile()
@@ -244,8 +254,9 @@ output$hokkaidoPatientTable <- renderDataTable({
     rownames = F,
     filter = 'top',
     extensions = c('Responsive'),
+    selection = 'single',
     options = list(
-      dom = 't',
+      dom = 'tf',
       paging = F,
       filter = 'top',
       # scrollCollapse = T,
