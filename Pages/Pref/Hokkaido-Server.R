@@ -116,6 +116,7 @@ output$hokkaidoStackGraph <- renderEcharts4r({
 output$hokkaidoConfirmedMap <- renderLeaflet({
   data <- hokkaidoData()$patient
   
+  clusterData <- GLOBAL_VALUE$signatePlace[カテゴリ != '市区町村']
   # getColor <- function(value) {
   #   sapply(value, function(gender) {
   #     if(gender == '男性') {
@@ -143,16 +144,22 @@ output$hokkaidoConfirmedMap <- renderLeaflet({
 
   leaflet(data) %>% 
     addTiles() %>% 
-    addProviderTiles(providers$CartoDB.Positron) %>%
-    addMarkers(lng = ~居住地経度, 
-                      lat = ~居住地緯度, 
+    addProviderTiles(providers$Wikimedia) %>%
+    addMarkers(lng = ~居住地経度,
+                      lat = ~居住地緯度,
                       layerId = ~No,
                       label = mapply(function(No, age, gender) {
                         HTML(sprintf('<b>%s番：</b>%s %s', No, age, gender))},
                         data$No, data$年代.x, data$性別.y, SIMPLIFY = F),
                       icon = ~Icons[性別.x],
-                      clusterOptions = markerClusterOptions()
+                      clusterOptions = markerClusterOptions(), labelOptions = labelOptions(direction = 'top')
     ) %>%
+    addMarkers(lat = clusterData$`緯度（世界測地系）`,
+               lng = clusterData$`経度（世界測地系）`,
+               popup = clusterData$mapPopup,
+               label = clusterData$接触場所,
+               labelOptions = labelOptions(direction = 'top')
+              ) %>%
     setView(lng = provinceCode[id == 1]$lng,
             lat = provinceCode[id == 1]$lat,
             zoom = 7) %>%
@@ -160,8 +167,9 @@ output$hokkaidoConfirmedMap <- renderLeaflet({
     #   icon = icon('crosshairs'), title = '自分の位置',
     #   onClick = JS("function(btn, map){ map.locate({setView: true}); }"))) %>%
     addMiniMap(
-      tiles = providers$CartoDB.Positron,
+      tiles = providers$Wikimedia,
       toggleDisplay = TRUE)
+
 })
 
 hokkaidoProfile <- reactive({

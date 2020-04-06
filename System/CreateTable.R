@@ -353,9 +353,13 @@ for (i in 1:nrow(signateLink)) {
   )]
 }
 
+signatePlace<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 接触場所マスタ.csv'), header = T)
+signatePlace[, mapPopup := paste0('<a href="', signatePlace$情報源,'">', signatePlace$接触場所, '</a>')]
+
 # テーブル出力
 fwrite(x = signateDetail, file = paste0(DATA_PATH, 'resultSignateDetail.csv'))
 fwrite(x = signateLink, file = paste0(DATA_PATH, 'resultSignateLink.csv'))
+fwrite(x = signatePlace, file = paste0(DATA_PATH, 'resultSignatePlace.csv'))
 
 # フィルター
 # prefCode <- 12

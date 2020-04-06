@@ -4,6 +4,8 @@ library(data.table)
 
 DATA_PATH <- 'Data/'
 signateDetail<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者.csv'), header = T)
+signateLink<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者関係.csv'), header = T)
+signatePlace<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 接触場所マスタ.csv'), header = T)
 
 saveFileFromApi <- function(jsonResult, patientsFileName, prefCode, pref, NoCol = 'No') {
   data <- list()

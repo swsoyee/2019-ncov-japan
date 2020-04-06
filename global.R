@@ -319,6 +319,7 @@ options(spinner.color = middleRed)
 GLOBAL_VALUE <- reactiveValues(
   signateDetail = NULL,
   signateLink = NULL,
+  signatePlace = fread(file = paste0(DATA_PATH, 'resultSignatePlace.csv')),
   hokkaidoData = NULL,
   hokkaidoDataUpdateTime = NULL,
   hokkaidoPatients = NULL,
