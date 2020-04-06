@@ -27,19 +27,19 @@ output$hokkaidoValueBoxes <- renderUI({
       fluidRow(
         createValueBox(value = tail(data$検査累計, n = 1),
                        subValue = paste0('陽性率：', precentage), 
-                       sparkline = createSparklineInValueBox(data, '日陽性数'), 
+                       sparkline = createSparklineInValueBox(data, '日検査数'), 
                        subtitle = lang[[langCode]][100], 
                        icon = 'vials',
                        color = 'yellow',
-                       diff = tail(data$日陽性数 , n = 1)
+                       diff = tail(data$日検査数 , n = 1)
         ),
         createValueBox(value = tail(data$陽性累計, n = 1),
                        subValue = paste0('速報：', sum(byDate[, 2, with = T], na.rm = T)), 
-                       sparkline = createSparklineInValueBox(data, '日検査数'), 
+                       sparkline = createSparklineInValueBox(data, '日陽性数'), 
                        subtitle = lang[[langCode]][101], 
                        icon = 'procedures',
                        color = 'red',
-                       diff = tail(data$日検査数 , n = 1)
+                       diff = tail(data$日陽性数 , n = 1)
         )
       ),
       fluidRow(
