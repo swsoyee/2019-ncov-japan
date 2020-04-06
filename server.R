@@ -55,6 +55,10 @@ shinyServer(function(input, output, session) {
   source(file = paste0(PAGE_PATH, 'Pref/Hokkaido-Server.R'),
          local = TRUE,
          encoding = "UTF-8")
+  # 青森県
+  source(file = paste0(PAGE_PATH, 'Pref/Aomori-Server.R'),
+         local = TRUE,
+         encoding = "UTF-8")
   # TODO 追加修正待ち
   observeEvent(input$language, {
     if(input$language == 'cn') {

@@ -321,7 +321,14 @@ GLOBAL_VALUE <- reactiveValues(
   signateLink = NULL,
   hokkaidoData = NULL,
   hokkaidoDataUpdateTime = NULL,
-  hokkaidoPatients = NULL
+  hokkaidoPatients = NULL,
+  Aomori = list(
+    summary = NULL,
+    patient = NULL,
+    callCenter = NULL,
+    contact = NULL,
+    updateTime = NULL
+  )
 )
 
 # =======TEST========

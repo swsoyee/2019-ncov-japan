@@ -17,6 +17,8 @@ hokkaidoData <- reactive({
 })
 
 createValueBox <- function(value, subValue, subtitle, sparkline, icon, color, width = 6) {
+  value <- ifelse(is.null(value), '情報なし', value)
+  subValue <- ifelse(is.null(subValue), '情報なし', subValue)
   return(
     valueBox(
       value = tagList(value, 
@@ -84,6 +86,12 @@ output$hokkaidoDeathValue <- renderUI({
 createSparklineInValueBox <- function(data, column, barColor = 'white', negBarColor = 'white', length = 30) {
   if (!is.null(data) && nrow(data) > 0) {
     sparkline(data[[column]][(nrow(data) - length):nrow(data)], 
+              type = 'bar', 
+              barColor = barColor, 
+              negBarColor = negBarColor, 
+              width = 160)
+  } else {
+    sparkline(rep(0, length), 
               type = 'bar', 
               barColor = barColor, 
               negBarColor = negBarColor, 
