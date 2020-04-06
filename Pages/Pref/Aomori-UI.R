@@ -26,15 +26,8 @@ fluidPage(
              )
            )
     ),
-    column(width = 6, # style='padding:0px;',
-           fluidRow(
-             uiOutput('AomoriPCRValue'),
-             uiOutput('AomoriConfirmedValue')
-           ),
-           fluidRow(
-             uiOutput('AomoriDischargeValue'),
-             uiOutput('AomoriDeathValue')
-           )
+    column(width = 6,
+           uiOutput('AomoriValueBoxes') %>% withSpinner()
     )
   ),
   fluidRow(

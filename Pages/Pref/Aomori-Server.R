@@ -40,72 +40,58 @@ observeEvent(input$sideBarTab, {
   }
 })
 
-output$AomoriFormalConfirmedSparkline <- renderSparkline({
-  createSparklineInValueBox(GLOBAL_VALUE$Aomori$summary, '陽性数', length = 10)
-})
-
-output$AomoriFormalPCRSparkline <- renderSparkline({
-  createSparklineInValueBox(GLOBAL_VALUE$Aomori$summary, '実施数', length = 10)
-})
-
-output$AomoriFormalDischargeSparkline <- renderSparkline({
-  createSparklineInValueBox(GLOBAL_VALUE$Aomori$summary, '治療終了数', length = 10)
-})
-
-output$AomoriFormalDeathSparkline <- renderSparkline({
-  createSparklineInValueBox(GLOBAL_VALUE$Aomori$summary, '死亡数', length = 10)
-})
-
-output$AomoriPCRValue <- renderUI({
-  precentage <- paste0(round(sum(GLOBAL_VALUE$Aomori$summary$陽性数, na.rm = T) / sum(GLOBAL_VALUE$Aomori$summary$実施数, na.rm = T) * 100, 2), '%')
-  createValueBox(value = sum(GLOBAL_VALUE$Aomori$summary$実施数, na.rm = T),
-                 subValue = paste0('陽性率：', precentage),
-                 sparkline = 'AomoriFormalPCRSparkline',
-                 subtitle = '累計検査数',
-                 icon = 'vials',
-                 color = 'yellow',
-  )
-})
-
-output$AomoriConfirmedValue <- renderUI({
-  createValueBox(value = sum(GLOBAL_VALUE$Aomori$summary$陽性数, na.rm = T),
-                 subValue = paste0('速報：', sum(byDate[, 3, with = T], na.rm = T)),
-                 sparkline = 'AomoriFormalConfirmedSparkline',
-                 subtitle = '累計陽性者数',
-                 icon = 'procedures',
-                 color = 'red'
-  )
-})
-
-output$AomoriDischargeValue <- renderUI({
-  data <- hokkaidoData()$data
-  precentage <- paste0(
+output$AomoriValueBoxes <- renderUI({
+  data <- GLOBAL_VALUE$Aomori$summary
+  totalPositive <- sum(data$陽性数, na.rm = T)
+  totalPCR <- sum(data$実施数, na.rm = T)
+  totalDischarge <-  sum(data$治療終了数, na.rm = T) # TODO 公式データまだない
+  totalDeath <- sum(data$死亡数, na.rm = T) # TODO 公式データまだない
+  positiveRate <- paste0(round(totalPositive / totalPCR * 100, 2), '%')
+  dischargeRate <- paste0(
     round(
-      sum(GLOBAL_VALUE$Aomori$summary$治療終了数, na.rm = T) / sum(GLOBAL_VALUE$Aomori$summary$陽性数, na.rm = T
-                                                              ) * 100, 2
-      ), '%'
-    )
-  createValueBox(value = sum(GLOBAL_VALUE$Aomori$summary$治療終了数, na.rm = T),
-                 subValue = precentage, 
-                 sparkline = 'AomoriFormalDischargeSparkline', 
-                 subtitle = '累計治療終了数', 
-                 icon = 'user-shield',
-                 color = 'green'
-  )
-})
-
-output$AomoriDeathValue <- renderUI({
-  precentage <- paste0(
-    round(
-      sum(GLOBAL_VALUE$Aomori$summary$死亡数, na.rm = T) / sum(GLOBAL_VALUE$Aomori$summary$陽性数, na.rm = T
-      ) * 100, 2
+      totalDischarge / totalPositive * 100, 2
     ), '%'
   )
-  createValueBox(value = sum(GLOBAL_VALUE$Aomori$summary$死亡数, na.rm = T),
-                 subValue = precentage, 
-                 sparkline = 'AomoriFormalDeathSparkline', 
-                 subtitle = '累計死亡者数', 
-                 icon = 'bible',
-                 color = 'navy'
+  deathRate <- paste0(
+    round(
+      totalDeath / totalPositive * 100, 2
+    ), '%'
+  )
+  
+  return(
+    tagList(
+      fluidRow(
+        createValueBox(value = totalPCR,
+                       subValue = paste0('陽性率：', positiveRate), 
+                       sparkline = createSparklineInValueBox(data, '陽性数', length = 10),
+                       subtitle = lang[[langCode]][100], 
+                       icon = 'vials',
+                       color = 'yellow',
+        ),
+        createValueBox(value = totalPositive,
+                       subValue = paste0('速報：', sum(byDate[, 2, with = T], na.rm = T)), 
+                       sparkline = createSparklineInValueBox(data, '実施数', length = 10),
+                       subtitle = lang[[langCode]][101], 
+                       icon = 'procedures',
+                       color = 'red'
+        )
+      ),
+      fluidRow(
+        createValueBox(value = totalDischarge, # TODO 公式データまだない
+                       subValue = dischargeRate, 
+                       sparkline = createSparklineInValueBox(data, '治療終了数', length = 10),
+                       subtitle = lang[[langCode]][102], 
+                       icon = 'user-shield',
+                       color = 'green'
+        ),
+        createValueBox(value = totalDeath, # TODO 公式データまだない
+                       subValue = deathRate, 
+                       sparkline = createSparklineInValueBox(data, '死亡数', length = 10),
+                       subtitle = lang[[langCode]][103], 
+                       icon = 'bible',
+                       color = 'navy'
+        )
+      )
+    )
   )
 })

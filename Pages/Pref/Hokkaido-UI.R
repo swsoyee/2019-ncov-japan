@@ -27,14 +27,7 @@ fluidPage(
            )
     ),
     column(width = 6, # style='padding:0px;',
-      fluidRow(
-        uiOutput('hokkaidoPCRValue'),
-        uiOutput('hokkaidoConfirmedValue')
-      ),
-      fluidRow(
-        uiOutput('hokkaidoDischargeValue'),
-        uiOutput('hokkaidoDeathValue')
-      )
+      uiOutput('hokkaidoValueBoxes') %>% withSpinner()
     )
   ),
   fluidRow(

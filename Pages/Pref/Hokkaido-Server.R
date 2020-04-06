@@ -16,103 +16,48 @@ hokkaidoData <- reactive({
               patient = GLOBAL_VALUE$hokkaidoPatients))
 })
 
-createValueBox <- function(value, subValue, subtitle, sparkline, icon, color, width = 6) {
-  value <- ifelse(is.null(value), '情報なし', value)
-  subValue <- ifelse(is.null(subValue), '情報なし', subValue)
+output$hokkaidoValueBoxes <- renderUI({
+  data <- hokkaidoData()$data
+  positiveRate <- paste0(round(tail(data$陽性累計, n = 1) / tail(data$検査累計, n = 1) * 100, 2), '%')
+  dischargeRate <- paste0(round(tail(data$治療終了累計, n = 1) / tail(data$陽性累計, n = 1) * 100, 2), '%')
+  deathRate <- precentage <- paste0(round(tail(data$死亡累計, n = 1) / tail(data$陽性累計, n = 1) * 100, 2), '%')
+  
   return(
-    valueBox(
-      value = tagList(value, 
-                      tags$small(
-                        paste0('| ' , subValue),
-                        style = 'color:white;font-size:16px;margin-top:10px;margin-right:10px;opacity:0.8'
-                        )
+    tagList(
+      fluidRow(
+        createValueBox(value = tail(data$検査累計, n = 1),
+                       subValue = paste0('陽性率：', precentage), 
+                       sparkline = createSparklineInValueBox(data, '日陽性数'), 
+                       subtitle = lang[[langCode]][100], 
+                       icon = 'vials',
+                       color = 'yellow',
+        ),
+        createValueBox(value = tail(data$陽性累計, n = 1),
+                       subValue = paste0('速報：', sum(byDate[, 2, with = T], na.rm = T)), 
+                       sparkline = createSparklineInValueBox(data, '日検査数'), 
+                       subtitle = lang[[langCode]][101], 
+                       icon = 'procedures',
+                       color = 'red'
+        )
       ),
-      subtitle = tagList(sparklineOutput(sparkline), 
-                         tags$span(subtitle, style = 'float:right')), 
-      icon = icon(icon), 
-      color = color,
-      width = width
+      fluidRow(
+        createValueBox(value = tail(data$治療終了累計, n = 1),
+                       subValue = precentage, 
+                       sparkline = createSparklineInValueBox(data, '日治療終了数'), 
+                       subtitle = lang[[langCode]][102], 
+                       icon = 'user-shield',
+                       color = 'green'
+        ),
+        createValueBox(value = tail(data$死亡累計, n = 1),
+                       subValue = precentage, 
+                       sparkline = createSparklineInValueBox(data, '日死亡数'), 
+                       subtitle = lang[[langCode]][103], 
+                       icon = 'bible',
+                       color = 'navy'
+        )
+      )
     )
   )
-}
-
-output$hokkaidoPCRValue <- renderUI({
-  data <- hokkaidoData()$data
-  precentage <- paste0(round(tail(data$陽性累計, n = 1) / tail(data$検査累計, n = 1) * 100, 2), '%')
-  createValueBox(value = tail(data$検査累計, n = 1),
-                 subValue = paste0('陽性率：', precentage), 
-                 sparkline = 'hokkaidoFormalPCRSparkline', 
-                 subtitle = '累計検査数', 
-                 icon = 'vials',
-                 color = 'yellow',
-  )
-})
-
-output$hokkaidoConfirmedValue <- renderUI({
-  data <- hokkaidoData()$data
-  createValueBox(value = tail(data$陽性累計, n = 1),
-                 subValue = paste0('速報：', sum(byDate[, 2, with = T], na.rm = T)), 
-                 sparkline = 'hokkaidoFormalConfirmedSparkline', 
-                 subtitle = '累計陽性者数', 
-                 icon = 'procedures',
-                 color = 'red'
-                 )
-})
-
-output$hokkaidoDischargeValue <- renderUI({
-  data <- hokkaidoData()$data
-  precentage <- paste0(round(tail(data$治療終了累計, n = 1) / tail(data$陽性累計, n = 1) * 100, 2), '%')
-  createValueBox(value = tail(data$治療終了累計, n = 1),
-                 subValue = precentage, 
-                 sparkline = 'hokkaidoFormalDischargeSparkline', 
-                 subtitle = '累計治療終了数', 
-                 icon = 'user-shield',
-                 color = 'green'
-  )
-})
-
-output$hokkaidoDeathValue <- renderUI({
-  data <- hokkaidoData()$data
-  precentage <- paste0(round(tail(data$死亡累計, n = 1) / tail(data$陽性累計, n = 1) * 100, 2), '%')
-  createValueBox(value = tail(data$死亡累計, n = 1),
-                 subValue = precentage, 
-                 sparkline = 'hokkaidoFormalDeathSparkline', 
-                 subtitle = '累計死亡者数', 
-                 icon = 'bible',
-                 color = 'navy'
-  )
-})
-
-createSparklineInValueBox <- function(data, column, barColor = 'white', negBarColor = 'white', length = 30) {
-  if (!is.null(data) && nrow(data) > 0) {
-    sparkline(data[[column]][(nrow(data) - length):nrow(data)], 
-              type = 'bar', 
-              barColor = barColor, 
-              negBarColor = negBarColor, 
-              width = 160)
-  } else {
-    sparkline(rep(0, length), 
-              type = 'bar', 
-              barColor = barColor, 
-              negBarColor = negBarColor, 
-              width = 160)
-  }
-}
-
-output$hokkaidoFormalConfirmedSparkline <- renderSparkline({
-  createSparklineInValueBox(hokkaidoData()$data, '日陽性数')
-})
-
-output$hokkaidoFormalPCRSparkline <- renderSparkline({
-  createSparklineInValueBox(hokkaidoData()$data, '日検査数')
-})
-
-output$hokkaidoFormalDischargeSparkline <- renderSparkline({
-  createSparklineInValueBox(hokkaidoData()$data, '日治療終了数')
-})
-
-output$hokkaidoFormalDeathSparkline <- renderSparkline({
-  createSparklineInValueBox(hokkaidoData()$data, '日死亡数')
 })
 
 output$hokkaidoSummaryGraph <- renderEcharts4r({
