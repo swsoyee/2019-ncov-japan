@@ -63,17 +63,19 @@ output$AomoriValueBoxes <- renderUI({
       fluidRow(
         createValueBox(value = totalPCR,
                        subValue = paste0('陽性率：', positiveRate), 
-                       sparkline = createSparklineInValueBox(data, '陽性数', length = 10),
+                       sparkline = createSparklineInValueBox(data, '実施数', length = 10),
                        subtitle = lang[[langCode]][100], 
                        icon = 'vials',
-                       color = 'yellow',
+                       color = 'yellow', 
+                       diff = tail(data$実施数, n = 1)
         ),
         createValueBox(value = totalPositive,
                        subValue = paste0('速報：', sum(byDate[, 2, with = T], na.rm = T)), 
-                       sparkline = createSparklineInValueBox(data, '実施数', length = 10),
+                       sparkline = createSparklineInValueBox(data, '陽性数', length = 10),
                        subtitle = lang[[langCode]][101], 
                        icon = 'procedures',
-                       color = 'red'
+                       color = 'red', 
+                       diff = tail(data$陽性数, n = 1)
         )
       ),
       fluidRow(
@@ -82,14 +84,16 @@ output$AomoriValueBoxes <- renderUI({
                        sparkline = createSparklineInValueBox(data, '治療終了数', length = 10),
                        subtitle = lang[[langCode]][102], 
                        icon = 'user-shield',
-                       color = 'green'
+                       color = 'green',
+                       diff = tail(data$治療終了数, n = 1)
         ),
         createValueBox(value = totalDeath, # TODO 公式データまだない
                        subValue = deathRate, 
                        sparkline = createSparklineInValueBox(data, '死亡数', length = 10),
                        subtitle = lang[[langCode]][103], 
                        icon = 'bible',
-                       color = 'navy'
+                       color = 'navy',
+                       diff = tail(data$死亡数, n = 1)
         )
       )
     )

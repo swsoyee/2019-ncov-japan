@@ -32,9 +32,24 @@ createValueBox <-
            sparkline,
            icon,
            color,
-           width = 6) {
+           width = 6,
+           diff = 0) {
     value <- ifelse(is.null(value), '情報なし', value)
     subValue <- ifelse(is.null(subValue), '情報なし', subValue)
+    
+    diffIcon <- ''
+    if (!is.null(diff)) {
+      if (diff > 0) {
+        diffIcon <- icon('caret-up')
+      } else if (diff < 0) {
+        diffIcon <- icon('caret-down')
+      } else {
+        diffIcon <- icon('lock')
+      }
+    } else {
+      diff <- '-'
+    }
+    
     return(
       valueBox(
         value = tagList(
@@ -44,7 +59,7 @@ createValueBox <-
         ),
         subtitle = tagList(
           sparkline,
-          tags$span(subtitle, style = 'float:right')
+          tags$span(diff, diffIcon, subtitle, style = 'float:right')
         ),
         icon = icon(icon),
         color = color,
