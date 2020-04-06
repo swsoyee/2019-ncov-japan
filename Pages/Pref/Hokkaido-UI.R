@@ -26,7 +26,7 @@ fluidPage(
              )
            )
     ),
-    column(width = 6, # style='padding:0px;',
+    column(width = 6,
       uiOutput('hokkaidoValueBoxes') %>% withSpinner()
     )
   ),

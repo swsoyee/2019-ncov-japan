@@ -70,7 +70,7 @@ output$AomoriValueBoxes <- renderUI({
                        diff = tail(data$実施数, n = 1)
         ),
         createValueBox(value = totalPositive,
-                       subValue = paste0('速報：', sum(byDate[, 2, with = T], na.rm = T)), 
+                       subValue = paste0('速報：', sum(byDate[, 3, with = T], na.rm = T)), 
                        sparkline = createSparklineInValueBox(data, '陽性数', length = 10),
                        subtitle = lang[[langCode]][101], 
                        icon = 'procedures',

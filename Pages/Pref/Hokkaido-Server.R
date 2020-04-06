@@ -31,13 +31,15 @@ output$hokkaidoValueBoxes <- renderUI({
                        subtitle = lang[[langCode]][100], 
                        icon = 'vials',
                        color = 'yellow',
+                       diff = tail(data$日陽性数 , n = 1)
         ),
         createValueBox(value = tail(data$陽性累計, n = 1),
                        subValue = paste0('速報：', sum(byDate[, 2, with = T], na.rm = T)), 
                        sparkline = createSparklineInValueBox(data, '日検査数'), 
                        subtitle = lang[[langCode]][101], 
                        icon = 'procedures',
-                       color = 'red'
+                       color = 'red',
+                       diff = tail(data$日検査数 , n = 1)
         )
       ),
       fluidRow(
@@ -46,14 +48,16 @@ output$hokkaidoValueBoxes <- renderUI({
                        sparkline = createSparklineInValueBox(data, '日治療終了数'), 
                        subtitle = lang[[langCode]][102], 
                        icon = 'user-shield',
-                       color = 'green'
+                       color = 'green',
+                       diff = tail(data$日治療終了数 , n = 1)
         ),
         createValueBox(value = tail(data$死亡累計, n = 1),
                        subValue = precentage, 
                        sparkline = createSparklineInValueBox(data, '日死亡数'), 
                        subtitle = lang[[langCode]][103], 
                        icon = 'bible',
-                       color = 'navy'
+                       color = 'navy',
+                       diff = tail(data$日死亡数 , n = 1)
         )
       )
     )
