@@ -246,7 +246,14 @@ output$hokkaidoProfile <- renderUI({
       )
     )
   } else {
-    return(tags$b('マップ上のマークをクリックすると感染者詳細がみれます。'))
+    return(
+      boxPlus(
+        title = tagList(icon('id-card'), '公開された感染者情報'),
+        width = 12, 
+        closable = F,
+        tags$b('マップ上のマークをクリックすると感染者詳細がみれます。')
+        )
+    )
   }
 })
 
