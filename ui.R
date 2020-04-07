@@ -55,6 +55,11 @@ shinyUI(
           text = '青森県', 
           tabName = 'aomori',
           icon = icon('apple-alt')
+        ),
+        menuSubItem(
+          text = '神奈川県', 
+          tabName = 'kanagawa'#,
+          # icon = icon('apple-alt')
         )
       ),
       menuItem(
@@ -120,6 +125,12 @@ shinyUI(
       tabItem(tabName = 'aomori',
               source(
                 file = paste0(PAGE_PATH, 'Pref/Aomori-UI.R'),
+                local = T,
+                encoding = 'UTF-8'
+              )$value),
+      tabItem(tabName = 'kanagawa',
+              source(
+                file = paste0(PAGE_PATH, 'Pref/Kanagawa-UI.R'),
                 local = T,
                 encoding = 'UTF-8'
               )$value),

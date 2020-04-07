@@ -1,3 +1,39 @@
+# データの読み込み
+loadDataFromFile <- function(fileList, FilePath, fileName, object, index) {
+  # 実際のファイル名を取得
+  dataName <- fileList[sapply(fileList, function(x) {grepl(fileName, x)})]
+  # 保存
+  object[[index]] <- fread(file = paste0(DATA_PATH, FilePath, dataName))
+  return(object)
+}
+
+convertUnit2Ja <- function(x) {
+  x <- as.character(units(x))
+  if (x == 'secs') {
+    return('秒前')
+  } else if (x == 'mins') {
+    return('分前')
+  } else if (x == 'hours') {
+    return('時間前')
+  } else if (x == 'days') {
+    return('日前')
+  } else if (x == 'weeks') {
+    return('週前')
+  } else {
+    return(paste(x, 'ago'))
+  }
+}  
+
+# データ更新時間変換
+getUpdateTimeDiff <- function(dataUpdateTime) {
+  latestUpdateDuration <- difftime(Sys.time(), dataUpdateTime)
+  updateTime <- paste0(
+    round(latestUpdateDuration[[1]], 0), 
+    convertUnit2Ja(latestUpdateDuration)
+  )
+  return(updateTime)
+}
+
 # ValueBox内部のSparklineを作成
 createSparklineInValueBox <-
   function(data,

@@ -329,6 +329,10 @@ GLOBAL_VALUE <- reactiveValues(
     callCenter = NULL,
     contact = NULL,
     updateTime = NULL
+  ),
+  Kanagawa = list(
+    summary = NULL,
+    updateTime = NULL
   )
 )
 
