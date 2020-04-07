@@ -3,7 +3,7 @@ fluidPage(
     column(width = 6, style='padding:0px;',
            widgetUserBox(
              title = '神奈川県', 
-             subtitle = '関東', 
+             subtitle = '関東地方', 
              width = 12,
              type = 2, 
              color = 'aqua-active',

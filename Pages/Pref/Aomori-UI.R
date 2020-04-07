@@ -30,17 +30,23 @@ fluidPage(
            uiOutput('AomoriValueBoxes') %>% withSpinner()
     )
   ),
-  boxPlus(
-    width = 12,
-    closable = F,
-    title = tagList(icon('chart-line'), '青森県の発生状況'),
-    fluidRow(
-      column(
-        width = 6,
-        echarts4rOutput('AomoriSummary') %>% withSpinner()
-      )
-    ),
-    footer = tags$small(icon('lightbulb'), '凡例クリックすると表示・非表示の切替ができます。')
+  fluidRow(
+    boxPlus(
+      width = 12,
+      closable = F,
+      title = tagList(icon('chart-line'), '青森県の発生状況'),
+      fluidRow(
+        column(
+          width = 6, 
+          echarts4rOutput('AomoriContact') %>% withSpinner()
+        ),
+        column(
+          width = 6,
+          echarts4rOutput('AomoriSummary') %>% withSpinner()
+        )
+      ),
+      footer = tags$small(icon('lightbulb'), '凡例クリックすると表示・非表示の切替ができます。')
+    )
   ), 
   fluidRow(
     boxPlus(

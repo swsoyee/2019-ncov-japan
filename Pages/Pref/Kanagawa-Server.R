@@ -33,15 +33,15 @@ output$kanagawaContact <- renderEcharts4r({
   data <- GLOBAL_VALUE$Kanagawa$summary
   data %>%
     e_chart(日付) %>%
-    e_bar(合計, name = '専用ダイヤル相談件数（日次）', stack = 1, color = darkBlue) %>%
-    e_bar(相談対応件数, name = '帰国者・接触者相談センター相談件数（日次）', stack = 1, color = lightBlue) %>%
-    e_line(専用ダイヤル累計, name = '専用ダイヤル相談件数（累計）', stack = 2, y_index = 1, color = darkRed) %>%
-    e_line(相談対応件数累計, name = '帰国者・接触者相談センター相談件数（累計）', stack = 2, y_index = 1, color = lightNavy) %>%
+    e_bar(合計, name = lang[[langCode]][105], stack = 1, color = darkBlue) %>%
+    e_bar(相談対応件数, name = lang[[langCode]][107], stack = 1, color = lightBlue) %>%
+    e_line(専用ダイヤル累計, name = lang[[langCode]][106], stack = 2, y_index = 1, color = darkRed) %>%
+    e_line(相談対応件数累計, name = lang[[langCode]][108], stack = 2, y_index = 1, color = lightNavy) %>%
     e_y_axis(splitLine = list(show = F), index = 1) %>%
     e_grid(left = '8%', right = '10%', bottom = '10%') %>%
     e_legend(orient = 'vertical', top = '15%', left = '8%') %>%
     e_tooltip(trigger = 'axis') %>%
-    e_title(text = '専用ダイヤルおよび帰国者・接触者相談センター相談件数',
+    e_title(text = lang[[langCode]][104],
             subtext = paste('更新時刻：', getUpdateTimeDiff(GLOBAL_VALUE$Kanagawa$updateTime))) %>%
     e_group('kanagawaSumarry')
 })
