@@ -1,8 +1,17 @@
 library(rjson)
 library(jsonlite)
 library(data.table)
+library(gsheet)
 
 DATA_PATH <- 'Data/'
+
+# ====けんもデータ====
+positiveDetail <- gsheet2tbl('docs.google.com/spreadsheets/d/1Cy4W9hYhGmABq1GuhLOkM92iYss0qy03Y1GeTv4bCyg/edit#gid=1196047345')
+fwrite(x = positiveDetail, file = paste0(DATA_PATH, 'positiveDetail.csv'))
+
+provincePCR <- gsheet2tbl('docs.google.com/spreadsheets/d/1Cy4W9hYhGmABq1GuhLOkM92iYss0qy03Y1GeTv4bCyg/edit#gid=845297461')
+fwrite(x = provincePCR, file = paste0(DATA_PATH, 'provincePCR.csv'))
+
 signateDetail<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者.csv'), header = T)
 signateLink<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者関係.csv'), header = T)
 signatePlace<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 接触場所マスタ.csv'), header = T)
