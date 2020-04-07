@@ -57,14 +57,14 @@ querent[, 相談対応件数累計 := cumsum(相談対応件数)]
 
 patient <- data.table(read.csv('http://www.pref.kanagawa.jp/osirase/1369/data/csv/patient.csv', fileEncoding = 'cp932'))
 patient$性別 <- as.character(patient$性別)
-patient[性別 == '', 性別 := '調査中']
+# patient[性別 == '', 性別 := '調査中']
 patient[性別 == '−', 性別 := '非公表']
 patientSummary <- data.table(as.data.frame.matrix(table(patient$発表日, patient$性別)), keep.rownames = T)
 
 dt <- merge(x = contact, y = querent, by.x = '日付', by.y = '日付', all.x = T, no.dups = T)
 dt <- merge(x = dt, y = patientSummary, by.x = '日付', by.y = 'rn', no.dups = T, all = T)
 dt[is.na(dt)] <- 0
-dt[, 陽性数 := rowSums(.SD), .SDcols = c('男性', '女性', '調査中', '非公表')]
+dt[, 陽性数 := rowSums(.SD), .SDcols = c('男性', '女性', '非公表')]
 dt[, 累積陽性数 := cumsum(.SD), .SDcols = c('陽性数')]
 
 fwrite(x = dt, file = paste0('Data/Pref/Kanagawa/summary.csv'))
