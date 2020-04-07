@@ -74,6 +74,7 @@ fluidPage(
       enable_label = T, 
       label_text = tagList('クリックして', icon('hand-point-right')), 
       label_status = 'warning',
+      footer = tags$small(icon('lightbulb'), '凡例クリックすると表示・非表示の切替ができます。'),
       width = 12,
       tabsetPanel(
         id = 'linePlot',
