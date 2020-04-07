@@ -26,7 +26,7 @@ fluidPage(
            )
     ),
     column(width = 6,
-           # uiOutput('hokkaidoValueBoxes') %>% withSpinner()
+           uiOutput('kanagawaValueBoxes') %>% withSpinner(proxy.height = '200px')
     )
   ),
   fluidRow(

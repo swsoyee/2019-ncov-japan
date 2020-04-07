@@ -27,7 +27,7 @@ fluidPage(
            )
     ),
     column(width = 6,
-           uiOutput('AomoriValueBoxes') %>% withSpinner()
+           uiOutput('AomoriValueBoxes') %>% withSpinner(proxy.height = '200px')
     )
   ),
   fluidRow(
