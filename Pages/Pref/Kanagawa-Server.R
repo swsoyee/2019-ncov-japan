@@ -42,7 +42,8 @@ output$kanagawaContact <- renderEcharts4r({
     e_legend(orient = 'vertical', top = '15%', left = '8%') %>%
     e_tooltip(trigger = 'axis') %>%
     e_title(text = '専用ダイヤルおよび帰国者・接触者相談センター相談件数',
-            subtext = paste('更新時刻：', getUpdateTimeDiff(GLOBAL_VALUE$Kanagawa$updateTime)))
+            subtext = paste('更新時刻：', getUpdateTimeDiff(GLOBAL_VALUE$Kanagawa$updateTime))) %>%
+    e_group('kanagawaSumarry')
 })
 
 output$kanagawaPatientSummary <- renderEcharts4r({
@@ -59,5 +60,7 @@ output$kanagawaPatientSummary <- renderEcharts4r({
     e_legend(orient = 'vertical', top = '15%', left = '8%') %>%
     e_tooltip(trigger = 'axis') %>%
     e_title(text = paste0('陽性患者数（計', tail(data$累積陽性数, n = 1), '人）'),
-            subtext = paste('更新時刻：', getUpdateTimeDiff(GLOBAL_VALUE$Kanagawa$updateTime)))
+            subtext = paste('更新時刻：', getUpdateTimeDiff(GLOBAL_VALUE$Kanagawa$updateTime))) %>%
+    e_group('kanagawaSumarry') %>%
+    e_connect_group('kanagawaSumarry')
 })
