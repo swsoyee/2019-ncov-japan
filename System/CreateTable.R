@@ -153,6 +153,7 @@ detailSparkLine <- sapply(detailSparkLineDt$都道府県名, function(region) {
   #                        detailSparkLineDt[都道府県名 == region, 患者数] - fixDiff, 
   #                        detailSparkLineDt[都道府県名 == region, 患者数])
   # 2020-03-30 対応分
+  
   confirmed <- ifelse(total[names(total) == region][[1]] > detailSparkLineDt[都道府県名 == region, 患者数],
                       total[names(total) == region][[1]],
                       detailSparkLineDt[都道府県名 == region, 患者数])
