@@ -372,7 +372,6 @@ fwrite(x = signatePlace, file = paste0(DATA_PATH, 'resultSignatePlace.csv'))
 # edge <- signateLink # TEST
 # node <- signateDetail # TEST
 # 
-#
 # e_charts() %>%
 #   e_graph(
 #     # layout = 'force',
@@ -383,7 +382,7 @@ fwrite(x = signatePlace, file = paste0(DATA_PATH, 'resultSignatePlace.csv'))
 #   e_graph_nodes(
 #     node,
 #     names = regionId, size = size, category = 性別,
-#     value = label #, 
+#     value = label #,
 #     # symbol = symbolIcon
 #   ) %>%
 #   e_graph_edges(edge, target = 罹患者id2, source = 罹患者id1) %>%
