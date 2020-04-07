@@ -151,7 +151,7 @@ output$hokkaidoConfirmedMap <- renderLeaflet({
                       label = mapply(function(No, age, gender) {
                         HTML(sprintf('<b>%s番：</b>%s %s', No, age, gender))},
                         data$No, data$年代.x, data$性別.y, SIMPLIFY = F),
-                      icon = ~Icons[性別.x],
+                      icon = ~Icons[性別.y],
                       clusterOptions = markerClusterOptions(), labelOptions = labelOptions(direction = 'top')
     ) %>%
     addMarkers(lat = clusterData$`緯度（世界測地系）`,
