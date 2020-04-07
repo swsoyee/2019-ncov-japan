@@ -81,6 +81,8 @@ output$hokkaidoSummaryGraph <- renderEcharts4r({
     e_line(患者累計, color = middleYellow) %>%
     e_line(死亡累計, color = darkNavy) %>%
     e_bar(日陽性数, color = darkRed, name = '日次陽性者数', y_index = 1) %>%
+    e_mark_line(data = list(xAxis = '2020-02-28', label = list(formatter = '2月28日\n緊急事態宣言')), symbol = 'circle') %>%
+    e_mark_line(data = list(xAxis = '2020-03-19', label = list(formatter = '3月19日\n緊急事態終了')), symbol = 'circle') %>%
     e_y_axis(splitLine = list(show = F), index = 1, max = 3 * max(data$日陽性数, na.rm = T)) %>%
     e_x_axis(splitLine = list(show = F)) %>%
     e_grid(left = '8%', right = '5%', bottom = '10%') %>%
@@ -103,7 +105,9 @@ output$hokkaidoStackGraph <- renderEcharts4r({
   data %>%
     e_chart(date) %>%
     e_bar(検査累計, color = middleYellow, stack = 1) %>%
-    e_bar(陽性累計, color = middleRed, stack = 2, z = 2, barGap = '-100%') %>%
+    e_bar(陽性累計, color = darkRed, stack = 2, z = 2, barGap = '-100%') %>%
+    e_mark_line(data = list(xAxis = '2020-02-28', label = list(formatter = '2月28日\n緊急事態宣言')), symbol = 'circle') %>%
+    e_mark_line(data = list(xAxis = '2020-03-19', label = list(formatter = '3月19日\n緊急事態終了')), symbol = 'circle') %>%
     e_bar(治療終了累計, color = middleGreen, stack = 3) %>%
     e_bar(死亡累計, color = darkNavy, stack = 3) %>%
     e_x_axis(splitLine = list(show = F)) %>%
