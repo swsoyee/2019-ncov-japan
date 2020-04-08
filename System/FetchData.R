@@ -73,6 +73,18 @@ iwateData[, 相談件数累計 := cumsum(相談件数)]
 iwateData[, 一般相談累計 := cumsum(一般相談)]
 fwrite(x = iwateData, file = paste0('Data/Pref/', 'Iwate', '/', 'summary.csv'))
 
+# ====宮城====
+dataUrl <- 'https://raw.githubusercontent.com/code4shiogama/covid19-miyagi/development/data/data.json'
+jsonFile <- fromJSON(dataUrl)
+pcr <- data.table(date = as.Date(jsonFile$inspection_persons$labels),
+                  検査数 = jsonFile$inspection_persons$datasets$data[[1]])
+contact <- data.table(date = as.Date(jsonFile$contacts$data$日付),
+                      相談件数 = jsonFile$contacts$data$小計)
+miyagiData <- merge(x = pcr, y = contact, by = 'date', no.dups = T, all = T)
+miyagiData[is.na(miyagiData)] <- 0
+miyagiData[, 検査数累計 := cumsum(検査数)]
+miyagiData[, 相談件数累計 := cumsum(相談件数)]
+fwrite(x = miyagiData, file = paste0('Data/Pref/', 'Miyagi', '/', 'summary.csv'))
 
 # ====秋田====
 # dataUrl <- 'https://raw.githubusercontent.com/asaba-zauberer/covid19-akita/development/data/data.json'
