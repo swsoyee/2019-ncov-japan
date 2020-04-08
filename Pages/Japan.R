@@ -7,7 +7,7 @@ fluidPage(
             label_status = 'warning', 
             solidHeader = T,
             status = 'info', 
-            title = tagList(icon('bullhorn'), 'お知らせ'),
+            title = tagList(icon('bullhorn'), '２時間ほど離席します。その間の速報値は更新しません。ご迷惑をかけましてすみません。'),
             collapsible = T,
             collapsed = T,
             tags$small(
