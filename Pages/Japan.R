@@ -2,12 +2,12 @@ fluidPage(
   fluidRow(
     boxPlus(width = 12, 
             closable = T, 
-            enable_label = T, 
+            enable_label = F, 
             label_text = 'New', 
             label_status = 'warning', 
             solidHeader = T,
             status = 'info', 
-            title = tagList(icon('bullhorn'), '２時間ほど離席します。その間の速報値は更新しません。ご迷惑をかけましてすみません。'),
+            title = tagList(icon('bullhorn'), 'お知らせ'),
             collapsible = T,
             collapsed = T,
             tags$small(
