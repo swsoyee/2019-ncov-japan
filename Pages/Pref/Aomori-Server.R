@@ -132,8 +132,8 @@ output$AomoriContact <- renderEcharts4r({
     e_chart(受付_年月日) %>%
     e_bar(相談件数.対応., name = lang[[langCode]][105], y_index = 1, stack = 1, color = middleBlue) %>%
     e_bar(相談件数, name = lang[[langCode]][107], y_index = 1, stack = 1, color = lightBlue) %>%
-    e_line(コールセンター相談件数累計, name = lang[[langCode]][106], color = darkRed) %>%
-    e_line(相談件数累計, name = lang[[langCode]][108], color = middelNavy) %>%
+    e_line(コールセンター相談件数累計, name = lang[[langCode]][106], stack = 2, color = darkRed) %>%
+    e_line(相談件数累計, name = lang[[langCode]][108], stack = 2, color = middelNavy) %>%
     e_y_axis(splitLine = list(show = F), index = 1, max = max(dt$相談件数 + dt$相談件数.対応., na.rm = T) * 2) %>%
     e_x_axis(splitLine = list(show = F)) %>%
     e_grid(left = '8%', right = '8%', bottom = '10%') %>%

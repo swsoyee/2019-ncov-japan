@@ -63,6 +63,10 @@ shinyServer(function(input, output, session) {
   source(file = paste0(PAGE_PATH, 'Pref/Aomori-Server.R'),
          local = TRUE,
          encoding = "UTF-8")
+  # 岩手県
+  source(file = paste0(PAGE_PATH, 'Pref/Iwate-Server.R'),
+         local = TRUE,
+         encoding = "UTF-8")
   # 神奈川県
   source(file = paste0(PAGE_PATH, 'Pref/Kanagawa-Server.R'),
          local = TRUE,
