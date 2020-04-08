@@ -57,10 +57,22 @@ saveFileFromApi(jsonResult, '陽性患者関係.csv', 2, 'Aomori', 'ＮＯ')
 
 
 # ====岩手====
-# dataUrl <- 'https://raw.githubusercontent.com/MeditationDuck/covid19/development/data/data.json'
-# jsonFile <- fromJSON(dataUrl)
-# pcr <- data.table(date = as.Date(jsonFile$inspections_summary$labels, '%m/%d'), 
-#                   dailyCheck = jsonFile$inspections_summary$data$県内)
+dataUrl <- 'https://raw.githubusercontent.com/MeditationDuck/covid19/development/data/data.json'
+jsonFile <- fromJSON(dataUrl)
+pcr <- data.table(date = as.Date(jsonFile$inspections_summary$labels, '%m/%d'),
+                  検査数 = jsonFile$inspections_summary$data$県内)
+contact <- data.table(date = as.Date(jsonFile$contacts$data$日付),
+                      相談件数 = jsonFile$contacts$data$小計)
+querent <- data.table(date = as.Date(jsonFile$querents$data$日付),
+                      一般相談 = jsonFile$querents$data$小計)
+iwateData <- merge(x = pcr, y = contact, by = 'date', no.dups = T, all = T)
+iwateData <- merge(x = iwateData, y = querent, by = 'date', no.dups = T, all = T)
+iwateData[is.na(iwateData)] <- 0
+iwateData[, 検査数累計 := cumsum(検査数)]
+iwateData[, 相談件数累計 := cumsum(相談件数)]
+iwateData[, 一般相談累計 := cumsum(一般相談)]
+fwrite(x = iwateData, file = paste0('Data/Pref/', 'Iwate', '/', 'summary.csv'))
+
 
 # ====秋田====
 # dataUrl <- 'https://raw.githubusercontent.com/asaba-zauberer/covid19-akita/development/data/data.json'
@@ -89,4 +101,10 @@ dt[, 累積陽性数 := cumsum(.SD), .SDcols = c('陽性数')]
 
 fwrite(x = dt, file = paste0('Data/Pref/Kanagawa/summary.csv'))
 
+# ====大分====
 
+# ====沖縄====
+# jsonUrl <- 'https://raw.githubusercontent.com/Code-for-OKINAWA/covid19/development/data/data.json'
+# jsonFile <- fromJSON(jsonUrl)
+# jsonFile$patients
+# test <- signateDetail[都道府県コード == 47]
