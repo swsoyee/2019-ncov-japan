@@ -55,6 +55,7 @@ output$kanagawaPatientSummary <- renderEcharts4r({
     e_bar(非公表, stack = 1, y_index= 1, color = darkBlue) %>%
     # e_bar(調査中, stack = 1, y_index= 1, color = darkYellow) %>%
     e_line(累積陽性数, y_index = 0, color = darkRed) %>%
+    e_mark_line(data = list(xAxis = '2020-04-07', label = list(formatter = '4月7日\n緊急事態宣言')), symbol = 'circle') %>%
     e_y_axis(splitLine = list(show = F), index = 1, max = max(data$陽性数, na.rm = T) * 2) %>%
     e_grid(left = '8%', right = '5%', bottom = '10%') %>%
     e_legend(orient = 'vertical', top = '15%', left = '8%') %>%

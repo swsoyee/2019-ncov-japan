@@ -111,7 +111,7 @@ output$IwateSummary <- renderEcharts4r({
                             '注3. 速報値として公開するものであり、後日確定データとして修正される場合あり',
                             sep = '\n')
     ) %>%
-    e_group('IwateSumarry')
+    e_group('iwateSumarry')
 })
 
 output$IwateContact <- renderEcharts4r({
