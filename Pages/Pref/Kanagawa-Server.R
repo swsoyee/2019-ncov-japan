@@ -68,8 +68,16 @@ output$kanagawaPatientSummary <- renderEcharts4r({
 output$kanagawaValueBoxes <- renderUI({
   data <- GLOBAL_VALUE$Kanagawa$summary
   totalPositive <- tail(data$累積陽性数, n = 1)
-  totalPCR <- sum(data$実施数, na.rm = T) # TODO 公式データまだない
-  totalDischarge <-  sum(data$治療終了数, na.rm = T) # TODO 公式データまだない
+  # totalPCR <- sum(data$実施数, na.rm = T) # TODO 公式データまだない、とりあえずけんもうデータから計算
+  kenmo <- provincePCR[県名 == '神奈川県']
+  kenmo[, 日次検査数 := 検査数 - shift(検査数)]
+  totalPCR <- tail(kenmo$検査数, n = 1)
+  # totalDischarge <-  sum(data$治療終了数, na.rm = T) # TODO 公式データまだない、とりあえず厚労省から計算
+  mhlwKanagawa <- detailByRegion[都道府県名 == '神奈川県']
+  mhlwKanagawa[, 日次退院者 := 退院者 - shift(退院者)]
+  dischargeValue <- mhlwKanagawa$退院者
+  totalDischarge <- tail(dischargeValue, n = 1)
+  
   totalDeath <- sum(death[, 15, with = F]) # TODO 公式データまだない
   positiveRate <- paste0(round(totalPositive / totalPCR * 100, 2), '%')
   dischargeRate <- paste0(
@@ -86,13 +94,13 @@ output$kanagawaValueBoxes <- renderUI({
   return(
     tagList(
       fluidRow(
-        createValueBox(value = '情報なし', # TODO
-                       subValue = '-', # paste0('陽性率：', positiveRate), 
-                       sparkline = createSparklineInValueBox(data, '実施数', length = 10),
+        createValueBox(value = totalPCR, # TODO 今はけんものデータを使ってる
+                       subValue = paste0('陽性率：', positiveRate), 
+                       sparkline = createSparklineInValueBox(kenmo, '日次検査数', length = 10),
                        subtitle = lang[[langCode]][100], 
                        icon = 'vials',
                        color = 'yellow', 
-                       diff = tail(data$実施数, n = 1)
+                       diff = tail(kenmo$日次検査数, n = 1)
         ),
         createValueBox(value = tail(data$累積陽性数, n = 1),
                        subValue = paste0('速報：', sum(byDate[, 15, with = T], na.rm = T)), 
@@ -104,13 +112,13 @@ output$kanagawaValueBoxes <- renderUI({
         )
       ),
       fluidRow(
-        createValueBox(value = '情報なし', # TODO
-                       subValue = '-', # TODO
-                       sparkline = createSparklineInValueBox(data, '治療終了数', length = 10),
+        createValueBox(value = totalDischarge, # TODO 今は厚労省のデータを使ってる
+                       subValue = dischargeRate, # TODO
+                       sparkline = createSparklineInValueBox(mhlwKanagawa, '日次退院者', length = 10),
                        subtitle = lang[[langCode]][102], 
                        icon = 'user-shield',
                        color = 'green',
-                       diff = tail(data$治療終了数, n = 1)
+                       diff = totalDischarge - dischargeValue[length(dischargeValue) - 1]
         ),
         createValueBox(value = totalDeath, # TODO 公式データまだない
                        subValue = deathRate, 

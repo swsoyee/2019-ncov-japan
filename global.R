@@ -46,6 +46,9 @@ activity <- rjson::fromJSON(file = paste0(DATA_PATH, 'caseMap.json'), unexpected
 # 経度緯度データ
 position <- fread(paste0(DATA_PATH, 'position.csv'))
 
+# 厚労省の都道府県まとめデータ
+detailByRegion <- fread(paste0(DATA_PATH, 'detailByRegion.csv'))
+
 # 各都道府県のPCR検査数
 provincePCR <- fread(paste0(DATA_PATH, 'provincePCR.csv'), header = T, na.strings = 'N/A')
 provincePCR$date <- as.Date(provincePCR$日付)

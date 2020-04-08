@@ -17,10 +17,16 @@ fluidPage(
              footer = tagList(
                tags$small(icon('database'),
                           tags$a(href = 'https://www.pref.kanagawa.jp/osirase/1369/',
-                                 '新型コロナウイルス感染症対策サイト'),
+                                 '感染症対策サイト'),
                           icon('database'),
                           tags$a(href = 'https://signate.jp/competitions/260/discussions', 
-                                 'SIGNATE - COVID-19 Chanllenge')
+                                 'COVID-19 Chanllenge'),
+                          icon('newspaper'),
+                          tags$a(href = 'https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html',
+                                 '厚生労働省'),
+                          icon('twitter'),
+                          tags$a(href = 'https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html',
+                                 '@kenmo_economics')
                )
              )
            )
