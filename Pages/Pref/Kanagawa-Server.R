@@ -75,6 +75,7 @@ output$kanagawaValueBoxes <- renderUI({
   # totalDischarge <-  sum(data$治療終了数, na.rm = T) # TODO 公式データまだない、とりあえず厚労省から計算
   mhlwKanagawa <- detailByRegion[都道府県名 == '神奈川県']
   mhlwKanagawa[, 日次退院者 := 退院者 - shift(退院者)]
+  # mhlwKanagawa$日次退院者[is.na(mhlwKanagawa$日次退院者)] <- 0
   dischargeValue <- mhlwKanagawa$退院者
   totalDischarge <- tail(dischargeValue, n = 1)
   
@@ -96,7 +97,7 @@ output$kanagawaValueBoxes <- renderUI({
       fluidRow(
         createValueBox(value = totalPCR, # TODO 今はけんものデータを使ってる
                        subValue = paste0('陽性率：', positiveRate), 
-                       sparkline = createSparklineInValueBox(kenmo, '日次検査数', length = 10),
+                       sparkline = createSparklineInValueBox(kenmo, '日次検査数'),
                        subtitle = lang[[langCode]][100], 
                        icon = 'vials',
                        color = 'yellow', 
@@ -104,7 +105,7 @@ output$kanagawaValueBoxes <- renderUI({
         ),
         createValueBox(value = tail(data$累積陽性数, n = 1),
                        subValue = paste0('速報：', sum(byDate[, 15, with = T], na.rm = T)), 
-                       sparkline = createSparklineInValueBox(data, '陽性数', length = 10),
+                       sparkline = createSparklineInValueBox(data, '陽性数'),
                        subtitle = lang[[langCode]][101], 
                        icon = 'procedures',
                        color = 'red', 
@@ -114,7 +115,7 @@ output$kanagawaValueBoxes <- renderUI({
       fluidRow(
         createValueBox(value = totalDischarge, # TODO 今は厚労省のデータを使ってる
                        subValue = dischargeRate, # TODO
-                       sparkline = createSparklineInValueBox(mhlwKanagawa, '日次退院者', length = 10),
+                       sparkline = createSparklineInValueBox(mhlwKanagawa, '日次退院者', length = 19),
                        subtitle = lang[[langCode]][102], 
                        icon = 'user-shield',
                        color = 'green',
@@ -122,7 +123,7 @@ output$kanagawaValueBoxes <- renderUI({
         ),
         createValueBox(value = totalDeath, # TODO 公式データまだない
                        subValue = deathRate, 
-                       sparkline = createSparklineInValueBox(death, '神奈川', length = 10),
+                       sparkline = createSparklineInValueBox(death, '神奈川'),
                        subtitle = lang[[langCode]][103], 
                        icon = 'bible',
                        color = 'navy',
