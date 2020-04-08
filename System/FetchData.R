@@ -80,10 +80,14 @@ pcr <- data.table(date = as.Date(jsonFile$inspection_persons$labels),
                   検査数 = jsonFile$inspection_persons$datasets$data[[1]])
 contact <- data.table(date = as.Date(jsonFile$contacts$data$日付),
                       相談件数 = jsonFile$contacts$data$小計)
+positive <- data.table(date = as.Date(jsonFile$patients_summary$data$日付),
+                      陽性数 = jsonFile$patients_summary$data$小計)
 miyagiData <- merge(x = pcr, y = contact, by = 'date', no.dups = T, all = T)
+miyagiData <- merge(x = miyagiData, y = positive, by = 'date', no.dups = T, all = T)
 miyagiData[is.na(miyagiData)] <- 0
 miyagiData[, 検査数累計 := cumsum(検査数)]
 miyagiData[, 相談件数累計 := cumsum(相談件数)]
+miyagiData[, 陽性数累計 := cumsum(陽性数)]
 fwrite(x = miyagiData, file = paste0('Data/Pref/', 'Miyagi', '/', 'summary.csv'))
 
 # ====秋田====
