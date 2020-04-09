@@ -1,4 +1,24 @@
-fluidPage(fluidRow(
+fluidPage(
+  fluidRow(
+    boxPlus(width = 12, 
+            closable = T, 
+            enable_label = T, 
+            label_text = 'New', 
+            label_status = 'warning', 
+            solidHeader = T,
+            status = 'warning', 
+            title = tagList(icon('bullhorn'), 'お知らせ'),
+            collapsible = T,
+            collapsed = T,
+            tags$small(
+              paste0(
+                'SIGNATE様のデータ構造が変更するため、新仕様の対応するまで少し時間がかかり、',
+                'データ更新はしばらく中止致します。対応が完了次第アップデータ致します。'
+              )
+            )
+          )
+  ),
+  fluidRow(
   boxPlus(
     width = 12,
     closable = F,
