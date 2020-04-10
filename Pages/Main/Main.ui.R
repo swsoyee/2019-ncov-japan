@@ -131,32 +131,7 @@ fluidPage(
     ),
   ),
   fluidRow(
-    #   boxPlus(width = 4,
-    #           title = tagList(icon('newspaper'), '情報源リンク集'),
-    #           collapsed = T,
-    #           closable = F,
-    #           collapsible = T,
-    #           dataTableOutput('news') %>% withSpinner()
-    # ),
     Component.NewsList(),
-    column(width = 8,
-           actionButton(width = '100%',
-             inputId = 'gotoRoutePage', 
-             style = paste0('color: #fff; background-color: ', middleRed),
-             label = tagList('感染ルート・クラスターへ', dashboardLabel('Beta 0.2', status = 'warning')),
-             icon = icon('connectdevelop'))
-           )
-    # boxPlus(title = tagList(icon('connectdevelop'), '感染経路ネットワーク'),
-    #         width = 8,
-    #         closable = F,
-    #         collapsible = T,
-    #         collapsed = T,
-    #         echarts4rOutput('network') %>% withSpinner(),
-    #         enable_sidebar = T,
-    #         sidebar_start_open = F,
-    #         sidebar_content = tagList(
-    #           checkboxInput('hideSingle', '離散を非表示', T)
-    #         ),
-    #         footer = tags$small('3月9日以後に、厚労省のページでは感染者の詳細情報についての発表は中止になり、こちらのデータ更新も止むを得ず中止になりました。'))
+    Button.clusterTab(),
   )
 )
