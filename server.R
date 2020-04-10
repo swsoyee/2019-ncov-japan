@@ -4,7 +4,7 @@ source(file = "global.R",
 
 shinyServer(function(input, output, session) {
   # マップ関連コンポーネント
-  source(file = paste0(COMPONENT_PATH, 'ComfiredMap.R'),
+  source(file = paste0(COMPONENT_PATH, 'Main/ConfirmedMap.server.R'),
          local = TRUE,
          encoding = "UTF-8")
   # 数値ボックスコンポーネント
