@@ -23,6 +23,7 @@ source(file = paste0(COMPONENT_PATH, '/Main/NewsList.ui.R'), local = T, encoding
 source(file = paste0(COMPONENT_PATH, '/Main/clusterTabButton.ui.R'), local = T, encoding = 'UTF-8')
 source(file = paste0(COMPONENT_PATH, '/Main/SymptomsProgression.ui.R'), local = T, encoding = 'UTF-8')
 source(file = paste0(COMPONENT_PATH, '/Main/ComfirmedPyramid.ui.R'), local = T, encoding = 'UTF-8')
+source(file = paste0(COMPONENT_PATH, '/Main/Tendency.ui.R'), local = T, encoding = 'UTF-8')
 
 # ====
 # データの読み込み

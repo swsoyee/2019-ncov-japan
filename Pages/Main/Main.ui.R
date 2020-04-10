@@ -52,61 +52,9 @@ fluidPage(
     ),
   ),
   fluidRow(
-    boxPlus(
-      # 国内状況推移
-      title = tagList(icon('chart-line'), lang[[langCode]][88]),
-      closable = F,
-      collapsible = T,
-      collapsed = T,
-      enable_label = T, 
-      label_text = tagList('クリックして', icon('hand-point-right')), 
-      label_status = 'warning',
-      footer = tags$small(icon('lightbulb'), '凡例クリックすると表示・非表示の切替ができます。'),
-      width = 12,
-      tabsetPanel(
-        id = 'linePlot',
-        # 感染者数の推移
-        source(
-          file = paste0(COMPONENT_PATH, 'UiTabConfirmed.R'),
-          local = T,
-          encoding = 'UTF-8'
-        )$value,
-        # PCR検査数推移
-        source(
-          file = paste0(COMPONENT_PATH, 'UiTabPCR.R'),
-          local = T,
-          encoding = 'UTF-8'
-        )$value,
-        # 退院数推移
-        source(
-          file = paste0(COMPONENT_PATH, 'UiTabDischarged.R'),
-          local = T,
-          encoding = 'UTF-8'
-        )$value
-        ,
-        # コールセンターの対応
-        source(
-          file = paste0(COMPONENT_PATH, 'UiTabCallCenter.R'),
-          local = T,
-          encoding = 'UTF-8'
-        )$value
-      )
-    )
+    Component.Tendency()
   ),
   fluidRow(
-    # boxPlus(title = tagList(icon('venus-mars'), '歳代・性別'),
-    #         width = 4,
-    #         enable_label = T,
-    #         collapsible = T,
-    #         collapsed = T,
-    #         label_text = paste('集計時間：', max(as.Date(positiveDetail$発表日), na.rm = T)),
-    #         echarts4rOutput('genderBar') %>% withSpinner(),
-    #         closable = F,
-    #         footer = tags$small('データ提供：', 
-    #                             tags$a(icon('twitter'), '@kenmo_economics', 
-    #                                    href = 'https://twitter.com/kenmo_economics')
-    #                             )
-    #         ),
     Component.ComfirmedPyramid(),
     Component.SymptomsProgression()
   ),
