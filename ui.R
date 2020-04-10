@@ -67,6 +67,11 @@ shinyUI(
           # icon = icon('apple-alt')
         ),
         menuSubItem(
+          text = '茨城県', 
+          tabName = 'ibaraki'#,
+          # icon = icon('apple-alt')
+        ),
+        menuSubItem(
           text = '神奈川県', 
           tabName = 'kanagawa'#,
           # icon = icon('apple-alt')
@@ -147,6 +152,12 @@ shinyUI(
       tabItem(tabName = 'miyagi',
               source(
                 file = paste0(PAGE_PATH, 'Pref/Miyagi-UI.R'),
+                local = T,
+                encoding = 'UTF-8'
+              )$value),
+      tabItem(tabName = 'ibaraki',
+              source(
+                file = paste0(PAGE_PATH, 'Pref/Ibaraki-UI.R'),
                 local = T,
                 encoding = 'UTF-8'
               )$value),
