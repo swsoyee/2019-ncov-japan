@@ -18,6 +18,7 @@ library(shinyBS)
 source(file = 'Settings/Path.R', local = T, encoding = "UTF-8")
 source(file = 'Utils/Functions.R', local = T, encoding = 'UTF-8')
 source(file = paste0(COMPONENT_PATH, 'Notification.R'), local = T, encoding = 'UTF-8')
+source(file = paste0(PAGE_PATH, 'Main/Utils/ValueBox.R'), local = T, encoding = 'UTF-8')
 
 # ====
 # データの読み込み
