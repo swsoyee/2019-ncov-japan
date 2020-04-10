@@ -104,6 +104,14 @@ contact <- data.table(date = as.Date(jsonFile$contacts$data$日付),
                       相談件数 = jsonFile$contacts$data$小計)
 positive <- data.table(date = as.Date(jsonFile$patients_summary$data$日付),
                        陽性数 = jsonFile$patients_summary$data$小計)
+dt <- merge(x = pcr, y = contact, by = 'date', no.dups = T, all = T)
+dt <- merge(x = dt, y = positive, by = 'date', no.dups = T, all = T)
+dt[is.na(dt)] <- 0
+dt[, paste0(colnames(dt)[2:ncol(dt)], '累計') := lapply(.SD, cumsum), .SDcols = c(2:ncol(dt))] 
+
+fwrite(x = dt, file = paste0('Data/Pref/', 'Ibaraki', '/', 'summary.csv'))
+
+
 
 # ====秋田====
 # dataUrl <- 'https://raw.githubusercontent.com/asaba-zauberer/covid19-akita/development/data/data.json'
