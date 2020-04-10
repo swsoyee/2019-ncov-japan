@@ -95,16 +95,16 @@ output$IwateSummary <- renderEcharts4r({
   data$date <- as.Date(data$date)
   data %>%
     e_chart(date) %>%
-    e_bar(検査数, name = '検査実施数', y_index = 1, barGap = '-100%', color = middleYellow) %>%
+    e_bar(検査数, name = '検査実施件数', y_index = 1, barGap = '-100%', color = middleYellow) %>%
     # e_bar(陽性数, name = '陽性数', y_index = 1, color = middleRed) %>%
-    e_line(検査数累計, name = '検査実施数累計', color = darkYellow) %>%
+    e_line(検査数累計, name = '検査実施件数累計', color = darkYellow) %>%
     # e_line(陽性数累計, name = '陽性数累計', color = darkRed) %>%
     e_y_axis(splitLine = list(show = F), index = 1, max = max(data$検査数, na.rm = T) * 2) %>%
     e_x_axis(splitLine = list(show = F)) %>%
     e_grid(left = '8%', right = '10%', bottom = '10%', top = '28%') %>%
     e_legend(orient = 'vertical', top = '28%', left = '8%') %>%
     e_tooltip(trigger = 'axis') %>%
-    e_title(text = '検査実施数',
+    e_title(text = '検査実施件数',
             subtext = paste(paste('更新時刻：', getUpdateTimeDiff(GLOBAL_VALUE$Iwate$updateTime)),
                             '\n注1. 医療機関が保険適用で行った検査は含まれていない',
                             '注2. 同一の対象者について複数の検体を検査する場合あり',
