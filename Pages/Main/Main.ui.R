@@ -7,7 +7,7 @@ fluidPage(
   ), 
   # メイン部分、Valueboxを含むなど
   source(
-    file = paste0(COMPONENT_PATH, 'UiRowMain.R'),
+    file = paste0(COMPONENT_PATH, '/Main/FirstRow.R'),
     local = T,
     encoding = 'UTF-8'
   )$value,
