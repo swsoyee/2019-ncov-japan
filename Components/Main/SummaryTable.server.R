@@ -1,29 +1,3 @@
-# ====感染確認情報====
-output$news <- renderDataTable({
-  newsData <-
-    data.table(
-      paste0(
-        "<small>",
-        as.POSIXct(as.character(news$date), format = "%Y%m%d"),
-        "</small><br><a href='",
-        news$link,
-        "'>",
-        news$title,
-        "</a>"
-      )
-    )
-  datatable(
-    newsData[order(-V1)],
-    options = list(
-      dom = 'tp',
-      scrollY = '360px'
-    ),
-    rownames = F,
-    colnames = lang[[langCode]][14], # 感染確認情報
-    escape = F
-  )
-})
-
 # TODO こちらのページの内容ではないから別のところに移動すべき、厚労省もまとめてくれないので、削除するのもあり
 output$detail <- renderDataTable({
   datatable(detail,

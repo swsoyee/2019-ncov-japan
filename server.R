@@ -3,6 +3,7 @@ source(file = "global.R",
        encoding = "UTF-8")
 
 shinyServer(function(input, output, session) {
+  source(file = paste0(COMPONENT_PATH, 'Main/NewsList.server.R'), local = T, encoding = 'UTF-8')
   # マップ関連コンポーネント
   source(file = paste0(COMPONENT_PATH, 'Main/ConfirmedMap.server.R'),
          local = TRUE,

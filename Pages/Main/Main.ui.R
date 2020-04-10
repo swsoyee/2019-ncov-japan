@@ -131,13 +131,14 @@ fluidPage(
     ),
   ),
   fluidRow(
-      boxPlus(width = 4,
-              title = tagList(icon('newspaper'), '情報源リンク集'),
-              collapsed = T, 
-              closable = F,
-              collapsible = T,
-              dataTableOutput('news') %>% withSpinner()
-    ),
+    #   boxPlus(width = 4,
+    #           title = tagList(icon('newspaper'), '情報源リンク集'),
+    #           collapsed = T,
+    #           closable = F,
+    #           collapsible = T,
+    #           dataTableOutput('news') %>% withSpinner()
+    # ),
+    Component.NewsList(),
     column(width = 8,
            actionButton(width = '100%',
              inputId = 'gotoRoutePage', 
