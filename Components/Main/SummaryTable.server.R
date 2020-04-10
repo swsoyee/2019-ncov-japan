@@ -24,6 +24,7 @@ output$news <- renderDataTable({
   )
 })
 
+# TODO こちらのページの内容ではないから別のところに移動すべき、厚労省もまとめてくれないので、削除するのもあり
 output$detail <- renderDataTable({
   datatable(detail,
             colnames = lang[[langCode]][37:48],
@@ -51,6 +52,7 @@ output$detail <- renderDataTable({
     )
 })
 
+# ==== シンプルバージョンのテーブル表示==== (サイトが重い時に追加用)
 # observeEvent(input$switchTableVersion, {
 #   if (input$switchTableVersion) {
 #     output$summaryTable <- renderUI({
@@ -140,15 +142,20 @@ output$detail <- renderDataTable({
 #       )
 # })
 
+# TODO データ読み込み専用のところに移動
+totalConfirmedByRegionData <- reactive({
+  dt <- fread(paste0(DATA_PATH, 'resultSummaryTable.csv'), sep = '@')
+  dt
+})
+
 output$summaryByRegion <- renderDataTable({
   # setcolorder(mergeDt, c('region', 'count', 'untilToday', 'today', 'diff', 'values'))
   # dt <- mergeDt[count > 0] # TEST
   dt <- totalConfirmedByRegionData()[count > 0]
   columnName <- c('today', 'death')
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
-  dt[, zeroContinuousDay := replace(.SD, .SD <= 0, NA), .SDcols = 'zeroContinuousDay']
-  # dt[, today := as.character(today)]
-  # dt[!is.na(today), today := paste('+', today)]
+  # TODO 感染拡大が終息する後からカラム復活、今は表示する必要はない
+  # dt[, zeroContinuousDay := replace(.SD, .SD <= 0, NA), .SDcols = 'zeroContinuousDay']
   
   breaks <- seq(0, max(ifelse(is.na(dt$today), 0, dt$today), na.rm = T), 2)
   colors <- colorRampPalette(c(lightRed, darkRed))(length(breaks) + 1)
@@ -222,12 +229,6 @@ output$summaryByRegion <- renderDataTable({
       backgroundSize = '80% 80%',
       backgroundPosition = 'center'
     ) %>%
-    # formatStyle(
-    #   columns = 'death',
-    #   background = styleColorBar(c(0, max(dt$death, na.rm = T)), lightNavy),
-    #   backgroundSize = '98% 80%',
-    #   backgroundRepeat = 'no-repeat',
-    #   backgroundPosition = 'center') %>%
     formatStyle(
       columns = 'death', 
       backgroundColor = styleInterval(breaksDeath, colorsDeath),
@@ -239,9 +240,5 @@ output$summaryByRegion <- renderDataTable({
     #   background = styleColorBar(c(0, max(dt$zeroContinuousDay, na.rm = T)), lightBlue, angle = -90),
     #   backgroundSize = '98% 80%',
     #   backgroundRepeat = 'no-repeat',
-    #   backgroundPosition = 'center') # %>%
-    # formatStyle(
-    #   columns = 'zeroContinuousDay', 
-    #   backgroundColor = styleInterval(breaks, colors)
-    #   )
+    #   backgroundPosition = 'center')
 })

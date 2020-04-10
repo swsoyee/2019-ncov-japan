@@ -203,7 +203,7 @@ output$echartsMap <- renderEcharts4r({
   }
 })
 
-# ====事例マップ====
+# ====事例マップ==== # TODO ホームページの内容ではないから別のところに移動
 output$caseMap <- renderLeaflet({
   defaultRadius <- 8
   genderColor <- c('女' = 'red', '男' = 'blue', '不明' = 'grey')
