@@ -78,7 +78,7 @@ fwrite(x = dailyReport, file = paste0(DATA_PATH, 'resultDailyReport.csv'))
 # rankDt[rankDt == 0] <- '-'
 # rankDt[, colnames(rankDt) := ifelse(.SD > 0, paste0('+', .SD), .SD), .SDcols = colnames(rankDt)]
 
-# 新規なし継続日数カラム作成
+print('新規なし継続日数カラム作成')
 zeroContinuousDay <- stack(lapply(byDate[, 2:ncol(byDate)], function(region) {
   continuousDay <- 0
   for (x in region) {
@@ -90,13 +90,13 @@ zeroContinuousDay <- stack(lapply(byDate[, 2:ncol(byDate)], function(region) {
   }
   return(continuousDay - 1)
 }))
-# 感染確認カラム作成
+print('感染確認カラム作成')
 total <- colSums(byDate[, 2:ncol(byDate)])
-# 新規カラム作成
+print('新規カラム作成')
 today <- colSums(byDate[nrow(byDate), 2:ncol(byDate)])
-# 昨日までカラム作成
+print('昨日までカラム作成')
 untilToday <- colSums(byDate[1:nrow(byDate) - 1, 2:ncol(byDate)])
-# 新規推移カラム作成
+print('新規推移カラム作成')
 diffSparkline <- sapply(2:ncol(byDate), function(i) {
   value <- byDate[(nrow(byDate) - 15):nrow(byDate), i, with = F][[1]]
   diff <- spk_chr(
@@ -109,7 +109,7 @@ diffSparkline <- sapply(2:ncol(byDate), function(i) {
   return(diff)
 })
 
-# 新規退院者カラム作成
+print('新規退院者カラム作成')
 detailByRegion <- fread(paste0(DATA_PATH, 'detailByRegion.csv'))
 detailByRegion[, `日付` := as.Date(as.character(`日付`), '%Y%m%d')]
 detailByRegion[, `都道府県名` := gsub('県', '', `都道府県名`)]
@@ -118,7 +118,7 @@ detailByRegion[, `都道府県名` := gsub('東京都', '東京', `都道府県�
 detailByRegion[order(`日付`), dischargedDiff := `退院者` - shift(`退院者`), by = `都道府県名`]
 detailByRegion[is.na(detailByRegion)] <- 0
 
-# 退院推移
+print('退院推移')
 dischargedDiffSparkline <- sapply(colnames(byDate)[c(2:48, 50)], function(region) {
   value <- detailByRegion[`都道府県名` == region]$dischargedDiff
   if (length(value) > 0) {
@@ -135,10 +135,10 @@ dischargedDiffSparkline <- sapply(colnames(byDate)[c(2:48, 50)], function(region
   return(diff)
 })
 
-# 死亡カラム作成
+print('死亡カラム作成')
 deathByRegion <- stack(colSums(death[, 2:ncol(byDate)]))
 
-# 感染者内訳
+print('感染者内訳')
 detailSparkLineDt <- detailByRegion[日付 == max(日付)]
 detailSparkLine <- sapply(detailSparkLineDt$都道府県名, function(region) {
   # 2020-03-30 厚労省の発表資料の基準は（無症状を除く、PCR陽性者、累積者）三度も変更が有るため、この部分を破棄します。
@@ -184,7 +184,7 @@ detailSparkLine <- sapply(detailSparkLineDt$都道府県名, function(region) {
 # }
 
 
-# テーブル作成
+print('テーブル作成')
 totalToday <- paste0(total, '<r ', today, '<r >')
 
 mergeDt <- data.table(region = names(total), 
@@ -213,5 +213,5 @@ mergeDt[, dischargeDiff := gsub('\\n', '', dischargeDiff)]
 mergeDt[, detailBullet := gsub('\\n', '', detailBullet)]
 # クルーズ船とチャーター便データ除外
 mergeDt <- mergeDt[!(region %in% lang[[langCode]][35:36])]
-# テーブル出力
+print('テーブル出力')
 fwrite(x = mergeDt, file = paste0(DATA_PATH, 'resultSummaryTable.csv'), sep = "@", quote = F)
