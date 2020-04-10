@@ -90,6 +90,21 @@ miyagiData[, 相談件数累計 := cumsum(相談件数)]
 miyagiData[, 陽性数累計 := cumsum(陽性数)]
 fwrite(x = miyagiData, file = paste0('Data/Pref/', 'Miyagi', '/', 'summary.csv'))
 
+# ====茨城====
+dataUrl <- 'https://raw.githubusercontent.com/a01sa01to/covid19-ibaraki/development/data/data.json'
+
+# 長さ不一致のバグ修正するため
+date <- jsonFile$inspection_persons$labels
+test <- jsonFile$inspection_persons$datasets$data[[1]]
+n <- max(length(date), length(test))
+
+pcr <- data.table(date = as.Date(jsonFile$inspection_persons$labels[1:n]),
+                  検査数 = jsonFile$inspection_persons$datasets$data[[1]][1:n])
+contact <- data.table(date = as.Date(jsonFile$contacts$data$日付),
+                      相談件数 = jsonFile$contacts$data$小計)
+positive <- data.table(date = as.Date(jsonFile$patients_summary$data$日付),
+                       陽性数 = jsonFile$patients_summary$data$小計)
+
 # ====秋田====
 # dataUrl <- 'https://raw.githubusercontent.com/asaba-zauberer/covid19-akita/development/data/data.json'
 # jsonFile <- fromJSON(dataUrl)
