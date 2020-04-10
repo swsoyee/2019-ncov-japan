@@ -42,7 +42,7 @@ fluidPage(
       tags$hr(),
       # 各カテゴリの合計と増加分表示の説明ブロック
       source(
-        file = paste0(COMPONENT_PATH, 'UiRowDescriptionValue.R'),
+        file = paste0(COMPONENT_PATH, 'Main/DescriptionValue.ui.R'),
         local = T,
         encoding = 'UTF-8'
       )$value,
