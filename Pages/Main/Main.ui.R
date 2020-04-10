@@ -94,19 +94,20 @@ fluidPage(
     )
   ),
   fluidRow(
-    boxPlus(title = tagList(icon('venus-mars'), '歳代・性別'),
-            width = 4,
-            enable_label = T,
-            collapsible = T,
-            collapsed = T,
-            label_text = paste('集計時間：', max(as.Date(positiveDetail$発表日), na.rm = T)),
-            echarts4rOutput('genderBar') %>% withSpinner(),
-            closable = F,
-            footer = tags$small('データ提供：', 
-                                tags$a(icon('twitter'), '@kenmo_economics', 
-                                       href = 'https://twitter.com/kenmo_economics')
-                                )
-            ),
+    # boxPlus(title = tagList(icon('venus-mars'), '歳代・性別'),
+    #         width = 4,
+    #         enable_label = T,
+    #         collapsible = T,
+    #         collapsed = T,
+    #         label_text = paste('集計時間：', max(as.Date(positiveDetail$発表日), na.rm = T)),
+    #         echarts4rOutput('genderBar') %>% withSpinner(),
+    #         closable = F,
+    #         footer = tags$small('データ提供：', 
+    #                             tags$a(icon('twitter'), '@kenmo_economics', 
+    #                                    href = 'https://twitter.com/kenmo_economics')
+    #                             )
+    #         ),
+    Component.ComfirmedPyramid(),
     Component.SymptomsProgression()
   ),
   fluidRow(

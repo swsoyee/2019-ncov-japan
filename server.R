@@ -41,7 +41,7 @@ shinyServer(function(input, output, session) {
          local = TRUE,
          encoding = "UTF-8")
   # 歳代、年齢コンポーネント
-  source(file = paste0(COMPONENT_PATH, 'GenderAgeBar.R'),
+  source(file = paste0(COMPONENT_PATH, 'Main/ComfirmedPyramid.server.R'),
          local = TRUE,
          encoding = "UTF-8")
   # 感染ルート

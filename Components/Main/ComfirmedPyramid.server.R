@@ -1,4 +1,4 @@
-genderAgeData <- reactive({
+ComfirmedPyramidData <- reactive({
   # TODO ローカル作成
   positiveDetail[年齢 == '10歳未満', 年齢 := '00代']
   positiveDetail[grepl('男', 性別), 性別 := '男性']
@@ -12,7 +12,7 @@ genderAgeData <- reactive({
 })
 
 output$genderBar <- renderEcharts4r({
-  dt <- genderAgeData()
+  dt <- ComfirmedPyramidData()
   maleCount <- sum(dt$count.男性)
   femaleCount <- sum(dt$count.女性)
   totalCount <- maleCount + femaleCount
