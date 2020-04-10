@@ -51,7 +51,7 @@ fluidRow(
         subtitle = tagList('　', sparklineOutput('pcrSparkLine'),
                           tags$span(
                             dailyReport$pcrDiff[nrow(dailyReport)], 
-                            getChangeIcon_(dailyReport$pcrDiff[nrow(dailyReport)]),
+                            getChangeIconWrapper(dailyReport$pcrDiff[nrow(dailyReport)]),
                             lang[[langCode]][90], style = 'float:right;z-index:999;')
                           ),
         icon = icon('vials'),
@@ -64,7 +64,7 @@ fluidRow(
                                    style = 'color:white;font-size:16px;margin-top:10px;margin-right:10px;opacity:0.6')
         ),
         subtitle = tagList('　', sparklineOutput('confirmedSparkLine'),
-                           tags$span(TOTAL_JAPAN_DIFF, getChangeIcon_(TOTAL_JAPAN_DIFF), '感染者数', 
+                           tags$span(TOTAL_JAPAN_DIFF, getChangeIconWrapper(TOTAL_JAPAN_DIFF), '感染者数', 
                                      style = 'float:right;')
                            ),
         icon = icon('procedures'),
@@ -81,7 +81,7 @@ fluidRow(
         subtitle = tagList('　', sparklineOutput('dischargeSparkLine'),
                            tags$span(
                              dailyReport$dischargeDiff[nrow(dailyReport)] ,
-                             getChangeIcon_(dailyReport$dischargeDiff[nrow(dailyReport)]),
+                             getChangeIconWrapper(dailyReport$dischargeDiff[nrow(dailyReport)]),
                              '退院者数',
                              style =  'float:right;')
                            ),
@@ -95,7 +95,7 @@ fluidRow(
                                    style = 'color:white;font-size:16px;margin-top:10px;margin-right:10px;opacity:0.8')
         ),
         subtitle = tagList('　', sparklineOutput('deathSparkLine'),
-                           tags$span(DEATH_JAPAN_DIFF, getChangeIcon_(DEATH_JAPAN_DIFF), '死亡者数',
+                           tags$span(DEATH_JAPAN_DIFF, getChangeIconWrapper(DEATH_JAPAN_DIFF), '死亡者数',
                                      style = 'float:right;'
                            )),
         icon = icon('bible'),

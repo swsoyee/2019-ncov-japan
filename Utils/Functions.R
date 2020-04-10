@@ -30,14 +30,6 @@ getChangeIcon <- function(number) {
   }
 }
 
-getDiffValueAndSign <- function(number) {
-  if (number >= 0) {
-    return(paste0('+', number))
-  } else {
-    return(number)
-  }
-}
-
 getChangeIcon_ <- function(number) {
   if (number > 0) {
     return(icon('caret-up'))
@@ -45,5 +37,21 @@ getChangeIcon_ <- function(number) {
     return(icon('caret-down'))
   } else {
     return(icon('lock'))
+  }
+}
+
+getChangeIconWrapper <- function(number, type = 'icon') {
+    if (type == 'icon') {
+        return(getChangeIcon_(number))
+    } else {
+        return(getChangeIcon(number))
+    }
+}
+
+getDiffValueAndSign <- function(number) {
+  if (number >= 0) {
+    return(paste0('+', number))
+  } else {
+    return(number)
   }
 }

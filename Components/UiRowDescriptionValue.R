@@ -15,7 +15,7 @@ fluidRow(
     descriptionBlock(
       number = PCR_WITHIN$diff + PCR_FLIGHT$diff + PCR_AIRPORT$diff,
       number_color = 'yellow',
-      number_icon = getChangeIcon(PCR_WITHIN$diff + PCR_FLIGHT$diff + PCR_AIRPORT$diff),
+      number_icon = getChangeIconWrapper(PCR_WITHIN$diff + PCR_FLIGHT$diff + PCR_AIRPORT$diff, type = 'fa'),
       header = paste(PCR_WITHIN$final + PCR_FLIGHT$final + PCR_AIRPORT$final, ''),
       right_border = F,
       text = '検査人数'
@@ -41,7 +41,7 @@ fluidRow(
     descriptionBlock(
       number = TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF,
       number_color = 'red',
-      number_icon = getChangeIcon(TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF),
+      number_icon = getChangeIconWrapper(TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF, type = 'fa'),
       header = paste(TOTAL_DOMESITC + TOTAL_OFFICER + TOTAL_FLIGHT, ''),
       right_border = F,
       text = '感染者'
@@ -62,7 +62,7 @@ fluidRow(
     descriptionBlock(
       number = DISCHARGE_DIFF_NO_SHIP,
       number_color = 'green',
-      number_icon = getChangeIcon(DISCHARGE_DIFF_NO_SHIP),
+      number_icon = getChangeIconWrapper(DISCHARGE_DIFF_NO_SHIP, type = 'fa'),
       header = DISCHARGE_TOTAL_NO_SHIP,
       right_border = F,
       text = '退院者'
@@ -83,7 +83,7 @@ fluidRow(
     descriptionBlock(
       number = DEATH_DOMESITC_DIFF + DEATH_OFFICER_DIFF,
       number_color = 'black',
-      number_icon = getChangeIcon(DEATH_DOMESITC_DIFF + DEATH_OFFICER_DIFF),
+      number_icon = getChangeIconWrapper(DEATH_DOMESITC_DIFF + DEATH_OFFICER_DIFF, type = 'fa'),
       header = paste(DEATH_DOMESITC + DEATH_OFFICER, ''),
       right_border = F,
       text = '死亡者'
@@ -110,7 +110,7 @@ fluidRow(
     descriptionBlock(
       number = PCR_SHIP$diff,
       number_color = 'yellow',
-      number_icon = getChangeIcon(PCR_SHIP$diff),
+      number_icon = getChangeIconWrapper(PCR_SHIP$diff, type = 'fa'),
       header = paste(PCR_SHIP$final, ''),
       right_border = F,
       text = '検査人数'
@@ -132,7 +132,7 @@ fluidRow(
     descriptionBlock(
       number = TOTAL_SHIP_DIFF,
       number_color = 'red',
-      number_icon = getChangeIcon(TOTAL_SHIP_DIFF),
+      number_icon = getChangeIconWrapper(TOTAL_SHIP_DIFF, type = 'fa'),
       header = paste(TOTAL_SHIP, ''),
       right_border = F,
       text = '感染者'
@@ -149,7 +149,7 @@ fluidRow(
     descriptionBlock(
       number = DISCHARGE_SHIP$diff,
       number_color = 'green',
-      number_icon = getChangeIcon(DISCHARGE_SHIP$diff),
+      number_icon = getChangeIconWrapper(DISCHARGE_SHIP$diff, type = 'fa'),
       header = paste(DISCHARGE_SHIP$final, ''),
       right_border = F,
       text = '退院者'
@@ -166,7 +166,7 @@ fluidRow(
     descriptionBlock(
       number = DEATH_SHIP_DIFF,
       number_color = 'black',
-      number_icon = getChangeIcon(DEATH_SHIP_DIFF),
+      number_icon = getChangeIconWrapper(DEATH_SHIP_DIFF, type = 'fa'),
       header = paste(DEATH_SHIP, ''),
       right_border = F,
       text = '死亡者'
