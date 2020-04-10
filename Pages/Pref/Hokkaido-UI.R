@@ -48,33 +48,34 @@ fluidPage(
         footer = tags$small(icon('lightbulb'), '凡例クリックすると表示・非表示の切替ができます。')
       )
   ),
-  fluidRow(
-    boxPlus(
-      width = 12,
-      closable = F, 
-      collapsed = T, 
-      collapsible = T,
-      enable_label = T, 
-      label_text = tagList('クリックして', icon('hand-point-right')), 
-      label_status = 'warning',
-      title = tagList(icon('map-marked-alt'), '道内の感染者'),
-      fluidRow(
-        column(
-          width = 8,
-          leafletOutput('hokkaidoConfirmedMap', height = '500px') %>% withSpinner(),
-          dataTableOutput('hokkaidoPatientTable') %>% withSpinner(),
-        ),
-        column(
-          width = 4,
-          uiOutput('hokkaidoProfile') %>% withSpinner()
-        )
-      )# ,
-      # fluidRow(
-      #   column(
-      #     width = 8,
-      #     dataTableOutput('hokkaidoPatientTable') %>% withSpinner(),
-      #   )
-      # )
-    )
-  )
+  # SIGNATE 問題修復まで非表示
+  # fluidRow(
+  #   boxPlus(
+  #     width = 12,
+  #     closable = F, 
+  #     collapsed = T, 
+  #     collapsible = T,
+  #     enable_label = T, 
+  #     label_text = tagList('クリックして', icon('hand-point-right')), 
+  #     label_status = 'warning',
+  #     title = tagList(icon('map-marked-alt'), '道内の感染者'),
+  #     fluidRow(
+  #       column(
+  #         width = 8,
+  #         leafletOutput('hokkaidoConfirmedMap', height = '500px') %>% withSpinner(),
+  #         dataTableOutput('hokkaidoPatientTable') %>% withSpinner(),
+  #       ),
+  #       column(
+  #         width = 4,
+  #         uiOutput('hokkaidoProfile') %>% withSpinner()
+  #       )
+  #     )# ,
+  #     # fluidRow(
+  #     #   column(
+  #     #     width = 8,
+  #     #     dataTableOutput('hokkaidoPatientTable') %>% withSpinner(),
+  #     #   )
+  #     # )
+  #   )
+  # )
 )
