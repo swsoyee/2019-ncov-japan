@@ -92,14 +92,10 @@ fwrite(x = miyagiData, file = paste0('Data/Pref/', 'Miyagi', '/', 'summary.csv')
 
 # ====茨城====
 dataUrl <- 'https://raw.githubusercontent.com/a01sa01to/covid19-ibaraki/development/data/data.json'
+jsonFile <- fromJSON(dataUrl)
 
-# 長さ不一致のバグ修正するため
-date <- jsonFile$inspection_persons$labels
-test <- jsonFile$inspection_persons$datasets$data[[1]]
-n <- max(length(date), length(test))
-
-pcr <- data.table(date = as.Date(jsonFile$inspection_persons$labels[1:n]),
-                  検査数 = jsonFile$inspection_persons$datasets$data[[1]][1:n])
+pcr <- data.table(date = as.Date(jsonFile$inspection_persons$labels),
+                  検査数 = jsonFile$inspection_persons$datasets$data[[1]])
 contact <- data.table(date = as.Date(jsonFile$contacts$data$日付),
                       相談件数 = jsonFile$contacts$data$小計)
 positive <- data.table(date = as.Date(jsonFile$patients_summary$data$日付),
@@ -110,8 +106,6 @@ dt[is.na(dt)] <- 0
 dt[, paste0(colnames(dt)[2:ncol(dt)], '累計') := lapply(.SD, cumsum), .SDcols = c(2:ncol(dt))] 
 
 fwrite(x = dt, file = paste0('Data/Pref/', 'Ibaraki', '/', 'summary.csv'))
-
-
 
 # ====秋田====
 # dataUrl <- 'https://raw.githubusercontent.com/asaba-zauberer/covid19-akita/development/data/data.json'
