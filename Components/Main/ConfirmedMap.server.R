@@ -32,7 +32,8 @@ output$echartsMap <- renderEcharts4r({
   sumByDay <- cumsum(rowSums(byDate[, 2:ncol(byDate)]))
   sumByDay <- data.table(byDate[, 1], sumByDay)
   timeSeriesTitle <- lapply(seq_along(dateSeq), function(i) {
-    subText <- '各都道府県からの新規報告なし'
+    # 各都道府県からの新規報告なし
+    subText <- lang[[langCode]][119]
     if (provinceCountByDate[i] > 0) {
       subText <- paste0('発表がある', provinceCountByDate[i], '都道府県合計新規', newByDate[i], 
                         '人, 合計', sumByDay[date == dateSeq[i]]$sumByDay, '人')
@@ -51,7 +52,8 @@ output$echartsMap <- renderEcharts4r({
     for(name in columnName) {
       diff <- byDate[date == dateSeq[i], name, with = F][[1]]
       if(diff > 0) {
-        item <- paste(item, paste0(name, '新規', diff), ' ')
+        # 新規
+        item <- paste(item, paste0(name, lang[[langCode]][118], diff), ' ')
       }
     }
     return(
@@ -66,8 +68,10 @@ output$echartsMap <- renderEcharts4r({
   timeSeriesTitleSource <- lapply(seq_along(dateSeq), function(i) {
     return(
       list(
-        subtext = 'マップのソースについて',
-        sublink = 'https://code.highcharts.com/mapdata/',
+        # マップのソースについて
+        subtext = lang[[langCode]][116],
+        # https://code.highcharts.com/mapdata/
+        sublink = lang[[langCode]][117],
         subtextStyle = list(
           color = '#3c8dbc',
           fontSize = 10
