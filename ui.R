@@ -121,7 +121,7 @@ shinyUI(
       tabItems(
       tabItem(tabName = 'japan',
               source(
-                file = paste0(PAGE_PATH, 'Japan.R'),
+                file = paste0(PAGE_PATH, 'Main/Main.ui.R'),
                 local = T,
                 encoding = 'UTF-8'
               )$value),
