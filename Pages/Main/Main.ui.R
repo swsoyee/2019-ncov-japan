@@ -1,23 +1,10 @@
 fluidPage(
-  fluidRow(
-    boxPlus(width = 12, 
-            closable = T, 
-            enable_label = F, 
-            label_text = 'New', 
-            label_status = 'warning', 
-            solidHeader = T,
-            status = 'info', 
-            title = tagList(icon('bullhorn'), 'お知らせ'),
-            collapsible = T,
-            collapsed = T,
-            tags$small(
-              paste0(
-                '当サイト使っているサーバーの性能が限られているため、一部のキャッシュをブラウザーに保存しております。',
-                '画面表示がおかしくなったり、数値が更新されていない場合はリロードまたはキャッシュをクリアして再度アクセスしてください。'
-              )
-            )
-          )
-  ),
+  Component.Notification(
+    context = paste0(
+      '当サイト使っているサーバーの性能が限られているため、一部のキャッシュをブラウザーに保存しております。',
+      '画面表示がおかしくなったり、数値が更新されていない場合はリロードまたはキャッシュをクリアして再度アクセスしてください。'
+    )
+  ), 
   # メイン部分、Valueboxを含むなど
   source(
     file = paste0(COMPONENT_PATH, 'UiRowMain.R'),
