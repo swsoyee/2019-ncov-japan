@@ -7,7 +7,7 @@ fluidPage(
   ), 
   # メイン部分、Valueboxを含むなど
   source(
-    file = paste0(COMPONENT_PATH, 'UiRowMain.R'),
+    file = paste0(COMPONENT_PATH, '/Main/FirstRow.ui.R'),
     local = T,
     encoding = 'UTF-8'
   )$value,
@@ -23,7 +23,7 @@ fluidPage(
       tabsetPanel(
         # 感染マップ、都道府県の情況のテーブル
         source(
-          file = paste0(COMPONENT_PATH, 'UiTabRegionConfirmedMap.R'),
+          file = paste0(COMPONENT_PATH, '/Main/ConfirmedMap.ui.R'),
           local = T,
           encoding = 'UTF-8'
         )$value,

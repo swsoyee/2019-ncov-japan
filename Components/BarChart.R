@@ -1,63 +1,3 @@
-# ====区域ごとの確認数====
-output$totalConfirmedByRegionPlot <- renderEcharts4r({
-  dt <- totalConfirmedByRegionData()[count > 0][order(-count)]
-  # dt$name <- paste(totalConfirmedByRegionData()$region, totalConfirmedByRegionData()$count)
-  dt$minusUntilToday <- 0 - dt$untilToday
-  dt$minusToday <- 0 - dt$today
-  dt$minusTotal <- dt$minusUntilToday + dt$minusToday
-  dt %>%
-    e_charts(region, x_index = 1) %>%
-    e_bar(minusUntilToday,
-          stack = '1',
-          z = 2,
-          itemStyle = list(color = middleRed),
-          label = list(show = T, position = 'inside', color = '#FFFFFF', formatter = htmlwidgets::JS('
-            function(params) {
-              if (params.value[0] < -3) {
-                return(0 - params.value[0]);
-              } else {
-                return("");
-              }
-            }
-          ')),
-          name = lang[[langCode]][79]) %>%
-    e_bar(minusToday,
-          stack = '1',
-          z = 2,
-          itemStyle = list(color = lightNavy),
-          label = list(show = T, position = 'inside', color = '#FFFFFF', formatter = htmlwidgets::JS('
-            function(params) {
-              if (params.value[0] < 0) {
-                return(0 - params.value[0]);
-              } else {
-                return("");
-              }
-            }
-          ')),
-          name = lang[[langCode]][78]) %>%
-    e_bar(minusTotal,
-          z = 1,
-          itemStyle = list(color = darkRed),
-          barGap = '-100%',
-          label = list(show = T, position = 'left', formatter = htmlwidgets::JS('
-            function(params) {
-              if (params.value[0] < 0) {
-                return(params.value[1] + "：" +(0 - params.value[0]));
-              } else {
-                return("");
-              }
-            }
-          ')),
-          name = '合計') %>%
-    e_grid(right = '0%', bottom = '0%', top = '0%', left = '25%') %>%
-    e_x_axis(splitLine = list(show = F), axisLabel = list(show = F),
-             axisLine = list(show = F)) %>%
-    e_y_axis(splitLine = list(show = F), show = F) %>%
-    e_legend(orient = 'vertical', top = '0%', left = '25%') %>%
-    e_legend_unselect(name = lang[[langCode]][78]) %>%
-    e_flip_coords()
-})
-
 output$regionTimeSeries <- renderEcharts4r({
   total <- colSums(byDate[, 2:ncol(byDate)])
   totalOver0 <- names(total[total > 0])
@@ -102,11 +42,6 @@ output$regionTimeSeries <- renderEcharts4r({
     e_timeline_serie(
       title = timeSeriesTitle
     )
-})
-
-totalConfirmedByRegionData <- reactive({
-  dt <- fread(paste0(DATA_PATH, 'resultSummaryTable.csv'), sep = '@')
-  dt
 })
 
 # ====感染者割合====
