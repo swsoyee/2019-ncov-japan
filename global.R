@@ -15,12 +15,7 @@ library(echarts4r.maps)
 library(sparkline)
 library(shinyBS)
 
-# ====
-# ファイルのパス設定
-# ====
-DATA_PATH <- 'Data/'
-COMPONENT_PATH <- 'Components/'
-PAGE_PATH <- 'Pages/'
+source(file = 'Settings/Path.R', local = TRUE, encoding = "UTF-8")
 
 # ====
 # メゾット
