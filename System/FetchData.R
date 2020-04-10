@@ -36,7 +36,7 @@ saveFileFromApi <- function(jsonResult, patientsFileName, prefCode, pref, NoCol 
       patient <- data.table(data[[i]])
       print('マージデータ...')
       mergeWithSignate <- merge(patient, signateDetail[都道府県コード == prefCode], by.x = NoCol, by.y = '都道府県別罹患者No')
-      fwrite(x = mergeWithSignate, file = paste0('Data/Pref/', pref, '/', jsonResult[i, ]$filename))
+      fwrite(x = patient, file = paste0('Data/Pref/', pref, '/', jsonResult[i, ]$filename))
     } else {
       fwrite(x = data[[i]], file = paste0('Data/Pref/', pref, '/', jsonResult[i, ]$filename))
     }
