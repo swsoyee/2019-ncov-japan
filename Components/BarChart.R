@@ -106,6 +106,7 @@ output$regionTimeSeries <- renderEcharts4r({
 
 totalConfirmedByRegionData <- reactive({
   dt <- fread(paste0(DATA_PATH, 'resultSummaryTable.csv'), sep = '@')
+  dt[, region := list(fix_prefecture_str(region))]
   dt
 })
 

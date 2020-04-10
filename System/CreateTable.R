@@ -1,14 +1,18 @@
+library(magrittr)
 library(data.table)
 library(sparkline)
+source("R/fix_prefecture_str.R")
 
 # ====準備部分====
 DATA_PATH <- 'Data/'
 # 感染者ソーステーブルを取得
-byDate <- fread(paste0(DATA_PATH, 'byDate.csv'), header = T)
+byDate <- fread(paste0(DATA_PATH, 'byDate.csv'), header = TRUE) %>% 
+  set_prefecture_fullnames()
 byDate[is.na(byDate)] <- 0
 byDate$date <- lapply(byDate[, 1], function(x){as.Date(as.character(x), format = '%Y%m%d')})
 # 死亡データ
-death <- fread(paste0(DATA_PATH, 'death.csv'))
+death <- fread(paste0(DATA_PATH, 'death.csv')) %>% 
+  set_prefecture_fullnames()
 death[is.na(death)] <- 0
 # 国内の日報
 domesticDailyReport <- fread(paste0(DATA_PATH, 'domesticDailyReport.csv'))
@@ -35,9 +39,9 @@ langCode <- 'ja'
 # 都道府県人口密度
 provinceAttr <- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 都道府県マスタ.csv'))
 provinceAttr$人口 <- as.numeric(gsub(',', '', provinceAttr$人口))
-provinceAttr[, `都道府県` := gsub('県', '', `都道府県`)]
-provinceAttr[, `都道府県` := gsub('府', '', `都道府県`)]
-provinceAttr[, `都道府県` := gsub('東京都', '東京', `都道府県`)]
+# provinceAttr[, `都道府県` := gsub('県', '', `都道府県`)]
+# provinceAttr[, `都道府県` := gsub('府', '', `都道府県`)]
+# provinceAttr[, `都道府県` := gsub('東京都', '東京', `都道府県`)]
 # 色設定
 lightRed <- '#F56954'
 middleRed <- '#DD4B39'
@@ -112,9 +116,9 @@ diffSparkline <- sapply(2:ncol(byDate), function(i) {
 # 新規退院者カラム作成
 detailByRegion <- fread(paste0(DATA_PATH, 'detailByRegion.csv'))
 detailByRegion[, `日付` := as.Date(as.character(`日付`), '%Y%m%d')]
-detailByRegion[, `都道府県名` := gsub('県', '', `都道府県名`)]
-detailByRegion[, `都道府県名` := gsub('府', '', `都道府県名`)]
-detailByRegion[, `都道府県名` := gsub('東京都', '東京', `都道府県名`)]
+# detailByRegion[, `都道府県名` := gsub('県', '', `都道府県名`)]
+# detailByRegion[, `都道府県名` := gsub('府', '', `都道府県名`)]
+# detailByRegion[, `都道府県名` := gsub('東京都', '東京', `都道府県名`)]
 detailByRegion[order(`日付`), dischargedDiff := `退院者` - shift(`退院者`), by = `都道府県名`]
 detailByRegion[is.na(detailByRegion)] <- 0
 
@@ -283,13 +287,14 @@ fwrite(x = processData, file = paste0(DATA_PATH, 'resultProcessData.csv'))
 
 # =====SIGNATE データ処理=====
 provinceCode <- fread(paste0(DATA_PATH, 'prefectures.csv'))
+provinceCode[, `name-ja` := list(fix_prefecture_str(`name-ja`))]
 # svgIcon <- fread(paste0(DATA_PATH, 'svg.csv'))
 # clusterPlace<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 接触場所マスタ.csv'), header = T)
 
-signateDetail<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者.csv'), header = T)
-signateDetail[, 受診都道府県 := gsub('県', '', 受診都道府県)]
-signateDetail[, 受診都道府県 := gsub('府', '', 受診都道府県)]
-signateDetail[, 受診都道府県 := gsub('東京都', '東京', 受診都道府県)]
+signateDetail<- fread(paste0(DATA_PATH, '/SIGNATE COVID-2019 Dataset - 罹患者.csv'), header = T)
+# signateDetail[, 受診都道府県 := gsub('県', '', 受診都道府県)]
+# signateDetail[, 受診都道府県 := gsub('府', '', 受診都道府県)]
+# signateDetail[, 受診都道府県 := gsub('東京都', '東京', 受診都道府県)]
 signateDetail[, regionId := paste0(都道府県コード, '-', 都道府県別罹患者No)]
 
 # 年代変換

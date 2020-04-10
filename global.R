@@ -14,6 +14,7 @@ library(echarts4r)
 library(echarts4r.maps)
 library(sparkline)
 library(shinyBS)
+source("R/fix_prefecture_str.R")
 
 # ====
 # ファイルのパス設定
@@ -33,12 +34,14 @@ getFinalAndDiff <- function(vector) {
 # ====
 # データの読み込み
 # ====
-byDate <- fread(paste0(DATA_PATH, 'byDate.csv'), header = T)
+byDate <- fread(paste0(DATA_PATH, 'byDate.csv'), header = T) %>% 
+  set_prefecture_fullnames()
 byDate[is.na(byDate)] <- 0
 byDate$date <- lapply(byDate[, 1], function(x){as.Date(as.character(x), format = '%Y%m%d')})
 
 # 死亡データ
-death <- fread(paste0(DATA_PATH, 'death.csv'))
+death <- fread(paste0(DATA_PATH, 'death.csv')) %>% 
+  set_prefecture_fullnames()
 death[is.na(death)] <- 0
 
 # 行動歴データ
@@ -215,8 +218,11 @@ regionName <- as.list(regionName)
 
 
 news <- fread(paste0(DATA_PATH, 'mhlw_houdou.csv'))
+news[ , pre := list(fix_prefecture_str(pre))]
+
 
 provinceCode <- fread(paste0(DATA_PATH, 'prefectures.csv'))
+provinceCode[, `name-ja` := list(fix_prefecture_str(`name-ja`))]
 provinceSelector <- provinceCode$id
 names(provinceSelector) <- provinceCode$`name-ja`
 

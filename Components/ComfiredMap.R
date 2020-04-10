@@ -2,12 +2,13 @@
 # Returns:
 #   data.table: データセット
 cumSumConfirmedByDateAndRegion <- reactive({
-  dt <- data.frame(date = byDate$date)
+  dt <- data.frame(date = byDate$date, stringsAsFactors = FALSE)
   for(i in 2:ncol(byDate)) {
-    dt[, i] = cumsum(byDate[, i, with = F])
+    dt[, i] = cumsum(byDate[, i, with = FALSE])
   }
   dt <- reshape2::melt(dt, id.vars = 'date')
-  dt <- data.table(dt)
+  dt <- data.table(dt, stringsAsFactors = FALSE)
+  dt[, variable := as.character(variable)]
   # input <- list(mapDateRange = c(as.Date('2020-03-01'), as.Date('2020-03-10')), showPopupOnMap = T) # TEST
   dt <- dt[date >= input$mapDateRange[1] & date <= input$mapDateRange[2]]
   dt
@@ -17,7 +18,7 @@ output$echartsMap <- renderEcharts4r({
   mapDt <- cumSumConfirmedByDateAndRegion()
   # mapDt <- data.table(dt) # TEST
   mapDt <- mapDt[!(variable %in% c('クルーズ船', 'チャーター便', '検疫職員'))]
-  mapDt <- merge(x = mapDt, y = provinceCode, by.x = 'variable', by.y = 'name-ja', all = T)
+  mapDt <- merge(x = mapDt, y = provinceCode, by.x = 'variable', by.y = 'name-ja', all = TRUE)
   mapDt <- mapDt[, .(date, variable, `name-en`, value)]
   colnames(mapDt) <- c('date', 'ja', 'en', 'count')
   nameMap <- as.list(mapDt$ja)
