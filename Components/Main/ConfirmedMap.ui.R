@@ -75,13 +75,15 @@ tabPanel(title = tagList(icon('globe-asia'),
            ),
            column(width = 7,
                   boxPad(
-                    # switchInput(
-                    #   inputId = 'switchTableVersion',
-                    #   value = T,
-                    #   onLabel = 'シンプル',
-                    #   offLabel = '詳細',
-                    # ),
-                    dataTableOutput('summaryByRegion') %>% withSpinner()
-                    # uiOutput('summaryTable') %>% withSpinner()
+                    switchInput(
+                      inputId = 'switchTableVersion',
+                      value = T,
+                      onLabel = 'シンプル',
+                      offLabel = '詳細', 
+                      label = '表示モード', 
+                      size = 'small', width = '300px', labelWidth = '200px', handleWidth = '100px'
+                    ),
+                    # dataTableOutput('summaryByRegion') %>% withSpinner() # 重いのでデフォルトはシンプルバージョンに変更
+                    uiOutput('summaryTable') %>% withSpinner()
                   )),
          ))
