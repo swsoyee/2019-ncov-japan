@@ -2,27 +2,73 @@
 # Returns:
 #   data.table: データセット
 cumSumConfirmedByDateAndRegion <- reactive({
-  dt <- data.frame(date = byDate$date)
-  for(i in 2:ncol(byDate)) {
-    dt[, i] = cumsum(byDate[, i, with = F])
-  }
-  dt <- reshape2::melt(dt, id.vars = 'date')
-  dt <- data.table(dt)
-  # input <- list(mapDateRange = c(as.Date('2020-03-01'), as.Date('2020-03-10')), showPopupOnMap = T) # TEST
-  dt <- dt[date >= input$mapDateRange[1] & date <= input$mapDateRange[2]]
+  dt <- mapData[date >= input$mapDateRange[1] & date <= input$mapDateRange[2]]
   dt
+})
+
+output$comfirmedMapWrapper <- renderUI({
+  if(input$switchMapVersion == T) {
+    echarts4rOutput('echartsSimpleMap', height = '500px')
+  } else {
+    echarts4rOutput('echartsMap', height = '500px')
+  }
+})
+
+output$echartsSimpleMap <- renderEcharts4r({
+  mapDt <- cumSumConfirmedByDateAndRegion()
+  # mapDt <- mapData # TEST
+  today <- max(unique(mapDt$date), na.rm = T)
+  yesterday <- as.Date(today) - 1
+  totalData <- mapDt[date == today]
+  yesterdayData <- mapDt[date == yesterday]
+  dt <- merge(x = totalData, y = yesterdayData, by = c('ja', 'en'), no.dups = T)
+  dt[, diff := (count.x - count.y)]
+  
+  nameMap <- as.list(dt$ja)
+  names(nameMap) <- dt$en
+  dt %>%
+    e_charts(ja) %>%
+    em_map("Japan") %>%
+    e_map(count.x, map = "Japan",
+          name = '感染確認数',
+          nameMap = nameMap,
+          layoutSize = '50%',
+          center = c(137.1374062, 36.8951298),
+          zoom = 1.5,
+          roam = 'move') %>%
+    e_visual_map(
+      count.x,
+      top = '20%',
+      left = '0%',
+      inRange = list(color = c('#EEEEEE', middleRed, darkRed)),
+      type = 'piecewise',
+      splitList = list(
+        list(min = 500),
+        list(min = 100, max = 500),
+        list(min = 50, max = 100),
+        list(min = 10, max = 50),
+        list(min = 1, max = 10),
+        list(value = 0)
+      )
+    ) %>% e_color(background = '#FFFFFF') %>%
+    e_mark_point(serie = dt[diff > 0]$en) %>%
+    e_tooltip(formatter = htmlwidgets::JS('
+      function(params) {
+        if(params.value) {
+          return(params.name + "：" + params.value)
+        } else {
+          return("");
+        }
+      }
+    '))
 })
 
 output$echartsMap <- renderEcharts4r({
   mapDt <- cumSumConfirmedByDateAndRegion()
-  # mapDt <- data.table(dt) # TEST
-  mapDt <- mapDt[!(variable %in% c('クルーズ船', 'チャーター便', '検疫職員'))]
-  mapDt <- merge(x = mapDt, y = provinceCode, by.x = 'variable', by.y = 'name-ja', all = T)
-  mapDt <- mapDt[, .(date, variable, `name-en`, value)]
-  colnames(mapDt) <- c('date', 'ja', 'en', 'count')
+  # mapDt <- mapData # TEST
+  # 時系列用都道府県名前
   nameMap <- as.list(mapDt$ja)
   names(nameMap) <- mapDt$en
-  
   newByDate <- rowSums(byDate[date >= input$mapDateRange[1] & date <= input$mapDateRange[2], 2:48])
   provinceCountByDate <- rowSums(
     byDate[date >= input$mapDateRange[1] & date <= input$mapDateRange[2], 2:48] != 0
@@ -107,31 +153,6 @@ output$echartsMap <- renderEcharts4r({
         )
     })
   }
-  # provinceColnames <- colnames(byDate)[2:4] # TEST
-  # for(i in 1:length(provinceColnames)) {
-  #   provinceDiffPopup[[i]] <- lapply(seq_along(byDate$date), function(j) {
-  #     text <- ''
-  #     subtext <- ''
-  #     left <- 0
-  #     bottom <- 0
-  #     diff <- byDate[[i + 1]][j]
-  #     if (diff > 0) {
-  #       text <- provinceColnames[i]
-  #       subtext <- diff
-  #       element <- provinceCode[`name-ja` == provinceColnames[i]]
-  #       left <- paste0((element$x), '%')
-  #       bottom <- paste0((element$y), '%')
-  #     }
-  #     return(
-  #       list(
-  #         text = paste0(text, '+', subtext),
-  #         textStyle = list(fontSize = 10),
-  #         left = left,
-  #         bottom = bottom
-  #       )
-  #     )
-  #   })
-  # }
   
   map <- mapDt %>%
     group_by(date) %>% 
@@ -183,14 +204,6 @@ output$echartsMap <- renderEcharts4r({
       title = timeSeriesTitleSource, 
       index = 3
     )
-  
-  # for (i in seq_along(provinceDiffPopup)) {
-  #   map <- map %>%
-  #     e_timeline_serie(
-  #       title = provinceDiffPopup[[i]],
-  #       index = i + 1
-  #     )
-  # }
 
   if(input$showPopupOnMap) {
     map %>%

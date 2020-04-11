@@ -215,3 +215,19 @@ mergeDt[, detailBullet := gsub('\\n', '', detailBullet)]
 mergeDt <- mergeDt[!(region %in% lang[[langCode]][35:36])]
 print('テーブル出力')
 fwrite(x = mergeDt, file = paste0(DATA_PATH, 'resultSummaryTable.csv'), sep = "@", quote = F)
+
+# ====マップ用のデータ作成====
+dt <- data.frame(date = byDate$date)
+for(i in 2:ncol(byDate)) {
+  dt[, i] = cumsum(byDate[, i, with = F])
+}
+dt <- reshape2::melt(dt, id.vars = 'date')
+dt <- data.table(dt)
+mapDt <- dt[!(variable %in% c('クルーズ船', 'チャーター便', '検疫職員'))]
+# マップデータ用意
+mapDt <- merge(x = mapDt, y = provinceCode, by.x = 'variable', by.y = 'name-ja', all = T)
+# 必要なカラムを保存
+mapDt <- mapDt[, .(date, variable, `name-en`, value)]
+# カラム名変更
+colnames(mapDt) <- c('date', 'ja', 'en', 'count')
+fwrite(x = mapDt, file = paste0(DATA_PATH, 'result.map.csv'))

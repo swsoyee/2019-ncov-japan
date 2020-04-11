@@ -6,58 +6,69 @@ tabPanel(title = tagList(icon('globe-asia'),
              width = 5,
              fluidRow(column(
                width = 6,
-               tags$br(),
-               dropdownButton(
-                 # 表示設定
-                 tags$h4(lang[[langCode]][110]),
-                 materialSwitch(
-                   inputId = 'showPopupOnMap',
-                   # 日次増加数のポップアップ
-                   label = lang[[langCode]][111],
+               tags$div(
+                 switchInput(
+                   inputId = 'switchMapVersion',
+                   value = T,
+                   onLabel = 'シンプル',
+                   offLabel = '詳細', 
+                   label = '表示モード', inline = T,
+                   size = 'small', width = '300px', labelWidth = '200px', handleWidth = '100px'
+                 ),
+                 dropdownButton(
+                   # 表示設定
+                   tags$h4(lang[[langCode]][110]),
+                   materialSwitch(
+                     inputId = 'showPopupOnMap',
+                     # 日次増加数のポップアップ
+                     label = lang[[langCode]][111],
+                     status = "danger",
+                     value = T
+                   ),
+                   materialSwitch(
+                     inputId = 'replyMapLoop',
+                     # ループ再生
+                     label = lang[[langCode]][112],
+                     status = "danger",
+                     value = T
+                   ),
+                   dateRangeInput(
+                     inputId = 'mapDateRange',
+                     # 表示日付
+                     label = lang[[langCode]][113],
+                     start = byDate$date[nrow(byDate) - 15],
+                     end = byDate$date[nrow(byDate)],
+                     min = byDate$date[1],
+                     max = byDate$date[nrow(byDate)],
+                     separator = " ~ ",
+                     language = 'ja'
+                   ),
+                   sliderInput(
+                     inputId = 'mapFrameSpeed',
+                     # 再生速度（秒/日）
+                     label = lang[[langCode]][114],
+                     min = 0.5,
+                     max = 3,
+                     step = 0.1,
+                     value = 0.8
+                   ),
+                   circle = F, 
+                   inline = T,
                    status = "danger",
-                   value = T
+                   icon = icon("gear"),
+                   size = 'sm',
+                   width = "300px",
+                   # 表示設定
+                   tooltip = tooltipOptions(title = lang[[langCode]][110])
                  ),
-                 materialSwitch(
-                   inputId = 'replyMapLoop',
-                   # ループ再生
-                   label = lang[[langCode]][112],
-                   status = "danger",
-                   value = T
-                 ),
-                 dateRangeInput(
-                   inputId = 'mapDateRange',
-                   # 表示日付
-                   label = lang[[langCode]][113],
-                   start = byDate$date[nrow(byDate) - 15],
-                   end = byDate$date[nrow(byDate)],
-                   min = byDate$date[1],
-                   max = byDate$date[nrow(byDate)],
-                   separator = " ~ ",
-                   language = 'ja'
-                 ),
-                 sliderInput(
-                   inputId = 'mapFrameSpeed',
-                   # 再生速度（秒/日）
-                   label = lang[[langCode]][114],
-                   min = 0.5,
-                   max = 3,
-                   step = 0.1,
-                   value = 0.8
-                 ),
-                 circle = F,
-                 status = "danger",
-                 icon = icon("gear"),
-                 size = 'sm',
-                 width = "300px",
-                 # 表示設定
-                 tooltip = tooltipOptions(title = lang[[langCode]][110])
+                 style = 'margin-top:10px;'
                )
                # column(
                #   width = 6,
                #   # actionButton(inputId = 'switchCaseMap', label = '事例マップへ')
                # )
              )),
-             echarts4rOutput('echartsMap', height = '500px')  %>% withSpinner(),
+             uiOutput('comfirmedMapWrapper') %>% withSpinner(proxy.height = '500px'),
              # TODO もし全部の都道府県に感染者報告がある場合、こちらのバーを再検討する
              progressBar(
                id = 'hasConfirmedRegionBar',
@@ -75,13 +86,15 @@ tabPanel(title = tagList(icon('globe-asia'),
            ),
            column(width = 7,
                   boxPad(
-                    # switchInput(
-                    #   inputId = 'switchTableVersion',
-                    #   value = T,
-                    #   onLabel = 'シンプル',
-                    #   offLabel = '詳細',
-                    # ),
-                    dataTableOutput('summaryByRegion') %>% withSpinner()
-                    # uiOutput('summaryTable') %>% withSpinner()
+                    switchInput(
+                      inputId = 'switchTableVersion',
+                      value = T,
+                      onLabel = 'シンプル',
+                      offLabel = '詳細', 
+                      label = '表示モード', 
+                      size = 'small', width = '300px', labelWidth = '200px', handleWidth = '100px'
+                    ),
+                    # dataTableOutput('summaryByRegion') %>% withSpinner() # 重いのでデフォルトはシンプルバージョンに変更
+                    uiOutput('summaryTable') %>% withSpinner()
                   )),
          ))
