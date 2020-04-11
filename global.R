@@ -31,6 +31,8 @@ source(file = paste0(COMPONENT_PATH, '/Main/Tendency.ui.R'), local = T, encoding
 byDate <- fread(paste0(DATA_PATH, 'byDate.csv'), header = T)
 byDate[is.na(byDate)] <- 0
 byDate$date <- lapply(byDate[, 1], function(x){as.Date(as.character(x), format = '%Y%m%d')})
+# マップ用データ読み込み
+mapData <- fread(paste0(DATA_PATH, 'result.map.csv'), header = T)
 
 # 死亡データ
 death <- fread(paste0(DATA_PATH, 'death.csv'))
