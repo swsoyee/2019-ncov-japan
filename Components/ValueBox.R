@@ -15,12 +15,6 @@ output$todayConfirmed <- renderUI({
   }
 })
 
-output$todayCured <- renderUI({
-  tagList(tags$b(lang[[langCode]][78]), 
-          dashboardLabel(lang[[langCode]][87], status = 'success', style = 'square')
-  )
-})
-
 output$todayDeath <- renderUI({
   if (length(HAS_TODAY_DEATH) > 0) {
     elements <- list()

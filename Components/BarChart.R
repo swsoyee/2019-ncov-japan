@@ -75,53 +75,6 @@ output$confirmedBar <- renderEcharts4r({
     ')))
 })
 
-# ====退院者割合====
-output$curedBar <- renderEcharts4r({
-  dt <- data.table('label' = '退院者',
-                   'domestic' = DISCHARGE_WITHIN$final,
-                   'flight' = DISCHARGE_FLIGHT$final,
-                   'airport' = DISCHARGE_AIRPORT$final,
-                   'ship' = DISCHARGE_SHIP$final,
-                   'domesticPer' = round(DISCHARGE_WITHIN$final / DISCHARGE_TOTAL * 100, 2),
-                   'flightPer' = round(DISCHARGE_FLIGHT$final / DISCHARGE_TOTAL * 100, 2),
-                   'airportPer' = round(DISCHARGE_AIRPORT$final / DISCHARGE_TOTAL * 100, 2),
-                   'shipPer' = round(DISCHARGE_SHIP$final / DISCHARGE_TOTAL * 100, 2)
-                   )
-  e_charts(dt, label) %>%
-    e_bar(domesticPer, 
-          name = lang[[langCode]][4], # 国内事例
-          stack = '1', itemStyle = list(color = lightGreen)) %>%
-    e_bar(airportPer, 
-          name = '空港検疫',
-          stack = '1', itemStyle = list(color = middleGreen)) %>%
-    e_bar(flightPer, 
-          name = lang[[langCode]][36], # チャーター便 （症状あり）
-          stack = '1', itemStyle = list(color = darkGreen)) %>%
-    e_bar(shipPer, 
-          name = lang[[langCode]][35], # クルーズ船
-          stack = '1', itemStyle = list(color = middleGreen)) %>%
-    e_y_axis(max = 100, splitLine = list(show = F), show = F) %>%
-    e_x_axis(splitLine = list(show = F), show = F) %>%
-    e_grid(left = '0%', right = '0%', top = '0%', bottom = '0%') %>%
-    e_labels(position = 'inside', formatter = htmlwidgets::JS('
-      function(params) {
-        if(params.value[0] > 10) {
-          return(params.value[0] + "%")
-        } else {
-          return("")
-        }
-      }
-    ')) %>%
-    e_legend(show = F) %>%
-    e_flip_coords() %>%
-    e_tooltip(formatter = htmlwidgets::JS(paste0('
-      function(params) {
-        return("<b>" + params.seriesName + "</b><br>" + Math.round(params.value[0] / 100 * ',
-        DISCHARGE_TOTAL, ', 0) + "名 (" + params.value[0] + "%)")
-      }
-    ')))
-})
-
 # ====死亡者割合====
 output$deathBar <- renderEcharts4r({
   DEATH_TOTAL <- DEATH_DOMESITC + DEATH_SHIP
