@@ -1,11 +1,12 @@
 output$genderBar <- renderEcharts4r({
-  dt <- ComfirmedPyramidData()
+  dt <- ConfirmedPyramidData(positiveDetail)
   maleCount <- sum(dt$count.男性)
   femaleCount <- sum(dt$count.女性)
   totalCount <- maleCount + femaleCount
+  dt[, count.男性 := -count.男性]
   dt %>%
     e_chart(年齢) %>%
-    e_bar(count.男, stack = '1', name = '男性', itemStyle = list(color = darkNavy)) %>%
+    e_bar(count.男性, stack = '1', name = '男性', itemStyle = list(color = darkNavy)) %>%
     e_bar(count.女性, stack = '1', name = '女性', itemStyle = list(color = middleRed)) %>%
     e_x_axis(axisTick = list(show = F), offset = - 20) %>%
     e_labels(position = 'inside', formatter = htmlwidgets::JS('
