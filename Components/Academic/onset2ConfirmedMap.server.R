@@ -49,7 +49,7 @@ output$onSet2ConfirmedMap <- renderEcharts4r({
           '
         function(params) {
           if(params.value) {
-            return(`${params.name}<br>平均所用日数${Math.round(params.value * 100) / 100}日`)
+            return(`${params.name}<br>平均所要${Math.round(params.value * 100) / 100}日`)
           } else {
             return("");
           }
