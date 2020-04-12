@@ -21,7 +21,7 @@ output$echartsSimpleMap <- renderEcharts4r({
   yesterday <- as.Date(today) - 1
   totalData <- mapDt[date == today]
   yesterdayData <- mapDt[date == yesterday]
-  dt <- merge(x = totalData, y = yesterdayData, by = c('ja', 'en'), no.dups = T)
+  dt <- merge(x = totalData, y = yesterdayData, by = c('ja', 'en', 'lat', 'lng', 'regions'), no.dups = T)
   dt[, diff := (count.x - count.y)]
   # 本日増加分
   todayTotalIncreaseNumber <- sum(dt$diff, na.rm = T)
@@ -33,7 +33,7 @@ output$echartsSimpleMap <- renderEcharts4r({
   
   nameMap <- as.list(dt$ja)
   names(nameMap) <- dt$en
-  dt %>%
+  map <- dt %>%
     e_charts(ja) %>%
     em_map("Japan") %>%
     e_map(count.x, map = "Japan",
@@ -42,6 +42,15 @@ output$echartsSimpleMap <- renderEcharts4r({
           layoutSize = '50%',
           center = c(137.1374062, 36.8951298),
           zoom = 1.5,
+          itemStyle = list(
+            borderWidth = 0.2,
+            borderColor = 'white' 
+          ),
+          emphasis = list(
+            label = list(
+              fontSize = 8
+            )
+          ),
           roam = 'move') %>%
     e_visual_map(
       count.x,
@@ -62,16 +71,37 @@ output$echartsSimpleMap <- renderEcharts4r({
     e_tooltip(formatter = htmlwidgets::JS('
       function(params) {
         if(params.value) {
-          return(params.name + "：" + params.value)
+          return(`${params.name}<br>累積感染者${params.value}名`)
         } else {
           return("");
         }
       }
     ')) %>%
     e_title(
-      text = '累積感染者数マップ', 
+      text = 'リアルタイム感染者数マップ', 
       subtext = subText
     )
+  
+  # 本日増加分をプロット
+  newToday <- dt[diff > 0]
+  for (i in 1:nrow(newToday)) {
+    map <- map %>%
+      e_mark_point(
+        data = list(
+          name = newToday[i]$ja,
+          coord = c(newToday[i]$lng, newToday[i]$lat)
+        ),
+        symbol = 'triangle',
+        symbolSize = c(8, newToday[i]$diff),
+        symbolOffset = c(0, '-50%'),
+        itemStyle = list(
+          color = '#520e05',
+          shadowColor = 'white',
+          shadowBlur = 0
+        )
+      )
+  }
+  map
 })
 
 output$echartsMap <- renderEcharts4r({
@@ -175,6 +205,15 @@ output$echartsMap <- renderEcharts4r({
           layoutSize = '50%',
           center = c(137.1374062, 36.8951298),
           zoom = 1.5,
+          itemStyle = list(
+            borderWidth = 0.2,
+            borderColor = 'white' 
+          ),
+          emphasis = list(
+            label = list(
+              fontSize = 8
+            )
+          ),
           roam = 'move') %>%
     e_visual_map(
       count,

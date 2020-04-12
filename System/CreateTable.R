@@ -227,7 +227,7 @@ mapDt <- dt[!(variable %in% c('クルーズ船', 'チャーター便', '検疫�
 # マップデータ用意
 mapDt <- merge(x = mapDt, y = provinceCode, by.x = 'variable', by.y = 'name-ja', all = T)
 # 必要なカラムを保存
-mapDt <- mapDt[, .(date, variable, `name-en`, value)]
+mapDt <- mapDt[, .(date, variable, `name-en`, value, regions, lat, lng)]
 # カラム名変更
-colnames(mapDt) <- c('date', 'ja', 'en', 'count')
+colnames(mapDt) <- c('date', 'ja', 'en', 'count', 'regions', 'lat', 'lng')
 fwrite(x = mapDt, file = paste0(DATA_PATH, 'result.map.csv'))
