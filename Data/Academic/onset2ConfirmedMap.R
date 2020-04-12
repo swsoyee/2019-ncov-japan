@@ -1,5 +1,5 @@
 library(data.table)
-library(gsheet)
+# library(gsheet)
 
 DATA_PATH = 'Data/'
 signateDetailUrl <- 'https://docs.google.com/spreadsheets/d/10MFfRQTblbOpuvOs_yjIYgntpMGBg592dL8veXoPpp4/edit#gid=0'
