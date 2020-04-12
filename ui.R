@@ -86,10 +86,10 @@ shinyUI(
         badgeColor = 'black'
       ),
       menuItem(
-        # 学術分析
-        lang[[langCode]][34],
+        # 状況分析
+        '状況分析',
         tabName = 'academic',
-        icon = icon('graduation-cap'),
+        icon = icon('eye'),
         badgeLabel = '追加中',
         badgeColor = 'black'
       ),

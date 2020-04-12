@@ -18,7 +18,7 @@ dt[ja != '北海道', ja := substr(ja, 1, nchar(ja) - 1)]
 
 provinceCode <- fread(paste0(DATA_PATH, 'prefectures.csv'))
 
-mergeDt <- merge(x = dt, y = provinceCode, by.x = 'ja', by.y = 'name-ja')
+mergeDt <- merge(x = dt, y = provinceCode, by.x = 'ja', by.y = 'name-ja', all.y = T)
 fwrite(x = mergeDt, file = paste0(DATA_PATH, '/Academic/onset2ConfirmedMap.csv'))
 
 # mergeDt %>%

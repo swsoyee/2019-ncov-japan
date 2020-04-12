@@ -12,6 +12,8 @@ output$onSet2ConfirmedMap <- renderEcharts4r({
   if(!is.null(data)) {
     nameMap <- as.list(data$ja)
     names(nameMap) <- data$`name-en`
+    maxPref <- data[発症から診断までの平均日数 == max(発症から診断までの平均日数, na.rm = T)]
+    minPref <- data[発症から診断までの平均日数 == min(発症から診断までの平均日数, na.rm = T)]
     data %>%
       e_charts(ja) %>%
       em_map("Japan") %>%
@@ -39,7 +41,7 @@ output$onSet2ConfirmedMap <- renderEcharts4r({
           list(min = 6, max = 7),
           list(min = 5, max = 6),
           list(min = 0, max = 5),
-          list(value = 0)
+          list(value = 0, label = 'データなし')
         )
       ) %>% e_color(background = '#FFFFFF') %>%
       e_tooltip(
@@ -56,7 +58,9 @@ output$onSet2ConfirmedMap <- renderEcharts4r({
         )
       ) %>%
       e_title(text = '発症から診断までの平均日数マップ',
-              subtext = 'データ：SIGNATE COVID-19 Case Dataset',
+              subtext = paste0('最長：', maxPref$ja, maxPref$発症から診断までの平均日数,
+                               '日　最短：', minPref$ja, minPref$発症から診断までの平均日数, 
+                               '日\n\nデータ：SIGNATE COVID-19 Case Dataset'),
               sublink = 'https://docs.google.com/spreadsheets/d/10MFfRQTblbOpuvOs_yjIYgntpMGBg592dL8veXoPpp4/edit#gid=0')
   }
 })
