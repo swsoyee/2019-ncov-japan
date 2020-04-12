@@ -78,10 +78,10 @@ output$echartsSimpleMap <- renderEcharts4r({
       }
     ')) %>%
     e_title(
-      text = 'リアルタイム感染者数マップ', 
+      text = 'リアルタイム感染者数マップ',
       subtext = subText
     )
-  
+
   # 本日増加分をプロット
   newToday <- dt[diff > 0]
   for (i in 1:nrow(newToday)) {
@@ -89,10 +89,10 @@ output$echartsSimpleMap <- renderEcharts4r({
       e_mark_point(
         data = list(
           name = newToday[i]$ja,
-          coord = c(newToday[i]$lng, newToday[i]$lat)
+          coord = c(newToday[i]$lng, newToday[i]$lat),
+          symbolSize = c(7, newToday[i]$diff)
         ),
         symbol = 'triangle',
-        symbolSize = c(8, newToday[i]$diff),
         symbolOffset = c(0, '-50%'),
         itemStyle = list(
           color = '#520e05',
