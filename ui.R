@@ -90,7 +90,7 @@ shinyUI(
         lang[[langCode]][34],
         tabName = 'academic',
         icon = icon('graduation-cap'),
-        badgeLabel = '着手中',
+        badgeLabel = '追加中',
         badgeColor = 'black'
       ),
       menuItem(
@@ -174,7 +174,11 @@ shinyUI(
                 encoding = 'UTF-8'
               )$value), 
       tabItem(tabName = 'academic',
-              box(title = '準備中', width = 12)),
+              source(
+                file = paste0(PAGE_PATH, '/Academic/Academic.ui.R'),
+                local = T,
+                encoding = 'UTF-8'
+              )$value),
       tabItem(tabName = 'about',
               fluidRow(column(width = 12,tagList(includeMarkdown('www/about.md'))))
               )
