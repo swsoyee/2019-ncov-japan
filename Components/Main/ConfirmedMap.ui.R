@@ -88,7 +88,7 @@ tabPanel(title = tagList(icon('globe-asia'),
                   boxPad(
                     switchInput(
                       inputId = 'switchTableVersion',
-                      value = T,
+                      value = F,
                       onLabel = 'シンプル',
                       offLabel = '詳細', 
                       label = '表示モード', 
