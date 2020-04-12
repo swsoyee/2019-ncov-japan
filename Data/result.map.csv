@@ -87,6 +87,7 @@ date,ja,en,count
 2020-04-09,三重,Mie Prefecture,15
 2020-04-10,三重,Mie Prefecture,15
 2020-04-11,三重,Mie Prefecture,17
+2020-04-12,三重,Mie Prefecture,17
 2020-01-15,京都,Kyoto Prefecture,0
 2020-01-16,京都,Kyoto Prefecture,0
 2020-01-17,京都,Kyoto Prefecture,0
@@ -175,6 +176,7 @@ date,ja,en,count
 2020-04-09,京都,Kyoto Prefecture,165
 2020-04-10,京都,Kyoto Prefecture,174
 2020-04-11,京都,Kyoto Prefecture,181
+2020-04-12,京都,Kyoto Prefecture,181
 2020-01-15,佐賀,Saga Prefecture,0
 2020-01-16,佐賀,Saga Prefecture,0
 2020-01-17,佐賀,Saga Prefecture,0
@@ -263,6 +265,7 @@ date,ja,en,count
 2020-04-09,佐賀,Saga Prefecture,12
 2020-04-10,佐賀,Saga Prefecture,12
 2020-04-11,佐賀,Saga Prefecture,13
+2020-04-12,佐賀,Saga Prefecture,13
 2020-01-15,兵庫,Hyogo Prefecture,0
 2020-01-16,兵庫,Hyogo Prefecture,0
 2020-01-17,兵庫,Hyogo Prefecture,0
@@ -351,6 +354,7 @@ date,ja,en,count
 2020-04-09,兵庫,Hyogo Prefecture,287
 2020-04-10,兵庫,Hyogo Prefecture,316
 2020-04-11,兵庫,Hyogo Prefecture,358
+2020-04-12,兵庫,Hyogo Prefecture,358
 2020-01-15,北海道,Hokkaido,0
 2020-01-16,北海道,Hokkaido,0
 2020-01-17,北海道,Hokkaido,0
@@ -439,6 +443,7 @@ date,ja,en,count
 2020-04-09,北海道,Hokkaido,223
 2020-04-10,北海道,Hokkaido,236
 2020-04-11,北海道,Hokkaido,252
+2020-04-12,北海道,Hokkaido,252
 2020-01-15,千葉,Chiba,0
 2020-01-16,千葉,Chiba,0
 2020-01-17,千葉,Chiba,0
@@ -527,6 +532,7 @@ date,ja,en,count
 2020-04-09,千葉,Chiba,354
 2020-04-10,千葉,Chiba,387
 2020-04-11,千葉,Chiba,423
+2020-04-12,千葉,Chiba,423
 2020-01-15,和歌山,Wakayama Prefecture,0
 2020-01-16,和歌山,Wakayama Prefecture,0
 2020-01-17,和歌山,Wakayama Prefecture,0
@@ -615,6 +621,7 @@ date,ja,en,count
 2020-04-09,和歌山,Wakayama Prefecture,37
 2020-04-10,和歌山,Wakayama Prefecture,38
 2020-04-11,和歌山,Wakayama Prefecture,38
+2020-04-12,和歌山,Wakayama Prefecture,38
 2020-01-15,埼玉,Saitama,0
 2020-01-16,埼玉,Saitama,0
 2020-01-17,埼玉,Saitama,0
@@ -703,6 +710,7 @@ date,ja,en,count
 2020-04-09,埼玉,Saitama,285
 2020-04-10,埼玉,Saitama,338
 2020-04-11,埼玉,Saitama,375
+2020-04-12,埼玉,Saitama,375
 2020-01-15,大分,Oita,0
 2020-01-16,大分,Oita,0
 2020-01-17,大分,Oita,0
@@ -791,6 +799,7 @@ date,ja,en,count
 2020-04-09,大分,Oita,41
 2020-04-10,大分,Oita,42
 2020-04-11,大分,Oita,42
+2020-04-12,大分,Oita,42
 2020-01-15,大阪,Osaka Prefecture,0
 2020-01-16,大阪,Osaka Prefecture,0
 2020-01-17,大阪,Osaka Prefecture,0
@@ -879,6 +888,7 @@ date,ja,en,count
 2020-04-09,大阪,Osaka Prefecture,616
 2020-04-10,大阪,Osaka Prefecture,696
 2020-04-11,大阪,Osaka Prefecture,766
+2020-04-12,大阪,Osaka Prefecture,766
 2020-01-15,奈良,Nara Prefecture,0
 2020-01-16,奈良,Nara Prefecture,0
 2020-01-17,奈良,Nara Prefecture,0
@@ -967,6 +977,7 @@ date,ja,en,count
 2020-04-09,奈良,Nara Prefecture,34
 2020-04-10,奈良,Nara Prefecture,37
 2020-04-11,奈良,Nara Prefecture,39
+2020-04-12,奈良,Nara Prefecture,39
 2020-01-15,宮城,Miyagi,0
 2020-01-16,宮城,Miyagi,0
 2020-01-17,宮城,Miyagi,0
@@ -1055,6 +1066,7 @@ date,ja,en,count
 2020-04-09,宮城,Miyagi,36
 2020-04-10,宮城,Miyagi,38
 2020-04-11,宮城,Miyagi,45
+2020-04-12,宮城,Miyagi,45
 2020-01-15,宮崎,Miyazaki Prefecture,0
 2020-01-16,宮崎,Miyazaki Prefecture,0
 2020-01-17,宮崎,Miyazaki Prefecture,0
@@ -1143,6 +1155,7 @@ date,ja,en,count
 2020-04-09,宮崎,Miyazaki Prefecture,16
 2020-04-10,宮崎,Miyazaki Prefecture,16
 2020-04-11,宮崎,Miyazaki Prefecture,17
+2020-04-12,宮崎,Miyazaki Prefecture,17
 2020-01-15,富山,Toyama,0
 2020-01-16,富山,Toyama,0
 2020-01-17,富山,Toyama,0
@@ -1231,6 +1244,7 @@ date,ja,en,count
 2020-04-09,富山,Toyama,21
 2020-04-10,富山,Toyama,23
 2020-04-11,富山,Toyama,30
+2020-04-12,富山,Toyama,30
 2020-01-15,山口,Yamaguchi,0
 2020-01-16,山口,Yamaguchi,0
 2020-01-17,山口,Yamaguchi,0
@@ -1319,6 +1333,7 @@ date,ja,en,count
 2020-04-09,山口,Yamaguchi,17
 2020-04-10,山口,Yamaguchi,18
 2020-04-11,山口,Yamaguchi,19
+2020-04-12,山口,Yamaguchi,19
 2020-01-15,山形,Yamagata,0
 2020-01-16,山形,Yamagata,0
 2020-01-17,山形,Yamagata,0
@@ -1407,6 +1422,7 @@ date,ja,en,count
 2020-04-09,山形,Yamagata,27
 2020-04-10,山形,Yamagata,32
 2020-04-11,山形,Yamagata,33
+2020-04-12,山形,Yamagata,33
 2020-01-15,山梨,Yamanashi,0
 2020-01-16,山梨,Yamanashi,0
 2020-01-17,山梨,Yamanashi,0
@@ -1495,6 +1511,7 @@ date,ja,en,count
 2020-04-09,山梨,Yamanashi,27
 2020-04-10,山梨,Yamanashi,30
 2020-04-11,山梨,Yamanashi,33
+2020-04-12,山梨,Yamanashi,33
 2020-01-15,岐阜,Gifu Prefecture,0
 2020-01-16,岐阜,Gifu Prefecture,0
 2020-01-17,岐阜,Gifu Prefecture,0
@@ -1583,6 +1600,7 @@ date,ja,en,count
 2020-04-09,岐阜,Gifu Prefecture,86
 2020-04-10,岐阜,Gifu Prefecture,97
 2020-04-11,岐阜,Gifu Prefecture,106
+2020-04-12,岐阜,Gifu Prefecture,106
 2020-01-15,岡山,Okayama Prefecture,0
 2020-01-16,岡山,Okayama Prefecture,0
 2020-01-17,岡山,Okayama Prefecture,0
@@ -1671,6 +1689,7 @@ date,ja,en,count
 2020-04-09,岡山,Okayama Prefecture,15
 2020-04-10,岡山,Okayama Prefecture,15
 2020-04-11,岡山,Okayama Prefecture,15
+2020-04-12,岡山,Okayama Prefecture,15
 2020-01-15,岩手,Iwate,0
 2020-01-16,岩手,Iwate,0
 2020-01-17,岩手,Iwate,0
@@ -1759,6 +1778,7 @@ date,ja,en,count
 2020-04-09,岩手,Iwate,0
 2020-04-10,岩手,Iwate,0
 2020-04-11,岩手,Iwate,0
+2020-04-12,岩手,Iwate,0
 2020-01-15,島根,Shimane,0
 2020-01-16,島根,Shimane,0
 2020-01-17,島根,Shimane,0
@@ -1847,6 +1867,7 @@ date,ja,en,count
 2020-04-09,島根,Shimane,1
 2020-04-10,島根,Shimane,2
 2020-04-11,島根,Shimane,6
+2020-04-12,島根,Shimane,7
 2020-01-15,広島,Hiroshima,0
 2020-01-16,広島,Hiroshima,0
 2020-01-17,広島,Hiroshima,0
@@ -1935,6 +1956,7 @@ date,ja,en,count
 2020-04-09,広島,Hiroshima,25
 2020-04-10,広島,Hiroshima,30
 2020-04-11,広島,Hiroshima,56
+2020-04-12,広島,Hiroshima,56
 2020-01-15,徳島,Tokushima Prefecture,0
 2020-01-16,徳島,Tokushima Prefecture,0
 2020-01-17,徳島,Tokushima Prefecture,0
@@ -2023,6 +2045,7 @@ date,ja,en,count
 2020-04-09,徳島,Tokushima Prefecture,3
 2020-04-10,徳島,Tokushima Prefecture,3
 2020-04-11,徳島,Tokushima Prefecture,3
+2020-04-12,徳島,Tokushima Prefecture,3
 2020-01-15,愛媛,Ehime Prefecture,0
 2020-01-16,愛媛,Ehime Prefecture,0
 2020-01-17,愛媛,Ehime Prefecture,0
@@ -2111,6 +2134,7 @@ date,ja,en,count
 2020-04-09,愛媛,Ehime Prefecture,26
 2020-04-10,愛媛,Ehime Prefecture,28
 2020-04-11,愛媛,Ehime Prefecture,30
+2020-04-12,愛媛,Ehime Prefecture,30
 2020-01-15,愛知,Aichi,0
 2020-01-16,愛知,Aichi,0
 2020-01-17,愛知,Aichi,0
@@ -2199,6 +2223,7 @@ date,ja,en,count
 2020-04-09,愛知,Aichi,300
 2020-04-10,愛知,Aichi,314
 2020-04-11,愛知,Aichi,347
+2020-04-12,愛知,Aichi,347
 2020-01-15,新潟,Niigata,0
 2020-01-16,新潟,Niigata,0
 2020-01-17,新潟,Niigata,0
@@ -2287,6 +2312,7 @@ date,ja,en,count
 2020-04-09,新潟,Niigata,41
 2020-04-10,新潟,Niigata,41
 2020-04-11,新潟,Niigata,42
+2020-04-12,新潟,Niigata,42
 2020-01-15,東京,Tokyo,0
 2020-01-16,東京,Tokyo,0
 2020-01-17,東京,Tokyo,0
@@ -2375,6 +2401,7 @@ date,ja,en,count
 2020-04-09,東京,Tokyo,1516
 2020-04-10,東京,Tokyo,1705
 2020-04-11,東京,Tokyo,1902
+2020-04-12,東京,Tokyo,1902
 2020-01-15,栃木,Tochigi,0
 2020-01-16,栃木,Tochigi,0
 2020-01-17,栃木,Tochigi,0
@@ -2463,6 +2490,7 @@ date,ja,en,count
 2020-04-09,栃木,Tochigi,31
 2020-04-10,栃木,Tochigi,32
 2020-04-11,栃木,Tochigi,35
+2020-04-12,栃木,Tochigi,35
 2020-01-15,沖縄,Okinawa Prefecture,0
 2020-01-16,沖縄,Okinawa Prefecture,0
 2020-01-17,沖縄,Okinawa Prefecture,0
@@ -2551,6 +2579,7 @@ date,ja,en,count
 2020-04-09,沖縄,Okinawa Prefecture,41
 2020-04-10,沖縄,Okinawa Prefecture,48
 2020-04-11,沖縄,Okinawa Prefecture,56
+2020-04-12,沖縄,Okinawa Prefecture,56
 2020-01-15,滋賀,Shiga,0
 2020-01-16,滋賀,Shiga,0
 2020-01-17,滋賀,Shiga,0
@@ -2639,6 +2668,7 @@ date,ja,en,count
 2020-04-09,滋賀,Shiga,33
 2020-04-10,滋賀,Shiga,34
 2020-04-11,滋賀,Shiga,38
+2020-04-12,滋賀,Shiga,38
 2020-01-15,熊本,Kumamoto,0
 2020-01-16,熊本,Kumamoto,0
 2020-01-17,熊本,Kumamoto,0
@@ -2727,6 +2757,7 @@ date,ja,en,count
 2020-04-09,熊本,Kumamoto,23
 2020-04-10,熊本,Kumamoto,24
 2020-04-11,熊本,Kumamoto,25
+2020-04-12,熊本,Kumamoto,25
 2020-01-15,石川,Ishikawa Prefecture,0
 2020-01-16,石川,Ishikawa Prefecture,0
 2020-01-17,石川,Ishikawa Prefecture,0
@@ -2815,6 +2846,7 @@ date,ja,en,count
 2020-04-09,石川,Ishikawa Prefecture,73
 2020-04-10,石川,Ishikawa Prefecture,92
 2020-04-11,石川,Ishikawa Prefecture,104
+2020-04-12,石川,Ishikawa Prefecture,104
 2020-01-15,神奈川,Kanagawa,1
 2020-01-16,神奈川,Kanagawa,1
 2020-01-17,神奈川,Kanagawa,1
@@ -2903,6 +2935,7 @@ date,ja,en,count
 2020-04-09,神奈川,Kanagawa,382
 2020-04-10,神奈川,Kanagawa,438
 2020-04-11,神奈川,Kanagawa,513
+2020-04-12,神奈川,Kanagawa,513
 2020-01-15,福井,Fukui Prefecture,0
 2020-01-16,福井,Fukui Prefecture,0
 2020-01-17,福井,Fukui Prefecture,0
@@ -2991,6 +3024,7 @@ date,ja,en,count
 2020-04-09,福井,Fukui Prefecture,77
 2020-04-10,福井,Fukui Prefecture,82
 2020-04-11,福井,Fukui Prefecture,86
+2020-04-12,福井,Fukui Prefecture,88
 2020-01-15,福岡,Fukuoka Prefecture,0
 2020-01-16,福岡,Fukuoka Prefecture,0
 2020-01-17,福岡,Fukuoka Prefecture,0
@@ -3079,6 +3113,7 @@ date,ja,en,count
 2020-04-09,福岡,Fukuoka Prefecture,250
 2020-04-10,福岡,Fukuoka Prefecture,289
 2020-04-11,福岡,Fukuoka Prefecture,332
+2020-04-12,福岡,Fukuoka Prefecture,332
 2020-01-15,福島,Fukushima,0
 2020-01-16,福島,Fukushima,0
 2020-01-17,福島,Fukushima,0
@@ -3167,6 +3202,7 @@ date,ja,en,count
 2020-04-09,福島,Fukushima,33
 2020-04-10,福島,Fukushima,36
 2020-04-11,福島,Fukushima,37
+2020-04-12,福島,Fukushima,37
 2020-01-15,秋田,Akita,0
 2020-01-16,秋田,Akita,0
 2020-01-17,秋田,Akita,0
@@ -3255,6 +3291,7 @@ date,ja,en,count
 2020-04-09,秋田,Akita,11
 2020-04-10,秋田,Akita,13
 2020-04-11,秋田,Akita,15
+2020-04-12,秋田,Akita,15
 2020-01-15,群馬,Gunma,0
 2020-01-16,群馬,Gunma,0
 2020-01-17,群馬,Gunma,0
@@ -3343,6 +3380,7 @@ date,ja,en,count
 2020-04-09,群馬,Gunma,33
 2020-04-10,群馬,Gunma,44
 2020-04-11,群馬,Gunma,79
+2020-04-12,群馬,Gunma,79
 2020-01-15,茨城,Ibaraki,0
 2020-01-16,茨城,Ibaraki,0
 2020-01-17,茨城,Ibaraki,0
@@ -3431,6 +3469,7 @@ date,ja,en,count
 2020-04-09,茨城,Ibaraki,82
 2020-04-10,茨城,Ibaraki,91
 2020-04-11,茨城,Ibaraki,103
+2020-04-12,茨城,Ibaraki,103
 2020-01-15,長崎,Nagasaki Prefecture,0
 2020-01-16,長崎,Nagasaki Prefecture,0
 2020-01-17,長崎,Nagasaki Prefecture,0
@@ -3519,6 +3558,7 @@ date,ja,en,count
 2020-04-09,長崎,Nagasaki Prefecture,13
 2020-04-10,長崎,Nagasaki Prefecture,14
 2020-04-11,長崎,Nagasaki Prefecture,14
+2020-04-12,長崎,Nagasaki Prefecture,14
 2020-01-15,長野,Nagano,0
 2020-01-16,長野,Nagano,0
 2020-01-17,長野,Nagano,0
@@ -3607,6 +3647,7 @@ date,ja,en,count
 2020-04-09,長野,Nagano,21
 2020-04-10,長野,Nagano,28
 2020-04-11,長野,Nagano,28
+2020-04-12,長野,Nagano,28
 2020-01-15,青森,Aomori,0
 2020-01-16,青森,Aomori,0
 2020-01-17,青森,Aomori,0
@@ -3695,6 +3736,7 @@ date,ja,en,count
 2020-04-09,青森,Aomori,14
 2020-04-10,青森,Aomori,17
 2020-04-11,青森,Aomori,22
+2020-04-12,青森,Aomori,22
 2020-01-15,静岡,Shizuoka,0
 2020-01-16,静岡,Shizuoka,0
 2020-01-17,静岡,Shizuoka,0
@@ -3783,6 +3825,7 @@ date,ja,en,count
 2020-04-09,静岡,Shizuoka,33
 2020-04-10,静岡,Shizuoka,37
 2020-04-11,静岡,Shizuoka,39
+2020-04-12,静岡,Shizuoka,39
 2020-01-15,香川,Kagawa Prefecture,0
 2020-01-16,香川,Kagawa Prefecture,0
 2020-01-17,香川,Kagawa Prefecture,0
@@ -3871,6 +3914,7 @@ date,ja,en,count
 2020-04-09,香川,Kagawa Prefecture,3
 2020-04-10,香川,Kagawa Prefecture,4
 2020-04-11,香川,Kagawa Prefecture,4
+2020-04-12,香川,Kagawa Prefecture,4
 2020-01-15,高知,Kōchi Prefecture,0
 2020-01-16,高知,Kōchi Prefecture,0
 2020-01-17,高知,Kōchi Prefecture,0
@@ -3959,6 +4003,7 @@ date,ja,en,count
 2020-04-09,高知,Kōchi Prefecture,49
 2020-04-10,高知,Kōchi Prefecture,54
 2020-04-11,高知,Kōchi Prefecture,54
+2020-04-12,高知,Kōchi Prefecture,54
 2020-01-15,鳥取,Tottori Prefecture,0
 2020-01-16,鳥取,Tottori Prefecture,0
 2020-01-17,鳥取,Tottori Prefecture,0
@@ -4047,6 +4092,7 @@ date,ja,en,count
 2020-04-09,鳥取,Tottori Prefecture,0
 2020-04-10,鳥取,Tottori Prefecture,1
 2020-04-11,鳥取,Tottori Prefecture,1
+2020-04-12,鳥取,Tottori Prefecture,1
 2020-01-15,鹿児島,Kagoshima Prefecture,0
 2020-01-16,鹿児島,Kagoshima Prefecture,0
 2020-01-17,鹿児島,Kagoshima Prefecture,0
@@ -4135,3 +4181,4 @@ date,ja,en,count
 2020-04-09,鹿児島,Kagoshima Prefecture,4
 2020-04-10,鹿児島,Kagoshima Prefecture,4
 2020-04-11,鹿児島,Kagoshima Prefecture,4
+2020-04-12,鹿児島,Kagoshima Prefecture,4
