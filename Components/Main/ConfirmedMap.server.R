@@ -23,6 +23,13 @@ output$echartsSimpleMap <- renderEcharts4r({
   yesterdayData <- mapDt[date == yesterday]
   dt <- merge(x = totalData, y = yesterdayData, by = c('ja', 'en'), no.dups = T)
   dt[, diff := (count.x - count.y)]
+  # 本日増加分
+  todayTotalIncreaseNumber <- sum(dt$diff, na.rm = T)
+  subText <- lang[[langCode]][119]
+  if (todayTotalIncreaseNumber > 0) {
+    subText <- paste0('発表がある', sum(dt$diff > 0), '都道府県合計新規', todayTotalIncreaseNumber, 
+                      '人, 合計', sum(dt$count.x, na.rm = T), '人')
+  }
   
   nameMap <- as.list(dt$ja)
   names(nameMap) <- dt$en
@@ -60,7 +67,11 @@ output$echartsSimpleMap <- renderEcharts4r({
           return("");
         }
       }
-    '))
+    ')) %>%
+    e_title(
+      text = '累積感染者数マップ', 
+      subtext = subText
+    )
 })
 
 output$echartsMap <- renderEcharts4r({
