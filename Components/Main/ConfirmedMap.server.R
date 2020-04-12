@@ -28,7 +28,9 @@ output$echartsSimpleMap <- renderEcharts4r({
   subText <- lang[[langCode]][119]
   if (todayTotalIncreaseNumber > 0) {
     subText <- paste0('発表がある', sum(dt$diff > 0), '都道府県合計新規', todayTotalIncreaseNumber, 
-                      '人, 合計', sum(dt$count.x, na.rm = T), '人')
+                      '人, 合計', sum(dt$count.x, na.rm = T), '人\n\n',
+                      '※こちらの合計値には空港検疫、チャーター便、\n　クルーズ関連の事例などは含まれていない。'
+                      )
   }
   
   nameMap <- as.list(dt$ja)
