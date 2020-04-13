@@ -36,7 +36,12 @@ output$AomoriValueBoxes <- renderUI({
   data <- GLOBAL_VALUE$Aomori$summary
   totalPositive <- sum(data$陽性数, na.rm = T)
   totalPCR <- sum(data$実施数, na.rm = T)
-  totalDischarge <-  sum(data$治療終了数, na.rm = T) # TODO 公式データまだない
+  # totalDischarge <-  sum(data$治療終了数, na.rm = T) # TODO 公式データまだない、とりあえず厚労省から計算
+  mhlw <- detailByRegion[都道府県名 == '青森県']
+  mhlw[, 日次退院者 := 退院者 - shift(退院者)]
+  # mhlw$日次退院者[is.na(mhlw$日次退院者)] <- 0
+  dischargeValue <- mhlw$退院者
+  totalDischarge <- tail(dischargeValue, n = 1)
   totalDeath <- sum(data$死亡数, na.rm = T) # TODO 公式データまだない
   positiveRate <- paste0(round(totalPositive / totalPCR * 100, 2), '%')
   dischargeRate <- paste0(
@@ -73,7 +78,7 @@ output$AomoriValueBoxes <- renderUI({
       fluidRow(
         createValueBox(value = totalDischarge, # TODO 公式データまだない
                        subValue = dischargeRate, 
-                       sparkline = createSparklineInValueBox(data, '治療終了数', length = 10),
+                       sparkline = createSparklineInValueBox(mhlw, '日次退院者', length = 19),
                        subtitle = lang[[langCode]][102], 
                        icon = 'user-shield',
                        color = 'green',

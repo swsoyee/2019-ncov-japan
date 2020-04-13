@@ -1,24 +1,5 @@
 fluidPage(
   fluidRow(
-    boxPlus(width = 12, 
-            closable = T, 
-            enable_label = F, 
-            label_text = 'New', 
-            label_status = 'warning', 
-            solidHeader = T,
-            status = 'info', 
-            title = tagList(icon('bullhorn'), 'お知らせ'),
-            collapsible = T,
-            collapsed = T,
-            tags$small(
-              paste0(
-                '青森県の新型コロナウイルスオープンデータAPIが４月９日頃に無効されるため、',
-                'データ更新はしばらくできなくなりました。代替案を考えています。'
-              )
-            )
-          )
-  ),
-  fluidRow(
     column(width = 6, style='padding:0px;',
            widgetUserBox(
              title = '青森県', 
