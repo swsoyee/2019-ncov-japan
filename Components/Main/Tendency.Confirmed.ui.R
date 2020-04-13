@@ -8,25 +8,18 @@ tabPanel(
       width = 8,
       fluidRow(
         tags$br(),
-        pickerInput(
-          inputId = 'regionPicker',
-          # 地域選択
-          label = lang[[langCode]][93],
-          choices = regionName,
-          selected = defaultSelectedRegionName,
-          options = list(
-            `actions-box` = TRUE,
-            size = 10,
-            # クリア
-            `deselect-all-text` = lang[[langCode]][91],
-            # 全部
-            `select-all-text` = lang[[langCode]][92],
-            # 三件以上選択されました
-            `selected-text-format` = lang[[langCode]][94] 
-          ),
-          multiple = T,
-          width = '70%',
-          inline = T
+        column(
+          width = 4,
+          radioGroupButtons(
+            inputId = "selectTendencyConfirmedMode",
+            label = "表示モード", 
+            choices = c("一般", "片対数"),
+            status = "danger", 
+          )
+        ),
+        column(
+          width = 6,
+          uiOutput('tendencyConfirmedRegionPicker')
         )
       ),
       uiOutput('confirmedLineWrapper') %>% withSpinner()
