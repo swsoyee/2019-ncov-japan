@@ -67,6 +67,7 @@ output$oneSideLogConfirmed <- renderEcharts4r({
       splitLine = list(lineStyle = list(opacity = 0.2)),
       name = '感染者数',
       type = 'log',
+      nameTextStyle = list(padding = c(0, 0, 0, 40)),
       axisLabel = list(inside = T),
       axisTick = list(show = F),
       nameGap = 10
@@ -160,6 +161,7 @@ output$confirmedLine <- renderEcharts4r({
       e_y_axis(
         name = '累積陽性者数',
         nameGap = 10,
+        nameTextStyle = list(padding = c(0, 0, 0, 80)),
         splitLine = list(lineStyle = list(opacity = 0.2)),
         axisLabel = list(inside = T),
         axisTick = list(show = F)
