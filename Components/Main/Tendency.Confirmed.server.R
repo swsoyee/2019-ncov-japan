@@ -75,6 +75,45 @@ output$oneSideLogConfirmed <- renderEcharts4r({
         list(type = 'all', title = '全'),
         list(type = 'inverse', title = '逆')
       )
+    ) %>%
+    e_mark_line(
+      data = list(
+        list(
+          coord = c(0, 10),
+          symbol = 'none'
+        ),
+        list(
+          coord = c(9.5, 10*2^9.5),
+          symbol = 'none',
+          name = '１日２倍'
+        )
+      )
+    ) %>%
+    e_mark_line(
+      data = list(
+        list(
+          coord = c(0, 10),
+          symbol = 'none'
+        ),
+        list(
+          coord = c(28.5, 10*2^9.5),
+          symbol = 'none',
+          name = '３日２倍'
+        )
+      )
+    ) %>%
+    e_mark_line(
+      data = list(
+        list(
+          coord = c(0, 10),
+          symbol = 'none'
+        ),
+        list(
+          coord = c(56, 10*2^8),
+          symbol = 'none',
+          name = '１週間２倍'
+        )
+      )
     )
 })
 
