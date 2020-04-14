@@ -97,13 +97,15 @@ today <- colSums(byDate[nrow(byDate), 2:ncol(byDate)])
 print('昨日までカラム作成')
 untilToday <- colSums(byDate[1:nrow(byDate) - 1, 2:ncol(byDate)])
 print('新規推移カラム作成')
+toolTipDate <- byDate[(nrow(byDate) - 15):nrow(byDate), 1, with = F][[1]]
 diffSparkline <- sapply(2:ncol(byDate), function(i) {
   value <- byDate[(nrow(byDate) - 15):nrow(byDate), i, with = F][[1]]
   diff <- spk_chr(
     values = value,
     type = 'bar',
     barColor = middleRed,
-    chartRangeMin = 0#,
+    chartRangeMin = 0,
+    tooltipFormat = '新規{{value}}名'
     # chartRangeMax = max(byDate[, c(2:48, 50)])
   )
   return(diff)
