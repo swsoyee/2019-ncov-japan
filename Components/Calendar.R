@@ -1,34 +1,10 @@
-output$confirmedCalendar <- renderEcharts4r({
-  dt <- confirmedDataByDate()
-  if(length(confirmedDataByDate()) > 1) {
-    maxValue <- max(dt$difference)
-    dt %>%
-      e_charts(date) %>% 
-      e_calendar(range = c('2020-01-01', '2020-06-30'),
-                 top = 25, left = 0, cellSize = 15,
-                 splitLine = list(show = F), itemStyle = list(borderWidth = 2, borderColor = '#FFFFFF'),
-                 dayLabel = list(nameMap = c('日', '月', '火', '水', '木', '金', '土')),
-                 monthLabel = list(nameMap = 'cn')) %>% 
-      e_heatmap(difference, coord_system = "calendar") %>%
-      e_legend(show = F) %>%
-      e_visual_map(top = '2%', 
-                   show = F,
-                   max = maxValue, 
-                   inRange = list(color = c('#FFFFFF', middleRed, darkRed)), # scale colors
-      ) %>%
-      e_tooltip()
-  } else {
-    return()
-  }
-})
-
 output$pcrCalendar <- renderEcharts4r({
   dt <- pcrData()
   maxValue <- max(dt$diff)
   dt %>%
     e_charts(date) %>% 
-    e_calendar(range = c('2020-01-01', '2020-06-30'),
-               top = 25, left = 0, cellSize = 15,
+    e_calendar(range = c('2020-02-01', '2020-07-30'),
+               top = 25, left = 25, cellSize = 15,
                splitLine = list(show = F), itemStyle = list(borderWidth = 2, borderColor = '#FFFFFF'),
                dayLabel = list(nameMap = c('日', '月', '火', '水', '木', '金', '土')),
                monthLabel = list(nameMap = 'cn')) %>% 
@@ -39,7 +15,11 @@ output$pcrCalendar <- renderEcharts4r({
                  show = F,
                  inRange = list(color = c('#FFFFFF', darkYellow)), # scale colors
     ) %>%
-    e_tooltip()
+    e_tooltip(formatter = htmlwidgets::JS('
+        function(params) {
+          return(`${params.value[0]}<br>新規${params.value[1]}人`)
+        }
+      '))
 })
 
 output$renderCalendar <- renderUI({
@@ -64,8 +44,8 @@ output$callCenterCanlendar <- renderEcharts4r({
   maxValue <- max(dt$count)
   dt %>%
     e_charts(date) %>% 
-    e_calendar(range = c('2020-01-01', '2020-06-30'),
-               top = 25, left = 0, cellSize = 15,
+    e_calendar(range = c('2020-02-01', '2020-07-30'),
+               top = 25, left = 25, cellSize = 15,
                splitLine = list(show = F), itemStyle = list(borderWidth = 2, borderColor = '#FFFFFF'),
                dayLabel = list(nameMap = c('日', '月', '火', '水', '木', '金', '土')),
                monthLabel = list(nameMap = 'cn')) %>% 
@@ -76,5 +56,9 @@ output$callCenterCanlendar <- renderEcharts4r({
                  show = F,
                  inRange = list(color = c('#FFFFFF', darkBlue)), # scale colors
     ) %>%
-    e_tooltip()
+    e_tooltip(formatter = htmlwidgets::JS('
+        function(params) {
+          return(`${params.value[0]}<br>新規${params.value[1]}人`)
+        }
+      '))
 })

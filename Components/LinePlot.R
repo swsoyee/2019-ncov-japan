@@ -1,18 +1,3 @@
-confirmedDataByDate <- reactive({
-  dt <- data.table(byDate)
-  dt$都道府県 <- rowSums(byDate[, c(2:48)])
-  if(!is.null(input$regionPicker)) {
-    dt <- dt[, c('date', input$regionPicker), with = F]
-    # dt <- dt[, c('date', '北海道', '東京', '神奈川')] # TEST
-    dt$total <- cumsum(rowSums(dt[, 2:ncol(dt)]))
-    dt[, difference := total - shift(total)]
-    setnafill(dt, fill = 0)
-    dt
-  } else {
-    dt[, 1, with = F] # 日付のカラムだけを返す
-  }
-})
-
 # ====退院推移図データセット====
 dischargeData <- reactive({
   dt <- domesticDailyReport

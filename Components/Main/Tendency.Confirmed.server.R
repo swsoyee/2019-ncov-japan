@@ -1,3 +1,4 @@
+# ====UI====
 output$tendencyConfirmedRegionPicker <- renderUI({
   if (input$selectTendencyConfirmedMode == '一般') {
     return(
@@ -23,6 +24,22 @@ output$tendencyConfirmedRegionPicker <- renderUI({
     )
   } else {
     return()
+  }
+})
+
+# ====DATA====
+confirmedDataByDate <- reactive({
+  dt <- data.table(byDate)
+  dt$都道府県 <- rowSums(byDate[, c(2:48)])
+  if(!is.null(input$regionPicker)) {
+    dt <- dt[, c('date', input$regionPicker), with = F]
+    # dt <- dt[, c('date', '北海道', '東京', '神奈川')] # TEST
+    dt$total <- cumsum(rowSums(dt[, 2:ncol(dt)]))
+    dt[, difference := total - shift(total)]
+    setnafill(dt, fill = 0)
+    dt
+  } else {
+    dt[, 1, with = F] # 日付のカラムだけを返す
   }
 })
 
@@ -176,5 +193,41 @@ output$confirmedLineWrapper <- renderUI({
     }
   } else if (input$selectTendencyConfirmedMode == '片対数') {
     echarts4rOutput('oneSideLogConfirmed')
+  }
+})
+
+
+output$confirmedCalendar <- renderEcharts4r({
+  dt <- confirmedDataByDate()
+  if (length(confirmedDataByDate()) > 1) {
+    maxValue <- max(dt$difference)
+    dt %>%
+      e_charts(date) %>%
+      e_calendar(
+        range = c('2020-02-01', '2020-07-30'),
+        top = 25,
+        left = 25,
+        cellSize = 15,
+        splitLine = list(show = F),
+        itemStyle = list(borderWidth = 2, borderColor = '#FFFFFF'),
+        dayLabel = list(nameMap = c('日', '月', '火', '水', '木', '金', '土')),
+        monthLabel = list(nameMap = 'cn')
+      ) %>%
+      e_heatmap(difference, coord_system = "calendar") %>%
+      e_legend(show = T) %>%
+      e_visual_map(
+        top = '2%',
+        show = F,
+        max = maxValue,
+        inRange = list(color = c('#FFFFFF', middleRed, darkRed)),
+        # scale colors
+      ) %>%
+      e_tooltip(formatter = htmlwidgets::JS('
+        function(params) {
+          return(`${params.value[0]}<br>新規${params.value[1]}人`)
+        }
+      '))
+  } else {
+    return()
   }
 })
