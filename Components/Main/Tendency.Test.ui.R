@@ -10,6 +10,7 @@ tabPanel(
       fluidRow(
         column(
           width = 6,
+          tags$p(tags$b('クルーズ・チャーター便事例の表示')),
           switchInput(
             inputId = "showShipInPCR",
             label = icon('ship'), 

@@ -97,9 +97,9 @@ output$curedCalendar <- renderEcharts4r({
   dt %>%
     e_charts(date) %>%
     e_calendar(
-      range = c('2020-01-01', '2020-06-30'),
+      range = c('2020-02-01', '2020-07-30'),
       top = 25,
-      left = 0,
+      left = 25,
       cellSize = 15,
       splitLine = list(show = F),
       itemStyle = list(borderWidth = 2, borderColor = '#FFFFFF'),
