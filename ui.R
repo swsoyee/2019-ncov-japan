@@ -7,8 +7,8 @@ shinyUI(
     skin = "red",
     title = lang[[langCode]][1],
     header = dashboardHeaderPlus(
-      title = paste0('🦠', lang[[langCode]][1]),
-      titleWidth = 350,
+      title = paste0('🦠　', lang[[langCode]][1]),
+      titleWidth = 600,
       dropdownMenu(type = 'notifications',
                    headerText = '', icon = icon('user-ninja'),
                    tags$li(
