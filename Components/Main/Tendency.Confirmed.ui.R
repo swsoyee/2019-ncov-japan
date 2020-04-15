@@ -13,7 +13,7 @@ tabPanel(
           radioGroupButtons(
             inputId = "selectTendencyConfirmedMode",
             label = "表示モード", 
-            choices = c("一般", "片対数"),
+            choices = c("一般", "片対数", '両対数'),
             status = "danger", 
           )
         ),
