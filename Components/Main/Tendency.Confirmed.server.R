@@ -287,11 +287,12 @@ output$twoSideLogConfirmed <- renderEcharts4r({
     setNames(as.list(orderRegion), rep("name", length(orderRegion)))
 
   NDay <- input$twoSideNSpan
+  # NDay <- 5 # TEST
   byNDay <-
-    dt[, lapply(.SD, sum), by = .(ja, threeDay = NDay * (as.numeric(difftime(
-      date, min(dt$date),
+    dt[, lapply(.SD, sum), by = .(ja, threeDay = as.Date(max(dt$date)) - NDay * (as.numeric(difftime(
+      date, max(dt$date),
       units = "days"
-    )) %/% NDay) + as.Date(min(dt$date))), .SDcols = c("diff")]
+    )) %/% NDay)), .SDcols = c("diff")]
   byNDay[, count := cumsum(diff), by = ja]
   plotDt <-
     byNDay[diff != 0 & count >= 10][order(match(ja, orderRegion))]
@@ -324,6 +325,7 @@ output$twoSideLogConfirmed <- renderEcharts4r({
     e_x_axis(
       splitLine = list(lineStyle = list(opacity = 0.2)),
       type = ifelse(input$twoSideXType, "log", "value"),
+      # type = 'log', # TEST
       name = "累積感染者数",
       nameLocation = "center",
       nameGap = 25
