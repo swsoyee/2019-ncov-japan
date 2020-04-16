@@ -17,6 +17,12 @@
 
 ![index](https://stg.covid-2019.live/ncov-static/capture.png)
 
-## 協力者
+## メンバー
 
-インフラ： [@Bob-Fu](https://github.com/Bob-FU)
+可視化開発、データ更新、主催：[@swsoyee](https://github.com/swsoyee)  
+インフラ、サーバー提供：[@Bob-Fu](https://github.com/Bob-FU)  
+技術サポート：[@uribo](https://github.com/uribo)  
+データ自動化：[@emckk](https://github.com/emc-kk)  
+
+協力できる有志がいればご気軽に連絡してください。Rのことがわからなくても貢献できることは必ずありますmm。  
+> 例えば日本語の文言の修正、多言語バージョンを提供するための翻訳の準備、データセットの収集など。
