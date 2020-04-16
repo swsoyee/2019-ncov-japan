@@ -181,12 +181,12 @@ output$confirmedLine <- renderEcharts4r({
         difference,
         name = "新規",
         # y_index = 1,
-        z = 2, barGap = '-100%',
+        z = 2, barGap = "-100%",
         itemStyle = list(normal = list(color = lightRed)),
         areaStyle = list(opacity = 0.4)
       ) %>%
-      e_line(ma_3, name = '３日移動平均（新規）', y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkRed)) %>%
-      e_line(ma_5, name = '５日移動平均（新規）', y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkYellow)) %>%
+      e_line(ma_3, name = "３日移動平均（新規）", y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkRed)) %>%
+      e_line(ma_5, name = "５日移動平均（新規）", y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkYellow)) %>%
       e_grid(
         left = "3%",
         right = "15%",
@@ -210,7 +210,7 @@ output$confirmedLine <- renderEcharts4r({
       ) %>%
       e_title(text = "日次新規・累積陽性者の推移") %>%
       e_legend_unselect(
-        name = '５日移動平均（新規）'
+        name = "５日移動平均（新規）"
       ) %>%
       e_legend(
         type = "scroll",
@@ -282,7 +282,8 @@ output$twoSideLogConfirmed <- renderEcharts4r({
   dt[is.na(dt$diff)]$diff <- 0
   # 本日のデータを除外
   dt <- dt[date != max(dt$date)]
-  
+  setorder(dt, ja, -date)
+
   regionCount <- dt[, .I[which.max(count)], by = ja]
   orderRegion <- dt[regionCount$V1][order(-count)]$ja
   mostNregion <- head(orderRegion, n = 7)
@@ -297,10 +298,11 @@ output$twoSideLogConfirmed <- renderEcharts4r({
 
   NDay <- input$twoSideNSpan
   # NDay <- 5 # TEST
-  dt[, index := 1:.N %/% NDay, by = ja]
+  dt[, index := rep((.N %/% NDay):1, each = NDay, len = .N), by = ja]
+  dt <- dt[, head(.SD, .N - .N %% NDay), by = "ja"]
   dt[, spanDiff := sum(diff), by = .(ja, index)]
   dt <- unique(dt[, .(ja, index, spanDiff)])
-  dt[, spanCount := cumsum(spanDiff), by = .(ja)]
+  dt <- dt[order(ja, index)][, spanCount := cumsum(spanDiff), by = .(ja)]
 
   dt[spanDiff != 0][order(match(ja, orderRegion))] %>%
     group_by(ja) %>%
@@ -329,8 +331,8 @@ output$twoSideLogConfirmed <- renderEcharts4r({
     ) %>%
     e_x_axis(
       splitLine = list(lineStyle = list(opacity = 0.2)),
-      # type = ifelse(input$twoSideXType, "log", "value"),
-      type = "log", # TEST
+      type = ifelse(input$twoSideXType, "log", "value"),
+      # type = "log", # TEST
       name = "累積感染者数",
       nameLocation = "center",
       nameGap = 25
