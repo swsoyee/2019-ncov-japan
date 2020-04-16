@@ -325,12 +325,24 @@ output$twoSideLogConfirmed <- renderEcharts4r({
     e_x_axis(
       splitLine = list(lineStyle = list(opacity = 0.2)),
       type = ifelse(input$twoSideXType, "log", "value"),
-      # type = 'log', # TEST
+      # type = "log", # TEST
       name = "累積感染者数",
       nameLocation = "center",
       nameGap = 25
     ) %>%
-    e_tooltip(trigger = "axis") %>%
+    e_tooltip(
+      trigger = "axis",
+      formatter = htmlwidgets::JS(
+        '
+    function(params) {
+      label = params.map(param => {
+        return(`<b style="color:${param.color};background-color:white;border-radius:3px;padding:1px 5px 1px 5px;">${param.seriesName}</b>：累計${param.value[0]}名, 期間中新規${param.value[1]}名`)
+      }).join("<br>")
+      return(label)
+    }
+  '
+      )
+    ) %>%
     e_mark_point(data = list(
       type = "max",
       symbol = "diamond",
