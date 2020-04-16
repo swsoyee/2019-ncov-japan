@@ -94,7 +94,7 @@ output$oneSideLogConfirmed <- renderEcharts4r({
   dt[order(match(ja, orderRegion))] %>%
     group_by(ja) %>%
     e_chart(index) %>%
-    e_line(count, symbol = "circle") %>%
+    e_line(count, symbol = "circle", smooth = T) %>%
     e_y_axis(
       splitLine = list(lineStyle = list(opacity = 0.2)),
       name = "感染者数",
@@ -167,21 +167,26 @@ output$oneSideLogConfirmed <- renderEcharts4r({
 output$confirmedLine <- renderEcharts4r({
   dt <- confirmedDataByDate()
   if (ncol(dt) > 1) {
+    dt$ma_3 <- round(frollmean(dt$difference, n = 3, fill = 0), 2)
+    dt$ma_5 <- round(frollmean(dt$difference, n = 5, fill = 0), 2)
     dt %>%
       e_charts(date) %>%
-      e_line(
+      e_bar(
         total,
-        name = "合計",
-        itemStyle = list(normal = list(color = middleRed)),
+        name = "累積",
+        itemStyle = list(normal = list(color = lightYellow)),
         areaStyle = list(opacity = 0.4)
       ) %>%
       e_bar(
         difference,
-        name = "新規感染者（日次）",
-        y_index = 1,
-        itemStyle = list(normal = list(color = middleRed)),
+        name = "新規",
+        # y_index = 1,
+        z = 2, barGap = '-100%',
+        itemStyle = list(normal = list(color = lightRed)),
         areaStyle = list(opacity = 0.4)
       ) %>%
+      e_line(ma_3, name = '３日移動平均（新規）', y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkRed)) %>%
+      e_line(ma_5, name = '５日移動平均（新規）', y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkYellow)) %>%
       e_grid(
         left = "3%",
         right = "15%",
@@ -189,26 +194,28 @@ output$confirmedLine <- renderEcharts4r({
       ) %>%
       e_x_axis(splitLine = list(lineStyle = list(opacity = 0.2))) %>%
       e_y_axis(
-        name = "累積陽性者数",
+        name = "陽性者数",
         nameGap = 10,
-        nameTextStyle = list(padding = c(0, 0, 0, 80)),
+        nameTextStyle = list(padding = c(0, 0, 0, 50)),
         splitLine = list(lineStyle = list(opacity = 0.2)),
         axisLabel = list(inside = T),
         axisTick = list(show = F)
       ) %>%
       e_y_axis(
-        name = "日次増加数",
+        name = "移動平均新規数",
         nameGap = 10,
         splitLine = list(show = F),
         index = 1,
-        max = max(dt$difference, na.rm = T),
         axisTick = list(show = F)
       ) %>%
       e_title(text = "日次新規・累積陽性者の推移") %>%
+      e_legend_unselect(
+        name = '５日移動平均（新規）'
+      ) %>%
       e_legend(
         type = "scroll",
         orient = "vertical",
-        left = "10%",
+        left = "18%",
         top = "15%",
         right = "15%"
       ) %>%
