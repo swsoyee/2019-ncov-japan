@@ -280,7 +280,9 @@ output$confirmedCalendar <- renderEcharts4r({
 output$twoSideLogConfirmed <- renderEcharts4r({
   dt <- mapData[, diff := count - shift(count), by = ja]
   dt[is.na(dt$diff)]$diff <- 0
-
+  # 本日のデータを除外
+  dt <- dt[date != max(dt$date)]
+  
   regionCount <- dt[, .I[which.max(count)], by = ja]
   orderRegion <- dt[regionCount$V1][order(-count)]$ja
   mostNregion <- head(orderRegion, n = 7)
@@ -295,20 +297,16 @@ output$twoSideLogConfirmed <- renderEcharts4r({
 
   NDay <- input$twoSideNSpan
   # NDay <- 5 # TEST
-  byNDay <-
-    dt[, lapply(.SD, sum), by = .(ja, threeDay = as.Date(max(dt$date)) - NDay * (as.numeric(difftime(
-      date, max(dt$date),
-      units = "days"
-    )) %/% NDay)), .SDcols = c("diff")]
-  byNDay[, count := cumsum(diff), by = ja]
-  plotDt <-
-    byNDay[diff != 0 & count >= 10][order(match(ja, orderRegion))]
+  dt[, index := 1:.N %/% NDay, by = ja]
+  dt[, spanDiff := sum(diff), by = .(ja, index)]
+  dt <- unique(dt[, .(ja, index, spanDiff)])
+  dt[, spanCount := cumsum(spanDiff), by = .(ja)]
 
-  plotDt %>%
+  dt[spanDiff != 0][order(match(ja, orderRegion))] %>%
     group_by(ja) %>%
     # dt[ja =='東京' & diff != 0] %>% #TEST
-    e_chart(count) %>%
-    e_line(diff, symbol = "circle", smooth = T) %>%
+    e_chart(spanCount) %>%
+    e_line(spanDiff, symbol = "circle", smooth = T) %>%
     e_legend(
       type = "scroll",
       orient = "vertical",
@@ -331,8 +329,8 @@ output$twoSideLogConfirmed <- renderEcharts4r({
     ) %>%
     e_x_axis(
       splitLine = list(lineStyle = list(opacity = 0.2)),
-      type = ifelse(input$twoSideXType, "log", "value"),
-      # type = "log", # TEST
+      # type = ifelse(input$twoSideXType, "log", "value"),
+      type = "log", # TEST
       name = "累積感染者数",
       nameLocation = "center",
       nameGap = 25
