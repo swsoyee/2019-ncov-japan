@@ -174,16 +174,14 @@ output$confirmedLine <- renderEcharts4r({
       e_bar(
         total,
         name = "累積",
-        itemStyle = list(normal = list(color = lightYellow)),
-        areaStyle = list(opacity = 0.4)
+        itemStyle = list(normal = list(color = lightYellow))
       ) %>%
       e_bar(
         difference,
         name = "新規",
         # y_index = 1,
         z = 2, barGap = "-100%",
-        itemStyle = list(normal = list(color = lightRed)),
-        areaStyle = list(opacity = 0.4)
+        itemStyle = list(normal = list(color = lightRed))
       ) %>%
       e_line(ma_3, name = "３日移動平均（新規）", y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkRed)) %>%
       e_line(ma_5, name = "５日移動平均（新規）", y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkYellow)) %>%
