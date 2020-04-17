@@ -35,7 +35,7 @@ observeEvent(input$switchTableVersion, {
     })
   } else {
     output$summaryTable <- renderUI({
-      dataTableOutput("summaryByRegion")
+      dataTableOutput("confirmedByPrefTable")
     })
   }
 })
@@ -224,4 +224,94 @@ output$summaryByRegion <- renderDataTable({
   #   backgroundSize = '98% 80%',
   #   backgroundRepeat = 'no-repeat',
   #   backgroundPosition = 'center')
+})
+
+output$confirmedByPrefTable <- renderDataTable({
+  # 感染情報だけを表示
+  # dt <- dt[count > 0] # TEST
+  dt <- totalConfirmedByRegionData()[count > 0]
+  # ０の値を非表示するため、NAに設定るす
+  columnName <- c("today", "doubleTimeDay")
+  dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
+  
+  breaks <- seq(0, max(ifelse(is.na(dt$today), 0, dt$today), na.rm = T), 2)
+  colors <- colorRampPalette(c(lightRed, darkRed))(length(breaks) + 1)
+  
+  breaksDoubleTimeDay <- seq(0, max(ifelse(is.na(dt$doubleTimeDay), 0, dt$doubleTimeDay), na.rm = T), 2)
+  colorsDoubleTimeDay <- colorRampPalette(c(darkRed, lightYellow))(length(breaksDoubleTimeDay) + 1)
+  
+  upMark <- as.character(icon("caret-up"))
+  
+  datatable(
+    data = dt[, c(1, 3, 4, 6, 11), with = F],
+    colnames = c("都道府県", "新規", "感染者数", "新規感染", "倍増時間"),
+    escape = F,
+    plugins = "natural",
+    extensions = c("Responsive"),
+    options = list(
+      paging = F,
+      dom = "t",
+      scrollY = "540px",
+      scrollX = T,
+      columnDefs = list(
+        list(
+          className = "dt-center",
+          width = "15%",
+          targets = c(1, 3:5)
+        ),
+        list(
+          width = "30px",
+          targets = 2
+        ),
+        list(
+          orderable = F,
+          targets = 3
+        )
+      ),
+      fnDrawCallback = htmlwidgets::JS("
+      function() {
+        HTMLWidgets.staticRender();
+      }
+    ")
+    )
+  ) %>%
+    spk_add_deps() %>%
+    formatStyle(
+      columns = "totalToday",
+      background = htmlwidgets::JS(
+        paste0(
+          "'linear-gradient(-90deg, transparent ' + (",
+          max(dt$count), "- value.split('<r ')[0])/", max(dt$count),
+          " * 100 + '%, #DD4B39 ' + (",
+          max(dt$count), "- value.split('<r ')[0])/", max(dt$count),
+          " * 100 + '% ' + (", max(dt$count), "- value.split('<r ')[0] + Number(value.split('<r ')[1]))/", max(dt$count),
+          " * 100 + '%, #F56954 ' + (",
+          max(dt$count), "- value.split('<r ')[0] + Number(value.split('<r ')[1]))/", max(dt$count), " * 100 + '%)'"
+        )
+      ),
+      backgroundSize = "100% 80%",
+      backgroundRepeat = "no-repeat",
+      backgroundPosition = "center"
+    ) %>%
+    formatCurrency(
+      columns = "today",
+      currency = paste(as.character(icon("caret-up")), " "),
+      digits = 0
+    ) %>%
+    formatStyle(
+      columns = "today",
+      color = styleInterval(breaks, colors),
+      fontWeight = "bold"
+    ) %>%
+    formatCurrency(
+      columns = "doubleTimeDay",
+      currency = "日",
+      digits = 0, 
+      before = F
+    ) %>%
+    formatStyle(
+      columns = "doubleTimeDay",
+      color = styleInterval(breaksDoubleTimeDay, colorsDoubleTimeDay),
+      fontWeight = "bold"
+    ) 
 })

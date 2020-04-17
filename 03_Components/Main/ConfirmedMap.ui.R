@@ -101,6 +101,7 @@ tabPanel(
           size = "small", width = "300px", labelWidth = "200px", handleWidth = "100px"
         ),
         # dataTableOutput('summaryByRegion') %>% withSpinner() # 重いのでデフォルトはシンプルバージョンに変更
+        tags$small("※退院、死亡データに関しては調整中のため一旦非表示します。次のバージョンをご期待ください。"),
         uiOutput("summaryTable") %>% withSpinner()
       )
     ),

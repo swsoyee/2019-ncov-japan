@@ -188,6 +188,15 @@ detailSparkLine <- sapply(detailSparkLineDt$都道府県名, function(region) {
 #   provinceAttr[names(total[i]) == 都道府県, millianConfirmed :=
 #     (total[i] / (provinceAttr[都道府県 == names(total[i])]$人口 / 1000000))[[1]]]
 # }
+print("二倍時間集計")
+dt <- byDate[, 2:ncol(byDate)]
+halfCount <- colSums(dt) / 2
+dt <- cumsum(dt)
+doubleTimeDay <- lapply(seq(halfCount), function(index) {
+  prefDt <- dt[, index, with = F]
+  nrow(prefDt[c(prefDt > halfCount[index])])
+})
+names(doubleTimeDay) <- names(dt)
 
 
 print("テーブル作成")
@@ -203,7 +212,8 @@ mergeDt <- data.table(
   dischargeDiff = "",
   detailBullet = "",
   death = deathByRegion$values,
-  zeroContinuousDay = zeroContinuousDay$values
+  zeroContinuousDay = zeroContinuousDay$values,
+  doubleTimeDay = doubleTimeDay
 )
 
 for (i in mergeDt$region) {
