@@ -1,7 +1,7 @@
 library(data.table)
 # library(gsheet)
 
-DATA_PATH <- "Data/"
+source(file = "01_Settings/Path.R", local = T, encoding = "UTF-8")
 signateDetailUrl <- "https://docs.google.com/spreadsheets/d/10MFfRQTblbOpuvOs_yjIYgntpMGBg592dL8veXoPpp4/edit#gid=0"
 data <- data.table(gsheet2tbl(signateDetailUrl))
 
