@@ -319,7 +319,7 @@ GLOBAL_VALUE <- reactiveValues(
   signateLink = NULL,
   signatePlace = fread(file = paste0(DATA_PATH, "resultSignatePlace.csv")),
   Academic = list(
-    onSet2ConfirmedMap = NULL
+    onset_to_confirmed_map = NULL
   ),
   hokkaidoData = NULL,
   hokkaidoDataUpdateTime = NULL,

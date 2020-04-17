@@ -8,7 +8,7 @@ fluidRow(
     fluidRow(
       column(
         width = 6,
-        echarts4rOutput("onSet2ConfirmedMap", height = "500px") %>% withSpinner()
+        echarts4rOutput("onset_to_confirmed_map", height = "500px") %>% withSpinner()
       )
     )
   )

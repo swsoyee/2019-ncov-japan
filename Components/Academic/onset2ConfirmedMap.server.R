@@ -1,19 +1,19 @@
 observeEvent(input$sideBarTab, {
   if (input$sideBarTab == "academic" && is.null(GLOBAL_VALUE$Academic[[1]])) {
     GLOBAL_VALUE$Academic <- list(
-      onSet2ConfirmedMap = fread(paste0(DATA_PATH, "/Academic/onset2ConfirmedMap.csv"))
+      onset_to_confirmed_map = fread(paste0(DATA_PATH, "/Academic/onset2ConfirmedMap.csv"))
     )
   }
   # data <- fread(paste0(DATA_PATH, '/Academic/onset2ConfirmedMap.csv')) # TEST
 })
 
-output$onSet2ConfirmedMap <- renderEcharts4r({
-  data <- GLOBAL_VALUE$Academic$onSet2ConfirmedMap
+output$onset_to_confirmed_map <- renderEcharts4r({
+  data <- GLOBAL_VALUE$Academic$onset_to_confirmed_map
   if (!is.null(data)) {
-    nameMap <- as.list(data$ja)
-    names(nameMap) <- data$`name-en`
-    maxPref <- data[発症から診断までの平均日数 == max(発症から診断までの平均日数, na.rm = T)]
-    minPref <- data[発症から診断までの平均日数 == min(発症から診断までの平均日数, na.rm = T)]
+    name_map <- as.list(data$ja)
+    names(name_map) <- data$`name-en`
+    max_pref <- data[発症から診断までの平均日数 == max(発症から診断までの平均日数, na.rm = T)]
+    min_pref <- data[発症から診断までの平均日数 == min(発症から診断までの平均日数, na.rm = T)]
     data %>%
       e_charts(ja) %>%
       em_map("Japan") %>%
@@ -21,7 +21,7 @@ output$onSet2ConfirmedMap <- renderEcharts4r({
         発症から診断までの平均日数,
         map = "Japan",
         name = "感染確認数",
-        nameMap = nameMap,
+        nameMap = name_map,
         layoutSize = "50%",
         center = c(137.1374062, 36.8951298),
         zoom = 1.5,
@@ -63,8 +63,8 @@ output$onSet2ConfirmedMap <- renderEcharts4r({
       e_title(
         text = "発症から診断までの平均日数マップ",
         subtext = paste0(
-          "最長：", maxPref$ja, maxPref$発症から診断までの平均日数,
-          "日　最短：", minPref$ja, minPref$発症から診断までの平均日数,
+          "最長：", max_pref$ja, max_pref$発症から診断までの平均日数,
+          "日　最短：", min_pref$ja, min_pref$発症から診断までの平均日数,
           "日\n\nデータ：SIGNATE COVID-19 Case Dataset"
         ),
         sublink = "https://docs.google.com/spreadsheets/d/10MFfRQTblbOpuvOs_yjIYgntpMGBg592dL8veXoPpp4/edit#gid=0"
