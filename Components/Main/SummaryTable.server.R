@@ -126,6 +126,7 @@ output$summaryByRegion <- renderDataTable({
   # setcolorder(mergeDt, c('region', 'count', 'untilToday', 'today', 'diff', 'values'))
   # dt <- mergeDt[count > 0] # TEST
   dt <- totalConfirmedByRegionData()[count > 0]
+  # ０の値を非表示するため、NAに設定るす
   columnName <- c('today', 'death')
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
   # TODO 感染拡大が終息する後からカラム復活、今は表示する必要はない
@@ -153,12 +154,12 @@ output$summaryByRegion <- renderDataTable({
       columnDefs = list(
         list(
           className = 'dt-center', 
-          width = '60px',
+          width = '15%',
           targets = c(1, 3:5)
         ),
         list(
           className = 'dt-center', 
-          width = '30px',
+          width = '10%',
           targets = 6:7
         ),
         list(
