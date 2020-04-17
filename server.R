@@ -28,12 +28,6 @@ shinyServer(function(input, output, session) {
               local = TRUE,
               encoding = "UTF-8"
        )
-       # 扇形図コンポーネント
-       source(
-              file = paste0(COMPONENT_PATH, "pieChart.R"),
-              local = TRUE,
-              encoding = "UTF-8"
-       )
        # テーブル系コンポーネント
        source(
               file = paste0(COMPONENT_PATH, "Main/SummaryTable.server.R"),
