@@ -15,9 +15,9 @@ library(echarts4r.maps)
 library(sparkline)
 library(shinyBS)
 
-source(file = "Settings/Path.R", local = T, encoding = "UTF-8")
-source(file = "Utils/Functions.R", local = T, encoding = "UTF-8")
-source(file = "Utils/ConfirmedPyramidData.R", local = T, encoding = "UTF-8")
+source(file = "01_Settings/Path.R", local = T, encoding = "UTF-8")
+source(file = "02_Utils/Functions.R", local = T, encoding = "UTF-8")
+source(file = "02_Utils/ConfirmedPyramidData.R", local = T, encoding = "UTF-8")
 source(file = paste0(COMPONENT_PATH, "Notification.R"), local = T, encoding = "UTF-8")
 source(file = paste0(PAGE_PATH, "Main/Utils/ValueBox.R"), local = T, encoding = "UTF-8")
 source(file = paste0(COMPONENT_PATH, "/Main/NewsList.ui.R"), local = T, encoding = "UTF-8")
@@ -176,11 +176,11 @@ DEATH_PIE_DATA <- data.table(
 
 # ====本日のデータ====
 # 確認
-byDateToday <- byDate[nrow(byDate), ] # 本日の差分データセット
+byDateToday <- byDate[nrow(byDate),] # 本日の差分データセット
 todayConfirmed <- unlist(as.list(byDateToday[, 2:ncol(byDateToday)]))
 HAS_TODAY_CONFIRMED <- todayConfirmed[todayConfirmed > 0] # 本日変化がある都道府県分類
 
-deathToday <- death[nrow(byDate), ] # 本日の差分データセット
+deathToday <- death[nrow(byDate),] # 本日の差分データセット
 todayDeath <- unlist(as.list(deathToday[, 2:ncol(deathToday)]))
 HAS_TODAY_DEATH <- todayDeath[todayDeath > 0] # 本日変化がある都道府県分類
 

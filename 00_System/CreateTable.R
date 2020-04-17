@@ -108,7 +108,7 @@ diffSparkline <- sapply(2:ncol(byDate), function(i) {
     barColor = middleRed,
     chartRangeMin = 0,
     tooltipFormat = "新規{{value}}名"
-    # chartRangeMax = max(byDate[, c(2:48, 50)])
+  # chartRangeMax = max(byDate[, c(2:48, 50)])
   )
   return(diff)
 })
@@ -131,7 +131,7 @@ dischargedDiffSparkline <- sapply(colnames(byDate)[c(2:48, 50)], function(region
       type = "bar",
       barColor = middleGreen,
       chartRangeMin = 0 # ,
-      # chartRangeMax = max(detailByRegion$dischargedDiff, na.rm = T)
+    # chartRangeMax = max(detailByRegion$dischargedDiff, na.rm = T)
     )
   } else {
     diff <- NA
@@ -213,7 +213,7 @@ for (i in mergeDt$region) {
 
 
 # オーダー
-setorder(mergeDt, -count)
+setorder(mergeDt, - count)
 # 読み取り時のエラーを回避するため
 mergeDt[, diff := gsub("\\n", "", diff)]
 mergeDt[, dischargeDiff := gsub("\\n", "", dischargeDiff)]
