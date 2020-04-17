@@ -3,7 +3,7 @@ library(jsonlite)
 library(data.table)
 # library(gsheet)
 
-DATA_PATH <- "Data/"
+source(file = "01_Settings/Path.R", local = T, encoding = "UTF-8")
 
 # ====けんもデータ====
 positiveDetail <- gsheet2tbl("docs.google.com/spreadsheets/d/1Cy4W9hYhGmABq1GuhLOkM92iYss0qy03Y1GeTv4bCyg/edit#gid=1196047345")
@@ -36,9 +36,9 @@ saveFileFromApi <- function(jsonResult, patientsFileName, prefCode, pref, NoCol 
       patient <- data.table(data[[i]])
       print("マージデータ...")
       # mergeWithSignate <- merge(patient, signateDetail[都道府県コード == prefCode], by.x = NoCol, by.y = '都道府県別罹患者No')
-      fwrite(x = patient, file = paste0("Data/Pref/", pref, "/", jsonResult[i, ]$filename))
+      fwrite(x = patient, file = paste0(DATA_PATH, "/Pref/", pref, "/", jsonResult[i, ]$filename))
     } else {
-      fwrite(x = data[[i]], file = paste0("Data/Pref/", pref, "/", jsonResult[i, ]$filename))
+      fwrite(x = data[[i]], file = paste0(DATA_PATH, "Pref/", pref, "/", jsonResult[i, ]$filename))
     }
   }
 }
@@ -77,7 +77,7 @@ iwateData[is.na(iwateData)] <- 0
 iwateData[, 検査数累計 := cumsum(検査数)]
 iwateData[, 相談件数累計 := cumsum(相談件数)]
 iwateData[, 一般相談累計 := cumsum(一般相談)]
-fwrite(x = iwateData, file = paste0("Data/Pref/", "Iwate", "/", "summary.csv"))
+fwrite(x = iwateData, file = paste0(DATA_PATH, "Pref/", "Iwate", "/", "summary.csv"))
 
 # ====宮城====
 dataUrl <- "https://raw.githubusercontent.com/code4shiogama/covid19-miyagi/development/data/data.json"
@@ -100,7 +100,7 @@ miyagiData[is.na(miyagiData)] <- 0
 miyagiData[, 検査数累計 := cumsum(検査数)]
 miyagiData[, 相談件数累計 := cumsum(相談件数)]
 miyagiData[, 陽性数累計 := cumsum(陽性数)]
-fwrite(x = miyagiData, file = paste0("Data/Pref/", "Miyagi", "/", "summary.csv"))
+fwrite(x = miyagiData, file = paste0(DATA_PATH, "Pref/", "Miyagi", "/", "summary.csv"))
 
 # ====茨城====
 dataUrl <- "https://raw.githubusercontent.com/a01sa01to/covid19-ibaraki/development/data/data.json"
@@ -123,7 +123,7 @@ dt <- merge(x = dt, y = positive, by = "date", no.dups = T, all = T)
 dt[is.na(dt)] <- 0
 dt[, paste0(colnames(dt)[2:ncol(dt)], "累計") := lapply(.SD, cumsum), .SDcols = c(2:ncol(dt))]
 
-fwrite(x = dt, file = paste0("Data/Pref/", "Ibaraki", "/", "summary.csv"))
+fwrite(x = dt, file = paste0(DATA_PATH, "Pref/", "Ibaraki", "/", "summary.csv"))
 
 # ====秋田====
 # dataUrl <- 'https://raw.githubusercontent.com/asaba-zauberer/covid19-akita/development/data/data.json'
@@ -150,7 +150,7 @@ dt[is.na(dt)] <- 0
 dt[, 陽性数 := rowSums(.SD), .SDcols = c("男性", "女性", "非公表")]
 dt[, 累積陽性数 := cumsum(.SD), .SDcols = c("陽性数")]
 
-fwrite(x = dt, file = paste0("Data/Pref/Kanagawa/summary.csv"))
+fwrite(x = dt, file = paste0(DATA_PATH, "Pref/Kanagawa/summary.csv"))
 
 # ====大分====
 
