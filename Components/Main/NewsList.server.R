@@ -14,12 +14,13 @@ output$news <- renderDataTable({
     )
   datatable(
     newsData[order(-V1)],
-    options = list(dom = 'tp',
-                   scrollY = '360px'),
+    options = list(
+      dom = "tp",
+      scrollY = "360px"
+    ),
     rownames = F,
     # 感染確認情報
     colnames = lang[[langCode]][14],
     escape = F
   )
 })
-

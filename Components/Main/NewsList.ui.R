@@ -3,11 +3,11 @@ Component.NewsList <- function() {
     boxPlus(
       width = 4,
       # 情報源リンク集
-      title = tagList(icon('newspaper'), lang[[langCode]][122]),
+      title = tagList(icon("newspaper"), lang[[langCode]][122]),
       collapsed = T,
       closable = F,
       collapsible = T,
-      dataTableOutput('news') %>% withSpinner()
+      dataTableOutput("news") %>% withSpinner()
     )
   )
 }
