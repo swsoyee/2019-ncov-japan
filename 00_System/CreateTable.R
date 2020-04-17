@@ -102,13 +102,21 @@ print("新規推移カラム作成")
 toolTipDate <- byDate[(nrow(byDate) - 15):nrow(byDate), 1, with = F][[1]]
 diffSparkline <- sapply(2:ncol(byDate), function(i) {
   value <- byDate[(nrow(byDate) - 15):nrow(byDate), i, with = F][[1]]
+  date <- byDate[(nrow(byDate) - 15):nrow(byDate), 1, with = F][[1]]
+  colorMapSetting <- rep(lightRed, length(value))
+  colorMapSetting[length(value)] <- darkRed
+  namesSetting <- as.list(date)
+  names(namesSetting) <- 0:(length(value) - 1)
   diff <- spk_chr(
     values = value,
     type = "bar",
     barColor = middleRed,
     chartRangeMin = 0,
-    tooltipFormat = "新規{{value}}名"
-  # chartRangeMax = max(byDate[, c(2:48, 50)])
+    tooltipFormat = "{{offset:names}}<br>新規{{value}}名",
+    tooltipValueLookups = list(
+      names = namesSetting
+    ),
+    colorMap = colorMapSetting
   )
   return(diff)
 })
