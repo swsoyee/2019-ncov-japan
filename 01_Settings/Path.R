@@ -1,3 +1,3 @@
 DATA_PATH <- "Data/"
-COMPONENT_PATH <- "Components/"
+COMPONENT_PATH <- "03_Components/"
 PAGE_PATH <- "Pages/"
