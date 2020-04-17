@@ -8,7 +8,7 @@ Component.Notification <- function(status = "info", context = "") {
       label_status = "warning",
       solidHeader = T,
       status = status,
-      title = tagList(icon("bullhorn"), "㝊知ら㝛"),
+      title = tagList(icon("bullhorn"), "お知らせ"),
       collapsible = T,
       collapsed = T,
       tags$small(context)
