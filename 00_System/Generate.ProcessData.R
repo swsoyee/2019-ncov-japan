@@ -1,7 +1,7 @@
 library(data.table)
 
 # ====準備部分====
-DATA_PATH <- "Data/"
+source(file = "01_Settings/Path.R", local = T, encoding = "UTF-8")
 
 # 国内の日報
 domesticDailyReport <- fread(paste0(DATA_PATH, "domesticDailyReport.csv"))
