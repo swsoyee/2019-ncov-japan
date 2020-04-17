@@ -1,0 +1,3 @@
+linters: lintr::with_defaults(line_length_linter(120L),
+                              object_name_linter = NULL,
+                              commented_code_linter = NULL)
