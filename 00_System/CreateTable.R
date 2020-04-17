@@ -2,7 +2,7 @@ library(data.table)
 library(sparkline)
 
 # ====準備部分====
-DATA_PATH <- "Data/"
+source(file = "01_Settings/Path.R", local = T, encoding = "UTF-8")
 # 感染者ソーステーブルを取得
 byDate <- fread(paste0(DATA_PATH, "byDate.csv"), header = T)
 byDate[is.na(byDate)] <- 0
