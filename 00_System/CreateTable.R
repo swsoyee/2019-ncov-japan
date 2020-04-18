@@ -34,9 +34,12 @@ callCenterDailyReport$date <- as.Date(as.character(callCenterDailyReport$date), 
 # 文言データを取得
 lang <- fread(paste0(DATA_PATH, "lang.csv"))
 langCode <- "ja"
-# 都道府県人口密度
-provinceAttr <- fread(paste0(DATA_PATH, "SIGNATE COVID-2019 Dataset - 都道府県マスタ.csv"))
-provinceAttr$人口 <- as.numeric(gsub(",", "", provinceAttr$人口))
+# 都道府県
+provinceCode <- fread(paste0(DATA_PATH, "prefectures.csv"))
+provinceSelector <- provinceCode$id
+names(provinceSelector) <- provinceCode$`name-ja`
+
+provinceAttr <- fread(paste0(DATA_PATH, "Signate/prefMaster.csv"))
 provinceAttr[, `都道府県` := gsub("県", "", `都道府県`)]
 provinceAttr[, `都道府県` := gsub("府", "", `都道府県`)]
 provinceAttr[, `都道府県` := gsub("東京都", "東京", `都道府県`)]
@@ -253,6 +256,10 @@ mergeDt <- data.table(
 )
 
 mergeDt <- merge(mergeDt, totalDischarged, all.x = T)
+signateSub <- provinceAttr[, .(都道府県, 人口)]
+colnames(signateSub) <- c("region", "perMillion")
+mergeDt <- merge(mergeDt, signateSub, all.x = T)
+mergeDt[, perMillion := round(count / (perMillion / 1000000), 2)]
 
 for (i in mergeDt$region) {
   mergeDt[region == i]$dischargeDiff <- dischargedDiffSparkline[i][[1]]

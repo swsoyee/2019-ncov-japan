@@ -218,17 +218,20 @@ output$confirmedByPrefTable <- renderDataTable({
   columnName <- c("today", "doubleTimeDay")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
   
-  breaks <- seq(0, max(ifelse(is.na(dt$today), 0, dt$today), na.rm = T), 2)
+  breaks <- seq(0, max(ifelse(is.na(dt$today), 0, dt$today), na.rm = T))
   colors <- colorRampPalette(c(lightRed, darkRed))(length(breaks) + 1)
   
-  breaksDoubleTimeDay <- seq(0, max(ifelse(is.na(dt$doubleTimeDay), 0, dt$doubleTimeDay), na.rm = T), 2)
+  breaksDoubleTimeDay <- seq(0, max(ifelse(is.na(dt$doubleTimeDay), 0, dt$doubleTimeDay), na.rm = T))
   colorsDoubleTimeDay <- colorRampPalette(c(darkRed, lightYellow))(length(breaksDoubleTimeDay) + 1)
+  
+  breaksPerMillion <- seq(0, max(ifelse(is.na(dt$perMillion), 0, dt$perMillion), na.rm = T))
+  colorsPerMillion <- colorRampPalette(c("#FFFFFF", darkRed))(length(breaksPerMillion) + 1)
   
   upMark <- as.character(icon("caret-up"))
   
   datatable(
-    data = dt[, c(1, 3, 4, 6, 11), with = F],
-    colnames = c("都道府県", "新規", "感染者数", "感染推移", "倍増時間"),
+    data = dt[, c(1, 3, 4, 6, 11, 13), with = F],
+    colnames = c("都道府県", "新規", "感染者数", "感染推移", "倍増時間", "百万人当たり"),
     escape = F,
     plugins = "natural",
     extensions = c("Responsive"),
@@ -241,12 +244,12 @@ output$confirmedByPrefTable <- renderDataTable({
         list(
           className = "dt-center",
           width = "15%",
-          targets = c(1, 3, 4)
+          targets = c(1, 3, 4, 5)
         ),
         list(
           className = "dt-center",
           width = "20%",
-          targets = 4
+          targets = c(4, 6)
         ),
         list(
           width = "30px",
@@ -303,5 +306,10 @@ output$confirmedByPrefTable <- renderDataTable({
       columns = "doubleTimeDay",
       color = styleInterval(breaksDoubleTimeDay, colorsDoubleTimeDay),
       fontWeight = "bold"
-    ) 
+    )  %>%
+    formatStyle(
+      columns = "perMillion",
+      backgroundColor = styleInterval(breaksPerMillion, colorsPerMillion),
+      fontWeight = "bold"
+    )
 })
