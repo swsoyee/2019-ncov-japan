@@ -193,10 +193,10 @@ detailSparkLine <- sapply(detailSparkLineDt$都道府県名, function(region) {
       detailSparkLineDt[都道府県名 == region, 死亡者]
     ),
     sliceColors = c(middleRed, middleYellow, middleGreen, darkNavy),
-    tooltipFormat = '<span style="color: {{color}}">&#9679;</span> {{offset:names}} ({{percent.1}}%)',
+    tooltipFormat = '<span style="color: {{color}}">&#9679;</span> {{offset:names}}<br>{{value}} 名 ({{percent.1}}%)',
     tooltipValueLookups = list(
       names = list(
-        "0" = "累積陽性者（情報まちを含む）",
+        "0" = "情報待ち陽性者",
         "1" = "入院者",
         "2" = "退院者",
         "3" = "死亡者"
