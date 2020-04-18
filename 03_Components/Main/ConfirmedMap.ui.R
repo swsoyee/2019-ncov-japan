@@ -96,8 +96,8 @@ tabPanel(
           inputId = "switchTableVersion",
           value = T,
           onLabel = "感染",
-          offLabel = "退院・死亡",
-          label = "表示モード",
+          offLabel = "退院死亡",
+          label = "もっと見る",
           size = "small", width = "300px", labelWidth = "200px", handleWidth = "150px"
         ),
         tags$small("[4/18] スタイル調整・情報追加中"),

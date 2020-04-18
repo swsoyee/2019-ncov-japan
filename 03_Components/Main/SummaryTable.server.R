@@ -47,7 +47,10 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
 
   breaksDeath <- seq(0, max(ifelse(is.na(dt$death), 0, dt$death), na.rm = T), 2)
-  colorsDeath <- colorRampPalette(c("white", lightNavy))(length(breaksDeath) + 1)
+  colorsDeath <- colorRampPalette(c(lightNavy, darkNavy))(length(breaksDeath) + 1)
+  
+  breaksDischarged <- seq(0, max(ifelse(is.na(dt$totalDischarged), 0, dt$totalDischarged), na.rm = T), 2)
+  colorsDischarged <- colorRampPalette(c(lightGreen, darkGreen))(length(breaksDischarged) + 1)
 
   upMark <- as.character(icon("caret-up"))
 
@@ -89,16 +92,14 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     #   currency = paste(as.character(icon("caret-up")), " "),
     #   digits = 0
     # ) %>%s
-    # formatStyle(
-    #   columns = "today",
-    #   color = styleInterval(breaks, colors),
-    #   fontWeight = "bold",
-    #   backgroundSize = "80% 80%",
-    #   backgroundPosition = "center"
-    # ) %>%
+    formatStyle(
+      columns = "totalDischarged",
+      color = styleInterval(breaksDischarged, colorsDischarged),
+      fontWeight = "bold"
+    ) %>%
     formatStyle(
       columns = "death",
-      backgroundColor = styleInterval(breaksDeath, colorsDeath),
+      color = styleInterval(breaksDeath, colorsDeath),
       fontWeight = "bold"
     )
 })
