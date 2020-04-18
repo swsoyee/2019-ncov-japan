@@ -52,8 +52,8 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
   upMark <- as.character(icon("caret-up"))
 
   datatable(
-    data = dt[, c(1, 8, 7, 9), with = F],
-    colnames = c("都道府県", "内訳", "退院推移", "死亡"),
+    data = dt[, c(1, 8, 12, 7, 9), with = F],
+    colnames = c("都道府県", "内訳", "退院", "退院推移", "死亡"),
     escape = F,
     plugins = "natural",
     extensions = c("Responsive"),
@@ -65,11 +65,15 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
       columnDefs = list(
         list(
           className = "dt-center",
-          targets = c(1:4)
+          targets = 1:5
+        ),
+        list(
+          width = "30px",
+          targets = c(2, 3, 5)
         ),
         list(
           width = "15%",
-          targets = 2
+          targets = 4
         )
       ),
       fnDrawCallback = htmlwidgets::JS("

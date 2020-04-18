@@ -231,6 +231,9 @@ doubleTimeDay <- lapply(seq(halfCount), function(index) {
 })
 names(doubleTimeDay) <- names(dt)
 
+# 退院者総数
+totalDischarged <- detailByRegion[日付 == max(日付), .(都道府県名, 退院者)]
+colnames(totalDischarged) <- c("region", "totalDischarged")
 
 print("テーブル作成")
 totalToday <- paste0(total, "<r ", today, "<r >")
@@ -248,6 +251,8 @@ mergeDt <- data.table(
   zeroContinuousDay = zeroContinuousDay$values,
   doubleTimeDay = doubleTimeDay
 )
+
+mergeDt <- merge(mergeDt, totalDischarged, all.x = T)
 
 for (i in mergeDt$region) {
   mergeDt[region == i]$dischargeDiff <- dischargedDiffSparkline[i][[1]]
