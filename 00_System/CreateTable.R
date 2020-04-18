@@ -107,7 +107,7 @@ diffSparkline <- sapply(2:ncol(byDate), function(i) {
   cumsumValue <- c(cumsum(byDate[, i, with = F])[(nrow(byDate) - dateSpan):nrow(byDate)])[[1]]
   # 日付
   date <- byDate[(nrow(byDate) - dateSpan):nrow(byDate), 1, with = F][[1]]
-  colorMapSetting <- rep(lightRed, length(value))
+  colorMapSetting <- rep("#E7ADA6", length(value))
   colorMapSetting[length(value)] <- darkRed
   namesSetting <- as.list(date)
   names(namesSetting) <- 0:(length(value) - 1)
@@ -117,7 +117,7 @@ diffSparkline <- sapply(2:ncol(byDate), function(i) {
     type = "bar",
     chartRangeMin = 0,
     width = 80,
-    tooltipFormat = "{{offset:names}}<br>新規{{value}}名",
+    tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> 新規{{value}}名",
     tooltipValueLookups = list(
       names = namesSetting
     ),
@@ -130,7 +130,7 @@ diffSparkline <- sapply(2:ncol(byDate), function(i) {
     width = 80,
     fillColor = F, 
     lineColor = darkRed,
-    tooltipFormat = "累計{{y}}名"
+    tooltipFormat = "<span style='color: {{color}}'>&#9679;</span> 累計{{y}}名"
   )
   return(as.character(htmltools::as.tags(spk_composite(diff, cumsumSpk))))
 })
