@@ -246,7 +246,7 @@ output$confirmedByPrefTable <- renderDataTable({
         ),
         list(
           orderable = F,
-          targets = 2
+          targets = 3
         )
       ),
       fnDrawCallback = htmlwidgets::JS("
