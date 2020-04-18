@@ -22,8 +22,8 @@ fwrite(x = provincePCR, file = paste0(DATA_PATH, "provincePCR.csv"))
 # signateLink <- gsheet2tbl('https://docs.google.com/spreadsheets/d/1CnQOf6eN18Kw5Q6ScE_9tFoyddk4FBwFZqZpt_tMOm4/edit#gid=57719256')
 # fwrite(x = signateLink, file = paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者関係.csv'))
 
-signatePref <- gsheet2tbl('https://docs.google.com/spreadsheets/d/1NQjppYx0QZQmt6706gCOw9DcIDxgnaEy9QTzfeqeMrQ/edit#gid=1940307536')
-fwrite(x = signatePref, file = paste0(DATA_PATH, 'Signate/', 'prefMaster.csv'))
+# signatePref <- gsheet2tbl('https://docs.google.com/spreadsheets/d/1NQjppYx0QZQmt6706gCOw9DcIDxgnaEy9QTzfeqeMrQ/edit#gid=1940307536')
+# fwrite(x = signatePref, file = paste0(DATA_PATH, 'Signate/', 'prefMaster.csv'))
 
 # signateDetail<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者.csv'), header = T)
 # signateLink<- fread(paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者関係.csv'), header = T)
