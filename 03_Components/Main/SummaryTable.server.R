@@ -66,6 +66,10 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
         list(
           className = "dt-center",
           targets = c(1:4)
+        ),
+        list(
+          width = "15%",
+          targets = 2
         )
       ),
       fnDrawCallback = htmlwidgets::JS("

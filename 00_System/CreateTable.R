@@ -145,15 +145,26 @@ detailByRegion[order(`日付`), dischargedDiff := `退院者` - shift(`退院者
 detailByRegion[is.na(detailByRegion)] <- 0
 
 print("退院推移")
-dischargedDiffSparkline <- sapply(colnames(byDate)[c(2:48, 50)], function(region) {
-  value <- detailByRegion[`都道府県名` == region]$dischargedDiff
+dischargedDiffSparkline <- sapply(colnames(byDate)[2:48], function(region) {
+  data <- detailByRegion[`都道府県名` == region]
+  # 新規
+  span <- nrow(data) - dateSpan
+  value <- data$dischargedDiff[ifelse(span < 0, 0, span) : nrow(data)]
+  # 日付
+  date <- data$日付[ifelse(span < 0, 0, span) : nrow(data)]
+  namesSetting <- as.list(date)
+  names(namesSetting) <- 0:(length(date) - 1)
+  
   if (length(value) > 0) {
     diff <- spk_chr(
       values = value,
       type = "bar",
+      width = 80,
       barColor = middleGreen,
-      chartRangeMin = 0 # ,
-    # chartRangeMax = max(detailByRegion$dischargedDiff, na.rm = T)
+      tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> 新規退院{{value}}名",
+      tooltipValueLookups = list(
+        names = namesSetting
+      )
     )
   } else {
     diff <- NA
