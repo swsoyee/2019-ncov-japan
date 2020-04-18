@@ -94,13 +94,13 @@ tabPanel(
       boxPad(
         switchInput(
           inputId = "switchTableVersion",
-          value = F,
-          onLabel = "シンプル",
-          offLabel = "詳細",
+          value = T,
+          onLabel = "感染",
+          offLabel = "退院・死亡",
           label = "表示モード",
-          size = "small", width = "300px", labelWidth = "200px", handleWidth = "100px"
+          size = "small", width = "300px", labelWidth = "200px", handleWidth = "150px"
         ),
-        # dataTableOutput('summaryByRegion') %>% withSpinner() # 重いのでデフォルトはシンプルバージョンに変更
+        tags$small("[4/18] スタイル調整・情報追加中"),
         uiOutput("summaryTable") %>% withSpinner()
       )
     ),

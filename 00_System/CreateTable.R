@@ -98,19 +98,41 @@ print("新規カラム作成")
 today <- colSums(byDate[nrow(byDate), 2:ncol(byDate)])
 print("昨日までカラム作成")
 untilToday <- colSums(byDate[1:nrow(byDate) - 1, 2:ncol(byDate)])
-print("新規推移カラム作成")
-toolTipDate <- byDate[(nrow(byDate) - 15):nrow(byDate), 1, with = F][[1]]
+print("感染者推移カラム作成")
+dateSpan <- 21
 diffSparkline <- sapply(2:ncol(byDate), function(i) {
-  value <- byDate[(nrow(byDate) - 15):nrow(byDate), i, with = F][[1]]
-  diff <- spk_chr(
+  # 新規値
+  value <- byDate[(nrow(byDate) - dateSpan):nrow(byDate), i, with = F][[1]]
+  # 累計値
+  cumsumValue <- c(cumsum(byDate[, i, with = F])[(nrow(byDate) - dateSpan):nrow(byDate)])[[1]]
+  # 日付
+  date <- byDate[(nrow(byDate) - dateSpan):nrow(byDate), 1, with = F][[1]]
+  colorMapSetting <- rep("#E7ADA6", length(value))
+  colorMapSetting[length(value)] <- darkRed
+  namesSetting <- as.list(date)
+  names(namesSetting) <- 0:(length(value) - 1)
+  # 新規
+  diff <- sparkline(
     values = value,
     type = "bar",
-    barColor = middleRed,
     chartRangeMin = 0,
-    tooltipFormat = "新規{{value}}名"
-  # chartRangeMax = max(byDate[, c(2:48, 50)])
+    width = 80,
+    tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> 新規{{value}}名",
+    tooltipValueLookups = list(
+      names = namesSetting
+    ),
+    colorMap = colorMapSetting
   )
-  return(diff)
+  # 累計
+  cumsumSpk <- sparkline(
+    values = cumsumValue,
+    type = "line", 
+    width = 80,
+    fillColor = F, 
+    lineColor = darkRed,
+    tooltipFormat = "<span style='color: {{color}}'>&#9679;</span> 累計{{y}}名"
+  )
+  return(as.character(htmltools::as.tags(spk_composite(diff, cumsumSpk))))
 })
 
 print("新規退院者カラム作成")
@@ -188,6 +210,15 @@ detailSparkLine <- sapply(detailSparkLineDt$都道府県名, function(region) {
 #   provinceAttr[names(total[i]) == 都道府県, millianConfirmed :=
 #     (total[i] / (provinceAttr[都道府県 == names(total[i])]$人口 / 1000000))[[1]]]
 # }
+print("二倍時間集計")
+dt <- byDate[, 2:ncol(byDate)]
+halfCount <- colSums(dt) / 2
+dt <- cumsum(dt)
+doubleTimeDay <- lapply(seq(halfCount), function(index) {
+  prefDt <- dt[, index, with = F]
+  nrow(prefDt[c(prefDt > halfCount[index])])
+})
+names(doubleTimeDay) <- names(dt)
 
 
 print("テーブル作成")
@@ -203,7 +234,8 @@ mergeDt <- data.table(
   dischargeDiff = "",
   detailBullet = "",
   death = deathByRegion$values,
-  zeroContinuousDay = zeroContinuousDay$values
+  zeroContinuousDay = zeroContinuousDay$values,
+  doubleTimeDay = doubleTimeDay
 )
 
 for (i in mergeDt$region) {
