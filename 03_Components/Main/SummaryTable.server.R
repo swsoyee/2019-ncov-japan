@@ -31,12 +31,11 @@ output$detail <- renderDataTable({
 observeEvent(input$switchTableVersion, {
   if (input$switchTableVersion) {
     output$summaryTable <- renderUI({
-      dataTableOutput("summarybyRegionSub")
-    })
-  } else {
-    output$summaryTable <- renderUI({
       dataTableOutput("confirmedByPrefTable")
     })
+  } else {
+    # output$summaryTable <- renderUI({
+    # })
   }
 })
 
@@ -243,8 +242,8 @@ output$confirmedByPrefTable <- renderDataTable({
   upMark <- as.character(icon("caret-up"))
   
   datatable(
-    data = dt[, c(1, 3, 4, 6, 11), with = F],
-    colnames = c("都道府県", "新規", "感染者数", "感染推移", "倍増時間"),
+    data = dt[, c(1, 4, 6, 3, 11), with = F],
+    colnames = c("都道府県", "感染者数", "感染推移", "新規", "倍増時間"),
     escape = F,
     plugins = "natural",
     extensions = c("Responsive"),
@@ -257,20 +256,21 @@ output$confirmedByPrefTable <- renderDataTable({
         list(
           className = "dt-center",
           width = "15%",
-          targets = c(1, 3, 5)
+          targets = c(1:3, 5)
         ),
         list(
           className = "dt-center",
           width = "20%",
-          targets = 4
+          targets = 3
         ),
         list(
           width = "30px",
-          targets = 2
+          className = "dt-left",
+          targets = 4
         ),
         list(
           orderable = F,
-          targets = 3
+          targets = 2
         )
       ),
       fnDrawCallback = htmlwidgets::JS("
