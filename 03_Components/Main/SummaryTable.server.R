@@ -244,7 +244,7 @@ output$confirmedByPrefTable <- renderDataTable({
   
   datatable(
     data = dt[, c(1, 3, 4, 6, 11), with = F],
-    colnames = c("都道府県", "新規", "感染者数", "新規感染", "倍増時間"),
+    colnames = c("都道府県", "新規", "感染者数", "感染推移", "倍増時間"),
     escape = F,
     plugins = "natural",
     extensions = c("Responsive"),
@@ -257,7 +257,12 @@ output$confirmedByPrefTable <- renderDataTable({
         list(
           className = "dt-center",
           width = "15%",
-          targets = c(1, 3:5)
+          targets = c(1, 3, 5)
+        ),
+        list(
+          className = "dt-center",
+          width = "20%",
+          targets = 4
         ),
         list(
           width = "30px",

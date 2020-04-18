@@ -98,27 +98,41 @@ print("新規カラム作成")
 today <- colSums(byDate[nrow(byDate), 2:ncol(byDate)])
 print("昨日までカラム作成")
 untilToday <- colSums(byDate[1:nrow(byDate) - 1, 2:ncol(byDate)])
-print("新規推移カラム作成")
-toolTipDate <- byDate[(nrow(byDate) - 15):nrow(byDate), 1, with = F][[1]]
+print("感染者推移カラム作成")
+dateSpan <- 21
 diffSparkline <- sapply(2:ncol(byDate), function(i) {
-  value <- byDate[(nrow(byDate) - 15):nrow(byDate), i, with = F][[1]]
-  date <- byDate[(nrow(byDate) - 15):nrow(byDate), 1, with = F][[1]]
+  # 新規値
+  value <- byDate[(nrow(byDate) - dateSpan):nrow(byDate), i, with = F][[1]]
+  # 累計値
+  cumsumValue <- c(cumsum(byDate[, i, with = F])[(nrow(byDate) - dateSpan):nrow(byDate)])[[1]]
+  # 日付
+  date <- byDate[(nrow(byDate) - dateSpan):nrow(byDate), 1, with = F][[1]]
   colorMapSetting <- rep(lightRed, length(value))
   colorMapSetting[length(value)] <- darkRed
   namesSetting <- as.list(date)
   names(namesSetting) <- 0:(length(value) - 1)
-  diff <- spk_chr(
+  # 新規
+  diff <- sparkline(
     values = value,
     type = "bar",
-    barColor = middleRed,
     chartRangeMin = 0,
+    width = 80,
     tooltipFormat = "{{offset:names}}<br>新規{{value}}名",
     tooltipValueLookups = list(
       names = namesSetting
     ),
     colorMap = colorMapSetting
   )
-  return(diff)
+  # 累計
+  cumsumSpk <- sparkline(
+    values = cumsumValue,
+    type = "line", 
+    width = 80,
+    fillColor = F, 
+    lineColor = darkRed,
+    tooltipFormat = "累計{{y}}名"
+  )
+  return(as.character(htmltools::as.tags(spk_composite(diff, cumsumSpk))))
 })
 
 print("新規退院者カラム作成")
