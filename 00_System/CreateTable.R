@@ -255,10 +255,10 @@ mergeDt <- data.table(
   doubleTimeDay = doubleTimeDay
 )
 
-mergeDt <- merge(mergeDt, totalDischarged, all.x = T)
+mergeDt <- merge(mergeDt, totalDischarged, all.x = T, sort = F)
 signateSub <- provinceAttr[, .(都道府県, 人口)]
 colnames(signateSub) <- c("region", "perMillion")
-mergeDt <- merge(mergeDt, signateSub, all.x = T)
+mergeDt <- merge(mergeDt, signateSub, all.x = T, sort = F)
 mergeDt[, perMillion := round(count / (perMillion / 1000000), 2)]
 
 for (i in mergeDt$region) {
@@ -266,6 +266,30 @@ for (i in mergeDt$region) {
   mergeDt[region == i]$detailBullet <- detailSparkLine[i][[1]]
 }
 
+# 13個特定警戒都道府県
+alertPref <-
+  c(
+    "東京",
+    "大阪",
+    "北海道",
+    "茨城",
+    "埼玉",
+    "千葉",
+    "神奈川",
+    "石川",
+    "岐阜",
+    "愛知",
+    "京都",
+    "兵庫",
+    "福岡"
+  )
+mergeDt[!(region %in% alertPref), region := paste0("<span style='float:right;'>", region, "</span>")]
+mergeDt[region %in% alertPref, region := paste0(icon("exclamation-triangle"), "<span style='float:right;'>", region, "</span>")]
+
+
+# 自治体名前ソート用
+prefNameId <- sprintf('%02d', seq(2:ncol(byDate)))
+mergeDt[, region := paste0(prefNameId, "|", region)]
 
 # オーダー
 setorder(mergeDt, - count)
@@ -274,7 +298,8 @@ mergeDt[, diff := gsub("\\n", "", diff)]
 mergeDt[, dischargeDiff := gsub("\\n", "", dischargeDiff)]
 mergeDt[, detailBullet := gsub("\\n", "", detailBullet)]
 # クルーズ船とチャーター便データ除外
-mergeDt <- mergeDt[!(region %in% lang[[langCode]][35:36])]
+mergeDt <- mergeDt[!grepl(pattern = paste0(lang[[langCode]][35:36], collapse = "|"), x = mergeDt$region)]
+
 print("テーブル出力")
 fwrite(x = mergeDt, file = paste0(DATA_PATH, "resultSummaryTable.csv"), sep = "@", quote = F)
 

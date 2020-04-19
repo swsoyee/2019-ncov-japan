@@ -58,26 +58,6 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
   colorsDischarged <-
     colorRampPalette(c(lightGreen, darkGreen))(length(breaksDischarged) + 1)
 
-  alertMark <- icon("exclamation-triangle")
-  # 13個特定警戒都道府県
-  alertPref <-
-    c(
-      "東京",
-      "大阪",
-      "北海道",
-      "茨城",
-      "埼玉",
-      "千葉",
-      "神奈川",
-      "石川",
-      "岐阜",
-      "愛知",
-      "京都",
-      "兵庫",
-      "福岡"
-    )
-  dt[region %in% alertPref, region := paste0(alertMark, " ", region)]
-
   datatable(
     data = dt[, c(1, 8, 12, 7, 9), with = F],
     colnames = c("自治体", "内訳", "退院", "退院推移", "死亡"),
@@ -93,8 +73,13 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
       scrollX = T,
       columnDefs = list(
         list(
+          className = "dt-left",
+          width = "50px",
+          targets = 1
+        ),
+        list(
           className = "dt-center",
-          targets = 1:5
+          targets = 2:5
         ),
         list(
           width = "30px",
@@ -103,6 +88,14 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
         list(
           width = "15%",
           targets = 4
+        ),
+        list(
+          render = JS("
+             function(data, type, row, meta) {
+                const split = data.split('|');
+                return split[1];
+            }"),
+          targets = 1
         )
       ),
       fnDrawCallback = htmlwidgets::JS("
@@ -156,26 +149,6 @@ output$summaryByRegion <- renderDataTable({
   colorsDeath <-
     colorRampPalette(c("white", lightNavy))(length(breaksDeath) + 1)
 
-  alertMark <- icon("exclamation-triangle")
-  # 13個特定警戒都道府県
-  alertPref <-
-    c(
-      "東京",
-      "大阪",
-      "北海道",
-      "茨城",
-      "埼玉",
-      "千葉",
-      "神奈川",
-      "石川",
-      "岐阜",
-      "愛知",
-      "京都",
-      "兵庫",
-      "福岡"
-    )
-  dt[region %in% alertPref, region := paste0(alertMark, " ", region)]
-
   datatable(
     data = dt[, c(1, 3, 4, 6:9), with = F],
     colnames = c("自治体", "新規", "感染者数", "新規感染", "新規退院", "内訳", "死亡"),
@@ -190,9 +163,14 @@ output$summaryByRegion <- renderDataTable({
       scrollX = T,
       columnDefs = list(
         list(
+          className = "dt-left",
+          width = "50px",
+          targets = 1
+        ),
+        list(
           className = "dt-center",
           width = "15%",
-          targets = c(1, 3:5)
+          targets = 3:5
         ),
         list(
           className = "dt-center",
@@ -210,7 +188,7 @@ output$summaryByRegion <- renderDataTable({
                 const split = data.split('|');
                 return split[1];
             }"),
-          targets = 3
+          targets = c(1, 3)
         )
       ),
       fnDrawCallback = htmlwidgets::JS("
@@ -299,26 +277,6 @@ output$confirmedByPrefTable <- renderDataTable({
   colorsPerMillion <-
     colorRampPalette(c("#FFFFFF", darkRed))(length(breaksPerMillion) + 1)
 
-  alertMark <- icon("exclamation-triangle")
-  # 13個特定警戒都道府県
-  alertPref <-
-    c(
-      "東京",
-      "大阪",
-      "北海道",
-      "茨城",
-      "埼玉",
-      "千葉",
-      "神奈川",
-      "石川",
-      "岐阜",
-      "愛知",
-      "京都",
-      "兵庫",
-      "福岡"
-    )
-  dt[region %in% alertPref, region := paste0(alertMark, " ", region)]
-
   datatable(
     data = dt[, c(1, 3, 4, 6, 11, 13), with = F],
     colnames = c("自治体", "新規", "感染者数", "感染推移", "倍増日数", "百万人当たり"),
@@ -338,7 +296,7 @@ output$confirmedByPrefTable <- renderDataTable({
         ),
         list(
           className = "dt-left",
-          width = "15%",
+          width = "50px",
           targets = 1
         ),
         list(
@@ -357,7 +315,7 @@ output$confirmedByPrefTable <- renderDataTable({
                 const split = data.split('|');
                 return split[1];
             }"),
-          targets = 3
+          targets = c(1, 3)
         )
       ),
       fnDrawCallback = htmlwidgets::JS("
