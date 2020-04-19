@@ -267,7 +267,6 @@ for (i in mergeDt$region) {
 }
 
 # 13個特定警戒都道府県
-alertMark <- icon("exclamation-triangle")
 alertPref <-
   c(
     "東京",
@@ -284,7 +283,9 @@ alertPref <-
     "兵庫",
     "福岡"
   )
-mergeDt[region %in% alertPref, region := paste0(alertMark, " ", region)]
+mergeDt[!(region %in% alertPref), region := paste0("<span style='float:right;'>", region, "</span>")]
+mergeDt[region %in% alertPref, region := paste0(icon("exclamation-triangle"), "<span style='float:right;'>", region, "</span>")]
+
 
 # 自治体名前ソート用
 prefNameId <- sprintf('%02d', seq(2:ncol(byDate)))

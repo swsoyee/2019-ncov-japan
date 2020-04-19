@@ -73,8 +73,13 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
       scrollX = T,
       columnDefs = list(
         list(
+          className = "dt-left",
+          width = "50px",
+          targets = 1
+        ),
+        list(
           className = "dt-center",
-          targets = 1:5
+          targets = 2:5
         ),
         list(
           width = "30px",
@@ -158,9 +163,14 @@ output$summaryByRegion <- renderDataTable({
       scrollX = T,
       columnDefs = list(
         list(
+          className = "dt-left",
+          width = "50px",
+          targets = 1
+        ),
+        list(
           className = "dt-center",
           width = "15%",
-          targets = c(1, 3:5)
+          targets = 3:5
         ),
         list(
           className = "dt-center",
@@ -286,7 +296,7 @@ output$confirmedByPrefTable <- renderDataTable({
         ),
         list(
           className = "dt-left",
-          width = "15%",
+          width = "50px",
           targets = 1
         ),
         list(
