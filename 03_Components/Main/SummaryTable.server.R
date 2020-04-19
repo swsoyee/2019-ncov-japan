@@ -80,7 +80,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
 
   datatable(
     data = dt[, c(1, 8, 12, 7, 9), with = F],
-    colnames = c("都道府県", "内訳", "退院", "退院推移", "死亡"),
+    colnames = c("自治体", "内訳", "退院", "退院推移", "死亡"),
     caption = "最適の見せ方を探しているため、見た目が時々変わります。予めご了承ください。",
     escape = F,
     plugins = "natural",
@@ -178,7 +178,7 @@ output$summaryByRegion <- renderDataTable({
 
   datatable(
     data = dt[, c(1, 3, 4, 6:9), with = F],
-    colnames = c("都道府県", "新規", "感染者数", "新規感染", "新規退院", "内訳", "死亡"),
+    colnames = c("自治体", "新規", "感染者数", "新規感染", "新規退院", "内訳", "死亡"),
     caption = "最適の見せ方を探しているため、見た目が時々変わります。予めご了承ください。",
     escape = F,
     extensions = c("Responsive"),
@@ -321,7 +321,7 @@ output$confirmedByPrefTable <- renderDataTable({
 
   datatable(
     data = dt[, c(1, 3, 4, 6, 11, 13), with = F],
-    colnames = c("都道府県", "新規", "感染者数", "感染推移", "倍増日数", "百万人当たり"),
+    colnames = c("自治体", "新規", "感染者数", "感染推移", "倍増日数", "百万人当たり"),
     escape = F,
     caption = "最適の見せ方を探しているため、見た目が時々変わります。予めご了承ください。",
     # extensions = c("Responsive"),
