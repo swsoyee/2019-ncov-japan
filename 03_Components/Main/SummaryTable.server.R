@@ -59,14 +59,16 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     colorRampPalette(c(lightGreen, darkGreen))(length(breaksDischarged) + 1)
 
   datatable(
-    data = dt[, c(1, 8, 12, 7, 9), with = F],
-    colnames = c("自治体", "内訳", "退院", "退院推移", "死亡"),
+    data = dt[, c(1, 8, 12, 7, 9, 14), with = F],
+    colnames = c("自治体", "内訳", "退院", "退院推移", "死亡", "カテゴリ"),
     caption = "最適の見せ方を探しているため、見た目が時々変わります。予めご了承ください。",
     escape = F,
     plugins = "natural",
     # extensions = c("Responsive"),
+    extensions = 'RowGroup',
     options = list(
       paging = F,
+      rowGroup = list(dataSrc = 6),
       fixedHeader = T,
       dom = "t",
       scrollY = "540px",
@@ -84,6 +86,10 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
         list(
           width = "30px",
           targets = c(2, 3, 5)
+        ),
+        list(
+          visible = F,
+          targets = 6
         ),
         list(
           width = "15%",
@@ -150,13 +156,15 @@ output$summaryByRegion <- renderDataTable({
     colorRampPalette(c("white", lightNavy))(length(breaksDeath) + 1)
 
   datatable(
-    data = dt[, c(1, 3, 4, 6:9), with = F],
-    colnames = c("自治体", "新規", "感染者数", "新規感染", "新規退院", "内訳", "死亡"),
+    data = dt[, c(1, 3, 4, 6:9, 14), with = F],
+    colnames = c("自治体", "新規", "感染者数", "新規感染", "新規退院", "内訳", "死亡", "カテゴリ"),
     caption = "最適の見せ方を探しているため、見た目が時々変わります。予めご了承ください。",
     escape = F,
-    extensions = c("Responsive"),
+    # extensions = c("Responsive"),
+    extensions = 'RowGroup',
     options = list(
       paging = F,
+      rowGroup = list(dataSrc = 8),
       dom = "t",
       fixedHeader = T,
       scrollY = "540px",
@@ -181,6 +189,10 @@ output$summaryByRegion <- renderDataTable({
           className = "dt-center",
           width = "30px",
           targets = 2
+        ),
+        list(
+          visible = F,
+          targets = 8
         ),
         list(
           render = JS("
@@ -278,13 +290,15 @@ output$confirmedByPrefTable <- renderDataTable({
     colorRampPalette(c("#FFFFFF", darkRed))(length(breaksPerMillion) + 1)
 
   datatable(
-    data = dt[, c(1, 3, 4, 6, 11, 13), with = F],
-    colnames = c("自治体", "新規", "感染者数", "感染推移", "倍増日数", "百万人当たり"),
+    data = dt[, c(1, 3, 4, 6, 11, 13, 14), with = F],
+    colnames = c("自治体", "新規", "感染者数", "感染推移", "倍増日数", "百万人当たり", "カテゴリ"),
     escape = F,
     caption = "最適の見せ方を探しているため、見た目が時々変わります。予めご了承ください。",
     # extensions = c("Responsive"),
+    extensions = 'RowGroup',
     options = list(
       paging = F,
+      rowGroup = list(dataSrc = 7),
       dom = "t",
       scrollY = "540px",
       scrollX = T,
@@ -308,6 +322,10 @@ output$confirmedByPrefTable <- renderDataTable({
           width = "30px",
           className = "dt-left",
           targets = 2
+        ),
+        list(
+          visible = F,
+          targets = 7
         ),
         list(
           render = JS("

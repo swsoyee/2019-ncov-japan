@@ -1,5 +1,6 @@
 library(data.table)
 library(sparkline)
+library(shiny)
 
 # ====準備部分====
 source(file = "01_Settings/Path.R", local = T, encoding = "UTF-8")
@@ -266,6 +267,22 @@ for (i in mergeDt$region) {
   mergeDt[region == i]$detailBullet <- detailSparkLine[i][[1]]
 }
 
+# グルーピング
+groupList <- list(
+  "北海道・東北" = provinceAttr[都道府県コード %in% 1:7]$都道府県,
+  "関東" = provinceAttr[都道府県コード %in% 8:14]$都道府県,
+  "中部" = provinceAttr[都道府県コード %in% 15:23]$都道府県,
+  "近畿" = provinceAttr[都道府県コード %in% 24:30]$都道府県,
+  "中国" = provinceAttr[都道府県コード %in% 31:35]$都道府県,
+  "四国" = provinceAttr[都道府県コード %in% 36:39]$都道府県,
+  "九州・沖縄" = provinceAttr[都道府県コード %in% 40:47]$都道府県,
+  "他" = colnames(byDate)[(ncol(byDate) - 2):ncol(byDate)]
+)
+mergeDt$group = ""
+for (i in seq(nrow(mergeDt))) {
+  mergeDt[i]$group <- names(which(lapply(groupList, function(x){mergeDt$region[i] %in% x}) == T))
+}
+
 # 13個特定警戒都道府県
 alertPref <-
   c(
@@ -292,7 +309,7 @@ prefNameId <- sprintf('%02d', seq(2:ncol(byDate)))
 mergeDt[, region := paste0(prefNameId, "|", region)]
 
 # オーダー
-setorder(mergeDt, - count)
+# setorder(mergeDt, - count)
 # 読み取り時のエラーを回避するため
 mergeDt[, diff := gsub("\\n", "", diff)]
 mergeDt[, dischargeDiff := gsub("\\n", "", dischargeDiff)]
