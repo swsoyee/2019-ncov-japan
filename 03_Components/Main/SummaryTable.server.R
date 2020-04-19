@@ -303,7 +303,7 @@ output$confirmedByPrefTable <- renderDataTable({
   
   datatable(
     data = dt[, c(1, 3, 4, 6, 11, 13), with = F],
-    colnames = c("都道府県", "新規", "感染者数", "感染推移", "倍増時間", "百万人当たり"),
+    colnames = c("都道府県", "新規", "感染者数", "感染推移", "倍増日数", "百万人当たり"),
     escape = F,
     caption = "最適の見せ方を探しているため、見た目が時々変わります。予めご了承ください。",
     plugins = "natural",
@@ -381,12 +381,6 @@ output$confirmedByPrefTable <- renderDataTable({
       columns = "today",
       color = styleInterval(breaks, colors),
       fontWeight = "bold"
-    ) %>%
-    formatCurrency(
-      columns = "doubleTimeDay",
-      currency = "日",
-      digits = 0,
-      before = F
     ) %>%
     formatStyle(
       columns = "doubleTimeDay",
