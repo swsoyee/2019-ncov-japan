@@ -56,8 +56,24 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     ), na.rm = T), 2)
   colorsDischarged <-
     colorRampPalette(c(lightGreen, darkGreen))(length(breaksDischarged) + 1)
-  
-  upMark <- as.character(icon("caret-up"))
+
+  alertMark <- icon("exclamation-triangle")
+  # 13個特定警戒都道府県
+  alertPref <-
+    c("東京",
+      "大阪",
+      "北海道",
+      "茨城",
+      "埼玉",
+      "千葉",
+      "神奈川",
+      "石川",
+      "岐阜",
+      "愛知",
+      "京都",
+      "兵庫",
+      "福岡")
+  dt[region %in% alertPref, region := paste0(alertMark, " ", region)]
   
   datatable(
     data = dt[, c(1, 8, 12, 7, 9), with = F],
@@ -129,8 +145,24 @@ output$summaryByRegion <- renderDataTable({
     seq(0, max(ifelse(is.na(dt$death), 0, dt$death), na.rm = T), 2)
   colorsDeath <-
     colorRampPalette(c("white", lightNavy))(length(breaksDeath) + 1)
-  
-  upMark <- as.character(icon("caret-up"))
+
+  alertMark <- icon("exclamation-triangle")
+  # 13個特定警戒都道府県
+  alertPref <-
+    c("東京",
+      "大阪",
+      "北海道",
+      "茨城",
+      "埼玉",
+      "千葉",
+      "神奈川",
+      "石川",
+      "岐阜",
+      "愛知",
+      "京都",
+      "兵庫",
+      "福岡")
+  dt[region %in% alertPref, region := paste0(alertMark, " ", region)]
   
   datatable(
     data = dt[, c(1, 3, 4, 6:9), with = F],
