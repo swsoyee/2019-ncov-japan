@@ -239,7 +239,7 @@ totalDischarged <- detailByRegion[日付 == max(日付), .(都道府県名, 退�
 colnames(totalDischarged) <- c("region", "totalDischarged")
 
 print("テーブル作成")
-totalToday <- paste0(total, "<r ", today, "<r >")
+totalToday <- paste(sprintf("%06d", total), total, today, sep = "|")
 
 mergeDt <- data.table(
   region = names(total),
