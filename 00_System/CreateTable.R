@@ -286,6 +286,10 @@ alertPref <-
   )
 mergeDt[region %in% alertPref, region := paste0(alertMark, " ", region)]
 
+# 自治体名前ソート用
+prefNameId <- sprintf('%02d', seq(2:ncol(byDate)))
+mergeDt[, region := paste0(prefNameId, "|", region)]
+
 # オーダー
 setorder(mergeDt, - count)
 # 読み取り時のエラーを回避するため

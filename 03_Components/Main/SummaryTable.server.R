@@ -83,6 +83,14 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
         list(
           width = "15%",
           targets = 4
+        ),
+        list(
+          render = JS("
+             function(data, type, row, meta) {
+                const split = data.split('|');
+                return split[1];
+            }"),
+          targets = 1
         )
       ),
       fnDrawCallback = htmlwidgets::JS("
@@ -170,7 +178,7 @@ output$summaryByRegion <- renderDataTable({
                 const split = data.split('|');
                 return split[1];
             }"),
-          targets = 3
+          targets = c(1, 3)
         )
       ),
       fnDrawCallback = htmlwidgets::JS("
@@ -297,7 +305,7 @@ output$confirmedByPrefTable <- renderDataTable({
                 const split = data.split('|');
                 return split[1];
             }"),
-          targets = 3
+          targets = c(1, 3)
         )
       ),
       fnDrawCallback = htmlwidgets::JS("
