@@ -62,6 +62,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     # extensions = c("Responsive"),
     options = list(
       paging = F,
+      fixedHeader = T,
       dom = "t",
       scrollY = "540px",
       scrollX = T,
@@ -137,6 +138,7 @@ output$summaryByRegion <- renderDataTable({
     options = list(
       paging = F,
       dom = "t",
+      fixedHeader = T,
       scrollY = "540px",
       scrollX = T,
       columnDefs = list(
