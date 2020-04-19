@@ -1,6 +1,7 @@
 # TODO こちらのページの内容ではないから別のところに移動すべき、厚労省もまとめてくれないので、削除するのもあり
 output$detail <- renderDataTable({
-  datatable(detail,
+  datatable(
+    detail,
     colnames = lang[[langCode]][37:48],
     rownames = NULL,
     caption = "データの正確性を確保するため、厚生労働省の報道発表資料のみ参照するので、遅れがあります（土日更新しない模様）。",
@@ -20,11 +21,9 @@ output$detail <- renderDataTable({
       )
     )
   ) %>%
-    formatStyle(
-      "observationStaus",
-      target = "row",
-      background = styleEqual("終了", "#CCCCCC"),
-    )
+    formatStyle("observationStaus",
+                target = "row",
+                background = styleEqual("終了", "#CCCCCC"),)
 })
 
 # ==== シンプルバージョンのテーブル表示==== (サイトが重い時に追加用)
@@ -45,15 +44,21 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
   # dt <- dt[count > 0]
   columnName <- c("death")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
-
-  breaksDeath <- seq(0, max(ifelse(is.na(dt$death), 0, dt$death), na.rm = T), 2)
-  colorsDeath <- colorRampPalette(c(lightNavy, darkNavy))(length(breaksDeath) + 1)
   
-  breaksDischarged <- seq(0, max(ifelse(is.na(dt$totalDischarged), 0, dt$totalDischarged), na.rm = T), 2)
-  colorsDischarged <- colorRampPalette(c(lightGreen, darkGreen))(length(breaksDischarged) + 1)
-
+  breaksDeath <-
+    seq(0, max(ifelse(is.na(dt$death), 0, dt$death), na.rm = T), 2)
+  colorsDeath <-
+    colorRampPalette(c(lightNavy, darkNavy))(length(breaksDeath) + 1)
+  
+  breaksDischarged <-
+    seq(0, max(ifelse(
+      is.na(dt$totalDischarged), 0, dt$totalDischarged
+    ), na.rm = T), 2)
+  colorsDischarged <-
+    colorRampPalette(c(lightGreen, darkGreen))(length(breaksDischarged) + 1)
+  
   upMark <- as.character(icon("caret-up"))
-
+  
   datatable(
     data = dt[, c(1, 8, 12, 7, 9), with = F],
     colnames = c("都道府県", "内訳", "退院", "退院推移", "死亡"),
@@ -67,18 +72,12 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
       scrollY = "540px",
       scrollX = T,
       columnDefs = list(
-        list(
-          className = "dt-center",
-          targets = 1:5
-        ),
-        list(
-          width = "30px",
-          targets = c(2, 3, 5)
-        ),
-        list(
-          width = "15%",
-          targets = 4
-        )
+        list(className = "dt-center",
+             targets = 1:5),
+        list(width = "30px",
+             targets = c(2, 3, 5)),
+        list(width = "15%",
+             targets = 4)
       ),
       fnDrawCallback = htmlwidgets::JS("
       function() {
@@ -120,15 +119,19 @@ output$summaryByRegion <- renderDataTable({
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
   # TODO 感染拡大が終息する後からカラム復活、今は表示する必要はない
   # dt[, zeroContinuousDay := replace(.SD, .SD <= 0, NA), .SDcols = 'zeroContinuousDay']
-
-  breaks <- seq(0, max(ifelse(is.na(dt$today), 0, dt$today), na.rm = T), 2)
-  colors <- colorRampPalette(c(lightRed, darkRed))(length(breaks) + 1)
-
-  breaksDeath <- seq(0, max(ifelse(is.na(dt$death), 0, dt$death), na.rm = T), 2)
-  colorsDeath <- colorRampPalette(c("white", lightNavy))(length(breaksDeath) + 1)
-
+  
+  breaks <-
+    seq(0, max(ifelse(is.na(dt$today), 0, dt$today), na.rm = T), 2)
+  colors <-
+    colorRampPalette(c(lightRed, darkRed))(length(breaks) + 1)
+  
+  breaksDeath <-
+    seq(0, max(ifelse(is.na(dt$death), 0, dt$death), na.rm = T), 2)
+  colorsDeath <-
+    colorRampPalette(c("white", lightNavy))(length(breaksDeath) + 1)
+  
   upMark <- as.character(icon("caret-up"))
-
+  
   datatable(
     data = dt[, c(1, 3, 4, 6:9), with = F],
     colnames = c("都道府県", "新規", "感染者数", "新規感染", "新規退院", "内訳", "死亡"),
@@ -153,13 +156,12 @@ output$summaryByRegion <- renderDataTable({
           targets = 6:7
         ),
         list(
+          className = "dt-center",
           width = "30px",
           targets = 2
         ),
-        list(
-          orderable = F,
-          targets = 3:6
-        )
+        list(orderable = F,
+             targets = 3:6)
       ),
       fnDrawCallback = htmlwidgets::JS("
       function() {
@@ -174,12 +176,22 @@ output$summaryByRegion <- renderDataTable({
       background = htmlwidgets::JS(
         paste0(
           "'linear-gradient(-90deg, transparent ' + (",
-          max(dt$count), "- value.split('<r ')[0])/", max(dt$count),
+          max(dt$count),
+          "- value.split('<r ')[0])/",
+          max(dt$count),
           " * 100 + '%, #DD4B39 ' + (",
-          max(dt$count), "- value.split('<r ')[0])/", max(dt$count),
-          " * 100 + '% ' + (", max(dt$count), "- value.split('<r ')[0] + Number(value.split('<r ')[1]))/", max(dt$count),
+          max(dt$count),
+          "- value.split('<r ')[0])/",
+          max(dt$count),
+          " * 100 + '% ' + (",
+          max(dt$count),
+          "- value.split('<r ')[0] + Number(value.split('<r ')[1]))/",
+          max(dt$count),
           " * 100 + '%, #F56954 ' + (",
-          max(dt$count), "- value.split('<r ')[0] + Number(value.split('<r ')[1]))/", max(dt$count), " * 100 + '%)'"
+          max(dt$count),
+          "- value.split('<r ')[0] + Number(value.split('<r ')[1]))/",
+          max(dt$count),
+          " * 100 + '%)'"
         )
       ),
       backgroundSize = "100% 80%",
@@ -220,16 +232,40 @@ output$confirmedByPrefTable <- renderDataTable({
   columnName <- c("today", "doubleTimeDay")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
   
-  breaks <- seq(0, max(ifelse(is.na(dt$today), 0, dt$today), na.rm = T))
-  colors <- colorRampPalette(c(lightRed, darkRed))(length(breaks) + 1)
+  breaks <-
+    seq(0, max(ifelse(is.na(dt$today), 0, dt$today), na.rm = T))
+  colors <-
+    colorRampPalette(c(lightRed, darkRed))(length(breaks) + 1)
   
-  breaksDoubleTimeDay <- seq(0, max(ifelse(is.na(dt$doubleTimeDay), 0, dt$doubleTimeDay), na.rm = T))
-  colorsDoubleTimeDay <- colorRampPalette(c(darkRed, lightYellow))(length(breaksDoubleTimeDay) + 1)
+  breaksDoubleTimeDay <-
+    seq(0, max(ifelse(
+      is.na(dt$doubleTimeDay), 0, dt$doubleTimeDay
+    ), na.rm = T))
+  colorsDoubleTimeDay <-
+    colorRampPalette(c(darkRed, lightYellow))(length(breaksDoubleTimeDay) + 1)
   
-  breaksPerMillion <- seq(0, max(ifelse(is.na(dt$perMillion), 0, dt$perMillion), na.rm = T))
-  colorsPerMillion <- colorRampPalette(c("#FFFFFF", darkRed))(length(breaksPerMillion) + 1)
+  breaksPerMillion <-
+    seq(0, max(ifelse(is.na(dt$perMillion), 0, dt$perMillion), na.rm = T))
+  colorsPerMillion <-
+    colorRampPalette(c("#FFFFFF", darkRed))(length(breaksPerMillion) + 1)
   
-  upMark <- as.character(icon("caret-up"))
+  alertMark <- icon("exclamation-triangle")
+  # 13個特定警戒都道府県
+  alertPref <-
+    c("東京",
+      "大阪",
+      "北海道",
+      "茨城",
+      "埼玉",
+      "千葉",
+      "神奈川",
+      "石川",
+      "岐阜",
+      "愛知",
+      "京都",
+      "兵庫",
+      "福岡")
+  dt[region %in% alertPref, region := paste0(alertMark, " ", region)]
   
   datatable(
     data = dt[, c(1, 3, 4, 6, 11, 13), with = F],
@@ -246,7 +282,12 @@ output$confirmedByPrefTable <- renderDataTable({
         list(
           className = "dt-center",
           width = "15%",
-          targets = c(1, 3, 4, 5)
+          targets = c(3, 4, 5)
+        ),
+        list(
+          className = "dt-left",
+          width = "15%",
+          targets = 1
         ),
         list(
           className = "dt-center",
@@ -258,10 +299,8 @@ output$confirmedByPrefTable <- renderDataTable({
           className = "dt-left",
           targets = 2
         ),
-        list(
-          orderable = F,
-          targets = 3
-        )
+        list(orderable = F,
+             targets = 3)
       ),
       fnDrawCallback = htmlwidgets::JS("
       function() {
@@ -276,12 +315,22 @@ output$confirmedByPrefTable <- renderDataTable({
       background = htmlwidgets::JS(
         paste0(
           "'linear-gradient(-90deg, transparent ' + (",
-          max(dt$count), "- value.split('<r ')[0])/", max(dt$count),
+          max(dt$count),
+          "- value.split('<r ')[0])/",
+          max(dt$count),
           " * 100 + '%, #DD4B39 ' + (",
-          max(dt$count), "- value.split('<r ')[0])/", max(dt$count),
-          " * 100 + '% ' + (", max(dt$count), "- value.split('<r ')[0] + Number(value.split('<r ')[1]))/", max(dt$count),
+          max(dt$count),
+          "- value.split('<r ')[0])/",
+          max(dt$count),
+          " * 100 + '% ' + (",
+          max(dt$count),
+          "- value.split('<r ')[0] + Number(value.split('<r ')[1]))/",
+          max(dt$count),
           " * 100 + '%, #F56954 ' + (",
-          max(dt$count), "- value.split('<r ')[0] + Number(value.split('<r ')[1]))/", max(dt$count), " * 100 + '%)'"
+          max(dt$count),
+          "- value.split('<r ')[0] + Number(value.split('<r ')[1]))/",
+          max(dt$count),
+          " * 100 + '%)'"
         )
       ),
       backgroundSize = "100% 80%",
@@ -301,7 +350,7 @@ output$confirmedByPrefTable <- renderDataTable({
     formatCurrency(
       columns = "doubleTimeDay",
       currency = "日",
-      digits = 0, 
+      digits = 0,
       before = F
     ) %>%
     formatStyle(
