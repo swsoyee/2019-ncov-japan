@@ -78,6 +78,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
   datatable(
     data = dt[, c(1, 8, 12, 7, 9), with = F],
     colnames = c("都道府県", "内訳", "退院", "退院推移", "死亡"),
+    caption = "最適の見せ方を探しているため、見た目が時々変わります。予めご了承ください。",
     escape = F,
     plugins = "natural",
     # extensions = c("Responsive"),
@@ -167,6 +168,7 @@ output$summaryByRegion <- renderDataTable({
   datatable(
     data = dt[, c(1, 3, 4, 6:9), with = F],
     colnames = c("都道府県", "新規", "感染者数", "新規感染", "新規退院", "内訳", "死亡"),
+    caption = "最適の見せ方を探しているため、見た目が時々変わります。予めご了承ください。",
     escape = F,
     plugins = "natural",
     extensions = c("Responsive"),
@@ -303,6 +305,7 @@ output$confirmedByPrefTable <- renderDataTable({
     data = dt[, c(1, 3, 4, 6, 11, 13), with = F],
     colnames = c("都道府県", "新規", "感染者数", "感染推移", "倍増時間", "百万人当たり"),
     escape = F,
+    caption = "最適の見せ方を探しているため、見た目が時々変わります。予めご了承ください。",
     plugins = "natural",
     # extensions = c("Responsive"),
     options = list(
@@ -331,7 +334,7 @@ output$confirmedByPrefTable <- renderDataTable({
           className = "dt-left",
           targets = 2
         ),
-        list(orderable = F,
+        list(type = "natural",
              targets = 3)
       ),
       fnDrawCallback = htmlwidgets::JS("

@@ -100,7 +100,6 @@ tabPanel(
           label = "もっと見る",
           size = "small", width = "300px", labelWidth = "200px", handleWidth = "150px"
         ),
-        tags$small("[4/18] スタイル調整・情報追加中"),
         uiOutput("summaryTable") %>% withSpinner()
       )
     ),
