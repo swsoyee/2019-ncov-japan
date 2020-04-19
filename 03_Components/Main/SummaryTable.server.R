@@ -59,7 +59,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     colnames = c("都道府県", "内訳", "退院", "退院推移", "死亡"),
     escape = F,
     plugins = "natural",
-    extensions = c("Responsive"),
+    # extensions = c("Responsive"),
     options = list(
       paging = F,
       dom = "t",
@@ -234,7 +234,7 @@ output$confirmedByPrefTable <- renderDataTable({
     colnames = c("都道府県", "新規", "感染者数", "感染推移", "倍増時間", "百万人当たり"),
     escape = F,
     plugins = "natural",
-    extensions = c("Responsive"),
+    # extensions = c("Responsive"),
     options = list(
       paging = F,
       dom = "t",
