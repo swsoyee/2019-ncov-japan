@@ -1,6 +1,6 @@
 fluidRow(
   column(
-    width = 6,
+    width = 5,
     style = "padding:0px;",
     widgetUserBox(
       title = lang[[langCode]][17],
@@ -13,6 +13,7 @@ fluidRow(
       color = "purple",
       collapsible = F,
       background = T,
+      footer_padding = F,
       backgroundUrl = "ncov_back.jpg",
       # tags$p(dashboardLabel(status = 'danger',  # APIアクセスできなかった
       #                       style = 'square',
@@ -30,27 +31,29 @@ fluidRow(
       ),
       # 発熱や上気道症状を引き起こすウイルス...
       tags$p(lang[[langCode]][19]),
-      footer = tagList(
-        tags$a(
-          href = lang[[langCode]][21], # https://www.mhlw.go.jp/stf/...
-          icon("link"),
-          paste0(
-            lang[[langCode]][22], # コロナウイルスはどのようなウイルスですか？
-            "（", lang[[langCode]][5], # 厚生労働省
-            "）、 "
+      tagList(
+        tags$small(
+          tags$a(
+            href = lang[[langCode]][21], # https://www.mhlw.go.jp/stf/...
+            icon("external-link-alt"),
+            paste0(
+              lang[[langCode]][22], # コロナウイルスはどのようなウイルスですか？
+              "（", lang[[langCode]][5], # 厚生労働省
+              "）、 "
+            )
+          ),
+          tags$a(
+            href = lang[[langCode]][59], # https://phil.cdc.gov/Details.aspx?pid=2871
+            icon("image"),
+            # 背景画像
+            lang[[langCode]][58]
           )
-        ),
-        tags$a(
-          href = lang[[langCode]][59], # https://phil.cdc.gov/Details.aspx?pid=2871
-          icon("image"),
-          # 背景画像
-          lang[[langCode]][58]
         )
       )
     )
   ),
   column(
-    width = 6,
+    width = 7,
     fluidRow(
       Component.MainValueBox(
         mainValue = sum(
