@@ -334,5 +334,8 @@ GLOBAL_VALUE <- reactiveValues(
   Kanagawa = list(
     summary = NULL,
     updateTime = NULL
+  ),
+  Google = list(
+    mobility = NULL
   )
 )

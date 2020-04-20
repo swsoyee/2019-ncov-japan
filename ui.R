@@ -94,7 +94,15 @@ shinyUI(
         "状況分析",
         tabName = "academic",
         icon = icon("eye"),
-        badgeLabel = "追加中",
+        badgeLabel = "V 0.1",
+        badgeColor = "black"
+      ),
+      menuItem(
+        # Google
+        "自粛効果",
+        tabName = "google",
+        icon = icon("google"),
+        badgeLabel = "V 0.1",
         badgeColor = "black"
       ),
       menuItem(
@@ -199,6 +207,14 @@ shinyUI(
           tabName = "academic",
           source(
             file = paste0(PAGE_PATH, "/Academic/Academic.ui.R"),
+            local = T,
+            encoding = "UTF-8"
+          )$value
+        ),
+        tabItem(
+          tabName = "google",
+          source(
+            file = paste0(PAGE_PATH, "/Google/PrefMobility.ui.R"),
             local = T,
             encoding = "UTF-8"
           )$value
