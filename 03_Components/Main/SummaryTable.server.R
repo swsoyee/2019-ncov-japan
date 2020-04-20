@@ -66,6 +66,9 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     plugins = "natural",
     # extensions = c("Responsive"),
     extensions = 'RowGroup',
+    callback = htmlwidgets::JS(paste0("
+      table.rowGroup().", ifelse(input$tableShowSetting, "enable()", "disable()"), ".draw();
+    ")),
     options = list(
       paging = F,
       rowGroup = list(dataSrc = 6),
@@ -162,6 +165,9 @@ output$summaryByRegion <- renderDataTable({
     escape = F,
     # extensions = c("Responsive"),
     extensions = 'RowGroup',
+    callback = htmlwidgets::JS(paste0("
+      table.rowGroup().", ifelse(input$tableShowSetting, "enable()", "disable()"), ".draw();
+    ")),
     options = list(
       paging = F,
       rowGroup = list(dataSrc = 8),
@@ -296,6 +302,9 @@ output$confirmedByPrefTable <- renderDataTable({
     caption = "最適の見せ方を探しているため、見た目が時々変わります。予めご了承ください。",
     # extensions = c("Responsive"),
     extensions = 'RowGroup',
+    callback = htmlwidgets::JS(paste0("
+      table.rowGroup().", ifelse(input$tableShowSetting, "enable()", "disable()"), ".draw();
+    ")),
     options = list(
       paging = F,
       rowGroup = list(dataSrc = 7),

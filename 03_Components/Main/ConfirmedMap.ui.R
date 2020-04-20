@@ -92,13 +92,29 @@ tabPanel(
     column(
       width = 7,
       boxPad(
-        switchInput(
-          inputId = "switchTableVersion",
-          value = T,
-          onLabel = "感染",
-          offLabel = "退院死亡",
-          label = "もっと見る",
-          size = "small", width = "300px", labelWidth = "200px", handleWidth = "150px"
+        fluidRow(
+          column(
+            width = 3,
+            switchInput(
+              inputId = "switchTableVersion",
+              value = T,
+              onLabel = "感染",
+              offLabel = "退院死亡",
+              label = "もっと見る", inline = T,
+              size = "small", width = "250px", labelWidth = "100px", handleWidth = "100px"
+            )
+          ),
+          column(
+            width = 9,
+            tags$div(
+              awesomeCheckbox(
+                inputId = "tableShowSetting",
+                label = "グルーピング表示",
+                status = "danger", value = T
+              ),
+              style = "float:right;"
+            )
+          )
         ),
         uiOutput("summaryTable") %>% withSpinner()
       )
