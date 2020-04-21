@@ -33,7 +33,7 @@ createMobilityCalendar <- function(data, pref, serie, title) {
       max = scaleStandard,
       min = (0 - scaleStandard),
       show = T,
-      inRange = list(color = c(middleGreen, middleYellow, middleRed)), # scale colors
+      inRange = list(color = c(middleGreen, "white", middleRed)), # scale colors
     ) %>%
     e_title(text = title) %>%
     e_tooltip(formatter = htmlwidgets::JS("
