@@ -47,12 +47,12 @@ createMobilityCalendar <- function(data, pref, serie, title) {
 createMobilityCalendarGroup <- function(data, pref) {
   calendars <- list()
   mobilitySeries <- list(
-    "retail_and_recreation_percent_change_from_baseline" = "娯楽関連施設",
-    "grocery_and_pharmacy_percent_change_from_baseline" = "食料品やドラッグストア",
+    "retail_and_recreation_percent_change_from_baseline" = "小売 & 娯楽",
+    "grocery_and_pharmacy_percent_change_from_baseline" = "食品 & 医薬品",
     "parks_percent_change_from_baseline" = "公園",
-    "transit_stations_percent_change_from_baseline" = "公共交通機関",
+    "transit_stations_percent_change_from_baseline" = "駅",
     "workplaces_percent_change_from_baseline" = "職場",
-    "residential_percent_change_from_baseline" = "住宅"
+    "residential_percent_change_from_baseline" = "家"
   )
   for (i in seq(mobilitySeries)) {
     calendars[[paste0(pref, "_", names(mobilitySeries[i]))]] <- createMobilityCalendar(
