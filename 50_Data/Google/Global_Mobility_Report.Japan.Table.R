@@ -41,7 +41,7 @@ for (pref in nameJa) {
         labels = label
       )
     )
-    medianValue <- median(values[(length(values) - 7):length(values)], na.rm = T)
+    medianValue <- round(mean(values[(length(values) - 7):length(values)], na.rm = T), 0)
     averageList[[serie]] <- ifelse(medianValue < 0, as.character(medianValue),  paste0("+", medianValue))
   }
   prefResultList <- rbind(
@@ -58,11 +58,19 @@ for (pref in nameJa) {
   )
 }
 
-fwrite(x = prefResultList, paste0(DATA_PATH, "Google/Global_Mobility_Report.Japan.Table.csv"))
+# TODO 書き方直す
+prefResultList[, 娯楽関連施設 := gsub("\\n", "", 娯楽関連施設)]
+prefResultList[, 食料品やドラッグストア := gsub("\\n", "", 食料品やドラッグストア)]
+prefResultList[, 公園 := gsub("\\n", "", 公園)]
+prefResultList[, 公共交通機関 := gsub("\\n", "", 公共交通機関)]
+prefResultList[, 職場 := gsub("\\n", "", 職場)]
+prefResultList[, 住宅 := gsub("\\n", "", 住宅)]
+fwrite(x = prefResultList, paste0(DATA_PATH, "Google/Global_Mobility_Report.Japan.Table.csv"), sep = "@", quote = F)
 
-# TEST
+# # TEST
 # DT::datatable(prefResultList,
 #   escape = F,
+#   colnames = c("a", "b", "c", "d", "e", "f", as.character(icon("house-user"))),
 #   options = list(
 #     dom = "t",
 #     scrollY = "540px",

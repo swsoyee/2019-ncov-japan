@@ -336,6 +336,7 @@ GLOBAL_VALUE <- reactiveValues(
     updateTime = NULL
   ),
   Google = list(
-    mobility = NULL
+    mobility = NULL,
+    table = NULL
   )
 )

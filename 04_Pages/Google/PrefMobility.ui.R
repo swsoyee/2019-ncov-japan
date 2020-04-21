@@ -1,10 +1,19 @@
 fluidRow(
   boxPlus(
-    title = "コミュニティモビリティレポート",
+    title = tagList(icon("google"), "コミュニティモビリティレポート"),
     width = 12,
     closable = F,
-    footer = tags$small("取り急ぎバージョン V 0.1"),
+    footer = tags$small(
+      tags$a(href = "https://www.google.com/covid19/mobility/", 
+             icon("file-medical-alt"),
+             "Google Community Mobility Reports"),
+      "取り急ぎバージョン V 0.1"
+    ),
     fluidRow(
+      column(
+        width = 6,
+        dataTableOutput("googleMobilityTable") %>% withSpinner()
+      ),
       column(
         width = 6,
         radioGroupButtons(

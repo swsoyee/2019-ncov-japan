@@ -4,7 +4,8 @@ observeEvent(input$sideBarTab, {
     #       mobility = fread(paste0(DATA_PATH, "Google/Global_Mobility_Report.Japan.csv"))
     #   )) # TEST
     GLOBAL_VALUE$Google <- list(
-      mobility = fread(paste0(DATA_PATH, "Google/Global_Mobility_Report.Japan.csv"))
+      mobility = fread(paste0(DATA_PATH, "Google/Global_Mobility_Report.Japan.csv")),
+      table = fread(paste0(DATA_PATH, "Google/Global_Mobility_Report.Japan.Table.csv"), sep = "@")
     )
   }
 })
@@ -113,4 +114,61 @@ output$mobilityCalendar <- renderUI({
       )
     ))
   }
+})
+
+output$googleMobilityTable <- renderDataTable({
+  data <- GLOBAL_VALUE$Google$table
+  # data <- fread(paste0(DATA_PATH, "Google/Global_Mobility_Report.Japan.Table.csv"), sep = "@")
+  DT::datatable(data,
+    escape = F, 
+    caption = "数値は直近１週間（４月１１日時点）の基準値との比較の平均値。",
+    options = list(
+      dom = "t",
+      scrollY = "540px",
+      scrollX = T,
+      paging = F,
+      columnDefs = list(
+        list(data = 1, 
+             targets = 1, 
+             className = "dt-center",
+             title = as.character(icon("landmark"))
+        ),
+        list(data = 2, 
+             targets = 2, 
+             className = "dt-center",
+             title = as.character(icon("umbrella-beach"))
+        ),
+        list(data = 3, 
+             targets = 3, 
+             className = "dt-center",
+             title = as.character(icon("shopping-cart"))
+        ),
+        list(data = 4, 
+             targets = 4, 
+             className = "dt-center",
+             title = as.character(icon("tree"))
+        ),
+        list(data = 5, 
+             targets = 5, 
+             className = "dt-center",
+             title = as.character(icon("subway"))
+        ),
+        list(data = 6, 
+             targets = 6, 
+             className = "dt-center",
+             title = as.character(icon("briefcase"))
+        ),
+        list(data = 7, 
+             targets = 7, 
+             className = "dt-center",
+             title = as.character(icon("home"))
+             )
+      ),
+      fnDrawCallback = htmlwidgets::JS("
+        function() {
+          HTMLWidgets.staticRender();
+        }
+      ")
+    )
+  ) %>% spk_add_deps()
 })
