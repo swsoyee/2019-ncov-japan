@@ -169,6 +169,7 @@ output$confirmedLine <- renderEcharts4r({
   if (ncol(dt) > 1) {
     dt$ma_3 <- round(frollmean(dt$difference, n = 3, fill = 0), 2)
     dt$ma_5 <- round(frollmean(dt$difference, n = 5, fill = 0), 2)
+    dt$ma_7 <- round(frollmean(dt$difference, n = 7, fill = 0), 2)
     dt %>%
       e_charts(date) %>%
       e_bar(
@@ -185,6 +186,7 @@ output$confirmedLine <- renderEcharts4r({
       ) %>%
       e_line(ma_3, name = "３日移動平均（新規）", y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkRed)) %>%
       e_line(ma_5, name = "５日移動平均（新規）", y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkYellow)) %>%
+      e_line(ma_7, name = "週間移動平均（新規）", y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkNavy)) %>%
       e_grid(
         left = "3%",
         right = "15%",
@@ -209,6 +211,9 @@ output$confirmedLine <- renderEcharts4r({
       e_title(text = "日次新規・累積陽性者の推移") %>%
       e_legend_unselect(
         name = "５日移動平均（新規）"
+      ) %>%
+      e_legend_unselect(
+        name = "週間移動平均（新規）"
       ) %>%
       e_legend(
         type = "scroll",
