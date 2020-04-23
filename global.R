@@ -87,6 +87,8 @@ setnafill(airportDailyReport, type = "locf")
 shipDailyReport <- fread(paste0(DATA_PATH, "shipDailyReport.csv"))
 shipDailyReport$date <- as.Date(as.character(shipDailyReport$date), "%Y%m%d")
 setnafill(shipDailyReport, type = "locf")
+# 2020-04-22時点から、退院者数と死亡者数が速報値と確定値に分かれているので、それの対応
+confirmingData <- fread(paste0(DATA_PATH, "confirmingData.csv"))
 # 日報まとめ
 dailyReport <- fread(paste0(DATA_PATH, "resultDailyReport.csv"))
 dailyReport$date <- as.Date(as.character(dailyReport$date), "%Y%m%d")

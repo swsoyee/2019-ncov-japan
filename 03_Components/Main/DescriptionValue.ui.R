@@ -63,7 +63,8 @@ fluidRow(
       number = DISCHARGE_DIFF_NO_SHIP,
       number_color = "green",
       number_icon = getChangeIconWrapper(DISCHARGE_DIFF_NO_SHIP, type = "fa"),
-      header = DISCHARGE_TOTAL_NO_SHIP,
+      # header = DISCHARGE_TOTAL_NO_SHIP, 
+      header = tail(confirmingData$domesticDischarged, n = 1) + DISCHARGE_FLIGHT$final + DISCHARGE_AIRPORT$final, # 2020-04-23 厚労省退院基準変更による仕様変更
       right_border = F,
       text = "退院者"
     )
@@ -72,8 +73,9 @@ fluidRow(
     id = "domesticDischarged",
     placement = "top",
     title = paste0(
-      "国内事例：", DISCHARGE_WITHIN$final, " (+", DISCHARGE_WITHIN$diff,
-      ")<br>空港検疫：", DISCHARGE_AIRPORT$final, " (+", DISCHARGE_AIRPORT$diff,
+      "国内事例（確定）：", DISCHARGE_WITHIN$final, " (+", DISCHARGE_WITHIN$diff,
+      ")<br>※突合作業中：", (tail(confirmingData$domesticDischarged, n = 1) - DISCHARGE_WITHIN$final),
+      "<br>空港検疫：", DISCHARGE_AIRPORT$final, " (+", DISCHARGE_AIRPORT$diff,
       ")<br>チャーター便：", DISCHARGE_FLIGHT$final, " (全員退院済み)"
     )
   ),
