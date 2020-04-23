@@ -7,6 +7,10 @@ output$dischargeSummary <- renderUI({
     tags$li("退院率：", round(dt$discharge / dt$positive * 100, 2), "%"),
     tags$li("重傷率：", round(dt$sever / dt$positive * 100, 2), "%"),
     tags$li("死亡率：", round(dt$death / dt$positive * 100, 2), "%"),
+    tags$small(paste0("※令和２年４月２２日から厚労省公開している退院者、死亡者数に突合作業",
+               "中の人数が含まれていて、入退院等の状況の合計とPCR検査陽性者数は一致しないため、",
+               "正しい分母がわからないのでこちらの計算はあくまでも参考程度にしてください。")),
+    tags$small("対処法考え＆調整中。"),
     tags$hr(),
   )
 })
@@ -65,26 +69,32 @@ output$recoveredLine <- renderEcharts4r({
       itemStyle = list(normal = list(color = darkNavy)),
       areaStyle = list(opacity = 0.4)
     ) %>%
-    e_x_axis(splitLine = list(show = F)) %>%
+    e_x_axis(splitLine = list(show = F), splitLine = list(lineStyle = list(opacity = 0.2))) %>%
     e_y_axis(
       splitLine = list(show = F),
       axisLabel = list(inside = T),
+      splitLine = list(lineStyle = list(opacity = 0.2)),
       axisTick = list(show = F)
     ) %>%
     e_y_axis(
       splitLine = list(show = F),
       index = 1,
+      splitLine = list(lineStyle = list(opacity = 0.2)),
       axisTick = list(show = F)
     ) %>%
     e_grid(left = "3%") %>%
     e_legend(
       type = "scroll",
       orient = "vertical",
-      left = "10%",
+      left = "18%",
       top = "15%",
+      right = "15%",
       selected = defaultUnselected
     ) %>%
-    e_title(subtext = "厚生労働省が毎日１２時にまとめているデータを使用しているため、遅れがあります。") %>%
+    e_title(subtext = paste0("※突合作業中の", 
+                             (tail(confirmingData$domesticDischarged, n = 1) - DISCHARGE_WITHIN$final),
+                             "名退院者はグラフに含まれていないことを予めご了承してください。")
+            ) %>%
     e_tooltip(trigger = "axis")
 })
 
