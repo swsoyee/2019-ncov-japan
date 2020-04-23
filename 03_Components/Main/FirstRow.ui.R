@@ -82,9 +82,11 @@ fluidRow(
       )
     ),
     fluidRow(
-      Component.MainValueBox(
-        mainValue = DISCHARGE_TOTAL,
-        mainValueSub = paste0(round(100 * DISCHARGE_TOTAL / TOTAL_JAPAN, 2), "%"),
+      Component.MainValueBox.Info(
+        # mainValue = DISCHARGE_TOTAL, # 確定値
+        mainValue = tail(confirmingData$domesticDischarged, n = 1) + (DISCHARGE_TOTAL - DISCHARGE_WITHIN$final), # 速報値 2020-04-23 対応
+        # mainValueSub = paste0(round(100 * DISCHARGE_TOTAL / TOTAL_JAPAN, 2), "%"),
+        mainValueSub = DISCHARGE_TOTAL, # 速報値 2020-04-23 対応
         sparklineName = "dischargeSparkLine",
         diffNumber = dailyReport$dischargeDiff[nrow(dailyReport)],
         text = lang[[langCode]][6],
