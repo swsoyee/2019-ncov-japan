@@ -276,7 +276,7 @@ groupList <- list(
   "中国" = provinceAttr[都道府県コード %in% 31:35]$都道府県,
   "四国" = provinceAttr[都道府県コード %in% 36:39]$都道府県,
   "九州・沖縄" = provinceAttr[都道府県コード %in% 40:47]$都道府県,
-  "他" = colnames(byDate)[(ncol(byDate) - 2):ncol(byDate)]
+  "他" = colnames(byDate)[(ncol(byDate) - 3):ncol(byDate)]
 )
 mergeDt$group = ""
 for (i in seq(nrow(mergeDt))) {
@@ -315,7 +315,7 @@ mergeDt[, diff := gsub("\\n", "", diff)]
 mergeDt[, dischargeDiff := gsub("\\n", "", dischargeDiff)]
 mergeDt[, detailBullet := gsub("\\n", "", detailBullet)]
 # クルーズ船とチャーター便データ除外
-mergeDt <- mergeDt[!grepl(pattern = paste0(lang[[langCode]][35:36], collapse = "|"), x = mergeDt$region)]
+# mergeDt <- mergeDt[!grepl(pattern = paste0(lang[[langCode]][35:36], collapse = "|"), x = mergeDt$region)]
 
 print("テーブル出力")
 fwrite(x = mergeDt, file = paste0(DATA_PATH, "resultSummaryTable.csv"), sep = "@", quote = F)
@@ -327,7 +327,7 @@ for (i in 2:ncol(byDate)) {
 }
 dt <- reshape2::melt(dt, id.vars = "date")
 dt <- data.table(dt)
-mapDt <- dt[!(variable %in% c("クルーズ船", "チャーター便", "検疫職員"))]
+mapDt <- dt[!(variable %in% c("クルーズ船", "伊客船", "チャーター便", "検疫職員"))]
 # マップデータ用意
 mapDt <- merge(x = mapDt, y = provinceCode, by.x = "variable", by.y = "name-ja", all = T)
 # 必要なカラムを保存

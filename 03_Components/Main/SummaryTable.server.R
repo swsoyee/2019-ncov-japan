@@ -79,7 +79,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
       columnDefs = list(
         list(
           className = "dt-left",
-          width = "50px",
+          width = "80px",
           targets = 1
         ),
         list(
@@ -178,7 +178,7 @@ output$summaryByRegion <- renderDataTable({
       columnDefs = list(
         list(
           className = "dt-left",
-          width = "50px",
+          width = "80px",
           targets = 1
         ),
         list(
@@ -319,7 +319,7 @@ output$confirmedByPrefTable <- renderDataTable({
         ),
         list(
           className = "dt-left",
-          width = "50px",
+          width = "80px",
           targets = 1
         ),
         list(
