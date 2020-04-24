@@ -193,7 +193,7 @@ TOTAL_OFFICER_DIFF <- sum(byDateToday[]$検疫職員) # クルーズ船関連の
 TOTAL_FLIGHT_DIFF <- sum(byDateToday$チャーター便) # チャーター便のPCR陽性数
 TOTAL_WITHIN_DIFF <- TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF # 日本国内事例のPCR陽性数
 TOTAL_SHIP_DIFF <- sum(byDateToday$クルーズ船) # クルーズ船のPCR陽性数
-TOTAL_JAPAN_DIFF <- TOTAL_WITHIN_DIFF + TOTAL_SHIP_DIFF # 日本領土内のPCR陽性数
+TOTAL_JAPAN_DIFF <- TOTAL_WITHIN_DIFF + sum(byDateToday[, 49:ncol(byDateToday)], na.rm = T) # 日本領土内のPCR陽性数
 
 # 死亡
 DEATH_DOMESITC_DIFF <- sum(deathToday[, c(2:48)]) # 日本国内事例のPCR陽性数（クルーズ船関連者除く）
