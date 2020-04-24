@@ -19,7 +19,7 @@ createMobilityCalendar <- function(data, pref, serie, title) {
   data %>%
     e_charts(date, height = 200) %>%
     e_calendar(
-      range = c("2020-02-16", "2020-04-16"),
+      range = c("2020-02-16", max(data$date)),
       left = 25, cellSize = 15,
       splitLine = list(show = F), itemStyle = list(borderWidth = 2, borderColor = "#FFFFFF"),
       dayLabel = list(nameMap = c("日", "月", "火", "水", "木", "金", "土")),
