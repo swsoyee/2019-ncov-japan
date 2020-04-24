@@ -125,12 +125,13 @@ fluidRow(
   bsTooltip(
     id = "shipPCRValue",
     title = paste(
-      "令和２年３月５日まで延べ人数で公表しましたＰＣＲ検査の結果について、実員数で精査した結果は下記の通りです。<br>参考：",
+      "ダイアモンド・プリンセス号：令和２年３月５日まで延べ人数で公表しましたＰＣＲ検査の結果について、実員数で精査した結果は下記の通りです。<br>参考：",
       tags$a(
         href = "https://www.mhlw.go.jp/stf/newpage_09997.html",
         "横浜港で検疫中のクルーズ船の乗客・乗員に係る新型コロナウイルス感染症ＰＣＲ検査結果について"
       ),
-      "<hr>なお、下船した方に対する健康フォローアップ期間中の249人に対するPCR検査数は含まれていない。"
+      "<br>※なお、下船した方に対する健康フォローアップ期間中の249人に対するPCR検査数は含まれていない。",
+      "<hr>コスタ・アトランチカ号：対応中。"
     ),
     placement = "top"
   ),
@@ -139,17 +140,20 @@ fluidRow(
     id = "shipConfirmedValue",
     # クルーズ船
     descriptionBlock(
-      number = TOTAL_SHIP_DIFF,
+      number = TOTAL_SHIP_DIFF + tail(byDate$伊客船, n = 1),
       number_color = "red",
-      number_icon = getChangeIconWrapper(TOTAL_SHIP_DIFF, type = "fa"),
-      header = paste(TOTAL_SHIP, ""),
+      number_icon = getChangeIconWrapper(TOTAL_SHIP_DIFF + tail(byDate$伊客船, n = 1), type = "fa"),
+      header = TOTAL_SHIP + sum(byDate$伊客船),
       right_border = F,
       text = "感染者"
     )
   ),
   bsTooltip(
     id = "shipConfirmedValue",
-    title = "船会社の医療スタッフとして途中乗船し、PCR陽性となった1名は含めず、チャーター便で帰国した40名を含む。",
+    title = paste0("ダイアモンド・プリンセス号：PCR陽性者", TOTAL_SHIP, "名。",
+                   "<br>※船会社の医療スタッフとして途中乗船し、PCR陽性となった1名は含めず、チャーター便で帰国した40名を含む。<hr>",
+                   "コスタ・アトランチカ号：PCR陽性者", sum(byDate$伊客船), "名。"
+                   ),
     placement = "top"
   ),
   column(
