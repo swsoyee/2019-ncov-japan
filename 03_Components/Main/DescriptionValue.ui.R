@@ -98,12 +98,15 @@ fluidRow(
     descriptionBlock(
       number = "　",
       header = tagList(icon("ship"), lang[[langCode]][35]),
-      text = "3711人"
+      text = ""
     )
   ),
   bsTooltip(
     id = "shipDescriptionBlock",
-    title = "那覇港出港時点の人数。うち日本国籍の者1,341人。",
+    title = paste0(
+      "ダイアモンド・プリンセス号：那覇港出港時点の人数は3711人。うち日本国籍の者1341人。",
+      tags$hr(),
+      "コスタ・アトランチカ号：クルーズ船乗員623名。"),
     placement = "top"
   ),
   column(
