@@ -142,7 +142,7 @@ output$echartsMap <- renderEcharts4r({
   })
 
   timeSeriesTitleSub <- lapply(seq_along(dateSeq), function(i) {
-    columnName <- colnames(byDate)[49:51]
+    columnName <- colnames(byDate)[49:ncol(byDate)]
     item <- ""
     for (name in columnName) {
       diff <- byDate[date == dateSeq[i], name, with = F][[1]]
