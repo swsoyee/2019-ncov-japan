@@ -121,7 +121,7 @@ output$googleMobilityTable <- renderDataTable({
   # data <- fread(paste0(DATA_PATH, "Google/Global_Mobility_Report.Japan.Table.csv"), sep = "@")
   DT::datatable(data,
     escape = F, 
-    caption = "数値は直近１週間（４月１１日時点）の基準値との比較の平均値。",
+    caption = paste0("数値は直近１週間（",max(mobility$date),"から遡り１週間）の基準値との比較の平均値。"),
     options = list(
       dom = "t",
       scrollY = "540px",
