@@ -118,7 +118,7 @@ TOTAL_OFFICER <- sum(byDate$検疫職員) # クルーズ船関連の職員のPCR
 TOTAL_FLIGHT <- sum(byDate$チャーター便) # チャーター便のPCR陽性数
 TOTAL_WITHIN <- TOTAL_DOMESITC + TOTAL_OFFICER + TOTAL_FLIGHT # 日本国内事例のPCR陽性数
 TOTAL_SHIP <- sum(byDate$クルーズ船) # クルーズ船のPCR陽性数
-TOTAL_JAPAN <- TOTAL_WITHIN + TOTAL_SHIP # 日本領土内のPCR陽性数
+TOTAL_JAPAN <- TOTAL_WITHIN + TOTAL_SHIP + sum(byDate$伊客船) # 日本領土内のPCR陽性数
 CONFIRMED_PIE_DATA <- data.table(
   category = c(
     lang[[langCode]][4], # 国内事例
