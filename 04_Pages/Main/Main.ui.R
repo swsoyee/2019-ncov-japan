@@ -35,7 +35,7 @@ fluidPage(
         )$value,
         # 市レベルの感染者数
         tabPanel(
-          title = tagList(icon("chart-bar"), "市区町村の感染者数"),
+          title = tagList(icon("grip-horizontal"), "市区町村の感染者数"),
           echarts4rOutput("confirmedCityTreemap", height = "500px") %>% withSpinner(proxy.height = "800px")
         )
       ),
