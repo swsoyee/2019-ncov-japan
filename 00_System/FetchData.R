@@ -13,21 +13,21 @@ provincePCR <- gsheet2tbl("docs.google.com/spreadsheets/d/1Cy4W9hYhGmABq1GuhLOkM
 fwrite(x = provincePCR, file = paste0(DATA_PATH, "provincePCR.csv"))
 
 # 市レベル
-provinceAttr <- fread(paste0(DATA_PATH, "Signate/prefMaster.csv"))
-
-provinceAttr[都道府県コード %in% 1:7, regionName := "北海道・東北地方"]
-provinceAttr[都道府県コード %in% 8:14, regionName := "関東地方"]
-provinceAttr[都道府県コード %in% 15:23, regionName := "中部地方"]
-provinceAttr[都道府県コード %in% 24:30, regionName := "近畿地方"]
-provinceAttr[都道府県コード %in% 31:35, regionName := "中国地方"]
-provinceAttr[都道府県コード %in% 36:39, regionName := "四国地方"]
-provinceAttr[都道府県コード %in% 40:47, regionName := "九州地方・沖縄"]
-
-provinceAttr <- provinceAttr[, .(都道府県, regionName)]
+# provinceAttr <- fread(paste0(DATA_PATH, "Signate/prefMaster.csv"))
+# 
+# provinceAttr[都道府県コード %in% 1:7, regionName := "北海道・東北地方"]
+# provinceAttr[都道府県コード %in% 8:14, regionName := "関東地方"]
+# provinceAttr[都道府県コード %in% 15:23, regionName := "中部地方"]
+# provinceAttr[都道府県コード %in% 24:30, regionName := "近畿地方"]
+# provinceAttr[都道府県コード %in% 31:35, regionName := "中国地方"]
+# provinceAttr[都道府県コード %in% 36:39, regionName := "四国地方"]
+# provinceAttr[都道府県コード %in% 40:47, regionName := "九州地方・沖縄"]
+# 
+# provinceAttr <- provinceAttr[, .(都道府県, regionName)]
 
 kenmoAreaDataset <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1Cy4W9hYhGmABq1GuhLOkM92iYss0qy03Y1GeTv4bCyg/edit#gid=491635333")
-kenmoAreaDataset$累計 <- rowSums(kenmoAreaDataset[, 5:ncol(kenmoAreaDataset)])
-kenmoAreaDataset <- merge(kenmoAreaDataset, provinceAttr, by.x = "県名", by.y = "都道府県", all.x = T, no.dups = T, sort = F)
+# kenmoAreaDataset$累計 <- rowSums(kenmoAreaDataset[, 5:ncol(kenmoAreaDataset)])
+# kenmoAreaDataset <- merge(kenmoAreaDataset, provinceAttr, by.x = "県名", by.y = "都道府県", all.x = T, no.dups = T, sort = F)
 fwrite(x = kenmoAreaDataset, file = paste0(DATA_PATH, "Kenmo/confirmedNumberByCity.csv"))
 
 # ====SIGNATEデータ====

@@ -33,10 +33,10 @@ fluidPage(
           local = T,
           encoding = "UTF-8"
         )$value,
-        # （破棄予定）
+        # 市レベルの感染者数
         tabPanel(
-          title = tagList(icon("chart-bar"), "時系列棒グラフ"),
-          echarts4rOutput("regionTimeSeries") %>% withSpinner()
+          title = tagList(icon("chart-bar"), "市区町村の感染者数"),
+          echarts4rOutput("confirmedCityTreemap", height = "500px") %>% withSpinner(proxy.height = "800px")
         )
       ),
       tags$hr(),

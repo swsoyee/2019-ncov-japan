@@ -235,6 +235,9 @@ positiveDetail <- fread(paste0(DATA_PATH, "positiveDetail.csv"))
 selectProvinceOption <- unique(positiveDetail$都道府県)
 selectProvinceOption <- selectProvinceOption[selectProvinceOption != "未"]
 
+# 市レベルの感染者数
+confirmedCityTreemapData <- fread(paste0(DATA_PATH, "Kenmo/confirmedNumberByCity.csv"))
+
 # 詳細データ
 detail <- fread(paste0(DATA_PATH, "detail.csv"),
   colClasses = list(
