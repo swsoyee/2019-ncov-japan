@@ -11,7 +11,8 @@ createConfirmedCityTreemap <- function(dataset) {
     ) %>%
     e_tooltip() %>%
     e_title(text = paste0("集計時間：", value), 
-            subtext = "データソース：@kenmo_economics", sublink = "https://twitter.com/kenmo_economics")
+            subtext = "データソース：@kenmo_economics　※陽性者数は居住地が判明した方のみを集計しているので、県の総計と一致しません。",
+            sublink = "https://twitter.com/kenmo_economics")
 }
 
 output$confirmedCityTreemap <- renderEcharts4r({
