@@ -138,7 +138,7 @@ output$callCenter <- renderEcharts4r({
     e_datazoom(
       minValueSpan = 3600 * 24 * 1000 * 7,
       bottom = "0%",
-      startValue = max(dt$date, na.rm = T) - 28
+      startValue = max(callCenterDailyReport$date, na.rm = T) - 28
     )
 })
 
