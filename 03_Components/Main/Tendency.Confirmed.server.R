@@ -31,7 +31,7 @@ output$tendencyConfirmedRegionPicker <- renderUI({
           label = "集計時間間隔",
           min = 1,
           max = 10,
-          value = 4,
+          value = 7,
           ticks = F,
           step = 1,
           post = "日"
@@ -94,7 +94,7 @@ output$oneSideLogConfirmed <- renderEcharts4r({
   dt[order(match(ja, orderRegion))] %>%
     group_by(ja) %>%
     e_chart(index) %>%
-    e_line(count, symbol = "circle", smooth = T) %>%
+    e_line(count, symbol = "circle", smooth = T, symbolSize = 1) %>%
     e_y_axis(
       splitLine = list(lineStyle = list(opacity = 0.2)),
       name = "感染者数",
@@ -116,7 +116,7 @@ output$oneSideLogConfirmed <- renderEcharts4r({
       right = "15%",
       left = "3%"
     ) %>%
-    e_title(text = "100人以上の都道府県感染者数推移", ) %>%
+    e_title(text = "累積感染者数推移") %>%
     e_legend(
       type = "scroll",
       orient = "vertical",
@@ -318,7 +318,7 @@ output$twoSideLogConfirmed <- renderEcharts4r({
     group_by(ja) %>%
     # dt[ja =='東京' & diff != 0] %>% #TEST
     e_chart(spanCount) %>%
-    e_line(spanDiff, symbol = "circle", smooth = T) %>%
+    e_line(spanDiff, symbol = "circle", smooth = T, symbolSize = 1) %>%
     e_legend(
       type = "scroll",
       orient = "vertical",
