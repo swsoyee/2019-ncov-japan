@@ -63,6 +63,7 @@ output$pcrLine <- renderEcharts4r({
       nameGap = 10,
       nameTextStyle = list(padding = c(0, 0, 0, 50)),
       splitLine = list(lineStyle = list(opacity = 0.2)),
+      z = 999,
       axisLabel = list(inside = T),
       min = -5000,
       axisTick = list(show = F)
@@ -71,6 +72,7 @@ output$pcrLine <- renderEcharts4r({
       name = "移動平均新規数",
       nameGap = 10,
       splitLine = list(show = F),
+      z = 999,
       index = 1,
       min = -250,
       axisTick = list(show = F)
@@ -78,7 +80,7 @@ output$pcrLine <- renderEcharts4r({
     e_grid(
       left = "3%",
       right = "15%",
-      bottom = "10%"
+      bottom = "18%"
     ) %>%
     e_legend(
       type = "scroll",
@@ -88,5 +90,10 @@ output$pcrLine <- renderEcharts4r({
       right = "15%"
     ) %>%
     e_tooltip(trigger = "axis") %>%
-    e_title(text = "日次新規・累積検査人数の推移")
+    e_title(text = "日次新規・累積検査人数の推移") %>%
+    e_datazoom(
+      minValueSpan = 3600 * 24 * 1000 * 7,
+      bottom = "0%",
+      startValue = max(dt$date, na.rm = T) - 28
+    )
 })

@@ -74,15 +74,17 @@ output$recoveredLine <- renderEcharts4r({
       splitLine = list(show = F),
       axisLabel = list(inside = T),
       splitLine = list(lineStyle = list(opacity = 0.2)),
+      z = 999,
       axisTick = list(show = F)
     ) %>%
     e_y_axis(
       splitLine = list(show = F),
       index = 1,
       splitLine = list(lineStyle = list(opacity = 0.2)),
+      z = 999,
       axisTick = list(show = F)
     ) %>%
-    e_grid(left = "3%") %>%
+    e_grid(left = "3%", bottom = "18%") %>%
     e_legend(
       type = "scroll",
       orient = "vertical",
@@ -95,7 +97,12 @@ output$recoveredLine <- renderEcharts4r({
                              (tail(confirmingData$domesticDischarged, n = 1) - DISCHARGE_WITHIN$final),
                              "名退院者はグラフに含まれていないことを予めご了承してください。")
             ) %>%
-    e_tooltip(trigger = "axis")
+    e_tooltip(trigger = "axis") %>%
+    e_datazoom(
+      minValueSpan = 3600 * 24 * 1000 * 7,
+      bottom = "0%",
+      startValue = max(dt$date, na.rm = T) - 28
+    )
 })
 
 output$curedCalendar <- renderEcharts4r({

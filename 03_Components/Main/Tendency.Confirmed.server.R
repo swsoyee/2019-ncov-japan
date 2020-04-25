@@ -184,13 +184,13 @@ output$confirmedLine <- renderEcharts4r({
         z = 2, barGap = "-100%",
         itemStyle = list(normal = list(color = lightRed))
       ) %>%
-      e_line(ma_3, name = "３日移動平均（新規）", y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkRed)) %>%
-      e_line(ma_5, name = "５日移動平均（新規）", y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkYellow)) %>%
-      e_line(ma_7, name = "週間移動平均（新規）", y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkNavy)) %>%
+      e_line(ma_3, name = "３日移動平均", y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkRed)) %>%
+      e_line(ma_5, name = "５日移動平均", y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkYellow)) %>%
+      e_line(ma_7, name = "週間移動平均", y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkNavy)) %>%
       e_grid(
         left = "3%",
         right = "15%",
-        bottom = "10%"
+        bottom = "18%"
       ) %>%
       e_x_axis(splitLine = list(lineStyle = list(opacity = 0.2))) %>%
       e_y_axis(
@@ -198,6 +198,7 @@ output$confirmedLine <- renderEcharts4r({
         nameGap = 10,
         nameTextStyle = list(padding = c(0, 0, 0, 50)),
         splitLine = list(lineStyle = list(opacity = 0.2)),
+        z = 999,
         axisLabel = list(inside = T),
         axisTick = list(show = F)
       ) %>%
@@ -205,6 +206,7 @@ output$confirmedLine <- renderEcharts4r({
         name = "移動平均新規数",
         nameGap = 10,
         splitLine = list(show = F),
+        z = 999,
         index = 1,
         axisTick = list(show = F)
       ) %>%
@@ -222,7 +224,12 @@ output$confirmedLine <- renderEcharts4r({
         top = "15%",
         right = "15%"
       ) %>%
-      e_tooltip(trigger = "axis")
+      e_tooltip(trigger = "axis") %>%
+      e_datazoom(
+        minValueSpan = 3600 * 24 * 1000 * 7,
+        bottom = "0%",
+        startValue = max(dt$date, na.rm = T) - 28
+      )
   }
 })
 

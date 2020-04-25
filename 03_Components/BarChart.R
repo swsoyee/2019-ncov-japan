@@ -117,7 +117,7 @@ output$callCenter <- renderEcharts4r({
     e_bar(fax, name = "FAX", stack = "1", itemStyle = list(color = darkBlue)) %>%
     e_bar(mail, name = "メール", stack = "1", itemStyle = list(color = lightBlue)) %>%
     e_line(line, name = "回線数", y_index = 1, itemStyle = list(color = darkBlue)) %>%
-    e_grid(left = "3%") %>%
+    e_grid(left = "3%", bottom = "18%") %>%
     e_legend(type = "scroll", orient = "vertical", left = "10%", top = "15%") %>%
     e_mark_line(data = list(
       xAxis = "2020-02-07", itemStyle = list(color = middleBlue),
@@ -132,9 +132,14 @@ output$callCenter <- renderEcharts4r({
       label = list(formatter = " 2/19正午\nメール対応")
     )) %>%
     e_x_axis(splitLine = list(show = F)) %>%
-    e_y_axis(splitLine = list(show = F), axisLabel = list(inside = T), axisTick = list(show = F)) %>%
-    e_y_axis(splitLine = list(show = F), index = 1, axisTick = list(show = F)) %>%
-    e_tooltip(trigger = "axis")
+    e_y_axis(splitLine = list(show = F), axisLabel = list(inside = T), axisTick = list(show = F), z = 999) %>%
+    e_y_axis(splitLine = list(show = F), index = 1, axisTick = list(show = F), z = 999) %>%
+    e_tooltip(trigger = "axis") %>%
+    e_datazoom(
+      minValueSpan = 3600 * 24 * 1000 * 7,
+      bottom = "0%",
+      startValue = max(dt$date, na.rm = T) - 28
+    )
 })
 
 regionPCRData <- reactive({
