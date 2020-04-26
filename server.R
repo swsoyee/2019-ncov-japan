@@ -9,6 +9,7 @@ shinyServer(function(input, output, session) {
   source(file = paste0(COMPONENT_PATH, "Main/Tendency.Discharged.server.R"), local = T, encoding = "UTF-8")
   source(file = paste0(COMPONENT_PATH, "Main/Tendency.Test.server.R"), local = T, encoding = "UTF-8")
   source(file = paste0(COMPONENT_PATH, "Main/Tendency.Confirmed.server.R"), local = T, encoding = "UTF-8")
+  source(file = paste0(COMPONENT_PATH, "Main/ConfirmedHeatmap.server.R"), local = T, encoding = "UTF-8")
   source(file = paste0(COMPONENT_PATH, "Main/ConfirmedCityTreemap.server.R"), local = T, encoding = "UTF-8")
   source(file = paste0(COMPONENT_PATH, "Academic/onset2ConfirmedMap.server.R"), local = T, encoding = "UTF-8")
   source(file = paste0(COMPONENT_PATH, "Google/PrefMobility.server.R"), local = T, encoding = "UTF-8")

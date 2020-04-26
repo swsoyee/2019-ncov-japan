@@ -33,10 +33,22 @@ fluidPage(
           local = T,
           encoding = "UTF-8"
         )$value,
+        # 感染者数ヒートマップ
+        tabPanel(
+          title = tagList(icon("th"), "感染者数ヒートマップ"),
+          fluidRow(
+            column(width = 9,
+                   echarts4rOutput("confirmedHeatmap", height = "600px") %>% withSpinner()
+            ),
+            column(width = 3,
+                   # 実装中
+            )
+          )
+        ),
         # 市レベルの感染者数
         tabPanel(
           title = tagList(icon("grip-horizontal"), "市区町村の感染者数"),
-          echarts4rOutput("confirmedCityTreemap", height = "500px") %>% withSpinner(proxy.height = "800px")
+          echarts4rOutput("confirmedCityTreemap", height = "600px") %>% withSpinner()
         )
       ),
       tags$hr(),
