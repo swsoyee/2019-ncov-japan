@@ -41,7 +41,7 @@ fluidRow(
     descriptionBlock(
       number = TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF + tail(byDate$伊客船, n = 1),
       number_color = "red",
-      number_icon = getChangeIconWrapper(TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF + sum(byDate$伊客船), type = "fa"),
+      number_icon = getChangeIconWrapper(TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF + tail(byDate$伊客船, n = 1), type = "fa"),
       header = paste(TOTAL_DOMESITC + TOTAL_OFFICER + TOTAL_FLIGHT + sum(byDate$伊客船)),
       right_border = F,
       text = "感染者"
