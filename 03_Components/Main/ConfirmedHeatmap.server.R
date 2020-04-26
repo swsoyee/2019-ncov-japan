@@ -17,7 +17,7 @@ output$confirmedHeatmap <- renderEcharts4r({
       ),
       orient = "horizontal",
       top = "5%",
-      right = "2%"
+      left = "1%"
     ) %>%
     e_y_axis(
       position = "right",
@@ -26,6 +26,12 @@ output$confirmedHeatmap <- renderEcharts4r({
       inverse = T
     ) %>%
     e_datazoom(startValue = max(data$date, na.rm = T) - 70) %>%
+    e_mark_line(
+      data = list(xAxis = "2020-04-07",
+                  label = list(formatter = "4月7日\n緊急事態宣言", position = "start")),
+      lineStyle = list(opacity = 0.5), 
+      silent = T,
+      symbol = "circle", symbolSize = 4) %>%
     e_grid(right = "8%", bottom = "15%", left = "2%") %>%
     e_title(text = "日次都道府県別新規発生数") %>%
     e_tooltip()
