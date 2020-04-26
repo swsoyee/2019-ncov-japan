@@ -31,7 +31,7 @@ fluidRow(
       "各自治体で行った全ての検査結果を反映しているものではない（退院時の確認検査などは含まれていない）。",
       "<hr>国内：", PCR_WITHIN$final, " (", getDiffValueAndSign(PCR_WITHIN$diff),
       ")<br>空港検疫：", PCR_AIRPORT$final, " (+", PCR_AIRPORT$diff,
-      ")<br>チャーター便：", PCR_FLIGHT$final, " (+", PCR_FLIGHT$diff, ")"
+      ")<br>チャーター便：", PCR_FLIGHT$final
     )
   ),
   column(
@@ -39,10 +39,10 @@ fluidRow(
     id = "domesticConfirmed",
     # 国内事例
     descriptionBlock(
-      number = TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF,
+      number = TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF +  + tail(byDate$伊客船, n = 1),
       number_color = "red",
-      number_icon = getChangeIconWrapper(TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF, type = "fa"),
-      header = paste(TOTAL_DOMESITC + TOTAL_OFFICER + TOTAL_FLIGHT, ""),
+      number_icon = getChangeIconWrapper(TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF +  + sum(byDate$伊客船), type = "fa"),
+      header = paste(TOTAL_DOMESITC + TOTAL_OFFICER + TOTAL_FLIGHT +  + sum(byDate$伊客船), ""),
       right_border = F,
       text = "感染者"
     )
@@ -52,7 +52,8 @@ fluidRow(
     placement = "top",
     title = paste0(
       "国内事例：", (TOTAL_DOMESITC + TOTAL_OFFICER), " (+", (TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF),
-      ")<br>チャーター便：", TOTAL_FLIGHT
+      ")<br>チャーター便：", TOTAL_FLIGHT,
+      "<br>コスタ・アトランチカ号：", sum(byDate$伊客船)
     )
   ),
   column(
@@ -104,9 +105,7 @@ fluidRow(
   bsTooltip(
     id = "shipDescriptionBlock",
     title = paste0(
-      "ダイアモンド・プリンセス号：那覇港出港時点の人数は3711人。うち日本国籍の者1341人。",
-      tags$hr(),
-      "コスタ・アトランチカ号：クルーズ船乗員623名。"),
+      "ダイアモンド・プリンセス号：那覇港出港時点の人数は3711人。うち日本国籍の者1341人。"),
     placement = "top"
   ),
   column(
@@ -130,8 +129,7 @@ fluidRow(
         href = "https://www.mhlw.go.jp/stf/newpage_09997.html",
         "横浜港で検疫中のクルーズ船の乗客・乗員に係る新型コロナウイルス感染症ＰＣＲ検査結果について"
       ),
-      "<br>※なお、下船した方に対する健康フォローアップ期間中の249人に対するPCR検査数は含まれていない。",
-      "<hr>コスタ・アトランチカ号：対応中。"
+      "<br>※なお、下船した方に対する健康フォローアップ期間中の249人に対するPCR検査数は含まれていない。"
     ),
     placement = "top"
   ),
@@ -140,10 +138,10 @@ fluidRow(
     id = "shipConfirmedValue",
     # クルーズ船
     descriptionBlock(
-      number = TOTAL_SHIP_DIFF + tail(byDate$伊客船, n = 1),
+      number = TOTAL_SHIP_DIFF,
       number_color = "red",
-      number_icon = getChangeIconWrapper(TOTAL_SHIP_DIFF + tail(byDate$伊客船, n = 1), type = "fa"),
-      header = TOTAL_SHIP + sum(byDate$伊客船),
+      number_icon = getChangeIconWrapper(TOTAL_SHIP_DIFF, type = "fa"),
+      header = TOTAL_SHIP,
       right_border = F,
       text = "感染者"
     )
@@ -151,8 +149,7 @@ fluidRow(
   bsTooltip(
     id = "shipConfirmedValue",
     title = paste0("ダイアモンド・プリンセス号：PCR陽性者", TOTAL_SHIP, "名。",
-                   "<br>※船会社の医療スタッフとして途中乗船し、PCR陽性となった1名は含めず、チャーター便で帰国した40名を含む。<hr>",
-                   "コスタ・アトランチカ号：PCR陽性者", sum(byDate$伊客船), "名。"
+                   "<br>※船会社の医療スタッフとして途中乗船し、PCR陽性となった1名は含めず、チャーター便で帰国した40名を含む。"
                    ),
     placement = "top"
   ),
