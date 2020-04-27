@@ -258,9 +258,11 @@ mergeDt <- data.table(
 
 mergeDt <- merge(mergeDt, totalDischarged, all.x = T, sort = F)
 signateSub <- provinceAttr[, .(都道府県, 人口)]
-colnames(signateSub) <- c("region", "perMillion")
+colnames(signateSub) <- c("region", "population")
 mergeDt <- merge(mergeDt, signateSub, all.x = T, sort = F)
-mergeDt[, perMillion := round(count / (perMillion / 1000000), 2)]
+mergeDt[, perMillion := round(count / (population / 1000000), 2)]
+mergeDt[, perMillionDeath := round(death / (population / 1000000), 2)]
+mergeDt[, population := NULL]
 
 for (i in mergeDt$region) {
   mergeDt[region == i]$dischargeDiff <- dischargedDiffSparkline[i][[1]]
