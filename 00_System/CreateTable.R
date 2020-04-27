@@ -41,9 +41,10 @@ provinceSelector <- provinceCode$id
 names(provinceSelector) <- provinceCode$`name-ja`
 
 provinceAttr <- fread(paste0(DATA_PATH, "Signate/prefMaster.csv"))
-provinceAttr[, `都道府県` := gsub("県", "", `都道府県`)]
-provinceAttr[, `都道府県` := gsub("府", "", `都道府県`)]
-provinceAttr[, `都道府県` := gsub("東京都", "東京", `都道府県`)]
+provinceAttr[, 都道府県略称 := 都道府県]
+provinceAttr[, 都道府県略称 := gsub("県", "", 都道府県略称)]
+provinceAttr[, 都道府県略称 := gsub("府", "", 都道府県略称)]
+provinceAttr[, 都道府県略称 := gsub("東京都", "東京", 都道府県略称)]
 # 色設定
 lightRed <- "#F56954"
 middleRed <- "#DD4B39"
@@ -220,11 +221,6 @@ detailSparkLine <- sapply(detailSparkLineDt$都道府県名, function(region) {
   )
 })
 
-# 感染密度
-# for (i in 1:length(total)) {
-#   provinceAttr[names(total[i]) == 都道府県, millianConfirmed :=
-#     (total[i] / (provinceAttr[都道府県 == names(total[i])]$人口 / 1000000))[[1]]]
-# }
 print("二倍時間集計")
 dt <- byDate[, 2:ncol(byDate)]
 halfCount <- colSums(dt) / 2
@@ -257,7 +253,7 @@ mergeDt <- data.table(
 )
 
 mergeDt <- merge(mergeDt, totalDischarged, all.x = T, sort = F)
-signateSub <- provinceAttr[, .(都道府県, 人口)]
+signateSub <- provinceAttr[, .(都道府県略称, 人口)]
 colnames(signateSub) <- c("region", "perMillion")
 mergeDt <- merge(mergeDt, signateSub, all.x = T, sort = F)
 mergeDt[, perMillion := round(count / (perMillion / 1000000), 2)]
@@ -269,13 +265,13 @@ for (i in mergeDt$region) {
 
 # グルーピング
 groupList <- list(
-  "北海道・東北" = provinceAttr[都道府県コード %in% 1:7]$都道府県,
-  "関東" = provinceAttr[都道府県コード %in% 8:14]$都道府県,
-  "中部" = provinceAttr[都道府県コード %in% 15:23]$都道府県,
-  "近畿" = provinceAttr[都道府県コード %in% 24:30]$都道府県,
-  "中国" = provinceAttr[都道府県コード %in% 31:35]$都道府県,
-  "四国" = provinceAttr[都道府県コード %in% 36:39]$都道府県,
-  "九州・沖縄" = provinceAttr[都道府県コード %in% 40:47]$都道府県,
+  "北海道・東北" = provinceAttr[都道府県コード %in% 1:7]$都道府県略称,
+  "関東" = provinceAttr[都道府県コード %in% 8:14]$都道府県略称,
+  "中部" = provinceAttr[都道府県コード %in% 15:23]$都道府県略称,
+  "近畿" = provinceAttr[都道府県コード %in% 24:30]$都道府県略称,
+  "中国" = provinceAttr[都道府県コード %in% 31:35]$都道府県略称,
+  "四国" = provinceAttr[都道府県コード %in% 36:39]$都道府県略称,
+  "九州・沖縄" = provinceAttr[都道府県コード %in% 40:47]$都道府県略称,
   "他" = colnames(byDate)[(ncol(byDate) - 3):ncol(byDate)]
 )
 mergeDt$group = ""
@@ -330,8 +326,9 @@ dt <- data.table(dt)
 mapDt <- dt[!(variable %in% c("クルーズ船", "伊客船", "チャーター便", "検疫職員"))]
 # マップデータ用意
 mapDt <- merge(x = mapDt, y = provinceCode, by.x = "variable", by.y = "name-ja", all = T)
+mapDt <- merge(x = mapDt, y = provinceAttr, by.x = "variable", by.y = "都道府県略称", all = T)
 # 必要なカラムを保存
-mapDt <- mapDt[, .(date, variable, `name-en`, value, regions, lat, lng)]
+mapDt <- mapDt[, .(date, variable, 都道府県, `name-en`, value, regions, lat, lng)]
 # カラム名変更
-colnames(mapDt) <- c("date", "ja", "en", "count", "regions", "lat", "lng")
+colnames(mapDt) <- c("date", "ja", "full_ja", "en", "count", "regions", "lat", "lng")
 fwrite(x = mapDt, file = paste0(DATA_PATH, "result.map.csv"))

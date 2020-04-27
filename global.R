@@ -11,7 +11,6 @@ library(rjson)
 library(htmltools)
 library(leaflet.minicharts)
 library(echarts4r)
-library(echarts4r.maps)
 library(sparkline)
 library(shinyBS)
 
@@ -29,6 +28,15 @@ source(file = paste0(COMPONENT_PATH, "/Main/Tendency.ui.R"), local = T, encoding
 # ====
 # データの読み込み
 # ====
+# マップのソースの読み込み
+japanMap <- jsonlite::read_json(paste0(DATA_PATH, "Echarts/japan.json"))
+# TODO ここで変換せず、ローカルで変換すべき
+japanMap$features <- japanMap$features %>% 
+  purrr::map(function(x){
+    x$properties$name <- x$properties$nam_ja
+    return(x)
+  })
+
 byDate <- fread(paste0(DATA_PATH, "byDate.csv"), header = T)
 byDate[is.na(byDate)] <- 0
 byDate$date <- lapply(byDate[, 1], function(x) {
