@@ -131,9 +131,9 @@ diffSparkline <- sapply(2:ncol(byDate), function(i) {
   # 累計
   cumsumSpk <- sparkline(
     values = cumsumValue,
-    type = "line", 
+    type = "line",
     width = 80,
-    fillColor = F, 
+    fillColor = F,
     lineColor = darkRed,
     tooltipFormat = "<span style='color: {{color}}'>&#9679;</span> 累計{{y}}名"
   )
@@ -154,12 +154,12 @@ dischargedDiffSparkline <- sapply(colnames(byDate)[2:48], function(region) {
   data <- detailByRegion[`都道府県名` == region]
   # 新規
   span <- nrow(data) - dateSpan
-  value <- data$dischargedDiff[ifelse(span < 0, 0, span) : nrow(data)]
+  value <- data$dischargedDiff[ifelse(span < 0, 0, span):nrow(data)]
   # 日付
-  date <- data$日付[ifelse(span < 0, 0, span) : nrow(data)]
+  date <- data$日付[ifelse(span < 0, 0, span):nrow(data)]
   namesSetting <- as.list(date)
   names(namesSetting) <- 0:(length(date) - 1)
-  
+
   if (length(value) > 0) {
     diff <- spk_chr(
       values = value,
@@ -253,10 +253,12 @@ mergeDt <- data.table(
 )
 
 mergeDt <- merge(mergeDt, totalDischarged, all.x = T, sort = F)
-signateSub <- provinceAttr[, .(都道府県略称, 人口)]
-colnames(signateSub) <- c("region", "perMillion")
+signateSub <- provinceAttr[, .(都道府県, 人口)]
+colnames(signateSub) <- c("region", "population")
 mergeDt <- merge(mergeDt, signateSub, all.x = T, sort = F)
-mergeDt[, perMillion := round(count / (perMillion / 1000000), 2)]
+mergeDt[, perMillion := round(count / (population / 1000000), 2)]
+mergeDt[, perMillionDeath := round(death / (population / 1000000), 2)]
+mergeDt[, population := NULL]
 
 for (i in mergeDt$region) {
   mergeDt[region == i]$dischargeDiff <- dischargedDiffSparkline[i][[1]]
@@ -276,7 +278,7 @@ groupList <- list(
 )
 mergeDt$group = ""
 for (i in seq(nrow(mergeDt))) {
-  mergeDt[i]$group <- names(which(lapply(groupList, function(x){mergeDt$region[i] %in% x}) == T))
+  mergeDt[i]$group <- names(which(lapply(groupList, function(x) { mergeDt$region[i] %in% x }) == T))
 }
 
 # 13個特定警戒都道府県

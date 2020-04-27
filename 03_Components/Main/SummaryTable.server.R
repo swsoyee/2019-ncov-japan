@@ -40,10 +40,11 @@ observeEvent(input$switchTableVersion, {
   }
 })
 
+# 退院・死亡表====
 output$dischargeAndDeathByPrefTable <- renderDataTable({
   dt <- totalConfirmedByRegionData()[count > 0]
   # dt <- dt[count > 0]
-  columnName <- c("death")
+  columnName <- c("death", "perMillionDeath")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
 
   breaksDeath <-
@@ -57,10 +58,14 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     ), na.rm = T), 2)
   colorsDischarged <-
     colorRampPalette(c(lightGreen, darkGreen))(length(breaksDischarged) + 1)
+  breaksPerMillion <-
+    seq(0, max(ifelse(is.na(dt$perMillionDeath), 0, dt$perMillionDeath), na.rm = T))
+  colorsPerMillion <-
+    colorRampPalette(c("#FFFFFF", "#6B7989"))(length(breaksPerMillion) + 1)
 
   datatable(
-    data = dt[, c(1, 8, 12, 7, 9, 14), with = F],
-    colnames = c("自治体", "内訳", "退院", "退院推移", "死亡", "カテゴリ"),
+    data = dt[, c(1, 8, 12, 7, 9, 14, 15), with = F],
+    colnames = c("自治体", "内訳", "退院", "退院推移", "死亡", "百万人あたり", "カテゴリ"),
     caption = "最適の見せ方を探しているため、見た目が時々変わります。予めご了承ください。",
     escape = F,
     plugins = "natural",
@@ -71,7 +76,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     ")),
     options = list(
       paging = F,
-      rowGroup = list(dataSrc = 6),
+      rowGroup = list(dataSrc = 7),
       fixedHeader = T,
       dom = "t",
       scrollY = "540px",
@@ -91,8 +96,13 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
           targets = c(2, 3, 5)
         ),
         list(
-          visible = F,
+          className = "dt-center",
+          width = "20%",
           targets = 6
+        ),
+        list(
+          visible = F,
+          targets = 7
         ),
         list(
           width = "15%",
@@ -129,6 +139,11 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
       columns = "death",
       color = styleInterval(breaksDeath, colorsDeath),
       fontWeight = "bold"
+    ) %>%
+    formatStyle(
+      columns = "perMillionDeath",
+      backgroundColor = styleInterval(breaksPerMillion, colorsPerMillion),
+      fontWeight = "bold"
     )
 })
 
@@ -159,7 +174,7 @@ output$summaryByRegion <- renderDataTable({
     colorRampPalette(c("white", lightNavy))(length(breaksDeath) + 1)
 
   datatable(
-    data = dt[, c(1, 3, 4, 6:9, 14), with = F],
+    data = dt[, c(1, 3, 4, 6:9, 15), with = F],
     colnames = c("自治体", "新規", "感染者数", "新規感染", "新規退院", "内訳", "死亡", "カテゴリ"),
     caption = "最適の見せ方を探しているため、見た目が時々変わります。予めご了承ください。",
     escape = F,
@@ -270,6 +285,7 @@ output$summaryByRegion <- renderDataTable({
   #   backgroundPosition = 'center')
 })
 
+# 感染表====
 output$confirmedByPrefTable <- renderDataTable({
   # 感染情報だけを表示
   # dt <- dt[count > 0] # TEST
@@ -296,8 +312,8 @@ output$confirmedByPrefTable <- renderDataTable({
     colorRampPalette(c("#FFFFFF", darkRed))(length(breaksPerMillion) + 1)
 
   datatable(
-    data = dt[, c(1, 3, 4, 6, 11, 13, 14), with = F],
-    colnames = c("自治体", "新規", "感染者数", "感染推移", "倍増日数", "百万人当たり", "カテゴリ"),
+    data = dt[, c(1, 3, 4, 6, 11, 13, 15), with = F],
+    colnames = c("自治体", "新規", "感染者数", "感染推移", "倍増日数", "百万人あたり", "カテゴリ"),
     escape = F,
     caption = "最適の見せ方を探しているため、見た目が時々変わります。予めご了承ください。",
     # extensions = c("Responsive"),
