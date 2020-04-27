@@ -21,7 +21,7 @@ output$echartsSimpleMap <- renderEcharts4r({
   yesterday <- as.Date(today) - 1
   totalData <- mapDt[date == today]
   yesterdayData <- mapDt[date == yesterday]
-  dt <- merge(x = totalData, y = yesterdayData, by = c("ja", "en", "lat", "lng", "regions"), no.dups = T)
+  dt <- merge(x = totalData, y = yesterdayData, by = c("ja", "full_ja", "en", "lat", "lng", "regions"), no.dups = T)
   dt[, diff := (count.x - count.y)]
   # 本日増加分
   todayTotalIncreaseNumber <- sum(dt$diff, na.rm = T)
@@ -34,15 +34,12 @@ output$echartsSimpleMap <- renderEcharts4r({
     )
   }
 
-  nameMap <- as.list(dt$ja)
-  names(nameMap) <- dt$en
   map <- dt %>%
-    e_charts(ja) %>%
-    em_map("Japan") %>%
+    e_charts(full_ja) %>%
+    e_map_register("japan", japanMap) %>%
     e_map(count.x,
-      map = "Japan",
+      map = "japan",
       name = "感染確認数",
-      nameMap = nameMap,
       layoutSize = "50%",
       center = c(137.1374062, 36.8951298),
       zoom = 1.5,
@@ -114,9 +111,6 @@ output$echartsSimpleMap <- renderEcharts4r({
 output$echartsMap <- renderEcharts4r({
   mapDt <- cumSumConfirmedByDateAndRegion()
   # mapDt <- mapData # TEST
-  # 時系列用都道府県名前
-  nameMap <- as.list(mapDt$ja)
-  names(nameMap) <- mapDt$en
   newByDate <- rowSums(byDate[date >= input$mapDateRange[1] & date <= input$mapDateRange[2], 2:48])
   provinceCountByDate <- rowSums(
     byDate[date >= input$mapDateRange[1] & date <= input$mapDateRange[2], 2:48] != 0
@@ -206,12 +200,11 @@ output$echartsMap <- renderEcharts4r({
 
   map <- mapDt %>%
     group_by(date) %>%
-    e_charts(ja, timeline = T) %>%
-    em_map("Japan") %>%
+    e_charts(full_ja, timeline = T) %>%
+    e_map_register("japan", japanMap) %>%
     e_map(count,
-      map = "Japan",
+      map = "japan",
       name = "感染確認数",
-      nameMap = nameMap,
       layoutSize = "50%",
       center = c(137.1374062, 36.8951298),
       zoom = 1.5,
