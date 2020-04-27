@@ -34,5 +34,10 @@ output$confirmedHeatmap <- renderEcharts4r({
       symbol = "circle", symbolSize = 4) %>%
     e_grid(right = "8%", bottom = "15%", left = "2%") %>%
     e_title(text = "日次都道府県別新規発生数") %>%
-    e_tooltip()
+    e_tooltip(formatter = htmlwidgets::JS("
+      function(params) {
+        console.log(params)
+        return(`${params.value[0]}<br>${params.value[1]}：${Math.round(params.value[2])}日`)
+      }
+    "))
 })
