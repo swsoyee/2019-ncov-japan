@@ -253,7 +253,7 @@ mergeDt <- data.table(
 )
 
 mergeDt <- merge(mergeDt, totalDischarged, all.x = T, sort = F)
-signateSub <- provinceAttr[, .(都道府県, 人口)]
+signateSub <- provinceAttr[, .(都道府県略称, 人口)]
 colnames(signateSub) <- c("region", "population")
 mergeDt <- merge(mergeDt, signateSub, all.x = T, sort = F)
 mergeDt[, perMillion := round(count / (population / 1000000), 2)]
