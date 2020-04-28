@@ -51,7 +51,8 @@ fluidPage(
                        status = "danger"
                      ),
                      style = "margin-top:5px;"
-                   )
+                   ),
+                   uiOutput("confirmedHeatmapDoublingTimeOptions")
             )
           )
         ),

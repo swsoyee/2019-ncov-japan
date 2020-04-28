@@ -115,3 +115,13 @@ output$confirmedHeatmapWrapper <- renderUI({
     echarts4rOutput("confirmedHeatmapDoublingTime", height = "600px")
   }
 })
+
+output$confirmedHeatmapDoublingTimeOptions <- renderUI({
+  if (input$confirmedHeatmapSelector == "confirmedHeatmapDoublingTime") {
+    tagList(
+      tags$p("日数の計算式は以下になります："),
+      withMathJax("$$7log2 \\div log(\\frac{day_7N}{day_0N})$$"),
+      helpText("N：累積感染者数")
+    )
+  }
+})
