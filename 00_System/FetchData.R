@@ -33,9 +33,19 @@ fwrite(x = kenmoAreaDataset, file = paste0(DATA_PATH, "Kenmo/confirmedNumberByCi
 # ====SIGNATEデータ====
 # signatePlace <- gsheet2tbl('docs.google.com/spreadsheets/d/1CnQOf6eN18Kw5Q6ScE_9tFoyddk4FBwFZqZpt_tMOm4/edit#gid=103322372')
 # fwrite(x = signatePlace, file = paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 接触場所マスタ.csv'))
-#
-# signateDetail <- gsheet2tbl('https://docs.google.com/spreadsheets/d/1CnQOf6eN18Kw5Q6ScE_9tFoyddk4FBwFZqZpt_tMOm4/edit#gid=0')
-# fwrite(x = signateDetail, file = paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者.csv'))
+
+Update.Signate.Detail <- function(update = F) {
+  if (update) {
+    signateDetail <- gsheet2tbl('https://docs.google.com/spreadsheets/d/10MFfRQTblbOpuvOs_yjIYgntpMGBg592dL8veXoPpp4/edit#gid=0')
+    signateDetail <- data.table(signateDetail)
+    fwrite(x = signateDetail, file = paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者.csv'))
+    # 都道府県、公表日、性別、年齢====
+    source(file = "02_Utils/ConfirmedPyramidData.R")
+    fwrite(x = Signate.ConfirmedPyramidData(signateDetail), file = paste0(DATA_PATH, "Generated/genderAgeData"))
+  }
+}
+Update.Signate.Detail(update = F)
+
 #
 # signateLink <- gsheet2tbl('https://docs.google.com/spreadsheets/d/1CnQOf6eN18Kw5Q6ScE_9tFoyddk4FBwFZqZpt_tMOm4/edit#gid=57719256')
 # fwrite(x = signateLink, file = paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者関係.csv'))
