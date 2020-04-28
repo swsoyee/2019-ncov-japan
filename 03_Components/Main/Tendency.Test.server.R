@@ -65,7 +65,7 @@ output$pcrLine <- renderEcharts4r({
       splitLine = list(lineStyle = list(opacity = 0.2)),
       z = 999,
       axisLabel = list(inside = T),
-      min = -5000,
+      # min = -5000,
       axisTick = list(show = F)
     ) %>%
     e_y_axis(
@@ -88,6 +88,9 @@ output$pcrLine <- renderEcharts4r({
       left = "18%",
       top = "15%",
       right = "15%"
+    ) %>%
+    e_legend_unselect(
+      name = "累積"
     ) %>%
     e_tooltip(trigger = "axis") %>%
     e_title(text = "日次新規・累積検査人数の推移") %>%

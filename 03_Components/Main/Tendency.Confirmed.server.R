@@ -212,10 +212,13 @@ output$confirmedLine <- renderEcharts4r({
       ) %>%
       e_title(text = "日次新規・累積陽性者の推移") %>%
       e_legend_unselect(
-        name = "５日移動平均（新規）"
+        name = "累積"
       ) %>%
       e_legend_unselect(
-        name = "週間移動平均（新規）"
+        name = "５日移動平均"
+      ) %>%
+      e_legend_unselect(
+        name = "３日移動平均"
       ) %>%
       e_legend(
         type = "scroll",

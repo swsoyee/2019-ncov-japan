@@ -35,7 +35,7 @@ tabPanel(
             label = "移動平均時間間隔",
             min = 1,
             max = 10,
-            value = 4,
+            value = 7,
             ticks = F,
             step = 1,
             post = "日"
