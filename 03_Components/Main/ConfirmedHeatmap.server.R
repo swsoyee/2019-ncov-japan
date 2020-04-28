@@ -1,3 +1,4 @@
+# 日次都道府県別新規発生数 ====
 output$confirmedHeatmap <- renderEcharts4r({
   data <- melt(byDate, id.vars = "date")
   data[variable %in% colnames(byDate)[2:48]] %>%
@@ -27,11 +28,14 @@ output$confirmedHeatmap <- renderEcharts4r({
     ) %>%
     e_datazoom(startValue = max(data$date, na.rm = T) - 70) %>%
     e_mark_line(
-      data = list(xAxis = "2020-04-07",
-                  label = list(formatter = "4月7日\n緊急事態宣言", position = "start")),
-      lineStyle = list(opacity = 0.5), 
+      data = list(
+        xAxis = "2020-04-07",
+        label = list(formatter = "4月7日\n緊急事態宣言", position = "start")
+      ),
+      lineStyle = list(opacity = 0.5),
       silent = T,
-      symbol = "circle", symbolSize = 4) %>%
+      symbol = "circle", symbolSize = 4
+    ) %>%
     e_grid(right = "8%", bottom = "15%", left = "2%") %>%
     e_title(text = "日次都道府県別新規発生数") %>%
     e_tooltip(formatter = htmlwidgets::JS("
@@ -40,4 +44,74 @@ output$confirmedHeatmap <- renderEcharts4r({
         return(`${params.value[0]}<br>${params.value[1]}：${Math.round(params.value[2])}日`)
       }
     "))
+})
+
+# 倍加時間の経時的変化====
+output$confirmedHeatmapDoublingTime <- renderEcharts4r({
+  dt <- byDate[, lapply(.SD, cumsum), .SDcols = 2:ncol(byDate)]
+
+  dt <- dt[, lapply(.SD, function(x) {
+    7 * log(2) / (log(x / shift(x, n = 7)))
+  })]
+  dt$date <- byDate$date
+
+  dt <- melt(dt, id.vars = "date")
+  dt[variable %in% colnames(byDate)[2:48]] %>%
+    e_chart(date) %>%
+    e_heatmap(variable, value,
+      label = list(show = T, fontSize = 5, formatter = htmlwidgets::JS("
+              function(params) {
+                return(Math.round(Number(params.value[2])))
+              }
+          ")),
+      itemStyle = list(borderWidth = 1, borderColor = "rgb(255, 255, 255, 0.2)")
+    ) %>%
+    e_visual_map(
+      value,
+      inRange = list(color = c("white", darkRed, middleRed, middleYellow, lightYellow, "#F6F7FA")),
+      type = "piecewise",
+      splitList = list(
+        list(min = 12),
+        list(min = 7, max = 12),
+        list(min = 5, max = 7),
+        list(min = 3, max = 5),
+        list(min = 0, max = 3),
+        list(value = 0)
+      ),
+      orient = "horizontal",
+      top = "5%",
+      left = "1%"
+    ) %>%
+    e_y_axis(
+      position = "right",
+      axisLabel = list(fontSize = 8, interval = 0),
+      axisTick = list(show = F),
+      inverse = T
+    ) %>%
+    e_datazoom(startValue = max(dt$date, na.rm = T) - 70) %>%
+    e_mark_line(
+      data = list(
+        xAxis = "2020-04-07",
+        label = list(formatter = "4月7日\n緊急事態宣言", position = "start")
+      ),
+      lineStyle = list(opacity = 0.5),
+      silent = T,
+      symbol = "circle", symbolSize = 4
+    ) %>%
+    e_grid(right = "8%", bottom = "15%", left = "2%") %>%
+    e_title(text = paste0("倍加時間の経時的変化(直近", 7, "日間で計算)")) %>%
+    e_tooltip(formatter = htmlwidgets::JS("
+      function(params) {
+        console.log(params)
+        return(`${params.value[0]}<br>${params.value[1]}：${Math.round(params.value[2])}日`)
+      }
+    "))
+})
+
+output$confirmedHeatmapWrapper <- renderUI({
+  if (input$confirmedHeatmapSelector == "confirmedHeatmap") {
+    echarts4rOutput("confirmedHeatmap", height = "600px")
+  } else if (input$confirmedHeatmapSelector == "confirmedHeatmapDoublingTime") {
+    echarts4rOutput("confirmedHeatmapDoublingTime", height = "600px")
+  }
 })

@@ -38,10 +38,20 @@ fluidPage(
           title = tagList(icon("th"), "感染者数ヒートマップ"),
           fluidRow(
             column(width = 9,
-                   echarts4rOutput("confirmedHeatmap", height = "600px") %>% withSpinner()
+                   uiOutput("confirmedHeatmapWrapper") %>% withSpinner(proxy.height = "600px")
             ),
             column(width = 3,
-                   # 実装中
+                   tags$div(
+                     radioGroupButtons(
+                       inputId = "confirmedHeatmapSelector",
+                       label = "ヒートマップ選択",
+                       size = "sm", justified = T,
+                       choices = list("日次新規" = "confirmedHeatmap",
+                                      "倍加時間" = "confirmedHeatmapDoublingTime"), 
+                       status = "danger"
+                     ),
+                     style = "margin-top:5px;"
+                   )
             )
           )
         ),
