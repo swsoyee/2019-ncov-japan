@@ -1,12 +1,10 @@
 library(data.table)
-# library(gsheet)
 
 source(file = "01_Settings/Path.R", local = T, encoding = "UTF-8")
-signateDetailUrl <- "https://docs.google.com/spreadsheets/d/10MFfRQTblbOpuvOs_yjIYgntpMGBg592dL8veXoPpp4/edit#gid=0"
-data <- data.table(gsheet2tbl(signateDetailUrl))
+data <- fread(paste0(DATA_PATH, "SIGNATE COVID-2019 Dataset - 罹患者.csv"))
 
 dt <- data[
-  !is.na(受診都道府県) & !is.na(発症日) & !is.na(確定日),
+  !is.na(受診都道府県) & 発症日 != "" & 確定日 != "",
   .(受診都道府県, 発症日 = as.Date(発症日), 確定日 = as.Date(確定日))
 ]
 
