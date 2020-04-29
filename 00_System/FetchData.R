@@ -41,10 +41,10 @@ Update.Signate.Detail <- function(update = F) {
     fwrite(x = signateDetail, file = paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者.csv'))
     # 都道府県、公表日、性別、年齢====
     source(file = "02_Utils/ConfirmedPyramidData.R")
-    fwrite(x = Signate.ConfirmedPyramidData(signateDetail), file = paste0(DATA_PATH, "Generated/genderAgeData"))
+    fwrite(x = Signate.ConfirmedPyramidData(signateDetail), file = paste0(DATA_PATH, "Generated/genderAgeData.csv"))
   }
 }
-Update.Signate.Detail(update = F)
+# Update.Signate.Detail(update = T)
 
 #
 # signateLink <- gsheet2tbl('https://docs.google.com/spreadsheets/d/1CnQOf6eN18Kw5Q6ScE_9tFoyddk4FBwFZqZpt_tMOm4/edit#gid=57719256')

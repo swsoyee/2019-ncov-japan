@@ -1,14 +1,20 @@
 output$genderBar <- renderEcharts4r({
-  dt <- ConfirmedPyramidData(positiveDetail)
-  maleCount <- sum(dt$count.男性)
-  femaleCount <- sum(dt$count.女性)
-  totalCount <- maleCount + femaleCount
-  dt[, count.男性 := -count.男性]
-  dt %>%
-    e_chart(年齢) %>%
-    e_bar(count.男性, stack = "1", name = "男性", itemStyle = list(color = darkNavy)) %>%
-    e_bar(count.女性, stack = "1", name = "女性", itemStyle = list(color = middleRed)) %>%
-    e_x_axis(axisTick = list(show = F)) %>%
+  dt <- GLOBAL_VALUE$signateDetail.ageGenderData
+
+  dt[年代 == "", 年代 := "不明"] # TODO データ作成時処理すべき
+
+  forPlot <- reshape(dt[, .(人数 = .N), by = c("年代", "性別")], idvar = "年代", timevar = "性別", direction = "wide")[order(年代)][, male_minus := -人数.男性]
+
+  maleCount <- sum(forPlot$人数.男性, na.rm = T)
+  femaleCount <- sum(forPlot$人数.女性, na.rm = T)
+  unknownCount <- sum(forPlot$人数.不明, na.rm = T)
+  totalCount <- maleCount + femaleCount + unknownCount
+
+  forPlot %>%
+    e_chart(年代) %>%
+    e_bar(male_minus, stack = "1", name = "男性", itemStyle = list(color = darkNavy)) %>%
+    e_bar(人数.女性, stack = "1", name = "女性", itemStyle = list(color = middleRed)) %>%
+    e_x_axis(axisTick = list(show = F), axisLabel = list(inside = T)) %>%
     e_labels(position = "inside", formatter = htmlwidgets::JS("
       function(params) {
         let count = params.value[0]
@@ -40,13 +46,14 @@ output$genderBar <- renderEcharts4r({
     e_title(
       text = paste0(
         "男性：", maleCount, "人 (", round(maleCount / totalCount * 100, 2),
-        "%), 女性：", femaleCount, "人 (", round(femaleCount / totalCount * 100, 2),
-        "%), 計：", totalCount, "人"
+        "%)、女性：", femaleCount, "人 (", round(femaleCount / totalCount * 100, 2),
+        "%)\n不明：", unknownCount, "人 (", round(unknownCount / totalCount * 100, 2),
+        "%)、計：", totalCount, "人"
       ),
+      subtext = paste0("集計時間：", max(dt$公表日)),
       textStyle = list(fontSize = 11),
-      subtext = "性別、年齢不明および発表なしの感染者が含まれていませんのでご注意ください。",
       subtextStyle = list(fontSize = 9)
     ) %>%
     e_legend(top = "15%", right = "5%", selectedMode = F, orient = "vertical") %>%
-    e_grid(bottom = "0%", right = "0%", left = "18%")
+    e_grid(bottom = "0%", right = "0%", left = "0px")
 })

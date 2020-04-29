@@ -7,18 +7,18 @@ Component.ComfirmedPyramid <- function() {
     collapsible = T,
     collapsed = T,
     # 集計時間：
-    label_text = paste(lang[[langCode]][123], max(as.Date(
-      positiveDetail$発表日
-    ), na.rm = T)),
+    # label_text = paste(lang[[langCode]][123], max(as.Date(
+    #   positiveDetail$発表日
+    # ), na.rm = T)),
     echarts4rOutput("genderBar") %>% withSpinner(),
     closable = F,
     # データ提供：
     footer = tags$small(
       lang[[langCode]][125],
       # @kenmo_economics
-      tags$a(icon("twitter"), lang[[langCode]][126],
+      tags$a(icon("database"), "SIGNATE COVID-19 Dataset",
         # https://twitter.com/kenmo_economics
-        href = lang[[langCode]][127]
+        href = "https://drive.google.com/drive/folders/1EcVW5JQKMB6zoyfHm8_zLVj---t_hccF"
       )
     )
   )

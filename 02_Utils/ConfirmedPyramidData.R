@@ -69,7 +69,7 @@ ConfirmedPyramidData <- function(data) {
 Signate.ConfirmedPyramidData <- function(signateDetail) {
   ageGenderData <- signateDetail[!is.na(公表日), .(公表日, 受診都道府県, 年代, 性別)]
   ageConverterList <- list(
-    "10歳未満" = "0 - 9",
+    "00代" = "0 - 9",
     "10代" = "10 - 19",
     "20代" = "20 - 29",
     "30代"= "30 - 39",
@@ -78,12 +78,12 @@ Signate.ConfirmedPyramidData <- function(signateDetail) {
     "60代" = "60 - 69",
     "70代" = "70 - 79",
     "80代" = "80 - 89",
-    "90代以上" = "90 -",
+    "> 90代" = "90 -",
     "不明" = "非公表"
   )
   ageGenderData[, 年代 := lapply(年代, function(x) {
     return(names(ageConverterList[ageConverterList %in% x]))
-  })]
+  })] # TODO 戻り値はListになっている？
   ageGenderData[, 性別 := lapply(性別, function(x) {
     if(grepl("男", x)) {
       return("男性")
@@ -93,7 +93,7 @@ Signate.ConfirmedPyramidData <- function(signateDetail) {
       return("不明")
     }
   })]
-  ageGenderData[is.na(年代), 年代 := "不明"]
+  ageGenderData[is.na(年代), 年代 := "不明"] # TODO 戻り値はListになっているから設定無効になっている
   ageGenderData[is.na(性別), 性別 := "不明"]
   return(ageGenderData)
 }
