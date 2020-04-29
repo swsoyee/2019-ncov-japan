@@ -1,7 +1,7 @@
 output$genderBar <- renderEcharts4r({
-  if (!is.null(input$ageGenderOptionRegion)) {
+  if (!is.null(input$ageGenderOptionRegion) & !is.null(input$ageGenderOptionDateRange)) {
     dt <- GLOBAL_VALUE$signateDetail.ageGenderData
-
+    updateDay <- max(dt$公表日, na.rm = T)
     dt[年代 == "", 年代 := "不明"] # TODO データ作成時処理すべき
     # 性別・年代マスター作成
     genderAgeMaster <- data.table(
@@ -12,7 +12,8 @@ output$genderBar <- renderEcharts4r({
     if (input$ageGenderOptionRegion != "全国") {
       dt <- dt[受診都道府県 %in% input$ageGenderOptionRegion]
     }
-    updateDay <- max(dt$公表日, na.rm = T)
+    dt <- dt[公表日 >= input$ageGenderOptionDateRange[1] & 公表日 <= input$ageGenderOptionDateRange[2]]
+
     dt <- merge(genderAgeMaster, dt[, .(人数 = .N), by = c("年代", "性別")], all.x = T)
     dt[is.na(人数), 人数 := 0]
     forPlot <- reshape(dt, idvar = "年代", timevar = "性別", direction = "wide")[order(年代)][, male_minus := -人数.男性]
@@ -79,6 +80,17 @@ output$ageGenderOption <- renderUI({
       inputId = "ageGenderOptionRegion",
       label = "都道府県",
       choices = c("全国", region)
+    ),
+    dateRangeInput(
+      "ageGenderOptionDateRange",
+      label = "公表日",
+      start = min(GLOBAL_VALUE$signateDetail.ageGenderData$公表日, na.rm = T),
+      end = Sys.Date(),
+      min = min(GLOBAL_VALUE$signateDetail.ageGenderData$公表日, na.rm = T),
+      max = Sys.Date(),
+      separator = " - ",
+      format = "yyyy年m月d日",
+      language = "ja"
     )
   )
 })
