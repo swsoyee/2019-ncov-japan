@@ -310,12 +310,17 @@ output$confirmedByPrefTable <- renderDataTable({
     seq(0, max(ifelse(is.na(dt$perMillion), 0, dt$perMillion), na.rm = T))
   colorsPerMillion <-
     colorRampPalette(c("#FFFFFF", darkRed))(length(breaksPerMillion) + 1)
+  
+  breaksPerArea <-
+    seq(0, max(ifelse(is.na(dt$perArea), 0, dt$perArea), na.rm = T))
+  colorsPerArea <-
+    colorRampPalette(c(darkYellow, "#FFFFFF"))(length(breaksPerArea) + 1)
 
   datatable(
-    data = dt[, c(1, 3, 4, 6, 11, 13, 15), with = F],
-    colnames = c("自治体", "新規", "感染者数", "感染推移", "倍増日数", "百万人あたり", "カテゴリ"),
+    data = dt[, c(1, 3, 4, 6, 11, 13, 15, 16), with = F],
+    colnames = c("自治体", "新規", "感染者数", "感染推移", "倍加日数", "百万人あたり", "カテゴリ", "感染密度(km)"),
     escape = F,
-    caption = "最適の見せ方を探しているため、見た目が時々変わります。予めご了承ください。",
+    caption = "感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。",
     # extensions = c("Responsive"),
     extensions = 'RowGroup',
     callback = htmlwidgets::JS(paste0("
@@ -331,7 +336,7 @@ output$confirmedByPrefTable <- renderDataTable({
         list(
           className = "dt-center",
           width = "15%",
-          targets = c(3, 4, 5)
+          targets = c(3, 4)
         ),
         list(
           className = "dt-left",
@@ -340,8 +345,8 @@ output$confirmedByPrefTable <- renderDataTable({
         ),
         list(
           className = "dt-center",
-          width = "20%",
-          targets = c(4, 6)
+          width = "13%",
+          targets = c(5, 6, 8)
         ),
         list(
           width = "30px",
@@ -414,6 +419,11 @@ output$confirmedByPrefTable <- renderDataTable({
     formatStyle(
       columns = "perMillion",
       backgroundColor = styleInterval(breaksPerMillion, colorsPerMillion),
+      fontWeight = "bold"
+    ) %>%
+    formatStyle(
+      columns = "perArea",
+      backgroundColor = styleInterval(breaksPerArea, colorsPerArea),
       fontWeight = "bold"
     )
 })
