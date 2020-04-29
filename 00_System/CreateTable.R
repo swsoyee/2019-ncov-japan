@@ -281,6 +281,18 @@ for (i in seq(nrow(mergeDt))) {
   mergeDt[i]$group <- names(which(lapply(groupList, function(x) { mergeDt$region[i] %in% x }) == T))
 }
 
+# 面積あたりの感染者数
+area <- fread(paste0(DATA_PATH, "Collection/area.csv"))
+area[, 都道府県略称 := 都道府県]
+area[, 都道府県略称 := gsub("県", "", 都道府県略称)]
+area[, 都道府県略称 := gsub("府", "", 都道府県略称)]
+area[, 都道府県略称 := gsub("東京都", "東京", 都道府県略称)]
+
+mergeDt <- merge(mergeDt, area, by.x = "region", by.y = "都道府県略称", all.x = T, no.dups = T, sort = F)
+mergeDt[, perArea := round(sqrt(可住地面積 / count), 2)]
+
+mergeDt[, `:=` (コード = NULL, 都道府県 = NULL, 可住地面積 = NULL, 可住地面積割合 = NULL, 宅地面積 = NULL, 宅地面積割合 = NULL)]
+
 # 13個特定警戒都道府県
 alertPref <-
   c(
