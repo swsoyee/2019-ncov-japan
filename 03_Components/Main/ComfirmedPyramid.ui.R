@@ -10,7 +10,8 @@ Component.ComfirmedPyramid <- function() {
     # label_text = paste(lang[[langCode]][123], max(as.Date(
     #   positiveDetail$発表日
     # ), na.rm = T)),
-    echarts4rOutput("genderBar") %>% withSpinner(),
+    uiOutput("ageGenderOption"),
+    echarts4rOutput("genderBar"),
     closable = F,
     # データ提供：
     footer = tags$small(
