@@ -27,9 +27,8 @@ output$echartsSimpleMap <- renderEcharts4r({
   todayTotalIncreaseNumber <- sum(dt$diff, na.rm = T)
   subText <- i18n$t("各都道府県からの新規報告なし")
   if (todayTotalIncreaseNumber > 0) {
-    subText <- paste0(
-      "発表がある", sum(dt$diff > 0), "都道府県合計新規", todayTotalIncreaseNumber,
-      "人, 合計", sum(dt$count.x, na.rm = T), "人\n\n",
+    subText <- paste0(sprintf(i18n$t("発表がある%s都道府県合計新規%s人, 合計%s人\n\n"),
+      sum(dt$diff > 0), todayTotalIncreaseNumber, sum(dt$count.x, na.rm = T)),
       i18n$t("※こちらの合計値には空港検疫、チャーター便、\n　クルーズ関連の事例などは含まれていない。")
     )
   }
@@ -122,9 +121,8 @@ output$echartsMap <- renderEcharts4r({
   timeSeriesTitle <- lapply(seq_along(dateSeq), function(i) {
     subText <- i18n$t("各都道府県からの新規報告なし")
     if (provinceCountByDate[i] > 0) {
-      subText <- paste0(
-        "発表がある", provinceCountByDate[i], "都道府県合計新規", newByDate[i],
-        "人, 合計", sumByDay[date == dateSeq[i]]$sumByDay, "人"
+      subText <- sprintf(i18n$t("発表がある%s都道府県合計新規%s人, 合計%s人\n\n"),
+        provinceCountByDate[i], newByDate[i], sumByDay[date == dateSeq[i]]$sumByDay
       )
     }
     return(
