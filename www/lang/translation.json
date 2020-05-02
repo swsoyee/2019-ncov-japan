@@ -440,6 +440,46 @@
       "ja": "発表がある%s都道府県合計新規%s人, 合計%s人\n\n",
       "cn": "今日收到来自%s个省份的报告共新增%s人，总计%s人\n\n",
       "en": "Announcements from %s prefectures\ntotal new %s confirmed, accumulated total %s confirmed\n\n"
+    },
+    {
+      "ja": "北海道・東北",
+      "cn": "北海道・东北",
+      "en": "Hokkaido & Tohoku"
+    },
+    {
+      "ja": "関東",
+      "cn": "关东",
+      "en": "Kanto"
+    },
+    {
+      "ja": "中部",
+      "cn": "中部",
+      "en": "Chubu"
+    },
+    {
+      "ja": "近畿",
+      "cn": "近畿",
+      "en": "Kinki"
+    },
+    {
+      "ja": "中国",
+      "cn": "中国",
+      "en": "Chugoku"
+    },
+    {
+      "ja": "四国",
+      "cn": "四国",
+      "en": "Shikoku"
+    },
+    {
+      "ja": "九州・沖縄",
+      "cn": "九州・冲绳",
+      "en": "Kyushu & Okinawa"
+    },
+    {
+      "ja": "他",
+      "cn": "其他",
+      "en": "Other"
     }
   ]
 }
