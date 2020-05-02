@@ -7,9 +7,9 @@ source(
 shinyUI(
   dashboardPagePlus(
     skin = "red",
-    title = lang[[langCode]][1],
+    title = i18n$t("新　型　コ　ロ　ナ　ウ　イ　ル　ス　感　染　速　報"),
     header = dashboardHeaderPlus(
-      title = paste0("🦠　", lang[[langCode]][1]),
+      title = paste0("🦠　", i18n$t("新　型　コ　ロ　ナ　ウ　イ　ル　ス　感　染　速　報")),
       titleWidth = 600,
       dropdownMenu(
         type = "notifications",
@@ -30,68 +30,63 @@ shinyUI(
     sidebar = dashboardSidebar(sidebarMenu(
       id = "sideBarTab",
       menuItem(
-        # 感染速報
-        lang[[langCode]][32],
+        i18n$t("感染速報"),
         tabName = "japan",
         icon = icon("tachometer-alt"),
-        badgeLabel = "更新中",
+        badgeLabel = i18n$t("実況中"),
         badgeColor = "red"
       ),
       menuItem(
-        # 感染ルート
-        "感染ルート",
+        i18n$t("感染ルート"),
         tabName = "route",
         icon = icon("project-diagram"),
-        badgeLabel = "開発中",
+        badgeLabel = i18n$t("開発中"),
         badgeColor = "black"
       ),
       menuItem(
-        # 自治体状況
-        "自治体状況",
+        i18n$t("自治体状況"),
         tabName = "prefStatus",
         icon = icon("city"),
         menuSubItem(
-          text = "北海道",
+          text = i18n$t("北海道"),
           tabName = "hokkaido",
           icon = icon("fish")
         ),
         menuSubItem(
-          text = "青森県",
+          text = i18n$t("青森県"),
           tabName = "aomori",
           icon = icon("apple-alt")
         ),
         menuSubItem(
-          text = "岩手県",
+          text = i18n$t("岩手県"),
           tabName = "iwate" # ,
           # icon = icon('apple-alt')
         ),
         menuSubItem(
-          text = "宮城県",
+          text = i18n$t("宮城県"),
           tabName = "miyagi" # ,
           # icon = icon('apple-alt')
         ),
         menuSubItem(
-          text = "茨城県",
+          text = i18n$t("茨城県"),
           tabName = "ibaraki" # ,
           # icon = icon('apple-alt')
         ),
         menuSubItem(
-          text = "神奈川県",
+          text = i18n$t("神奈川県"),
           tabName = "kanagawa" # ,
           # icon = icon('apple-alt')
         )
       ),
       menuItem(
-        # 事例マップ
-        lang[[langCode]][33],
+        i18n$t("事例マップ"),
         tabName = "caseMap",
         icon = icon("map-marked-alt"),
-        badgeLabel = "破棄中",
+        badgeLabel = i18n$t("破棄"),
         badgeColor = "black"
       ),
       menuItem(
-        # 状況分析
-        "状況分析",
+        i18n$t("状況分析"),
         tabName = "academic",
         icon = icon("eye"),
         badgeLabel = "V 0.1",
@@ -99,28 +94,20 @@ shinyUI(
       ),
       menuItem(
         # Google
-        "自粛効果",
+        i18n$t("自粛効果"),
         tabName = "google",
         icon = icon("google"),
         badgeLabel = "V 0.1",
         badgeColor = "black"
       ),
       menuItem(
-        # アプリについて
-        lang[[langCode]][67],
+        i18n$t("サイトについて"),
         tabName = "about",
         icon = icon("readme"),
-        badgeLabel = "追加中",
+        badgeLabel = i18n$t("開発中"),
         badgeColor = "black"
       )
     )),
-    # TODO 追加修正待ち
-    # rightsidebar = rightSidebar(
-    #   background = "dark",
-    #   selectInput(inputId = 'language',
-    #               label = lang[[langCode]][24], # 言語
-    #               choices = languageSet)
-    # ),
     dashboardBody(
       tags$head(
         tags$link(rel = "icon", href = "favicon.ico"),

@@ -2,6 +2,91 @@
   "languages": ["ja", "cn", "en"],
   "translation": [
     {
+      "ja": "新　型　コ　ロ　ナ　ウ　イ　ル　ス　感　染　速　報",
+      "cn": "新　型　冠　状　病　毒　疫　情　快　报",
+      "en": "C O V I D - 1 9　N e w s　F l a s h　i n　J a p a n"
+    },
+    {
+      "ja": "実況中",
+      "cn": "直播中",
+      "en": "Live"
+    },
+    {
+      "ja": "開発中",
+      "cn": "开发中",
+      "en": "Dev"
+    },
+    {
+      "ja": "感染速報",
+      "cn": "疫情快报",
+      "en": "News Flash"
+    },
+    {
+      "ja": "感染ルート",
+      "cn": "感染路线",
+      "en": "Infection Route"
+    },
+    {
+      "ja": "自治体状況",
+      "cn": "各省情况",
+      "en": "Prefecture"
+    },
+    {
+      "ja": "北海道",
+      "cn": "北海道",
+      "en": "Hokkaido"
+    },
+    {
+      "ja": "青森県",
+      "cn": "青森县",
+      "en": "Aomori"
+    },
+    {
+      "ja": "岩手県",
+      "cn": "岩手县",
+      "en": "Iwate"
+    },
+    {
+      "ja": "宮城県",
+      "cn": "宫城县",
+      "en": "Miyagi"
+    },
+    {
+      "ja": "茨城県",
+      "cn": "茨城县",
+      "en": "Ibaraki"
+    },
+    {
+      "ja": "神奈川県",
+      "cn": "神奈川县",
+      "en": "Kanagawa"
+    },
+    {
+      "ja": "事例マップ",
+      "cn": "案例地图",
+      "en": "Case Map"
+    },
+    {
+      "ja": "破棄",
+      "cn": "归档",
+      "en": "Archive"
+    },
+    {
+      "ja": "状況分析",
+      "cn": "综合分析",
+      "en": "Analysis"
+    },
+    {
+      "ja": "自粛効果",
+      "cn": "行动限制成效",
+      "en": "Self-restraint Effect"
+    },
+    {
+      "ja": "サイトについて",
+      "cn": "关于本站",
+      "en": "About"
+    },
+    {
       "ja": "新型コロナウイルス",
       "cn": "新型冠状病毒",
       "en": "Novel Coronavirus"
