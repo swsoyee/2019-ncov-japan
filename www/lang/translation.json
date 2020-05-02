@@ -1,0 +1,120 @@
+{
+  "languages": ["ja", "cn", "en"],
+  "translation": [
+    {
+      "ja": "死亡者数",
+      "cn": "死亡人数",
+      "en": "Death"
+    },
+    {
+      "ja": "感染者数ヒートマップ",
+      "cn": "确诊人数热图",
+      "en": "Heatmap of Infected"
+    },
+    {
+      "ja": "各都道府県の状況",
+      "cn": "各省份情况",
+      "en": "The situation in each prefecture"
+    },
+    {
+      "ja": "市区町村の感染者数",
+      "cn": "各次级行政区域的确诊人数",
+      "en": "Number of infected people in the municipality"
+    },
+    {
+      "ja": "開発＆調整中",
+      "cn": "开发调整中",
+      "en": "Under development & adjustment"
+    },
+    {
+      "ja": "ヒートマップ選択",
+      "cn": "选择热图",
+      "en": "Heatmap Selector"
+    },
+    {
+      "ja": "歳代・性別",
+      "cn": "性别年龄层",
+      "en": "Age & Gender"
+    },
+    {
+      "ja": "データ提供：",
+      "cn": "数据来源：",
+      "en": "Data source: "
+    },
+    {
+      "ja": "感染状況マップ",
+      "cn": "疫情地图",
+      "en": "Infection Map"
+    },
+    {
+      "ja": "シンプル",
+      "cn": "简洁",
+      "en": "Simplify"
+    },
+    {
+      "ja": "詳細",
+      "cn": "详细",
+      "en": "Detail"
+    },
+    {
+      "ja": "表示モード",
+      "cn": "模式",
+      "en": "Mode"
+    },
+    {
+      "ja": "表示設定",
+      "cn": "显示设置",
+      "en": "Options"
+    },
+    {
+      "ja": "日次増加数のポップアップ",
+      "cn": "显示新增悬浮气泡",
+      "en": "Daily increases pop-up"
+    },
+    {
+      "ja": "ループ再生",
+      "cn": "循环播放",
+      "en": "Loop play"
+    },
+    {
+      "ja": "表示日付",
+      "cn": "显示日期范围",
+      "en": "Date range"
+    },
+    {
+      "ja": "もっと見る",
+      "cn": "了解更多",
+      "en": "More"
+    },
+    {
+      "ja": "感染",
+      "cn": "确诊",
+      "en": "Infection"
+    },
+    {
+      "ja": "退院死亡",
+      "cn": "出院死亡",
+      "en": "Discharged & Death"
+    },
+    {
+      "ja": "グルーピング表示",
+      "cn": "分组显示",
+      "en": "Grouping"
+    },
+    {
+      "ja": "感染者報告あり",
+      "cn": "有确诊报告",
+      "en": "Infection reported"
+    },
+    {
+      "ja": "感染者報告なし",
+      "cn": "无确诊报告",
+      "en": "No reported"
+    },
+    {
+      "ja": "再生速度（秒/日）",
+      "cn": "播放速度（秒/日）",
+      "en": "Speed (sec/day)"
+    }
+  ]
+}

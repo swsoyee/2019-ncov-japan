@@ -1,8 +1,7 @@
 tabPanel(
   title = tagList(
     icon("globe-asia"),
-    # 感染状況マップ
-    lang[[langCode]][109]
+    i18n$t("感染状況マップ")
   ),
   fluidRow(
     column(
@@ -13,32 +12,28 @@ tabPanel(
           switchInput(
             inputId = "switchMapVersion",
             value = T,
-            onLabel = "シンプル",
-            offLabel = "詳細",
-            label = "表示モード", inline = T,
+            onLabel = i18n$t("シンプル"),
+            offLabel = i18n$t("詳細"),
+            label = i18n$t("表示モード"), inline = T,
             size = "small", width = "300px", labelWidth = "200px", handleWidth = "100px"
           ),
           dropdownButton(
-            # 表示設定
-            tags$h4(lang[[langCode]][110]),
+            tags$h4(i18n$t("表示設定")),
             materialSwitch(
               inputId = "showPopupOnMap",
-              # 日次増加数のポップアップ
-              label = lang[[langCode]][111],
+              label = i18n$t("日次増加数のポップアップ"),
               status = "danger",
               value = T
             ),
             materialSwitch(
               inputId = "replyMapLoop",
-              # ループ再生
-              label = lang[[langCode]][112],
+              label = i18n$t("ループ再生"),
               status = "danger",
               value = T
             ),
             dateRangeInput(
               inputId = "mapDateRange",
-              # 表示日付
-              label = lang[[langCode]][113],
+              label = i18n$t("表示日付"),
               start = byDate$date[nrow(byDate) - 15],
               end = byDate$date[nrow(byDate)],
               min = byDate$date[1],
@@ -48,8 +43,7 @@ tabPanel(
             ),
             sliderInput(
               inputId = "mapFrameSpeed",
-              # 再生速度（秒/日）
-              label = lang[[langCode]][114],
+              label = i18n$t("再生速度（秒/日）"),
               min = 0.5,
               max = 3,
               step = 0.1,
@@ -61,15 +55,10 @@ tabPanel(
             icon = icon("gear"),
             size = "sm",
             width = "300px",
-            # 表示設定
-            tooltip = tooltipOptions(title = lang[[langCode]][110])
+            tooltip = tooltipOptions(title = i18n$t("表示設定"))
           ),
           style = "margin-top:10px;"
         )
-        # column(
-        #   width = 6,
-        #   # actionButton(inputId = 'switchCaseMap', label = '事例マップへ')
-        # )
       )),
       uiOutput("comfirmedMapWrapper") %>% withSpinner(proxy.height = "500px"),
       # TODO もし全部の都道府県に感染者報告がある場合、こちらのバーを再検討する
@@ -77,47 +66,47 @@ tabPanel(
         id = "hasConfirmedRegionBar",
         value = 47 - length(regionZero),
         total = 47,
-        # 感染者報告あり
         title = tagList(
           icon("exclamation-triangle"),
-          lang[[langCode]][115]
+          i18n$t("感染者報告あり")
         ),
         striped = T,
         status = "danger",
         display_pct = T
       ),
-      tagList(icon("shield-alt"), tags$b(lang[[langCode]][97])),
-      uiOutput("saveArea"),
-    ),
-    column(
-      width = 7,
-      boxPad(
-        fluidRow(
-          column(
-            width = 3,
-            switchInput(
-              inputId = "switchTableVersion",
-              value = T,
-              onLabel = "感染",
-              offLabel = "退院死亡",
-              label = "もっと見る", inline = T,
-              size = "small", width = "250px", labelWidth = "100px", handleWidth = "100px"
+      tagList(
+        icon("shield-alt"), tags$b(i18n$t("感染者報告なし"))),
+        uiOutput("saveArea"),
+      ),
+      column(
+        width = 7,
+        boxPad(
+          fluidRow(
+            column(
+              width = 3,
+              switchInput(
+                inputId = "switchTableVersion",
+                value = T,
+                onLabel = i18n$t("感染"),
+                offLabel = i18n$t("退院死亡"),
+                label = i18n$t("もっと見る"), inline = T,
+                size = "small", width = "350px", labelWidth = "100px", handleWidth = "200px"
+              )
+            ),
+            column(
+              width = 9,
+              tags$div(
+                awesomeCheckbox(
+                  inputId = "tableShowSetting",
+                  label = i18n$t("グルーピング表示"),
+                  status = "danger", value = T
+                ),
+                style = "float:right;"
+              )
             )
           ),
-          column(
-            width = 9,
-            tags$div(
-              awesomeCheckbox(
-                inputId = "tableShowSetting",
-                label = "グルーピング表示",
-                status = "danger", value = T
-              ),
-              style = "float:right;"
-            )
-          )
-        ),
-        uiOutput("summaryTable") %>% withSpinner()
+          uiOutput("summaryTable") %>% withSpinner()
+        )
       )
-    ),
-  )
+    )
 )

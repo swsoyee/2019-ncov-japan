@@ -13,6 +13,7 @@ shinyServer(function(input, output, session) {
   source(file = paste0(COMPONENT_PATH, "Main/ConfirmedCityTreemap.server.R"), local = T, encoding = "UTF-8")
   source(file = paste0(COMPONENT_PATH, "Academic/onset2ConfirmedMap.server.R"), local = T, encoding = "UTF-8")
   source(file = paste0(COMPONENT_PATH, "Google/PrefMobility.server.R"), local = T, encoding = "UTF-8")
+
   # マップ関連コンポーネント
   source(
     file = paste0(COMPONENT_PATH, "Main/ConfirmedMap.server.R"),
@@ -121,14 +122,6 @@ shinyServer(function(input, output, session) {
     local = TRUE,
     encoding = "UTF-8"
   )
-  # TODO 追加修正待ち
-  observeEvent(input$language, {
-    if (input$language == "cn") {
-      langCode <- "cn"
-    } else {
-      langCode <- "ja"
-    }
-  })
 
   observeEvent(input$switchCaseMap, {
     updateTabItems(session, "sideBarTab", "caseMap")

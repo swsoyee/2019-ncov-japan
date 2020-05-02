@@ -15,7 +15,7 @@ fluidPage(
     boxPlus(
       title = tagList(
         icon("map-marked-alt"),
-        "各都道府県の状況"
+        i18n$t("各都道府県の状況")
       ),
       closable = F,
       collapsible = T,
@@ -35,7 +35,7 @@ fluidPage(
         )$value,
         # 感染者数ヒートマップ
         tabPanel(
-          title = tagList(icon("th"), "感染者数ヒートマップ"),
+          title = tagList(icon("th"), i18n$t("感染者数ヒートマップ")),
           fluidRow(
             column(width = 9,
                    uiOutput("confirmedHeatmapWrapper") %>% withSpinner(proxy.height = "600px")
@@ -44,7 +44,7 @@ fluidPage(
                    tags$div(
                      radioGroupButtons(
                        inputId = "confirmedHeatmapSelector",
-                       label = "ヒートマップ選択",
+                       label = i18n$t("ヒートマップ選択"),
                        size = "sm", justified = T,
                        choices = list("日次新規" = "confirmedHeatmap",
                                       "倍加時間" = "confirmedHeatmapDoublingTime"), 
@@ -58,7 +58,7 @@ fluidPage(
         ),
         # 市レベルの感染者数
         tabPanel(
-          title = tagList(icon("grip-horizontal"), "市区町村の感染者数"),
+          title = tagList(icon("grip-horizontal"), i18n$t("市区町村の感染者数")),
           echarts4rOutput("confirmedCityTreemap", height = "600px") %>% withSpinner()
         )
       ),
@@ -70,7 +70,7 @@ fluidPage(
         encoding = "UTF-8"
       )$value,
       footer = tags$small(paste(
-        lang[[langCode]][62], UPDATE_DATETIME, "開発＆調整中"
+        lang[[langCode]][62], UPDATE_DATETIME, i18n$t("開発＆調整中")
       ))
     ),
   ),

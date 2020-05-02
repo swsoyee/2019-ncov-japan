@@ -13,6 +13,7 @@ library(leaflet.minicharts)
 library(echarts4r)
 library(sparkline)
 library(shinyBS)
+library(shiny.i18n)
 
 source(file = "01_Settings/Path.R", local = T, encoding = "UTF-8")
 source(file = "02_Utils/Functions.R", local = T, encoding = "UTF-8")
@@ -28,6 +29,9 @@ source(file = paste0(COMPONENT_PATH, "/Main/Tendency.ui.R"), local = T, encoding
 # ====
 # データの読み込み
 # ====
+i18n <- suppressWarnings(Translator$new(translation_json_path = "www/lang/translation.json"))
+i18n$set_translation_language("en")
+
 # マップのソースの読み込み
 japanMap <- jsonlite::read_json(paste0(DATA_PATH, "Echarts/japan.json"))
 # TODO ここで変換せず、ローカルで変換すべき
