@@ -115,6 +115,96 @@
       "ja": "再生速度（秒/日）",
       "cn": "播放速度（秒/日）",
       "en": "Speed (sec/day)"
+    },
+    {
+      "ja": "国内事例",
+      "cn": "国内确诊",
+      "en": "Domestic cases"
+    },
+    {
+      "ja": "チャーター便を含む",
+      "cn": "包括撤侨包机",
+      "en": "Charter case incl."
+    },
+    {
+      "ja": "検査人数",
+      "cn": "检测人数",
+      "en": "Tested"
+    },
+    {
+      "ja": "感染者",
+      "cn": "确诊人数",
+      "en": "Confirmed"
+    },
+    {
+      "ja": "退院者",
+      "cn": "出院人数",
+      "en": "Discharged"
+    },
+    {
+      "ja": "死亡者",
+      "cn": "死亡人数",
+      "en": "Death"
+    },
+    {
+      "ja": "「令和２年３月４日版」以後は、陽性となった者の濃厚接触者に対する検査も含めた検査実施人数を都道府県に照会し、回答を得たものを公表している。なお、国内事例のPCR検査実施人数は、疑似症報告制度の枠組みの中で報告が上がった数を計上しており、各自治体で行った全ての検査結果を反映しているものではない（退院時の確認検査などは含まれていない）。",
+      "cn": "在《令和2年3月4日版》以后，包括对于与阳性患者有过密切接触的检测人数在内的数据在与各省份的数据进行核对后，得到确认的部分将予以公开。此外，国内确诊的PCR检查实施人数仅计算了属于疑似病症报告规定中的数量，不代表该省份的所有的检查结果数量（如出院时的确认检查等）。",
+      "en": "After the Report of March 4, the number of people who conducted the tests, including those who have a close contact with the patients, was referred to the prefectural governments and only confirmed number were published. The number of PCR tests conducted in Japan is the number of reports within the framework of the pseudopathy reporting system, and does not reflect the results of all tests conducted in each municipality (such as confirmation tests at the time of discharge are not included)."
+    },
+    {
+      "ja": "<hr>国内：%s (%s)<br>空港検疫：%s (+%s)<br>チャーター便：%s",
+      "cn": "<hr>国内：%s (%s)<br>机场检疫：%s (+%s)<br>撤侨包机：%s",
+      "en": "<hr>Domestic: %s (%s)<br>Airport quarantine: %s (+%s)<br>Air charter: %s"
+    },
+    {
+      "ja": "国内事例：%s (+%s)<br>チャーター便：%s<br>コスタ・アトランチカ号：%s",
+      "cn": "国内确诊：%s (+%s)<br>撤侨包机：%s<br>歌诗达大西洋号：%s",
+      "en": "Domestic cases: %s (+%s)<br>Air charter: %s<br>Costa Atlantica: %s"
+    },
+    {
+      "ja": "国内事例（確定）：%s (+%s)<br>※突合作業中：%s<br>空港検疫：%s (+%s)<br>チャーター便：%s（全員退院済み）",
+      "cn": "国内确诊（已核实）：%s (+%s)<br>※核实中：%s<br>机场检疫：%s (+%s)<br>撤侨包机：%s（全部出院）",
+      "en": "Domestic cases (confirmed): %s (+%s)<br>※Confirming: %s<br>Airport quarantine: %s (+%s)<br>Air charter: %s (all discharged)"
+    },
+    {
+      "ja": "クルーズ船",
+      "cn": "游轮",
+      "en": "Cruise"
+    },
+    {
+      "ja": "ダイアモンド・プリンセス号：令和２年３月５日まで延べ人数で公表しましたＰＣＲ検査の結果について、実員数で精査した結果は下記の数値通りです。<br><br>",
+      "cn": "钻石公主号：公布到2020年3月5日为止的PCR检查人次数据在进行核查后的人数结果即为如下数值。<br><br>",
+      "en": "Diamond Princess: The results of the PCR test, which was announced by the total number of personnel until March 5, 2020, are as follows. <br><br>"
+    },
+    {
+      "ja": "参考：横浜港で検疫中のクルーズ船の乗客・乗員に係る新型コロナウイルス感染症ＰＣＲ検査結果について",
+      "cn": "参考：关于横滨港检疫中的游轮乘客、乘务员等进行的新型冠状病毒肺炎PCR检测结果",
+      "en": "Ref: PCR Test Results of COVID-19 in Passengers and Crew of Cruise Ships under Quarantine at the Port of Yokohama"
+    },
+    {
+      "ja": "<br><br>※下船した方に対する健康フォローアップ期間中の249人に対するPCR検査数は含まれていない。",
+      "cn": "<br><br>※在对下船后的249人进行健康跟踪调查期间的进行的PCR检查人数不包含在内",
+      "en": "<br><br>※The number of PCR tests on 249 persons during the health follow-up period for disembarked persons was not included."
+    },
+    {
+      "ja": "ダイアモンド・プリンセス号：那覇港出港時点の人数は3711人。うち日本国籍の者1341人。",
+      "cn": "钻石公主号：那霸港出港时人数为3711人。其中为日本国籍的有1341人。",
+      "en": "Diamond Princess: The number of people at the time of departure from Naha Port was 3711. Of these, 1341 are Japanese citizens."
+    },
+    {
+      "ja": "船会社の医療スタッフとして途中乗船し、PCR陽性となった1名は含めず、チャーター便で帰国した40名を含む。",
+      "cn": "不包含一名中途上船的游轮公司医疗人员（PCR显阳性），但包括乘坐包机回国的40名阳性患者在内。",
+      "en": "The cruise company's medical staff who was on board en route and tested positive was not included, and 40 patients who returned by air charter were included."
+    },
+    {
+      "ja": "チャーター便で帰国した者を除く。",
+      "cn": "不包含乘坐包机回国的患者在内。",
+      "en": "Excludes those returning by air charter."
+    },
+    {
+      "ja": "この他にチャーター便で帰国後、3月1日に死亡したとオーストラリア政府が発表した１名がいる。",
+      "cn": "据澳洲政府报告，另有一名乘坐包机回国的乘客于3月1日病亡。",
+      "en": "According to Australian government, one other patients died on March 1st after returning by air charter."
     }
   ]
 }
