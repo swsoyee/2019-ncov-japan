@@ -4,6 +4,7 @@ library(data.table)
 # library(gsheet)
 
 source(file = "01_Settings/Path.R", local = T, encoding = "UTF-8")
+source(file = "00_System/Generate.ProcessData.R", local = T, encoding = "UTF-8")
 
 # ====けんもデータ====
 positiveDetail <- gsheet2tbl("docs.google.com/spreadsheets/d/1Cy4W9hYhGmABq1GuhLOkM92iYss0qy03Y1GeTv4bCyg/edit#gid=1196047345")
