@@ -730,6 +730,21 @@
       "ja": "チャーター便",
       "cn": "撤侨包机",
       "en": "Air charter"
+    },
+    {
+      "ja": "情報源リンク集",
+      "cn": "确诊报道来源",
+      "en": "Source Links"
+    },
+    {
+      "ja": "日付選択",
+      "cn": "选择日期",
+      "en": "Select Date"
+    },
+    {
+      "ja": "症状の進行",
+      "cn": "病情现状",
+      "en": "Progression of symptoms"
     }
   ]
 }

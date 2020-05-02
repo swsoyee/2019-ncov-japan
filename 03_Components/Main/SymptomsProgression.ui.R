@@ -1,13 +1,13 @@
 Component.SymptomsProgression <- function() {
   boxPlus(
-    title = tagList(icon("hospital"), "症状の進行"),
+    title = tagList(icon("hospital"), i18n$t("症状の進行")),
     width = 8,
     closable = F,
     collapsible = T,
     collapsed = T,
     dateInput(
       inputId = "selectProcessDay",
-      label = "日付選択",
+      label = i18n$t("日付選択"),
       min = domesticDailyReport$date[1],
       max = domesticDailyReport$date[nrow(domesticDailyReport)],
       value = domesticDailyReport$date[nrow(domesticDailyReport)],

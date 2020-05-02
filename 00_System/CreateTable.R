@@ -329,6 +329,7 @@ mergeDt[, detailBullet := gsub("\\n", "", detailBullet)]
 
 print("テーブル出力")
 fwrite(x = mergeDt, file = paste0(DATA_PATH, "Generated/resultSummaryTable.ja.csv"), sep = "@", quote = F)
+source(file = "00_System/CreateTable.Translate.R")
 
 # ====マップ用のデータ作成====
 dt <- data.frame(date = byDate$date)
