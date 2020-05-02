@@ -328,7 +328,7 @@ mergeDt[, detailBullet := gsub("\\n", "", detailBullet)]
 # mergeDt <- mergeDt[!grepl(pattern = paste0(lang[[langCode]][35:36], collapse = "|"), x = mergeDt$region)]
 
 print("テーブル出力")
-fwrite(x = mergeDt, file = paste0(DATA_PATH, "resultSummaryTable.csv"), sep = "@", quote = F)
+fwrite(x = mergeDt, file = paste0(DATA_PATH, "Generated/resultSummaryTable.csv"), sep = "@", quote = F)
 
 # ====マップ用のデータ作成====
 dt <- data.frame(date = byDate$date)
