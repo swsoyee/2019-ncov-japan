@@ -205,6 +205,71 @@
       "ja": "この他にチャーター便で帰国後、3月1日に死亡したとオーストラリア政府が発表した１名がいる。",
       "cn": "据澳洲政府报告，另有一名乘坐包机回国的乘客于3月1日病亡。",
       "en": "According to Australian government, one other patients died on March 1st after returning by air charter."
+    },
+    {
+      "ja": "感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。",
+      "cn": "感染密度 (km)：用于说明每边长为多少km的方形土地（可住地面积）内有1名感染者的指标",
+      "en": "Infection density (km): an indicator of how many km of land (inhabitable area) there is one infected person in a given area."
+    },
+    {
+      "ja": "自治体",
+      "cn": "省份",
+      "en": "Prefecture"
+    },
+    {
+      "ja": "新規",
+      "cn": "新增",
+      "en": "New"
+    },
+    {
+      "ja": "感染者数",
+      "cn": "确诊人数",
+      "en": "Confirmed"
+    },
+    {
+      "ja": "感染推移",
+      "cn": "确诊趋势",
+      "en": "Trends"
+    },
+    {
+      "ja": "倍加日数",
+      "cn": "翻倍天数",
+      "en": "Doubling Day"
+    },
+    {
+      "ja": "百万人あたり",
+      "cn": "每百万人",
+      "en": "/M people"
+    },
+    {
+      "ja": "カテゴリ",
+      "cn": "分类",
+      "en": "Category"
+    },
+    {
+      "ja": "感染密度(km)",
+      "cn": "感染密度(km)",
+      "en": "Infection density"
+    },
+    {
+      "ja": "退院",
+      "cn": "出院",
+      "en": "Discharged"
+    },
+    {
+      "ja": "退院推移",
+      "cn": "出院趋势",
+      "en": "Trends"
+    },
+    {
+      "ja": "死亡",
+      "cn": "死亡",
+      "en": "Death"
+    },
+    {
+      "ja": "内訳",
+      "cn": "具体",
+      "en": "Details"
     }
   ]
 }
