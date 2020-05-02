@@ -745,6 +745,51 @@
       "ja": "症状の進行",
       "cn": "病情现状",
       "en": "Progression of symptoms"
+    },
+    {
+      "ja": "国内状況推移",
+      "cn": "国内疫情趋势",
+      "en": "Domestic Trends"
+    },
+    {
+      "ja": "秒前",
+      "cn": "秒前",
+      "en": " secs ago"
+    },
+    {
+      "ja": "分前",
+      "cn": "分钟前",
+      "en": " mins ago"
+    },
+    {
+      "ja": "時間前",
+      "cn": "小时前",
+      "en": "hours ago"
+    },
+    {
+      "ja": "日前",
+      "cn": "天前",
+      "en": " days ago"
+    },
+    {
+      "ja": "週前",
+      "cn": "周前",
+      "en": " weeks ago"
+    },
+    {
+      "ja": "お知らせ",
+      "cn": "本站公告",
+      "en": "Notification"
+    },
+    {
+      "ja": "更新時刻",
+      "cn": "更新时间",
+      "en": "Update at "
+    },
+    {
+      "ja": "感染ルート・クラスターへ",
+      "cn": "前往感染路线・聚集性感染",
+      "en": "Go to Infection Route & Cluster"
     }
   ]
 }

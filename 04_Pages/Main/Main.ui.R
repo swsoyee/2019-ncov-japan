@@ -70,7 +70,7 @@ fluidPage(
         encoding = "UTF-8"
       )$value,
       footer = tags$small(paste(
-        lang[[langCode]][62], UPDATE_DATETIME, i18n$t("開発＆調整中")
+        i18n$t("更新時刻"), UPDATE_DATETIME, i18n$t("開発＆調整中")
       ))
     ),
   ),

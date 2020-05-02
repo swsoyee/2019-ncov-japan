@@ -1,13 +1,12 @@
 Component.Tendency <- function() {
   boxPlus(
     # 国内状況推移
-    title = tagList(icon("chart-line"), lang[[langCode]][88]),
+    title = tagList(icon("chart-line"), i18n$t("国内状況推移")),
     closable = F,
     collapsible = T,
     collapsed = T,
     enable_label = T,
-    # クリックして
-    label_text = tagList(lang[[langCode]][129], icon("hand-point-right")),
+    label_text = tagList(i18n$t("もっと見る"), icon("hand-point-right")),
     label_status = "warning",
     # 凡例クリックすると表示・非表示の切替ができます。
     footer = tags$small(icon("lightbulb"), lang[[langCode]][128]),
