@@ -415,6 +415,26 @@
       "ja": "感染新規数（日次）",
       "cn": "确诊增加数（每日）",
       "en": "New confirmed (daily)"
+    },
+    {
+      "ja": "※こちらの合計値には空港検疫、チャーター便、\n　クルーズ関連の事例などは含まれていない。",
+      "cn": "※上诉总计数不包括机场检疫、撤侨包机、\n　游轮相关确诊例。",
+      "en": "※ The total do not include airport quarantines, air charter,\n or cases related to cruises."
+    },
+    {
+      "ja": "リアルタイム感染者数マップ",
+      "cn": "实时确诊情况地图",
+      "en": "Realtime Infection Map"
+    },
+    {
+      "ja": "累積感染者数：",
+      "cn": "累计确诊人数：",
+      "en": "Total confirmed: "
+    },
+    {
+      "ja": "各都道府県からの新規報告なし",
+      "cn": "尚未收到各省份的新增感染报告",
+      "en": "No new reports from prefectures."
     }
   ]
 }

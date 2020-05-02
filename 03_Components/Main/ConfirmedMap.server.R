@@ -25,12 +25,12 @@ output$echartsSimpleMap <- renderEcharts4r({
   dt[, diff := (count.x - count.y)]
   # 本日増加分
   todayTotalIncreaseNumber <- sum(dt$diff, na.rm = T)
-  subText <- lang[[langCode]][119]
+  subText <- i18n$t("各都道府県からの新規報告なし")
   if (todayTotalIncreaseNumber > 0) {
     subText <- paste0(
       "発表がある", sum(dt$diff > 0), "都道府県合計新規", todayTotalIncreaseNumber,
       "人, 合計", sum(dt$count.x, na.rm = T), "人\n\n",
-      "※こちらの合計値には空港検疫、チャーター便、\n　クルーズ関連の事例などは含まれていない。"
+      i18n$t("※こちらの合計値には空港検疫、チャーター便、\n　クルーズ関連の事例などは含まれていない。")
     )
   }
 
@@ -72,17 +72,17 @@ output$echartsSimpleMap <- renderEcharts4r({
     ) %>%
     e_color(background = "#FFFFFF") %>%
     e_mark_point(serie = dt[diff > 0]$en) %>%
-    e_tooltip(formatter = htmlwidgets::JS('
+    e_tooltip(formatter = htmlwidgets::JS(paste0('
       function(params) {
         if(params.value) {
-          return(`${params.name}<br>累積感染者${params.value}名`)
+          return(`${params.name}<br>', i18n$t("累積感染者数："), '${params.value}`)
         } else {
           return("");
         }
       }
-    ')) %>%
+    '))) %>%
     e_title(
-      text = "リアルタイム感染者数マップ",
+      text = i18n$t("リアルタイム感染者数マップ"),
       subtext = subText
     )
 
@@ -120,8 +120,7 @@ output$echartsMap <- renderEcharts4r({
   sumByDay <- cumsum(rowSums(byDate[, 2:ncol(byDate)]))
   sumByDay <- data.table(byDate[, 1], sumByDay)
   timeSeriesTitle <- lapply(seq_along(dateSeq), function(i) {
-    # 各都道府県からの新規報告なし
-    subText <- lang[[langCode]][119]
+    subText <- i18n$t("各都道府県からの新規報告なし")
     if (provinceCountByDate[i] > 0) {
       subText <- paste0(
         "発表がある", provinceCountByDate[i], "都道府県合計新規", newByDate[i],
