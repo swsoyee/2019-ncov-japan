@@ -3,7 +3,7 @@
   "translation": [
     {
       "ja": "新　型　コ　ロ　ナ　ウ　イ　ル　ス　感　染　速　報",
-      "cn": "新　型　冠　状　病　毒　疫　情　快　报",
+      "cn": "新　型　冠　状　病　毒　疫　情　速　报",
       "en": "C O V I D - 1 9　N e w s　F l a s h　i n　J a p a n"
     },
     {
@@ -18,7 +18,7 @@
     },
     {
       "ja": "感染速報",
-      "cn": "疫情快报",
+      "cn": "疫情速报",
       "en": "News Flash"
     },
     {
@@ -112,9 +112,14 @@
       "en": "Background"
     },
     {
-      "ja": "コロナウイルスはどのようなウイルスですか？（厚生労働省）",
-      "cn": "何谓冠状病毒？（厚生劳动省）",
-      "en": "What's coronavirus? (Ministry of Health, Labour and Welfare)"
+      "ja": "「新型コロナウイルス」はどのようなウイルスですか（厚生労働省）",
+      "cn": "什么是冠状病毒（WHO）",
+      "en": "What is a coronavirus? (WHO)"
+    },
+    {
+      "ja": "「新型コロナウイルス（SARS-CoV2）」はコロナウイルスのひとつです。コロナウイルスには、一般の風邪の原因となるウイルスや、「重症急性呼吸器症候群（ＳＡＲＳ）」や2012年以降発生している「中東呼吸器症候群（ＭＥＲＳ）」ウイルスが含まれます。",
+      "cn": "冠状病毒是可以导致动物或人间疾病的一个大型病毒家族。一些冠状病毒已知可在人间引起呼吸道感染，范围从感冒到中东呼吸综合征（MERS）和严重急性呼吸综合征（SARS）等较严重疾病不等。最近发现的冠状病毒导致2019冠状病毒病（COVID-19）。",
+      "en": "Coronaviruses are a large family of viruses which may cause illness in animals or humans.  In humans, several coronaviruses are known to cause respiratory infections ranging from the common cold to more severe diseases such as Middle East Respiratory Syndrome (MERS) and Severe Acute Respiratory Syndrome (SARS). The most recently discovered coronavirus causes coronavirus disease COVID-19."
     },
     {
       "ja": "PCR検査状況",
@@ -288,8 +293,8 @@
     },
     {
       "ja": "クルーズ船",
-      "cn": "游轮",
-      "en": "Cruise"
+      "cn": "公主号游轮",
+      "en": "Cruise DP"
     },
     {
       "ja": "ダイアモンド・プリンセス号：令和２年３月５日まで延べ人数で公表しましたＰＣＲ検査の結果について、実員数で精査した結果は下記の数値通りです。<br><br>",
@@ -353,12 +358,12 @@
     },
     {
       "ja": "倍加日数",
-      "cn": "翻倍天数",
+      "cn": "翻倍所需天数",
       "en": "Doubling Day"
     },
     {
       "ja": "百万人あたり",
-      "cn": "每百万人",
+      "cn": "每百万人确诊",
       "en": "/M people"
     },
     {
@@ -480,6 +485,251 @@
       "ja": "他",
       "cn": "其他",
       "en": "Other"
+    },
+    {
+      "ja": "青森",
+      "cn": "青森",
+      "en": "Aomori"
+    },
+    {
+      "ja": "岩手",
+      "cn": "岩手",
+      "en": "Iwate"
+    },
+    {
+      "ja": "宮城",
+      "cn": "宫城",
+      "en": "Miyagi"
+    },
+    {
+      "ja": "秋田",
+      "cn": "秋田",
+      "en": "Akita"
+    },
+    {
+      "ja": "山形",
+      "cn": "山形",
+      "en": "Yamagata"
+    },
+    {
+      "ja": "福島",
+      "cn": "福岛",
+      "en": "Fukushima"
+    },
+    {
+      "ja": "茨城",
+      "cn": "茨城",
+      "en": "Ibaraki"
+    },
+    {
+      "ja": "栃木",
+      "cn": "枥木",
+      "en": "Tochigi"
+    },
+    {
+      "ja": "群馬",
+      "cn": "群马",
+      "en": "Gunma"
+    },
+    {
+      "ja": "埼玉",
+      "cn": "埼玉",
+      "en": "Saitama"
+    },
+    {
+      "ja": "千葉",
+      "cn": "千叶",
+      "en": "Chiba"
+    },
+    {
+      "ja": "東京",
+      "cn": "东京",
+      "en": "Tokyo"
+    },
+    {
+      "ja": "神奈川",
+      "cn": "神奈川",
+      "en": "Kanagawa"
+    },
+    {
+      "ja": "新潟",
+      "cn": "新泻",
+      "en": "Niigata"
+    },
+    {
+      "ja": "富山",
+      "cn": "富山",
+      "en": "Toyama"
+    },
+    {
+      "ja": "石川",
+      "cn": "石川",
+      "en": "Ishikawa"
+    },
+    {
+      "ja": "福井",
+      "cn": "福井",
+      "en": "Fukui"
+    },
+    {
+      "ja": "山梨",
+      "cn": "山梨",
+      "en": "Yamanashi"
+    },
+    {
+      "ja": "長野",
+      "cn": "长野",
+      "en": "Nagano"
+    },
+    {
+      "ja": "岐阜",
+      "cn": "岐阜",
+      "en": "Gifu"
+    },
+    {
+      "ja": "静岡",
+      "cn": "静冈",
+      "en": "Shizuoka"
+    },
+    {
+      "ja": "愛知",
+      "cn": "爱知",
+      "en": "Aichi"
+    },
+    {
+      "ja": "三重",
+      "cn": "三重",
+      "en": "Mie"
+    },
+    {
+      "ja": "滋賀",
+      "cn": "滋贺",
+      "en": "Shiga"
+    },
+    {
+      "ja": "京都",
+      "cn": "京都",
+      "en": "Kyoto"
+    },
+    {
+      "ja": "大阪",
+      "cn": "大阪",
+      "en": "Osaka"
+    },
+    {
+      "ja": "兵庫",
+      "cn": "兵库",
+      "en": "Hyogo"
+    },
+    {
+      "ja": "奈良",
+      "cn": "奈良",
+      "en": "Nara"
+    },
+    {
+      "ja": "和歌山",
+      "cn": "和歌山",
+      "en": "Wakayama"
+    },
+    {
+      "ja": "鳥取",
+      "cn": "鸟取",
+      "en": "Tottori"
+    },
+    {
+      "ja": "島根",
+      "cn": "岛根",
+      "en": "Shimane"
+    },
+    {
+      "ja": "岡山",
+      "cn": "冈山",
+      "en": "Okayama"
+    },
+    {
+      "ja": "広島",
+      "cn": "广岛",
+      "en": "Hiroshima"
+    },
+    {
+      "ja": "山口",
+      "cn": "山口",
+      "en": "Yamaguchi"
+    },
+    {
+      "ja": "徳島",
+      "cn": "德岛",
+      "en": "Tokushima"
+    },
+    {
+      "ja": "香川",
+      "cn": "香川",
+      "en": "Kagawa"
+    },
+    {
+      "ja": "愛媛",
+      "cn": "爱媛",
+      "en": "Ehime"
+    },
+    {
+      "ja": "高知",
+      "cn": "高知",
+      "en": "Kochi"
+    },
+    {
+      "ja": "福岡",
+      "cn": "福冈",
+      "en": "Fukuoka"
+    },
+    {
+      "ja": "佐賀",
+      "cn": "佐贺",
+      "en": "Saga"
+    },
+    {
+      "ja": "長崎",
+      "cn": "长崎",
+      "en": "Nagasaki"
+    },
+    {
+      "ja": "熊本",
+      "cn": "熊本",
+      "en": "Kumamoto"
+    },
+    {
+      "ja": "大分",
+      "cn": "大分",
+      "en": "Oita"
+    },
+    {
+      "ja": "宮崎",
+      "cn": "宫崎",
+      "en": "Miyazaki"
+    },
+    {
+      "ja": "鹿児島",
+      "cn": "鹿儿岛",
+      "en": "Kagoshima"
+    },
+    {
+      "ja": "沖縄",
+      "cn": "冲绳",
+      "en": "Okinawa"
+    },
+    {
+      "ja": "検疫職員",
+      "cn": "检疫相关",
+      "en": "Quarantine"
+    },
+    {
+      "ja": "伊客船",
+      "cn": "大西洋号",
+      "en": "Cruise CA"
+    },
+    {
+      "ja": "チャーター便",
+      "cn": "撤侨包机",
+      "en": "Air charter"
     }
   ]
 }
