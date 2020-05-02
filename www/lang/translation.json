@@ -2,9 +2,34 @@
   "languages": ["ja", "cn", "en"],
   "translation": [
     {
+      "ja": "新型コロナウイルス",
+      "cn": "新型冠状病毒",
+      "en": "Novel Coronavirus"
+    },
+    {
+      "ja": "Coronavirus disease 2019 (COVID-19)",
+      "cn": "Coronavirus disease 2019 (COVID-19)",
+      "en": "Coronavirus disease 2019 (COVID-19)"
+    },
+    {
       "ja": "死亡者数",
       "cn": "死亡人数",
       "en": "Death"
+    },
+    {
+      "ja": "退院者数",
+      "cn": "出院人数",
+      "en": "Discharged"
+    },
+    {
+      "ja": "背景画像",
+      "cn": "背景图像",
+      "en": "Background"
+    },
+    {
+      "ja": "コロナウイルスはどのようなウイルスですか？（厚生労働省）",
+      "cn": "何谓冠状病毒？（厚生劳动省）",
+      "en": "What's coronavirus? (Ministry of Health, Labour and Welfare)"
     },
     {
       "ja": "感染者数ヒートマップ",
