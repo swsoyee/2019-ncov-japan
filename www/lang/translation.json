@@ -32,6 +32,16 @@
       "en": "What's coronavirus? (Ministry of Health, Labour and Welfare)"
     },
     {
+      "ja": "PCR検査状況",
+      "cn": "PCR检查情况",
+      "en": "PCR Test"
+    },
+    {
+      "ja": "自治体選択",
+      "cn": "选择省份",
+      "en": "Select Prefecture"
+    },
+    {
       "ja": "感染者数ヒートマップ",
       "cn": "确诊人数热图",
       "en": "Heatmap of Infected"
@@ -295,6 +305,31 @@
       "ja": "内訳",
       "cn": "具体",
       "en": "Details"
+    },
+    {
+      "ja": "感染者数の推移",
+      "cn": "确诊人数趋势",
+      "en": "Confirmed Trends"
+    },
+    {
+      "ja": "一般",
+      "cn": "数值",
+      "en": "Normal"
+    },
+    {
+      "ja": "片対数",
+      "cn": "单对数",
+      "en": "Single-log"
+    },
+    {
+      "ja": "両対数",
+      "cn": "双对数",
+      "en": "Double-log"
+    },
+    {
+      "ja": "感染新規数（日次）",
+      "cn": "确诊增加数（每日）",
+      "en": "New confirmed (daily)"
     }
   ]
 }
