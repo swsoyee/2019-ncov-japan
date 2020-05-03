@@ -1040,6 +1040,16 @@
       "ja": "確定済みの退院者数は%s名、他にも%s名の退院者は個々の陽性者との突合作業中。従って、入退院等の状況の合計とPCR検査陽性者数は一致しない。<br><br>※令和２年４月２２日から厚労省公開している退院者数の基準が変わりました。",
       "cn": "已核实出院%s人，另有%s名出院者的数据正在与阳性患者数据进行核对中。因此入出院的数量总计与PCR阳性患者数存在不一致<br><br>※2020年4月22日以后厚劳省公开的出院数目标准发生了变更。",
       "en": "The number of confirmed discharges is %s and %s others are in the process of being matched against individual positives. Therefore, the total number of admissions and discharges does not correspond to the number of positive PCR test positive. <br><br>※The standard for the number of patients discharged from the Ministry of Health, Labour and Welfare has changed since April 22, 2020."
+    },
+    {
+      "ja": "全",
+      "cn": "全",
+      "en": "All"
+    },
+    {
+      "ja": "逆",
+      "cn": "反",
+      "en": "Reverse"
     }
   ]
 }

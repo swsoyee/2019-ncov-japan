@@ -265,7 +265,7 @@ output$confirmedCalendar <- renderEcharts4r({
         splitLine = list(show = F),
         itemStyle = list(borderWidth = 2, borderColor = "#FFFFFF"),
         dayLabel = list(nameMap = c("日", "月", "火", "水", "木", "金", "土")),
-        monthLabel = list(nameMap = "cn")
+        monthLabel = list(nameMap = i18n$translation_language)
       ) %>%
       e_heatmap(difference, coord_system = "calendar") %>%
       e_legend(show = T) %>%
@@ -277,13 +277,13 @@ output$confirmedCalendar <- renderEcharts4r({
         # scale colors
       ) %>%
       e_tooltip(
-        formatter = htmlwidgets::JS(
+        formatter = htmlwidgets::JS(sprintf(
           "
         function(params) {
-          return(`${params.value[0]}<br>新規${params.value[1]}人`)
+          return(`${params.value[0]}<br>%s${params.value[1]}`)
         }
-      "
-        )
+      ", paste0(i18n$t("新規"), " ")
+        ))
       )
   } else {
     return()
@@ -329,13 +329,13 @@ output$twoSideLogConfirmed <- renderEcharts4r({
       top = "10%",
       selected = unselected,
       selector = list(
-        list(type = "all", title = "全"),
-        list(type = "inverse", title = "逆")
+        list(type = "all", title = i18n$t("全")),
+        list(type = "inverse", title = i18n$t("逆"))
       )
     ) %>%
     e_y_axis(
       splitLine = list(lineStyle = list(opacity = 0.2)),
-      name = "新規感染者数",
+      name = i18n$t("新規"),
       type = "log",
       nameTextStyle = list(padding = c(0, 0, 0, 40)),
       axisLabel = list(inside = T),
@@ -346,7 +346,7 @@ output$twoSideLogConfirmed <- renderEcharts4r({
       splitLine = list(lineStyle = list(opacity = 0.2)),
       type = ifelse(input$twoSideXType, "log", "value"),
       # type = "log", # TEST
-      name = "累積感染者数",
+      name = i18n$t("累積"),
       nameLocation = "center",
       nameGap = 25
     ) %>%
