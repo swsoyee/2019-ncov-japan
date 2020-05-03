@@ -174,19 +174,19 @@ output$confirmedLine <- renderEcharts4r({
       e_charts(date) %>%
       e_bar(
         total,
-        name = "累積",
+        name = i18n$t("累積"),
         itemStyle = list(normal = list(color = lightYellow))
       ) %>%
       e_bar(
         difference,
-        name = "新規",
+        name = i18n$t("新規"),
         # y_index = 1,
         z = 2, barGap = "-100%",
         itemStyle = list(normal = list(color = lightRed))
       ) %>%
-      e_line(ma_3, name = "３日移動平均", y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkRed)) %>%
-      e_line(ma_5, name = "５日移動平均", y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkYellow)) %>%
-      e_line(ma_7, name = "週間移動平均", y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkNavy)) %>%
+      e_line(ma_3, name = i18n$t("３日移動平均"), y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkRed)) %>%
+      e_line(ma_5, name = i18n$t("５日移動平均"), y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkYellow)) %>%
+      e_line(ma_7, name = i18n$t("週間移動平均"), y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkNavy)) %>%
       e_grid(
         left = "3%",
         right = "15%",
@@ -194,7 +194,7 @@ output$confirmedLine <- renderEcharts4r({
       ) %>%
       e_x_axis(splitLine = list(lineStyle = list(opacity = 0.2))) %>%
       e_y_axis(
-        name = "陽性者数",
+        name = i18n$t("陽性者数"),
         nameGap = 10,
         nameTextStyle = list(padding = c(0, 0, 0, 50)),
         splitLine = list(lineStyle = list(opacity = 0.2)),
@@ -203,22 +203,22 @@ output$confirmedLine <- renderEcharts4r({
         axisTick = list(show = F)
       ) %>%
       e_y_axis(
-        name = "移動平均新規数",
+        name = i18n$t("移動平均新規数"),
         nameGap = 10,
         splitLine = list(show = F),
         z = 999,
         index = 1,
         axisTick = list(show = F)
       ) %>%
-      e_title(text = "日次新規・累積陽性者の推移") %>%
+      e_title(text = i18n$t("日次新規・累積陽性者の推移")) %>%
       e_legend_unselect(
-        name = "累積"
+        name = i18n$t("累積")
       ) %>%
       e_legend_unselect(
-        name = "５日移動平均"
+        name = i18n$t("５日移動平均")
       ) %>%
       e_legend_unselect(
-        name = "３日移動平均"
+        name = i18n$t("３日移動平均")
       ) %>%
       e_legend(
         type = "scroll",

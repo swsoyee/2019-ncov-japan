@@ -945,6 +945,41 @@
       "ja": "2/19正午\nメール対応",
       "cn": "2/19正午\n启用邮件问询",
       "en": "2/19 Noon\nE-mail supported"
+    },
+    {
+      "ja": "累積",
+      "cn": "累计",
+      "en": "Total"
+    },
+    {
+      "ja": "３日移動平均",
+      "cn": "3日移动平均",
+      "en": "3-Day Moving Average"
+    },
+    {
+      "ja": "５日移動平均",
+      "cn": "5日移动平均",
+      "en": "5-Day Moving Average"
+    },
+    {
+      "ja": "週間移動平均",
+      "cn": "7日移动平均",
+      "en": "Weekly Moving Average"
+    },
+    {
+      "ja": "陽性者数",
+      "cn": "阳性人数",
+      "en": "Positive"
+    },
+    {
+      "ja": "日次新規・累積陽性者の推移",
+      "cn": "每日新增和累计阳性人数趋势",
+      "en": "Trends of Daily New and Cumulative Positive Cases"
+    },
+    {
+      "ja": "移動平均新規数",
+      "cn": "移动平均新增数",
+      "en": "New in Moving Average"
     }
   ]
 }
