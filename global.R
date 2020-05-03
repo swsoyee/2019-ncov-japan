@@ -30,7 +30,9 @@ source(file = paste0(COMPONENT_PATH, "/Main/Tendency.ui.R"), local = T, encoding
 # データの読み込み
 # ====
 i18n <- suppressWarnings(Translator$new(translation_json_path = "www/lang/translation.json"))
-i18n$set_translation_language("en")
+i18n$set_translation_language("cn")
+
+languageSetting <- ifelse(length(i18n$translation_language) == 0, "ja", i18n$translation_language)
 
 # マップのソースの読み込み
 japanMap <- jsonlite::read_json(paste0(DATA_PATH, "Echarts/japan.json"))

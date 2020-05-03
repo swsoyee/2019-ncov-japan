@@ -90,7 +90,7 @@ output$ageGenderOption <- renderUI({
       max = Sys.Date(),
       separator = " - ",
       format = i18n$t("yyyy年m月d日"),
-      language = i18n$translation_language
+      language = languageSetting
     )
   )
 })

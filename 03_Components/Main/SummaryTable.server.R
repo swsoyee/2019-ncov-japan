@@ -157,7 +157,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
 
 # TODO データ読み込み専用のところに移動
 totalConfirmedByRegionData <- reactive({
-  dt <- fread(paste0(DATA_PATH, paste0("Generated/resultSummaryTable.", i18n$translation_language, ".csv")), sep = "@")
+  dt <- fread(paste0(DATA_PATH, paste0("Generated/resultSummaryTable.", languageSetting, ".csv")), sep = "@")
   dt
 })
 
