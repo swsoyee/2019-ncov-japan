@@ -265,7 +265,7 @@ output$confirmedCalendar <- renderEcharts4r({
         splitLine = list(show = F),
         itemStyle = list(borderWidth = 2, borderColor = "#FFFFFF"),
         dayLabel = list(nameMap = c("日", "月", "火", "水", "木", "金", "土")),
-        monthLabel = list(nameMap = languageSetting)
+        monthLabel = list(nameMap = ifelse(languageSetting != "en", "cn", "en"))
       ) %>%
       e_heatmap(difference, coord_system = "calendar") %>%
       e_legend(show = T) %>%
