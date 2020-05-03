@@ -45,7 +45,7 @@ fluidPage(
             echarts4rOutput('hokkaidoStackGraph') %>% withSpinner()
           )
         ),
-        footer = tags$small(icon('lightbulb'), '凡例クリックすると表示・非表示の切替ができます。')
+        footer = tags$small(icon('lightbulb'), i18n$t("凡例クリックすると表示・非表示の切替ができます。"))
       )
   ),
   # SIGNATE 問題修復まで非表示

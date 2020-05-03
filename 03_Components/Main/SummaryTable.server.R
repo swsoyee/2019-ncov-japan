@@ -65,12 +65,20 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
 
   datatable(
     data = dt[, c(1, 8, 12, 7, 9, 14, 15), with = F],
-    colnames = c("自治体", "内訳", "退院", "退院推移", "死亡", "百万人あたり", "カテゴリ"),
-    caption = "最適の見せ方を探しているため、見た目が時々変わります。予めご了承ください。",
+    colnames = c(
+      i18n$t("自治体"),
+      i18n$t("内訳"),
+      i18n$t("退院"),
+      i18n$t("退院推移"),
+      i18n$t("死亡"),
+      i18n$t("百万人あたり"),
+      i18n$t("カテゴリ")
+    ),
+    caption = "",
     escape = F,
     plugins = "natural",
     # extensions = c("Responsive"),
-    extensions = 'RowGroup',
+    extensions = "RowGroup",
     callback = htmlwidgets::JS(paste0("
       table.rowGroup().", ifelse(input$tableShowSetting, "enable()", "disable()"), ".draw();
     ")),
@@ -149,7 +157,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
 
 # TODO データ読み込み専用のところに移動
 totalConfirmedByRegionData <- reactive({
-  dt <- fread(paste0(DATA_PATH, "resultSummaryTable.csv"), sep = "@")
+  dt <- fread(paste0(DATA_PATH, paste0("Generated/resultSummaryTable.", languageSetting, ".csv")), sep = "@")
   dt
 })
 
@@ -179,7 +187,7 @@ output$summaryByRegion <- renderDataTable({
     caption = "最適の見せ方を探しているため、見た目が時々変わります。予めご了承ください。",
     escape = F,
     # extensions = c("Responsive"),
-    extensions = 'RowGroup',
+    extensions = "RowGroup",
     callback = htmlwidgets::JS(paste0("
       table.rowGroup().", ifelse(input$tableShowSetting, "enable()", "disable()"), ".draw();
     ")),
@@ -310,7 +318,7 @@ output$confirmedByPrefTable <- renderDataTable({
     seq(0, max(ifelse(is.na(dt$perMillion), 0, dt$perMillion), na.rm = T))
   colorsPerMillion <-
     colorRampPalette(c("#FFFFFF", darkRed))(length(breaksPerMillion) + 1)
-  
+
   breaksPerArea <-
     seq(0, max(ifelse(is.na(dt$perArea), 0, dt$perArea), na.rm = T))
   colorsPerArea <-
@@ -318,11 +326,20 @@ output$confirmedByPrefTable <- renderDataTable({
 
   datatable(
     data = dt[, c(1, 3, 4, 6, 11, 13, 15, 16), with = F],
-    colnames = c("自治体", "新規", "感染者数", "感染推移", "倍加日数", "百万人あたり", "カテゴリ", "感染密度(km)"),
+    colnames = c(
+      i18n$t("自治体"),
+      i18n$t("新規"),
+      i18n$t("感染者数"),
+      i18n$t("感染推移"),
+      i18n$t("倍加日数"),
+      i18n$t("百万人あたり"),
+      i18n$t("カテゴリ"),
+      i18n$t("感染密度(km)")
+    ),
     escape = F,
-    caption = "感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。",
+    caption = i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。"),
     # extensions = c("Responsive"),
-    extensions = 'RowGroup',
+    extensions = "RowGroup",
     callback = htmlwidgets::JS(paste0("
       table.rowGroup().", ifelse(input$tableShowSetting, "enable()", "disable()"), ".draw();
     ")),

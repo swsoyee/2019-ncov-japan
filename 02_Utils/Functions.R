@@ -6,15 +6,15 @@ getFinalAndDiff <- function(vector) {
 convertUnit2Ja <- function(x) {
   x <- as.character(units(x))
   if (x == "secs") {
-    return("秒前")
+    return(i18n$t("秒前"))
   } else if (x == "mins") {
-    return("分前")
+    return(i18n$t("分前"))
   } else if (x == "hours") {
-    return("時間前")
+    return(i18n$t("時間前"))
   } else if (x == "days") {
-    return("日前")
+    return(i18n$t("日前"))
   } else if (x == "weeks") {
-    return("週前")
+    return(i18n$t("週前"))
   } else {
     return(paste(x, "ago"))
   }

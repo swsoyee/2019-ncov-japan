@@ -1,7 +1,6 @@
 Component.ComfirmedPyramid <- function() {
   boxPlus(
-    # 歳代・性別
-    title = tagList(icon("venus-mars"), lang[[langCode]][124]),
+    title = tagList(icon("venus-mars"), i18n$t("歳代・性別")),
     width = 4,
     enable_label = T,
     collapsible = T,
@@ -13,10 +12,8 @@ Component.ComfirmedPyramid <- function() {
     uiOutput("ageGenderOption"),
     echarts4rOutput("genderBar"),
     closable = F,
-    # データ提供：
     footer = tags$small(
-      lang[[langCode]][125],
-      # @kenmo_economics
+      i18n$t("データ提供："),
       tags$a(icon("database"), "SIGNATE COVID-19 Dataset",
         # https://twitter.com/kenmo_economics
         href = "https://drive.google.com/drive/folders/1EcVW5JQKMB6zoyfHm8_zLVj---t_hccF"

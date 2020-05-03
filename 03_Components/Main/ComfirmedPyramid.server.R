@@ -23,10 +23,11 @@ output$genderBar <- renderEcharts4r({
     unknownCount <- sum(forPlot$人数.不明, na.rm = T)
     totalCount <- maleCount + femaleCount + unknownCount
 
+    forPlot$年代 <- suppressWarnings(i18n$t(forPlot$年代))
     forPlot %>%
       e_chart(年代) %>%
-      e_bar(male_minus, stack = "1", name = "男性", itemStyle = list(color = darkNavy)) %>%
-      e_bar(人数.女性, stack = "1", name = "女性", itemStyle = list(color = middleRed)) %>%
+      e_bar(male_minus, stack = "1", name = i18n$t("男性"), itemStyle = list(color = darkNavy)) %>%
+      e_bar(人数.女性, stack = "1", name = i18n$t("女性"), itemStyle = list(color = middleRed)) %>%
       e_x_axis(axisTick = list(show = F), axisLabel = list(inside = T)) %>%
       e_labels(position = "inside", formatter = htmlwidgets::JS("
       function(params) {
@@ -47,9 +48,9 @@ output$genderBar <- renderEcharts4r({
           count = -count
         }
         const total = Number(count) + Number(params[1].value[0])
-        return(`${params[0].value[1]}合計：${total}人 (総計の${Math.round(total/", totalCount, "*100, 4)}%)
-          <hr>男性：${count}人 (${params[0].value[1]}の${Math.round(count/total*100, 4)}%)
-          <br>女性：${params[1].value[0]}人 (${params[0].value[1]}の${Math.round(params[1].value[0]/total*100, 4)}%)
+        return(`${params[0].value[1]} ", i18n$t("合計："), "${total} (", i18n$t("総計の"), "${Math.round(total/", totalCount, "*100, 4)}%)
+          <hr>", i18n$t("男性："), "${count} (${params[0].value[1]}", i18n$t("の"), "${Math.round(count/total*100, 4)}%)
+          <br>", i18n$t("女性："), "${params[1].value[0]} (${params[0].value[1]}", i18n$t("の"), "${Math.round(params[1].value[0]/total*100, 4)}%)
         `)
       }
                                           ")),
@@ -57,13 +58,12 @@ output$genderBar <- renderEcharts4r({
         axisPointer = list(type = "shadow")
       ) %>%
       e_title(
-        text = paste0(
-          "男性：", maleCount, "人 (", round(maleCount / totalCount * 100, 2),
-          "%)、女性：", femaleCount, "人 (", round(femaleCount / totalCount * 100, 2),
-          "%)\n不明：", unknownCount, "人 (", round(unknownCount / totalCount * 100, 2),
-          "%)、計：", totalCount, "人"
+        text = sprintf(
+          i18n$t("男性：%s人 (%s%%)、女性：%s人 (%s%%)\n不明：%s人 (%s%%)、計：%s人"),
+          maleCount, round(maleCount / totalCount * 100, 2), femaleCount, round(femaleCount / totalCount * 100, 2),
+          unknownCount, round(unknownCount / totalCount * 100, 2), totalCount
         ),
-        subtext = paste0("集計時間：", updateDay),
+        subtext = paste0(i18n$t("集計時間："), updateDay),
         textStyle = list(fontSize = 11),
         subtextStyle = list(fontSize = 9)
       ) %>%
@@ -78,19 +78,19 @@ output$ageGenderOption <- renderUI({
   tagList(
     pickerInput(
       inputId = "ageGenderOptionRegion",
-      label = "都道府県",
+      label = i18n$t("都道府県"),
       choices = c("全国", region)
     ),
     dateRangeInput(
       "ageGenderOptionDateRange",
-      label = "公表日",
+      label = i18n$t("公表日"),
       start = min(GLOBAL_VALUE$signateDetail.ageGenderData$公表日, na.rm = T),
       end = Sys.Date(),
       min = min(GLOBAL_VALUE$signateDetail.ageGenderData$公表日, na.rm = T),
       max = Sys.Date(),
       separator = " - ",
-      format = "yyyy年m月d日",
-      language = "ja"
+      format = i18n$t("yyyy年m月d日"),
+      language = languageSetting
     )
   )
 })

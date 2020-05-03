@@ -1,0 +1,1075 @@
+{
+  "languages": ["ja", "cn", "en"],
+  "translation": [
+    {
+      "ja": "新　型　コ　ロ　ナ　ウ　イ　ル　ス　感　染　速　報",
+      "cn": "新　型　冠　状　病　毒　疫　情　速　报",
+      "en": "C O V I D - 1 9　N e w s　F l a s h　i n　J a p a n"
+    },
+    {
+      "ja": "実況中",
+      "cn": "直播中",
+      "en": "Live"
+    },
+    {
+      "ja": "開発中",
+      "cn": "开发中",
+      "en": "Dev"
+    },
+    {
+      "ja": "感染速報",
+      "cn": "疫情速报",
+      "en": "News Flash"
+    },
+    {
+      "ja": "感染ルート",
+      "cn": "感染路线",
+      "en": "Infection Route"
+    },
+    {
+      "ja": "自治体状況",
+      "cn": "各省情况",
+      "en": "Prefecture"
+    },
+    {
+      "ja": "北海道",
+      "cn": "北海道",
+      "en": "Hokkaido"
+    },
+    {
+      "ja": "青森県",
+      "cn": "青森县",
+      "en": "Aomori"
+    },
+    {
+      "ja": "岩手県",
+      "cn": "岩手县",
+      "en": "Iwate"
+    },
+    {
+      "ja": "岩手県（非公式）新型コロナウイルス感染症対策サイト",
+      "cn": "岩手县（非官方）新型冠状病毒肺炎对策网站",
+      "en": "Iwate COVID-19 Information (Unofficial)"
+    },
+    {
+      "ja": "宮城県",
+      "cn": "宫城县",
+      "en": "Miyagi"
+    },
+    {
+      "ja": "茨城県",
+      "cn": "茨城县",
+      "en": "Ibaraki"
+    },
+    {
+      "ja": "神奈川県",
+      "cn": "神奈川县",
+      "en": "Kanagawa"
+    },
+    {
+      "ja": "事例マップ",
+      "cn": "案例地图",
+      "en": "Case Map"
+    },
+    {
+      "ja": "破棄",
+      "cn": "归档",
+      "en": "Archive"
+    },
+    {
+      "ja": "状況分析",
+      "cn": "综合分析",
+      "en": "Analysis"
+    },
+    {
+      "ja": "自粛効果",
+      "cn": "行动限制成效",
+      "en": "Self-restraint Effect"
+    },
+    {
+      "ja": "サイトについて",
+      "cn": "关于本站",
+      "en": "About"
+    },
+    {
+      "ja": "新型コロナウイルス",
+      "cn": "新型冠状病毒",
+      "en": "Novel Coronavirus"
+    },
+    {
+      "ja": "Coronavirus disease 2019 (COVID-19)",
+      "cn": "Coronavirus disease 2019 (COVID-19)",
+      "en": "Coronavirus disease 2019 (COVID-19)"
+    },
+    {
+      "ja": "死亡者数",
+      "cn": "死亡人数",
+      "en": "Death"
+    },
+    {
+      "ja": "退院者数",
+      "cn": "出院人数",
+      "en": "Discharged"
+    },
+    {
+      "ja": "背景画像",
+      "cn": "背景图像",
+      "en": "Background"
+    },
+    {
+      "ja": "「新型コロナウイルス」はどのようなウイルスですか（厚生労働省）",
+      "cn": "什么是冠状病毒（WHO）",
+      "en": "What is a coronavirus? (WHO)"
+    },
+    {
+      "ja": "「新型コロナウイルス（SARS-CoV2）」はコロナウイルスのひとつです。コロナウイルスには、一般の風邪の原因となるウイルスや、「重症急性呼吸器症候群（ＳＡＲＳ）」や2012年以降発生している「中東呼吸器症候群（ＭＥＲＳ）」ウイルスが含まれます。",
+      "cn": "冠状病毒是可以导致动物或人间疾病的一个大型病毒家族。一些冠状病毒已知可在人间引起呼吸道感染，范围从感冒到中东呼吸综合征（MERS）和严重急性呼吸综合征（SARS）等较严重疾病不等。最近发现的冠状病毒导致2019冠状病毒病（COVID-19）。",
+      "en": "Coronaviruses are a large family of viruses which may cause illness in animals or humans.  In humans, several coronaviruses are known to cause respiratory infections ranging from the common cold to more severe diseases such as Middle East Respiratory Syndrome (MERS) and Severe Acute Respiratory Syndrome (SARS). The most recently discovered coronavirus causes coronavirus disease COVID-19."
+    },
+    {
+      "ja": "PCR検査状況",
+      "cn": "PCR检查情况",
+      "en": "PCR Test"
+    },
+    {
+      "ja": "自治体選択",
+      "cn": "选择省份",
+      "en": "Select Prefecture"
+    },
+    {
+      "ja": "感染者数ヒートマップ",
+      "cn": "确诊人数热图",
+      "en": "Heatmap of Infected"
+    },
+    {
+      "ja": "各都道府県の状況",
+      "cn": "各省份情况",
+      "en": "The situation in each prefecture"
+    },
+    {
+      "ja": "市区町村の感染者数",
+      "cn": "各次级行政区域的确诊人数",
+      "en": "Number of infected people in the municipality"
+    },
+    {
+      "ja": "開発＆調整中",
+      "cn": "开发调整中",
+      "en": "Under development & adjustment"
+    },
+    {
+      "ja": "ヒートマップ選択",
+      "cn": "选择热图",
+      "en": "Heatmap Selector"
+    },
+    {
+      "ja": "歳代・性別",
+      "cn": "性别年龄层",
+      "en": "Age & Gender"
+    },
+    {
+      "ja": "データ提供：",
+      "cn": "数据来源：",
+      "en": "Data source: "
+    },
+    {
+      "ja": "感染状況マップ",
+      "cn": "疫情地图",
+      "en": "Infection Map"
+    },
+    {
+      "ja": "シンプル",
+      "cn": "简洁",
+      "en": "Simplify"
+    },
+    {
+      "ja": "詳細",
+      "cn": "详细",
+      "en": "Detail"
+    },
+    {
+      "ja": "表示モード",
+      "cn": "模式",
+      "en": "Mode"
+    },
+    {
+      "ja": "表示設定",
+      "cn": "显示设置",
+      "en": "Options"
+    },
+    {
+      "ja": "日次増加数のポップアップ",
+      "cn": "显示新增悬浮气泡",
+      "en": "Daily increases pop-up"
+    },
+    {
+      "ja": "ループ再生",
+      "cn": "循环播放",
+      "en": "Loop play"
+    },
+    {
+      "ja": "表示日付",
+      "cn": "显示日期范围",
+      "en": "Date range"
+    },
+    {
+      "ja": "もっと見る",
+      "cn": "了解更多",
+      "en": "More"
+    },
+    {
+      "ja": "感染",
+      "cn": "确诊",
+      "en": "Infection"
+    },
+    {
+      "ja": "退院死亡",
+      "cn": "出院死亡",
+      "en": "Discharged & Death"
+    },
+    {
+      "ja": "グルーピング表示",
+      "cn": "分组显示",
+      "en": "Grouping"
+    },
+    {
+      "ja": "感染者報告あり",
+      "cn": "有确诊报告",
+      "en": "Infection reported"
+    },
+    {
+      "ja": "感染者報告なし",
+      "cn": "无确诊报告",
+      "en": "No reported"
+    },
+    {
+      "ja": "再生速度（秒/日）",
+      "cn": "播放速度（秒/日）",
+      "en": "Speed (sec/day)"
+    },
+    {
+      "ja": "国内事例",
+      "cn": "国内确诊",
+      "en": "Domestic cases"
+    },
+    {
+      "ja": "チャーター便を含む",
+      "cn": "包括撤侨包机",
+      "en": "Charter case incl."
+    },
+    {
+      "ja": "検査人数",
+      "cn": "检测人数",
+      "en": "Tested"
+    },
+    {
+      "ja": "感染者",
+      "cn": "确诊人数",
+      "en": "Confirmed"
+    },
+    {
+      "ja": "退院者",
+      "cn": "出院人数",
+      "en": "Discharged"
+    },
+    {
+      "ja": "死亡者",
+      "cn": "死亡人数",
+      "en": "Death"
+    },
+    {
+      "ja": "「令和２年３月４日版」以後は、陽性となった者の濃厚接触者に対する検査も含めた検査実施人数を都道府県に照会し、回答を得たものを公表している。なお、国内事例のPCR検査実施人数は、疑似症報告制度の枠組みの中で報告が上がった数を計上しており、各自治体で行った全ての検査結果を反映しているものではない（退院時の確認検査などは含まれていない）。",
+      "cn": "在《令和2年3月4日版》以后，包括对于与阳性患者有过密切接触的检测人数在内的数据在与各省份的数据进行核对后，得到确认的部分将予以公开。此外，国内确诊的PCR检查实施人数仅计算了属于疑似病症报告规定中的数量，不代表该省份的所有的检查结果数量（如出院时的确认检查等）。",
+      "en": "After the Report of March 4, the number of people who conducted the tests, including those who have a close contact with the patients, was referred to the prefectural governments and only confirmed number were published. The number of PCR tests conducted in Japan is the number of reports within the framework of the pseudopathy reporting system, and does not reflect the results of all tests conducted in each municipality (such as confirmation tests at the time of discharge are not included)."
+    },
+    {
+      "ja": "<hr>国内：%s (%s)<br>空港検疫：%s (+%s)<br>チャーター便：%s",
+      "cn": "<hr>国内：%s (%s)<br>机场检疫：%s (+%s)<br>撤侨包机：%s",
+      "en": "<hr>Domestic: %s (%s)<br>Airport quarantine: %s (+%s)<br>Air charter: %s"
+    },
+    {
+      "ja": "国内事例：%s (+%s)<br>チャーター便：%s<br>コスタ・アトランチカ号：%s",
+      "cn": "国内确诊：%s (+%s)<br>撤侨包机：%s<br>歌诗达大西洋号：%s",
+      "en": "Domestic cases: %s (+%s)<br>Air charter: %s<br>Costa Atlantica: %s"
+    },
+    {
+      "ja": "国内事例（確定）：%s (+%s)<br>※突合作業中：%s<br>空港検疫：%s (+%s)<br>チャーター便：%s（全員退院済み）",
+      "cn": "国内确诊（已核实）：%s (+%s)<br>※核实中：%s<br>机场检疫：%s (+%s)<br>撤侨包机：%s（全部出院）",
+      "en": "Domestic cases (confirmed): %s (+%s)<br>※Confirming: %s<br>Airport quarantine: %s (+%s)<br>Air charter: %s (all discharged)"
+    },
+    {
+      "ja": "クルーズ船",
+      "cn": "公主号游轮",
+      "en": "Cruise DP"
+    },
+    {
+      "ja": "ダイアモンド・プリンセス号：令和２年３月５日まで延べ人数で公表しましたＰＣＲ検査の結果について、実員数で精査した結果は下記の数値通りです。<br><br>",
+      "cn": "钻石公主号：公布到2020年3月5日为止的PCR检查人次数据在进行核查后的人数结果即为如下数值。<br><br>",
+      "en": "Diamond Princess: The results of the PCR test, which was announced by the total number of personnel until March 5, 2020, are as follows. <br><br>"
+    },
+    {
+      "ja": "参考：横浜港で検疫中のクルーズ船の乗客・乗員に係る新型コロナウイルス感染症ＰＣＲ検査結果について",
+      "cn": "参考：关于横滨港检疫中的游轮乘客、乘务员等进行的新型冠状病毒肺炎PCR检测结果",
+      "en": "Ref: PCR Test Results of COVID-19 in Passengers and Crew of Cruise Ships under Quarantine at the Port of Yokohama"
+    },
+    {
+      "ja": "<br><br>※下船した方に対する健康フォローアップ期間中の249人に対するPCR検査数は含まれていない。",
+      "cn": "<br><br>※在对下船后的249人进行健康跟踪调查期间的进行的PCR检查人数不包含在内",
+      "en": "<br><br>※The number of PCR tests on 249 persons during the health follow-up period for disembarked persons was not included."
+    },
+    {
+      "ja": "ダイアモンド・プリンセス号：那覇港出港時点の人数は3711人。うち日本国籍の者1341人。",
+      "cn": "钻石公主号：那霸港出港时人数为3711人。其中为日本国籍的有1341人。",
+      "en": "Diamond Princess: The number of people at the time of departure from Naha Port was 3711. Of these, 1341 are Japanese citizens."
+    },
+    {
+      "ja": "船会社の医療スタッフとして途中乗船し、PCR陽性となった1名は含めず、チャーター便で帰国した40名を含む。",
+      "cn": "不包含一名中途上船的游轮公司医疗人员（PCR显阳性），但包括乘坐包机回国的40名阳性患者在内。",
+      "en": "The cruise company's medical staff who was on board en route and tested positive was not included, and 40 patients who returned by air charter were included."
+    },
+    {
+      "ja": "チャーター便で帰国した者を除く。",
+      "cn": "不包含乘坐包机回国的患者在内。",
+      "en": "Excludes those returning by air charter."
+    },
+    {
+      "ja": "この他にチャーター便で帰国後、3月1日に死亡したとオーストラリア政府が発表した１名がいる。",
+      "cn": "据澳洲政府报告，另有一名乘坐包机回国的乘客于3月1日病亡。",
+      "en": "According to Australian government, one other patients died on March 1st after returning by air charter."
+    },
+    {
+      "ja": "感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。",
+      "cn": "感染密度 (km)：用于说明每边长为多少km的方形土地（可住地面积）内有1名感染者的指标",
+      "en": "Infection density (km): an indicator of how many km of land (inhabitable area) there is one infected person in a given area."
+    },
+    {
+      "ja": "自治体",
+      "cn": "省份",
+      "en": "Prefecture"
+    },
+    {
+      "ja": "新規",
+      "cn": "新增",
+      "en": "New"
+    },
+    {
+      "ja": "感染者数",
+      "cn": "确诊人数",
+      "en": "Confirmed"
+    },
+    {
+      "ja": "感染推移",
+      "cn": "确诊趋势",
+      "en": "Trends"
+    },
+    {
+      "ja": "倍加日数",
+      "cn": "翻倍所需天数",
+      "en": "Doubling Day"
+    },
+    {
+      "ja": "百万人あたり",
+      "cn": "每百万人确诊",
+      "en": "/M people"
+    },
+    {
+      "ja": "カテゴリ",
+      "cn": "分类",
+      "en": "Category"
+    },
+    {
+      "ja": "感染密度(km)",
+      "cn": "感染密度(km)",
+      "en": "Infection density"
+    },
+    {
+      "ja": "退院",
+      "cn": "出院",
+      "en": "Discharged"
+    },
+    {
+      "ja": "退院推移",
+      "cn": "出院趋势",
+      "en": "Trends"
+    },
+    {
+      "ja": "死亡",
+      "cn": "死亡",
+      "en": "Death"
+    },
+    {
+      "ja": "内訳",
+      "cn": "具体",
+      "en": "Details"
+    },
+    {
+      "ja": "感染者数の推移",
+      "cn": "确诊人数趋势",
+      "en": "Confirmed Trends"
+    },
+    {
+      "ja": "一般",
+      "cn": "数值",
+      "en": "Normal"
+    },
+    {
+      "ja": "片対数",
+      "cn": "单对数",
+      "en": "Single-log"
+    },
+    {
+      "ja": "両対数",
+      "cn": "双对数",
+      "en": "Double-log"
+    },
+    {
+      "ja": "感染新規数（日次）",
+      "cn": "确诊增加数（每日）",
+      "en": "New confirmed (daily)"
+    },
+    {
+      "ja": "※こちらの合計値には空港検疫、チャーター便、\n　クルーズ関連の事例などは含まれていない。",
+      "cn": "※上诉总计数不包括机场检疫、撤侨包机、\n　游轮相关确诊例。",
+      "en": "※ The total do not include airport quarantines,\n  air charter, or cases related to cruises."
+    },
+    {
+      "ja": "リアルタイム感染者数マップ",
+      "cn": "实时确诊情况地图",
+      "en": "Realtime Infection Map"
+    },
+    {
+      "ja": "累積感染者数：",
+      "cn": "累计确诊人数：",
+      "en": "Total confirmed: "
+    },
+    {
+      "ja": "各都道府県からの新規報告なし",
+      "cn": "尚未收到各省份的新增感染报告",
+      "en": "No new reports from prefectures."
+    },
+    {
+      "ja": "発表がある%s都道府県合計新規%s人, 合計%s人\n\n",
+      "cn": "今日收到来自%s个省份的报告共新增%s人，总计%s人\n\n",
+      "en": "Announcements from %s prefectures\ntotal new %s confirmed, accumulated total %s confirmed\n\n"
+    },
+    {
+      "ja": "北海道・東北",
+      "cn": "北海道・东北",
+      "en": "Hokkaido & Tohoku"
+    },
+    {
+      "ja": "東北地方",
+      "cn": "东北地区",
+      "en": "Tohoku Region"
+    },
+    {
+      "ja": "関東",
+      "cn": "关东",
+      "en": "Kanto"
+    },
+    {
+      "ja": "中部",
+      "cn": "中部",
+      "en": "Chubu"
+    },
+    {
+      "ja": "近畿",
+      "cn": "近畿",
+      "en": "Kinki"
+    },
+    {
+      "ja": "中国",
+      "cn": "中国",
+      "en": "Chugoku"
+    },
+    {
+      "ja": "四国",
+      "cn": "四国",
+      "en": "Shikoku"
+    },
+    {
+      "ja": "九州・沖縄",
+      "cn": "九州・冲绳",
+      "en": "Kyushu & Okinawa"
+    },
+    {
+      "ja": "他",
+      "cn": "其他",
+      "en": "Other"
+    },
+    {
+      "ja": "青森",
+      "cn": "青森",
+      "en": "Aomori"
+    },
+    {
+      "ja": "岩手",
+      "cn": "岩手",
+      "en": "Iwate"
+    },
+    {
+      "ja": "宮城",
+      "cn": "宫城",
+      "en": "Miyagi"
+    },
+    {
+      "ja": "秋田",
+      "cn": "秋田",
+      "en": "Akita"
+    },
+    {
+      "ja": "山形",
+      "cn": "山形",
+      "en": "Yamagata"
+    },
+    {
+      "ja": "福島",
+      "cn": "福岛",
+      "en": "Fukushima"
+    },
+    {
+      "ja": "茨城",
+      "cn": "茨城",
+      "en": "Ibaraki"
+    },
+    {
+      "ja": "栃木",
+      "cn": "枥木",
+      "en": "Tochigi"
+    },
+    {
+      "ja": "群馬",
+      "cn": "群马",
+      "en": "Gunma"
+    },
+    {
+      "ja": "埼玉",
+      "cn": "埼玉",
+      "en": "Saitama"
+    },
+    {
+      "ja": "千葉",
+      "cn": "千叶",
+      "en": "Chiba"
+    },
+    {
+      "ja": "東京",
+      "cn": "东京",
+      "en": "Tokyo"
+    },
+    {
+      "ja": "神奈川",
+      "cn": "神奈川",
+      "en": "Kanagawa"
+    },
+    {
+      "ja": "新潟",
+      "cn": "新泻",
+      "en": "Niigata"
+    },
+    {
+      "ja": "富山",
+      "cn": "富山",
+      "en": "Toyama"
+    },
+    {
+      "ja": "石川",
+      "cn": "石川",
+      "en": "Ishikawa"
+    },
+    {
+      "ja": "福井",
+      "cn": "福井",
+      "en": "Fukui"
+    },
+    {
+      "ja": "山梨",
+      "cn": "山梨",
+      "en": "Yamanashi"
+    },
+    {
+      "ja": "長野",
+      "cn": "长野",
+      "en": "Nagano"
+    },
+    {
+      "ja": "岐阜",
+      "cn": "岐阜",
+      "en": "Gifu"
+    },
+    {
+      "ja": "静岡",
+      "cn": "静冈",
+      "en": "Shizuoka"
+    },
+    {
+      "ja": "愛知",
+      "cn": "爱知",
+      "en": "Aichi"
+    },
+    {
+      "ja": "三重",
+      "cn": "三重",
+      "en": "Mie"
+    },
+    {
+      "ja": "滋賀",
+      "cn": "滋贺",
+      "en": "Shiga"
+    },
+    {
+      "ja": "京都",
+      "cn": "京都",
+      "en": "Kyoto"
+    },
+    {
+      "ja": "大阪",
+      "cn": "大阪",
+      "en": "Osaka"
+    },
+    {
+      "ja": "兵庫",
+      "cn": "兵库",
+      "en": "Hyogo"
+    },
+    {
+      "ja": "奈良",
+      "cn": "奈良",
+      "en": "Nara"
+    },
+    {
+      "ja": "和歌山",
+      "cn": "和歌山",
+      "en": "Wakayama"
+    },
+    {
+      "ja": "鳥取",
+      "cn": "鸟取",
+      "en": "Tottori"
+    },
+    {
+      "ja": "島根",
+      "cn": "岛根",
+      "en": "Shimane"
+    },
+    {
+      "ja": "岡山",
+      "cn": "冈山",
+      "en": "Okayama"
+    },
+    {
+      "ja": "広島",
+      "cn": "广岛",
+      "en": "Hiroshima"
+    },
+    {
+      "ja": "山口",
+      "cn": "山口",
+      "en": "Yamaguchi"
+    },
+    {
+      "ja": "徳島",
+      "cn": "德岛",
+      "en": "Tokushima"
+    },
+    {
+      "ja": "香川",
+      "cn": "香川",
+      "en": "Kagawa"
+    },
+    {
+      "ja": "愛媛",
+      "cn": "爱媛",
+      "en": "Ehime"
+    },
+    {
+      "ja": "高知",
+      "cn": "高知",
+      "en": "Kochi"
+    },
+    {
+      "ja": "福岡",
+      "cn": "福冈",
+      "en": "Fukuoka"
+    },
+    {
+      "ja": "佐賀",
+      "cn": "佐贺",
+      "en": "Saga"
+    },
+    {
+      "ja": "長崎",
+      "cn": "长崎",
+      "en": "Nagasaki"
+    },
+    {
+      "ja": "熊本",
+      "cn": "熊本",
+      "en": "Kumamoto"
+    },
+    {
+      "ja": "大分",
+      "cn": "大分",
+      "en": "Oita"
+    },
+    {
+      "ja": "宮崎",
+      "cn": "宫崎",
+      "en": "Miyazaki"
+    },
+    {
+      "ja": "鹿児島",
+      "cn": "鹿儿岛",
+      "en": "Kagoshima"
+    },
+    {
+      "ja": "沖縄",
+      "cn": "冲绳",
+      "en": "Okinawa"
+    },
+    {
+      "ja": "検疫職員",
+      "cn": "检疫相关",
+      "en": "Quarantine"
+    },
+    {
+      "ja": "伊客船",
+      "cn": "大西洋号",
+      "en": "Cruise CA"
+    },
+    {
+      "ja": "チャーター便",
+      "cn": "撤侨包机",
+      "en": "Air charter"
+    },
+    {
+      "ja": "情報源リンク集",
+      "cn": "确诊报道来源",
+      "en": "Source Links"
+    },
+    {
+      "ja": "日付選択",
+      "cn": "选择日期",
+      "en": "Select Date"
+    },
+    {
+      "ja": "症状の進行",
+      "cn": "病情现状",
+      "en": "Progression of symptoms"
+    },
+    {
+      "ja": "国内状況推移",
+      "cn": "国内疫情趋势",
+      "en": "Domestic Trends"
+    },
+    {
+      "ja": "秒前",
+      "cn": "秒前",
+      "en": " secs ago"
+    },
+    {
+      "ja": "分前",
+      "cn": "分钟前",
+      "en": " mins ago"
+    },
+    {
+      "ja": "時間前",
+      "cn": "小时前",
+      "en": " hours ago"
+    },
+    {
+      "ja": "日前",
+      "cn": "天前",
+      "en": " days ago"
+    },
+    {
+      "ja": "週前",
+      "cn": "周前",
+      "en": " weeks ago"
+    },
+    {
+      "ja": "お知らせ",
+      "cn": "本站公告",
+      "en": "Notification"
+    },
+    {
+      "ja": "更新時刻",
+      "cn": "更新时间",
+      "en": "Update at "
+    },
+    {
+      "ja": "感染ルート・クラスターへ",
+      "cn": "前往感染路线・聚集性感染",
+      "en": "Go to Infection Route & Cluster"
+    },
+    {
+      "ja": "男性：",
+      "cn": "男性：",
+      "en": "Male: "
+    },
+    {
+      "ja": "男性",
+      "cn": "男性",
+      "en": "Male"
+    },
+    {
+      "ja": "女性：",
+      "cn": "女性：",
+      "en": "Female: "
+    },
+    {
+      "ja": "女性",
+      "cn": "女性",
+      "en": "Female"
+    },
+    {
+      "ja": "合計：",
+      "cn": "合计：",
+      "en": "Total: "
+    },
+    {
+      "ja": "総計の",
+      "cn": "占总数的",
+      "en": " "
+    },
+    {
+      "ja": "の",
+      "cn": "的",
+      "en": " - "
+    },
+    {
+      "ja": "男性：%s人 (%s%%)、女性：%s人 (%s%%)\n不明：%s人 (%s%%)、計：%s人",
+      "cn": "男性：%s人 (%s%%)，女性：%s人 (%s%%)\n不明：%s人 (%s%%)，共：%s人",
+      "en": "Male: %s (%s%%), Female: %s (%s%%)\nUnknown: %s (%s%%), Total: %s"
+    },
+    {
+      "ja": "集計時間：",
+      "cn": "统计时间：",
+      "en": "Aggregation time: "
+    },
+    {
+      "ja": "公表日",
+      "cn": "发表日",
+      "en": "Announced: "
+    },
+    {
+      "ja": "yyyy年m月d日",
+      "cn": "yyyy年m月d日",
+      "en": "yyyy-mm-dd"
+    },
+    {
+      "ja": "都道府県",
+      "cn": "都道府县",
+      "en": "Prefecture"
+    },
+    {
+      "ja": "00代",
+      "cn": "< 10岁",
+      "en": "0s"
+    },
+    {
+      "ja": "10代",
+      "cn": "10岁",
+      "en": "10s"
+    },
+    {
+      "ja": "20代",
+      "cn": "20岁",
+      "en": "20s"
+    },
+    {
+      "ja": "30代",
+      "cn": "30岁",
+      "en": "30s"
+    },
+    {
+      "ja": "40代",
+      "cn": "40岁",
+      "en": "40s"
+    },
+    {
+      "ja": "50代",
+      "cn": "50岁",
+      "en": "50s"
+    },
+    {
+      "ja": "60代",
+      "cn": "60岁",
+      "en": "60s"
+    },
+    {
+      "ja": "70代",
+      "cn": "70岁",
+      "en": "70s"
+    },
+    {
+      "ja": "80代",
+      "cn": "80岁",
+      "en": "80s"
+    },
+    {
+      "ja": "> 90代",
+      "cn": "90岁以上",
+      "en": "> 90s"
+    },
+    {
+      "ja": "不明",
+      "cn": "不明",
+      "en": "Unknown"
+    },
+    {
+      "ja": "本日合計新規%s人（検疫カテゴリを含む）",
+      "cn": "今日合计新增%s人（包括检疫一分类）",
+      "en": "New %s cases today (Quarantine included)"
+    },
+    {
+      "ja": "名",
+      "cn": "名",
+      "en": ""
+    },
+    {
+      "ja": "コールセンター",
+      "cn": "咨询热线",
+      "en": "Call Center"
+    },
+    {
+      "ja": "メール",
+      "cn": "邮件",
+      "en": "E-mail"
+    },
+    {
+      "ja": "回線数",
+      "cn": "热线数",
+      "en": "Lines"
+    },
+    {
+      "ja": "2/7\nフリーダイヤル化",
+      "cn": "2/7\n开启免费热线",
+      "en": "2/7\nToll-free number"
+    },
+    {
+      "ja": "2/14正午\nFAX対応",
+      "cn": "2/14正午\n启用FAX问询",
+      "en": "2/14 Noon\nFAX supported"
+    },
+    {
+      "ja": "2/19正午\nメール対応",
+      "cn": "2/19正午\n启用邮件问询",
+      "en": "2/19 Noon\nE-mail supported"
+    },
+    {
+      "ja": "累積",
+      "cn": "累计",
+      "en": "Total"
+    },
+    {
+      "ja": "３日移動平均",
+      "cn": "3日移动平均",
+      "en": "3-Day Moving Average"
+    },
+    {
+      "ja": "５日移動平均",
+      "cn": "5日移动平均",
+      "en": "5-Day Moving Average"
+    },
+    {
+      "ja": "週間移動平均",
+      "cn": "7日移动平均",
+      "en": "Weekly Moving Average"
+    },
+    {
+      "ja": "陽性者数",
+      "cn": "阳性人数",
+      "en": "Positive"
+    },
+    {
+      "ja": "日次新規・累積陽性者の推移",
+      "cn": "每日新增和累计阳性人数趋势",
+      "en": "Trends of Daily New and Cumulative Positive Cases"
+    },
+    {
+      "ja": "移動平均新規数",
+      "cn": "移动平均新增数",
+      "en": "New in Moving Average"
+    },
+    {
+      "ja": "※開発バージョンです。",
+      "cn": "开发中版本",
+      "en": "Under developing"
+    },
+    {
+      "ja": "3月28日以後、厚労省集計方法が変更あり、無症状患者の内訳は公表しないため、無症状患者がどのぐらい入院しているかの情報がなくなりました。こちらではグラフ作成するため、無症状者は一律入院必要ないという仮説を設定した上で、グラフを作りました。よって、該当グラフはあくまで参考です。",
+      "cn": "3月28日以后由于厚劳省代汇总方法发生了变化，不再公布无症状患者的详细数据，因此无法得知有多少无症状患者处于住院状态。在此为了绘图方便，进行了无症状患者一律无需住院的假设后才能得到本图。因此该图仅供参考。",
+      "en": "After March 28, details of asymptomatic patients will no longer be published due to changes in the method of aggregation by the Ministry of Health, Labour and Welfare, so it is not possible to know how many asymptomatic patients are in hospital. This graph is available only after the assumption that all asymptomatic patients do not need to be hospitalized has been made for the sake of drawing convenience. The figure is therefore for reference only."
+    },
+    {
+      "ja": "4月22日以後、厚労省集計方法が変更あり、退院者、死亡者数に突合作業中の数値が含まれ、分母（PCR陽性者）と一致しないという説明がありました。こちらではグラフの作成するため、今まで通り確定した人数のみでグラフを作成します。よって、該当グラフはあくまで参考です。",
+      "cn": "4月22日以后由于厚劳省代汇总方法发生了变化，汇总中所报的出院死亡人数包含了正在进行核对的数目在内，合计值和PCR阳性患者总数会存在不一致。本图依然采用一直以来的核实数据进行绘制。因此该图仅供参考。",
+      "en": "After April 22, due to changes in the method of aggregation by the Ministry of Health, Labour and Welfare, the number of hospital discharges and death reported includes the number of patients undergoing reconciliation, and there is a discrepancy between the pooled values and the total number of PCR-positive. This figure is still drawn using the data that have been verified. The figure is therefore for reference only."
+    },
+    {
+      "ja": "PCR検査陽性",
+      "cn": "PCR检查阳性",
+      "en": "PCR Positive"
+    },
+    {
+      "ja": "有症状",
+      "cn": "有症状",
+      "en": "Symptomatic"
+    },
+    {
+      "ja": "無症状",
+      "cn": "无症状",
+      "en": "Asymptomatic"
+    },
+    {
+      "ja": "入院待機中",
+      "cn": "等待住院中",
+      "en": "Awaiting hospitalization"
+    },
+    {
+      "ja": "軽〜中等症の者",
+      "cn": "轻中度症状",
+      "en": "Mild or moderate"
+    },
+    {
+      "ja": "人工呼吸又は\nICUに入院",
+      "cn": "重症",
+      "en": "Severe"
+    },
+    {
+      "ja": "入院治療必要",
+      "cn": "需要住院治疗",
+      "en": "Necessary for hospitalization"
+    },
+    {
+      "ja": "症状有無確認中",
+      "cn": "症状确认中",
+      "en": "Symptoms confirming."
+    },
+    {
+      "ja": "確定済みの退院者数は%s名、他にも%s名の退院者は個々の陽性者との突合作業中。従って、入退院等の状況の合計とPCR検査陽性者数は一致しない。<br><br>※令和２年４月２２日から厚労省公開している退院者数の基準が変わりました。",
+      "cn": "已核实出院%s人，另有%s名出院者的数据正在与阳性患者数据进行核对中。因此入出院的数量总计与PCR阳性患者数存在不一致<br><br>※2020年4月22日以后厚劳省公开的出院数目标准发生了变更。",
+      "en": "The number of confirmed discharges is %s and %s others are in the process of being matched against individual positives. Therefore, the total number of admissions and discharges does not correspond to the number of positive PCR test positive. <br><br>※The standard for the number of patients discharged from the Ministry of Health, Labour and Welfare has changed since April 22, 2020."
+    },
+    {
+      "ja": "全",
+      "cn": "全",
+      "en": "All"
+    },
+    {
+      "ja": "逆",
+      "cn": "反",
+      "en": "Reverse"
+    },
+    {
+      "ja": "凡例クリックすると表示・非表示の切替ができます。",
+      "cn": "点击数据项的图例可以在显示与隐藏间切换。",
+      "en": "Click on the legend to switch between display and hide."
+    },
+    {
+      "ja": "こちらは%sの発生状況をまとめたページです。厚労省のまとめより早く状況を把握できますが、県の集計時間は厚労省の発表時間と完全に一致していないため、タイムラグによる数値の違いが生じる可能性もありますので、予めご注意ください。また、速報では陰性から再び陽性になった人は再計算に含めていないため、自治体発表の陽性者数と数値が異なる場合があります。",
+      "cn": "本页面为%s的疫情发生状况的汇总页面。虽然能比厚劳省的数据能够更先一步了解到最新情况，但由于县的汇总时间和厚劳省的发布时间存在一定的时间差，因此可能会导致数值上的些许差异，敬请注意。此外，速报中的确诊人数不对复阳性患者进行重复计算，因此存在与地方政府所报人数在总数上有些许差别。",
+      "en": "Here is a summary of the outbreak in %s. However, please note that the county's aggregation time does not completely coincide with the announcement time of the Ministry of Health, Labour and Welfare, so there may be a difference in the figures due to the time lag. In addition, the realtime number does not include those who have gone from negative to positive again, so the numbers may differ from the one announced by the local government."
+    }
+  ]
+}

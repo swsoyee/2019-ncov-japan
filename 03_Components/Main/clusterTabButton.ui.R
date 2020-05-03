@@ -5,9 +5,8 @@ Button.clusterTab <- function() {
       width = "100%",
       inputId = "gotoRoutePage",
       style = paste0("color: #fff; background-color: ", middleRed),
-      # 感染ルート・クラスターへ
       label = tagList(
-        lang[[langCode]][120],
+        i18n$t("感染ルート・クラスターへ"),
         # Beta xx
         dashboardLabel(
           lang[[langCode]][121],

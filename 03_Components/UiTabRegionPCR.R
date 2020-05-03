@@ -1,7 +1,7 @@
 tabPanel(
   title = tagList(
     icon("vials"),
-    "PCR検査状況"
+    i18n$t("PCR検査状況")
   ),
   fluidRow(
     column(
@@ -9,7 +9,7 @@ tabPanel(
       tags$br(),
       tags$small(
         icon("database"),
-        "データ提供：",
+        i18n$t("データ提供："),
         tags$a(href = "https://twitter.com/kenmo_economics", icon("twitter"), "@kenmo_economics")
       ),
       tags$p("こちらは補間法を使用した後のデータになります。データに関する問い合わせは@kenmo_economicsまで。"),
@@ -20,7 +20,7 @@ tabPanel(
       tags$br(),
       selectInput(
         inputId = "selectSingleRegionPCR",
-        label = "地域選択",
+        label = i18n$t("自治体選択"),
         choices = unique(provincePCR$県名)
       ),
       echarts4rOutput("singleRegionPCR")

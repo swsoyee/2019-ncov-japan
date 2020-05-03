@@ -14,7 +14,7 @@ output$regionTimeSeries <- renderEcharts4r({
     return(
       list(
         text = byDate$date[[i]],
-        subtext = paste0("本日合計新規", newByDate[[i]], "人（検疫職員カテゴリを含む）")
+        subtext = sprintf(i18n$t("本日合計新規%s人（検疫カテゴリを含む）"), newByDate[[i]])
       )
     )
   })
@@ -49,7 +49,7 @@ output$regionTimeSeries <- renderEcharts4r({
 # ====感染者割合====
 output$confirmedBar <- renderEcharts4r({
   dt <- data.table(
-    "label" = "感染者",
+    "label" = i18n$t("感染者"),
     "domestic" = TOTAL_DOMESITC + TOTAL_OFFICER,
     "ship" = TOTAL_SHIP,
     "flight" = TOTAL_FLIGHT,
@@ -58,9 +58,9 @@ output$confirmedBar <- renderEcharts4r({
     "flightPer" = round(TOTAL_FLIGHT / TOTAL_JAPAN * 100, 2)
   )
   e_charts(dt, label) %>%
-    e_bar(shipPer, name = lang[[langCode]][35], stack = "1", itemStyle = list(color = lightRed)) %>%
-    e_bar(domesticPer, name = lang[[langCode]][4], stack = "1", itemStyle = list(color = middleRed)) %>%
-    e_bar(flightPer, name = lang[[langCode]][36], stack = "1", itemStyle = list(color = lightYellow)) %>%
+    e_bar(shipPer, name = i18n$t("クルーズ船"), stack = "1", itemStyle = list(color = lightRed)) %>%
+    e_bar(domesticPer, name = i18n$t("国内事例"), stack = "1", itemStyle = list(color = middleRed)) %>%
+    e_bar(flightPer, name = i18n$t("チャーター便"), stack = "1", itemStyle = list(color = lightYellow)) %>%
     e_y_axis(max = 100, splitLine = list(show = F), show = F) %>%
     e_x_axis(splitLine = list(show = F), show = F) %>%
     e_grid(left = "0%", right = "0%", top = "0%", bottom = "0%") %>%
@@ -73,7 +73,7 @@ output$confirmedBar <- renderEcharts4r({
     e_flip_coords() %>%
     e_tooltip(formatter = htmlwidgets::JS(paste0('
       function(params) {
-        return(params.seriesName + "：" + Math.round(params.value[0] / 100 * ', TOTAL_JAPAN, ', 0) + "名")
+        return(params.seriesName + "：" + Math.round(params.value[0] / 100 * ', TOTAL_JAPAN, ', 0) + "', i18n$t("名"), '")
       }
     ')))
 })
@@ -82,15 +82,15 @@ output$confirmedBar <- renderEcharts4r({
 output$deathBar <- renderEcharts4r({
   DEATH_TOTAL <- DEATH_DOMESITC + DEATH_SHIP
   dt <- data.table(
-    "label" = "死亡者",
+    "label" = i18n$t("死亡者"),
     "domestic" = DEATH_DOMESITC,
     "flight" = DEATH_SHIP,
     "domesticPer" = round(DEATH_DOMESITC / DEATH_TOTAL * 100, 2),
     "shipPer" = round(DEATH_SHIP / DEATH_TOTAL * 100, 2)
   )
   e_charts(dt, label) %>%
-    e_bar(domesticPer, name = lang[[langCode]][4], stack = "1", itemStyle = list(color = lightNavy)) %>%
-    e_bar(shipPer, name = lang[[langCode]][35], stack = "1", itemStyle = list(color = darkNavy)) %>%
+    e_bar(domesticPer, name = i18n$t("国内事例"), stack = "1", itemStyle = list(color = lightNavy)) %>%
+    e_bar(shipPer, name = i18n$t("クルーズ船"), stack = "1", itemStyle = list(color = darkNavy)) %>%
     e_y_axis(max = 100, splitLine = list(show = F), show = F) %>%
     e_x_axis(splitLine = list(show = F), show = F) %>%
     e_grid(left = "0%", right = "0%", top = "0%", bottom = "0%") %>%
@@ -103,7 +103,7 @@ output$deathBar <- renderEcharts4r({
     e_flip_coords() %>%
     e_tooltip(formatter = htmlwidgets::JS(paste0('
       function(params) {
-        return(params.seriesName + "：" + Math.round(params.value[0] / 100 * ', DEATH_TOTAL, ', 0) + "名")
+        return(params.seriesName + "：" + Math.round(params.value[0] / 100 * ', DEATH_TOTAL, ', 0) + "', i18n$t("名"), '")
       }
     ')))
 })
@@ -113,23 +113,23 @@ output$callCenter <- renderEcharts4r({
   maxCall <- max(callCenterDailyReport$call)
   callCenterDailyReport %>%
     e_chart(date) %>%
-    e_bar(call, name = "コールセンター", stack = "1", itemStyle = list(color = middleBlue)) %>%
+    e_bar(call, name = i18n$t("コールセンター"), stack = "1", itemStyle = list(color = middleBlue)) %>%
     e_bar(fax, name = "FAX", stack = "1", itemStyle = list(color = darkBlue)) %>%
-    e_bar(mail, name = "メール", stack = "1", itemStyle = list(color = lightBlue)) %>%
-    e_line(line, name = "回線数", y_index = 1, itemStyle = list(color = darkBlue)) %>%
+    e_bar(mail, name = i18n$t("メール"), stack = "1", itemStyle = list(color = lightBlue)) %>%
+    e_line(line, name = i18n$t("回線数"), y_index = 1, itemStyle = list(color = darkBlue)) %>%
     e_grid(left = "3%", bottom = "18%") %>%
     e_legend(type = "scroll", orient = "vertical", left = "10%", top = "15%") %>%
     e_mark_line(data = list(
       xAxis = "2020-02-07", itemStyle = list(color = middleBlue),
-      label = list(formatter = " 2/7\nフリーダイヤル化")
+      label = list(formatter = i18n$t("2/7\nフリーダイヤル化"))
     )) %>%
     e_mark_line(data = list(
       xAxis = "2020-02-14", itemStyle = list(color = darkBlue),
-      label = list(formatter = " 2/14正午\nFAX対応")
+      label = list(formatter = i18n$t("2/14正午\nFAX対応"))
     )) %>%
     e_mark_line(data = list(
       xAxis = "2020-02-19", itemStyle = list(color = lightBlue),
-      label = list(formatter = " 2/19正午\nメール対応")
+      label = list(formatter = i18n$t("2/19正午\nメール対応"))
     )) %>%
     e_x_axis(splitLine = list(show = F)) %>%
     e_y_axis(splitLine = list(show = F), axisLabel = list(inside = T), axisTick = list(show = F), z = 999) %>%
