@@ -1,0 +1,39 @@
+# This is a basic workflow to help you get started with Actions
+
+name: 表示用データセット作成
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  render:
+    name: Data Update
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+      - uses: r-lib/actions/setup-r@v1
+      - uses: actions/cache@v1
+        if: startsWith(runner.os, 'macOS')
+        with:
+          path: ~/Library/Application Support/renv
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-renv-
+      - name: Install Package Dependencies
+        run: |-
+          Rscript -e "install.packages(c('data.table', 'sparkline', 'shiny'))"
+      - name: Run Script
+        run: |
+          Rscript -e 'source("00_System/CreateTable.R")'
+      - name: Git Auto Commit
+        uses: stefanzweifel/git-auto-commit-action@v4.1.6
+        with:
+          commit_message: 表示用データセット作成
+          ref: ${{ github.head_ref }}
