@@ -995,6 +995,51 @@
       "ja": "4月22日以後、厚労省集計方法が変更あり、退院者、死亡者数に突合作業中の数値が含まれ、分母（PCR陽性者）と一致しないという説明がありました。こちらではグラフの作成するため、今まで通り確定した人数のみでグラフを作成します。よって、該当グラフはあくまで参考です。",
       "cn": "4月22日以后由于厚劳省代汇总方法发生了变化，汇总中所报的出院死亡人数包含了正在进行核对的数目在内，合计值和PCR阳性患者总数会存在不一致。本图依然采用一直以来的核实数据进行绘制。因此该图仅供参考。",
       "en": "After April 22, due to changes in the method of aggregation by the Ministry of Health, Labour and Welfare, the number of hospital discharges and death reported includes the number of patients undergoing reconciliation, and there is a discrepancy between the pooled values and the total number of PCR-positive. This figure is still drawn using the data that have been verified. The figure is therefore for reference only."
+    },
+    {
+      "ja": "PCR検査陽性",
+      "cn": "PCR检查阳性",
+      "en": "PCR Positive"
+    },
+    {
+      "ja": "有症状",
+      "cn": "有症状",
+      "en": "Symptomatic"
+    },
+    {
+      "ja": "無症状",
+      "cn": "无症状",
+      "en": "Asymptomatic"
+    },
+    {
+      "ja": "入院待機中",
+      "cn": "等待住院中",
+      "en": "Awaiting hospitalization"
+    },
+    {
+      "ja": "軽〜中等症の者",
+      "cn": "轻中度症状",
+      "en": "Mild or moderate"
+    },
+    {
+      "ja": "人工呼吸又は\nICUに入院",
+      "cn": "重症",
+      "en": "Severe"
+    },
+    {
+      "ja": "入院治療必要",
+      "cn": "需要住院治疗",
+      "en": "Necessary for hospitalization"
+    },
+    {
+      "ja": "症状有無確認中",
+      "cn": "症状确认中",
+      "en": "Symptoms confirming."
+    },
+    {
+      "ja": "確定済みの退院者数は%s名、他にも%s名の退院者は個々の陽性者との突合作業中。従って、入退院等の状況の合計とPCR検査陽性者数は一致しない。<br><br>※令和２年４月２２日から厚労省公開している退院者数の基準が変わりました。",
+      "cn": "已核实出院%s人，另有%s名出院者的数据正在与阳性患者数据进行核对中。因此入出院的数量总计与PCR阳性患者数存在不一致<br><br>※2020年4月22日以后厚劳省公开的出院数目标准发生了变更。",
+      "en": "The number of confirmed discharges is %s and %s others are in the process of being matched against individual positives. Therefore, the total number of admissions and discharges does not correspond to the number of positive PCR test positive. <br><br>※The standard for the number of patients discharged from the Ministry of Health, Labour and Welfare has changed since April 22, 2020."
     }
   ]
 }
