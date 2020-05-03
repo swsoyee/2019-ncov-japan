@@ -142,12 +142,12 @@ pcr <- data.table(
   検査数 = jsonFile$inspection_persons$datasets$data[[1]]
 )
 contact <- data.table(
-  date = as.Date(jsonFile$contacts$data$日付),
-  相談件数 = jsonFile$contacts$data$小計
+  date = as.Date(jsonFile$contacts$data$date),
+  相談件数 = jsonFile$contacts$data$total
 )
 positive <- data.table(
-  date = as.Date(jsonFile$patients_summary$data$日付),
-  陽性数 = jsonFile$patients_summary$data$小計
+  date = as.Date(jsonFile$patients_summary$data$date),
+  陽性数 = jsonFile$patients_summary$data$total
 )
 dt <- merge(x = pcr, y = contact, by = "date", no.dups = T, all = T)
 dt <- merge(x = dt, y = positive, by = "date", no.dups = T, all = T)
