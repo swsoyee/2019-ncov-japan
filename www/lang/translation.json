@@ -905,6 +905,46 @@
       "ja": "不明",
       "cn": "不明",
       "en": "Unknown"
+    },
+    {
+      "ja": "本日合計新規%s人（検疫カテゴリを含む）",
+      "cn": "今日合计新增%s人（包括检疫一分类）",
+      "en": "New %s cases today (Quarantine included)"
+    },
+    {
+      "ja": "名",
+      "cn": "名",
+      "en": ""
+    },
+    {
+      "ja": "コールセンター",
+      "cn": "咨询热线",
+      "en": "Call Center"
+    },
+    {
+      "ja": "メール",
+      "cn": "邮件",
+      "en": "E-mail"
+    },
+    {
+      "ja": "回線数",
+      "cn": "热线数",
+      "en": "Lines"
+    },
+    {
+      "ja": "2/7\nフリーダイヤル化",
+      "cn": "2/7\n开启免费热线",
+      "en": "2/7\nToll-free number"
+    },
+    {
+      "ja": "2/14正午\nFAX対応",
+      "cn": "2/14正午\n启用FAX问询",
+      "en": "2/14 Noon\nFAX supported"
+    },
+    {
+      "ja": "2/19正午\nメール対応",
+      "cn": "2/19正午\n启用邮件问询",
+      "en": "2/19 Noon\nE-mail supported"
     }
   ]
 }
