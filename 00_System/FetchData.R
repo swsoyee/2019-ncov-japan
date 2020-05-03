@@ -37,7 +37,7 @@ fwrite(x = kenmoAreaDataset, file = paste0(DATA_PATH, "Kenmo/confirmedNumberByCi
 
 Update.Signate.Detail <- function(update = F) {
   if (update) {
-    signateDetail <- gsheet2tbl('https://docs.google.com/spreadsheets/d/10MFfRQTblbOpuvOs_yjIYgntpMGBg592dL8veXoPpp4/edit#gid=0')
+    signateDetail <- gsheet2tbl('https://docs.google.com/spreadsheets/d/10MFfRQTblbOpuvOs_yjIYgntpMGBg592dL8veXoPpp4/edit#gid=2113829779')
     signateDetail <- data.table(signateDetail)
     fwrite(x = signateDetail, file = paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者.csv'))
     # 都道府県、公表日、性別、年齢====
@@ -142,12 +142,12 @@ pcr <- data.table(
   検査数 = jsonFile$inspection_persons$datasets$data[[1]]
 )
 contact <- data.table(
-  date = as.Date(jsonFile$contacts$data$日付),
-  相談件数 = jsonFile$contacts$data$小計
+  date = as.Date(jsonFile$contacts$data$date),
+  相談件数 = jsonFile$contacts$data$total
 )
 positive <- data.table(
-  date = as.Date(jsonFile$patients_summary$data$日付),
-  陽性数 = jsonFile$patients_summary$data$小計
+  date = as.Date(jsonFile$patients_summary$data$date),
+  陽性数 = jsonFile$patients_summary$data$total
 )
 dt <- merge(x = pcr, y = contact, by = "date", no.dups = T, all = T)
 dt <- merge(x = dt, y = positive, by = "date", no.dups = T, all = T)

@@ -1741,7 +1741,7 @@
 1742,20200417,１人死亡２７人感染 ４８１人に,https://www3.nhk.or.jp/lnews/kobe/20200417/2020007630.html,兵庫,日本
 1743,20200417,県内で新たに２人の感染確認,https://www3.nhk.or.jp/lnews/maebashi/20200417/1060006713.html,群馬,日本
 1744,20200417,唐津市の４０代男性がコロナ陽性確認　玄海原発の工事関係者,https://www.sagatv.co.jp/news/archives/2020041702476,佐賀,日本
-1745,20200417,東京感染者、最多２０１人　国内死者２１８人に―新型コロナ,https://www.jiji.com/jc/article?k=2020041700810&g=soc,東京,日本
+1745,20200417,東京感染者、最多２０１人　国内死者２１８人に—新型コロナ,https://www.jiji.com/jc/article?k=2020041700810&g=soc,東京,日本
 1746,20200417,埼玉 新たに男女20人感染確認 患者や看護師など 県内590人に,https://www3.nhk.or.jp/news/html/20200418/k10012393871000.html,埼玉,日本
 1747,20200417,東海３県で新たに１７人の感染確認　新型コロナ,https://hicbc.com/news/article/?id=0004D9DE,愛知,日本
 1748,20200418,福岡県久留米市が30代男性の新型コロナ感染を発表,https://www.fukuishimbun.co.jp/articles/-/1070830,福岡,日本
@@ -2386,3 +2386,34 @@
 2387,20200502,富山でさらに4人感染,https://rd.kyodo-d.info/np/2020050201001948,富山,検疫
 2388,20200502,岐阜県で１人感染確認　新型コロナ,https://www.chunichi.co.jp/s/article/2020050290193123.html,岐阜,日本
 2389,20200502,埼玉で1人死亡、21人感染,https://rd.kyodo-d.info/np/2020050201001993,埼玉,日本
+2390,20200503,福岡 久留米 感染した男性死亡 新型コロナウイルス,https://www3.nhk.or.jp/news/html/20200503/k10012416321000.html,福岡,日本
+2391,20200503,兵庫県で川西市の幼児３人含む11人、新型コロナ感染,https://www.fukuishimbun.co.jp/articles/-/1080047,兵庫,日本
+2392,20200503,兵庫県 新たに７人感染確認 県内663人に 新型コロナウイルス,https://www3.nhk.or.jp/news/html/20200503/k10012416411000.html,兵庫,日本
+2393,20200503,島根県松江市で新型コロナ新たに1人感染、感染経路不明,https://www.fukuishimbun.co.jp/articles/-/1080007,島根,日本
+2394,20200503,千葉県柏市で新型コロナ新たに1人感染,https://www.fukuishimbun.co.jp/articles/-/1080008,千葉,日本
+2395,20200503,熊本市 感染者の60代男性死亡 県内２人目 新型コロナウイルス,https://www3.nhk.or.jp/news/html/20200503/k10012416451000.html,熊本,日本
+2396,20200503,広島市、新たに20代男性感染　新型コロナ、佐伯区の施設の入所者,https://www.chugoku-np.co.jp/local/news/article.php?comment_id=639617&comment_sub_id=0&category_id=256,広島,日本
+2397,20200503,北海道で新型コロナ感染の80代男性死亡,https://www.fukuishimbun.co.jp/articles/-/1080042,北海道,日本
+2398,20200503,千葉県で新たに女性２人、新型コロナ感染確認,https://www.fukuishimbun.co.jp/articles/-/1080036,千葉,日本
+2399,20200503,奈良県で30代男性、新型コロナ感染,https://www.fukuishimbun.co.jp/articles/-/1080048,奈良,日本
+2400,20200503,愛媛県松山市内高齢者向け住宅で働いていた香川県の女性、新型コロナ感染,https://www.fukuishimbun.co.jp/articles/-/1080052,愛媛,日本
+2401,20200503,佐賀県で新型コロナ男女２人感染,https://www.fukuishimbun.co.jp/articles/-/1080040,佐賀,日本
+2402,20200503,神奈川県で新型コロナ新たに23人感染,https://www.fukuishimbun.co.jp/articles/-/1080090,神奈川,日本
+2403,20200503,富山 感染者１人死亡 県内死者11人に 新型コロナウイルス,https://www3.nhk.or.jp/news/html/20200503/k10012416461000.html,富山,日本
+2404,20200503,松戸市の千葉西総合病院勤務の看護師ら新型コロナ感染,https://www.fukuishimbun.co.jp/articles/-/1080107,千葉,日本
+2405,20200503,石川 ２人死亡 県内の死者15人に 新型コロナウイルス,https://www3.nhk.or.jp/news/html/20200503/k10012416581000.html,石川,日本
+2406,20200503,京都で感染３人　府内３３２人に,https://www.sankei.com/life/news/200503/lif2005030062-n1.html,京都,日本
+2407,20200503,県内１人死亡５人感染計８９１人,https://www3.nhk.or.jp/lnews/saitama/20200503/1100008396.html,埼玉,日本
+2408,20200503,福島県 新たに３人感染 感染確認78人に,https://www3.nhk.or.jp/news/html/20200503/k10012416751000.html,福島,日本
+2409,20200503,愛知 新たに女性２人感染確認 県内延べ492人に,https://www3.nhk.or.jp/news/html/20200503/k10012416781000.html,愛知,日本
+2410,20200503,埼玉県 新たに１人死亡 感染確認891人に,https://www3.nhk.or.jp/news/html/20200503/k10012416671000.html,埼玉,日本
+2411,20200503,大阪府 ４人死亡 新たに11人感染確認 新型コロナウイルス,https://www3.nhk.or.jp/news/html/20200503/k10012416681000.html,大阪,日本
+2412,20200503,横浜と相模原 新たに計13人感染確認 新型コロナウイルス,https://www3.nhk.or.jp/news/html/20200503/k10012416691000.html,神奈川,日本
+2413,20200503,神奈川県 新たに３人死亡 感染確認1084人に,https://www3.nhk.or.jp/news/html/20200503/k10012416631000.html,神奈川,日本
+2414,20200503,東京都 新たに91人感染確認 都内4568人に 新型コロナウイルス,https://www3.nhk.or.jp/news/html/20200503/k10012416701000.html,東京,日本
+2415,20200503,富山市の介護施設の関係者が新型コロナ感染,https://www.fukuishimbun.co.jp/articles/-/1080100,富山,日本
+2416,20200503,福岡市 感染した70代男性死亡 県内死者24人に 新型コロナ,https://www3.nhk.or.jp/news/html/20200503/k10012416731000.html,福岡,日本
+2417,20200503,兵庫県神戸市の神戸赤十字病院の看護師２人、新型コロナ感染,https://www.fukuishimbun.co.jp/articles/-/1080119,兵庫,日本
+2418,20200503,山梨で1人感染　感染知りつつ東京に帰った女性の友人,https://www.asahi.com/articles/ASN536QX1N53UZOB00C.html,山梨,日本
+2419,20200503,埼玉県川口市の70代男性死亡、新たに新型コロナ12人感染,https://www.fukuishimbun.co.jp/articles/-/1080123,埼玉,日本
+2420,20200503,光市で1人感染確認　県内34人目,https://www.yab.co.jp/news/64529,山口,日本
