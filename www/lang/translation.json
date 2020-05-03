@@ -47,6 +47,11 @@
       "en": "Iwate"
     },
     {
+      "ja": "岩手県（非公式）新型コロナウイルス感染症対策サイト",
+      "cn": "岩手县（非官方）新型冠状病毒肺炎对策网站",
+      "en": "Iwate COVID-19 Information (Unofficial)"
+    },
+    {
       "ja": "宮城県",
       "cn": "宫城县",
       "en": "Miyagi"
@@ -450,6 +455,11 @@
       "ja": "北海道・東北",
       "cn": "北海道・东北",
       "en": "Hokkaido & Tohoku"
+    },
+    {
+      "ja": "東北地方",
+      "cn": "东北地区",
+      "en": "Tohoku Region"
     },
     {
       "ja": "関東",
@@ -1055,6 +1065,11 @@
       "ja": "凡例クリックすると表示・非表示の切替ができます。",
       "cn": "点击数据项的图例可以在显示与隐藏间切换。",
       "en": "Click on the legend to switch between display and hide."
+    },
+    {
+      "ja": "こちらは%sの発生状況をまとめたページです。厚労省のまとめより早く状況を把握できますが、県の集計時間は厚労省の発表時間と完全に一致していないため、タイムラグによる数値の違いが生じる可能性もありますので、予めご注意ください。また、速報では陰性から再び陽性になった人は再計算に含めていないため、自治体発表の陽性者数と数値が異なる場合があります。",
+      "cn": "本页面为%s的疫情发生状况的汇总页面。虽然能比厚劳省的数据能够更先一步了解到最新情况，但由于县的汇总时间和厚劳省的发布时间存在一定的时间差，因此可能会导致数值上的些许差异，敬请注意。此外，速报中的确诊人数不对复阳性患者进行重复计算，因此存在与地方政府所报人数在总数上有些许差别。",
+      "en": "Here is a summary of the outbreak in %s. However, please note that the county's aggregation time does not completely coincide with the announcement time of the Ministry of Health, Labour and Welfare, so there may be a difference in the figures due to the time lag. In addition, the realtime number does not include those who have gone from negative to positive again, so the numbers may differ from the one announced by the local government."
     }
   ]
 }
