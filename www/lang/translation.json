@@ -764,7 +764,7 @@
     {
       "ja": "時間前",
       "cn": "小时前",
-      "en": "hours ago"
+      "en": " hours ago"
     },
     {
       "ja": "日前",
@@ -980,6 +980,21 @@
       "ja": "移動平均新規数",
       "cn": "移动平均新增数",
       "en": "New in Moving Average"
+    },
+    {
+      "ja": "※開発バージョンです。",
+      "cn": "开发中版本",
+      "en": "Under developing"
+    },
+    {
+      "ja": "3月28日以後、厚労省集計方法が変更あり、無症状患者の内訳は公表しないため、無症状患者がどのぐらい入院しているかの情報がなくなりました。こちらではグラフ作成するため、無症状者は一律入院必要ないという仮説を設定した上で、グラフを作りました。よって、該当グラフはあくまで参考です。",
+      "cn": "3月28日以后由于厚劳省代汇总方法发生了变化，不再公布无症状患者的详细数据，因此无法得知有多少无症状患者处于住院状态。在此为了绘图方便，进行了无症状患者一律无需住院的假设后才能得到本图。因此该图仅供参考。",
+      "en": "After March 28, details of asymptomatic patients will no longer be published due to changes in the method of aggregation by the Ministry of Health, Labour and Welfare, so it is not possible to know how many asymptomatic patients are in hospital. This graph is available only after the assumption that all asymptomatic patients do not need to be hospitalized has been made for the sake of drawing convenience. The figure is therefore for reference only."
+    },
+    {
+      "ja": "4月22日以後、厚労省集計方法が変更あり、退院者、死亡者数に突合作業中の数値が含まれ、分母（PCR陽性者）と一致しないという説明がありました。こちらではグラフの作成するため、今まで通り確定した人数のみでグラフを作成します。よって、該当グラフはあくまで参考です。",
+      "cn": "4月22日以后由于厚劳省代汇总方法发生了变化，汇总中所报的出院死亡人数包含了正在进行核对的数目在内，合计值和PCR阳性患者总数会存在不一致。本图依然采用一直以来的核实数据进行绘制。因此该图仅供参考。",
+      "en": "After April 22, due to changes in the method of aggregation by the Ministry of Health, Labour and Welfare, the number of hospital discharges and death reported includes the number of patients undergoing reconciliation, and there is a discrepancy between the pooled values and the total number of PCR-positive. This figure is still drawn using the data that have been verified. The figure is therefore for reference only."
     }
   ]
 }
