@@ -3,8 +3,7 @@ fluidRow(
     title = "マップから見る発生・対応状況",
     width = 12,
     closable = F,
-    # 凡例クリックすると表示・非表示の切替ができます。
-    footer = tags$small(icon("lightbulb"), lang[[langCode]][128]),
+    footer = tags$small(icon("lightbulb"), i18n$t("凡例クリックすると表示・非表示の切替ができます。")),
     fluidRow(
       column(
         width = 6,

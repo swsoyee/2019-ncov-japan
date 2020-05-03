@@ -8,8 +8,7 @@ Component.Tendency <- function() {
     enable_label = T,
     label_text = tagList(i18n$t("もっと見る"), icon("hand-point-right")),
     label_status = "warning",
-    # 凡例クリックすると表示・非表示の切替ができます。
-    footer = tags$small(icon("lightbulb"), lang[[langCode]][128]),
+    footer = tags$small(icon("lightbulb"), i18n$t("凡例クリックすると表示・非表示の切替ができます。")),
     width = 12,
     tabsetPanel(
       id = "linePlot",

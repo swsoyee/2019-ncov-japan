@@ -45,7 +45,7 @@ fluidPage(
           echarts4rOutput('IwateSummary') %>% withSpinner()
         )
       ),
-      footer = tags$small(icon('lightbulb'), '凡例クリックすると表示・非表示の切替ができます。')
+      footer = tags$small(icon('lightbulb'), i18n$t("凡例クリックすると表示・非表示の切替ができます。"))
     )
   ), 
   fluidRow(

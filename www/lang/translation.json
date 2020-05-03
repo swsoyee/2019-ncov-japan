@@ -1050,6 +1050,11 @@
       "ja": "逆",
       "cn": "反",
       "en": "Reverse"
+    },
+    {
+      "ja": "凡例クリックすると表示・非表示の切替ができます。",
+      "cn": "点击数据项的图例可以在显示与隐藏间切换。",
+      "en": "Click on the legend to switch between display and hide."
     }
   ]
 }
