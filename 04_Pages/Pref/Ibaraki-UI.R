@@ -2,23 +2,21 @@ fluidPage(
   fluidRow(
     column(width = 6, style='padding:0px;',
            widgetUserBox(
-             title = '茨城県', 
-             subtitle = '関東地方', 
+             title = i18n$t('茨城県'), 
+             subtitle = i18n$t('関東地方'), 
              width = 12,
              # src = 'Pref/aomori.png', 
              type = 2, 
              color = 'aqua-active',
              collapsible = F,
-             paste0('こちらは茨城県の発生状況をまとめたページです。', 
-                    '厚労省のまとめより早く状況を把握できますが、',
-                    '県の集計時間は厚労省の発表時間と完全に一致していないため、', 
-                    'タイムラグによる数値の違いが生じる可能性もありますので、予めご注意ください。',
-                    'また、速報では陰性から再び陽性になった人は再計算に含めていないため、自治体発表の陽性者数と数値が異なる場合があります。'
-             ),
+             sprintf(
+                i18n$t("こちらは%sの発生状況をまとめたページです。厚労省のまとめより早く状況を把握できますが、県の集計時間は厚労省の発表時間と完全に一致していないため、タイムラグによる数値の違いが生じる可能性もありますので、予めご注意ください。また、速報では陰性から再び陽性になった人は再計算に含めていないため、自治体発表の陽性者数と数値が異なる場合があります。"),
+                i18n$t("茨城県")
+              ),
              footer = tagList(
                tags$small(icon('github'),
                           tags$a(href = 'https://github.com/code4shiogama/covid19-miyagi',
-                                 '茨城県(非公式) 新型コロナウイルス感染症対策サイト'),
+                                 i18n$t('茨城県（非公式）新型コロナウイルス感染症対策サイト')),
                           icon('database'),
                           tags$a(href = 'https://signate.jp/competitions/260/discussions', 
                                  'SIGNATE - COVID-19 Chanllenge')
@@ -34,7 +32,7 @@ fluidPage(
     boxPlus(
       width = 12,
       closable = F,
-      title = tagList(icon('chart-line'), '茨城県の発生状況'),
+      title = tagList(icon('chart-line'), sprintf(i18n$t("%sの発生状況"), i18n$t("茨城県"))),
       fluidRow(
         column(
           width = 6, 
@@ -55,7 +53,7 @@ fluidPage(
       collapsed = T, 
       collapsible = T,
       enable_label = T, 
-      label_text = tagList('クリックして', icon('hand-point-right')), 
+      label_text = tagList(i18n$t("もっと見る"), icon('hand-point-right')), 
       label_status = 'warning',
       # title = tagList(icon('map-marked-alt'), '道内の感染者'),
       fluidRow(

@@ -42,6 +42,11 @@
       "en": "Aomori"
     },
     {
+      "ja": "青森県内における新型コロナウイルス感染症の感染動向データ",
+      "cn": "青森县内的新型冠状病毒肺炎疫情动态数据",
+      "en": "Data on the trends of COVID-19 infections in Aomori Prefecture"
+    },
+    {
       "ja": "岩手県",
       "cn": "岩手县",
       "en": "Iwate"
@@ -60,6 +65,11 @@
       "ja": "茨城県",
       "cn": "茨城县",
       "en": "Ibaraki"
+    },
+    {
+      "ja": "茨城県（非公式）新型コロナウイルス感染症対策サイト",
+      "cn": "茨城县（非官方）新型冠状病毒肺炎对策网站",
+      "en": "Ibaraki COVID-19 Information (Unofficial)"
     },
     {
       "ja": "神奈川県",
@@ -465,6 +475,11 @@
       "ja": "関東",
       "cn": "关东",
       "en": "Kanto"
+    },
+    {
+      "ja": "関東地方",
+      "cn": "关东地方",
+      "en": "Kanto Region"
     },
     {
       "ja": "中部",
@@ -1085,6 +1100,21 @@
       "ja": "こちらは%sの発生状況をまとめたページです。厚労省のまとめより早く状況を把握できますが、県の集計時間は厚労省の発表時間と完全に一致していないため、タイムラグによる数値の違いが生じる可能性もありますので、予めご注意ください。また、速報では陰性から再び陽性になった人は再計算に含めていないため、自治体発表の陽性者数と数値が異なる場合があります。",
       "cn": "本页面为%s的疫情发生状况的汇总页面。虽然能比厚劳省的数据能够更先一步了解到最新情况，但由于县的汇总时间和厚劳省的发布时间存在一定的时间差，因此可能会导致数值上的些许差异，敬请注意。此外，速报中的确诊人数不对复阳性患者进行重复计算，因此存在与地方政府所报人数在总数上有些许差别。",
       "en": "Here is a summary of the outbreak in %s. However, please note that the county's aggregation time does not completely coincide with the announcement time of the Ministry of Health, Labour and Welfare, so there may be a difference in the figures due to the time lag. In addition, the realtime number does not include those who have gone from negative to positive again, so the numbers may differ from the one announced by the local government."
+    },
+    {
+      "ja": "こちらは%sの発生状況をまとめたページです。厚労省のまとめより早く状況を把握できますが、道の集計時間は厚労省の発表時間と完全に一致していないため、タイムラグによる数値の違いが生じる可能性もありますので、予めご注意ください。また、速報では陰性から再び陽性になった人は再計算に含めていないため、自治体発表の陽性者数と数値が異なる場合があります。",
+      "cn": "本页面为%s的疫情发生状况的汇总页面。虽然能比厚劳省的数据能够更先一步了解到最新情况，但由于道的汇总时间和厚劳省的发布时间存在一定的时间差，因此可能会导致数值上的些许差异，敬请注意。此外，速报中的确诊人数不对复阳性患者进行重复计算，因此存在与地方政府所报人数在总数上有些许差别。",
+      "en": "Here is a summary of the outbreak in %s. However, please note that the county's aggregation time does not completely coincide with the announcement time of the Ministry of Health, Labour and Welfare, so there may be a difference in the figures due to the time lag. In addition, the realtime number does not include those who have gone from negative to positive again, so the numbers may differ from the one announced by the local government."
+    },
+    {
+      "ja": "新型コロナウイルス感染症に関するデータ【北海道】",
+      "cn": "新型冠状病毒肺炎相关数据【北海道】",
+      "en": "Data about COVID-19 (Hokkaido)"
+    },
+    {
+      "ja": "%sの発生状況",
+      "cn": "%s疫情现状",
+      "en": "Outbreaks in %s"
     },
     {
       "ja": "地域選択",

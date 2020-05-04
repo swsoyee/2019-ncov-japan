@@ -39,7 +39,7 @@ fluidPage(
     boxPlus(
       width = 12,
       closable = F,
-      title = tagList(icon("chart-line"), "岩手県の発生状況"),
+      title = tagList(icon("chart-line"), sprintf(i18n$t("%sの発生状況"), i18n$t("岩手県"))),
       fluidRow(
         column(
           width = 6,
