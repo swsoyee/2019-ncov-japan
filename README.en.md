@@ -4,7 +4,7 @@
 ![last commit](https://img.shields.io/github/last-commit/swsoyee/2019-ncov-japan?style=flat-square)
 ![page views](https://img.shields.io/badge/dynamic/json?url=https://stg.covid-2019.live/ncov-static/stats.json&label=pv&query=$.result.totals.pageviews.all&color=orange&style=flat-square)
 
-[`🇯🇵日本語`](https://github.com/swsoyee/2019-ncov-japan/blob/master/README.md) | [`🇨🇳中文`]((https://github.com/swsoyee/2019-ncov-japan/blob/master/README.cn.md)) | `🇺🇸English`
+[`🇯🇵日本語`](https://github.com/swsoyee/2019-ncov-japan/blob/master/README.md) | [`🇨🇳中文`](https://github.com/swsoyee/2019-ncov-japan/blob/master/README.cn.md) | `🇺🇸English`
 
 The project is a website for real-time visualization of the COVID-19 epidemic in Japan, developed mainly using the `R` language with `shiny` and other open-source packages. It mainly shows various indicators including, but not limited to, PCR test, positive confirmed, hospital discharge and death, as well as trends in each prefecture in Japan, and there are also a variety of charts such as cluster network, new confirmed case in log scale for users' reference.
 
@@ -32,12 +32,12 @@ Due to the complexity of the data, differences in aggregation time periods or st
 
 ### Project Creators
 
-- Data collection, Visualization development：[@swsoyee](https://github.com/swsoyee)  
-- Server setting, O & M：[@Bob-Fu](https://github.com/Bob-FU)  
+- Data collection, Visualization development: [@swsoyee](https://github.com/swsoyee)  
+- Server setting, O & M: [@Bob-Fu](https://github.com/Bob-FU)  
 
 ### Contributors
 
-- R-related technical support：[@uribo](https://github.com/uribo)  
-- Data automation updates：[@emckk](https://github.com/emc-kk)  
+- R-related technical support: [@uribo](https://github.com/uribo)  
+- Data automation updates: [@emckk](https://github.com/emc-kk)  
 
 All interested parties are welcome to join this open source project!
