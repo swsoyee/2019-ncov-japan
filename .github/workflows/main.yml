@@ -12,7 +12,7 @@ jobs:
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
   generate:
-    if: contains(github.event.head_commit.message, 'data update pull request')
+    if: "contains(github.event.head_commit.message, 'data update pull request')"
     name: Data Update
     runs-on: macOS-latest
     steps:
