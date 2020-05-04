@@ -1130,6 +1130,31 @@
       "ja": "対数",
       "cn": "对数",
       "en": "Log"
+    },
+    {
+      "ja": "感染者が10人以上から経過した日数",
+      "cn": "确诊人数到达10人后经过的天数",
+      "en": "Number of days that have elapsed since 10 confirmed cases"
+    },
+    {
+      "ja": "累積感染者数推移",
+      "cn": "累计确诊人数趋势",
+      "en": "Trends of Cumulative Number of Confirmed"
+    },
+    {
+      "ja": "１日２倍",
+      "cn": "每天翻倍",
+      "en": "Doubling in one day"
+    },
+    {
+      "ja": "３日２倍",
+      "cn": "3天翻倍",
+      "en": "Doubling in three days"
+    },
+    {
+      "ja": "１週間２倍",
+      "cn": "每周翻倍",
+      "en": "Doubling in one week"
     }
   ]
 }

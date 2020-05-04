@@ -93,7 +93,7 @@ output$oneSideLogConfirmed <- renderEcharts4r({
     e_line(count, symbol = "circle", smooth = T, symbolSize = 1) %>%
     e_y_axis(
       splitLine = list(lineStyle = list(opacity = 0.2)),
-      name = "感染者数",
+      name = i18n$t("感染者数"),
       type = "log",
       nameTextStyle = list(padding = c(0, 0, 0, 40)),
       axisLabel = list(inside = T),
@@ -102,7 +102,7 @@ output$oneSideLogConfirmed <- renderEcharts4r({
     ) %>%
     e_x_axis(
       splitLine = list(lineStyle = list(opacity = 0.2)),
-      name = "感染者が10人以上から経過した日数",
+      name = i18n$t("感染者が10人以上から経過した日数"),
       nameLocation = "center",
       nameGap = 25
     ) %>%
@@ -112,7 +112,7 @@ output$oneSideLogConfirmed <- renderEcharts4r({
       right = "15%",
       left = "3%"
     ) %>%
-    e_title(text = "累積感染者数推移") %>%
+    e_title(text = i18n$t("累積感染者数推移")) %>%
     e_legend(
       type = "scroll",
       orient = "vertical",
@@ -120,8 +120,8 @@ output$oneSideLogConfirmed <- renderEcharts4r({
       top = "10%",
       selected = unselected,
       selector = list(
-        list(type = "all", title = "全"),
-        list(type = "inverse", title = "逆")
+        list(type = "all", title = i18n$t("全")),
+        list(type = "inverse", title = i18n$t("逆"))
       )
     ) %>%
     e_mark_line(data = list(
@@ -132,7 +132,7 @@ output$oneSideLogConfirmed <- renderEcharts4r({
       list(
         coord = c(9.5, 10 * 2^9.5),
         symbol = "none",
-        name = "１日２倍"
+        name = i18n$t("１日２倍")
       )
     )) %>%
     e_mark_line(data = list(
@@ -143,7 +143,7 @@ output$oneSideLogConfirmed <- renderEcharts4r({
       list(
         coord = c(28.5, 10 * 2^9.5),
         symbol = "none",
-        name = "３日２倍"
+        name = i18n$t("３日２倍")
       )
     )) %>%
     e_mark_line(data = list(
@@ -154,7 +154,7 @@ output$oneSideLogConfirmed <- renderEcharts4r({
       list(
         coord = c(56, 10 * 2^8),
         symbol = "none",
-        name = "１週間２倍"
+        name = i18n$t("１週間２倍")
       )
     ))
 })
