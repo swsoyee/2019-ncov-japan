@@ -113,6 +113,22 @@ fluidRow(
             "window.open('%s')",
             "https://github.com/swsoyee/2019-ncov-japan"
           )
+        ),
+        actionButton(
+          inputId = "chineseVersion",
+          label = "🇨🇳中文",
+          onclick = sprintf(
+            "window.open('%s')",
+            "https://covid-2019.live/cn"
+          )
+        ),
+        actionButton(
+          inputId = "englishVersion",
+          label = "🇺🇸English",
+          onclick = sprintf(
+            "window.open('%s')",
+            "https://covid-2019.live/en"
+          )
         )
       )
     ))
