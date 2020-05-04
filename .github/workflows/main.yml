@@ -2,6 +2,8 @@ name: 表示用データセット作成
 
 on:
   pull_request:
+    paths:
+    - 50_Data/**/*
     branches: [ master ]
 
 jobs:
@@ -12,7 +14,6 @@ jobs:
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
   generate:
-    if: "contains(github.event.head_commit.message, 'data update pull request')"
     name: Data Update
     runs-on: macOS-latest
     steps:
