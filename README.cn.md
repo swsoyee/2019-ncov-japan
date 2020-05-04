@@ -4,7 +4,7 @@
 ![last commit](https://img.shields.io/github/last-commit/swsoyee/2019-ncov-japan?style=flat-square)
 ![page views](https://img.shields.io/badge/dynamic/json?url=https://stg.covid-2019.live/ncov-static/stats.json&label=pv&query=$.result.totals.pageviews.all&color=orange&style=flat-square)
 
-[`🇯🇵日本語`](https://github.com/swsoyee/2019-ncov-japan/blob/master/README.md) | `🇨🇳中文` | [`🇺🇸English`]()
+[`🇯🇵日本語`](https://github.com/swsoyee/2019-ncov-japan/blob/master/README.md) | `🇨🇳中文` | [`🇺🇸English`](https://github.com/swsoyee/2019-ncov-japan/blob/master/README.en.md)
 
 该项目主要使用`R`语言与`shiny`以及其他的开源软件包开发的用于实时可视化COVID-19在日本的疫情的网站。主要展示包括但不限于检测、确诊、出院和死亡等各项指标以及数据的走势在日本各个都道府县的情况，同时还有密切接触网络图等各种丰富图表供用户参考。
 

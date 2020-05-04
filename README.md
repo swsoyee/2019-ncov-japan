@@ -4,7 +4,7 @@
 ![last commit](https://img.shields.io/github/last-commit/swsoyee/2019-ncov-japan?style=flat-square)
 ![page views](https://img.shields.io/badge/dynamic/json?url=https://stg.covid-2019.live/ncov-static/stats.json&label=pv&query=$.result.totals.pageviews.all&color=orange&style=flat-square)
 
-`🇯🇵日本語` | [`🇨🇳中文`](https://github.com/swsoyee/2019-ncov-japan/blob/master/README.cn.md) | [`🇺🇸English`]()
+`🇯🇵日本語` | [`🇨🇳中文`](https://github.com/swsoyee/2019-ncov-japan/blob/master/README.cn.md) | [`🇺🇸English`](https://github.com/swsoyee/2019-ncov-japan/blob/master/README.en.md)
 
 このプロジェクトは、`R言語`で`shiny`および他のオープンソースパッケージを用いて、日本のCOVID-19発生状況をリアルタイムで可視化しているサイトです。主に検査人数・感染数・退院数・死亡数などの各種指標およびその傾向を、全国または都道府県別で示しており、クラスターネットワーク、対数グラフなど多数のグラフが用意されております。
 
