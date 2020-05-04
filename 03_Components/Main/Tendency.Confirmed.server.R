@@ -4,19 +4,15 @@ output$tendencyConfirmedRegionPicker <- renderUI({
     return(
       pickerInput(
         inputId = "regionPicker",
-        # 地域選択
-        label = lang[[langCode]][93],
+        label = i18n$t("地域選択"),
         choices = regionName,
         selected = defaultSelectedRegionName,
         options = list(
           `actions-box` = TRUE,
           size = 10,
-          # クリア
-          `deselect-all-text` = lang[[langCode]][91],
-          # 全部
-          `select-all-text` = lang[[langCode]][92],
-          # 三件以上選択されました
-          `selected-text-format` = lang[[langCode]][94]
+          `deselect-all-text` = i18n$t("クリア"),
+          `select-all-text` = i18n$t("全部"),
+          `selected-text-format` = i18n$t("三件以上選択されました")
         ),
         multiple = T,
         width = "100%"
@@ -28,28 +24,28 @@ output$tendencyConfirmedRegionPicker <- renderUI({
         width = 8,
         sliderInput(
           inputId = "twoSideNSpan",
-          label = "集計時間間隔",
+          label = i18n$t("時間間隔設定"),
           min = 1,
           max = 10,
           value = 7,
           ticks = F,
           step = 1,
-          post = "日"
+          post = i18n$t("日")
         )
       ),
       column(
         width = 4,
-        tags$b("軸設定"),
+        tags$b(i18n$t("軸設定")),
         switchInput(
           inputId = "twoSideXType",
-          label = "横軸",
-          offLabel = "一般",
-          onLabel = "対数",
+          label = i18n$t("横軸"),
+          offLabel = i18n$t("一般"),
+          onLabel = i18n$t("対数"),
           value = T,
           size = "small",
-          width = "150px",
-          labelWidth = "80px",
-          handleWidth = "80px",
+          width = "200px",
+          labelWidth = "150px",
+          handleWidth = "150px",
           inline = T
         )
       )
