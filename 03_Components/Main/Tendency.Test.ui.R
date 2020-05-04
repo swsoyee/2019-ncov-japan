@@ -1,6 +1,6 @@
 tabPanel(
   # PCR検査数推移
-  title = "PCR検査数の推移",
+  title = i18n$t("PCR検査数の推移"),
   icon = icon("vials"),
   value = "pcr",
   fluidRow(
@@ -10,7 +10,7 @@ tabPanel(
       fluidRow(
         column(
           width = 4,
-          tags$p(tags$b("クルーズ・チャーター便事例の表示")),
+          tags$p(tags$b(i18n$t("クルーズ・チャーター便事例の表示"))),
           switchInput(
             inputId = "showShipInPCR",
             label = icon("ship"),
@@ -32,13 +32,13 @@ tabPanel(
           width = 4,
           sliderInput(
             inputId = "testDaySpan",
-            label = "移動平均時間間隔",
+            label = i18n$t("移動平均時間間隔"),
             min = 1,
             max = 10,
             value = 7,
             ticks = F,
             step = 1,
-            post = "日"
+            post = i18n$t("日")
           )
         )
       ),

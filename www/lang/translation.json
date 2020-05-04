@@ -19,7 +19,7 @@
     {
       "ja": "感染速報",
       "cn": "疫情速报",
-      "en": "News Flash"
+      "en": "Bulletin Board"
     },
     {
       "ja": "感染ルート",
@@ -285,6 +285,21 @@
       "ja": "検査数",
       "cn": "检测数",
       "en": "Tested"
+    },
+    {
+      "ja": "PCR検査数の推移",
+      "cn": "PCR检测数趋势",
+      "en": "PCR Conducted Trends"
+    },
+    {
+      "ja": "クルーズ・チャーター便事例の表示",
+      "cn": "公主号游轮、撤侨包机数据的显示",
+      "en": "Cruise DP & Air charters"
+    },
+    {
+      "ja": "移動平均時間間隔",
+      "cn": "移动平均时间间隔",
+      "en": "Moving Average Time Interval"
     },
     {
       "ja": "コールセンター（日次）",
