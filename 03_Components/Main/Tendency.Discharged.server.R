@@ -25,46 +25,46 @@ output$recoveredLine <- renderEcharts4r({
 
   defaultUnselected <- list(F, F, F, F)
   names(defaultUnselected) <-
-    c("軽〜中等症の者", "新規退院者（日次）", "重症者", "死亡者")
+    c(i18n$t("軽〜中等症の者"), i18n$t("新規退院者（日次）"), i18n$t("重症者"), i18n$t("死亡者"))
   dt %>%
     e_chart(date) %>%
     e_line(
       positive,
-      name = "PCR検査陽性者",
+      name = i18n$t("PCR検査陽性"),
       itemStyle = list(normal = list(color = lightRed)),
       areaStyle = list(opacity = 0.4)
     ) %>%
     e_line(
       discharge,
-      name = "退院者",
+      name = i18n$t("退院者"),
       stack = "1",
       itemStyle = list(normal = list(color = middleGreen)),
       areaStyle = list(opacity = 0.4)
     ) %>%
     e_bar(
       diff,
-      name = "新規退院者（日次）",
+      name = i18n$t("新規退院者（日次）"),
       y_index = 1,
       itemStyle = list(normal = list(color = middleGreen)),
       areaStyle = list(opacity = 0.4)
     ) %>%
     e_line(
       mild,
-      name = "軽〜中等症の者",
+      name = i18n$t("軽〜中等症の者"),
       stack = "1",
       itemStyle = list(normal = list(color = middleYellow)),
       areaStyle = list(opacity = 0.4)
     ) %>%
     e_line(
       severe,
-      name = "重症者",
+      name = i18n$t("重症者"),
       stack = "1",
       itemStyle = list(normal = list(color = darkRed)),
       areaStyle = list(opacity = 0.4)
     ) %>%
     e_line(
       death,
-      name = "死亡者",
+      name = i18n$t("死亡者"),
       stack = "1",
       itemStyle = list(normal = list(color = darkNavy)),
       areaStyle = list(opacity = 0.4)
@@ -93,9 +93,8 @@ output$recoveredLine <- renderEcharts4r({
       right = "15%",
       selected = defaultUnselected
     ) %>%
-    e_title(subtext = paste0("※突合作業中の", 
-                             (tail(confirmingData$domesticDischarged, n = 1) - DISCHARGE_WITHIN$final),
-                             "名退院者はグラフに含まれていないことを予めご了承してください。")
+    e_title(subtext = sprintf(i18n$t("※突合作業中の%s名退院者はグラフに含まれていないことを予めご了承してください。"),
+            (tail(confirmingData$domesticDischarged, n = 1) - DISCHARGE_WITHIN$final))
             ) %>%
     e_tooltip(trigger = "axis") %>%
     e_datazoom(
@@ -123,7 +122,7 @@ output$curedCalendar <- renderEcharts4r({
       splitLine = list(show = F),
       itemStyle = list(borderWidth = 2, borderColor = "#FFFFFF"),
       dayLabel = list(nameMap = c("日", "月", "火", "水", "木", "金", "土")),
-      monthLabel = list(nameMap = "cn")
+      monthLabel = list(nameMap = ifelse(languageSetting != "en", "cn", "en"))
     ) %>%
     e_heatmap(diff, coord_system = "calendar", name = lang[[langCode]][80]) %>%
     e_legend(show = F) %>%

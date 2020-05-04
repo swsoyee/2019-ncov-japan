@@ -1037,6 +1037,21 @@
       "en": "Severe"
     },
     {
+      "ja": "重症者",
+      "cn": "重症",
+      "en": "Severe"
+    },
+    {
+      "ja": "新規退院者（日次）",
+      "cn": "日新增出院人数",
+      "en": "New discharged (daily)"
+    },
+    {
+      "ja": "※突合作業中の%s名退院者はグラフに含まれていないことを予めご了承してください。",
+      "cn": "※核实中的%s名出院者的数据不包含在该图中。",
+      "en": "※Please note that the graph does not include the %s discharged patients during the confirming."
+    },
+    {
       "ja": "入院治療必要",
       "cn": "需要住院治疗",
       "en": "Necessary for hospitalization"
