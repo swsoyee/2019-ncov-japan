@@ -28,7 +28,7 @@ output$hokkaidoValueBoxes <- renderUI({
         createValueBox(value = tail(data$検査累計, n = 1),
                        subValue = paste0(i18n$t('陽性率：'), precentage), 
                        sparkline = createSparklineInValueBox(data, '日検査数'), 
-                       subtitle = lang[[langCode]][100], 
+                       subtitle = i18n$t("検査数"),
                        icon = 'vials',
                        color = 'yellow',
                        diff = tail(data$日検査数 , n = 1)
@@ -46,7 +46,7 @@ output$hokkaidoValueBoxes <- renderUI({
         createValueBox(value = tail(data$治療終了累計, n = 1),
                        subValue = dischargeRate, 
                        sparkline = createSparklineInValueBox(data, '日治療終了数'), 
-                       subtitle = lang[[langCode]][102], 
+                       subtitle = i18n$t("退院者数"),
                        icon = 'user-shield',
                        color = 'green',
                        diff = tail(data$日治療終了数 , n = 1)
@@ -88,7 +88,7 @@ output$hokkaidoSummaryGraph <- renderEcharts4r({
     e_grid(left = '8%', right = '5%', bottom = '10%') %>%
     e_legend(orient = 'vertical', top = '15%', left = '8%') %>%
     e_tooltip(trigger = 'axis') %>%
-    e_title(text = '検査数・陽性者数推移', subtext = paste('更新時刻：', LATEST_UPDATE)) %>%
+    e_title(text = '検査数・陽性者数推移', subtext = paste(i18n$t("更新時刻："), LATEST_UPDATE)) %>%
     e_group('hokkaidoSummary')
 })
 
@@ -115,7 +115,7 @@ output$hokkaidoStackGraph <- renderEcharts4r({
     e_grid(left = '8%', right = '5%', bottom = '10%') %>%
     e_legend(orient = 'vertical', top = '15%', left = '8%') %>%
     e_tooltip(trigger = 'axis') %>%
-    e_title(text = '検査数・罹患者内訳推移', subtext = paste('更新時刻：', LATEST_UPDATE)) %>%
+    e_title(text = '検査数・罹患者内訳推移', subtext = paste(i18n$t("更新時刻："), LATEST_UPDATE)) %>%
     e_group('hokkaidoSummary') %>%
     e_connect_group("hokkaidoSummary")
 })

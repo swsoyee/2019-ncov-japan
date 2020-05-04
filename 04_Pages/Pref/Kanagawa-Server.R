@@ -33,8 +33,8 @@ output$kanagawaContact <- renderEcharts4r({
   data <- GLOBAL_VALUE$Kanagawa$summary
   data %>%
     e_chart(日付) %>%
-    e_bar(合計, name = lang[[langCode]][105], stack = 1, color = darkBlue) %>%
-    e_bar(相談対応件数, name = lang[[langCode]][107], stack = 1, color = lightBlue) %>%
+    e_bar(合計, name = i18n$t("コールセンター（日次）"), stack = 1, color = darkBlue) %>%
+    e_bar(相談対応件数, name = i18n$t("帰国者・接触者相談（日次）"), stack = 1, color = lightBlue) %>%
     e_line(専用ダイヤル累計, name = lang[[langCode]][106], stack = 2, y_index = 1, color = darkRed) %>%
     e_line(相談対応件数累計, name = lang[[langCode]][108], stack = 2, y_index = 1, color = lightNavy) %>%
     e_y_axis(splitLine = list(show = F), index = 1) %>%
@@ -42,7 +42,7 @@ output$kanagawaContact <- renderEcharts4r({
     e_legend(orient = 'vertical', top = '15%', left = '8%') %>%
     e_tooltip(trigger = 'axis') %>%
     e_title(text = lang[[langCode]][104],
-            subtext = paste('更新時刻：', getUpdateTimeDiff(GLOBAL_VALUE$Kanagawa$updateTime))) %>%
+            subtext = paste(i18n$t("更新時刻："), getUpdateTimeDiff(GLOBAL_VALUE$Kanagawa$updateTime))) %>%
     e_group('kanagawaSumarry')
 })
 
@@ -61,7 +61,7 @@ output$kanagawaPatientSummary <- renderEcharts4r({
     e_legend(orient = 'vertical', top = '15%', left = '8%') %>%
     e_tooltip(trigger = 'axis') %>%
     e_title(text = paste0('陽性患者数（計', tail(data$累積陽性数, n = 1), '人）'),
-            subtext = paste('更新時刻：', getUpdateTimeDiff(GLOBAL_VALUE$Kanagawa$updateTime))) %>%
+            subtext = paste(i18n$t("更新時刻："), getUpdateTimeDiff(GLOBAL_VALUE$Kanagawa$updateTime))) %>%
     e_group('kanagawaSumarry') %>%
     e_connect_group('kanagawaSumarry')
 })
@@ -99,7 +99,7 @@ output$kanagawaValueBoxes <- renderUI({
         createValueBox(value = totalPCR, # TODO 今はけんものデータを使ってる
                        subValue = paste0(i18n$t('陽性率：'), positiveRate), 
                        sparkline = createSparklineInValueBox(kenmo, '日次検査数'),
-                       subtitle = lang[[langCode]][100], 
+                       subtitle = i18n$t("検査数"),
                        icon = 'vials',
                        color = 'yellow', 
                        diff = tail(kenmo$日次検査数, n = 1)
@@ -117,7 +117,7 @@ output$kanagawaValueBoxes <- renderUI({
         createValueBox(value = totalDischarge, # TODO 今は厚労省のデータを使ってる
                        subValue = dischargeRate, # TODO
                        sparkline = createSparklineInValueBox(mhlwKanagawa, '日次退院者', length = 19),
-                       subtitle = lang[[langCode]][102], 
+                       subtitle = i18n$t("退院者数"),
                        icon = 'user-shield',
                        color = 'green',
                        diff = totalDischarge - dischargeValue[length(dischargeValue) - 1]

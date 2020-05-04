@@ -282,6 +282,21 @@
       "en": "Discharged"
     },
     {
+      "ja": "検査数",
+      "cn": "检测数",
+      "en": "Tested"
+    },
+    {
+      "ja": "コールセンター（日次）",
+      "cn": "咨询热线（每日）",
+      "en": "Call Center (daily)"
+    },
+    {
+      "ja": "帰国者・接触者相談（日次）",
+      "cn": "归国者・接触者咨询（每日）",
+      "en": "Consultations at returnee/contact (daily)"
+    },
+    {
       "ja": "死亡者",
       "cn": "死亡人数",
       "en": "Death"
@@ -810,6 +825,11 @@
       "ja": "更新時刻",
       "cn": "更新时间",
       "en": "Update at "
+    },
+    {
+      "ja": "更新時刻：",
+      "cn": "更新时间：",
+      "en": "Update: "
     },
     {
       "ja": "感染ルート・クラスターへ",

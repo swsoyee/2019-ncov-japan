@@ -63,7 +63,7 @@ output$IbarakiValueBoxes <- renderUI({
         createValueBox(value = totalPCR,
                        subValue = paste0(i18n$t('陽性率：'), positiveRate), 
                        sparkline = createSparklineInValueBox(data, '検査数'),
-                       subtitle = lang[[langCode]][100], 
+                       subtitle = i18n$t("検査数"),
                        icon = 'vials',
                        color = 'yellow', 
                        diff = tail(data$実施数, n = 1)
@@ -81,7 +81,7 @@ output$IbarakiValueBoxes <- renderUI({
         createValueBox(value = totalDischarge, # TODO 今は厚労省のデータを使ってる
                        subValue = dischargeRate, 
                        sparkline = createSparklineInValueBox(mhlw, '日次退院者', length = 20),
-                       subtitle = lang[[langCode]][102], 
+                       subtitle = i18n$t("退院者数"),
                        icon = 'user-shield',
                        color = 'green',
                        diff = totalDischarge - dischargeValue[length(dischargeValue) - 1]
@@ -114,7 +114,7 @@ output$IbarakiSummary <- renderEcharts4r({
     e_legend(orient = 'vertical', top = '28%', left = '8%') %>%
     e_tooltip(trigger = 'axis') %>%
     e_title(text = '検査実施人数・陽性者数',
-            subtext = paste(paste('更新時刻：', getUpdateTimeDiff(GLOBAL_VALUE$Ibaraki$updateTime)),
+            subtext = paste(paste(i18n$t("更新時刻："), getUpdateTimeDiff(GLOBAL_VALUE$Ibaraki$updateTime)),
                             '\n注1. 医療機関が保険適用で行った検査は含まれていない',
                             '注2. チャーター機帰国者、クルーズ船乗客等は含まれていない',
                             '注3. 速報値として公開するものであり、後日確定データとして修正される場合あり',
@@ -136,7 +136,7 @@ output$IbarakiContact <- renderEcharts4r({
     e_legend(orient = 'vertical', top = '15%', left = '8%') %>%
     e_tooltip(trigger = 'axis') %>%
     e_title(text = '新型コロナウイルス感染症　電話相談件数',
-            subtext = paste('更新時刻：', getUpdateTimeDiff(GLOBAL_VALUE$Ibaraki$updateTime))
+            subtext = paste(i18n$t("更新時刻："), getUpdateTimeDiff(GLOBAL_VALUE$Ibaraki$updateTime))
     ) %>%
     e_group('ibarakiSumarry') %>%
     e_connect_group('ibarakiSumarry')

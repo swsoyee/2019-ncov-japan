@@ -59,7 +59,7 @@ output$MiyagiValueBoxes <- renderUI({
         createValueBox(value = totalPCR,
                        subValue = paste0(i18n$t('陽性率：'), positiveRate), 
                        sparkline = createSparklineInValueBox(data, '検査数'),
-                       subtitle = lang[[langCode]][100], 
+                       subtitle = i18n$t("検査数"),
                        icon = 'vials',
                        color = 'yellow', 
                        diff = tail(data$実施数, n = 1)
@@ -77,7 +77,7 @@ output$MiyagiValueBoxes <- renderUI({
         createValueBox(value = totalDischarge, # TODO 今は厚労省のデータを使ってる
                        subValue = dischargeRate, # TODO
                        sparkline = createSparklineInValueBox(mhlwMiyagi, '日次退院者', length = 20),
-                       subtitle = lang[[langCode]][102], 
+                       subtitle = i18n$t("退院者数"),
                        icon = 'user-shield',
                        color = 'green',
                        diff = totalDischarge - dischargeValue[length(dischargeValue) - 1]
@@ -110,7 +110,7 @@ output$MiyagiSummary <- renderEcharts4r({
     e_legend(orient = 'vertical', top = '28%', left = '8%') %>%
     e_tooltip(trigger = 'axis') %>%
     e_title(text = '検査実施件数・陽性者数',
-            subtext = paste(paste('更新時刻：', getUpdateTimeDiff(GLOBAL_VALUE$Miyagi$updateTime)),
+            subtext = paste(paste(i18n$t("更新時刻："), getUpdateTimeDiff(GLOBAL_VALUE$Miyagi$updateTime)),
                             '\n注1. 検査開始日；令和２年１月３０日（木）１９時',
                             '注2. PCR検査実施件数は，帰国者・接触者外来を通じて検査を行った数のみを計上しており，',
                             '     退院時の確認検査などは含まれておりません。',
@@ -125,7 +125,7 @@ output$MiyagiContact <- renderEcharts4r({
   data %>%
     e_chart(date) %>%
     # e_bar(一般相談, name = '（一般相談）受付 相談件数（日次）', y_index = 1, stack = 1, color = middleBlue) %>%
-    e_bar(相談件数, name = lang[[langCode]][107], y_index = 1, stack = 1, color = lightBlue) %>%
+    e_bar(相談件数, name = i18n$t("帰国者・接触者相談（日次）"), y_index = 1, stack = 1, color = lightBlue) %>%
     # e_line(一般相談累計, name = '（一般相談）受付 相談件数（累計）', stack = 2, color = darkRed) %>%
     e_line(相談件数累計, name = lang[[langCode]][108],stack = 2, color = middelNavy) %>%
     e_y_axis(splitLine = list(show = F), index = 1, max = max(data$相談件数, na.rm = T) * 2) %>%
@@ -134,7 +134,7 @@ output$MiyagiContact <- renderEcharts4r({
     e_legend(orient = 'vertical', top = '15%', left = '8%') %>%
     e_tooltip(trigger = 'axis') %>%
     e_title(text = '新型コロナウイルス感染症相談窓口（コールセンター）対応状況',
-            subtext = paste('更新時刻：', getUpdateTimeDiff(GLOBAL_VALUE$Miyagi$updateTime))
+            subtext = paste(i18n$t("更新時刻："), getUpdateTimeDiff(GLOBAL_VALUE$Miyagi$updateTime))
     ) %>%
     e_group('miyagiSumarry') %>%
     e_connect_group('miyagiSumarry')
