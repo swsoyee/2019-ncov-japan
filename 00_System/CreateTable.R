@@ -1,6 +1,5 @@
 library(data.table)
 library(sparkline)
-library(shiny)
 
 # ====準備部分====
 source(file = "01_Settings/Path.R", local = T, encoding = "UTF-8")
@@ -311,7 +310,7 @@ alertPref <-
     "福岡"
   )
 mergeDt[!(region %in% alertPref), region := paste0("<span style='float:right;'>", region, "</span>")]
-mergeDt[region %in% alertPref, region := paste0(icon("exclamation-triangle"), "<span style='float:right;'>", region, "</span>")]
+mergeDt[region %in% alertPref, region := paste0("<i class=\"fa fa-exclamation-triangle\"></i>", "<span style='float:right;'>", region, "</span>")]
 
 
 # 自治体名前ソート用

@@ -28,7 +28,7 @@ jobs:
             ${{ runner.os }}-renv-
       - name: Install Package Dependencies
         run: |-
-          Rscript -e "install.packages(c('data.table', 'sparkline', 'shiny', 'purrr', 'jsonlite', 'reshape2'))"
+          Rscript -e "install.packages(c('data.table', 'sparkline', 'purrr', 'jsonlite', 'reshape2'))"
       - name: Run Script
         run: |
           Rscript -e 'source("00_System/CreateTable.R")'
