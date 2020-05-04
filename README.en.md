@@ -10,9 +10,9 @@ The project is a website for real-time visualization of the COVID-19 epidemic in
 
 ## Online Access Links
 
-1. [🇨🇳中文版](https://covid-2019.live/cn)
-2. [🇯🇵日本語バージョン](https://covid-2019.live)
-3. [🇺🇸English Version](https://covid-2019.live/en)
+1. [🇺🇸English Version](https://covid-2019.live/en)
+2. [🇨🇳中文版](https://covid-2019.live/cn)
+3. [🇯🇵日本語バージョン](https://covid-2019.live)
 
 ## Snapshot
 
