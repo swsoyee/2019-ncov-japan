@@ -26,7 +26,7 @@ output$hokkaidoValueBoxes <- renderUI({
     tagList(
       fluidRow(
         createValueBox(value = tail(data$検査累計, n = 1),
-                       subValue = paste0('陽性率：', precentage), 
+                       subValue = paste0(i18n$t('陽性率：'), precentage), 
                        sparkline = createSparklineInValueBox(data, '日検査数'), 
                        subtitle = lang[[langCode]][100], 
                        icon = 'vials',
@@ -34,9 +34,9 @@ output$hokkaidoValueBoxes <- renderUI({
                        diff = tail(data$日検査数 , n = 1)
         ),
         createValueBox(value = tail(data$陽性累計, n = 1),
-                       subValue = paste0('速報：', sum(byDate[, 2, with = T], na.rm = T)), 
+                       subValue = paste0(i18n$t('速報：'), sum(byDate[, 2, with = T], na.rm = T)), 
                        sparkline = createSparklineInValueBox(data, '日陽性数'), 
-                       subtitle = lang[[langCode]][101], 
+                       subtitle = i18n$t("陽性者数"),
                        icon = 'procedures',
                        color = 'red',
                        diff = tail(data$日陽性数 , n = 1)
@@ -54,7 +54,7 @@ output$hokkaidoValueBoxes <- renderUI({
         createValueBox(value = tail(data$死亡累計, n = 1),
                        subValue = deathRate, 
                        sparkline = createSparklineInValueBox(data, '日死亡数'), 
-                       subtitle = lang[[langCode]][103], 
+                       subtitle = i18n$t("死亡者数"),
                        icon = 'bible',
                        color = 'navy',
                        diff = tail(data$日死亡数 , n = 1)

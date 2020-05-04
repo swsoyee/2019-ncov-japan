@@ -97,7 +97,7 @@ output$kanagawaValueBoxes <- renderUI({
     tagList(
       fluidRow(
         createValueBox(value = totalPCR, # TODO 今はけんものデータを使ってる
-                       subValue = paste0('陽性率：', positiveRate), 
+                       subValue = paste0(i18n$t('陽性率：'), positiveRate), 
                        sparkline = createSparklineInValueBox(kenmo, '日次検査数'),
                        subtitle = lang[[langCode]][100], 
                        icon = 'vials',
@@ -105,9 +105,9 @@ output$kanagawaValueBoxes <- renderUI({
                        diff = tail(kenmo$日次検査数, n = 1)
         ),
         createValueBox(value = tail(data$累積陽性数, n = 1),
-                       subValue = paste0('速報：', sum(byDate[, 15, with = T], na.rm = T)), 
+                       subValue = paste0(i18n$t('速報：'), sum(byDate[, 15, with = T], na.rm = T)), 
                        sparkline = createSparklineInValueBox(data, '陽性数'),
-                       subtitle = lang[[langCode]][101], 
+                       subtitle = i18n$t("陽性者数"),
                        icon = 'procedures',
                        color = 'red', 
                        diff = tail(data$陽性数, n = 1)
@@ -125,7 +125,7 @@ output$kanagawaValueBoxes <- renderUI({
         createValueBox(value = totalDeath, # TODO 公式データまだない
                        subValue = deathRate, 
                        sparkline = createSparklineInValueBox(death, '神奈川'),
-                       subtitle = lang[[langCode]][103], 
+                       subtitle = i18n$t("死亡者数"),
                        icon = 'bible',
                        color = 'navy',
                        diff = tail(death[, 15, with = F], n = 1)

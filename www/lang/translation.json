@@ -997,6 +997,16 @@
       "en": "Positive"
     },
     {
+      "ja": "陽性率：",
+      "cn": "阳性率：",
+      "en": "Positive rate: "
+    },
+    {
+      "ja": "速報：",
+      "cn": "速报：",
+      "en": "Real-time: "
+    },
+    {
       "ja": "日次新規・累積陽性者の推移",
       "cn": "每日新增和累计阳性人数趋势",
       "en": "Trends of Daily New and Cumulative Positive Cases"

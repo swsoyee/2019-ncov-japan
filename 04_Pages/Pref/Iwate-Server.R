@@ -52,7 +52,7 @@ output$IwateValueBoxes <- renderUI({
     tagList(
       fluidRow(
         createValueBox(value = totalPCR,
-                       subValue = paste0('陽性率：', positiveRate), 
+                       subValue = paste0(i18n$t('陽性率：'), positiveRate), 
                        sparkline = createSparklineInValueBox(data, '検査数'),
                        subtitle = lang[[langCode]][100], 
                        icon = 'vials',
@@ -60,9 +60,9 @@ output$IwateValueBoxes <- renderUI({
                        diff = tail(data$実施数, n = 1)
         ),
         createValueBox(value = totalPositive,
-                       subValue = paste0('速報：', sum(byDate[, 4, with = T], na.rm = T)), 
+                       subValue = paste0(i18n$t('速報：'), sum(byDate[, 4, with = T], na.rm = T)), 
                        sparkline = createSparklineInValueBox(data, '陽性数'),
-                       subtitle = lang[[langCode]][101], 
+                       subtitle = i18n$t("陽性者数"),
                        icon = 'procedures',
                        color = 'red', 
                        diff = tail(data$陽性数, n = 1)
@@ -80,7 +80,7 @@ output$IwateValueBoxes <- renderUI({
         createValueBox(value = totalDeath, # TODO 公式データまだない
                        subValue = '-', # deathRate, 
                        sparkline = createSparklineInValueBox(data, '死亡数'),
-                       subtitle = lang[[langCode]][103], 
+                       subtitle = i18n$t("死亡者数"),
                        icon = 'bible',
                        color = 'navy',
                        diff = tail(data$死亡数, n = 1)
