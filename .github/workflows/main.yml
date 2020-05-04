@@ -7,28 +7,28 @@ on:
 jobs:
   generate:
     if: contains(github.event.pull_request.labels.*.name, 'data_update')
-      name: Data Update
-      runs-on: macOS-latest
-      steps:
-        - uses: actions/checkout@v2
-          with:
-            ref: ${{ github.head_ref }}
-        - uses: r-lib/actions/setup-r@v1
-        - uses: actions/cache@v1
-          if: startsWith(runner.os, 'macOS')
-          with:
-            path: ~/Library/Application Support/renv
-            key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
-            restore-keys: |
-              ${{ runner.os }}-renv-
-        - name: Install Package Dependencies
-          run: |-
-            Rscript -e "install.packages(c('data.table', 'sparkline', 'purrr', 'jsonlite', 'reshape2'))"
-        - name: Run Script
-          run: |
-            Rscript -e 'source("00_System/CreateTable.R")'
-        - name: Git Auto Commit
-          uses: stefanzweifel/git-auto-commit-action@v4.1.6
-          with:
-            commit_message: 🙆表示用データセット作成
-            ref: ${{ github.head_ref }}
+    name: Data Update
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+      - uses: r-lib/actions/setup-r@v1
+      - uses: actions/cache@v1
+        if: startsWith(runner.os, 'macOS')
+        with:
+          path: ~/Library/Application Support/renv
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-renv-
+      - name: Install Package Dependencies
+        run: |-
+          Rscript -e "install.packages(c('data.table', 'sparkline', 'purrr', 'jsonlite', 'reshape2'))"
+      - name: Run Script
+        run: |
+          Rscript -e 'source("00_System/CreateTable.R")'
+      - name: Git Auto Commit
+        uses: stefanzweifel/git-auto-commit-action@v4.1.6
+        with:
+          commit_message: 🙆表示用データセット作成
+          ref: ${{ github.head_ref }}
