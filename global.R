@@ -225,14 +225,14 @@ regionNamePref <- regionName[1:47]
 # 感染者確認されていない地域
 regionZero <- names(regionNamePref[regionNamePref == 0])
 regionNamePref <- sort(regionNamePref[regionNamePref > 0], decreasing = T)
-regionNamePrefName <- paste0(names(regionNamePref), " (", regionNamePref, ")")
+regionNamePrefName <- paste0(sapply(names(regionNamePref), i18n$t), " (", regionNamePref, ")")
 regionNameOther <- regionName[48:length(regionName)]
-regionNameOtherName <- paste0(names(regionNameOther), " (", regionNameOther, ")")
+regionNameOtherName <- paste0(convertRegionName(names(regionNameOther), languageSetting), " (", regionNameOther, ")")
 regionName <- c("都道府県", names(regionNameOther), names(regionNamePref))
 defaultSelectedRegionName <- regionName[1:3]
 
 names(regionName) <- c(
-  paste0("都道府県合計", " (", TOTAL_DOMESITC, ")"),
+  paste0(i18n$t("都道府県合計"), " (", TOTAL_DOMESITC, ")"),
   regionNameOtherName,
   regionNamePrefName
 )

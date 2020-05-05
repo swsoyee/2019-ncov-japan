@@ -45,7 +45,11 @@ prefectureNameMapJa <- c(
   "大分県",
   "宮崎県",
   "鹿児島県",
-  "沖縄県"
+  "沖縄県",
+  "チャーター便",
+  "クルーズ船",
+  "検疫職員",
+  "伊客船"
 )
 
 prefectureNameMapCn <- c(
@@ -95,7 +99,11 @@ prefectureNameMapCn <- c(
   "大分县",
   "宫崎县",
   "鹿儿岛县",
-  "冲绳县"
+  "冲绳县",
+  "撤侨包机",
+  "公主号游轮",
+  "检疫相关",
+  "大西洋号游轮"
 )
 
 prefectureNameMapEn <- c(
@@ -137,7 +145,7 @@ prefectureNameMapEn <- c(
   "Tokushima",
   "Kagawa",
   "Ehime",
-  "Kōchi",
+  "Kochi",
   "Fukuoka",
   "Saga",
   "Nagasaki",
@@ -145,7 +153,11 @@ prefectureNameMapEn <- c(
   "Oita",
   "Miyazaki",
   "Kagoshima",
-  "Okinawa"
+  "Okinawa",
+  "Air charter",
+  "Cruise DP",
+  "Quarantine",
+  "Cruise CA"
 )
 
 prefectureNameMap <- list(
