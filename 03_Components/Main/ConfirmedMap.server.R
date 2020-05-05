@@ -60,7 +60,7 @@ output$echartsSimpleMap <- renderEcharts4r({
       count.x,
       top = "20%",
       left = "0%",
-      inRange = list(color = c("#EEEEEE", lightYellow, lightRed, darkRed)),
+      inRange = list(color = c("#DADADA", "#FFCEAB", "#FF9D57", "#FF781E", "#EA5432", "#C02B11", "#8C0B00")),
       type = "piecewise",
       splitList = list(
         list(min = 1000),
@@ -223,7 +223,7 @@ output$echartsMap <- renderEcharts4r({
       count,
       top = "20%",
       left = "0%",
-      inRange = list(color = c("#EEEEEE", lightYellow, lightRed, darkRed)),
+      inRange = list(color = c("#DADADA", "#FFCEAB", "#FF9D57", "#FF781E", "#EA5432", "#C02B11", "#8C0B00")),
       type = "piecewise",
       splitList = list(
         list(min = 1000),
