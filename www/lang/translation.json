@@ -342,6 +342,41 @@
       "en": "Positive (total)"
     },
     {
+      "ja": "感染経路",
+      "cn": "感染途径",
+      "en": "Route of Infection"
+    },
+    {
+      "ja": "†マーク：死亡者。",
+      "cn": "†符号：死亡患者。",
+      "en": "† mark: Death."
+    },
+    {
+      "ja": "番号の枠：選択された公表日範囲内の事例。",
+      "cn": "序号外框：在所选的发表日期范围内的确诊例。",
+      "en": "Box of the number: cases within the selected publication date range."
+    },
+    {
+      "ja": "クラスターネットワーク",
+      "cn": "聚集性感染网络图",
+      "en": "Cluster Network"
+    },
+    {
+      "ja": "1. クラスターネットワークについて",
+      "cn": "1. 关于聚集性感染网络图",
+      "en": "1. About the Cluster Network"
+    },
+    {
+      "ja": "2. データセットについて",
+      "cn": "2. 关于数据集",
+      "en": "2. About the Dataset"
+    },
+    {
+      "ja": "3. 更新について",
+      "cn": "3. 关于数据更新",
+      "en": "3. About the Update"
+    },
+    {
       "ja": "検査実施数・陽性数",
       "cn": "检测和阳性数",
       "en": "Test Conducted & Positive"

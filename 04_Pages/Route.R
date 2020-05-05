@@ -8,7 +8,7 @@ fluidPage(
       label_status = "warning",
       solidHeader = T,
       status = "warning",
-      title = tagList(icon("bullhorn"), "お知らせ"),
+      title = tagList(icon("bullhorn"), i18n$t("お知らせ")),
       collapsible = T,
       collapsed = T,
       tags$small(
@@ -27,10 +27,10 @@ fluidPage(
       collapsible = T,
       label_status = "warning",
       label_text = "Beta 0.2",
-      title = tagList(icon("connectdevelop"), "クラスターネットワーク"),
+      title = tagList(icon("connectdevelop"), i18n$t("クラスターネットワーク")),
       footer = tags$small(
         icon("database"),
-        "データ提供：",
+        i18n$t("データ提供："),
         tags$a(href = "https://signate.jp/competitions/260/discussions", "SIGNATE - COVID-19 Chanllenge")
       ),
       fluidRow(
@@ -48,12 +48,9 @@ fluidPage(
                 options = list(
                   `actions-box` = TRUE,
                   size = 10,
-                  # クリア
-                  `deselect-all-text` = lang[[langCode]][91],
-                  # 全部
-                  `select-all-text` = lang[[langCode]][92],
-                  # 三件以上選択されました
-                  `selected-text-format` = lang[[langCode]][94],
+                  `deselect-all-text` = i18n$t("クリア"),
+                  `select-all-text` = i18n$t("全部"),
+                  `selected-text-format` = i18n$t("三件以上選択されました"),
                   `max-options` = 5
                 ),
                 multiple = T,
@@ -69,13 +66,13 @@ fluidPage(
             width = 12,
             uiOutput("clusterNetworkWrapper") %>% withSpinner(),
             tags$hr(),
-            tags$li("番号の枠：選択された公表日範囲内の事例。"),
-            tags$li("†マーク：死亡者。"),
+            tags$li(i18n$t("番号の枠：選択された公表日範囲内の事例。")),
+            tags$li(i18n$t("†マーク：死亡者。")),
             tags$br(),
             accordion(
               accordionItem(
                 id = 1,
-                title = "1. クラスターネットワークについて",
+                title = i18n$t("1. クラスターネットワークについて"),
                 tags$small(
                   tags$li(paste0(
                     "当クラスターネットワークは、株式会社SIGNATEが提供したデータセットおよびリンク情報",
@@ -89,7 +86,7 @@ fluidPage(
               ),
               accordionItem(
                 id = 2,
-                title = "2. データセットについて",
+                title = i18n$t("2. データセットについて"),
                 tags$small(
                   paste0(
                     "本分析に用いたデータセット（SIGNATE COVID-19 Dataset）は、現在、収集途中のものであり、データの正確性を保証するものではありません。",
@@ -100,7 +97,7 @@ fluidPage(
               ),
               accordionItem(
                 id = 3,
-                title = "3. 更新について",
+                title = i18n$t("3. 更新について"),
                 tags$small(
                   "更新頻度は二三日一回となります。データセットに貢献したい有志はぜひ下記のリンク先でデータの追加や訂正をしてください。",
                   tags$a(href = "https://signate.jp/competitions/260/discussions", icon("external-link-alt"), "SIGNATE - COVID-19 Chanllenge")
@@ -121,17 +118,17 @@ fluidPage(
   fluidRow(
     boxPlus(
       width = 8,
-      title = tagList(icon("project-diagram"), "感染経路"),
+      title = tagList(icon("project-diagram"), i18n$t("感染経路")),
       enable_label = T,
       collapsible = T,
-      label_text = paste("集計時間：", max(
+      label_text = paste(i18n$t("集計時間："), max(
         as.Date(positiveDetail$発表日),
         na.rm = T
       )),
       closable = F,
       footer = tags$small(
         icon("database"),
-        "データ提供：",
+        i18n$t("データ提供："),
         tags$a(icon("twitter"), "@kenmo_economics",
           href = "https://twitter.com/kenmo_economics"
         ),
@@ -148,12 +145,9 @@ fluidPage(
           options = list(
             `actions-box` = TRUE,
             size = 10,
-            # クリア
-            `deselect-all-text` = lang[[langCode]][91],
-            # 全部
-            `select-all-text` = lang[[langCode]][92],
-            # 三件以上選択されました
-            `selected-text-format` = lang[[langCode]][94]
+            `deselect-all-text` = i18n$t("クリア"),
+            `select-all-text` = i18n$t("全部"),
+            `selected-text-format` = i18n$t("三件以上選択されました")
           ),
           multiple = T,
           inline = T
