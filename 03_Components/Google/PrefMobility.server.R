@@ -23,7 +23,7 @@ createMobilityCalendar <- function(data, pref, serie, title) {
       left = 25, cellSize = 15,
       splitLine = list(show = F), itemStyle = list(borderWidth = 2, borderColor = "#FFFFFF"),
       dayLabel = list(nameMap = c("日", "月", "火", "水", "木", "金", "土")),
-      monthLabel = list(nameMap = "cn")
+      monthLabel = list(nameMap = ifelse(languageSetting != "en", "cn", "en"))
     ) %>%
     e_heatmap_(serie, coord_system = "calendar") %>%
     # e_legend(show = T) %>%

@@ -293,13 +293,33 @@
     },
     {
       "ja": "クルーズ・チャーター便事例の表示",
-      "cn": "公主号游轮、撤侨包机数据的显示",
+      "cn": "公主号游轮、撤侨包机数据显示",
       "en": "Cruise DP & Air charters"
     },
     {
       "ja": "移動平均時間間隔",
       "cn": "移动平均时间间隔",
       "en": "Moving Average Time Interval"
+    },
+    {
+      "ja": "報道発表一覧（新型コロナウイルス）",
+      "cn": "发表报道一览（新型冠状病毒）",
+      "en": "Press Releases (COVID-19)"
+    },
+    {
+      "ja": "PCR検査人数（日次）",
+      "cn": "每日PCR检测人数",
+      "en": "PCR tests conducted (daily)"
+    },
+    {
+      "ja": "注意事項",
+      "cn": "注意事项",
+      "en": "Notes"
+    },
+    {
+      "ja": "これまで延べ人数で公表しましたクルーズ船のＰＣＲ検査の結果について、３月５日以後に実員数で精査した結果になり、３月５日のデータを下方修正しました。",
+      "cn": "以累计人次进行发表的公主号游轮的PCR检查结果在3月5日以后进行了人数核查，因此3月5日的数据会有负向修正。",
+      "en": "The PCR results of the cruise PD, published in terms of cumulative number of test conducted, were verified after March 5, so the March 5 data will have a negative correction."
     },
     {
       "ja": "コールセンター（日次）",
@@ -1020,6 +1040,16 @@
       "ja": "５日移動平均",
       "cn": "5日移动平均",
       "en": "5-Day Moving Average"
+    },
+    {
+      "ja": "%s日移動平均",
+      "cn": "%s日移动平均",
+      "en": "%s-Day Moving Average"
+    },
+    {
+      "ja": "日次新規・累積検査人数の推移",
+      "cn": "每日新增、累计检测人数趋势",
+      "en": "Trends of new, cumulative tests conducted (daily)"
     },
     {
       "ja": "週間移動平均",

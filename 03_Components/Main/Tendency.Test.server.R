@@ -47,19 +47,19 @@ output$pcrLine <- renderEcharts4r({
     e_chart(date) %>%
     e_bar(
       pcr,
-      name = "累積",
+      name = i18n$t("累積"),
       itemStyle = list(color = lightYellow)
     ) %>%
     e_bar(
       diff,
-      name = "新規",
+      name = i18n$t("新規"),
       itemStyle = list(color = darkYellow),
       z = 2, barGap = "-100%"
     ) %>%
-    e_line(ma, name = paste0(input$testDaySpan, "日移動平均（新規）"), y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkRed)) %>%
+    e_line(ma, name = sprintf(i18n$t("%s日移動平均"), input$testDaySpan), y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkRed)) %>%
     e_x_axis(splitLine = list(lineStyle = list(opacity = 0.2))) %>%
     e_y_axis(
-      name = "検査人数",
+      name = i18n$t("検査人数"),
       nameGap = 10,
       nameTextStyle = list(padding = c(0, 0, 0, 50)),
       splitLine = list(lineStyle = list(opacity = 0.2)),
@@ -69,7 +69,7 @@ output$pcrLine <- renderEcharts4r({
       axisTick = list(show = F)
     ) %>%
     e_y_axis(
-      name = "移動平均新規数",
+      name = i18n$t("移動平均新規数"),
       nameGap = 10,
       splitLine = list(show = F),
       z = 999,
@@ -90,10 +90,10 @@ output$pcrLine <- renderEcharts4r({
       right = "15%"
     ) %>%
     e_legend_unselect(
-      name = "累積"
+      name = i18n$t("累積")
     ) %>%
     e_tooltip(trigger = "axis") %>%
-    e_title(text = "日次新規・累積検査人数の推移") %>%
+    e_title(text = i18n$t("日次新規・累積検査人数の推移")) %>%
     e_datazoom(
       minValueSpan = 3600 * 24 * 1000 * 7,
       bottom = "0%",
