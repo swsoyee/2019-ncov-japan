@@ -22,7 +22,12 @@ createMobilityCalendar <- function(data, pref, serie, title) {
       range = c("2020-02-16", max(data$date)),
       left = 25, cellSize = 15,
       splitLine = list(show = F), itemStyle = list(borderWidth = 2, borderColor = "#FFFFFF"),
-      dayLabel = list(nameMap = c("日", "月", "火", "水", "木", "金", "土")),
+      dayLabel = list(nameMap = switch(
+        languageSetting,
+        "ja" = c("日", "月", "火", "水", "木", "金", "土"),
+        "cn" = "cn",
+        "en" = "en"
+      )),
       monthLabel = list(nameMap = ifelse(languageSetting != "en", "cn", "en"))
     ) %>%
     e_heatmap_(serie, coord_system = "calendar") %>%

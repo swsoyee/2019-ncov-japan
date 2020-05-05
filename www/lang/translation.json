@@ -1057,6 +1057,56 @@
       "en": "Weekly Moving Average"
     },
     {
+      "ja": "相談を受けた件数（日次）",
+      "cn": "每日咨询应对次数",
+      "en": "WNumber of consultations received (daily)"
+    },
+    {
+      "ja": "コールセンターの対応",
+      "cn": "咨询热线应对情况",
+      "en": "Call Center Correspondence"
+    },
+    {
+      "ja": "これまでの主な相談内容",
+      "cn": "至今为止的主要咨询内容",
+      "en": "Main contents of consultation to date"
+    },
+    {
+      "ja": "現在の症状に対する不安",
+      "cn": "对现在的症状的担忧",
+      "en": "Anxiety about current symptoms"
+    },
+    {
+      "ja": "予防法、消毒、対処法等医療に関する一般的事項",
+      "cn": "预防、消毒和应对方法等一般医疗事项",
+      "en": "General medical matters such as prevention, disinfection and coping methods"
+    },
+    {
+      "ja": "政府の対策についてのご意見",
+      "cn": "对政府对策的意见",
+      "en": "Opinion on the government's measures"
+    },
+    {
+      "ja": "渡航に関する相談",
+      "cn": "出行相关咨询",
+      "en": "Consultation on travel"
+    },
+    {
+      "ja": "国内発症例の詳細な行動履歴について",
+      "cn": "国内发病例的详细行为历",
+      "en": "Detailed behavioral history of domestic cases"
+    },
+    {
+      "ja": "その他",
+      "cn": "其他",
+      "en": "Other"
+    },
+    {
+      "ja": "厚生労働省コールセンターの対応状況等について",
+      "cn": "厚生劳动省咨询热线应对情况等",
+      "en": "Status of the Call Center of the Ministry of Health, Labour and Welfare"
+    },
+    {
       "ja": "陽性者数",
       "cn": "阳性人数",
       "en": "Positive"

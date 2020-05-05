@@ -121,7 +121,12 @@ output$curedCalendar <- renderEcharts4r({
       cellSize = 15,
       splitLine = list(show = F),
       itemStyle = list(borderWidth = 2, borderColor = "#FFFFFF"),
-      dayLabel = list(nameMap = c("日", "月", "火", "水", "木", "金", "土")),
+      dayLabel = list(nameMap = switch(
+        languageSetting,
+        "ja" = c("日", "月", "火", "水", "木", "金", "土"),
+        "cn" = "cn",
+        "en" = "en"
+      )),
       monthLabel = list(nameMap = ifelse(languageSetting != "en", "cn", "en"))
     ) %>%
     e_heatmap(diff, coord_system = "calendar", name = lang[[langCode]][80]) %>%

@@ -5,9 +5,17 @@ output$pcrCalendar <- renderEcharts4r({
     e_charts(date) %>%
     e_calendar(
       range = c("2020-02-01", "2020-07-30"),
-      top = 25, left = 25, cellSize = 15,
-      splitLine = list(show = F), itemStyle = list(borderWidth = 2, borderColor = "#FFFFFF"),
-      dayLabel = list(nameMap = switch(languageSetting, "ja" = c("日", "月", "火", "水", "木", "金", "土"), "cn" = "cn", "en" = "en") ),
+      top = 25,
+      left = 25,
+      cellSize = 15,
+      splitLine = list(show = F),
+      itemStyle = list(borderWidth = 2, borderColor = "#FFFFFF"),
+      dayLabel = list(nameMap = switch(
+        languageSetting,
+        "ja" = c("日", "月", "火", "水", "木", "金", "土"),
+        "cn" = "cn",
+        "en" = "en"
+      )),
       monthLabel = list(nameMap = ifelse(languageSetting != "en", "cn", "en"))
     ) %>%
     e_heatmap(diff, coord_system = "calendar", name = lang[[langCode]][80]) %>%
@@ -16,13 +24,18 @@ output$pcrCalendar <- renderEcharts4r({
       top = "15%",
       max = maxValue,
       show = F,
-      inRange = list(color = c("#FFFFFF", darkYellow)), # scale colors
+      inRange = list(color = c("#FFFFFF", darkYellow)),
+      # scale colors
     ) %>%
-    e_tooltip(formatter = htmlwidgets::JS("
+    e_tooltip(
+      formatter = htmlwidgets::JS(
+        "
         function(params) {
           return(`${params.value[0]}<br>新規${params.value[1]}人`)
         }
-      "))
+      "
+      )
+    )
 })
 
 output$renderCalendar <- renderUI({
@@ -33,9 +46,7 @@ output$renderCalendar <- renderUI({
       echarts4rOutput("confirmedCalendar", height = "130px")
     }
   } else {
-    tagList(
-      tags$p("開発中")
-    )
+    tagList(tags$p("開発中"))
   }
 })
 
@@ -51,9 +62,17 @@ output$callCenterCanlendar <- renderEcharts4r({
     e_charts(date) %>%
     e_calendar(
       range = c("2020-02-01", "2020-07-30"),
-      top = 25, left = 25, cellSize = 15,
-      splitLine = list(show = F), itemStyle = list(borderWidth = 2, borderColor = "#FFFFFF"),
-      dayLabel = list(nameMap = c("日", "月", "火", "水", "木", "金", "土")),
+      top = 25,
+      left = 25,
+      cellSize = 15,
+      splitLine = list(show = F),
+      itemStyle = list(borderWidth = 2, borderColor = "#FFFFFF"),
+      dayLabel = list(nameMap = switch(
+        languageSetting,
+        "ja" = c("日", "月", "火", "水", "木", "金", "土"),
+        "cn" = "cn",
+        "en" = "en"
+      )),
       monthLabel = list(nameMap = ifelse(languageSetting != "en", "cn", "en"))
     ) %>%
     e_heatmap(count, coord_system = "calendar", name = lang[[langCode]][80]) %>%
@@ -62,11 +81,16 @@ output$callCenterCanlendar <- renderEcharts4r({
       top = "15%",
       max = maxValue,
       show = F,
-      inRange = list(color = c("#FFFFFF", darkBlue)), # scale colors
+      inRange = list(color = c("#FFFFFF", darkBlue)),
+      # scale colors
     ) %>%
-    e_tooltip(formatter = htmlwidgets::JS("
+    e_tooltip(
+      formatter = htmlwidgets::JS(
+        "
         function(params) {
           return(`${params.value[0]}<br>新規${params.value[1]}人`)
         }
-      "))
+      "
+      )
+    )
 })
