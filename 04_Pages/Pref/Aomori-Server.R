@@ -104,16 +104,16 @@ output$AomoriSummary <- renderEcharts4r({
   data$陽性数累計 <- cumsum(data$陽性数)
   data %>%
     e_chart(検査日時) %>%
-    e_bar(実施数, name = '検査実施数', y_index = 1, barGap = '-100%', color = middleYellow) %>%
-    e_bar(陽性数, name = '陽性数', y_index = 1, color = middleRed) %>%
-    e_line(実施数累計, name = '検査実施数累計', color = darkYellow) %>%
-    e_line(陽性数累計, name = '陽性数累計', color = darkRed) %>%
+    e_bar(実施数, name = i18n$t('検査実施数'), y_index = 1, barGap = '-100%', color = middleYellow) %>%
+    e_bar(陽性数, name = i18n$t('陽性数'), y_index = 1, color = middleRed) %>%
+    e_line(実施数累計, name = i18n$t('検査実施数累計'), color = darkYellow) %>%
+    e_line(陽性数累計, name = i18n$t('陽性数累計'), color = darkRed) %>%
     e_y_axis(splitLine = list(show = F), index = 1, max = max(data$実施数, na.rm = T) * 2) %>%
     e_x_axis(splitLine = list(show = F)) %>%
     e_grid(left = '8%', right = '10%', bottom = '10%', top = '28%') %>%
     e_legend(orient = 'vertical', top = '28%', left = '8%') %>%
     e_tooltip(trigger = 'axis') %>%
-    e_title(text = '検査実施数・陽性数',
+    e_title(text = i18n$t('検査実施数・陽性数'),
             subtext = paste(paste(i18n$t("更新時刻："), getUpdateTimeDiff(GLOBAL_VALUE$Aomori$updateTime)),
               '\n注1. 医療機関が保険適用で行った検査は含まれていない',
               '注2. 同一の対象者について複数の検体を検査する場合あり',
@@ -136,7 +136,7 @@ output$AomoriContact <- renderEcharts4r({
     e_chart(受付_年月日) %>%
     e_bar(相談件数.対応., name = i18n$t("コールセンター（日次）"), y_index = 1, stack = 1, color = middleBlue) %>%
     e_bar(相談件数, name = i18n$t("帰国者・接触者相談（日次）"), y_index = 1, stack = 1, color = lightBlue) %>%
-    e_line(コールセンター相談件数累計, name = lang[[langCode]][106], stack = 2, color = darkRed) %>%
+    e_line(コールセンター相談件数累計, name = i18n$t("コールセンター（累計）"), stack = 2, color = darkRed) %>%
     e_line(相談件数累計, name = lang[[langCode]][108], stack = 2, color = middelNavy) %>%
     e_y_axis(splitLine = list(show = F), index = 1, max = max(dt$相談件数 + dt$相談件数.対応., na.rm = T) * 2) %>%
     e_x_axis(splitLine = list(show = F)) %>%

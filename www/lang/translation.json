@@ -302,6 +302,51 @@
       "en": "About the map source"
     },
     {
+      "ja": "日次都道府県別新規発生数",
+      "cn": "各都道府县每日新增确诊数",
+      "en": "Number of new confirmed by prefecture (daily)"
+    },
+    {
+      "ja": "4月7日\n緊急事態宣言",
+      "cn": "4月7日\n宣布进入紧急状态",
+      "en": "April 7\nDeclaration of emergency"
+    },
+    {
+      "ja": "倍加時間の経時的変化（直近%s日間で計算）",
+      "cn": "翻倍所需时间的变化趋势（以最近%s天间隔计算）",
+      "en": "Change in doubling time over time (calculated over the last %s days)"
+    },
+    {
+      "ja": "コールセンター（累計）",
+      "cn": "咨询热线（累计）",
+      "en": "Call Center (total)"
+    },
+    {
+      "ja": "検査実施数",
+      "cn": "检测数",
+      "en": "Test Conducted"
+    },
+    {
+      "ja": "陽性数",
+      "cn": "阳性数",
+      "en": "Positive"
+    },
+    {
+      "ja": "検査実施数累計",
+      "cn": "检测数累计",
+      "en": "Test Conducted (total)"
+    },
+    {
+      "ja": "陽性数累計",
+      "cn": "阳性数累计",
+      "en": "Positive (total)"
+    },
+    {
+      "ja": "検査実施数・陽性数",
+      "cn": "检测和阳性数",
+      "en": "Test Conducted & Positive"
+    },
+    {
       "ja": "本日新規",
       "cn": "今日新增",
       "en": "New Today"

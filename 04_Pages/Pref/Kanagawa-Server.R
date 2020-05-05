@@ -35,7 +35,7 @@ output$kanagawaContact <- renderEcharts4r({
     e_chart(日付) %>%
     e_bar(合計, name = i18n$t("コールセンター（日次）"), stack = 1, color = darkBlue) %>%
     e_bar(相談対応件数, name = i18n$t("帰国者・接触者相談（日次）"), stack = 1, color = lightBlue) %>%
-    e_line(専用ダイヤル累計, name = lang[[langCode]][106], stack = 2, y_index = 1, color = darkRed) %>%
+    e_line(専用ダイヤル累計, name = i18n$t("コールセンター（累計）"), stack = 2, y_index = 1, color = darkRed) %>%
     e_line(相談対応件数累計, name = lang[[langCode]][108], stack = 2, y_index = 1, color = lightNavy) %>%
     e_y_axis(splitLine = list(show = F), index = 1) %>%
     e_grid(left = '8%', right = '10%', bottom = '10%') %>%
@@ -55,7 +55,7 @@ output$kanagawaPatientSummary <- renderEcharts4r({
     e_bar(非公表, stack = 1, y_index= 1, color = darkBlue) %>%
     # e_bar(調査中, stack = 1, y_index= 1, color = darkYellow) %>%
     e_line(累積陽性数, y_index = 0, color = darkRed) %>%
-    e_mark_line(data = list(xAxis = '2020-04-07', label = list(formatter = '4月7日\n緊急事態宣言')), symbol = 'circle') %>%
+    e_mark_line(data = list(xAxis = '2020-04-07', label = list(formatter = i18n$t("4月7日\n緊急事態宣言"))), symbol = 'circle') %>%
     e_y_axis(splitLine = list(show = F), index = 1, max = max(data$陽性数, na.rm = T) * 2) %>%
     e_grid(left = '8%', right = '5%', bottom = '10%') %>%
     e_legend(orient = 'vertical', top = '15%', left = '8%') %>%

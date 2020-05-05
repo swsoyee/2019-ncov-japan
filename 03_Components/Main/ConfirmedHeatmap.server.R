@@ -30,14 +30,14 @@ output$confirmedHeatmap <- renderEcharts4r({
     e_mark_line(
       data = list(
         xAxis = "2020-04-07",
-        label = list(formatter = "4月7日\n緊急事態宣言", position = "start")
+        label = list(formatter = i18n$t("4月7日\n緊急事態宣言"), position = "start")
       ),
       lineStyle = list(opacity = 0.5),
       silent = T,
       symbol = "circle", symbolSize = 4
     ) %>%
     e_grid(right = "8%", bottom = "15%", left = "2%") %>%
-    e_title(text = "日次都道府県別新規発生数") %>%
+    e_title(text = i18n$t("日次都道府県別新規発生数")) %>%
     e_tooltip(formatter = htmlwidgets::JS("
       function(params) {
         console.log(params)
@@ -92,14 +92,14 @@ output$confirmedHeatmapDoublingTime <- renderEcharts4r({
     e_mark_line(
       data = list(
         xAxis = "2020-04-07",
-        label = list(formatter = "4月7日\n緊急事態宣言", position = "start")
+        label = list(formatter = i18n$t("4月7日\n緊急事態宣言"), position = "start")
       ),
       lineStyle = list(opacity = 0.5),
       silent = T,
       symbol = "circle", symbolSize = 4
     ) %>%
     e_grid(right = "8%", bottom = "15%", left = "2%") %>%
-    e_title(text = paste0("倍加時間の経時的変化(直近", 7, "日間で計算)")) %>%
+    e_title(text = sprintf(i18n$t("倍加時間の経時的変化（直近%s日間で計算）"), 7)) %>%
     e_tooltip(formatter = htmlwidgets::JS("
       function(params) {
         console.log(params)
