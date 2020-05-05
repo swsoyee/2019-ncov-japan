@@ -9,15 +9,17 @@ observeEvent(input$sideBarTab, {
 
 output$onset_to_confirmed_map <- renderEcharts4r({
   data <- GLOBAL_VALUE$Academic$onset_to_confirmed_map
+  data[, translatedRegionName := convertRegionName(受診都道府県, languageSetting)]
   if (!is.null(data)) {
     max_pref <- data[発症から診断までの平均日数 == max(発症から診断までの平均日数, na.rm = T)]
     min_pref <- data[発症から診断までの平均日数 == min(発症から診断までの平均日数, na.rm = T)]
     data %>%
-      e_charts(受診都道府県) %>%
+      e_charts(translatedRegionName) %>%
       e_map_register("japan", japanMap) %>%
       e_map(
         発症から診断までの平均日数,
         map = "japan",
+        nameMap = useMapNameMap(languageSetting),
         name = "発症から診断までの平均日数",
         layoutSize = "50%",
         center = c(137.1374062, 36.8951298),

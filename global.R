@@ -17,6 +17,7 @@ library(shiny.i18n)
 
 source(file = "01_Settings/Path.R", local = T, encoding = "UTF-8")
 source(file = "02_Utils/Functions.R", local = T, encoding = "UTF-8")
+source(file = "02_Utils/mapNameMap.R", local = T, encoding = "UTF-8")
 source(file = "02_Utils/ConfirmedPyramidData.R", local = T, encoding = "UTF-8")
 source(file = paste0(COMPONENT_PATH, "Notification.R"), local = T, encoding = "UTF-8")
 source(file = paste0(PAGE_PATH, "Main/Utils/ValueBox.R"), local = T, encoding = "UTF-8")
@@ -39,7 +40,7 @@ japanMap <- jsonlite::read_json(paste0(DATA_PATH, "Echarts/japan.json"))
 # TODO ここで変換せず、ローカルで変換すべき
 japanMap$features <- japanMap$features %>% 
   purrr::map(function(x){
-    x$properties$name <- x$properties$nam_ja
+    x$properties$name <- convertRegionName(x$properties$nam_ja, languageSetting)
     return(x)
   })
 

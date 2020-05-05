@@ -21,7 +21,7 @@ output$echartsSimpleMap <- renderEcharts4r({
   yesterday <- as.Date(today) - 1
   totalData <- mapDt[date == today]
   yesterdayData <- mapDt[date == yesterday]
-  dt <- merge(x = totalData, y = yesterdayData, by = c("ja", "full_ja", "en", "lat", "lng", "regions"), no.dups = T)
+  dt <- merge(x = totalData, y = yesterdayData, by = c("ja", "full_ja", "en", "lat", "lng", "regions"), no.dups = T, sort = F)
   dt[, diff := (count.x - count.y)]
   # 本日増加分
   todayTotalIncreaseNumber <- sum(dt$diff, na.rm = T)
@@ -32,13 +32,16 @@ output$echartsSimpleMap <- renderEcharts4r({
       i18n$t("※こちらの合計値には空港検疫、チャーター便、\n　クルーズ関連の事例などは含まれていない。")
     )
   }
+  
+  dt[, translatedRegionName := convertRegionName(full_ja, languageSetting)]
 
   map <- dt %>%
-    e_charts(full_ja) %>%
+    e_charts(translatedRegionName) %>%
     e_map_register("japan", japanMap) %>%
     e_map(count.x,
       map = "japan",
       name = "感染確認数",
+      nameMap = useMapNameMap(languageSetting),
       layoutSize = "50%",
       center = c(137.1374062, 36.8951298),
       zoom = 1.5,
@@ -167,6 +170,7 @@ output$echartsMap <- renderEcharts4r({
     )
   })
 
+  mapDt[, translatedRegionName := convertRegionName(full_ja, languageSetting)]
   # provinceCode <- fread(paste0(DATA_PATH, 'prefectures.csv')) # TEST
   if (input$showPopupOnMap) {
     provinceColnames <- colnames(byDate)[2:ncol(byDate)]
@@ -192,14 +196,15 @@ output$echartsMap <- renderEcharts4r({
       )
     })
   }
-
+  
   map <- mapDt %>%
     group_by(date) %>%
-    e_charts(full_ja, timeline = T) %>%
+    e_charts(translatedRegionName, timeline = T) %>%
     e_map_register("japan", japanMap) %>%
     e_map(count,
       map = "japan",
       name = "感染確認数",
+      nameMap = useMapNameMap(languageSetting),
       layoutSize = "50%",
       center = c(137.1374062, 36.8951298),
       zoom = 1.5,
