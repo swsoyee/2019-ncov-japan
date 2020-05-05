@@ -73,13 +73,14 @@ output$genderBar <- renderEcharts4r({
 })
 
 output$ageGenderOption <- renderUI({
-  region <- unique(GLOBAL_VALUE$signateDetail.ageGenderData$受診都道府県)
-
+  region <- as.list(c("全国", prefectureNameMapJa))
+  names(region) <- c(i18n$t("全国"), prefectureNameMap[[languageSetting]])
+  
   tagList(
     pickerInput(
       inputId = "ageGenderOptionRegion",
       label = i18n$t("都道府県"),
-      choices = c("全国", region)
+      choices = region
     ),
     dateRangeInput(
       "ageGenderOptionDateRange",
