@@ -292,6 +292,61 @@
       "en": "PCR Conducted Trends"
     },
     {
+      "ja": "各都道府県の累積・新規感染者数推移",
+      "cn": "各都道府县的累计和新增确诊人数趋势",
+      "en": "Cumulative and Newly Confirmed Cases in Each Prefecture"
+    },
+    {
+      "ja": "マップのソースについて",
+      "cn": "地图来源",
+      "en": "About the map source"
+    },
+    {
+      "ja": "本日新規",
+      "cn": "今日新增",
+      "en": "New Today"
+    },
+    {
+      "ja": "退院者数の推移",
+      "cn": "出院者数趋势",
+      "en": "Discharged Trends"
+    },
+    {
+      "ja": "退院者内訳",
+      "cn": "出院者详情",
+      "en": "Details of Discharged"
+    },
+    {
+      "ja": "退院者数（日次）",
+      "cn": "每日新增出院者数",
+      "en": "New Discharged (daily)"
+    },
+    {
+      "ja": "※令和２年４月２２日から厚労省公開している退院者、死亡者数に突合作業中の人数が含まれていて、入退院等の状況の合計とPCR検査陽性者数は一致しないため、正しい分母がわからないのでこちらの計算はあくまでも参考程度にしてください。対処法考え＆調整中。",
+      "cn": "注：2020年4月22日以后厚劳省所发表等出院者、死亡者数据中包含了正处于核实当中数据，导致住出院人数与总体的PCR检测阳性人数合计不相等，因此无法得知准确的分母，此处的计算仅供参考用。应对方法正在考虑中。",
+      "en": "Note: The data on discharges and deaths published by the Ministry of Health, Labour and Welfare after April 22, 2020 include data that are in the process of being verified, resulting in a discrepancy between the number of hospital discharges and the overall number of positive PCR tests, so it is not possible to know the exact denominator and calculations here are for information purposes only. The response is under consideration."
+    },
+    {
+      "ja": "%sのサマリー",
+      "cn": "%s汇总",
+      "en": "Summary of %s"
+    },
+    {
+      "ja": "退院率：",
+      "cn": "出院率：",
+      "en": "Discharged: "
+    },
+    {
+      "ja": "重傷率：",
+      "cn": "重症率：",
+      "en": "Severity rate: "
+    },
+    {
+      "ja": "死亡率：",
+      "cn": "死亡率：",
+      "en": "Mortality rate: "
+    },
+    {
       "ja": "クルーズ・チャーター便事例の表示",
       "cn": "公主号游轮、撤侨包机数据显示",
       "en": "Cruise DP & Air charters"
@@ -360,6 +415,11 @@
       "ja": "クルーズ船",
       "cn": "公主号游轮",
       "en": "Cruise DP"
+    },
+    {
+      "ja": "空港検疫",
+      "cn": "机场检疫",
+      "en": "Airport Quarantine"
     },
     {
       "ja": "ダイアモンド・プリンセス号：令和２年３月５日まで延べ人数で公表しましたＰＣＲ検査の結果について、実員数で精査した結果は下記の数値通りです。<br><br>",

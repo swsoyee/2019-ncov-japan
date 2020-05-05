@@ -140,7 +140,7 @@ output$echartsMap <- renderEcharts4r({
       diff <- byDate[date == dateSeq[i], name, with = F][[1]]
       if (diff > 0) {
         # 新規
-        item <- paste(item, paste0(name, lang[[langCode]][118], diff), " ")
+        item <- paste(item, paste0(name, i18n$t("新規"), diff), " ")
       }
     }
     return(
@@ -155,10 +155,8 @@ output$echartsMap <- renderEcharts4r({
   timeSeriesTitleSource <- lapply(seq_along(dateSeq), function(i) {
     return(
       list(
-        # マップのソースについて
-        subtext = lang[[langCode]][116],
-        # https://code.highcharts.com/mapdata/
-        sublink = lang[[langCode]][117],
+        subtext = i18n$t("マップのソースについて"),
+        sublink = "https://github.com/dataofjapan/land",
         subtextStyle = list(
           color = "#3c8dbc",
           fontSize = 10

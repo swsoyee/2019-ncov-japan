@@ -376,5 +376,5 @@ output$twoSideLogConfirmed <- renderEcharts4r({
       right = "15%",
       left = "3%"
     ) %>%
-    e_title(text = "各都道府県の累積・新規感染者数推移")
+    e_title(text = i18n$t("各都道府県の累積・新規感染者数推移"))
 })

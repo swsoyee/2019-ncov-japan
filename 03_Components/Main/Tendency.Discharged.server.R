@@ -3,15 +3,12 @@
 output$dischargeSummary <- renderUI({
   dt <- dischargeData()[nrow(dischargeData())]
   tagList(
-    tags$b(dt$date, "のサマリー"),
-    tags$li("退院率：", round(dt$discharge / dt$positive * 100, 2), "%"),
-    tags$li("重傷率：", round(dt$sever / dt$positive * 100, 2), "%"),
-    tags$li("死亡率：", round(dt$death / dt$positive * 100, 2), "%"),
-    tags$small(paste0("※令和２年４月２２日から厚労省公開している退院者、死亡者数に突合作業",
-               "中の人数が含まれていて、入退院等の状況の合計とPCR検査陽性者数は一致しないため、",
-               "正しい分母がわからないのでこちらの計算はあくまでも参考程度にしてください。")),
-    tags$small("対処法考え＆調整中。"),
-    tags$hr(),
+    tags$b(sprintf(i18n$t("%sのサマリー"), dt$date)),
+    tags$li(i18n$t("退院率："), round(dt$discharge / dt$positive * 100, 2), "%"),
+    tags$li(i18n$t("重傷率："), round(dt$sever / dt$positive * 100, 2), "%"),
+    tags$li(i18n$t("死亡率："), round(dt$death / dt$positive * 100, 2), "%"),
+    tags$small(i18n$t("※令和２年４月２２日から厚労省公開している退院者、死亡者数に突合作業中の人数が含まれていて、入退院等の状況の合計とPCR検査陽性者数は一致しないため、正しい分母がわからないのでこちらの計算はあくまでも参考程度にしてください。対処法考え＆調整中。")),
+    tags$hr()
   )
 })
 
@@ -144,7 +141,7 @@ output$curedCalendar <- renderEcharts4r({
 # TODO まだ実装されてない
 output$todayCured <- renderUI({
   tagList(
-    tags$b(lang[[langCode]][78]),
+    tags$b(i18n$t("本日新規")),
     dashboardLabel(lang[[langCode]][87], status = "success", style = "square")
   )
 })
@@ -165,19 +162,19 @@ output$curedBar <- renderEcharts4r({
   )
   e_charts(dt, label) %>%
     e_bar(domesticPer,
-      name = lang[[langCode]][4], # 国内事例
+      name = i18n$t("国内事例"),
       stack = "1", itemStyle = list(color = lightGreen)
     ) %>%
     e_bar(airportPer,
-      name = "空港検疫",
+      name = i18n$t("空港検疫"),
       stack = "1", itemStyle = list(color = middleGreen)
     ) %>%
     e_bar(flightPer,
-      name = lang[[langCode]][36], # チャーター便 （症状あり）
+      name = i18n$t("チャーター便"),
       stack = "1", itemStyle = list(color = darkGreen)
     ) %>%
     e_bar(shipPer,
-      name = lang[[langCode]][35], # クルーズ船
+      name = i18n$t("クルーズ船"),
       stack = "1", itemStyle = list(color = middleGreen)
     ) %>%
     e_y_axis(max = 100, splitLine = list(show = F), show = F) %>%
@@ -198,7 +195,7 @@ output$curedBar <- renderEcharts4r({
       '
       function(params) {
         return("<b>" + params.seriesName + "</b><br>" + Math.round(params.value[0] / 100 * ',
-      DISCHARGE_TOTAL, ', 0) + "名 (" + params.value[0] + "%)")
+      DISCHARGE_TOTAL, ', 0) + " (" + params.value[0] + "%)")
       }
     '
     )))

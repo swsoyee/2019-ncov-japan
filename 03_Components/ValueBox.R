@@ -10,10 +10,10 @@ output$todayConfirmed <- renderUI({
       status = "danger", style = "square"
       )
     }
-    tagList(tags$b(lang[[langCode]][78]), elements)
+    tagList(tags$b(i18n$t("本日新規")), elements)
   } else {
     tagList(
-      tags$b(lang[[langCode]][78]),
+      tags$b(i18n$t("本日新規")),
       dashboardLabel(lang[[langCode]][63], status = "danger", style = "square") # なし
     )
   }
@@ -31,10 +31,10 @@ output$todayDeath <- renderUI({
       status = "primary", style = "square"
       )
     }
-    tagList(tags$b(lang[[langCode]][78]), elements)
+    tagList(tags$b(i18n$t("本日新規")), elements)
   } else {
     tagList(
-      tags$b(lang[[langCode]][78]),
+      tags$b(i18n$t("本日新規")),
       dashboardLabel(lang[[langCode]][73], status = "primary", style = "square") # なし
     )
   }
