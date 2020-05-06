@@ -14,8 +14,12 @@ tabPanel(
             value = T,
             onLabel = i18n$t("シンプル"),
             offLabel = i18n$t("詳細"),
-            label = i18n$t("表示モード"), inline = T,
-            size = "small", width = "300px", labelWidth = "200px", handleWidth = "100px"
+            label = i18n$t("表示モード"),
+            inline = T,
+            size = "small",
+            width = "300px",
+            labelWidth = "200px",
+            handleWidth = "100px"
           ),
           dropdownButton(
             tags$h4(i18n$t("表示設定")),
@@ -74,39 +78,38 @@ tabPanel(
         status = "danger",
         display_pct = T
       ),
-      tagList(
-        icon("shield-alt"), tags$b(i18n$t("感染者報告なし"))),
-        uiOutput("saveArea"),
-      ),
-      column(
-        width = 7,
-        boxPad(
-          fluidRow(
-            column(
-              width = 3,
-              switchInput(
-                inputId = "switchTableVersion",
-                value = T,
-                onLabel = i18n$t("感染"),
-                offLabel = i18n$t("退院死亡"),
-                label = i18n$t("もっと見る"), inline = T,
-                size = "small", width = "350px", labelWidth = "100px", handleWidth = "200px"
-              )
-            ),
-            column(
-              width = 9,
-              tags$div(
-                awesomeCheckbox(
-                  inputId = "tableShowSetting",
-                  label = i18n$t("グルーピング表示"),
-                  status = "danger", value = T
-                ),
-                style = "float:right;"
-              )
+      tagList(icon("shield-alt"), tags$b(i18n$t("感染者報告なし"))),
+      uiOutput("saveArea"),
+    ),
+    column(
+      width = 7,
+      boxPad(
+        fluidRow(
+          column(
+            width = 6,
+            radioGroupButtons(
+              inputId = "switchTableVersion",
+              label = "",
+              choiceNames = c(i18n$t("感染"), i18n$t("検査"), i18n$t("退院死亡")),
+              choiceValues = c("confirmed", "test", "discharged"),
+              status = "danger",
             )
           ),
-          uiOutput("summaryTable") %>% withSpinner()
-        )
+          column(
+            width = 6,
+            tags$div(
+              awesomeCheckbox(
+                inputId = "tableShowSetting",
+                label = i18n$t("グルーピング表示"),
+                status = "danger",
+                value = T
+              ),
+              style = "float:right;"
+            )
+          )
+        ),
+        uiOutput("summaryTable") %>% withSpinner()
       )
     )
+  )
 )

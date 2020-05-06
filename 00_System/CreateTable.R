@@ -234,6 +234,71 @@ names(doubleTimeDay) <- names(dt)
 totalDischarged <- detailByRegion[日付 == max(日付), .(都道府県名, 退院者)]
 colnames(totalDischarged) <- c("region", "totalDischarged")
 
+print("都道府県別PCRデータ作成")
+pcrByRegion <- fread(file = paste0(DATA_PATH, "MHLW/pcrByRegion.csv"))
+pcrByRegion$日付 <- as.Date(as.character(pcrByRegion$日付), "%Y%m%d")
+pcrByRegion[, 前日比 := 検査人数 - shift(検査人数), by = c("都道府県略称")]
+pcrByRegion[, 週間平均移動 := round(frollmean(前日比, 7), 0), by = c("都道府県略称")]
+pcrByRegion[, 陽性率 := round(陽性者数 / 検査人数 * 100, 1)]
+pcrByRegionToday <- pcrByRegion[日付 == max(日付)]
+pcrDiffSparkline <- sapply(pcrByRegionToday$都道府県略称, function(region) {
+  data <- pcrByRegion[`都道府県略称` == region]
+  # 新規
+  span <- nrow(data) - dateSpan
+  value <- data$前日比[ifelse(span < 0, 0, span):nrow(data)]
+  # 日付
+  date <- data$日付[ifelse(span < 0, 0, span):nrow(data)]
+  namesSetting <- as.list(date)
+  names(namesSetting) <- 0:(length(date) - 1)
+  
+  if (length(value) > 0) {
+    diff <- spk_chr(
+      values = value,
+      type = "bar",
+      width = 80,
+      barColor = middleYellow,
+      tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> 新規{{value}}",
+      tooltipValueLookups = list(
+        names = namesSetting
+      )
+    )
+  } else {
+    diff <- NA
+  }
+  return(diff)
+})
+
+positiveRatioSparkline <- sapply(pcrByRegionToday$都道府県略称, function(region) {
+  data <- pcrByRegion[`都道府県略称` == region]
+  # 新規
+  span <- nrow(data) - dateSpan
+  value <- data$陽性率[ifelse(span < 0, 0, span):nrow(data)]
+  # 日付
+  date <- data$日付[ifelse(span < 0, 0, span):nrow(data)]
+  namesSetting <- as.list(date)
+  names(namesSetting) <- 0:(length(date) - 1)
+  
+  if (length(value) > 0) {
+    diff <- spk_chr(
+      values = value,
+      type = "line",
+      width = 80,
+      lineColor = darkRed,
+      fillColor = "#f2b3aa",
+      tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> 陽性率：{{y}}%",
+      tooltipValueLookups = list(
+        names = namesSetting
+      )
+    )
+  } else {
+    diff <- NA
+  }
+  return(diff)
+})
+
+pcrByRegionToday$検査数推移 <- pcrDiffSparkline
+pcrByRegionToday$陽性率推移 <- positiveRatioSparkline
+
 print("テーブル作成")
 totalToday <- paste(sprintf("%06d", total), total, today, sep = "|")
 
@@ -255,9 +320,8 @@ mergeDt <- merge(mergeDt, totalDischarged, all.x = T, sort = F)
 signateSub <- provinceAttr[, .(都道府県略称, 人口)]
 colnames(signateSub) <- c("region", "population")
 mergeDt <- merge(mergeDt, signateSub, all.x = T, sort = F)
-mergeDt[, perMillion := round(count / (population / 1000000), 2)]
-mergeDt[, perMillionDeath := round(death / (population / 1000000), 2)]
-mergeDt[, population := NULL]
+mergeDt[, perMillion := round(count / (population / 1000000), 0)]
+mergeDt[, perMillionDeath := round(death / (population / 1000000), 0)]
 
 for (i in mergeDt$region) {
   mergeDt[region == i]$dischargeDiff <- dischargedDiffSparkline[i][[1]]
@@ -289,8 +353,12 @@ area[, 都道府県略称 := gsub("東京都", "東京", 都道府県略称)]
 
 mergeDt <- merge(mergeDt, area, by.x = "region", by.y = "都道府県略称", all.x = T, no.dups = T, sort = F)
 mergeDt[, perArea := round(sqrt(可住地面積 / count), 2)]
-
 mergeDt[, `:=` (コード = NULL, 都道府県 = NULL, 可住地面積 = NULL, 可住地面積割合 = NULL, 宅地面積 = NULL, 宅地面積割合 = NULL)]
+
+mergeDt <- merge(mergeDt, pcrByRegionToday, by.x = "region", by.y = "都道府県略称", all.x =T, no.dups = T, sort = F)
+mergeDt[, `:=` (日付 = NULL, 陽性者数 = NULL)]
+mergeDt[, 百万人あたり := round(検査人数 / (population / 1000000), 0)]
+mergeDt[, population := NULL]
 
 # 13個特定警戒都道府県
 alertPref <-
@@ -323,6 +391,8 @@ mergeDt[, region := paste0(prefNameId, "|", region)]
 mergeDt[, diff := gsub("\\n", "", diff)]
 mergeDt[, dischargeDiff := gsub("\\n", "", dischargeDiff)]
 mergeDt[, detailBullet := gsub("\\n", "", detailBullet)]
+mergeDt[, 検査数推移 := gsub("\\n", "", 検査数推移)]
+mergeDt[, 陽性率推移 := gsub("\\n", "", 陽性率推移)]
 # クルーズ船とチャーター便データ除外
 # mergeDt <- mergeDt[!grepl(pattern = paste0(lang[[langCode]][35:36], collapse = "|"), x = mergeDt$region)]
 

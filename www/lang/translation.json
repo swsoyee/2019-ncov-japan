@@ -287,6 +287,11 @@
       "en": "Tested"
     },
     {
+      "ja": "検査",
+      "cn": "检测",
+      "en": "Test"
+    },
+    {
       "ja": "PCR検査数の推移",
       "cn": "PCR检测数趋势",
       "en": "PCR Conducted Trends"
@@ -1265,6 +1270,31 @@
       "ja": "陽性率：",
       "cn": "阳性率：",
       "en": "Positive rate: "
+    },
+    {
+      "ja": "前日比",
+      "cn": "较前日",
+      "en": "New"
+    },
+    {
+      "ja": "検査推移",
+      "cn": "检测趋势",
+      "en": "Trends of Test"
+    },
+    {
+      "ja": "日均",
+      "cn": "日均",
+      "en": "Daily (Ave)"
+    },
+    {
+      "ja": "陽性率推移",
+      "cn": "阳性率趋势",
+      "en": "Trends of Positive Rate"
+    },
+    {
+      "ja": "陽性率",
+      "cn": "阳性率",
+      "en": "Positive Rate"
     },
     {
       "ja": "速報：",
