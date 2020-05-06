@@ -543,8 +543,28 @@
     },
     {
       "ja": "感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。",
-      "cn": "感染密度 (km)：用于说明每边长为多少km的方形土地（可住地面积）内有1名感染者的指标",
+      "cn": "感染密度 (km)：用于说明每边长为多少km的方形土地（可住地面积）内有1名感染者的指标。",
       "en": "Infection density (km): an indicator of how many km of land (inhabitable area) there is one infected person in a given area."
+    },
+    {
+      "ja": "検査人数：複数の検体を重複してカウントしていた期間については検査人数の合計に含まれていない。陽性者数の検査人数に対する比率についても、重複が排除された期間のみの比率を表している。なお、千葉県においては3/20までに1716件の検査が、神奈川県においては3/22までにクルーズ船を含む2835件の検査が、大阪府においては3/20までに2350件の検査が行われた。千葉県は3/21より、神奈川県は3/23より、大阪府は3/21より検査人数を計上している。",
+      "cn": "检查人数：不包含对每个人进行多次样本采样检测的统计期间的数据。阳性人数与检测人数的比率仅为去掉重复后的统计期间的比率。此外，千叶县在3月20日为止进行了1716次检测，神奈川县在3月22为止包括公主号游轮的检测在内共进行了2835次检查，大阪府在3月20日以前进行了2350次检测。千叶县从3月21日、神奈川县从3月23日、大阪府从3月21日起的数据作为起点重新统计。",
+      "en": "Tested: Periods in which multiple specimens were counted in duplicate were not included in the total count. The ratio of the number of positives to the number of people tested also represents the ratio only for the period in which duplicates were eliminated. In Chiba Prefecture, 1716 tests were conducted by 20 March, Kanagawa Prefecture 2835 tests including cruise ships were conducted by 22 March, and Osaka Prefecture 2350 tests were conducted by 20 March. The number of people tested in Chiba, Kanagawa, and Osaka prefectures has been recorded since 3/21, 3/23, and 3/21, respectively."
+    },
+    {
+      "ja": "日均：日次検査人数を週間平均を計算した直近１週間の数値である。",
+      "cn": "日均：每日检查人数计算7日移动平均后的最近一周的数值。",
+      "en": "Daily (Ave): the value for the most recent week after the seven-day moving average of the number of daily tests conducted."
+    },
+    {
+      "ja": "陽性率：陽性者数の検査人数に対する比率は、千葉県、神奈川県及び大阪府において、複数の検体を重複してカウントしていた期間の陽性者数を除いて算出している。",
+      "cn": "阳性率：千叶县、神奈川县、大阪府的阳性人数与检测检测人数的比率为去除掉多次样本采样检测期间的数据。",
+      "en": "Positive rate: The ratio of the number of positive subjects to the number of persons tested is calculated by excluding the number of positive subjects in Chiba, Kanagawa, and Osaka prefectures when multiple specimens were counted in duplicate."
+    },
+    {
+      "ja": "東京都の検査実施人数には、医療機関による保険適用での検査人数、チャーター機帰国者、クルーズ船乗客等は含まれていない。",
+      "cn": "东京都的检测人数不包含医疗机构的使用保险所进行的检测、撤侨包机、公主号游轮乘客等的检测在内",
+      "en": "The number of people tested by the Tokyo Metropolitan Government does not include the number of people inspected by medical institutions under insurance coverage, air charter returnees, cruise ship passengers, etc."
     },
     {
       "ja": "自治体",

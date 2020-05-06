@@ -31,7 +31,10 @@ output$detail <- renderDataTable({
 observeEvent(input$switchTableVersion, {
   if (input$switchTableVersion == "confirmed") {
     output$summaryTable <- renderUI({
-      dataTableOutput("confirmedByPrefTable")
+      tagList(
+        dataTableOutput("confirmedByPrefTable"),
+        helpText(icon("street-view"), i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。"))
+      )
     })
   } else if (input$switchTableVersion == "discharged") {
     output$summaryTable <- renderUI({
@@ -39,7 +42,13 @@ observeEvent(input$switchTableVersion, {
     })
   } else if (input$switchTableVersion == "test") {
     output$summaryTable <- renderUI({
-      dataTableOutput("testByPrefTable")
+      tagList(
+        dataTableOutput("testByPrefTable"),
+        helpText("1. ", icon("vial"), i18n$t("検査人数：複数の検体を重複してカウントしていた期間については検査人数の合計に含まれていない。陽性者数の検査人数に対する比率についても、重複が排除された期間のみの比率を表している。なお、千葉県においては3/20までに1716件の検査が、神奈川県においては3/22までにクルーズ船を含む2835件の検査が、大阪府においては3/20までに2350件の検査が行われた。千葉県は3/21より、神奈川県は3/23より、大阪府は3/21より検査人数を計上している。")),
+        helpText("2. ", icon("calculator"), i18n$t("日均：日次検査人数を週間平均を計算した直近１週間の数値である。")),
+        helpText("3. ", icon("user-plus"), i18n$t("陽性率：陽性者数の検査人数に対する比率は、千葉県、神奈川県及び大阪府において、複数の検体を重複してカウントしていた期間の陽性者数を除いて算出している。")),
+        helpText("4. ", icon("landmark"), i18n$t("東京都の検査実施人数には、医療機関による保険適用での検査人数、チャーター機帰国者、クルーズ船乗客等は含まれていない。"))
+      )
     })
   }
 })
@@ -341,7 +350,7 @@ output$confirmedByPrefTable <- renderDataTable({
       i18n$t("感染密度(km)")
     ),
     escape = F,
-    caption = i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。"),
+    # caption = i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。"),
     # extensions = c("Responsive"),
     extensions = "RowGroup",
     callback = htmlwidgets::JS(paste0("
@@ -493,7 +502,6 @@ output$testByPrefTable <- renderDataTable({
       i18n$t("カテゴリ")
     ),
     escape = F,
-    # caption = i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。"),
     # extensions = c("Responsive"),
     extensions = "RowGroup",
     callback = htmlwidgets::JS(paste0("
