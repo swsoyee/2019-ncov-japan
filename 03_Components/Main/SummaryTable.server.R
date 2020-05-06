@@ -55,7 +55,7 @@ observeEvent(input$switchTableVersion, {
 
 # 退院・死亡表====
 output$dischargeAndDeathByPrefTable <- renderDataTable({
-  dt <- totalConfirmedByRegionData() #[count > 0]
+  dt <- totalConfirmedByRegionData()#[count > 0]
   # dt <- dt[count > 0]
   columnName <- c("death", "perMillionDeath")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
@@ -310,7 +310,7 @@ totalConfirmedByRegionData <- reactive({
 output$confirmedByPrefTable <- renderDataTable({
   # 感染情報だけを表示
   # dt <- dt[count > 0] # TEST
-  dt <- totalConfirmedByRegionData()[count > 0]
+  dt <- totalConfirmedByRegionData()#[count > 0]
   # ０の値を非表示するため、NAに設定るす
   columnName <- c("today", "doubleTimeDay")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
