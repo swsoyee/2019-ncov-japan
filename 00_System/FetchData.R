@@ -43,6 +43,8 @@ Update.Signate.Detail <- function(update = F) {
     # 都道府県、公表日、性別、年齢====
     source(file = "02_Utils/ConfirmedPyramidData.R")
     fwrite(x = Signate.ConfirmedPyramidData(signateDetail), file = paste0(DATA_PATH, "Generated/genderAgeData.csv"))
+    # 発症から診断までの日数マップ
+    source(file = paste0(DATA_PATH, "Academic/onset2ConfirmedMap.R"))
   }
 }
 # Update.Signate.Detail(update = T)

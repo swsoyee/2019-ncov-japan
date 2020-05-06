@@ -34,6 +34,7 @@ observeEvent(input$sideBarTab, {
 
 output$AomoriValueBoxes <- renderUI({
   data <- GLOBAL_VALUE$Aomori$summary
+  data <- data[検査日時 != ""]
   totalPositive <- sum(data$陽性数, na.rm = T)
   totalPCR <- sum(data$実施数, na.rm = T)
   # totalDischarge <-  sum(data$治療終了数, na.rm = T) # TODO 公式データまだない、とりあえず厚労省から計算
