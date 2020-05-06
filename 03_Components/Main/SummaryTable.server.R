@@ -33,7 +33,10 @@ observeEvent(input$switchTableVersion, {
     output$summaryTable <- renderUI({
       tagList(
         dataTableOutput("confirmedByPrefTable"),
-        helpText(icon("street-view"), i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。"))
+        helpText(
+          icon("street-view"),
+          i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。")
+        )
       )
     })
   } else if (input$switchTableVersion == "discharged") {
@@ -44,10 +47,32 @@ observeEvent(input$switchTableVersion, {
     output$summaryTable <- renderUI({
       tagList(
         dataTableOutput("testByPrefTable"),
-        helpText("1. ", icon("vial"), i18n$t("検査人数：複数の検体を重複してカウントしていた期間については検査人数の合計に含まれていない。陽性者数の検査人数に対する比率についても、重複が排除された期間のみの比率を表している。なお、千葉県においては3/20までに1716件の検査が、神奈川県においては3/22までにクルーズ船を含む2835件の検査が、大阪府においては3/20までに2350件の検査が行われた。千葉県は3/21より、神奈川県は3/23より、大阪府は3/21より検査人数を計上している。")),
-        helpText("2. ", icon("calculator"), i18n$t("日均：日次検査人数を週間平均を計算した直近１週間の数値である。")),
-        helpText("3. ", icon("user-plus"), i18n$t("陽性率：陽性者数の検査人数に対する比率は、千葉県、神奈川県及び大阪府において、複数の検体を重複してカウントしていた期間の陽性者数を除いて算出している。")),
-        helpText("4. ", icon("landmark"), i18n$t("東京都の検査実施人数には、医療機関による保険適用での検査人数、チャーター機帰国者、クルーズ船乗客等は含まれていない。"))
+        helpText(
+          "1. ",
+          icon("vial"),
+          i18n$t(
+            "検査人数：複数の検体を重複してカウントしていた期間については検査人数の合計に含まれていない。陽性者数の検査人数に対する比率についても、重複が排除された期間のみの比率を表している。なお、千葉県においては3/20までに1716件の検査が、神奈川県においては3/22までにクルーズ船を含む2835件の検査が、大阪府においては3/20までに2350件の検査が行われた。千葉県は3/21より、神奈川県は3/23より、大阪府は3/21より検査人数を計上している。"
+          )
+        ),
+        helpText(
+          "2. ",
+          icon("calculator"),
+          i18n$t("日均：日次検査人数を週間平均を計算した直近１週間の数値である。")
+        ),
+        helpText(
+          "3. ",
+          icon("user-plus"),
+          i18n$t(
+            "陽性率：陽性者数の検査人数に対する比率は、千葉県、神奈川県及び大阪府において、複数の検体を重複してカウントしていた期間の陽性者数を除いて算出している。"
+          )
+        ),
+        helpText(
+          "4. ",
+          icon("landmark"),
+          i18n$t(
+            "東京都の検査実施人数には、医療機関による保険適用での検査人数、チャーター機帰国者、クルーズ船乗客等は含まれていない。"
+          )
+        )
       )
     })
   }
@@ -55,7 +80,7 @@ observeEvent(input$switchTableVersion, {
 
 # 退院・死亡表====
 output$dischargeAndDeathByPrefTable <- renderDataTable({
-  dt <- totalConfirmedByRegionData()#[count > 0]
+  dt <- totalConfirmedByRegionData() # [count > 0]
   # dt <- dt[count > 0]
   columnName <- c("death", "perMillionDeath")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
@@ -72,7 +97,9 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
   colorsDischarged <-
     colorRampPalette(c(lightGreen, darkGreen))(length(breaksDischarged) + 1)
   breaksPerMillion <-
-    seq(0, max(ifelse(is.na(dt$perMillionDeath), 0, dt$perMillionDeath), na.rm = T))
+    seq(0, max(ifelse(
+      is.na(dt$perMillionDeath), 0, dt$perMillionDeath
+    ), na.rm = T))
   colorsPerMillion <-
     colorRampPalette(c("#FFFFFF", "#6B7989"))(length(breaksPerMillion) + 1)
 
@@ -92,9 +119,13 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     plugins = "natural",
     # extensions = c("Responsive"),
     extensions = "RowGroup",
-    callback = htmlwidgets::JS(paste0("
-      table.rowGroup().", ifelse(input$tableShowSetting, "enable()", "disable()"), ".draw();
-    ")),
+    callback = htmlwidgets::JS(paste0(
+      "
+      table.rowGroup().",
+      ifelse(input$tableShowSetting, "enable()", "disable()"),
+      ".draw();
+    "
+    )),
     options = list(
       paging = F,
       rowGroup = list(dataSrc = 7),
@@ -130,11 +161,13 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
           targets = 4
         ),
         list(
-          render = JS("
+          render = JS(
+            "
              function(data, type, row, meta) {
                 const split = data.split('|');
                 return split[1];
-            }"),
+            }"
+          ),
           targets = 1
         )
       ),
@@ -170,7 +203,11 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
 
 # TODO データ読み込み専用のところに移動
 totalConfirmedByRegionData <- reactive({
-  dt <- fread(paste0(DATA_PATH, paste0("Generated/resultSummaryTable.", languageSetting, ".csv")), sep = "@")
+  dt <-
+    fread(paste0(
+      DATA_PATH,
+      paste0("Generated/resultSummaryTable.", languageSetting, ".csv")
+    ), sep = "@")
   dt
 })
 
@@ -183,17 +220,17 @@ totalConfirmedByRegionData <- reactive({
 #   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
 #   # TODO 感染拡大が終息する後からカラム復活、今は表示する必要はない
 #   # dt[, zeroContinuousDay := replace(.SD, .SD <= 0, NA), .SDcols = 'zeroContinuousDay']
-# 
+#
 #   breaks <-
 #     seq(0, max(ifelse(is.na(dt$today), 0, dt$today), na.rm = T), 2)
 #   colors <-
 #     colorRampPalette(c(lightRed, darkRed))(length(breaks) + 1)
-# 
+#
 #   breaksDeath <-
 #     seq(0, max(ifelse(is.na(dt$death), 0, dt$death), na.rm = T), 2)
 #   colorsDeath <-
 #     colorRampPalette(c("white", lightNavy))(length(breaksDeath) + 1)
-# 
+#
 #   datatable(
 #     data = dt[, c(1, 3, 4, 6:9, 15), with = F],
 #     colnames = c("自治体", "新規", "感染者数", "新規感染", "新規退院", "内訳", "死亡", "カテゴリ"),
@@ -310,7 +347,7 @@ totalConfirmedByRegionData <- reactive({
 output$confirmedByPrefTable <- renderDataTable({
   # 感染情報だけを表示
   # dt <- dt[count > 0] # TEST
-  dt <- totalConfirmedByRegionData()#[count > 0]
+  dt <- totalConfirmedByRegionData() # [count > 0]
   # ０の値を非表示するため、NAに設定るす
   columnName <- c("today", "doubleTimeDay")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
@@ -333,7 +370,9 @@ output$confirmedByPrefTable <- renderDataTable({
     colorRampPalette(c("#FFFFFF", darkRed))(length(breaksPerMillion) + 1)
 
   breaksPerArea <-
-    seq(0, max(unlist(ifelse(is.numeric(dt$perArea), 0, dt$perArea)), na.rm = T))
+    seq(0, max(unlist(ifelse(
+      is.numeric(dt$perArea), 0, dt$perArea
+    )), na.rm = T))
   colorsPerArea <-
     colorRampPalette(c(darkYellow, "#FFFFFF"))(length(breaksPerArea) + 1)
 
@@ -353,9 +392,13 @@ output$confirmedByPrefTable <- renderDataTable({
     # caption = i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。"),
     # extensions = c("Responsive"),
     extensions = "RowGroup",
-    callback = htmlwidgets::JS(paste0("
-      table.rowGroup().", ifelse(input$tableShowSetting, "enable()", "disable()"), ".draw();
-    ")),
+    callback = htmlwidgets::JS(paste0(
+      "
+      table.rowGroup().",
+      ifelse(input$tableShowSetting, "enable()", "disable()"),
+      ".draw();
+    "
+    )),
     options = list(
       paging = F,
       rowGroup = list(dataSrc = 7),
@@ -380,7 +423,7 @@ output$confirmedByPrefTable <- renderDataTable({
         ),
         list(
           width = "30px",
-          className = "dt-left",
+          className = "dt-right",
           targets = 2
         ),
         list(
@@ -388,11 +431,13 @@ output$confirmedByPrefTable <- renderDataTable({
           targets = 7
         ),
         list(
-          render = JS("
+          render = JS(
+            "
              function(data, type, row, meta) {
                 const split = data.split('|');
                 return split[1];
-            }"),
+            }"
+          ),
           targets = c(1, 3)
         )
       ),
@@ -460,43 +505,41 @@ output$confirmedByPrefTable <- renderDataTable({
 
 # 検査表====
 output$testByPrefTable <- renderDataTable({
-  # dt <- dt[count > 0] # TEST
-  dt <- totalConfirmedByRegionData()#[count > 0]
+  # dt <- mergeDt # TEST
+  dt <- totalConfirmedByRegionData() # [count > 0]
   # ０の値を非表示するため、NAに設定るす
   columnName <- c("前日比")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
-  # 
-  # breaks <-
-  #   seq(0, max(ifelse(is.na(dt$today), 0, dt$today), na.rm = T))
-  # colors <-
-  #   colorRampPalette(c(lightRed, darkRed))(length(breaks) + 1)
-  # 
-  # breaksDoubleTimeDay <-
-  #   seq(0, max(ifelse(
-  #     is.na(dt$doubleTimeDay), 0, dt$doubleTimeDay
-  #   ), na.rm = T))
-  # colorsDoubleTimeDay <-
-  #   colorRampPalette(c(darkRed, lightYellow))(length(breaksDoubleTimeDay) + 1)
-  # 
-  # breaksPerMillion <-
-  #   seq(0, max(ifelse(is.na(dt$perMillion), 0, dt$perMillion), na.rm = T))
-  # colorsPerMillion <-
-  #   colorRampPalette(c("#FFFFFF", darkRed))(length(breaksPerMillion) + 1)
-  # 
-  # breaksPerArea <-
-  #   seq(0, max(ifelse(is.na(dt$perArea), 0, dt$perArea), na.rm = T))
-  # colorsPerArea <-
-  #   colorRampPalette(c(darkYellow, "#FFFFFF"))(length(breaksPerArea) + 1)
+
+  breaksPerM <-
+    seq(0, max(ifelse(is.na(dt$百万人あたり), 0, dt$百万人あたり), na.rm = T), by = 1000)
+  colorsPerM <-
+    colorRampPalette(c("#FFFFFF", middleYellow))(length(breaksPerM) + 1)
+
+  breaksDaily <-
+    seq(0, max(ifelse(is.na(dt$週間平均移動), 0, dt$週間平均移動), na.rm = T), by = 50)
+  colorsDaily <-
+    colorRampPalette(c(lightYellow, darkYellow))(length(breaksDaily) + 1)
+
+  breaksNew <-
+    seq(0, max(ifelse(is.na(dt$前日比), 0, dt$前日比), na.rm = T), by = 50)
+  colorsNew <-
+    colorRampPalette(c(lightYellow, darkYellow))(length(breaksNew) + 1)
+
+  breaksPositiveRate <-
+    seq(0, max(ifelse(is.na(dt$陽性率), 0, dt$陽性率), na.rm = T))
+  colorsPositiveRate <-
+    colorRampPalette(c(lightRed, darkRed))(length(breaksPositiveRate) + 1)
 
   datatable(
-    data = dt[, .(region, 検査人数, 百万人あたり, 前日比, 検査数推移, 週間平均移動, 陽性率推移, 陽性率, group)],
+    data = dt[, .(region, 検査人数, 検査数推移, 前日比, 週間平均移動, 百万人あたり, 陽性率推移, 陽性率, group)],
     colnames = c(
       i18n$t("自治体"),
       i18n$t("検査人数"),
-      i18n$t("百万人あたり"),
-      i18n$t("前日比"),
       i18n$t("検査推移"),
+      i18n$t("前日比"),
       i18n$t("日均"),
+      i18n$t("百万人あたり"),
       i18n$t("陽性率推移"),
       i18n$t("陽性率"),
       i18n$t("カテゴリ")
@@ -504,9 +547,13 @@ output$testByPrefTable <- renderDataTable({
     escape = F,
     # extensions = c("Responsive"),
     extensions = "RowGroup",
-    callback = htmlwidgets::JS(paste0("
-      table.rowGroup().", ifelse(input$tableShowSetting, "enable()", "disable()"), ".draw();
-    ")),
+    callback = htmlwidgets::JS(paste0(
+      "
+      table.rowGroup().",
+      ifelse(input$tableShowSetting, "enable()", "disable()"),
+      ".draw();
+    "
+    )),
     options = list(
       paging = F,
       rowGroup = list(dataSrc = 9),
@@ -516,34 +563,46 @@ output$testByPrefTable <- renderDataTable({
       columnDefs = list(
         list(
           className = "dt-center",
-          width = "15%",
-          targets = c(5, 7)
+          width = "13%",
+          # targets = i18n$t("百万人あたり"))
+          targets = 6
+        ),
+        list(
+          width = "45px",
+          className = "dt-right",
+          # targets = i18n$t("前日比")
+          targets = 4
+        ),
+        list(
+          width = "30px",
+          className = "dt-right",
+          # targets = i18n$t("日均")
+          targets = 5
         ),
         list(
           className = "dt-left",
           width = "80px",
+          # targets = i18n$t("自治体")
           targets = 1
         ),
         list(
           className = "dt-center",
           width = "13%",
-          targets = c(2, 3, 5)
-        ),
-        list(
-          width = "30px",
-          className = "dt-left",
-          targets = 7
+          # targets = c(i18n$t("検査人数"), i18n$t("検査推移"), i18n$t("陽性率推移"))
+          targets = c(2, 3, 7)
         ),
         list(
           visible = F,
           targets = 9
         ),
         list(
-          render = JS("
+          render = JS(
+            "
              function(data, type, row, meta) {
                 const split = data.split('|');
                 return split[1];
-            }"),
+            }"
+          ),
           targets = 1
         )
       ),
@@ -555,33 +614,13 @@ output$testByPrefTable <- renderDataTable({
     )
   ) %>%
     spk_add_deps() %>%
-    # formatStyle(
-    #   columns = "totalToday",
-    #   background = htmlwidgets::JS(
-    #     paste0(
-    #       "'linear-gradient(-90deg, transparent ' + (",
-    #       max(dt$count),
-    #       "- value.split('|')[1])/",
-    #       max(dt$count),
-    #       " * 100 + '%, #DD4B39 ' + (",
-    #       max(dt$count),
-    #       "- value.split('|')[1])/",
-    #       max(dt$count),
-    #       " * 100 + '% ' + (",
-    #       max(dt$count),
-    #       "- value.split('|')[1] + Number(value.split('|')[2]))/",
-    #       max(dt$count),
-    #       " * 100 + '%, #F56954 ' + (",
-    #       max(dt$count),
-    #       "- value.split('|')[1] + Number(value.split('|')[2]))/",
-    #       max(dt$count),
-    #       " * 100 + '%)'"
-    #     )
-    #   ),
-    #   backgroundSize = "100% 80%",
-    #   backgroundRepeat = "no-repeat",
-    #   backgroundPosition = "center"
-    # ) %>%
+    formatStyle(
+      columns = "検査人数",
+      background = styleColorBar(c(0, max(dt$検査人数, na.rm = T)), middleYellow, angle = -90),
+      backgroundSize = "98% 80%",
+      backgroundRepeat = "no-repeat",
+      backgroundPosition = "center"
+    ) %>%
     formatCurrency(
       columns = "前日比",
       currency = paste(as.character(icon("caret-up")), " "),
@@ -590,25 +629,25 @@ output$testByPrefTable <- renderDataTable({
     formatString(
       columns = "陽性率",
       suffix = "%"
+    ) %>%
+    formatStyle(
+      columns = "陽性率",
+      color = styleInterval(breaksPositiveRate, colorsPositiveRate),
+      fontWeight = "bold"
+    ) %>%
+    formatStyle(
+      columns = "百万人あたり",
+      backgroundColor = styleInterval(breaksPerM, colorsPerM),
+      fontWeight = "bold"
+    ) %>%
+    formatStyle(
+      columns = "週間平均移動",
+      color = styleInterval(breaksDaily, colorsDaily),
+      fontWeight = "bold"
+    ) %>%
+    formatStyle(
+      columns = "前日比",
+      color = styleInterval(breaksNew, colorsNew),
+      fontWeight = "bold"
     )
-    # formatStyle(
-    #   columns = "today",
-    #   color = styleInterval(breaks, colors),
-    #   fontWeight = "bold"
-    # ) %>%
-    # formatStyle(
-    #   columns = "doubleTimeDay",
-    #   color = styleInterval(breaksDoubleTimeDay, colorsDoubleTimeDay),
-    #   fontWeight = "bold"
-    # ) %>%
-    # formatStyle(
-    #   columns = "perMillion",
-    #   backgroundColor = styleInterval(breaksPerMillion, colorsPerMillion),
-    #   fontWeight = "bold"
-    # ) %>%
-    # formatStyle(
-    #   columns = "perArea",
-    #   backgroundColor = styleInterval(breaksPerArea, colorsPerArea),
-    #   fontWeight = "bold"
-    # )
 })
