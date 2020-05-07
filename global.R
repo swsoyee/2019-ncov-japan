@@ -65,22 +65,22 @@ position <- fread(paste0(DATA_PATH, "position.csv"))
 detailByRegion <- fread(paste0(DATA_PATH, "detailByRegion.csv"))
 
 # 各都道府県のPCR検査数
-provincePCR <- fread(paste0(DATA_PATH, "provincePCR.csv"), header = T, na.strings = "N/A")
-provincePCR$date <- as.Date(provincePCR$日付)
-setorderv(provincePCR, c("県名", "date"))
-# provincePCR[is.na(検査数), 検査数 := shift(検査数), by = .(県名, 日付)]
-for (i in 2:nrow(provincePCR)) {
-  if (is.na(provincePCR[i]$検査数)) {
-    if (provincePCR[i]$県名 == provincePCR[i - 1]$県名) {
-      provincePCR[i]$検査数 <- provincePCR[i - 1]$検査数
-    } else {
-      provincePCR[i]$検査数 <- 0
-    }
-  }
-}
-provincePCR <- provincePCR[!(県名 %in% c("全国（厚労省）", "イタリア", "ロンバルディア", "韓国"))]
-maxCheckNumberData <- provincePCR[provincePCR[, .I[which.max(検査数)], by = 県名]$V1]
-maxCheckNumberData[, rank := order(検査数, decreasing = T)]
+# provincePCR <- fread(paste0(DATA_PATH, "provincePCR.csv"), header = T, na.strings = "N/A")
+# provincePCR$date <- as.Date(provincePCR$日付)
+# setorderv(provincePCR, c("県名", "date"))
+# # provincePCR[is.na(検査数), 検査数 := shift(検査数), by = .(県名, 日付)]
+# for (i in 2:nrow(provincePCR)) {
+#   if (is.na(provincePCR[i]$検査数)) {
+#     if (provincePCR[i]$県名 == provincePCR[i - 1]$県名) {
+#       provincePCR[i]$検査数 <- provincePCR[i - 1]$検査数
+#     } else {
+#       provincePCR[i]$検査数 <- 0
+#     }
+#   }
+# }
+# provincePCR <- provincePCR[!(県名 %in% c("全国（厚労省）", "イタリア", "ロンバルディア", "韓国"))]
+# maxCheckNumberData <- provincePCR[provincePCR[, .I[which.max(検査数)], by = 県名]$V1]
+# maxCheckNumberData[, rank := order(検査数, decreasing = T)]
 
 # アプリ情報
 # statics <- fromJSON(file = 'https://stg.covid-2019.live/ncov-static/stats.json',
@@ -251,7 +251,7 @@ selectProvinceOption <- unique(positiveDetail$都道府県)
 selectProvinceOption <- selectProvinceOption[selectProvinceOption != "未"]
 
 # 市レベルの感染者数
-confirmedCityTreemapData <- fread(paste0(DATA_PATH, "Kenmo/confirmedNumberByCity.csv"))
+confirmedCityTreemapData <- fread(paste0(DATA_PATH, "Kenmo/confirmedNumberByCity.", languageSetting, ".csv"))
 
 # 詳細データ
 detail <- fread(paste0(DATA_PATH, "detail.csv"),

@@ -27,9 +27,16 @@ fwrite(x = provincePCR, file = paste0(DATA_PATH, "provincePCR.csv"))
 # provinceAttr <- provinceAttr[, .(都道府県, regionName)]
 
 kenmoAreaDataset <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1Cy4W9hYhGmABq1GuhLOkM92iYss0qy03Y1GeTv4bCyg/edit#gid=491635333")
-# kenmoAreaDataset$累計 <- rowSums(kenmoAreaDataset[, 5:ncol(kenmoAreaDataset)])
-# kenmoAreaDataset <- merge(kenmoAreaDataset, provinceAttr, by.x = "県名", by.y = "都道府県", all.x = T, no.dups = T, sort = F)
-fwrite(x = kenmoAreaDataset, file = paste0(DATA_PATH, "Kenmo/confirmedNumberByCity.csv"))
+fwrite(x = kenmoAreaDataset, file = paste0(DATA_PATH, "Kenmo/confirmedNumberByCity.ja.csv"))
+# Translate
+translateSubData <- fread(paste0(DATA_PATH, "Collection/cityMaster.csv"))
+# TODO 関数化
+kenmoAreaDataset.cn <- kenmoAreaDataset
+kenmoAreaDataset.cn$市名 <- translateSubData[match(kenmoAreaDataset.cn$市名, translateSubData$ja)]$cn
+fwrite(x = kenmoAreaDataset.cn, file = paste0(DATA_PATH, "Kenmo/confirmedNumberByCity.cn.csv"))
+kenmoAreaDataset.en <- kenmoAreaDataset
+kenmoAreaDataset.en$市名 <- translateSubData[match(kenmoAreaDataset.en$市名, translateSubData$ja)]$en
+fwrite(x = kenmoAreaDataset.en, file = paste0(DATA_PATH, "Kenmo/confirmedNumberByCity.en.csv"))
 
 # ====SIGNATEデータ====
 # signatePlace <- gsheet2tbl('docs.google.com/spreadsheets/d/1CnQOf6eN18Kw5Q6ScE_9tFoyddk4FBwFZqZpt_tMOm4/edit#gid=103322372')
