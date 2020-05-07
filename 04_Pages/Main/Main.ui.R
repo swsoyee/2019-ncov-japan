@@ -46,8 +46,8 @@ fluidPage(
                        inputId = "confirmedHeatmapSelector",
                        label = i18n$t("ヒートマップ選択"),
                        size = "sm", justified = T,
-                       choices = list("日次新規" = "confirmedHeatmap",
-                                      "倍加時間" = "confirmedHeatmapDoublingTime"), 
+                       choiceNames = c(i18n$t("日次新規"), i18n$t("倍加時間")),
+                       choiceValues = list("confirmedHeatmap", "confirmedHeatmapDoublingTime"), 
                        status = "danger"
                      ),
                      style = "margin-top:5px;"

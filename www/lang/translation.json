@@ -318,8 +318,28 @@
     },
     {
       "ja": "倍加時間の経時的変化（直近%s日間で計算）",
-      "cn": "翻倍所需时间的变化趋势（以最近%s天间隔计算）",
+      "cn": "翻倍需时的变化趋势（以最近%s天间隔计算）",
       "en": "Change in doubling time over time (calculated over the last %s days)"
+    },
+    {
+      "ja": "倍加時間",
+      "cn": "翻倍需时",
+      "en": "Doubling Time"
+    },
+    {
+      "ja": "日次新規",
+      "cn": "每日新增",
+      "en": "New daily"
+    },
+    {
+      "ja": "日数の計算式は以下になります：",
+      "cn": "天数计算方法如下式所示：",
+      "en": "The number of days is calculated by the following formula: "
+    },
+    {
+      "ja": "N：累積感染者数",
+      "cn": "N：累计确诊人数",
+      "en": "N: Cumulative number of infected"
     },
     {
       "ja": "コールセンター（累計）",
