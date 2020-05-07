@@ -16,7 +16,7 @@ The project is a website for real-time visualization of the COVID-19 epidemic in
 
 ## Snapshot
 
-![index](https://stg.covid-2019.live/ncov-static/capture.png)
+![index](https://cdn.covid-2019.live/static/capture.jpg)
 
 ## About the data
 
