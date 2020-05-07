@@ -49,7 +49,8 @@
 #   "20200503" = "https://www.mhlw.go.jp/content/10906000/000627492.pdf",
 #   "20200504" = "https://www.mhlw.go.jp/content/10906000/000627546.pdf",
 #   "20200505" = "https://www.mhlw.go.jp/content/10906000/000627546.pdf", # データなし
-#   "20200506" = "https://www.mhlw.go.jp/content/10906000/000627645.pdf"
+#   "20200506" = "https://www.mhlw.go.jp/content/10906000/000627645.pdf",
+#   "20200507" = "https://www.mhlw.go.jp/content/10906000/000627964.pdf"
 # )
 # 
 # result <- fread(file = dataPath)
