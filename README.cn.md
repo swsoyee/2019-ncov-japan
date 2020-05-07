@@ -16,7 +16,7 @@
 
 ## 网站截屏
 
-![index](https://stg.covid-2019.live/ncov-static/capture.png)
+![index](https://cdn.covid-2019.live/static/capture.jpg)
 
 ## 关于本站的数据
 
