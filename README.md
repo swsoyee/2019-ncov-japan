@@ -16,7 +16,7 @@
 
 ## スクリーンショット
 
-![index](https://stg.covid-2019.live/ncov-static/capture.png)
+![index](https://cdn.covid-2019.live/static/capture.jpg)
 
 ### サイトのデータについて
 
