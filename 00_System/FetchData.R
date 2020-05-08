@@ -59,7 +59,7 @@ Update.Signate.Detail <- function(update = F) {
     source(file = paste0(DATA_PATH, "Academic/onset2ConfirmedMap.R"))
   }
 }
-# Update.Signate.Detail(update = T)
+Update.Signate.Detail(update = T)
 
 #
 # signateLink <- gsheet2tbl('https://docs.google.com/spreadsheets/d/1CnQOf6eN18Kw5Q6ScE_9tFoyddk4FBwFZqZpt_tMOm4/edit#gid=57719256')
