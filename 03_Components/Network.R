@@ -24,24 +24,24 @@ output$clusterDateRangeSelector <- renderUI({
   if (!is.null(node) && nrow(node) > 0) {
     dateRangeInput(
       "clusterDateRange",
-      label = "公表日",
+      label = i18n$t("公表日"),
       start = Sys.Date() - 14,
       end = Sys.Date(),
       min = min(node$公表日, na.rm = T),
       max = Sys.Date(),
       separator = " - ",
       format = "yyyy年m月d日",
-      language = "ja"
+      language = languageSetting
     )
   } else {
-    tagList(tags$b("該当地域には感染者が確認されていません。またはデータの更新が必要です。"))
+    tagList(tags$b(i18n$t("該当地域には感染者が確認されていません。またはデータの更新が必要です。")))
   }
 })
 
 output$clusterNetworkWrapper <- renderUI({
   node <- clusterData()$node
   if (is.null(node)) {
-    tags$p("少なくとも一個以上の地域を選択してください。")
+    tags$p(i18n$t("少なくとも一個以上の地域を選択してください。"))
   } else {
     echarts4rOutput("clusterNetwork", height = "600px")
   }
@@ -54,7 +54,7 @@ output$clusterProfileSearchBox <- renderUI({
     choices <- node$罹患者id
     names(choices) <- choicesLabel
     selectizeInput(
-      label = tagList(icon("search"), "感染者検索"),
+      label = tagList(icon("search"), i18n$t("感染者検索")),
       choices = choices,
       inputId = "searchProfileInCluster"
     )
@@ -83,37 +83,37 @@ output$profile <- renderUI({
     if (length(patientInfo$label) > 0) {
       profile <- unlist(strsplit(patientInfo$label, "\\|")[[1]])
 
-      age <- ifelse(profile[3] != "", profile[3], "未知")
-      confirmedDate <- ifelse(profile[2] != "", profile[2], "調査中")
-      job <- ifelse(profile[5] != "", profile[5], "非公表")
+      age <- ifelse(profile[3] != "", profile[3], i18n$t("不明"))
+      confirmedDate <- ifelse(profile[2] != "", profile[2], i18n$t("不明"))
+      job <- ifelse(profile[5] != "", profile[5], i18n$t("不明"))
       gender <- tagList(icon("venus-mars"), profile[4])
       if (profile[4] == "男性") {
-        gender <- tagList(icon("mars"), profile[4])
+        gender <- tagList(icon("mars"), i18n$t("男性"))
       } else if (profile[4] == "女性") {
-        gender <- tagList(icon("venus"), profile[4])
+        gender <- tagList(icon("venus"), i18n$t("女性"))
       }
 
       # リンク分割
       outerLinks <- strsplit(profile[8], split = ";")[[1]]
       outerLinkTags <- tagList(lapply(1:length(outerLinks), function(i) {
-        tags$a(href = outerLinks[i], icon("link"), "外部リンク", style = "float: right!important;")
+        tags$a(href = outerLinks[i], icon("link"), i18n$t("外部リンク"), style = "float: right!important;")
       }))
       # 行動歴
-      activityLog <- ifelse(profile[7] == "", "詳細なし", profile[7])
+      activityLog <- ifelse(profile[7] == "", i18n$t("不明"), profile[7])
       # ステータス
       statusBadge <- ""
       if (profile[9] == "罹患中") {
-        statusBadge <- dashboardLabel(profile[9], status = "warning")
+        statusBadge <- dashboardLabel(i18n$t("罹患中"), status = "warning")
       } else if (profile[9] == "回復") {
-        statusBadge <- dashboardLabel(profile[9], status = "success")
+        statusBadge <- dashboardLabel(i18n$t("回復"), status = "success")
       } else if (profile[9] == "死亡") {
-        statusBadge <- dashboardLabel(profile[9], status = "primary")
+        statusBadge <- dashboardLabel(i18n$t("死亡"), status = "primary")
       } else {
         statusBadge <- dashboardLabel(profile[9], status = "info")
       }
 
       boxPlus(
-        title = tagList(icon("id-card"), "公開された感染者情報"),
+        title = tagList(icon("id-card"), i18n$t("公開された感染者情報")),
         width = 12,
         closable = F,
         boxProfile(
@@ -144,23 +144,23 @@ output$profile <- renderUI({
           )
         ),
         footer = tagList(
-          tags$b(icon("handshake"), "濃厚接触者状況"),
+          tags$b(icon("handshake"), i18n$t("濃厚接触者状況")),
           tags$p(tags$small(HTML(profile[11]))),
           tags$hr(),
-          tags$b(icon("procedures"), "症状・経過"),
+          tags$b(icon("procedures"), i18n$t("症状・経過")),
           tags$p(tags$small(HTML(profile[6]))),
           tags$hr(),
-          tags$b(icon("walking"), "行動歴"),
+          tags$b(icon("walking"), i18n$t("行動歴")),
           tags$p(tags$small(HTML(activityLog)))
         )
       )
     }
   } else {
     boxPlus(
-      title = tagList(icon("id-card"), "公開された感染者情報"),
+      title = tagList(icon("id-card"), i18n$t("公開された感染者情報")),
       width = 12,
       closable = F,
-      "左側の感染者アイコンをクリックすると詳細情報が表示されます。"
+      i18n$t("左側の丸いアイコンをクリックすると詳細情報が表示されます。")
     )
   }
 })
@@ -206,23 +206,23 @@ output$clusterNetwork <- renderEcharts4r({
         outDateRange = list(borderColor = "transparent", borderWidth = 2, borderRadius = 2, padding = 3, fontSize = 8),
         death = list(borderColor = "auto", borderWidth = 2, borderRadius = 10, padding = 3)
       ), ) %>%
-      e_tooltip(formatter = htmlwidgets::JS('
+      e_tooltip(formatter = htmlwidgets::JS(paste0('
     function(params) {
       if (params.value) {
         const text = params.value.split("|")
         return(`
           番号：${text[0]}<br>
-          公表日：${text[1]}<br>
-          年代：${text[2]}<br>
+          ', i18n$t("公表日："), '${text[1]}<br>
+          ', i18n$t("年代："), '${text[2]}<br>
           性別：${text[3]}
         `)
       }
     }
-  ')) %>%
+  '))) %>%
       # e_modularity() %>%
       e_title(
-        text = paste0("合計：", nrow(node), "人"),
-        subtext = paste0("公表日：", min(as.Date(node$公表日), na.rm = T), " ~ ", max(as.Date(node$公表日), na.rm = T))
+        text = paste0(i18n$t("合計："), nrow(node)),
+        subtext = paste0(i18n$t("公表日："), min(as.Date(node$公表日), na.rm = T), " ~ ", max(as.Date(node$公表日), na.rm = T))
       )
   } else {
     return()

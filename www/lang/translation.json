@@ -179,7 +179,47 @@
     {
       "ja": "感染確認情報",
       "cn": "确诊消息来源",
-      "en": "Sources of confirmed"
+      "en": "Sources of Confirmed"
+    },
+    {
+      "ja": "感染者検索",
+      "cn": "确诊例搜索",
+      "en": "Search for Infected"
+    },
+    {
+      "ja": "該当地域には感染者が確認されていません。またはデータの更新が必要です。",
+      "cn": "在本地区没有确诊例。或者数据需要更新。",
+      "en": "There are no confirmed cases in the region. Or the data needs to be updated."
+    },
+    {
+      "ja": "少なくとも一個以上の地域を選択してください。",
+      "cn": "至少选择一个以上地区。",
+      "en": "Choose at least one region."
+    },
+    {
+      "ja": "濃厚接触者状況",
+      "cn": "密切接触者情况",
+      "en": "Close Contact Info."
+    },
+    {
+      "ja": "症状・経過",
+      "cn": "症状和经过",
+      "en": "Symptoms & Observation"
+    },
+    {
+      "ja": "行動歴",
+      "cn": "活动历史",
+      "en": "Activity History"
+    },
+    {
+      "ja": "公開された感染者情報",
+      "cn": "已公开的确诊例信息",
+      "en": "Publicly Available Information"
+    },
+    {
+      "ja": "左側の丸いアイコンをクリックすると詳細情報が表示されます。",
+      "cn": "点击左图中圆点图表可显示详细内容。",
+      "en": "Click on the circle icon on the left for more information."
     },
     {
       "ja": "データ提供：",
@@ -1087,9 +1127,29 @@
       "en": "Female"
     },
     {
+      "ja": "外部リンク",
+      "cn": "外部链接",
+      "en": "External Link"
+    },
+    {
+      "ja": "回復",
+      "cn": "恢复",
+      "en": "Recovered"
+    },
+    {
+      "ja": "罹患中",
+      "cn": "患病中",
+      "en": "Suffering"
+    },
+    {
       "ja": "合計：",
       "cn": "合计：",
       "en": "Total: "
+    },
+    {
+      "ja": "年代：",
+      "cn": "年龄层：",
+      "en": "Age: "
     },
     {
       "ja": "総計の",
@@ -1114,6 +1174,11 @@
     {
       "ja": "公表日",
       "cn": "发表日",
+      "en": "Announced: "
+    },
+    {
+      "ja": "公表日：",
+      "cn": "发表日：",
       "en": "Announced: "
     },
     {
