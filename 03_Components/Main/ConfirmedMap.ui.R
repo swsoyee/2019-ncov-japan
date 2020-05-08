@@ -6,64 +6,74 @@ tabPanel(
   fluidRow(
     column(
       width = 5,
-      fluidRow(column(
-        width = 6,
-        tags$div(
-          switchInput(
-            inputId = "switchMapVersion",
-            value = T,
-            onLabel = i18n$t("シンプル"),
-            offLabel = i18n$t("詳細"),
-            label = i18n$t("表示モード"),
-            inline = T,
-            size = "small",
-            width = "300px",
-            labelWidth = "200px",
-            handleWidth = "100px"
+      tags$div(
+        fluidRow(
+          column(
+            width = 6,
+            switchInput(
+              inputId = "switchMapVersion",
+              value = T, 
+              onLabel = i18n$t("シンプル"),
+              onStatus = "danger",
+              offStatus = "danger",
+              offLabel = i18n$t("詳細"),
+              label = i18n$t("表示モード"),
+              inline = T,
+              size = "small",
+              width = "300px",
+              labelWidth = "200px",
+              handleWidth = "100px"
+            ),
           ),
-          dropdownButton(
-            tags$h4(i18n$t("表示設定")),
-            materialSwitch(
-              inputId = "showPopupOnMap",
-              label = i18n$t("日次増加数のポップアップ"),
+          column(
+            width = 6,
+            tags$span(
+            dropdownButton(
+              tags$h4(i18n$t("表示設定")),
+              materialSwitch(
+                inputId = "showPopupOnMap",
+                label = i18n$t("日次増加数のポップアップ"),
+                status = "danger",
+                value = T
+              ),
+              materialSwitch(
+                inputId = "replyMapLoop",
+                label = i18n$t("ループ再生"),
+                status = "danger",
+                value = T
+              ),
+              dateRangeInput(
+                inputId = "mapDateRange",
+                label = i18n$t("表示日付"),
+                start = byDate$date[nrow(byDate) - 15],
+                end = byDate$date[nrow(byDate)],
+                min = byDate$date[1],
+                max = byDate$date[nrow(byDate)],
+                separator = " ~ ",
+                language = "ja"
+              ),
+              sliderInput(
+                inputId = "mapFrameSpeed",
+                label = i18n$t("再生速度（秒/日）"),
+                min = 0.5,
+                max = 3,
+                step = 0.1,
+                value = 0.8
+              ),
+              circle = F,
+              inline = T,
               status = "danger",
-              value = T
+              icon = icon("gear"),
+              size = "sm",
+              width = "300px",
+              tooltip = tooltipOptions(title = i18n$t("表示設定"), placement = "top")
             ),
-            materialSwitch(
-              inputId = "replyMapLoop",
-              label = i18n$t("ループ再生"),
-              status = "danger",
-              value = T
-            ),
-            dateRangeInput(
-              inputId = "mapDateRange",
-              label = i18n$t("表示日付"),
-              start = byDate$date[nrow(byDate) - 15],
-              end = byDate$date[nrow(byDate)],
-              min = byDate$date[1],
-              max = byDate$date[nrow(byDate)],
-              separator = " ~ ",
-              language = "ja"
-            ),
-            sliderInput(
-              inputId = "mapFrameSpeed",
-              label = i18n$t("再生速度（秒/日）"),
-              min = 0.5,
-              max = 3,
-              step = 0.1,
-              value = 0.8
-            ),
-            circle = F,
-            inline = T,
-            status = "danger",
-            icon = icon("gear"),
-            size = "sm",
-            width = "300px",
-            tooltip = tooltipOptions(title = i18n$t("表示設定"))
+            style = "float:right;"
+          )
           ),
-          style = "margin-top:10px;"
-        )
-      )),
+        ),
+        style = "margin-top:10px;"
+      ),
       uiOutput("comfirmedMapWrapper") %>% withSpinner(proxy.height = "500px"),
       # TODO もし全部の都道府県に感染者報告がある場合、こちらのバーを再検討する
       progressBar(
@@ -89,7 +99,8 @@ tabPanel(
             width = 8,
             radioGroupButtons(
               inputId = "switchTableVersion",
-              label = "", justified = T,
+              label = NULL, 
+              justified = T,
               choiceNames = c(
                 paste(icon("procedures"), i18n$t("感染")),
                 paste(icon("vials"), i18n$t("検査")),
@@ -101,7 +112,7 @@ tabPanel(
           ),
           column(
             width = 4,
-            tags$div(
+            tags$span(
               awesomeCheckbox(
                 inputId = "tableShowSetting",
                 label = i18n$t("グルーピング表示"),
