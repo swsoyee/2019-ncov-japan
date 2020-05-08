@@ -1457,6 +1457,41 @@
       "en": "Trends of Positive Rate"
     },
     {
+      "ja": "コミュニティモビリティレポート",
+      "cn": "社区流动报告",
+      "en": "Community Mobility Reports"
+    },
+    {
+      "ja": "小売・娯楽",
+      "cn": "零售和娱乐",
+      "en": "Retail & Recreation"
+    },
+    {
+      "ja": "食品・医薬品",
+      "cn": "食品和医药品",
+      "en": "Grocery & Pharmacy"
+    },
+    {
+      "ja": "公園",
+      "cn": "公园",
+      "en": "Park"
+    },
+    {
+      "ja": "駅",
+      "cn": "车站",
+      "en": "Transit Stations"
+    },
+    {
+      "ja": "職場",
+      "cn": "职场",
+      "en": "Workplaces"
+    },
+    {
+      "ja": "家",
+      "cn": "家",
+      "en": "Residential"
+    },
+    {
       "ja": "陽性率",
       "cn": "阳性率",
       "en": "Positive Rate"

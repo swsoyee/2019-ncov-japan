@@ -1,6 +1,6 @@
 fluidRow(
   boxPlus(
-    title = tagList(icon("google"), "コミュニティモビリティレポート"),
+    title = tagList(icon("google"), i18n$t("コミュニティモビリティレポート")),
     width = 12,
     closable = F,
     footer = tags$small(
@@ -18,9 +18,9 @@ fluidRow(
         width = 6,
         radioGroupButtons(
           inputId = "prefMobility",
-          label = "自治体",
+          label = i18n$t("自治体"),
           size = "sm",
-          choices = c("全国", provinceCode$`name-ja`), 
+          choices = c("全国", provinceCode$`name-ja`),
           status = "danger"
         ),
         uiOutput("mobilityCalendar") %>% withSpinner(proxy.height = "400px")

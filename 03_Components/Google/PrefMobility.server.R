@@ -35,6 +35,7 @@ createMobilityCalendar <- function(data, pref, serie, title) {
     e_visual_map(
       top = "10%",
       right = "0%",
+      itemWidth = 8,
       max = scaleStandard,
       min = (0 - scaleStandard),
       show = T,
@@ -52,12 +53,12 @@ createMobilityCalendar <- function(data, pref, serie, title) {
 createMobilityCalendarGroup <- function(data, pref) {
   calendars <- list()
   mobilitySeries <- list(
-    "retail_and_recreation_percent_change_from_baseline" = "小売 & 娯楽",
-    "grocery_and_pharmacy_percent_change_from_baseline" = "食品 & 医薬品",
-    "parks_percent_change_from_baseline" = "公園",
-    "transit_stations_percent_change_from_baseline" = "駅",
-    "workplaces_percent_change_from_baseline" = "職場",
-    "residential_percent_change_from_baseline" = "家"
+    "retail_and_recreation_percent_change_from_baseline" = i18n$t("小売・娯楽"),
+    "grocery_and_pharmacy_percent_change_from_baseline" = i18n$t("食品・医薬品"),
+    "parks_percent_change_from_baseline" = i18n$t("公園"),
+    "transit_stations_percent_change_from_baseline" = i18n$t("駅"),
+    "workplaces_percent_change_from_baseline" = i18n$t("職場"),
+    "residential_percent_change_from_baseline" = i18n$t("家")
   )
   for (i in seq(mobilitySeries)) {
     calendars[[paste0(pref, "_", names(mobilitySeries[i]))]] <- createMobilityCalendar(
@@ -125,49 +126,56 @@ output$googleMobilityTable <- renderDataTable({
   data <- GLOBAL_VALUE$Google$table
   # data <- fread(paste0(DATA_PATH, "Google/Global_Mobility_Report.Japan.Table.csv"), sep = "@")
   DT::datatable(data,
-    escape = F, 
-    caption = paste0("数値は直近１週間（", max(GLOBAL_VALUE$Google$mobility$date),"から遡り１週間）の基準値との比較の平均値。"),
+    escape = F,
+    caption = paste0("数値は直近１週間（", max(GLOBAL_VALUE$Google$mobility$date), "から遡り１週間）の基準値との比較の平均値。"),
     options = list(
       dom = "t",
       scrollY = "540px",
       scrollX = T,
       paging = F,
       columnDefs = list(
-        list(data = 1, 
-             targets = 1, 
-             className = "dt-center",
-             title = as.character(icon("landmark"))
+        list(
+          data = 1,
+          targets = 1,
+          className = "dt-center",
+          title = as.character(icon("landmark"))
         ),
-        list(data = 2, 
-             targets = 2, 
-             className = "dt-center",
-             title = as.character(icon("umbrella-beach"))
+        list(
+          data = 2,
+          targets = 2,
+          className = "dt-center",
+          title = as.character(icon("umbrella-beach"))
         ),
-        list(data = 3, 
-             targets = 3, 
-             className = "dt-center",
-             title = as.character(icon("shopping-cart"))
+        list(
+          data = 3,
+          targets = 3,
+          className = "dt-center",
+          title = as.character(icon("shopping-cart"))
         ),
-        list(data = 4, 
-             targets = 4, 
-             className = "dt-center",
-             title = as.character(icon("tree"))
+        list(
+          data = 4,
+          targets = 4,
+          className = "dt-center",
+          title = as.character(icon("tree"))
         ),
-        list(data = 5, 
-             targets = 5, 
-             className = "dt-center",
-             title = as.character(icon("subway"))
+        list(
+          data = 5,
+          targets = 5,
+          className = "dt-center",
+          title = as.character(icon("subway"))
         ),
-        list(data = 6, 
-             targets = 6, 
-             className = "dt-center",
-             title = as.character(icon("briefcase"))
+        list(
+          data = 6,
+          targets = 6,
+          className = "dt-center",
+          title = as.character(icon("briefcase"))
         ),
-        list(data = 7, 
-             targets = 7, 
-             className = "dt-center",
-             title = as.character(icon("home"))
-             )
+        list(
+          data = 7,
+          targets = 7,
+          className = "dt-center",
+          title = as.character(icon("home"))
+        )
       ),
       fnDrawCallback = htmlwidgets::JS("
         function() {
