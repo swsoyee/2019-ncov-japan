@@ -176,6 +176,14 @@ convertRegionName <- function(sourceName, targetLanguage, sourceLanguage = "ja")
   return(prefectureNameMap[[targetLanguage]][match(sourceName, prefectureNameMap$ja)])
 }
 
+GenerateSelectProvinceOption <- function(data, column, languageSetting) {
+  selectProvinceOption <- unique(data[[column]])
+  selectProvinceOptionName <- sapply(selectProvinceOption, function(x){convertRegionName(x, languageSetting)})
+  selectProvinceOption <- as.list(selectProvinceOption)
+  names(selectProvinceOption) <- selectProvinceOptionName
+  return(selectProvinceOption)
+}
+
 # TEST
 # sourceName <- c("東京都", "北海道")
 # convertRegionName(sourceName, targetLanguage = "en")
