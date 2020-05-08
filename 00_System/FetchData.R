@@ -30,12 +30,17 @@ kenmoAreaDataset <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1Cy4W9hYh
 fwrite(x = kenmoAreaDataset, file = paste0(DATA_PATH, "Kenmo/confirmedNumberByCity.ja.csv"))
 # Translate
 translateSubData <- fread(paste0(DATA_PATH, "Collection/cityMaster.csv"))
-# TODO 関数化
-kenmoAreaDataset.cn <- kenmoAreaDataset
-kenmoAreaDataset.cn$市名 <- translateSubData[match(kenmoAreaDataset.cn$市名, translateSubData$ja)]$cn
+
+translateColumn <- function(data, column, language, language_data) {
+  data <- data.table(data)
+  data[[column]] <- language_data[match(data[[column]], language_data[["ja"]])][[language]]
+  return(data)
+}
+kenmoAreaDataset.cn <- translateColumn(data = kenmoAreaDataset, column = "県名", language = "cn", language_data = translateSubData)
+kenmoAreaDataset.cn <- translateColumn(data = kenmoAreaDataset.cn, column = "市名", language = "cn", language_data = translateSubData)
 fwrite(x = kenmoAreaDataset.cn, file = paste0(DATA_PATH, "Kenmo/confirmedNumberByCity.cn.csv"))
-kenmoAreaDataset.en <- kenmoAreaDataset
-kenmoAreaDataset.en$市名 <- translateSubData[match(kenmoAreaDataset.en$市名, translateSubData$ja)]$en
+kenmoAreaDataset.en <- translateColumn(data = kenmoAreaDataset, column = "県名", language = "en", language_data = translateSubData)
+kenmoAreaDataset.en <- translateColumn(data = kenmoAreaDataset.en, column = "市名", language = "en", language_data = translateSubData)
 fwrite(x = kenmoAreaDataset.en, file = paste0(DATA_PATH, "Kenmo/confirmedNumberByCity.en.csv"))
 
 # ====SIGNATEデータ====

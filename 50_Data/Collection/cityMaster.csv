@@ -1,7 +1,54 @@
 ﻿ja,en,cn
+北海道,Hokkaido,北海道
+青森県,Aomori,青森县
+岩手県,Iwate,岩手县
+宮城県,Miyagi,宫城县
+秋田県,Akita,秋田县
+山形県,Yamagata,山形县
+福島県,Fukushima,福岛县
+茨城県,Ibaraki,茨城县
+栃木県,Tochigi,栃木县
+群馬県,Gunma,群马县
+埼玉県,Saitama,埼玉县
+千葉県,Chiba,千叶县
+東京都,Tokyo,东京都
+神奈川県,Kanagawa,神奈川县
+新潟県,Niigata,新泻县
+富山県,Toyama,富山县
+石川県,Ishikawa,石川县
+福井県,Fukui,福井县
+山梨県,Yamanashi,山梨县
+長野県,Nagano,长野县
+岐阜県,Gifu,岐阜县
+静岡県,Shizuoka,静冈县
+愛知県,Aichi,爱知县
+三重県,Mie,三重县
+滋賀県,Shiga,滋贺县
+京都府,Kyoto,京都府
+大阪府,Osaka,大阪府
+兵庫県,Hyogo,兵库县
+奈良県,Nara,奈良县
+和歌山県,Wakayama,和歌山县
+鳥取県,Tottori,鸟取县
+島根県,Shimane,岛根县
+岡山県,Okayama,冈山县
+広島県,Hiroshima,广岛县
+山口県,Yamaguchi,山口县
+徳島県,Tokushima,德岛县
+香川県,Kagawa,香川县
+愛媛県,Ehime,爱媛县
+高知県,Kochi,高知县
+福岡県,Fukuoka,福冈县
+佐賀県,Saga,佐贺县
+長崎県,Nagasaki,长崎県
+熊本県,Kumamoto,熊本县
+大分県,Oita,大分县
+宮崎県,Miyazaki,宫崎县
+鹿児島県,Kagoshima,鹿儿岛县
+沖縄県,Okinawa,冲绳县
 千代田区,Chiyoda,千代田区
-中央区,Chuo-ku,中央区
-港区,Minato-ku,港区
+中央区,Chuo ward,中央区
+港区,Minato ward,港区
 新宿区,Shinjuku ward,新宿区
 文京区,Bunkyo Ward,文京区
 台東区,Taito,台东区
@@ -9,10 +56,10 @@
 江東区,Koto Ward,江东区
 品川区,Shinagawa Ward,品川区
 目黒区,Meguro,目黑区
-大田区,Ota-ku,大田区
+大田区,Ota ward,大田区
 世田谷区,Setagaya,世田谷区
 渋谷区,Shibuya Ward,涩谷区
-中野区,Nakano,中野市
+中野区,Nakano,中野区
 杉並区,Suginami,杉并区
 豊島区,Toshima ward,丰岛区
 北区,Kita Ward,北区
@@ -50,8 +97,8 @@
 西東京市,West Tokyo,西东京市
 瑞穂町,Mizuho Town,瑞穗町
 横浜市鶴見区,"Tsurumi Ward, Yokohama City",横滨市鹤见区
-横浜市神奈川区,"Kanagawa-ku, Yokohama",横滨神奈川区
-横浜市西区,"Nishi-ku, Yokohama",横滨西区
+横浜市神奈川区,"Kanagawa ward, Yokohama",横滨神奈川区
+横浜市西区,"Nishi ward, Yokohama",横滨西区
 横浜市中区,"Naka City, Yokohama City",横滨市中市
 横浜市南区,"Minami Ward, Yokohama City",横滨市南区
 横浜市港南区,"Konan Ward, Yokohama City",横滨市港南区
@@ -362,7 +409,7 @@
 新潟市江南区,Niigata City Konan Ward,新泻市江南区
 長岡市,Nagaoka,长冈市
 小千谷市,Ojiya City,小千谷市
-新潟市西区,"Nishi-ku, Niigata City",新泻市西区
+新潟市西区,"Nishi ward, Niigata City",新泻市西区
 燕市,Tsubame City,燕市
 上越市,Joetsu City,上越市
 阿賀野市,Agano City,阿贺野市
@@ -450,7 +497,7 @@
 静岡市葵区,"Aoi Ward, Shizuoka City",静冈市葵区
 富士宮市,Fujinomiya city,富士宫市
 菊川市,Kikugawa,菊川市
-浜松市中区,"Naka-ku, Hamamatsu City",滨松市中区
+浜松市中区,"Naka ward, Hamamatsu City",滨松市中区
 長泉町,Nagaizumi Town,长泉町
 静岡市清水区,Shizuoka City Shimizu Ward,静冈市清水区
 静岡市駿河区,"Suruga Ward, Shizuoka City",静冈市骏河区
@@ -687,7 +734,7 @@
 北九州市八幡西区,Kitakyushu City Hachiman Nishi Ward,北九州市八幡西区
 京都郡,Kyoto-gun,京都郡
 久留米市,Kurume,久留米市
-北九州市戸畑区,"Tobata-ku, Kitakyushu",北九州市户畑区
+北九州市戸畑区,"Tobata ward, Kitakyushu",北九州市户畑区
 北九州市若松区,"Wakamatsu Ward, Kitakyushu",北九州市若松区
 北九州市門司区,Kitakyushu Moji Ward,北九州门司区
 糸島市,Itoshima,丝岛市
