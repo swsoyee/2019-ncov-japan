@@ -122,23 +122,23 @@ output$profile <- renderUI({
           boxProfileItemList(
             bordered = TRUE,
             boxProfileItem(
-              title = tagList(icon("user-clock"), "年代"),
+              title = tagList(icon("user-clock"), i18n$t("年代")),
               description = age
             ),
             boxProfileItem(
-              title = tagList(icon("bullhorn"), "公表日"),
+              title = tagList(icon("bullhorn"), i18n$t("公表日")),
               description = confirmedDate
             ),
             boxProfileItem(
-              title = tagList(icon("user-tie"), "職業"),
+              title = tagList(icon("user-tie"), i18n$t("職業")),
               description = job
             ),
             boxProfileItem(
-              title = tagList(icon("home"), "居住地"),
+              title = tagList(icon("home"), i18n$t("居住地")),
               description = profile[10]
             ),
             boxProfileItem(
-              title = tagList(icon("external-link-alt"), "情報源"),
+              title = tagList(icon("external-link-alt"), i18n$t("情報源")),
               description = outerLinkTags
             ),
           )
@@ -211,10 +211,10 @@ output$clusterNetwork <- renderEcharts4r({
       if (params.value) {
         const text = params.value.split("|")
         return(`
-          番号：${text[0]}<br>
+          ', i18n$t("番号："), '${text[0]}<br>
           ', i18n$t("公表日："), '${text[1]}<br>
           ', i18n$t("年代："), '${text[2]}<br>
-          性別：${text[3]}
+          ', i18n$t("性別："), '${text[3]}
         `)
       }
     }
