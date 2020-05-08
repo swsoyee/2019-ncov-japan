@@ -195,7 +195,23 @@ shinyUI(
         ),
         tabItem(
           tabName = "about",
-          fluidRow(column(width = 12, tagList(includeMarkdown("www/about.md"))))
+          fluidRow(
+            column(
+              width = 12,
+              boxPlus(
+                width = 12,
+                collapsible = F,
+                fluidRow(
+                  column(
+                    width = 12,
+                    tagList(
+                      includeMarkdown(paste0("README", ifelse(languageSetting == "ja", "", paste0(".", languageSetting)), ".md"))
+                    )
+                  )
+                )
+              )
+            )
+          )
         )
       )
     ),
