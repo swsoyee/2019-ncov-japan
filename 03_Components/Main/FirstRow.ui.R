@@ -106,15 +106,6 @@ fluidRow(
           onclick = sprintf("window.open('%s')", twitterUrl)
         ),
         actionButton(
-          inputId = "github",
-          label = "Github",
-          icon = icon("github"),
-          onclick = sprintf(
-            "window.open('%s')",
-            "https://github.com/swsoyee/2019-ncov-japan"
-          )
-        ),
-        actionButton(
           inputId = "chineseVersion",
           label = "🇨🇳中文",
           onclick = sprintf(

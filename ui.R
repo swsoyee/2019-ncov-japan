@@ -11,19 +11,6 @@ shinyUI(
     header = dashboardHeaderPlus(
       title = paste0("🦠　", i18n$t("新　型　コ　ロ　ナ　ウ　イ　ル　ス　感　染　速　報")),
       titleWidth = 600,
-      dropdownMenu(
-        type = "notifications",
-        headerText = "", icon = icon("user-ninja"),
-        tags$li(
-          width = 12,
-          tags$br(),
-          boxProfile(
-            src = "profile.png",
-            title = tags$a(href = "https://github.com/swsoyee/2019-ncov-japan", "Su Wei"),
-            subtitle = tagList("Front-End Engineer", tags$small("(Bioinformatics)"))
-          )
-        )
-      ),
       enable_rightsidebar = F
     ),
     # TODO 言語設定の追加
@@ -209,6 +196,26 @@ shinyUI(
         tabItem(
           tabName = "about",
           fluidRow(column(width = 12, tagList(includeMarkdown("www/about.md"))))
+        )
+      )
+    ),
+    footer = dashboardFooter(
+      left_text = tagList(userPost(
+        id = 1,
+        src = "profile.png",
+        author = tagList(
+          tags$small("Developed by"),
+          "Su Wei"
+        ),
+        collapsible = F,
+        description = "Front-End Engineer | ex-Bioinformatics"
+      )),
+      right_text = tagList(
+        tags$div(
+          style = "font-size:22px;letter-spacing: .3rem;",
+          tags$a(href = "https://github.com/swsoyee/2019-ncov-japan", icon("github")),
+          tags$a(href = "https://twitter.com/swsoyee", icon("twitter")),
+          tags$a(href = "https://www.linkedin.com/in/infinityloop/", icon("linkedin"))
         )
       )
     )
