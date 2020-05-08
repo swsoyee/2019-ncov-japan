@@ -159,7 +159,7 @@
     {
       "ja": "市区町村の感染者数",
       "cn": "各次级行政区域的确诊人数",
-      "en": "Number of infected people in the municipality"
+      "en": "Number of infected in the municipality"
     },
     {
       "ja": "開発＆調整中",
@@ -175,6 +175,11 @@
       "ja": "歳代・性別",
       "cn": "性别年龄层",
       "en": "Age & Gender"
+    },
+    {
+      "ja": "感染確認情報",
+      "cn": "确诊消息来源",
+      "en": "Sources of confirmed"
     },
     {
       "ja": "データ提供：",
