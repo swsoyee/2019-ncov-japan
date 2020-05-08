@@ -208,7 +208,7 @@ shinyUI(
           "Su Wei"
         ),
         collapsible = F,
-        description = "Front-End Engineer | ex-Bioinformatics"
+        description = "Front-End Engineer | ex-Binformatician"
       )),
       right_text = tagList(
         tags$div(
