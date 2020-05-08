@@ -102,7 +102,7 @@ shinyUI(
         # tags$meta(property = 'og:url', content = 'https://covid-2019.live/'),
         tags$meta(property = "og:title", content = "🦠新型コロナウイルス感染速報"),
         tags$meta(property = "og:description", content = "日本における新型コロナウイルスの最新感染・罹患情報をいち早く速報・まとめるサイトです。"),
-        tags$meta(property = "og:image", content = "https://repository-images.githubusercontent.com/237152814/47b7c400-753a-11ea-8de6-8364c08e37c9")
+        tags$meta(property = "og:image", content = "https://repository-images.githubusercontent.com/237152814/77329f80-917c-11ea-958c-731c8433c504")
       ),
       tabItems(
         tabItem(
@@ -208,7 +208,7 @@ shinyUI(
           "Su Wei"
         ),
         collapsible = F,
-        description = "Front-End Engineer | ex-Binformatician"
+        description = "Front-End Engineer | ex-Bioinformatician"
       )),
       right_text = tagList(
         tags$div(
