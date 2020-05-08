@@ -438,7 +438,17 @@ output$confirmedByPrefTable <- renderDataTable({
                 return split[1];
             }"
           ),
-          targets = c(1, 3)
+          targets = 1
+        ),
+        list(
+          render = JS(
+            "
+             function(data, type, row, meta) {
+                const split = data.split('|');
+                return Number(split[1]).toLocaleString();;
+            }"
+          ),
+          targets = 3
         )
       ),
       fnDrawCallback = htmlwidgets::JS("
@@ -614,6 +624,11 @@ output$testByPrefTable <- renderDataTable({
     )
   ) %>%
     spk_add_deps() %>%
+    formatCurrency(
+      columns = "検査人数", 
+      currency = "",
+      digits = 0
+    ) %>%
     formatStyle(
       columns = "検査人数",
       background = styleColorBar(c(0, max(dt$検査人数, na.rm = T)), middleYellow, angle = -90),
@@ -639,6 +654,11 @@ output$testByPrefTable <- renderDataTable({
       columns = "百万人あたり",
       backgroundColor = styleInterval(breaksPerM, colorsPerM),
       fontWeight = "bold"
+    ) %>%
+    formatCurrency(
+      columns = "百万人あたり", 
+      currency = "",
+      digits = 0
     ) %>%
     formatStyle(
       columns = "週間平均移動",
