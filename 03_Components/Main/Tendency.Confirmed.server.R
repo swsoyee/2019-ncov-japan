@@ -39,7 +39,9 @@ output$tendencyConfirmedRegionPicker <- renderUI({
         switchInput(
           inputId = "twoSideXType",
           label = i18n$t("横軸"),
+          offStatus = "danger",
           offLabel = i18n$t("一般"),
+          onStatus = "danger",
           onLabel = i18n$t("対数"),
           value = T,
           size = "small",
@@ -84,9 +86,9 @@ output$oneSideLogConfirmed <- renderEcharts4r({
   unselected <- regionName[!(regionName %in% mostNregion)]
   unselected <- setNames(
     as.list(rep(F, length(unselected))),
-    unselected
+    sapply(unselected, i18n$t)
   )
-
+  dt[, ja := sapply(ja, i18n$t)]
   dt[order(match(ja, orderRegion))] %>%
     group_by(ja) %>%
     e_chart(index) %>%
@@ -180,9 +182,12 @@ output$confirmedLine <- renderEcharts4r({
         z = 2, barGap = "-100%",
         itemStyle = list(normal = list(color = lightRed))
       ) %>%
-      e_line(ma_3, name = i18n$t("３日移動平均"), y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkRed)) %>%
-      e_line(ma_5, name = i18n$t("５日移動平均"), y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkYellow)) %>%
-      e_line(ma_7, name = i18n$t("週間移動平均"), y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkNavy)) %>%
+      e_line(ma_3, name = i18n$t("３日移動平均"), y_index = 1,
+             symbol = "none", smooth = T, itemStyle = list(color = darkRed)) %>%
+      e_line(ma_5, name = i18n$t("５日移動平均"), y_index = 1,
+             symbol = "none", smooth = T, itemStyle = list(color = darkYellow)) %>%
+      e_line(ma_7, name = i18n$t("週間移動平均"), y_index = 1,
+             symbol = "none", smooth = T, itemStyle = list(color = darkNavy)) %>%
       e_grid(
         left = "3%",
         right = "15%",
@@ -235,7 +240,7 @@ output$confirmedLine <- renderEcharts4r({
 output$confirmedLineWrapper <- renderUI({
   if (input$selectTendencyConfirmedMode == "一般") {
     if (is.null(input$regionPicker)) {
-      tags$p("未選択です。地域を選択してください。")
+      tags$p(i18n$t("未選択です。地域を選択してください。"))
     } else {
       echarts4rOutput("confirmedLine")
     }
@@ -305,10 +310,10 @@ output$twoSideLogConfirmed <- renderEcharts4r({
   unselected <- regionName[!(regionName %in% mostNregion)]
   unselected <- setNames(
     as.list(rep(F, length(unselected))),
-    unselected
+    sapply(unselected, i18n$t)
   )
-  orderLegendList <-
-    setNames(as.list(orderRegion), rep("name", length(orderRegion)))
+  # orderLegendList <-
+  #   setNames(as.list(orderRegion), rep("name", length(orderRegion)))
 
   NDay <- input$twoSideNSpan
   # NDay <- 5 # TEST
@@ -317,7 +322,7 @@ output$twoSideLogConfirmed <- renderEcharts4r({
   dt[, spanDiff := sum(diff), by = .(ja, index)]
   dt <- unique(dt[, .(ja, index, spanDiff)])
   dt <- dt[order(ja, index)][, spanCount := cumsum(spanDiff), by = .(ja)]
-
+  dt[, ja := sapply(ja, i18n$t)]
   dt[spanDiff != 0][order(match(ja, orderRegion))] %>%
     group_by(ja) %>%
     # dt[ja =='東京' & diff != 0] %>% #TEST
@@ -353,16 +358,18 @@ output$twoSideLogConfirmed <- renderEcharts4r({
     ) %>%
     e_tooltip(
       trigger = "axis",
-      formatter = htmlwidgets::JS(
+      formatter = htmlwidgets::JS(paste0(
         '
     function(params) {
       label = params.map(param => {
-        return(`<b style="color:${param.color};background-color:white;border-radius:3px;padding:1px 5px 1px 5px;">${param.seriesName}</b>：累計${param.value[0]}名, 期間中新規${param.value[1]}名`)
+        return(`<b style="color:${param.color};background-color:white;border-radius:3px;padding:1px 5px 1px 5px;">${param.seriesName}</b>：', 
+        i18n$t("累積感染者数："),
+        '${param.value[0]}', i18n$t("名"), " ", i18n$t("期間中新規"), '${param.value[1]}', i18n$t("名"), '`)
       }).join("<br>")
       return(label)
     }
   '
-      )
+      ))
     ) %>%
     e_mark_point(data = list(
       type = "max",

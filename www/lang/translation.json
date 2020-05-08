@@ -277,6 +277,11 @@
       "en": "Infection"
     },
     {
+      "ja": "未選択です。地域を選択してください。",
+      "cn": "请选择地区。",
+      "en": "Not selected. Please select the region."
+    },
+    {
       "ja": "退院死亡",
       "cn": "出院死亡",
       "en": "Discharged & Death"
@@ -1300,6 +1305,11 @@
       "ja": "名",
       "cn": "名",
       "en": ""
+    },
+    {
+      "ja": "期間中新規：",
+      "cn": "时间段中新增：",
+      "en": "New in the time period: "
     },
     {
       "ja": "コールセンター",
