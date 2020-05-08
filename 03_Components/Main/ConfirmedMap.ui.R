@@ -86,17 +86,21 @@ tabPanel(
       boxPad(
         fluidRow(
           column(
-            width = 6,
+            width = 8,
             radioGroupButtons(
               inputId = "switchTableVersion",
-              label = "",
-              choiceNames = c(i18n$t("感染"), i18n$t("検査"), i18n$t("退院死亡")),
+              label = "", justified = T,
+              choiceNames = c(
+                paste(icon("procedures"), i18n$t("感染")),
+                paste(icon("vials"), i18n$t("検査")),
+                paste(icon("hospital"), i18n$t("退院死亡"))
+              ),
               choiceValues = c("confirmed", "test", "discharged"),
-              status = "danger",
+              status = "danger"
             )
           ),
           column(
-            width = 6,
+            width = 4,
             tags$div(
               awesomeCheckbox(
                 inputId = "tableShowSetting",
