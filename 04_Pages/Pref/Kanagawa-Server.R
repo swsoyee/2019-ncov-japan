@@ -70,9 +70,9 @@ output$kanagawaValueBoxes <- renderUI({
   data <- GLOBAL_VALUE$Kanagawa$summary
   totalPositive <- tail(data$累積陽性数, n = 1)
   # totalPCR <- sum(data$実施数, na.rm = T) # TODO 公式データまだない、とりあえずけんもうデータから計算
-  kenmo <- provincePCR[県名 == '神奈川県']
-  kenmo[, 日次検査数 := 検査数 - shift(検査数)]
-  totalPCR <- tail(kenmo$検査数, n = 1)
+  pcrData <- pcrByRegion[都道府県略称 == '神奈川']
+  pcrData[, 日次検査人数 := 検査人数 - shift(検査人数)]
+  totalPCR <- tail(pcrData$検査人数, n = 1)
   # totalDischarge <-  sum(data$治療終了数, na.rm = T) # TODO 公式データまだない、とりあえず厚労省から計算
   mhlwKanagawa <- detailByRegion[都道府県名 == '神奈川県']
   mhlwKanagawa[, 日次退院者 := 退院者 - shift(退院者)]
@@ -81,7 +81,7 @@ output$kanagawaValueBoxes <- renderUI({
   totalDischarge <- tail(dischargeValue, n = 1)
   
   totalDeath <- sum(death[, 15, with = F]) # TODO 公式データまだない
-  positiveRate <- paste0(round(totalPositive / totalPCR * 100, 2), '%')
+  positiveRate <- paste0(round(tail(pcrData$陽性者数, n = 1) / totalPCR * 100, 2), '%')
   dischargeRate <- paste0(
     round(
       totalDischarge / totalPositive * 100, 2
@@ -98,11 +98,11 @@ output$kanagawaValueBoxes <- renderUI({
       fluidRow(
         createValueBox(value = totalPCR, # TODO 今はけんものデータを使ってる
                        subValue = paste0(i18n$t('陽性率：'), positiveRate), 
-                       sparkline = createSparklineInValueBox(kenmo, '日次検査数'),
+                       sparkline = createSparklineInValueBox(pcrData, '日次検査人数'),
                        subtitle = i18n$t("検査数"),
                        icon = 'vials',
                        color = 'yellow', 
-                       diff = tail(kenmo$日次検査数, n = 1)
+                       diff = tail(pcrData$日次検査人数, n = 1)
         ),
         createValueBox(value = tail(data$累積陽性数, n = 1),
                        subValue = paste0(i18n$t('速報：'), sum(byDate[, 15, with = T], na.rm = T)), 

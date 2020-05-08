@@ -94,6 +94,8 @@ setnafill(dailyReport, type = "locf")
 callCenterDailyReport <- fread(paste0(DATA_PATH, "callCenter.csv"))
 callCenterDailyReport$date <- as.Date(as.character(callCenterDailyReport$date), "%Y%m%d")
 
+pcrByRegion <- fread(file = paste0(DATA_PATH, "MHLW/pcrByRegion.csv"))
+
 # 文言データ
 lang <- fread(paste0(DATA_PATH, "lang.csv"))
 langCode <- "ja"
