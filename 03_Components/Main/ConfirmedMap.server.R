@@ -8,9 +8,9 @@ cumSumConfirmedByDateAndRegion <- reactive({
 
 output$comfirmedMapWrapper <- renderUI({
   if (input$switchMapVersion == T) {
-    echarts4rOutput("echartsSimpleMap", height = "500px")
+    echarts4rOutput("echartsSimpleMap", height = "550px")
   } else {
-    echarts4rOutput("echartsMap", height = "500px")
+    echarts4rOutput("echartsMap", height = "550px")
   }
 })
 
