@@ -38,7 +38,7 @@ output$AomoriValueBoxes <- renderUI({
   totalPositive <- sum(data$陽性数, na.rm = T)
   totalPCR <- sum(data$実施数, na.rm = T)
   # totalDischarge <-  sum(data$治療終了数, na.rm = T) # TODO 公式データまだない、とりあえず厚労省から計算
-  mhlw <- detailByRegion[都道府県名 == '青森県']
+  mhlw <- detailByRegion[都道府県名 == '青森']
   mhlw[, 日次退院者 := 退院者 - shift(退院者)]
   # mhlw$日次退院者[is.na(mhlw$日次退院者)] <- 0
   dischargeValue <- mhlw$退院者
