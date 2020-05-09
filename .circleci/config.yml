@@ -31,7 +31,7 @@ workflows:
       - deploystg:
           filters:
             branches:
-              only: dev
+              only: /^de.*/
   build-and-deploy:
     jobs:
       - deploy:
