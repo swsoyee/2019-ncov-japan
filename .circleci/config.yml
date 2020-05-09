@@ -19,8 +19,6 @@ jobs:
   deploystg:
     docker:
       - image: bitnami/kubectl:1.17.4
-    machine:
-      enabled: true
     steps:
       - run: |
           mkdir -p ~/.kube
