@@ -23,9 +23,8 @@ jobs:
       - run: |
           export PWD=$(pwd)
           echo $OKTETO_SECERT | base64 -d > "$PWD/config"
-          wget -O ~/deployment.yaml "https://gist.githubusercontent.com/Bob-FU/978c3edee7444834fa4042114a6eb00a/raw/6fa209b12ca2371d5f47a6b5d2985a199ad20fd0/covid-stg-okteto.yaml"
-          sed -i -e "s/{{BRA_NAME}}/$CIRCLE_BRANCH/" ~/deployment.yaml
-          kubectl --kubeconfig="$PWD/config" delete deployment "ncov-stg-$CIRCLE_BRANCH"
+          wget -O ~/deployment.yaml "$STG_GIST_URL"
+          sed -i -e "s/{{BRA_NAME}}/$CIRCLE_BRANCH/; s/{{BRA_NAME}}/$CIRCLE_SHA1/" ~/deployment.yaml
           kubectl --kubeconfig="$PWD/config" apply -f ~/deployment.yaml
 workflows:
   version: 2
