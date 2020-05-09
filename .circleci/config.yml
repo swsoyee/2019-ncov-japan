@@ -17,13 +17,19 @@ jobs:
             - "5f:ca:3d:34:ff:30:1d:cb:ad:2f:e8:0d:e2:1a:3a:02"
       - run: ssh -p $SSH_PORT_STG $SSH_USER@$SSH_HOST_STG
   deploystg:
+    image: bitnami/kubectl:1.17.4
     machine:
       enabled: true
     steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "5f:ca:3d:34:ff:30:1d:cb:ad:2f:e8:0d:e2:1a:3a:02"
-      - run: ssh -p $SSH_PORT_STG $SSH_USER_STG@$SSH_HOST_STG
+      - add_kubectl_credential: |
+          mkdir -p ~/.kube
+          echo $OKTETO_SECERT | base64 -d > ~/.kube/config
+      - fetch_deployment_file: |
+          wget -O ~/deployment.yaml "https://gist.githubusercontent.com/Bob-FU/978c3edee7444834fa4042114a6eb00a/raw/6fa209b12ca2371d5f47a6b5d2985a199ad20fd0/covid-stg-okteto.yaml"
+          sed -i -e "s/{{BRA_NAME}}/$CIRCLE_BRANCH/" ~/deployment.yaml
+      - do_deployment: |
+          kubectl delete deployment "ncov-stg-$CIRCLE_BRANCH"
+          kubectl apply -f ~/deployment.yaml
 workflows:
   version: 2
   chk-on-stg:
