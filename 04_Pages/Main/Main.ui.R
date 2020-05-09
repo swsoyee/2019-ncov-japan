@@ -27,12 +27,12 @@ fluidPage(
           local = T,
           encoding = "UTF-8"
         )$value,
-        # 各都道府県のPCR検査数
-        # source(
-        #   file = paste0(COMPONENT_PATH, "UiTabRegionPCR.R"),
-        #   local = T,
-        #   encoding = "UTF-8"
-        # )$value,
+        # 各都道府県の比較
+        source(
+          file = paste0(COMPONENT_PATH, "/Main/ComparePref.ui.R"),
+          local = T,
+          encoding = "UTF-8"
+        )$value,
         # 感染者数ヒートマップ
         tabPanel(
           title = tagList(icon("th"), i18n$t("感染者数ヒートマップ")),

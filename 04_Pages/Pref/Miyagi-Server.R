@@ -35,7 +35,7 @@ output$MiyagiValueBoxes <- renderUI({
   totalPositive <- sum(data$陽性数, na.rm = T)
   totalPCR <- tail(data$検査数累計, n = 1)
   # totalDischarge <-  sum(data$治療終了数, na.rm = T) # TODO 公式データまだない、とりあえず厚労省から計算
-  mhlwMiyagi <- detailByRegion[都道府県名 == '宮城県']
+  mhlwMiyagi <- detailByRegion[都道府県名 == '宮城']
   mhlwMiyagi[, 日次退院者 := 退院者 - shift(退院者)]
   # mhlwMiyagi$日次退院者[is.na(mhlwMiyagi$日次退院者)] <- 0
   dischargeValue <- mhlwMiyagi$退院者
