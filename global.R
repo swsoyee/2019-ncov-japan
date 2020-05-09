@@ -63,6 +63,9 @@ position <- fread(paste0(DATA_PATH, "position.csv"))
 
 # 厚労省の都道府県まとめデータ
 detailByRegion <- fread(paste0(DATA_PATH, "detailByRegion.csv"))
+detailByRegion[, 都道府県名 := gsub("県|府", "", 都道府県名)]
+detailByRegion[, 都道府県名 := gsub("東京都", "東京", 都道府県名)]
+detailByRegion[, 日付 := as.Date(as.character(日付), "%Y%m%d")]
 
 # アプリ情報
 # statics <- fromJSON(file = 'https://stg.covid-2019.live/ncov-static/stats.json',
@@ -95,6 +98,7 @@ callCenterDailyReport <- fread(paste0(DATA_PATH, "callCenter.csv"))
 callCenterDailyReport$date <- as.Date(as.character(callCenterDailyReport$date), "%Y%m%d")
 
 pcrByRegion <- fread(file = paste0(DATA_PATH, "MHLW/pcrByRegion.csv"))
+pcrByRegion[, 日付 := as.Date(as.character(日付), "%Y%m%d")]
 
 # 文言データ
 lang <- fread(paste0(DATA_PATH, "lang.csv"))

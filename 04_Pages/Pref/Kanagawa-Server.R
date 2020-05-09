@@ -74,7 +74,7 @@ output$kanagawaValueBoxes <- renderUI({
   pcrData[, 日次検査人数 := 検査人数 - shift(検査人数)]
   totalPCR <- tail(pcrData$検査人数, n = 1)
   # totalDischarge <-  sum(data$治療終了数, na.rm = T) # TODO 公式データまだない、とりあえず厚労省から計算
-  mhlwKanagawa <- detailByRegion[都道府県名 == '神奈川県']
+  mhlwKanagawa <- detailByRegion[都道府県名 == '神奈川']
   mhlwKanagawa[, 日次退院者 := 退院者 - shift(退院者)]
   # mhlwKanagawa$日次退院者[is.na(mhlwKanagawa$日次退院者)] <- 0
   dischargeValue <- mhlwKanagawa$退院者
