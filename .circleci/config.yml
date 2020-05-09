@@ -24,7 +24,7 @@ jobs:
           export PWD=$(pwd)
           echo $OKTETO_SECERT | base64 -d > "$PWD/config"
           wget -O ~/deployment.yaml "$STG_GIST_URL"
-          sed -i -e "s/{{BRA_NAME}}/$CIRCLE_BRANCH/; s/{{BRA_NAME}}/$CIRCLE_SHA1/" ~/deployment.yaml
+          sed -i -e "s/{{BRA_NAME}}/$CIRCLE_BRANCH/; s/{{HASH_TAG}}/$CIRCLE_SHA1/" ~/deployment.yaml
           kubectl --kubeconfig="$PWD/config" apply -f ~/deployment.yaml
 workflows:
   version: 2
