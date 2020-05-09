@@ -2,7 +2,7 @@
 
 ![language](https://img.shields.io/github/languages/top/swsoyee/2019-ncov-japan?style=flat-square)
 ![last commit](https://img.shields.io/github/last-commit/swsoyee/2019-ncov-japan?style=flat-square)
-![page views](https://img.shields.io/badge/dynamic/json?url=https://stg.covid-2019.live/ncov-static/stats.json&label=pv&query=$.result.totals.pageviews.all&color=orange&style=flat-square)
+![page views](https://img.shields.io/badge/dynamic/json?url=https://cdn.covid-2019.live/static/stats.json&label=pv&query=$.result.totals.pageviews.all&color=orange&style=flat-square)
 
 [`🇯🇵日本語`](https://github.com/swsoyee/2019-ncov-japan/blob/master/README.md) | `🇨🇳中文` | [`🇺🇸English`](https://github.com/swsoyee/2019-ncov-japan/blob/master/README.en.md)
 
