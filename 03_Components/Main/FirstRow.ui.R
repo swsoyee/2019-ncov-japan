@@ -25,7 +25,7 @@ fluidRow(
       #        )
       #        ),
       tags$p(
-        tags$img(src = "https://img.shields.io/badge/dynamic/json?url=https://stg.covid-2019.live/ncov-static/stats.json&label=PV&query=$.result.totals.pageviews.all&color=orange&style=flat-square")
+        tags$img(src = "https://img.shields.io/badge/dynamic/json?url=https://cdn.covid-2019.live/static/stats.json&label=PV&query=$.result.totals.pageviews.all&color=orange&style=flat-square")
       ),
       # 発熱や上気道症状を引き起こすウイルス...
       tags$p(i18n$t("「新型コロナウイルス（SARS-CoV2）」はコロナウイルスのひとつです。コロナウイルスには、一般の風邪の原因となるウイルスや、「重症急性呼吸器症候群（ＳＡＲＳ）」や2012年以降発生している「中東呼吸器症候群（ＭＥＲＳ）」ウイルスが含まれます。")),
