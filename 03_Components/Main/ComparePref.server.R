@@ -5,21 +5,21 @@ output$comparePrefP1 <- renderEcharts4r({
     e_chart(日付) %>%
     e_line(
       速報陽性累積,
-      name = "速報値：陽性数",
+      name = i18n$t("速報値：陽性者数"),
       itemStyle = list(color = darkRed),
       symbol = "circle",
       symbolSize = 1
     ) %>%
     e_line(
       患者数,
-      name = "厚労省：陽性数",
+      name = i18n$t("厚労省：陽性者数"),
       itemStyle = list(color = lightRed),
       symbol = "circle",
       symbolSize = 1
     ) %>%
     e_line(
       速報死亡累積,
-      name = "速報値：死亡数",
+      name = i18n$t("速報値：死亡者数"),
       itemStyle = list(color = darkNavy),
       y_index = 1,
       symbol = "circle",
@@ -27,7 +27,7 @@ output$comparePrefP1 <- renderEcharts4r({
     ) %>%
     e_line(
       死亡者,
-      name = "厚労省：死亡数",
+      name = i18n$t("厚労省：死亡者数"),
       itemStyle = list(color = lightNavy),
       y_index = 1,
       symbol = "circle",
@@ -37,14 +37,14 @@ output$comparePrefP1 <- renderEcharts4r({
     e_x_axis(splitLine = list(show = F)) %>%
     e_y_axis(splitLine = list(show = F)) %>%
     e_y_axis(splitLine = list(show = F), index = 1) %>%
-    e_title(text = "速報値と厚労省発表値の比較") %>%
+    e_title(text = i18n$t("速報値と厚労省発表値の比較")) %>%
     e_legend(
       orient = "vertical",
       left = "15%",
       top = "15%"
     ) %>%
     e_datazoom(startValue = "2020-04-01", show = F) %>%
-    e_grid(bottom = "4%", top = "16%") %>%
+    e_grid(bottom = "4%", top = "18%") %>%
     e_group(paste0("compare_", pref))
 })
 
@@ -54,23 +54,23 @@ output$comparePrefP2 <- renderEcharts4r({
   dt %>%
     e_chart(日付) %>%
     e_bar(検査人数,
-      name = "検査人数",
+      name = i18n$t("検査人数"),
       itemStyle = list(color = middleYellow)
     ) %>%
     e_bar(
       陽性者数,
-      name = "陽性者数",
+      name = i18n$t("陽性者数"),
       itemStyle = list(color = middleRed),
       z = 2,
       barGap = "-100%"
     ) %>%
     e_line(
       陽性率,
-      name = "陽性率",
+      name = i18n$t("陽性率"),
       itemStyle = list(color = darkRed),
       y_index = 1
     ) %>%
-    e_title(text = "検査人数・陽性者数（厚労省）") %>%
+    e_title(text = i18n$t("検査人数・陽性者数（厚労省）")) %>%
     e_tooltip(trigger = "axis") %>%
     e_x_axis(splitLine = list(show = F)) %>%
     e_y_axis(splitLine = list(show = F)) %>%
@@ -85,7 +85,7 @@ output$comparePrefP2 <- renderEcharts4r({
       top = "15%"
     ) %>%
     e_datazoom(startValue = "2020-04-01", show = F) %>%
-    e_grid(bottom = "4%", top = "16%") %>%
+    e_grid(bottom = "4%", top = "18%") %>%
     e_group(paste0("compare_", pref))
 })
 output$comparePrefP3 <- renderEcharts4r({
@@ -94,23 +94,23 @@ output$comparePrefP3 <- renderEcharts4r({
   dt %>%
     e_chart(日付) %>%
     e_bar(患者数,
-      name = "患者数",
+      name = i18n$t("陽性者数"),
       itemStyle = list(color = middleRed)
     ) %>%
     e_bar(
       死亡者,
-      name = "死亡者",
+      name = i18n$t("死亡者数"),
       itemStyle = list(color = darkNavy),
       stack = 1
     ) %>%
     e_bar(
       退院者,
-      name = "退院者",
+      name = i18n$t("退院者数"),
       itemStyle = list(color = middleGreen),
       barGap = "-100%",
       stack = 1
     ) %>%
-    e_title(text = "陽性・退院・死亡（厚労省）") %>%
+    e_title(text = i18n$t("陽性・退院・死亡（厚労省）")) %>%
     e_tooltip(trigger = "axis") %>%
     e_x_axis(splitLine = list(show = F)) %>%
     e_y_axis(splitLine = list(show = F)) %>%
@@ -120,7 +120,7 @@ output$comparePrefP3 <- renderEcharts4r({
       top = "15%"
     ) %>%
     e_datazoom(startValue = "2020-04-01") %>%
-    e_grid(top = "16%") %>%
+    e_grid(top = "18%") %>%
     e_group(paste0("compare_", pref)) %>%
     e_connect_group(paste0("compare_", pref))
 })

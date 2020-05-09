@@ -1,5 +1,5 @@
 tabPanel(
-  title = tagList(icon("chart-bar"), "多次元比較"),
+  title = tagList(icon("chart-bar"), i18n$t("多次元比較")),
   fluidRow(
     column(
       width = 6,

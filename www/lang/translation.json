@@ -1492,6 +1492,46 @@
       "en": "Residential"
     },
     {
+      "ja": "多次元比較",
+      "cn": "多维度比较",
+      "en": "Multidimensional Comparison"
+    },
+    {
+      "ja": "速報値：陽性者数",
+      "cn": "速报值：阳性人数",
+      "en": "Real-time: Confirmed"
+    },
+    {
+      "ja": "厚労省：陽性者数",
+      "cn": "厚劳省：阳性人数",
+      "en": "MHLW: Confirmed"
+    },
+    {
+      "ja": "速報値：死亡者数",
+      "cn": "速报值：死亡人数",
+      "en": "Real-time: Death"
+    },
+    {
+      "ja": "厚労省：死亡者数",
+      "cn": "厚劳省：死亡人数",
+      "en": "MHLW: Death"
+    },
+    {
+      "ja": "速報値と厚労省発表値の比較",
+      "cn": "速报值与厚劳省发表数据比较",
+      "en": "Comparison of Real-time Number and Published by the MHLW"
+    },
+    {
+      "ja": "検査人数・陽性者数（厚労省）",
+      "cn": "检测人数与阳性人数（厚劳省）",
+      "en": "Tests Conducted & Positive (MHLW)"
+    },
+    {
+      "ja": "陽性・退院・死亡（厚労省）",
+      "cn": "阳性、出院和死亡（厚劳省）",
+      "en": "Positive, Discharged & Death (MHLW)"
+    },
+    {
       "ja": "陽性率",
       "cn": "阳性率",
       "en": "Positive Rate"
