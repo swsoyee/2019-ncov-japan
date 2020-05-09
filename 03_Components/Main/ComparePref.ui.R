@@ -6,7 +6,7 @@ tabPanel(
       pickerInput(
         inputId = "comparePref",
         label = "",
-        choices = colnames(byDate)[2:48],
+        choices = regionName[!regionName %in% c("都道府県", "チャーター便", "検疫職員", "クルーズ船", "伊客船")],
         options = list(
           `live-search` = TRUE
         )
