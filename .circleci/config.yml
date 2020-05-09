@@ -18,7 +18,7 @@ jobs:
       - run: ssh -p $SSH_PORT_STG $SSH_USER@$SSH_HOST_STG
   deploystg:
     docker:
-      image: bitnami/kubectl:1.17.4
+      - image: bitnami/kubectl:1.17.4
     machine:
       enabled: true
     steps:
