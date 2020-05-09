@@ -18,15 +18,15 @@ jobs:
       - run: ssh -p $SSH_PORT_STG $SSH_USER@$SSH_HOST_STG
   deploystg:
     docker:
-      - image: bitnami/kubectl:1.17.4
+      - image: boxboat/kubectl:1.15.12
     steps:
       - run: |
-          mkdir -p ~/.kube
-          echo $OKTETO_SECERT | base64 -d > ~/.kube/config
+          export PWD=$(pwd)
+          echo $OKTETO_SECERT | base64 -d > "$PWD/config"
           wget -O ~/deployment.yaml "https://gist.githubusercontent.com/Bob-FU/978c3edee7444834fa4042114a6eb00a/raw/6fa209b12ca2371d5f47a6b5d2985a199ad20fd0/covid-stg-okteto.yaml"
           sed -i -e "s/{{BRA_NAME}}/$CIRCLE_BRANCH/" ~/deployment.yaml
-          kubectl delete deployment "ncov-stg-$CIRCLE_BRANCH"
-          kubectl apply -f ~/deployment.yaml
+          kubectl --kubeconfig="$PWD/config" delete deployment "ncov-stg-$CIRCLE_BRANCH"
+          kubectl --kubeconfig="$PWD/config" apply -f ~/deployment.yaml
 workflows:
   version: 2
   chk-on-stg:
