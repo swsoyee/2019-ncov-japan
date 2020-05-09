@@ -25,7 +25,7 @@ jobs:
           export K8S_DEPLOYMENT_NAME=`echo $CIRCLE_BRANCH | tr "[:upper:]" "[:lower:]"`
           echo $OKTETO_SECERT | base64 -d > "$PWD/config"
           wget -O ~/deployment.yaml "$STG_GIST_URL"
-          sed -i -e "s/{{BRA_NAME}}/$K8S_DEPLOYMENT_NAME/; s/{{HASH_TAG}}/$CIRCLE_SHA1/" ~/deployment.yaml
+          sed -i -e "s/{{BRA_NAME}}/$K8S_DEPLOYMENT_NAME/; s/{{HASH_TAG}}/$CIRCLE_SHA1/; s/{{BRA_NAME_REAL}}/$CIRCLE_BRANCH/" ~/deployment.yaml
           kubectl --kubeconfig="$PWD/config" apply -f ~/deployment.yaml
 workflows:
   version: 2
