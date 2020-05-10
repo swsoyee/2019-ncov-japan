@@ -68,13 +68,13 @@ fluidRow(
       )
     ),
     fluidRow(
-      Component.MainValueBox.Info(
-        # mainValue = DISCHARGE_TOTAL, # 確定値
-        mainValue = tail(confirmingData$domesticDischarged, n = 1) + (DISCHARGE_TOTAL - DISCHARGE_WITHIN$final), # 速報値 2020-04-23 対応
-        # mainValueSub = paste0(round(100 * DISCHARGE_TOTAL / TOTAL_JAPAN, 2), "%"),
-        mainValueSub = DISCHARGE_TOTAL, # 速報値 2020-04-23 対応
+      Component.MainValueBox(
+        mainValue = sum(mhlwSummary[日付 == max(日付)]$退院者),
+        # 退院者 / (PCR 陽性者 - クルーズ船帰国の40名 - 死亡者)
+        mainValueSub = paste0(round(sum(mhlwSummary[日付 == max(日付)]$退院者) / 
+          (sum(mhlwSummary[日付 == max(日付)]$陽性者) - 40 - sum(mhlwSummary[日付 == max(日付)]$死亡者, na.rm = T)) * 100, 2), "%"),
         sparklineName = "dischargeSparkLine",
-        diffNumber = dailyReport$dischargeDiff[nrow(dailyReport)],
+        diffNumber = (sum(mhlwSummary[日付 == max(日付)]$退院者) - sum(mhlwSummary[日付 == max(日付) - 1]$退院者, na.rm = T)),
         text = i18n$t("退院者数"),
         icon = "user-shield",
         color = "green"

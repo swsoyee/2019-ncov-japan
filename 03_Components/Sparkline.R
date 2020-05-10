@@ -14,7 +14,7 @@ output$confirmedSparkLine <- renderSparkline({
 
 output$dischargeSparkLine <- renderSparkline({
   sparkline(
-    dailyReport$dischargeDiff[(nrow(dailyReport) - 21):nrow(dailyReport)],
+    tail(mhlwSummary[, .(cumsum = sum(退院者, na.rm = T)), by = "日付"][, .(diff = cumsum - shift(cumsum))], n = 28)[[1]],
     type = "bar", width = 100, barColor = "white"
   )
 })
