@@ -78,3 +78,9 @@
 # dataset <- dataset[order(日付, id)]
 # dataset <- dataset[,.(日付, 都道府県名, 陽性者, 検査人数, 入院中, 重症者, 退院者, 死亡者, 確認中)]
 # fwrite(dataset, file = "50_Data/MHLW/summary.csv")
+# dataset <- fread(file = "50_Data/MHLW/summary.csv")
+# dataset[都道府県名 == "空港検疫", 分類 := 1]
+# dataset[都道府県名 == "チャーター便", 分類 := 2]
+# dataset[都道府県名 == "クルーズ船", 分類 := 3]
+# dataset[is.na(分類), 分類 := 0]
+# fwrite(dataset, file = "50_Data/MHLW/summary.csv")
