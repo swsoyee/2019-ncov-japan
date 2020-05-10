@@ -12,7 +12,8 @@ output$tendencyConfirmedRegionPicker <- renderUI({
           size = 10,
           `deselect-all-text` = i18n$t("クリア"),
           `select-all-text` = i18n$t("全部"),
-          `selected-text-format` = i18n$t("三件以上選択されました")
+          `selected-text-format` = i18n$t("三件以上選択されました"),
+          `live-search` = T
         ),
         multiple = T,
         width = "100%"
