@@ -27,8 +27,24 @@ jobs:
           wget -O ~/deployment.yaml "$STG_GIST_URL"
           sed -i -e "s/{{BRA_NAME}}/$K8S_DEPLOYMENT_NAME/; s/{{HASH_TAG}}/$CIRCLE_SHA1/; s/{{BRA_NAME_REAL}}/$CIRCLE_BRANCH/" ~/deployment.yaml
           kubectl --kubeconfig="$PWD/config" apply -f ~/deployment.yaml
+  deployShinyioNew:
+    docker:
+      - image: boxboat/kubectl:1.15.12
+    steps:
+      - checkout
+      - run:
+          name: test
+          command: |
+            PWD=$(pwd)
+            ls -ltra "$PWD"
 workflows:
   version: 2
+  test-new-job:
+    jobs:
+      - deployShinyioNew:
+          filters:
+            branches:
+              only: testci
   chk-on-stg:
     jobs:
       - deploystg:
