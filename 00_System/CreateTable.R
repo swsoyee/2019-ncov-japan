@@ -194,14 +194,12 @@ totalDischarged <- mhlwSummary[日付 == max(日付), .(都道府県名, 退院�
 colnames(totalDischarged) <- c("region", "totalDischarged")
 
 print("都道府県別PCRデータ作成")
-pcrByRegion <- fread(file = paste0(DATA_PATH, "MHLW/pcrByRegion.csv"))
-pcrByRegion$日付 <- as.Date(as.character(pcrByRegion$日付), "%Y%m%d")
-pcrByRegion[, 前日比 := 検査人数 - shift(検査人数), by = c("都道府県略称")]
-pcrByRegion[, 週間平均移動 := round(frollmean(前日比, 7), 0), by = c("都道府県略称")]
-pcrByRegion[, 陽性率 := round(陽性者数 / 検査人数 * 100, 1)]
-pcrByRegionToday <- pcrByRegion[日付 == max(日付)]
-pcrDiffSparkline <- sapply(pcrByRegionToday$都道府県略称, function(region) {
-  data <- pcrByRegion[`都道府県略称` == region]
+mhlwSummary[, 前日比 := 検査人数 - shift(検査人数), by = c("都道府県名")]
+mhlwSummary[, 週間平均移動 := round(frollmean(前日比, 7), 0), by = c("都道府県名")]
+mhlwSummary[, 陽性率 := round(陽性者 / 検査人数 * 100, 1)]
+pcrByRegionToday <- mhlwSummary[日付 == max(日付)]
+pcrDiffSparkline <- sapply(pcrByRegionToday$都道府県名, function(region) {
+  data <- mhlwSummary[都道府県名 == region]
   # 新規
   span <- nrow(data) - dateSpan
   value <- data$前日比[ifelse(span < 0, 0, span):nrow(data)]
@@ -227,8 +225,8 @@ pcrDiffSparkline <- sapply(pcrByRegionToday$都道府県略称, function(region)
   return(diff)
 })
 
-positiveRatioSparkline <- sapply(pcrByRegionToday$都道府県略称, function(region) {
-  data <- pcrByRegion[`都道府県略称` == region]
+positiveRatioSparkline <- sapply(pcrByRegionToday$都道府県名, function(region) {
+  data <- mhlwSummary[都道府県名 == region]
   # 新規
   span <- nrow(data) - dateSpan
   value <- data$陽性率[ifelse(span < 0, 0, span):nrow(data)]
@@ -314,8 +312,9 @@ mergeDt <- merge(mergeDt, area, by.x = "region", by.y = "都道府県略称", al
 mergeDt[, perArea := round(sqrt(可住地面積 / count), 2)]
 mergeDt[, `:=` (コード = NULL, 都道府県 = NULL, 可住地面積 = NULL, 可住地面積割合 = NULL, 宅地面積 = NULL, 宅地面積割合 = NULL)]
 
-mergeDt <- merge(mergeDt, pcrByRegionToday, by.x = "region", by.y = "都道府県略称", all.x =T, no.dups = T, sort = F)
-mergeDt[, `:=` (日付 = NULL, 陽性者数 = NULL)]
+pcrByRegionToday[, `:=` (dischargedDiff = NULL)]
+mergeDt <- merge(mergeDt, pcrByRegionToday, by.x = "region", by.y = "都道府県名", all.x = T, no.dups = T, sort = F)
+mergeDt[, `:=` (日付 = NULL, 陽性者 = NULL, 入院中 = NULL, 退院者 = NULL, 死亡者 = NULL, 確認中 = NULL, 分類 = NULL)]
 mergeDt[, 百万人あたり := round(検査人数 / (population / 1000000), 0)]
 mergeDt[, population := NULL]
 
