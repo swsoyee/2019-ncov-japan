@@ -54,10 +54,9 @@
 # 
 # airport <- ConvertDailyReport(airportDailyReport, "空港検疫")
 # flight <- ConvertDailyReport(flightDailyReport, "チャーター便")
-# flight[1:35]
 # 
-# ship <- shipDailyReport[, .(日付 = as.character(date), 
-#                       都道府県名 = "クルーズ船", 
+# ship <- shipDailyReport[, .(日付 = as.character(date),
+#                       都道府県名 = "クルーズ船",
 #                       陽性者  = positive,
 #                       退院者  = discharge,
 #                       重症者  = severe,
@@ -66,7 +65,7 @@
 #                       確認中 = positive - discharge - severe - death - 40
 #                       )]
 # 
-# dataset <- smartbind(dataset, airport, flight[1:35], ship)
+# dataset <- smartbind(dataset, airport, flight, ship)
 # 
 # provinceCode <- fread(paste0(DATA_PATH, "prefectures.csv"))
 # code <- c(sprintf("%02d", provinceCode$id), 48:51)
