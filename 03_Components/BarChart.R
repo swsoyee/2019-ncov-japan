@@ -210,27 +210,3 @@ output$regionPCR <- renderEcharts4r({
       title = timeSeriesTitle
     )
 })
-
-# ====個別都道府県のPCRデータ====
-output$singleRegionPCR <- renderEcharts4r({
-  regionName <- input$selectSingleRegionPCR
-  data <- regionPCRData()[県名 == regionName]
-  # regionName <- '茨城県' # TEST
-  # data <- dt[県名 == regionName] #TEST
-  setorder(data, date)
-  data <- data[検査数 != 0 | 累積陽性者数 != 0]
-
-  data %>%
-    e_chart(date) %>%
-    e_bar(検査数, itemStyle = list(color = middleYellow)) %>%
-    e_bar(累積陽性者数, z = 2, barGap = "-100%", itemStyle = list(color = darkRed)) %>%
-    e_line(per, name = "検査陽性率", y_index = 1) %>%
-    e_x_axis(axisTick = list(show = F), splitLine = list(show = F)) %>%
-    e_y_axis(axisTick = list(show = F), splitLine = list(show = F)) %>%
-    e_y_axis(axisTick = list(show = F), index = 1, splitLine = list(show = F)) %>%
-    e_title(
-      text = regionName,
-      subtext = paste0("累積検査数ランキング：", maxCheckNumberData[県名 == regionName]$rank)
-    ) %>%
-    e_tooltip(trigger = "axis")
-})
