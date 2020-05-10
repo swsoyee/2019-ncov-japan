@@ -112,7 +112,7 @@ mhlwSummaryPath <- paste0(DATA_PATH, "/MHLW/summary.csv")
 mhlwSummary <- fread(file = mhlwSummaryPath)
 mhlwSummary$日付 <- as.Date(as.character(mhlwSummary$日付), "%Y%m%d")
 mhlwSummary <- mhlwSummary[order(都道府県名, 日付)]
-setnafill(mhlwSummary, type = "locf", cols = c("陽性者"))
+setnafill(mhlwSummary, type = "locf", cols = c("陽性者", "退院者"))
 
 # ====総数基礎集計====
 # PCR

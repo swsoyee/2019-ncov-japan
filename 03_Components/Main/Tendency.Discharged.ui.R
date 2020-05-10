@@ -8,23 +8,7 @@ tabPanel(
       tags$br(),
       fluidRow(
         column(
-          width = 6,
-          switchInput(
-            inputId = "showShipInDischarge",
-            label = icon("ship"),
-            offLabel = icon("eye-slash"),
-            onLabel = icon("eye"),
-            value = F,
-            inline = T
-          ),
-          switchInput(
-            inputId = "showFlightInDischarge",
-            label = icon("plane"),
-            offLabel = icon("eye-slash"),
-            onLabel = icon("eye"),
-            value = T,
-            inline = T
-          )
+          width = 6
         )
       ),
       echarts4rOutput("recoveredLine") %>% withSpinner()
