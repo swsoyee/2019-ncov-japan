@@ -132,12 +132,12 @@ output$recoveredLine <- renderEcharts4r({
 output$dischargeSummary <- renderUI({
   dt <- dischargeData()[nrow(dischargeData())]
   tagList(
-    tags$b(sprintf(i18n$t("%sのサマリー"), dt$date)),
-    tags$li(i18n$t("退院率："), round(dt$discharge / dt$positive * 100, 2), "%"),
-    tags$li(i18n$t("重傷率："), round(dt$sever / dt$positive * 100, 2), "%"),
-    tags$li(i18n$t("死亡率："), round(dt$death / dt$positive * 100, 2), "%"),
-    tags$small(i18n$t("※令和２年４月２２日から厚労省公開している退院者、死亡者数に突合作業中の人数が含まれていて、入退院等の状況の合計とPCR検査陽性者数は一致しないため、正しい分母がわからないのでこちらの計算はあくまでも参考程度にしてください。対処法考え＆調整中。")),
-    tags$hr()
+    tags$ol(
+    tags$li(i18n$t("令和2年4月22日から厚労省公開している退院者、死亡者数に突合作業中の人数が含まれていて、入退院等の状況の合計とPCR検査陽性者数は一致しないことが明らかにしました。"),
+            tags$a(href = "https://www.mhlw.go.jp/stf/newpage_10989.html", icon("external-link"))),
+    tags$li(i18n$t("令和2年5月9日公表分から、データソースを従来の厚生労働省が把握した個票を積み上げたものから、各自治体がウェブサイトで公表している数等を積み上げたものに変更した。"),
+            tags$a(href = "https://www.mhlw.go.jp/stf/newpage_11229.html", icon("external-link")))
+    )
   )
 })
 
@@ -185,59 +185,4 @@ output$todayCured <- renderUI({
     tags$b(i18n$t("本日新規")),
     dashboardLabel(lang[[langCode]][87], status = "success", style = "square")
   )
-})
-
-# ====退院者割合====
-# TODO 意味なさそう、削除または改修予定
-output$curedBar <- renderEcharts4r({
-  dt <- data.table(
-    "label" = "退院者",
-    "domestic" = DISCHARGE_WITHIN$final,
-    "flight" = DISCHARGE_FLIGHT$final,
-    "airport" = DISCHARGE_AIRPORT$final,
-    "ship" = DISCHARGE_SHIP$final,
-    "domesticPer" = round(DISCHARGE_WITHIN$final / DISCHARGE_TOTAL * 100, 2),
-    "flightPer" = round(DISCHARGE_FLIGHT$final / DISCHARGE_TOTAL * 100, 2),
-    "airportPer" = round(DISCHARGE_AIRPORT$final / DISCHARGE_TOTAL * 100, 2),
-    "shipPer" = round(DISCHARGE_SHIP$final / DISCHARGE_TOTAL * 100, 2)
-  )
-  e_charts(dt, label) %>%
-    e_bar(domesticPer,
-      name = i18n$t("国内事例"),
-      stack = "1", itemStyle = list(color = lightGreen)
-    ) %>%
-    e_bar(airportPer,
-      name = i18n$t("空港検疫"),
-      stack = "1", itemStyle = list(color = middleGreen)
-    ) %>%
-    e_bar(flightPer,
-      name = i18n$t("チャーター便"),
-      stack = "1", itemStyle = list(color = darkGreen)
-    ) %>%
-    e_bar(shipPer,
-      name = i18n$t("クルーズ船"),
-      stack = "1", itemStyle = list(color = middleGreen)
-    ) %>%
-    e_y_axis(max = 100, splitLine = list(show = F), show = F) %>%
-    e_x_axis(splitLine = list(show = F), show = F) %>%
-    e_grid(left = "0%", right = "0%", top = "0%", bottom = "0%") %>%
-    e_labels(position = "inside", formatter = htmlwidgets::JS('
-      function(params) {
-        if(params.value[0] > 10) {
-          return(params.value[0] + "%")
-        } else {
-          return("")
-        }
-      }
-    ')) %>%
-    e_legend(show = F) %>%
-    e_flip_coords() %>%
-    e_tooltip(formatter = htmlwidgets::JS(paste0(
-      '
-      function(params) {
-        return("<b>" + params.seriesName + "</b><br>" + Math.round(params.value[0] / 100 * ',
-      DISCHARGE_TOTAL, ', 0) + " (" + params.value[0] + "%)")
-      }
-    '
-    )))
 })

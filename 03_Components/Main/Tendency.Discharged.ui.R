@@ -34,9 +34,6 @@ tabPanel(
       tagList(
         tags$br(),
         uiOutput("dischargeSummary"),
-        tags$b(i18n$t("退院者内訳")),
-        echarts4rOutput("curedBar", height = "20px") %>% withSpinner(),
-        uiOutput("todayCured"),
         tags$hr(),
         tags$b(i18n$t("退院者数（日次）"))
       ),
