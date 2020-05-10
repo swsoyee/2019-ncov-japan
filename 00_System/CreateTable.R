@@ -112,12 +112,12 @@ diffSparkline <- sapply(2:ncol(byDate), function(i) {
   return(as.character(htmltools::as.tags(spk_composite(diff, cumsumSpk))))
 })
 
-print("新規退院者カラム作成")
+print("新規回復者カラム作成")
 mhlwSummary <- fread(file = "50_Data/MHLW/summary.csv")
 mhlwSummary$日付 <- as.Date(as.character(mhlwSummary$日付), "%Y%m%d")
 mhlwSummary[order(日付), dischargedDiff := 退院者 - shift(退院者), by = "都道府県名"]
 
-print("退院推移")
+print("回復推移")
 dischargedDiffSparkline <- sapply(colnames(byDate)[2:48], function(region) {
   data <- mhlwSummary[`都道府県名` == region]
   # 新規
@@ -134,7 +134,7 @@ dischargedDiffSparkline <- sapply(colnames(byDate)[2:48], function(region) {
       type = "bar",
       width = 80,
       barColor = middleGreen,
-      tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> 新規退院{{value}}名",
+      tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> 新規回復{{value}}名",
       tooltipValueLookups = list(
         names = namesSetting
       )
@@ -172,7 +172,7 @@ detailSparkLine <- sapply(detailSparkLineDt$都道府県名, function(region) {
       names = list(
         "0" = "情報待ち陽性者",
         "1" = "入院者",
-        "2" = "退院者",
+        "2" = "回復者",
         "3" = "死亡者"
       )
     )
@@ -189,7 +189,7 @@ doubleTimeDay <- lapply(seq(halfCount), function(index) {
 })
 names(doubleTimeDay) <- names(dt)
 
-# 退院者総数
+# 回復者総数
 totalDischarged <- mhlwSummary[日付 == max(日付), .(都道府県名, 退院者)]
 colnames(totalDischarged) <- c("region", "totalDischarged")
 
