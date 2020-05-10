@@ -587,6 +587,21 @@
       "en": "Airport Quarantine"
     },
     {
+      "ja": "死亡（突合中）",
+      "cn": "死亡（确认中）",
+      "en": "Death (Confirming)"
+    },
+    {
+      "ja": "回復（突合中）",
+      "cn": "恢复（确认中）",
+      "en": "Recovered (Confirming)"
+    },
+    {
+      "ja": "回復・重症・死亡",
+      "cn": "恢复、重症和死亡",
+      "en": "Recovered, Severe & Death"
+    },
+    {
       "ja": "回復",
       "cn": "恢复",
       "en": "Recovered"

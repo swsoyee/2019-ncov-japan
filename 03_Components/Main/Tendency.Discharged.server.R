@@ -1,70 +1,99 @@
-# ====退院タブのサマリー====
-# TODO 意味が大きくない、見ている人が少ない？
-output$dischargeSummary <- renderUI({
-  dt <- dischargeData()[nrow(dischargeData())]
-  tagList(
-    tags$b(sprintf(i18n$t("%sのサマリー"), dt$date)),
-    tags$li(i18n$t("退院率："), round(dt$discharge / dt$positive * 100, 2), "%"),
-    tags$li(i18n$t("重傷率："), round(dt$sever / dt$positive * 100, 2), "%"),
-    tags$li(i18n$t("死亡率："), round(dt$death / dt$positive * 100, 2), "%"),
-    tags$small(i18n$t("※令和２年４月２２日から厚労省公開している退院者、死亡者数に突合作業中の人数が含まれていて、入退院等の状況の合計とPCR検査陽性者数は一致しないため、正しい分母がわからないのでこちらの計算はあくまでも参考程度にしてください。対処法考え＆調整中。")),
-    tags$hr()
-  )
+# ====退院推移図データセット====
+dischargeData <- reactive({
+  dt <- domesticDailyReport
+  dt <- merge(x = domesticDailyReport, y = flightDailyReport, by = "date", all.x = T, suffixes = c(".d", ".f"))
+  dt <- merge(x = dt, y = airportDailyReport, by = "date", all.x = T)
+  dt <- merge(x = dt, y = shipDailyReport, by = "date", all.x = T)
+  
+  dataset <- domesticDailyReport
+  
+  dataset$positive <- rowSums(cbind(dataset$positive, dt$positive.x), na.rm = T)
+  dataset$discharge <- rowSums(cbind(dataset$discharge, dt$discharge.x), na.rm = T)
+  dataset$mild <- rowSums(cbind(dataset$mild, dt$mild), na.rm = T)
+  dataset$severe <- rowSums(cbind(dataset$severe, dt$severe.x), na.rm = T)
+  dataset$death <- rowSums(cbind(dataset$death, dt$death.x), na.rm = T)
+  
+  if (input$showFlightInDischarge) {
+    dataset$positive <- dataset$positive + flightDailyReport$positive
+    dataset$discharge <- dataset$discharge + flightDailyReport$discharge
+    dataset$mild <- dataset$mild + flightDailyReport$mild
+    dataset$severe <- dataset$severe + flightDailyReport$severe
+    dataset$death <- dataset$death + flightDailyReport$death
+  }
+  if (input$showShipInDischarge) {
+    ship <- shipDailyReport[2:nrow(shipDailyReport), ]
+    setnafill(ship, fill = 0)
+    dataset$positive <- dataset$positive + ship$positive
+    dataset$discharge <- dataset$discharge + ship$discharge
+    dataset$severe <- dataset$severe + ship$severe
+    dataset$death <- dataset$death + ship$death
+  }
+  dataset
+})
+
+recoveredData <- reactive({
+  dataset <- mhlwSummary[, .(陽性者 = sum(陽性者, na.rm = T), 
+                                回復者 = sum(退院者, na.rm = T), 
+                                重症者 = sum(重症者, na.rm = T), 
+                                死亡者 = sum(死亡者, na.rm = T)), by = "日付"]
+  dataset <- merge(dataset, confirmingData, all.x = T, by.x = "日付", by.y = "date")
+  dataset[dailyReport, 重症者 := 重症者 + i.severe.d, on = c(日付 = "date")]
+  dataset[, 回復突合中 := domesticDischarged - 回復者]
+  # 訳わからないマイナスの値があるため、削除
+  dataset[回復突合中 < 0, 回復突合中 := NA]
+  dataset[, 死亡突合中 := domesticDeath - 死亡者]
+  # 2020-05-09仕様変更
+  dataset[日付 %in% as.Date(c("2020-05-09", "2020-04-22")), `:=` (回復突合中 = 0, 死亡突合中 = 0)]
+  dataset
 })
 
 # ====退院推移図====
 output$recoveredLine <- renderEcharts4r({
   # dt <- dataset
-  dt <- dischargeData()
+  dataset <- recoveredData()
 
-  dt[, diff := discharge - shift(discharge)]
-  setnafill(dt, fill = 0)
-
-  defaultUnselected <- list(F, F, F, F)
-  names(defaultUnselected) <-
-    c(i18n$t("軽〜中等症の者"), i18n$t("新規退院者（日次）"), i18n$t("重症者"), i18n$t("死亡者"))
-  dt %>%
-    e_chart(date) %>%
+  dataset %>%
+    e_chart(日付) %>%
     e_line(
-      positive,
+      陽性者,
       name = i18n$t("PCR検査陽性"),
       itemStyle = list(normal = list(color = lightRed)),
-      areaStyle = list(opacity = 0.4)
+      areaStyle = list(opacity = 0.4), symbol = "circle", symbolSize = 1
     ) %>%
     e_line(
-      discharge,
-      name = i18n$t("退院者"),
-      stack = "1",
-      itemStyle = list(normal = list(color = middleGreen)),
-      areaStyle = list(opacity = 0.4)
-    ) %>%
-    e_bar(
-      diff,
-      name = i18n$t("新規退院者（日次）"),
-      y_index = 1,
-      itemStyle = list(normal = list(color = middleGreen)),
-      areaStyle = list(opacity = 0.4)
-    ) %>%
-    e_line(
-      mild,
-      name = i18n$t("軽〜中等症の者"),
-      stack = "1",
-      itemStyle = list(normal = list(color = middleYellow)),
-      areaStyle = list(opacity = 0.4)
-    ) %>%
-    e_line(
-      severe,
-      name = i18n$t("重症者"),
-      stack = "1",
-      itemStyle = list(normal = list(color = darkRed)),
-      areaStyle = list(opacity = 0.4)
-    ) %>%
-    e_line(
-      death,
-      name = i18n$t("死亡者"),
+      死亡者,
+      name = i18n$t("死亡"),
       stack = "1",
       itemStyle = list(normal = list(color = darkNavy)),
-      areaStyle = list(opacity = 0.4)
+      areaStyle = list(opacity = 0.4), symbol = "circle", symbolSize = 1
+    ) %>%
+    e_line(
+      死亡突合中,
+      name = i18n$t("死亡（突合中）"),
+      stack = "1",
+      itemStyle = list(normal = list(color = darkNavy)),
+      areaStyle = list(opacity = 0.4), symbol = "circle", symbolSize = 1
+    ) %>%
+    e_line(
+      重症者,
+      name = i18n$t("重症"),
+      stack = "1",
+      itemStyle = list(normal = list(color = darkRed)),
+      areaStyle = list(opacity = 0.4), symbol = "circle", symbolSize = 1
+    ) %>%
+    e_line(
+      回復者,
+      name = i18n$t("回復"),
+      stack = "1",
+      itemStyle = list(normal = list(color = middleGreen)),
+      areaStyle = list(opacity = 0.4), symbol = "circle", symbolSize = 1
+    ) %>%
+    e_line(
+      回復突合中,
+      name = i18n$t("回復（突合中）"),
+      stack = "1",
+      itemStyle = list(normal = list(color = middleGreen)),
+      areaStyle = list(opacity = 0.4), symbol = "circle", symbolSize = 1
     ) %>%
     e_x_axis(splitLine = list(show = F), splitLine = list(lineStyle = list(opacity = 0.2))) %>%
     e_y_axis(
@@ -87,19 +116,31 @@ output$recoveredLine <- renderEcharts4r({
       orient = "vertical",
       left = "18%",
       top = "15%",
-      right = "15%",
-      selected = defaultUnselected
+      right = "15%"
     ) %>%
-    e_title(subtext = sprintf(i18n$t("※突合作業中の%s名退院者はグラフに含まれていないことを予めご了承してください。"),
-            (tail(confirmingData$domesticDischarged, n = 1) - DISCHARGE_WITHIN$final))
-            ) %>%
+    e_title(i18n$t("回復・重症・死亡")) %>%
     e_tooltip(trigger = "axis") %>%
     e_datazoom(
       minValueSpan = 3600 * 24 * 1000 * 7,
       bottom = "0%",
-      startValue = max(dt$date, na.rm = T) - 28
+      startValue = max(dataset$日付, na.rm = T) - 28
     )
 })
+
+# ====退院タブのサマリー====
+# TODO 意味が大きくない、見ている人が少ない？
+output$dischargeSummary <- renderUI({
+  dt <- dischargeData()[nrow(dischargeData())]
+  tagList(
+    tags$b(sprintf(i18n$t("%sのサマリー"), dt$date)),
+    tags$li(i18n$t("退院率："), round(dt$discharge / dt$positive * 100, 2), "%"),
+    tags$li(i18n$t("重傷率："), round(dt$sever / dt$positive * 100, 2), "%"),
+    tags$li(i18n$t("死亡率："), round(dt$death / dt$positive * 100, 2), "%"),
+    tags$small(i18n$t("※令和２年４月２２日から厚労省公開している退院者、死亡者数に突合作業中の人数が含まれていて、入退院等の状況の合計とPCR検査陽性者数は一致しないため、正しい分母がわからないのでこちらの計算はあくまでも参考程度にしてください。対処法考え＆調整中。")),
+    tags$hr()
+  )
+})
+
 
 output$curedCalendar <- renderEcharts4r({
   dt <- data.table(
