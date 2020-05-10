@@ -1,6 +1,7 @@
 # library(gtools)
 # library(data.table)
 # 
+# 統合部分 =====
 # pcrByRegion <- fread(file = paste0(DATA_PATH, "MHLW/pcrByRegion.csv"))
 # 
 # detailByRegion <- fread(paste0(DATA_PATH, "detailByRegion.csv"))
@@ -83,3 +84,33 @@
 # dataset[都道府県名 == "クルーズ船", 分類 := 3]
 # dataset[is.na(分類), 分類 := 0]
 # fwrite(dataset, file = "50_Data/MHLW/summary.csv")
+
+# 更新部分 =====
+
+# dataset <- fread(file = "50_Data/MHLW/summary.csv")
+# location <- list(
+#   "20200509" = "https://www.mhlw.go.jp/content/10906000/000628667.pdf",
+#   "20200510" = "https://www.mhlw.go.jp/content/10906000/000628697.pdf"
+# )
+# 
+# for (i in names(location)) {
+#   if (!i %in% dataset$日付) {
+#     out <- extract_tables(location[i][[1]], method = "lattice")
+#     
+#     dt <- data.table(out[[1]])
+#     colnames(dt) <- c("都道府県名", "陽性者", "検査人数", "入院中", "重症者", "退院者", "死亡者")
+#     dt <- dt[3:(nrow(dt) - 1)]
+#     dt[grepl("その他", 都道府県名), 都道府県名 := "伊客船"]
+#     dt[, 都道府県名 := gsub(" ", "", 都道府県名)]
+#     cols <- colnames(dt)[2:ncol(dt)]
+#     dt[, (cols) := lapply(.SD, function(x){return(gsub(",", "", x))}), .SDcols = cols]
+#     suppressWarnings(dt[, (cols) := lapply(.SD, as.numeric), .SDcols = cols])
+#     dt$temp <- rowSums(dt[, c(4, 6:ncol(dt)), with = F], na.rm = T)
+#     dt[, 確認中 := 陽性者 - temp]
+#     dt <- cbind(data.table("日付" = rep(names(location[i]), nrow(dt))), dt, "分類" = 0)
+#     dt[, temp := NULL]
+#     dataset <- suppressWarnings(smartbind(dataset, dt))
+#   }
+# }
+# 
+# fwrite(dataset, "50_Data/MHLW/summary.csv")
