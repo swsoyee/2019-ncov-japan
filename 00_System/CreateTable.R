@@ -12,9 +12,6 @@ byDate$date <- lapply(byDate[, 1], function(x) {
 # 死亡データ
 death <- fread(paste0(DATA_PATH, "death.csv"))
 death[is.na(death)] <- 0
-# コールセンター
-callCenterDailyReport <- fread(paste0(DATA_PATH, "callCenter.csv"))
-callCenterDailyReport$date <- as.Date(as.character(callCenterDailyReport$date), "%Y%m%d")
 # 文言データを取得
 lang <- fread(paste0(DATA_PATH, "lang.csv"))
 langCode <- "ja"

@@ -94,7 +94,7 @@ dailyReport <- fread(paste0(DATA_PATH, "resultDailyReport.csv"))
 dailyReport$date <- as.Date(as.character(dailyReport$date), "%Y%m%d")
 setnafill(dailyReport, type = "locf")
 # コールセンター
-callCenterDailyReport <- fread(paste0(DATA_PATH, "callCenter.csv"))
+callCenterDailyReport <- fread(paste0(DATA_PATH, "MHLW/callCenter.csv"))
 callCenterDailyReport$date <- as.Date(as.character(callCenterDailyReport$date), "%Y%m%d")
 
 pcrByRegion <- fread(file = paste0(DATA_PATH, "MHLW/pcrByRegion.csv"))
