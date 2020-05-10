@@ -110,10 +110,10 @@ fluidRow(
     id = "shipPCRValue",
     # クルーズ船
     descriptionBlock(
-      number = PCR_SHIP$diff,
+      number = mhlwSummary[日付 == max(日付) & 分類 %in% 3]$検査人数 - mhlwSummary[日付 == max(日付) - 1 & 分類 %in% 3]$検査人数,
       number_color = "yellow",
-      number_icon = getChangeIconWrapper(PCR_SHIP$diff, type = "fa"),
-      header = paste(PCR_SHIP$final, ""),
+      number_icon = getChangeIconWrapper(mhlwSummary[日付 == max(日付) & 分類 %in% 3]$検査人数 - mhlwSummary[日付 == max(日付) - 1 & 分類 %in% 3]$検査人数, type = "fa"),
+      header = mhlwSummary[日付 == max(日付) & 分類 %in% 3]$検査人数,
       right_border = F,
       text = i18n$t("検査人数")
     )
@@ -151,10 +151,10 @@ fluidRow(
     width = 1,
     id = "shipDischargedValue",
     descriptionBlock(
-      number = DISCHARGE_SHIP$diff,
+      number = mhlwSummary[日付 == max(日付) & 分類 %in% 3]$退院者 - mhlwSummary[日付 == max(日付) - 1 & 分類 %in% 3]$退院者,
       number_color = "green",
-      number_icon = getChangeIconWrapper(DISCHARGE_SHIP$diff, type = "fa"),
-      header = paste(DISCHARGE_SHIP$final, ""),
+      number_icon = getChangeIconWrapper(mhlwSummary[日付 == max(日付) & 分類 %in% 3]$退院者 - mhlwSummary[日付 == max(日付) - 1 & 分類 %in% 3]$退院者, type = "fa"),
+      header =  mhlwSummary[日付 == max(日付) & 分類 %in% 3]$退院者,
       right_border = F,
       text = i18n$t("退院者")
     )
