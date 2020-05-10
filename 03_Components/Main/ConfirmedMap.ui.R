@@ -109,7 +109,7 @@ tabPanel(
               choiceNames = c(
                 paste(icon("procedures"), i18n$t("感染")),
                 paste(icon("vials"), i18n$t("検査")),
-                paste(icon("hospital"), i18n$t("退院死亡"))
+                paste(icon("hospital"), i18n$t("回復・死亡"))
               ),
               choiceValues = c("confirmed", "test", "discharged"),
               status = "danger"

@@ -46,7 +46,7 @@ output$hokkaidoValueBoxes <- renderUI({
         createValueBox(value = tail(data$治療終了累計, n = 1),
                        subValue = dischargeRate, 
                        sparkline = createSparklineInValueBox(data, '日治療終了数'), 
-                       subtitle = i18n$t("退院者数"),
+                       subtitle = i18n$t("回復者数"),
                        icon = 'user-shield',
                        color = 'green',
                        diff = tail(data$日治療終了数 , n = 1)

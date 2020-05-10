@@ -65,7 +65,7 @@ fluidRow(
         sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$退院者) - sum(mhlwSummary[日付 == max(日付) -1 & 分類 %in% 0:2]$退院者), type = "fa"),
       header = sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$退院者),
       right_border = F,
-      text = i18n$t("退院者")
+      text = i18n$t("回復者")
     )
   ),
   bsTooltip(
@@ -156,7 +156,7 @@ fluidRow(
       number_icon = getChangeIconWrapper(mhlwSummary[日付 == max(日付) & 分類 %in% 3]$退院者 - mhlwSummary[日付 == max(日付) - 1 & 分類 %in% 3]$退院者, type = "fa"),
       header =  mhlwSummary[日付 == max(日付) & 分類 %in% 3]$退院者,
       right_border = F,
-      text = i18n$t("退院者")
+      text = i18n$t("回復者")
     )
   ),
   bsTooltip(

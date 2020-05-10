@@ -282,9 +282,9 @@
       "en": "Not selected. Please select the region."
     },
     {
-      "ja": "退院死亡",
-      "cn": "出院死亡",
-      "en": "Discharged & Death"
+      "ja": "回復・死亡",
+      "cn": "恢复和死亡",
+      "en": "Recovered & Death"
     },
     {
       "ja": "現在患者数",
@@ -585,6 +585,26 @@
       "ja": "空港検疫",
       "cn": "机场检疫",
       "en": "Airport Quarantine"
+    },
+    {
+      "ja": "回復",
+      "cn": "恢复",
+      "en": "Recovered"
+    },
+    {
+      "ja": "回復推移",
+      "cn": "恢复趋势",
+      "en": "Trends"
+    },
+    {
+      "ja": "回復者",
+      "cn": "恢复",
+      "en": "Recovered"
+    },
+    {
+      "ja": "回復者数",
+      "cn": "恢复人数",
+      "en": "Recovered"
     },
     {
       "ja": "ダイアモンド・プリンセス号：令和２年３月５日まで延べ人数で公表しましたＰＣＲ検査の結果について、実員数で精査した結果は下記の数値通りです。<br><br>",
@@ -1165,11 +1185,6 @@
       "ja": "外部リンク",
       "cn": "外部链接",
       "en": "External Link"
-    },
-    {
-      "ja": "回復",
-      "cn": "恢复",
-      "en": "Recovered"
     },
     {
       "ja": "罹患中",

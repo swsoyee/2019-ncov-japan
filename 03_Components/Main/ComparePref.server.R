@@ -105,7 +105,7 @@ output$comparePrefP3 <- renderEcharts4r({
     ) %>%
     e_bar(
       退院者,
-      name = i18n$t("退院者数"),
+      name = i18n$t("回復者数"),
       itemStyle = list(color = middleGreen),
       barGap = "-100%",
       stack = 1

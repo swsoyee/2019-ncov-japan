@@ -77,7 +77,7 @@ output$MiyagiValueBoxes <- renderUI({
         createValueBox(value = totalDischarge, # TODO 今は厚労省のデータを使ってる
                        subValue = dischargeRate, # TODO
                        sparkline = createSparklineInValueBox(mhlwMiyagi, '日次退院者', length = 20),
-                       subtitle = i18n$t("退院者数"),
+                       subtitle = i18n$t("回復者数"),
                        icon = 'user-shield',
                        color = 'green',
                        diff = totalDischarge - dischargeValue[length(dischargeValue) - 1]

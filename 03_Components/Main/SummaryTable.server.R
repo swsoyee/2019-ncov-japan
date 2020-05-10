@@ -126,8 +126,8 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     colnames = c(
       i18n$t("自治体"),
       i18n$t("内訳"),
-      i18n$t("退院"),
-      i18n$t("退院推移"),
+      i18n$t("回復"),
+      i18n$t("回復推移"),
       i18n$t("死亡"),
       i18n$t("百万人あたり"),
       i18n$t("カテゴリ")

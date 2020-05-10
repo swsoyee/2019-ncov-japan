@@ -75,7 +75,7 @@ fluidRow(
           (sum(mhlwSummary[日付 == max(日付)]$陽性者) - 40 - sum(mhlwSummary[日付 == max(日付)]$死亡者, na.rm = T)) * 100, 2), "%"),
         sparklineName = "dischargeSparkLine",
         diffNumber = (sum(mhlwSummary[日付 == max(日付)]$退院者) - sum(mhlwSummary[日付 == max(日付) - 1]$退院者, na.rm = T)),
-        text = i18n$t("退院者数"),
+        text = i18n$t("回復者数"),
         icon = "user-shield",
         color = "green"
       ),
