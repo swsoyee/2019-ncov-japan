@@ -388,9 +388,7 @@ output$confirmedByPrefTable <- renderDataTable({
     colorRampPalette(c("#FFFFFF", darkRed))(length(breaksPerMillion) + 1)
 
   breaksPerArea <-
-    seq(0, max(unlist(ifelse(
-      is.numeric(dt$perArea), 0, dt$perArea
-    )), na.rm = T))
+    seq(0, ceiling(max(dt$perArea[!is.infinite(dt$perArea)], na.rm = T)))
   colorsPerArea <-
     colorRampPalette(c(darkYellow, "#FFFFFF"))(length(breaksPerArea) + 1)
 
