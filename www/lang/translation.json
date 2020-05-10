@@ -572,9 +572,9 @@
       "en": "Domestic cases: %s (+%s)<br>Air charter: %s<br>Costa Atlantica: %s"
     },
     {
-      "ja": "国内事例（確定）：%s (+%s)<br>※突合作業中：%s<br>空港検疫：%s (+%s)<br>チャーター便：%s（全員退院済み）",
-      "cn": "国内确诊（已核实）：%s (+%s)<br>※核实中：%s<br>机场检疫：%s (+%s)<br>撤侨包机：%s（全部出院）",
-      "en": "Domestic cases (confirmed): %s (+%s)<br>※Confirming: %s<br>Airport quarantine: %s (+%s)<br>Air charter: %s (all discharged)"
+      "ja": "国内事例：%s (+%s)<br>空港検疫：%s (+%s)<br>チャーター便：%s（全員退院済み）",
+      "cn": "国内确诊：%s (+%s)<br>机场检疫：%s (+%s)<br>撤侨包机：%s（全部出院）",
+      "en": "Domestic cases: %s (+%s)<br>Airport quarantine: %s (+%s)<br>Air charter: %s (all discharged)"
     },
     {
       "ja": "クルーズ船",
