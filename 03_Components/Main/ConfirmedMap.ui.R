@@ -78,9 +78,7 @@ tabPanel(
       # TODO もし全部の都道府県に感染者報告がある場合、こちらのバーを再検討する
       progressBar(
         id = "activePatients",
-        value = TOTAL_JAPAN - DEATH_JAPAN - 40 -
-          (tail(confirmingData$domesticDischarged, n = 1) +
-            (DISCHARGE_TOTAL - DISCHARGE_WITHIN$final)),
+        value = TOTAL_JAPAN - DEATH_JAPAN - 40 - sum(mhlwSummary[日付 == max(日付)]$退院者),
         total = TOTAL_JAPAN - DEATH_JAPAN - 40,
         title = tagList(
           icon("procedures"),
