@@ -32,4 +32,49 @@
 # dataset<- smartbind(detailByRegion, dt)
 # dataset <- data.table(dataset)
 # 
+# # fwrite(dataset, file = "50_Data/MHLW/summary.csv")
+# 
+# airportDailyReport <- fread(paste0(DATA_PATH, "airportDailyReport.csv"))
+# flightDailyReport <- fread(paste0(DATA_PATH, "flightDailyReport.csv"))
+# shipDailyReport <- fread(paste0(DATA_PATH, "shipDailyReport.csv"))
+# 
+# ConvertDailyReport <- function(data, type) {
+#   return(data[, .(
+#     日付  = as.character(date),
+#     都道府県名 = type,
+#     陽性者  = positive,
+#     入院中  = hospitalized, # hospitalize,
+#     退院者  = discharge,
+#     重症者  = severe,
+#     死亡者  = death,
+#     検査人数  = pcr,
+#     確認中  = confirming
+#   )])
+# }
+# 
+# airport <- ConvertDailyReport(airportDailyReport, "空港検疫")
+# flight <- ConvertDailyReport(flightDailyReport, "チャーター便")
+# flight[1:35]
+# 
+# ship <- shipDailyReport[, .(日付 = as.character(date), 
+#                       都道府県名 = "クルーズ船", 
+#                       陽性者  = positive,
+#                       退院者  = discharge,
+#                       重症者  = severe,
+#                       死亡者  = death,
+#                       検査人数  = pcr,
+#                       確認中 = positive - discharge - severe - death - 40
+#                       )]
+# 
+# dataset <- smartbind(dataset, airport, flight[1:35], ship)
+# 
+# provinceCode <- fread(paste0(DATA_PATH, "prefectures.csv"))
+# code <- c(sprintf("%02d", provinceCode$id), 48:51)
+# codeName <- c(provinceCode$`name-ja`, "伊客船", "空港検疫", "チャーター便", "クルーズ船")
+# names(codeName) <- code
+# 
+# dataset$id <- names(codeName[match(dataset$都道府県名, codeName)])
+# dataset <- data.table(dataset)
+# dataset <- dataset[order(日付, id)]
+# dataset <- dataset[,.(日付, 都道府県名, 陽性者, 検査人数, 入院中, 重症者, 退院者, 死亡者, 確認中)]
 # fwrite(dataset, file = "50_Data/MHLW/summary.csv")
