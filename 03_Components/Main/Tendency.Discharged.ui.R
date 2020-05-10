@@ -1,5 +1,5 @@
 tabPanel(
-  title = i18n$t("退院者数の推移"),
+  title = i18n$t("回復者数の推移"),
   icon = icon("user-shield"),
   value = "discharged",
   fluidRow(
@@ -19,7 +19,7 @@ tabPanel(
         tags$br(),
         uiOutput("dischargeSummary"),
         tags$hr(),
-        tags$b(i18n$t("退院者数（日次）"))
+        tags$b(i18n$t("回復者数（日次）"))
       ),
       echarts4rOutput("curedCalendar", height = "130px") %>% withSpinner()
     )
