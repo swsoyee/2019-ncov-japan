@@ -59,11 +59,11 @@ fluidRow(
     width = 1,
     id = "domesticDischarged",
     descriptionBlock(
-      number = DISCHARGE_DIFF_NO_SHIP,
+      number = sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$退院者) - sum(mhlwSummary[日付 == max(日付) -1 & 分類 %in% 0:2]$退院者),
       number_color = "green",
-      number_icon = getChangeIconWrapper(DISCHARGE_DIFF_NO_SHIP, type = "fa"),
-      # header = DISCHARGE_TOTAL_NO_SHIP,
-      header = tail(confirmingData$domesticDischarged, n = 1) + DISCHARGE_FLIGHT$final + DISCHARGE_AIRPORT$final, # 2020-04-23 厚労省退院基準変更による仕様変更
+      number_icon = getChangeIconWrapper(
+        sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$退院者) - sum(mhlwSummary[日付 == max(日付) -1 & 分類 %in% 0:2]$退院者), type = "fa"),
+      header = sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$退院者),
       right_border = F,
       text = i18n$t("退院者")
     )
@@ -72,9 +72,12 @@ fluidRow(
     id = "domesticDischarged",
     placement = "top",
     title = sprintf(
-      i18n$t("国内事例（確定）：%s (+%s)<br>※突合作業中：%s<br>空港検疫：%s (+%s)<br>チャーター便：%s（全員退院済み）"),
-      DISCHARGE_WITHIN$final, DISCHARGE_WITHIN$diff, (tail(confirmingData$domesticDischarged, n = 1) - DISCHARGE_WITHIN$final),
-      DISCHARGE_AIRPORT$final, DISCHARGE_AIRPORT$diff, DISCHARGE_FLIGHT$final
+      i18n$t("国内事例：%s (+%s)<br>空港検疫：%s (+%s)<br>チャーター便：%s（全員退院済み）"),
+      sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0]$退院者), 
+      sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0]$退院者) - sum(mhlwSummary[日付 == max(日付) -1 & 分類 %in% 0]$退院者),
+      sum(mhlwSummary[日付 == max(日付) & 分類 %in% 1]$退院者),
+      sum(mhlwSummary[日付 == max(日付) & 分類 %in% 1]$退院者) - sum(mhlwSummary[日付 == max(日付) -1 & 分類 %in% 1]$退院者),
+      sum(mhlwSummary[日付 == max(日付) & 分類 %in% 2]$退院者)
     )
   ),
   column(
