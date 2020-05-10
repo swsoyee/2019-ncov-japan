@@ -9,13 +9,15 @@ jobs:
             - "5f:ca:3d:34:ff:30:1d:cb:ad:2f:e8:0d:e2:1a:3a:02"
       - run: ssh -p $SSH_PORT $SSH_USER@$SSH_HOST
   deployShinyio:
-    machine:
-      enabled: true
+    docker:
+      - image: bobfujp/shiny:latest
     steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "5f:ca:3d:34:ff:30:1d:cb:ad:2f:e8:0d:e2:1a:3a:02"
-      - run: ssh -p $SSH_PORT_STG $SSH_USER@$SSH_HOST_STG
+      - checkout
+      - run:
+          name: deployToShinyIo
+          command: |
+            PWD=$(pwd)
+            /usr/bin/R -e "rsconnect::setAccountInfo(name=\"infinityloop\", token=\"$R_TOKEN\", secret=\"$R_SECRET\"); setwd(\"$PWD\"); rsconnect::deployApp(forceUpdate=TRUE)"
   deploystg:
     docker:
       - image: boxboat/kubectl:1.15.12
@@ -27,6 +29,7 @@ jobs:
           wget -O ~/deployment.yaml "$STG_GIST_URL"
           sed -i -e "s/{{BRA_NAME}}/$K8S_DEPLOYMENT_NAME/; s/{{HASH_TAG}}/$CIRCLE_SHA1/; s/{{BRA_NAME_REAL}}/$CIRCLE_BRANCH/" ~/deployment.yaml
           kubectl --kubeconfig="$PWD/config" apply -f ~/deployment.yaml
+
 workflows:
   version: 2
   chk-on-stg:
