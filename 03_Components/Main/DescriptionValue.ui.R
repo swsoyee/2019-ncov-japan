@@ -11,10 +11,10 @@ fluidRow(
     width = 1,
     id = "domesticPCR",
     descriptionBlock(
-      number = PCR_WITHIN$diff + PCR_FLIGHT$diff + PCR_AIRPORT$diff,
+      number = sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$検査人数) - sum(mhlwSummary[日付 == (max(日付) - 1) & 分類 %in% 0:2]$検査人数),
       number_color = "yellow",
-      number_icon = getChangeIconWrapper(PCR_WITHIN$diff + PCR_FLIGHT$diff + PCR_AIRPORT$diff, type = "fa"),
-      header = paste(PCR_WITHIN$final + PCR_FLIGHT$final + PCR_AIRPORT$final, ""),
+      number_icon = getChangeIconWrapper(sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$検査人数) - sum(mhlwSummary[日付 == (max(日付) - 1) & 分類 %in% 0:2]$検査人数), type = "fa"),
+      header = sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$検査人数),
       right_border = F,
       text = i18n$t("検査人数")
     )
@@ -23,11 +23,14 @@ fluidRow(
     id = "domesticPCR",
     placement = "top",
     title = paste0(
-      i18n$t("「令和２年３月４日版」以後は、陽性となった者の濃厚接触者に対する検査も含めた検査実施人数を都道府県に照会し、回答を得たものを公表している。なお、国内事例のPCR検査実施人数は、疑似症報告制度の枠組みの中で報告が上がった数を計上しており、各自治体で行った全ての検査結果を反映しているものではない（退院時の確認検査などは含まれていない）。"),
+      i18n$t("チャーター便を除く国内事例については、令和2年5月8日公表分から、データソースを従来の厚生労働省が把握した個票を積み上げたものから、各自治体がウェブサイトで公表している数等を積み上げたものに変更した。また、一部自治体について件数を計上しているため、実際の人数より過大である。"),
       sprintf(
         i18n$t("<hr>国内：%s (%s)<br>空港検疫：%s (+%s)<br>チャーター便：%s"),
-        PCR_WITHIN$final, getDiffValueAndSign(PCR_WITHIN$diff),
-        PCR_AIRPORT$final, PCR_AIRPORT$diff, PCR_FLIGHT$final
+        sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0]$検査人数),
+        getDiffValueAndSign(sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0]$検査人数) - sum(mhlwSummary[日付 == (max(日付) - 1) & 分類 %in% 0]$検査人数)),
+        sum(mhlwSummary[日付 == max(日付) & 分類 %in% 1]$検査人数),
+        sum(mhlwSummary[日付 == max(日付) & 分類 %in% 1]$検査人数) - sum(mhlwSummary[日付 == (max(日付) - 1) & 分類 %in% 1]$検査人数),
+        sum(mhlwSummary[日付 == max(日付) & 分類 %in% 2]$検査人数)
       )
     )
   ),
