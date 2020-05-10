@@ -1548,8 +1548,18 @@
     },
     {
       "ja": "チャーター便を除く国内事例については、令和2年5月8日公表分から、データソースを従来の厚生労働省が把握した個票を積み上げたものから、各自治体がウェブサイトで公表している数等を積み上げたものに変更した。また、一部自治体について件数を計上しているため、実際の人数より過大である。",
-      "cn": "自2020年5月8日的报告起，除撤侨包机以外的国内确诊例外，统计方式从厚生劳动省所掌握的确诊例信息进行汇总变更为以各自治体官网所发表的内容为准进行汇总。此外，一部分自治体以检测次数为标准进行统计，因此存在数据比实际人数多的现象。",
+      "cn": "自2020年5月8日的报告起，除撤侨包机以外的国内确诊例外，统计方式从厚生劳动省所掌握的确诊例信息进行汇总变更为以各自治体官网所发表的内容为准进行汇总。此外，部分自治体以检测次数为标准进行统计，因此存在数据比实际人数多的现象。",
       "en": "From May 8, 2020, with respect to domestic cases excluding air charters, the data source was changed from the individual data obtained by the Ministry of Health, Labour and Welfare to the number of cases published by each municipality on its website. In addition, because the number of tests conducted rather than cases (persons tested) is reported for some municipalities, the figures are larger than the number of persons tested."
+    },
+    {
+      "ja": "PCR検査実施人数は、一部自治体について件数を計上しているため、実際の人数より過大である。",
+      "cn": "部分自治体以检测次数为标准进行统计，因此会出现所统数据比实际检测人数多的现象。",
+      "en": "Because the number of tests conducted rather than cases (persons tested) is reported for some municipalities, the figures are larger than the number of persons tested."
+    },
+    {
+      "ja": "2. 5月9日からの集計について",
+      "cn": "2. 关于5月9日开始的统计",
+      "en": "2. Data published by MHLW from May 8"
     },
     {
       "ja": "速報：",

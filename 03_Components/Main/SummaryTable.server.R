@@ -79,6 +79,16 @@ observeEvent(input$switchTableVersion, {
                 )
               )
             )
+          ),
+          accordionItem(
+            id = 2,
+            title = i18n$t("2. 5月9日からの集計について"),
+            tags$ol(
+              tags$li(
+                icon(""),
+                i18n$t("PCR検査実施人数は、一部自治体について件数を計上しているため、実際の人数より過大である。")
+              )
+            )
           )
         )
       )
