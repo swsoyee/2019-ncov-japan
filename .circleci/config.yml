@@ -29,14 +29,14 @@ jobs:
           kubectl --kubeconfig="$PWD/config" apply -f ~/deployment.yaml
   deployShinyioNew:
     docker:
-      - image: boxboat/kubectl:1.15.12
+      - image: bobfujp/shiny:latest
     steps:
       - checkout
       - run:
-          name: test
+          name: deployToShinyIo
           command: |
             PWD=$(pwd)
-            ls -ltra "$PWD"
+            /usr/bin/R -e "rsconnect::setAccountInfo(name=\"infinityloop\", token=\"$R_TOKEN\", secret=\"$R_SECRET\"); setwd(\"$PWD\"); rsconnect::deployApp(forceUpdate=TRUE)"
 workflows:
   version: 2
   test-new-job:
