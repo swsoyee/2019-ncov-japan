@@ -12,22 +12,6 @@ byDate$date <- lapply(byDate[, 1], function(x) {
 # 死亡データ
 death <- fread(paste0(DATA_PATH, "death.csv"))
 death[is.na(death)] <- 0
-# 国内の日報
-domesticDailyReport <- fread(paste0(DATA_PATH, "domesticDailyReport.csv"))
-domesticDailyReport$date <- as.Date(as.character(domesticDailyReport$date), "%Y%m%d")
-setnafill(domesticDailyReport, type = "locf")
-# チャーター便の日報
-flightDailyReport <- fread(paste0(DATA_PATH, "flightDailyReport.csv"))
-flightDailyReport$date <- as.Date(as.character(flightDailyReport$date), "%Y%m%d")
-setnafill(flightDailyReport, type = "locf")
-# クルーズ船の日報
-shipDailyReport <- fread(paste0(DATA_PATH, "shipDailyReport.csv"))
-shipDailyReport$date <- as.Date(as.character(shipDailyReport$date), "%Y%m%d")
-setnafill(shipDailyReport, type = "locf")
-# 空港検疫の日報
-airportDailyReport <- fread(paste0(DATA_PATH, "airportDailyReport.csv"))
-airportDailyReport$date <- as.Date(as.character(airportDailyReport$date), "%Y%m%d")
-setnafill(airportDailyReport, type = "locf")
 # コールセンター
 callCenterDailyReport <- fread(paste0(DATA_PATH, "callCenter.csv"))
 callCenterDailyReport$date <- as.Date(as.character(callCenterDailyReport$date), "%Y%m%d")
@@ -62,17 +46,6 @@ lightGrey <- "#F5F5F5"
 lightBlue <- "#7BD6F5"
 middleBlue <- "#00C0EF"
 darkBlue <- "#00A7D0"
-
-# ====日報====
-dailyReport <- domesticDailyReport
-dailyReport <- merge(x = domesticDailyReport, y = flightDailyReport, by = "date", all.x = T, suffixes = c(".d", ".f"))
-dailyReport <- merge(x = dailyReport, y = airportDailyReport, by = "date", all.x = T)
-dailyReport <- merge(x = dailyReport, y = shipDailyReport, by = "date", all.x = T)
-dailyReport[, pcr := rowSums(.SD, na.rm = T), .SDcols = c("pcr.d", "pcr.f", "pcr.x", "pcr.y")]
-dailyReport[, discharge := rowSums(.SD, na.rm = T), .SDcols = c("discharge.d", "discharge.f", "discharge.x", "discharge.y")]
-dailyReport[, pcrDiff := pcr - shift(pcr)]
-dailyReport[, dischargeDiff := discharge - shift(discharge)]
-fwrite(x = dailyReport, file = paste0(DATA_PATH, "resultDailyReport.csv"))
 
 
 # ====各都道府県のサマリーテーブル====
@@ -140,6 +113,11 @@ diffSparkline <- sapply(2:ncol(byDate), function(i) {
 })
 
 print("新規退院者カラム作成")
+mhlwSummary <- fread(file = "50_Data/MHLW/summary.csv")
+mhlwSummary$日付 <- as.Date(as.character(mhlwSummary$日付), "%Y%m%d")
+mhlwSummary[order(日付), dischargedDiff := 退院者 - shift(退院者), by = "都道府県名"]
+
+
 detailByRegion <- fread(paste0(DATA_PATH, "detailByRegion.csv"))
 detailByRegion[, `日付` := as.Date(as.character(`日付`), "%Y%m%d")]
 detailByRegion[, `都道府県名` := gsub("県", "", `都道府県名`)]
@@ -150,7 +128,7 @@ detailByRegion[is.na(detailByRegion)] <- 0
 
 print("退院推移")
 dischargedDiffSparkline <- sapply(colnames(byDate)[2:48], function(region) {
-  data <- detailByRegion[`都道府県名` == region]
+  data <- mhlwSummary[`都道府県名` == region]
   # 新規
   span <- nrow(data) - dateSpan
   value <- data$dischargedDiff[ifelse(span < 0, 0, span):nrow(data)]
@@ -180,29 +158,19 @@ print("死亡カラム作成")
 deathByRegion <- stack(colSums(death[, 2:ncol(byDate)]))
 
 print("感染者内訳")
-detailSparkLineDt <- detailByRegion[日付 == max(日付)]
+detailSparkLineDt <- mhlwSummary[日付 == max(日付)]
 detailSparkLine <- sapply(detailSparkLineDt$都道府県名, function(region) {
-  # 2020-03-30 厚労省の発表資料の基準は（無症状を除く、PCR陽性者、累積者）三度も変更が有るため、この部分を破棄します。
-  # 厚労省の定義は、死亡後に陽性に確認された人は患者数に含まれていないようで、
-  # マイナスのデータを防ぐため修正します。
-  # region = '千葉' # TEST
-  # fixDiff <- (detailSparkLineDt[都道府県名 == region, 患者数] -
-  #               detailSparkLineDt[都道府県名 == region, 入院中] -
-  #               detailSparkLineDt[都道府県名 == region, 退院者] -
-  #               detailSparkLineDt[都道府県名 == region, 死亡者])
-  # fixConfirmed <- ifelse(fixDiff < 0,
-  #                        detailSparkLineDt[都道府県名 == region, 患者数] - fixDiff,
-  #                        detailSparkLineDt[都道府県名 == region, 患者数])
-  # 2020-03-30 対応分
-
-  confirmed <- ifelse(total[names(total) == region][[1]] > detailSparkLineDt[都道府県名 == region, 患者数],
-    total[names(total) == region][[1]],
-    detailSparkLineDt[都道府県名 == region, 患者数]
+  # 速報値との差分処理
+  regionNew <- ifelse(region == "空港検疫", "検疫職員", region)
+  confirmed <- ifelse(total[names(total) == regionNew][[1]] > detailSparkLineDt[都道府県名 == region, 陽性者],
+    total[names(total) == regionNew][[1]],
+    detailSparkLineDt[都道府県名 == region, 陽性者]
   )
   spk_chr(
     type = "pie",
     values = c(
-      confirmed - sum(detailSparkLineDt[都道府県名 == region, .(入院中, 退院者, 死亡者)]),
+      confirmed - sum(detailSparkLineDt[都道府県名 == region, .(入院中, 退院者, 死亡者)], na.rm = T) -
+        ifelse(region == "クルーズ船", 40, 0),
       detailSparkLineDt[都道府県名 == region, 入院中],
       detailSparkLineDt[都道府県名 == region, 退院者],
       detailSparkLineDt[都道府県名 == region, 死亡者]
@@ -231,7 +199,7 @@ doubleTimeDay <- lapply(seq(halfCount), function(index) {
 names(doubleTimeDay) <- names(dt)
 
 # 退院者総数
-totalDischarged <- detailByRegion[日付 == max(日付), .(都道府県名, 退院者)]
+totalDischarged <- mhlwSummary[日付 == max(日付), .(都道府県名, 退院者)]
 colnames(totalDischarged) <- c("region", "totalDischarged")
 
 print("都道府県別PCRデータ作成")
