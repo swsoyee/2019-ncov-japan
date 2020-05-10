@@ -742,6 +742,16 @@
       "en": "Realtime Infection Map"
     },
     {
+      "ja": "1. 3月下旬〜5月8日までの集計について",
+      "cn": "1. 关于3月下旬～5月8日为止的统计",
+      "en": "1. Data published by MHLW from late March to May 8"
+    },
+    {
+      "ja": "マイナスの値について：こちらの数値は全て厚労省が毎日発表されている数値である。厚労省の発表基準変更（5月8日）たったり、自治体からの報告と齟齬があったりする時、データの不整合性が生じるが、当サイトは修正せずそのまま厚労省が発表した数値を可視化しております。",
+      "cn": "关于出现的负值：本表所展示的皆为厚劳省每天所发布的原始数据。由于厚劳省的公布标准发生变更（5月8日）或者是其数值与自治体的报告有数据出入时，则会发生数据一致性问题，本站不对此做任何修正仅将厚劳省每日所发布的数据进行原封不动地可视化。",
+      "en": "About the negative values: The table shows the raw data published daily by the MHLW. Due to the change of the publication standards of the MHLW (May 8) or the discrepancy between the data reported by municipalities, there will be data consistency problems, and we does not make any corrections to this, but only visualizes the data published by the MHLW."
+    },
+    {
       "ja": "累積感染者数：",
       "cn": "累计确诊人数：",
       "en": "Total confirmed: "
