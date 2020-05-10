@@ -117,15 +117,6 @@ mhlwSummary <- fread(file = "50_Data/MHLW/summary.csv")
 mhlwSummary$日付 <- as.Date(as.character(mhlwSummary$日付), "%Y%m%d")
 mhlwSummary[order(日付), dischargedDiff := 退院者 - shift(退院者), by = "都道府県名"]
 
-
-detailByRegion <- fread(paste0(DATA_PATH, "detailByRegion.csv"))
-detailByRegion[, `日付` := as.Date(as.character(`日付`), "%Y%m%d")]
-detailByRegion[, `都道府県名` := gsub("県", "", `都道府県名`)]
-detailByRegion[, `都道府県名` := gsub("府", "", `都道府県名`)]
-detailByRegion[, `都道府県名` := gsub("東京都", "東京", `都道府県名`)]
-detailByRegion[order(`日付`), dischargedDiff := `退院者` - shift(`退院者`), by = `都道府県名`]
-detailByRegion[is.na(detailByRegion)] <- 0
-
 print("退院推移")
 dischargedDiffSparkline <- sapply(colnames(byDate)[2:48], function(region) {
   data <- mhlwSummary[`都道府県名` == region]
