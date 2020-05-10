@@ -3,6 +3,15 @@ getFinalAndDiff <- function(vector) {
   return(list("final" = vector[index], "diff" = vector[index] - vector[index - 1]))
 }
 
+getFileUpdateTime <- function(file) {
+  fileUpdateTime <- file.info(file)$mtime
+  latestUpdateDuration <- difftime(Sys.time(), fileUpdateTime)
+  return(paste0(
+    round(latestUpdateDuration[[1]], 0),
+    convertUnit2Ja(latestUpdateDuration)
+  ))
+}
+
 convertUnit2Ja <- function(x) {
   x <- as.character(units(x))
   if (x == "secs") {

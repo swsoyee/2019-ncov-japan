@@ -107,6 +107,10 @@ langCode <- "ja"
 # languageSet <- c('ja', 'cn')
 # names(languageSet) <- c(lang[[langCode]][25], lang[[langCode]][26])
 
+mhlwSummaryPath <- paste0(DATA_PATH, "/MHLW/summary.csv")
+mhlwSummary <- fread(file = mhlwSummaryPath)
+mhlwSummary$日付 <- as.Date(as.character(mhlwSummary$日付), "%Y%m%d")
+
 # ====総数基礎集計====
 # PCR
 PCR_WITHIN <- getFinalAndDiff(domesticDailyReport$pcr)
@@ -270,14 +274,6 @@ latestUpdateDuration <- difftime(Sys.time(), UPDATE_DATETIME)
 LATEST_UPDATE <- paste0(
   round(latestUpdateDuration[[1]], 0),
   convertUnit2Ja(latestUpdateDuration)
-)
-
-# PCRデータ（厚労省対応）の更新時間
-UPDATE_DATETIME_DOMESTIC_DAILY_REPORT <- file.info(paste0(DATA_PATH, "domesticDailyReport.csv"))$mtime
-latestUpdateDomesticDailyReportDuration <- difftime(Sys.time(), UPDATE_DATETIME_DOMESTIC_DAILY_REPORT)
-LATEST_UPDATE_DOMESTIC_DAILY_REPORT <- paste0(
-  round(latestUpdateDomesticDailyReportDuration[[1]], 0),
-  convertUnit2Ja(latestUpdateDomesticDailyReportDuration)
 )
 
 RECOVERED_FILE_UPDATE_DATETIME <- file.info(paste0(DATA_PATH, "recovered.csv"))$mtime

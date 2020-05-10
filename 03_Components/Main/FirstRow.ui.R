@@ -49,15 +49,10 @@ fluidRow(
     width = 7,
     fluidRow(
       Component.MainValueBox(
-        mainValue = sum(
-          PCR_WITHIN$final,
-          PCR_FLIGHT$final,
-          PCR_SHIP$final,
-          PCR_AIRPORT$final
-        ),
-        mainValueSub = LATEST_UPDATE_DOMESTIC_DAILY_REPORT,
+        mainValue = sum(mhlwSummary[日付 == max(日付)]$検査人数),
+        mainValueSub = getFileUpdateTime(mhlwSummaryPath),
         sparklineName = "pcrSparkLine",
-        diffNumber = dailyReport$pcrDiff[nrow(dailyReport)],
+        diffNumber = (sum(mhlwSummary[日付 == max(日付)]$検査人数) - sum(mhlwSummary[日付 == max(日付) - 1]$検査人数, na.rm = T)),
         text = i18n$t("検査人数"),
         icon = "vials",
         color = "yellow"
