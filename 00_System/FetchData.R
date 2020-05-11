@@ -98,6 +98,7 @@ saveFileFromApi(jsonResult, "patients.csv", 1, "Hokkaido")
 apiUrl <- "https://opendata.pref.aomori.lg.jp/api/package_show?id=5e4612ce-1636-41d9-82a3-c5130a79ffe0"
 jsonFile <- fromJSON(apiUrl)
 jsonResult <- jsonFile$result$resources
+sapply(paste0(DATA_PATH, "Pref/Aomori/", list.files(path = paste0(DATA_PATH, "Pref/Aomori"))), file.remove)
 saveFileFromApi(jsonResult, "陽性患者関係.csv", 2, "Aomori", "ＮＯ")
 
 
