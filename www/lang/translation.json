@@ -147,6 +147,11 @@
       "en": "Select Prefecture"
     },
     {
+      "ja": "表示選択",
+      "cn": "选择显示",
+      "en": "Select Display"
+    },
+    {
       "ja": "感染者数ヒートマップ",
       "cn": "确诊人数热图",
       "en": "Heatmap of Infected"

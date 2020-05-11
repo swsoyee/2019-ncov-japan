@@ -10,9 +10,22 @@ tabPanel(
       fluidRow(
         column(
           width = 4,
+          sliderInput(
+            inputId = "testDaySpan",
+            label = i18n$t("移動平均時間間隔"),
+            min = 1,
+            max = 10,
+            value = 7,
+            ticks = F,
+            step = 1,
+            post = i18n$t("日")
+          )
+        ),
+        column(
+          width = 8,
           pickerInput(
             inputId = "pcrRegionSelection",
-            label = "表示選択",
+            label = i18n$t("表示選択"),
             choices = setNames(
               c("国内", "チャーター便", "空港検疫", "クルーズ船"),
               c(i18n$t("国内"), i18n$t("チャーター便"), i18n$t("空港検疫"), i18n$t("クルーズ船"))
@@ -27,19 +40,6 @@ tabPanel(
               `max-options` = 5
             ),
             multiple = T
-          )
-        ),
-        column(
-          width = 4,
-          sliderInput(
-            inputId = "testDaySpan",
-            label = i18n$t("移動平均時間間隔"),
-            min = 1,
-            max = 10,
-            value = 7,
-            ticks = F,
-            step = 1,
-            post = i18n$t("日")
           )
         )
       ),

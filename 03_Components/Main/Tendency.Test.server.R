@@ -86,3 +86,45 @@ output$pcrLine <- renderEcharts4r({
       startValue = max(dt$日付, na.rm = T) - 28
     )
 })
+
+# PCR カレンダー
+output$pcrCalendar <- renderEcharts4r({
+  dt <- pcrData()
+  maxValue <- suppressWarnings(max(dt$diff, na.rm = T))
+  dt %>%
+    e_charts(日付) %>%
+    e_calendar(
+      range = c("2020-02-01", "2020-07-30"),
+      top = 25,
+      left = 25,
+      cellSize = 15,
+      splitLine = list(show = F),
+      itemStyle = list(borderWidth = 2, borderColor = "#FFFFFF"),
+      dayLabel = list(nameMap = switch(
+        languageSetting,
+        "ja" = c("日", "月", "火", "水", "木", "金", "土"),
+        "cn" = "cn",
+        "en" = "en"
+      )),
+      monthLabel = list(nameMap = ifelse(languageSetting != "en", "cn", "en"))
+    ) %>%
+    e_heatmap(diff, coord_system = "calendar") %>%
+    e_legend(show = F) %>%
+    e_visual_map(
+      top = "15%",
+      max = maxValue,
+      show = F,
+      inRange = list(color = c("#FFFFFF", darkYellow)),
+      # scale colors
+    ) %>%
+    e_tooltip(formatter = htmlwidgets::JS(
+      sprintf(
+        "
+        function(params) {
+          return(`${params.value[0]}<br>%s${params.value[1]}`)
+        }
+      ",
+        paste0(i18n$t("新規"), " ")
+      )
+    ))
+})
