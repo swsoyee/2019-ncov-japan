@@ -86,17 +86,21 @@
 # fwrite(dataset, file = "50_Data/MHLW/summary.csv")
 
 # 更新部分 =====
-
+# library(tabulizer)
+# library(gtools)
+# library(data.table)
+# 
 # dataset <- fread(file = "50_Data/MHLW/summary.csv")
 # location <- list(
 #   "20200509" = "https://www.mhlw.go.jp/content/10906000/000628667.pdf",
-#   "20200510" = "https://www.mhlw.go.jp/content/10906000/000628697.pdf"
+#   "20200510" = "https://www.mhlw.go.jp/content/10906000/000628697.pdf",
+#   "20200511" = "https://www.mhlw.go.jp/content/10906000/000628917.pdf"
 # )
 # 
 # for (i in names(location)) {
 #   if (!i %in% dataset$日付) {
-#     out <- extract_tables(location[i][[1]], method = "lattice")
-#     
+#     out <- tabulizer::extract_tables(location[i][[1]], method = "lattice")
+# 
 #     dt <- data.table(out[[1]])
 #     colnames(dt) <- c("都道府県名", "陽性者", "検査人数", "入院中", "重症者", "退院者", "死亡者")
 #     dt <- dt[3:(nrow(dt) - 1)]
@@ -109,7 +113,7 @@
 #     dt[, 確認中 := 陽性者 - temp]
 #     dt <- cbind(data.table("日付" = rep(names(location[i]), nrow(dt))), dt, "分類" = 0)
 #     dt[, temp := NULL]
-#     dataset <- suppressWarnings(smartbind(dataset, dt))
+#     dataset <- suppressWarnings(gtools::smartbind(dataset, dt))
 #   }
 # }
 # 
