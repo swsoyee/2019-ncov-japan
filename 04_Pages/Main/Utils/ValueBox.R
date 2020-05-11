@@ -9,7 +9,7 @@ Component.MainValueBox <-
     valueBox(
       width = 6,
       value = tagList(
-        countup(mainValue),
+        mainValue,
         tags$small(paste0("| ", mainValueSub),
           style = "color:white;font-size:16px;margin-top:10px;margin-right:10px;opacity:0.8"
         )
@@ -18,7 +18,7 @@ Component.MainValueBox <-
         "　",
         sparklineOutput(sparklineName),
         tags$span(
-          countup(diffNumber),
+          diffNumber,
           getChangeIconWrapper(diffNumber),
           text,
           style = "float:right;"
@@ -42,7 +42,7 @@ Component.MainValueBox.Info <-
     valueBox(
       width = 6,
       value = tagList(
-        countup(mainValue),
+        mainValue,
         tags$small(paste0("| ", mainValueSub),
                    tags$span(id = "discharged_info", icon("info-circle")),
                    bsTooltip(id = "discharged_info",
@@ -56,7 +56,7 @@ Component.MainValueBox.Info <-
         "　",
         sparklineOutput(sparklineName),
         tags$span(
-          countup(diffNumber),
+          diffNumber,
           getChangeIconWrapper(diffNumber),
           text,
           style = "float:right;"
