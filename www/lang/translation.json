@@ -152,6 +152,11 @@
       "en": "Select Display"
     },
     {
+      "ja": "0新規日数",
+      "cn": "0新增天数",
+      "en": "0 new continuous days"
+    },
+    {
       "ja": "感染者数ヒートマップ",
       "cn": "确诊人数热图",
       "en": "Heatmap of Infected"

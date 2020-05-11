@@ -102,6 +102,12 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
   # dt <- dt[count > 0]
   columnName <- c("death", "perMillionDeath")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
+  
+  dt[, zeroContinuousDay := replace(.SD, .SD <= 0, NA), .SDcols = 'zeroContinuousDay']
+  breaksZero <-
+    seq(0, max(ifelse(is.na(dt$zeroContinuousDay), 0, dt$zeroContinuousDay), na.rm = T), 5)
+  colorsZero <-
+    colorRampPalette(c(lightBlue, darkBlue))(length(breaksZero) + 1)
 
   breaksDeath <-
     seq(0, max(ifelse(is.na(dt$death), 0, dt$death), na.rm = T), 2)
@@ -122,7 +128,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     colorRampPalette(c("#FFFFFF", "#6B7989"))(length(breaksPerMillion) + 1)
 
   datatable(
-    data = dt[, c(1, 8, 12, 7, 9, 14, 15), with = F],
+    data = dt[, c(1, 8, 12, 7, 9, 14, 15, 10), with = F],
     colnames = c(
       i18n$t("自治体"),
       i18n$t("内訳"),
@@ -130,7 +136,8 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
       i18n$t("回復推移"),
       i18n$t("死亡"),
       i18n$t("百万人あたり"),
-      i18n$t("カテゴリ")
+      i18n$t("カテゴリ"),
+      i18n$t("0新規日数")
     ),
     caption = "",
     escape = F,
@@ -167,8 +174,8 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
         ),
         list(
           className = "dt-center",
-          width = "20%",
-          targets = 6
+          width = "18%",
+          targets = c(6, 8)
         ),
         list(
           visible = F,
@@ -215,6 +222,11 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     formatStyle(
       columns = "perMillionDeath",
       backgroundColor = styleInterval(breaksPerMillion, colorsPerMillion),
+      fontWeight = "bold"
+    ) %>%
+    formatStyle(
+      columns = 'zeroContinuousDay',
+      color = styleInterval(breaksZero, colorsZero),
       fontWeight = "bold"
     )
 })
