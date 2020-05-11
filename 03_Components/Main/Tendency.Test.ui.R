@@ -10,22 +10,23 @@ tabPanel(
       fluidRow(
         column(
           width = 4,
-          tags$p(tags$b(i18n$t("クルーズ・チャーター便事例の表示"))),
-          switchInput(
-            inputId = "showShipInPCR",
-            label = icon("ship"),
-            offLabel = icon("eye-slash"),
-            onLabel = icon("eye"),
-            value = F,
-            inline = T
-          ),
-          switchInput(
-            inputId = "showFlightInPCR",
-            label = icon("plane"),
-            offLabel = icon("eye-slash"),
-            onLabel = icon("eye"),
-            value = T,
-            inline = T
+          pickerInput(
+            inputId = "pcrRegionSelection",
+            label = "表示選択",
+            choices = setNames(
+              c("国内", "チャーター便", "空港検疫", "クルーズ船"),
+              c(i18n$t("国内"), i18n$t("チャーター便"), i18n$t("空港検疫"), i18n$t("クルーズ船"))
+            ),
+            selected = c("国内", "チャーター便", "空港検疫", "クルーズ船"),
+            options = list(
+              `actions-box` = TRUE,
+              size = 10,
+              `deselect-all-text` = i18n$t("クリア"),
+              `select-all-text` = i18n$t("全部"),
+              `selected-text-format` = i18n$t("三件以上選択されました"),
+              `max-options` = 5
+            ),
+            multiple = T
           )
         ),
         column(

@@ -1,42 +1,28 @@
 # ====PCR検査数の推移図データセット====
 pcrData <- reactive({
   dt <-
-    merge(
-      x = domesticDailyReport,
-      y = flightDailyReport,
-      by = "date",
-      all.x = T
+    rbind(
+      dailyReport[, .(
+        日付 = date,
+        国内 = pcr.d,
+        チャーター便 = pcr.f,
+        空港検疫 = pcr.x,
+        クルーズ船 = pcr.y
+      )],
+      cbind(
+        mhlwSummary[日付 > "2020-05-08" &
+          分類 == 0][, .(
+          国内 = sum(検査人数),
+          チャーター便 = 829,
+          クルーズ船 = 3618
+        ), by = "日付"],
+        mhlwSummary[日付 > "2020-05-08" &
+          分類 == 1][, .(空港検疫 = 検査人数)]
+      )
     )
-  dt <-
-    merge(
-      x = dt,
-      y = airportDailyReport,
-      by = "date",
-      suffixes = ".y",
-      all.x = T
-    )
-  dt <-
-    merge(
-      x = dt,
-      y = shipDailyReport,
-      by = "date",
-      all.x = T,
-      suffixes = ".z"
-    )
-  dataset <- domesticDailyReport
-  if (input$showFlightInPCR) {
-    dataset$pcr <-
-      rowSums(cbind(dt$pcr.x, dt$pcr.y, dt$pcr.z), na.rm = T)
-  }
-  if (input$showShipInPCR) {
-    ship <- shipDailyReport[2:nrow(shipDailyReport), ]
-    setnafill(ship, fill = 0)
-    dataset$pcr <-
-      rowSums(cbind(dt$pcr.x, dt$pcr.y, dt$pcr.z, dt$pcrNA), na.rm = T)
-  }
-  dataset[, diff := pcr - shift(pcr)]
-  setnafill(dataset, fill = 0)
-  dataset
+  # input <- list(pcrRegionSelection = c("国内", "チャーター便"), testDaySpan = 7) # TEST
+  dt$合計 <- rowSums(dt[, input$pcrRegionSelection, with = F], na.rm = T)
+  dt[, diff := 合計 - shift(合計)]
 })
 
 # ====PCR検査数====
@@ -44,9 +30,9 @@ output$pcrLine <- renderEcharts4r({
   dt <- pcrData()
   dt$ma <- round(frollmean(dt$diff, n = input$testDaySpan, fill = 0), 2)
   dt %>%
-    e_chart(date) %>%
+    e_chart(日付) %>%
     e_bar(
-      pcr,
+      合計,
       name = i18n$t("累積"),
       itemStyle = list(color = lightYellow)
     ) %>%
@@ -97,6 +83,6 @@ output$pcrLine <- renderEcharts4r({
     e_datazoom(
       minValueSpan = 3600 * 24 * 1000 * 7,
       bottom = "0%",
-      startValue = max(dt$date, na.rm = T) - 28
+      startValue = max(dt$日付, na.rm = T) - 28
     )
 })
