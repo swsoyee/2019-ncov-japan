@@ -1582,9 +1582,9 @@
       "en": "Tests Conducted & Positive (MHLW)"
     },
     {
-      "ja": "陽性・退院・死亡（厚労省）",
-      "cn": "阳性、出院和死亡（厚劳省）",
-      "en": "Positive, Discharged & Death (MHLW)"
+      "ja": "陽性・回復・死亡（厚労省）",
+      "cn": "阳性、恢复和死亡（厚劳省）",
+      "en": "Positive, Recovered & Death (MHLW)"
     },
     {
       "ja": "陽性率",
@@ -1674,6 +1674,11 @@
     {
       "ja": "重症者",
       "cn": "重症",
+      "en": "Severe"
+    },
+    {
+      "ja": "重症者数",
+      "cn": "重症人数",
       "en": "Severe"
     },
     {

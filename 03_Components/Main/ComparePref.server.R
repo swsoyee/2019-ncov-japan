@@ -11,7 +11,7 @@ output$comparePrefP1 <- renderEcharts4r({
       symbolSize = 1
     ) %>%
     e_line(
-      患者数,
+      陽性者,
       name = i18n$t("厚労省：陽性者数"),
       itemStyle = list(color = lightRed),
       symbol = "circle",
@@ -58,7 +58,7 @@ output$comparePrefP2 <- renderEcharts4r({
       itemStyle = list(color = middleYellow)
     ) %>%
     e_bar(
-      陽性者数,
+      陽性者,
       name = i18n$t("陽性者数"),
       itemStyle = list(color = middleRed),
       z = 2,
@@ -93,7 +93,7 @@ output$comparePrefP3 <- renderEcharts4r({
   dt <- compareDataset()
   dt %>%
     e_chart(日付) %>%
-    e_bar(患者数,
+    e_bar(陽性者,
       name = i18n$t("陽性者数"),
       itemStyle = list(color = middleRed)
     ) %>%
@@ -101,6 +101,14 @@ output$comparePrefP3 <- renderEcharts4r({
       死亡者,
       name = i18n$t("死亡者数"),
       itemStyle = list(color = darkNavy),
+      barGap = "-100%",
+      stack = 1
+    ) %>%
+    e_bar(
+      重症者,
+      name = i18n$t("重症者数"),
+      itemStyle = list(color = darkRed),
+      barGap = "-100%",
       stack = 1
     ) %>%
     e_bar(
@@ -110,7 +118,7 @@ output$comparePrefP3 <- renderEcharts4r({
       barGap = "-100%",
       stack = 1
     ) %>%
-    e_title(text = i18n$t("陽性・退院・死亡（厚労省）")) %>%
+    e_title(text = i18n$t("陽性・回復・死亡（厚労省）")) %>%
     e_tooltip(trigger = "axis") %>%
     e_x_axis(splitLine = list(show = F)) %>%
     e_y_axis(splitLine = list(show = F)) %>%
@@ -132,14 +140,7 @@ compareDataset <- reactive({
     速報患者 = byDate[[pref]],
     速報死亡 = death[[pref]]
   )
-  mhlw <-
-    merge(
-      x = detailByRegion[都道府県名 == pref],
-      y = pcrByRegion[都道府県略称 == pref],
-      by = "日付",
-      all = T,
-      sort = F
-    )
+  mhlw<- mhlwSummary[都道府県名 == pref]
   dt <- merge(
     x = realtime,
     y = mhlw,
@@ -147,7 +148,7 @@ compareDataset <- reactive({
     all = T,
     sort = F
   )
-  dt[, 陽性率 := round(陽性者数 / 検査人数 * 100, 2)]
+  dt[, 陽性率 := round(陽性者 / 検査人数 * 100, 2)]
   dt[, 速報陽性累積 := cumsum(速報患者)]
   dt[, 速報死亡累積 := cumsum(速報死亡)]
   return(dt)
