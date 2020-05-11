@@ -71,7 +71,7 @@ fluidRow(
       Component.MainValueBox(
         mainValue = sum(mhlwSummary[日付 == max(日付)]$退院者),
         # 退院者 / (PCR 陽性者 - クルーズ船帰国の40名 - 死亡者)
-        mainValueSub = paste0(round(sum(mhlwSummary[日付 == max(日付)]$退院者) / 
+        mainValueSub = paste0(round(sum(mhlwSummary[日付 == max(日付)]$退院者) /
           (sum(mhlwSummary[日付 == max(日付)]$陽性者) - 40 - sum(mhlwSummary[日付 == max(日付)]$死亡者, na.rm = T)) * 100, 2), "%"),
         sparklineName = "dischargeSparkLine",
         diffNumber = (sum(mhlwSummary[日付 == max(日付)]$退院者) - sum(mhlwSummary[日付 == max(日付) - 1]$退院者, na.rm = T)),
@@ -100,22 +100,30 @@ fluidRow(
           icon = icon("twitter"),
           onclick = sprintf("window.open('%s')", twitterUrl)
         ),
-        actionButton(
+        ifelse(languageSetting != "ja", tagList(actionButton(
+          inputId = "japaneseVersion",
+          label = "🇯🇵日本語",
+          onclick = sprintf(
+            "window.open('%s')",
+            "https://covid-2019.live/"
+          )
+        )), ""),
+        ifelse(languageSetting != "cn", tagList(actionButton(
           inputId = "chineseVersion",
           label = "🇨🇳中文",
           onclick = sprintf(
             "window.open('%s')",
             "https://covid-2019.live/cn"
           )
-        ),
-        actionButton(
+        )), ""),
+        ifelse(languageSetting != "en", tagList(actionButton(
           inputId = "englishVersion",
           label = "🇺🇸English",
           onclick = sprintf(
             "window.open('%s')",
             "https://covid-2019.live/en"
           )
-        )
+        )), "")
       )
     ))
   )
