@@ -80,7 +80,7 @@ output$AomoriValueBoxes <- renderUI({
         createValueBox(value = totalDischarge, # TODO 公式データまだない
                        subValue = dischargeRate, 
                        sparkline = createSparklineInValueBox(mhlw, '日次退院者', length = 19),
-                       subtitle = i18n$t("退院者数"),
+                       subtitle = i18n$t("回復者数"),
                        icon = 'user-shield',
                        color = 'green',
                        diff = tail(data$治療終了数, n = 1)

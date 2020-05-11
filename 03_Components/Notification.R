@@ -3,7 +3,7 @@ Component.Notification <- function(status = "info", context = "") {
     boxPlus(
       width = 12,
       closable = T,
-      enable_label = F,
+      enable_label = T,
       label_text = "New",
       label_status = "warning",
       solidHeader = T,

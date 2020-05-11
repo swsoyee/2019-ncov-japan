@@ -1,72 +1,95 @@
-# ====退院タブのサマリー====
-# TODO 意味が大きくない、見ている人が少ない？
-output$dischargeSummary <- renderUI({
-  dt <- dischargeData()[nrow(dischargeData())]
-  tagList(
-    tags$b(sprintf(i18n$t("%sのサマリー"), dt$date)),
-    tags$li(i18n$t("退院率："), round(dt$discharge / dt$positive * 100, 2), "%"),
-    tags$li(i18n$t("重傷率："), round(dt$sever / dt$positive * 100, 2), "%"),
-    tags$li(i18n$t("死亡率："), round(dt$death / dt$positive * 100, 2), "%"),
-    tags$small(i18n$t("※令和２年４月２２日から厚労省公開している退院者、死亡者数に突合作業中の人数が含まれていて、入退院等の状況の合計とPCR検査陽性者数は一致しないため、正しい分母がわからないのでこちらの計算はあくまでも参考程度にしてください。対処法考え＆調整中。")),
-    tags$hr()
-  )
+# ====退院推移図データセット====
+recoveredData <- reactive({
+  dataset <- mhlwSummary[, .(
+    陽性者  = sum(陽性者, na.rm = T),
+    回復者  = sum(退院者, na.rm = T),
+    重症者  = sum(重症者, na.rm = T),
+    死亡者  = sum(死亡者, na.rm = T)
+  ), by = "日付"]
+  dataset <-
+    merge(
+      dataset,
+      confirmingData,
+      all.x = T,
+      by.x = "日付",
+      by.y = "date"
+    )
+  dataset[dailyReport, 重症者 := 重症者 + i.severe.d, on = c(日付 = "date")]
+  # 突合中の退院者データにチャーター便と空港検疫の分（17）を追加して、総数と見なす
+  dataset[, domesticDischarged := domesticDischarged + 17]
+  dataset[, 回復突合中 := domesticDischarged - 回復者]
+  # 訳わからないマイナスの値があるため、削除
+  dataset[回復突合中 < 0, 回復突合中 := NA]
+  dataset[, 死亡突合中 := domesticDeath - 死亡者]
+  # 2020-05-09仕様変更
+  dataset[日付 %in% as.Date(c("2020-05-09", "2020-04-22")), `:=`(回復突合中 = 0, 死亡突合中 = 0)]
+  dataset
 })
 
 # ====退院推移図====
 output$recoveredLine <- renderEcharts4r({
   # dt <- dataset
-  dt <- dischargeData()
+  dataset <- recoveredData()
 
-  dt[, diff := discharge - shift(discharge)]
-  setnafill(dt, fill = 0)
-
-  defaultUnselected <- list(F, F, F, F)
-  names(defaultUnselected) <-
-    c(i18n$t("軽〜中等症の者"), i18n$t("新規退院者（日次）"), i18n$t("重症者"), i18n$t("死亡者"))
-  dt %>%
-    e_chart(date) %>%
+  dataset %>%
+    e_chart(日付) %>%
     e_line(
-      positive,
+      陽性者,
       name = i18n$t("PCR検査陽性"),
       itemStyle = list(normal = list(color = lightRed)),
-      areaStyle = list(opacity = 0.4)
+      areaStyle = list(opacity = 0.4),
+      symbol = "circle",
+      symbolSize = 1
     ) %>%
     e_line(
-      discharge,
-      name = i18n$t("退院者"),
-      stack = "1",
-      itemStyle = list(normal = list(color = middleGreen)),
-      areaStyle = list(opacity = 0.4)
-    ) %>%
-    e_bar(
-      diff,
-      name = i18n$t("新規退院者（日次）"),
-      y_index = 1,
-      itemStyle = list(normal = list(color = middleGreen)),
-      areaStyle = list(opacity = 0.4)
-    ) %>%
-    e_line(
-      mild,
-      name = i18n$t("軽〜中等症の者"),
-      stack = "1",
-      itemStyle = list(normal = list(color = middleYellow)),
-      areaStyle = list(opacity = 0.4)
-    ) %>%
-    e_line(
-      severe,
-      name = i18n$t("重症者"),
-      stack = "1",
-      itemStyle = list(normal = list(color = darkRed)),
-      areaStyle = list(opacity = 0.4)
-    ) %>%
-    e_line(
-      death,
-      name = i18n$t("死亡者"),
+      死亡者,
+      name = i18n$t("死亡"),
       stack = "1",
       itemStyle = list(normal = list(color = darkNavy)),
-      areaStyle = list(opacity = 0.4)
+      areaStyle = list(opacity = 0.4),
+      symbol = "circle",
+      symbolSize = 1
     ) %>%
-    e_x_axis(splitLine = list(show = F), splitLine = list(lineStyle = list(opacity = 0.2))) %>%
+    e_line(
+      死亡突合中,
+      name = i18n$t("死亡（突合中）"),
+      stack = "1",
+      itemStyle = list(normal = list(color = darkNavy)),
+      areaStyle = list(opacity = 0.4),
+      symbol = "circle",
+      symbolSize = 1
+    ) %>%
+    e_line(
+      重症者,
+      name = i18n$t("重症"),
+      stack = "1",
+      itemStyle = list(normal = list(color = darkRed)),
+      areaStyle = list(opacity = 0.4),
+      symbol = "circle",
+      symbolSize = 1
+    ) %>%
+    e_line(
+      回復者,
+      name = i18n$t("回復"),
+      stack = "1",
+      itemStyle = list(normal = list(color = middleGreen)),
+      areaStyle = list(opacity = 0.4),
+      symbol = "circle",
+      symbolSize = 1
+    ) %>%
+    e_line(
+      回復突合中,
+      name = i18n$t("回復（突合中）"),
+      stack = "1",
+      itemStyle = list(normal = list(color = middleGreen)),
+      areaStyle = list(opacity = 0.4),
+      symbol = "circle",
+      symbolSize = 1
+    ) %>%
+    e_x_axis(
+      splitLine = list(show = F),
+      splitLine = list(lineStyle = list(opacity = 0.2))
+    ) %>%
     e_y_axis(
       splitLine = list(show = F),
       axisLabel = list(inside = T),
@@ -87,30 +110,43 @@ output$recoveredLine <- renderEcharts4r({
       orient = "vertical",
       left = "18%",
       top = "15%",
-      right = "15%",
-      selected = defaultUnselected
+      right = "15%"
     ) %>%
-    e_title(subtext = sprintf(i18n$t("※突合作業中の%s名退院者はグラフに含まれていないことを予めご了承してください。"),
-            (tail(confirmingData$domesticDischarged, n = 1) - DISCHARGE_WITHIN$final))
-            ) %>%
+    e_title(i18n$t("回復・重症・死亡")) %>%
     e_tooltip(trigger = "axis") %>%
     e_datazoom(
       minValueSpan = 3600 * 24 * 1000 * 7,
       bottom = "0%",
-      startValue = max(dt$date, na.rm = T) - 28
+      startValue = max(dataset$日付, na.rm = T) - 28
     )
 })
 
+# ====退院タブのサマリー====
+# TODO 意味が大きくない、見ている人が少ない？
+output$dischargeSummary <- renderUI({
+  tagList(tags$ol(
+    tags$li(
+      i18n$t(
+        "令和2年4月22日から厚労省公開している退院者、死亡者数に突合作業中の人数が含まれていて、入退院等の状況の合計とPCR検査陽性者数は一致しないことが明らかにしました。"
+      ),
+      tags$a(href = "https://www.mhlw.go.jp/stf/newpage_10989.html", icon("external-link"))
+    ),
+    tags$li(
+      i18n$t(
+        "令和2年5月8日公表分から、データソースを従来の厚生労働省が把握した個票を積み上げたものから、各自治体がウェブサイトで公表している数等を積み上げたものに変更した。"
+      ),
+      tags$a(href = "https://www.mhlw.go.jp/stf/newpage_11229.html", icon("external-link"))
+    )
+  ))
+})
+
+
 output$curedCalendar <- renderEcharts4r({
-  dt <- data.table(
-    "date" = domesticDailyReport$date,
-    "discharge" = dischargeData()$discharge
-  )
-  dt[, diff := discharge - shift(discharge)]
-  setnafill(dt, fill = 0)
-  maxValue <- max(dt$diff)
-  dt %>%
-    e_charts(date) %>%
+  dataset <- recoveredData()
+  dataset[is.na(domesticDischarged), domesticDischarged := 回復者]
+  dataset[, diff := domesticDischarged - shift(domesticDischarged)]
+  dataset %>%
+    e_charts(日付) %>%
     e_calendar(
       range = c("2020-02-01", "2020-07-30"),
       top = 25,
@@ -126,77 +162,23 @@ output$curedCalendar <- renderEcharts4r({
       )),
       monthLabel = list(nameMap = ifelse(languageSetting != "en", "cn", "en"))
     ) %>%
-    e_heatmap(diff, coord_system = "calendar", name = lang[[langCode]][80]) %>%
+    e_heatmap(diff, coord_system = "calendar") %>%
     e_legend(show = F) %>%
     e_visual_map(
       top = "15%",
-      max = maxValue,
+      max = 500,
       show = F,
       inRange = list(color = c("#FFFFFF", darkGreen)),
       # scale colors
     ) %>%
-    e_tooltip()
-})
-
-# TODO まだ実装されてない
-output$todayCured <- renderUI({
-  tagList(
-    tags$b(i18n$t("本日新規")),
-    dashboardLabel(lang[[langCode]][87], status = "success", style = "square")
-  )
-})
-
-# ====退院者割合====
-# TODO 意味なさそう、削除または改修予定
-output$curedBar <- renderEcharts4r({
-  dt <- data.table(
-    "label" = "退院者",
-    "domestic" = DISCHARGE_WITHIN$final,
-    "flight" = DISCHARGE_FLIGHT$final,
-    "airport" = DISCHARGE_AIRPORT$final,
-    "ship" = DISCHARGE_SHIP$final,
-    "domesticPer" = round(DISCHARGE_WITHIN$final / DISCHARGE_TOTAL * 100, 2),
-    "flightPer" = round(DISCHARGE_FLIGHT$final / DISCHARGE_TOTAL * 100, 2),
-    "airportPer" = round(DISCHARGE_AIRPORT$final / DISCHARGE_TOTAL * 100, 2),
-    "shipPer" = round(DISCHARGE_SHIP$final / DISCHARGE_TOTAL * 100, 2)
-  )
-  e_charts(dt, label) %>%
-    e_bar(domesticPer,
-      name = i18n$t("国内事例"),
-      stack = "1", itemStyle = list(color = lightGreen)
-    ) %>%
-    e_bar(airportPer,
-      name = i18n$t("空港検疫"),
-      stack = "1", itemStyle = list(color = middleGreen)
-    ) %>%
-    e_bar(flightPer,
-      name = i18n$t("チャーター便"),
-      stack = "1", itemStyle = list(color = darkGreen)
-    ) %>%
-    e_bar(shipPer,
-      name = i18n$t("クルーズ船"),
-      stack = "1", itemStyle = list(color = middleGreen)
-    ) %>%
-    e_y_axis(max = 100, splitLine = list(show = F), show = F) %>%
-    e_x_axis(splitLine = list(show = F), show = F) %>%
-    e_grid(left = "0%", right = "0%", top = "0%", bottom = "0%") %>%
-    e_labels(position = "inside", formatter = htmlwidgets::JS('
-      function(params) {
-        if(params.value[0] > 10) {
-          return(params.value[0] + "%")
-        } else {
-          return("")
+    e_tooltip(formatter = htmlwidgets::JS(
+      sprintf(
+        "
+        function(params) {
+          return(`${params.value[0]}<br>%s${params.value[1]}`)
         }
-      }
-    ')) %>%
-    e_legend(show = F) %>%
-    e_flip_coords() %>%
-    e_tooltip(formatter = htmlwidgets::JS(paste0(
-      '
-      function(params) {
-        return("<b>" + params.seriesName + "</b><br>" + Math.round(params.value[0] / 100 * ',
-      DISCHARGE_TOTAL, ', 0) + " (" + params.value[0] + "%)")
-      }
-    '
-    )))
+      ",
+        paste0(i18n$t("新規"), " ")
+      )
+    ))
 })

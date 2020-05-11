@@ -90,12 +90,13 @@ shipDailyReport$date <- as.Date(as.character(shipDailyReport$date), "%Y%m%d")
 setnafill(shipDailyReport, type = "locf")
 # 2020-04-22時点から、退院者数と死亡者数が速報値と確定値に分かれているので、それの対応
 confirmingData <- fread(paste0(DATA_PATH, "confirmingData.csv"))
+confirmingData$date <- as.Date(as.character(confirmingData$date), "%Y%m%d")
 # 日報まとめ
 dailyReport <- fread(paste0(DATA_PATH, "resultDailyReport.csv"))
-dailyReport$date <- as.Date(as.character(dailyReport$date), "%Y%m%d")
+dailyReport$date <- as.Date(dailyReport$date, "%Y-%m-%d")
 setnafill(dailyReport, type = "locf")
 # コールセンター
-callCenterDailyReport <- fread(paste0(DATA_PATH, "callCenter.csv"))
+callCenterDailyReport <- fread(paste0(DATA_PATH, "MHLW/callCenter.csv"))
 callCenterDailyReport$date <- as.Date(as.character(callCenterDailyReport$date), "%Y%m%d")
 
 pcrByRegion <- fread(file = paste0(DATA_PATH, "MHLW/pcrByRegion.csv"))
@@ -107,6 +108,12 @@ langCode <- "ja"
 # TODO 言語切り替え機能
 # languageSet <- c('ja', 'cn')
 # names(languageSet) <- c(lang[[langCode]][25], lang[[langCode]][26])
+
+mhlwSummaryPath <- paste0(DATA_PATH, "/MHLW/summary.csv")
+mhlwSummary <- fread(file = mhlwSummaryPath)
+mhlwSummary$日付 <- as.Date(as.character(mhlwSummary$日付), "%Y%m%d")
+mhlwSummary <- mhlwSummary[order(都道府県名, 日付)]
+setnafill(mhlwSummary, type = "locf", cols = c("陽性者", "退院者", "検査人数"))
 
 # ====総数基礎集計====
 # PCR
@@ -271,14 +278,6 @@ latestUpdateDuration <- difftime(Sys.time(), UPDATE_DATETIME)
 LATEST_UPDATE <- paste0(
   round(latestUpdateDuration[[1]], 0),
   convertUnit2Ja(latestUpdateDuration)
-)
-
-# PCRデータ（厚労省対応）の更新時間
-UPDATE_DATETIME_DOMESTIC_DAILY_REPORT <- file.info(paste0(DATA_PATH, "domesticDailyReport.csv"))$mtime
-latestUpdateDomesticDailyReportDuration <- difftime(Sys.time(), UPDATE_DATETIME_DOMESTIC_DAILY_REPORT)
-LATEST_UPDATE_DOMESTIC_DAILY_REPORT <- paste0(
-  round(latestUpdateDomesticDailyReportDuration[[1]], 0),
-  convertUnit2Ja(latestUpdateDomesticDailyReportDuration)
 )
 
 RECOVERED_FILE_UPDATE_DATETIME <- file.info(paste0(DATA_PATH, "recovered.csv"))$mtime

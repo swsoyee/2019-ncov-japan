@@ -147,6 +147,16 @@
       "en": "Select Prefecture"
     },
     {
+      "ja": "表示選択",
+      "cn": "选择显示",
+      "en": "Select Display"
+    },
+    {
+      "ja": "0新規日数",
+      "cn": "0新增天数",
+      "en": "0 new continuous days"
+    },
+    {
       "ja": "感染者数ヒートマップ",
       "cn": "确诊人数热图",
       "en": "Heatmap of Infected"
@@ -282,9 +292,9 @@
       "en": "Not selected. Please select the region."
     },
     {
-      "ja": "退院死亡",
-      "cn": "出院死亡",
-      "en": "Discharged & Death"
+      "ja": "回復・死亡",
+      "cn": "恢复和死亡",
+      "en": "Recovered & Death"
     },
     {
       "ja": "現在患者数",
@@ -320,6 +330,11 @@
       "ja": "国内事例",
       "cn": "国内确诊",
       "en": "Domestic cases"
+    },
+    {
+      "ja": "国内",
+      "cn": "国内",
+      "en": "Domestic"
     },
     {
       "ja": "チャーター便を含む",
@@ -472,9 +487,9 @@
       "en": "New Today"
     },
     {
-      "ja": "退院者数の推移",
-      "cn": "出院者数趋势",
-      "en": "Discharged Trends"
+      "ja": "回復者数の推移",
+      "cn": "恢复人数趋势",
+      "en": "Recovered Trends"
     },
     {
       "ja": "退院者内訳",
@@ -482,14 +497,14 @@
       "en": "Details of Discharged"
     },
     {
-      "ja": "退院者数（日次）",
-      "cn": "每日新增出院者数",
-      "en": "New Discharged (daily)"
+      "ja": "回復者数（日次）",
+      "cn": "每日新增恢复人数",
+      "en": "New Recovered (daily)"
     },
     {
-      "ja": "※令和２年４月２２日から厚労省公開している退院者、死亡者数に突合作業中の人数が含まれていて、入退院等の状況の合計とPCR検査陽性者数は一致しないため、正しい分母がわからないのでこちらの計算はあくまでも参考程度にしてください。対処法考え＆調整中。",
-      "cn": "注：2020年4月22日以后厚劳省所发表等出院者、死亡者数据中包含了正处于核实当中数据，导致住出院人数与总体的PCR检测阳性人数合计不相等，因此无法得知准确的分母，此处的计算仅供参考用。应对方法正在考虑中。",
-      "en": "Note: The data on discharges and deaths published by the Ministry of Health, Labour and Welfare after April 22, 2020 include data that are in the process of being verified, resulting in a discrepancy between the number of hospital discharges and the overall number of positive PCR tests, so it is not possible to know the exact denominator and calculations here are for information purposes only. The response is under consideration."
+      "ja": "令和2年4月22日から厚労省公開している退院者、死亡者数に突合作業中の人数が含まれていて、入退院等の状況の合計とPCR検査陽性者数は一致しないことが明らかにしました。",
+      "cn": "注：2020年4月22日以后厚劳省所发表等出院者、死亡者数据中包含了正处于核实当中数据，导致住出院人数与总体的PCR检测阳性人数合计不相等。",
+      "en": "Note: The data on discharges and deaths published by the MHLW after April 22, 2020 include data that are in the process of being verified, resulting in a discrepancy between the number of hospital discharges and the overall number of positive PCR tests."
     },
     {
       "ja": "%sのサマリー",
@@ -572,9 +587,9 @@
       "en": "Domestic cases: %s (+%s)<br>Air charter: %s<br>Costa Atlantica: %s"
     },
     {
-      "ja": "国内事例（確定）：%s (+%s)<br>※突合作業中：%s<br>空港検疫：%s (+%s)<br>チャーター便：%s（全員退院済み）",
-      "cn": "国内确诊（已核实）：%s (+%s)<br>※核实中：%s<br>机场检疫：%s (+%s)<br>撤侨包机：%s（全部出院）",
-      "en": "Domestic cases (confirmed): %s (+%s)<br>※Confirming: %s<br>Airport quarantine: %s (+%s)<br>Air charter: %s (all discharged)"
+      "ja": "国内事例：%s (+%s)<br>空港検疫：%s (+%s)<br>チャーター便：%s（全員退院済み）",
+      "cn": "国内确诊：%s (+%s)<br>机场检疫：%s (+%s)<br>撤侨包机：%s（全部出院）",
+      "en": "Domestic cases: %s (+%s)<br>Airport quarantine: %s (+%s)<br>Air charter: %s (all discharged)"
     },
     {
       "ja": "クルーズ船",
@@ -585,6 +600,41 @@
       "ja": "空港検疫",
       "cn": "机场检疫",
       "en": "Airport Quarantine"
+    },
+    {
+      "ja": "死亡（突合中）",
+      "cn": "死亡（确认中）",
+      "en": "Death (Confirming)"
+    },
+    {
+      "ja": "回復（突合中）",
+      "cn": "恢复（确认中）",
+      "en": "Recovered (Confirming)"
+    },
+    {
+      "ja": "回復・重症・死亡",
+      "cn": "恢复、重症和死亡",
+      "en": "Recovered, Severe & Death"
+    },
+    {
+      "ja": "回復",
+      "cn": "恢复",
+      "en": "Recovered"
+    },
+    {
+      "ja": "回復推移",
+      "cn": "恢复趋势",
+      "en": "Trends"
+    },
+    {
+      "ja": "回復者",
+      "cn": "恢复人数",
+      "en": "Recovered"
+    },
+    {
+      "ja": "回復者数",
+      "cn": "恢复人数",
+      "en": "Recovered"
     },
     {
       "ja": "ダイアモンド・プリンセス号：令和２年３月５日まで延べ人数で公表しましたＰＣＲ検査の結果について、実員数で精査した結果は下記の数値通りです。<br><br>",
@@ -740,6 +790,16 @@
       "ja": "リアルタイム感染者数マップ",
       "cn": "实时确诊情况地图",
       "en": "Realtime Infection Map"
+    },
+    {
+      "ja": "1. 3月下旬〜5月8日までの集計について",
+      "cn": "1. 关于3月下旬～5月8日为止的统计",
+      "en": "1. Data published by MHLW from late March to May 8"
+    },
+    {
+      "ja": "マイナスの値について：こちらの数値は全て厚労省が毎日発表されている数値である。厚労省の発表基準変更（5月8日）たったり、自治体からの報告と齟齬があったりする時、データの不整合性が生じるが、当サイトは修正せずそのまま厚労省が発表した数値を可視化しております。",
+      "cn": "关于出现的负值：本表所展示的皆为厚劳省每天所发布的原始数据。由于厚劳省的公布标准发生变更（5月8日）或者是其数值与自治体的报告有数据出入时，则会发生数据一致性问题，本站不对此做任何修正仅将厚劳省每日所发布的数据进行原封不动地可视化。",
+      "en": "About the negative values: The table shows the raw data published daily by the MHLW. Due to the change of the publication standards of the MHLW (May 8) or the discrepancy between the data reported by municipalities, there will be data consistency problems, and we does not make any corrections to this, but only visualizes the data published by the MHLW."
     },
     {
       "ja": "累積感染者数：",
@@ -1157,11 +1217,6 @@
       "en": "External Link"
     },
     {
-      "ja": "回復",
-      "cn": "恢复",
-      "en": "Recovered"
-    },
-    {
       "ja": "罹患中",
       "cn": "患病中",
       "en": "Suffering"
@@ -1527,14 +1582,34 @@
       "en": "Tests Conducted & Positive (MHLW)"
     },
     {
-      "ja": "陽性・退院・死亡（厚労省）",
-      "cn": "阳性、出院和死亡（厚劳省）",
-      "en": "Positive, Discharged & Death (MHLW)"
+      "ja": "陽性・回復・死亡（厚労省）",
+      "cn": "阳性、恢复和死亡（厚劳省）",
+      "en": "Positive, Recovered & Death (MHLW)"
     },
     {
       "ja": "陽性率",
       "cn": "阳性率",
       "en": "Positive Rate"
+    },
+    {
+      "ja": "チャーター便を除く国内事例については、令和2年5月8日公表分から、データソースを従来の厚生労働省が把握した個票を積み上げたものから、各自治体がウェブサイトで公表している数等を積み上げたものに変更した。また、一部自治体について件数を計上しているため、実際の人数より過大である。",
+      "cn": "自2020年5月8日的报告起，除撤侨包机以外的国内确诊例外，统计方式从厚生劳动省所掌握的确诊例信息进行汇总变更为以各自治体官网所发表的内容为准进行汇总。此外，部分自治体以检测次数为标准进行统计，因此存在数据比实际人数多的现象。",
+      "en": "From May 8, 2020, with respect to domestic cases excluding air charters, the data source was changed from the individual data obtained by the MHLW to the number of cases published by each municipality on its website. In addition, because the number of tests conducted rather than cases (persons tested) is reported for some municipalities, the figures are larger than the number of persons tested."
+    },
+    {
+      "ja": "令和2年5月8日公表分から、データソースを従来の厚生労働省が把握した個票を積み上げたものから、各自治体がウェブサイトで公表している数等を積み上げたものに変更した。",
+      "cn": "自2020年5月8日的报告起，除撤侨包机以外的国内确诊例外，统计方式从厚生劳动省所掌握的确诊例信息进行汇总变更为以各自治体官网所发表的内容为准进行汇总。",
+      "en": "From May 8, 2020, the data source was changed from the individual data obtained by the MHLW to the number of cases published by each municipality on its website."
+    },
+    {
+      "ja": "PCR検査実施人数は、一部自治体について件数を計上しているため、実際の人数より過大である。",
+      "cn": "部分自治体以检测次数为标准进行统计，因此会出现所统数据比实际检测人数多的现象。",
+      "en": "Because the number of tests conducted rather than cases (persons tested) is reported for some municipalities, the figures are larger than the number of persons tested."
+    },
+    {
+      "ja": "2. 5月9日からの集計について",
+      "cn": "2. 关于5月9日开始的统计",
+      "en": "2. Data published by MHLW from May 8"
     },
     {
       "ja": "速報：",
@@ -1597,8 +1672,18 @@
       "en": "Severe"
     },
     {
+      "ja": "重症",
+      "cn": "重症",
+      "en": "Severe"
+    },
+    {
       "ja": "重症者",
       "cn": "重症",
+      "en": "Severe"
+    },
+    {
+      "ja": "重症者数",
+      "cn": "重症人数",
       "en": "Severe"
     },
     {

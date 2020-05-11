@@ -48,29 +48,47 @@ observeEvent(input$switchTableVersion, {
       tagList(
         dataTableOutput("testByPrefTable"),
         helpText(
-          "1. ",
-          icon("vial"),
-          i18n$t(
-            "検査人数：複数の検体を重複してカウントしていた期間については検査人数の合計に含まれていない。陽性者数の検査人数に対する比率についても、重複が排除された期間のみの比率を表している。なお、千葉県においては3/20までに1716件の検査が、神奈川県においては3/22までにクルーズ船を含む2835件の検査が、大阪府においては3/20までに2350件の検査が行われた。千葉県は3/21より、神奈川県は3/23より、大阪府は3/21より検査人数を計上している。"
-          )
-        ),
-        helpText(
-          "2. ",
-          icon("calculator"),
+          icon("calculator"), "1. ",
           i18n$t("日均：日次検査人数を週間平均を計算した直近１週間の数値である。")
         ),
         helpText(
-          "3. ",
-          icon("user-plus"),
-          i18n$t(
-            "陽性率：陽性者数の検査人数に対する比率は、千葉県、神奈川県及び大阪府において、複数の検体を重複してカウントしていた期間の陽性者数を除いて算出している。"
-          )
+          icon("exclamation-circle"), "2. ",
+          i18n$t("マイナスの値について：こちらの数値は全て厚労省が毎日発表されている数値である。厚労省の発表基準変更（5月8日）たったり、自治体からの報告と齟齬があったりする時、データの不整合性が生じるが、当サイトは修正せずそのまま厚労省が発表した数値を可視化しております。")
         ),
-        helpText(
-          "4. ",
-          icon("landmark"),
-          i18n$t(
-            "東京都の検査実施人数には、医療機関による保険適用での検査人数、チャーター機帰国者、クルーズ船乗客等は含まれていない。"
+        accordion(
+          accordionItem(
+            id = 1,
+            title = i18n$t("1. 3月下旬〜5月8日までの集計について"),
+            tags$ol(
+              tags$li(
+                icon("vial"),
+                i18n$t(
+                  "検査人数：複数の検体を重複してカウントしていた期間については検査人数の合計に含まれていない。陽性者数の検査人数に対する比率についても、重複が排除された期間のみの比率を表している。なお、千葉県においては3/20までに1716件の検査が、神奈川県においては3/22までにクルーズ船を含む2835件の検査が、大阪府においては3/20までに2350件の検査が行われた。千葉県は3/21より、神奈川県は3/23より、大阪府は3/21より検査人数を計上している。"
+                )
+              ),
+              tags$li(
+                icon("user-plus"),
+                i18n$t(
+                  "陽性率：陽性者数の検査人数に対する比率は、千葉県、神奈川県及び大阪府において、複数の検体を重複してカウントしていた期間の陽性者数を除いて算出している。"
+                )
+              ),
+              tags$li(
+                icon("landmark"),
+                i18n$t(
+                  "東京都の検査実施人数には、医療機関による保険適用での検査人数、チャーター機帰国者、クルーズ船乗客等は含まれていない。"
+                )
+              )
+            )
+          ),
+          accordionItem(
+            id = 2,
+            title = i18n$t("2. 5月9日からの集計について"),
+            tags$ol(
+              tags$li(
+                icon(""),
+                i18n$t("PCR検査実施人数は、一部自治体について件数を計上しているため、実際の人数より過大である。")
+              )
+            )
           )
         )
       )
@@ -84,6 +102,12 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
   # dt <- dt[count > 0]
   columnName <- c("death", "perMillionDeath")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
+  
+  dt[, zeroContinuousDay := replace(.SD, .SD <= 0, NA), .SDcols = 'zeroContinuousDay']
+  breaksZero <-
+    seq(0, max(ifelse(is.na(dt$zeroContinuousDay), 0, dt$zeroContinuousDay), na.rm = T), 5)
+  colorsZero <-
+    colorRampPalette(c(lightBlue, darkBlue))(length(breaksZero) + 1)
 
   breaksDeath <-
     seq(0, max(ifelse(is.na(dt$death), 0, dt$death), na.rm = T), 2)
@@ -104,15 +128,16 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     colorRampPalette(c("#FFFFFF", "#6B7989"))(length(breaksPerMillion) + 1)
 
   datatable(
-    data = dt[, c(1, 8, 12, 7, 9, 14, 15), with = F],
+    data = dt[, c(1, 8, 12, 7, 9, 14, 15, 10), with = F],
     colnames = c(
       i18n$t("自治体"),
       i18n$t("内訳"),
-      i18n$t("退院"),
-      i18n$t("退院推移"),
+      i18n$t("回復"),
+      i18n$t("回復推移"),
       i18n$t("死亡"),
       i18n$t("百万人あたり"),
-      i18n$t("カテゴリ")
+      i18n$t("カテゴリ"),
+      i18n$t("0新規日数")
     ),
     caption = "",
     escape = F,
@@ -149,8 +174,8 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
         ),
         list(
           className = "dt-center",
-          width = "20%",
-          targets = 6
+          width = "18%",
+          targets = c(6, 8)
         ),
         list(
           visible = F,
@@ -198,6 +223,11 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
       columns = "perMillionDeath",
       backgroundColor = styleInterval(breaksPerMillion, colorsPerMillion),
       fontWeight = "bold"
+    ) %>%
+    formatStyle(
+      columns = 'zeroContinuousDay',
+      color = styleInterval(breaksZero, colorsZero),
+      fontWeight = "bold"
     )
 })
 
@@ -210,138 +240,6 @@ totalConfirmedByRegionData <- reactive({
     ), sep = "@")
   dt
 })
-
-# output$summaryByRegion <- renderDataTable({
-#   # setcolorder(mergeDt, c('region', 'count', 'untilToday', 'today', 'diff', 'values'))
-#   # dt <- mergeDt[count > 0] # TEST
-#   dt <- totalConfirmedByRegionData()[count > 0]
-#   # ０の値を非表示するため、NAに設定るす
-#   columnName <- c("today", "death")
-#   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
-#   # TODO 感染拡大が終息する後からカラム復活、今は表示する必要はない
-#   # dt[, zeroContinuousDay := replace(.SD, .SD <= 0, NA), .SDcols = 'zeroContinuousDay']
-#
-#   breaks <-
-#     seq(0, max(ifelse(is.na(dt$today), 0, dt$today), na.rm = T), 2)
-#   colors <-
-#     colorRampPalette(c(lightRed, darkRed))(length(breaks) + 1)
-#
-#   breaksDeath <-
-#     seq(0, max(ifelse(is.na(dt$death), 0, dt$death), na.rm = T), 2)
-#   colorsDeath <-
-#     colorRampPalette(c("white", lightNavy))(length(breaksDeath) + 1)
-#
-#   datatable(
-#     data = dt[, c(1, 3, 4, 6:9, 15), with = F],
-#     colnames = c("自治体", "新規", "感染者数", "新規感染", "新規退院", "内訳", "死亡", "カテゴリ"),
-#     caption = "最適の見せ方を探しているため、見た目が時々変わります。予めご了承ください。",
-#     escape = F,
-#     # extensions = c("Responsive"),
-#     extensions = "RowGroup",
-#     callback = htmlwidgets::JS(paste0("
-#       table.rowGroup().", ifelse(input$tableShowSetting, "enable()", "disable()"), ".draw();
-#     ")),
-#     options = list(
-#       paging = F,
-#       rowGroup = list(dataSrc = 8),
-#       dom = "t",
-#       fixedHeader = T,
-#       scrollY = "540px",
-#       scrollX = T,
-#       columnDefs = list(
-#         list(
-#           className = "dt-left",
-#           width = "80px",
-#           targets = 1
-#         ),
-#         list(
-#           className = "dt-center",
-#           width = "15%",
-#           targets = 3:5
-#         ),
-#         list(
-#           className = "dt-center",
-#           width = "10%",
-#           targets = 6:7
-#         ),
-#         list(
-#           className = "dt-center",
-#           width = "30px",
-#           targets = 2
-#         ),
-#         list(
-#           visible = F,
-#           targets = 8
-#         ),
-#         list(
-#           render = JS("
-#              function(data, type, row, meta) {
-#                 const split = data.split('|');
-#                 return split[1];
-#             }"),
-#           targets = c(1, 3)
-#         )
-#       ),
-#       fnDrawCallback = htmlwidgets::JS("
-#       function() {
-#         HTMLWidgets.staticRender();
-#       }
-#     ")
-#     )
-#   ) %>%
-#     spk_add_deps() %>%
-#     formatStyle(
-#       columns = "totalToday",
-#       background = htmlwidgets::JS(
-#         paste0(
-#           "'linear-gradient(-90deg, transparent ' + (",
-#           max(dt$count),
-#           "- value.split('|')[1])/",
-#           max(dt$count),
-#           " * 100 + '%, #DD4B39 ' + (",
-#           max(dt$count),
-#           "- value.split('|')[1])/",
-#           max(dt$count),
-#           " * 100 + '% ' + (",
-#           max(dt$count),
-#           "- value.split('|')[1] + Number(value.split('|')[2]))/",
-#           max(dt$count),
-#           " * 100 + '%, #F56954 ' + (",
-#           max(dt$count),
-#           "- value.split('|')[1] + Number(value.split('|')[2]))/",
-#           max(dt$count),
-#           " * 100 + '%)'"
-#         )
-#       ),
-#       backgroundSize = "100% 80%",
-#       backgroundRepeat = "no-repeat",
-#       backgroundPosition = "center"
-#     ) %>%
-#     formatCurrency(
-#       columns = "today",
-#       currency = paste(as.character(icon("caret-up")), " "),
-#       digits = 0
-#     ) %>%
-#     formatStyle(
-#       columns = "today",
-#       color = styleInterval(breaks, colors),
-#       fontWeight = "bold",
-#       backgroundSize = "80% 80%",
-#       backgroundPosition = "center"
-#     ) %>%
-#     formatStyle(
-#       columns = "death",
-#       backgroundColor = styleInterval(breaksDeath, colorsDeath),
-#       fontWeight = "bold",
-#       backgroundPosition = "center"
-#     ) # %>%
-#   # formatStyle(
-#   #   columns = 'zeroContinuousDay',
-#   #   background = styleColorBar(c(0, max(dt$zeroContinuousDay, na.rm = T)), lightBlue, angle = -90),
-#   #   backgroundSize = '98% 80%',
-#   #   backgroundRepeat = 'no-repeat',
-#   #   backgroundPosition = 'center')
-# })
 
 # 感染表====
 output$confirmedByPrefTable <- renderDataTable({
@@ -370,9 +268,7 @@ output$confirmedByPrefTable <- renderDataTable({
     colorRampPalette(c("#FFFFFF", darkRed))(length(breaksPerMillion) + 1)
 
   breaksPerArea <-
-    seq(0, max(unlist(ifelse(
-      is.numeric(dt$perArea), 0, dt$perArea
-    )), na.rm = T))
+    seq(0, ceiling(max(dt$perArea[!is.infinite(dt$perArea)], na.rm = T)))
   colorsPerArea <-
     colorRampPalette(c(darkYellow, "#FFFFFF"))(length(breaksPerArea) + 1)
 

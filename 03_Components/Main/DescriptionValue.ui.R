@@ -11,10 +11,10 @@ fluidRow(
     width = 1,
     id = "domesticPCR",
     descriptionBlock(
-      number = PCR_WITHIN$diff + PCR_FLIGHT$diff + PCR_AIRPORT$diff,
+      number = sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$検査人数) - sum(mhlwSummary[日付 == (max(日付) - 1) & 分類 %in% 0:2]$検査人数),
       number_color = "yellow",
-      number_icon = getChangeIconWrapper(PCR_WITHIN$diff + PCR_FLIGHT$diff + PCR_AIRPORT$diff, type = "fa"),
-      header = paste(PCR_WITHIN$final + PCR_FLIGHT$final + PCR_AIRPORT$final, ""),
+      number_icon = getChangeIconWrapper(sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$検査人数) - sum(mhlwSummary[日付 == (max(日付) - 1) & 分類 %in% 0:2]$検査人数), type = "fa"),
+      header = sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$検査人数),
       right_border = F,
       text = i18n$t("検査人数")
     )
@@ -23,11 +23,14 @@ fluidRow(
     id = "domesticPCR",
     placement = "top",
     title = paste0(
-      i18n$t("「令和２年３月４日版」以後は、陽性となった者の濃厚接触者に対する検査も含めた検査実施人数を都道府県に照会し、回答を得たものを公表している。なお、国内事例のPCR検査実施人数は、疑似症報告制度の枠組みの中で報告が上がった数を計上しており、各自治体で行った全ての検査結果を反映しているものではない（退院時の確認検査などは含まれていない）。"),
+      i18n$t("チャーター便を除く国内事例については、令和2年5月8日公表分から、データソースを従来の厚生労働省が把握した個票を積み上げたものから、各自治体がウェブサイトで公表している数等を積み上げたものに変更した。また、一部自治体について件数を計上しているため、実際の人数より過大である。"),
       sprintf(
         i18n$t("<hr>国内：%s (%s)<br>空港検疫：%s (+%s)<br>チャーター便：%s"),
-        PCR_WITHIN$final, getDiffValueAndSign(PCR_WITHIN$diff),
-        PCR_AIRPORT$final, PCR_AIRPORT$diff, PCR_FLIGHT$final
+        sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0]$検査人数),
+        getDiffValueAndSign(sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0]$検査人数) - sum(mhlwSummary[日付 == (max(日付) - 1) & 分類 %in% 0]$検査人数)),
+        sum(mhlwSummary[日付 == max(日付) & 分類 %in% 1]$検査人数),
+        sum(mhlwSummary[日付 == max(日付) & 分類 %in% 1]$検査人数) - sum(mhlwSummary[日付 == (max(日付) - 1) & 分類 %in% 1]$検査人数),
+        sum(mhlwSummary[日付 == max(日付) & 分類 %in% 2]$検査人数)
       )
     )
   ),
@@ -56,22 +59,25 @@ fluidRow(
     width = 1,
     id = "domesticDischarged",
     descriptionBlock(
-      number = DISCHARGE_DIFF_NO_SHIP,
+      number = sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$退院者) - sum(mhlwSummary[日付 == max(日付) -1 & 分類 %in% 0:2]$退院者),
       number_color = "green",
-      number_icon = getChangeIconWrapper(DISCHARGE_DIFF_NO_SHIP, type = "fa"),
-      # header = DISCHARGE_TOTAL_NO_SHIP,
-      header = tail(confirmingData$domesticDischarged, n = 1) + DISCHARGE_FLIGHT$final + DISCHARGE_AIRPORT$final, # 2020-04-23 厚労省退院基準変更による仕様変更
+      number_icon = getChangeIconWrapper(
+        sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$退院者) - sum(mhlwSummary[日付 == max(日付) -1 & 分類 %in% 0:2]$退院者), type = "fa"),
+      header = sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$退院者),
       right_border = F,
-      text = i18n$t("退院者")
+      text = i18n$t("回復者")
     )
   ),
   bsTooltip(
     id = "domesticDischarged",
     placement = "top",
     title = sprintf(
-      i18n$t("国内事例（確定）：%s (+%s)<br>※突合作業中：%s<br>空港検疫：%s (+%s)<br>チャーター便：%s（全員退院済み）"),
-      DISCHARGE_WITHIN$final, DISCHARGE_WITHIN$diff, (tail(confirmingData$domesticDischarged, n = 1) - DISCHARGE_WITHIN$final),
-      DISCHARGE_AIRPORT$final, DISCHARGE_AIRPORT$diff, DISCHARGE_FLIGHT$final
+      i18n$t("国内事例：%s (+%s)<br>空港検疫：%s (+%s)<br>チャーター便：%s（全員退院済み）"),
+      sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0]$退院者), 
+      sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0]$退院者) - sum(mhlwSummary[日付 == max(日付) -1 & 分類 %in% 0]$退院者),
+      sum(mhlwSummary[日付 == max(日付) & 分類 %in% 1]$退院者),
+      sum(mhlwSummary[日付 == max(日付) & 分類 %in% 1]$退院者) - sum(mhlwSummary[日付 == max(日付) -1 & 分類 %in% 1]$退院者),
+      sum(mhlwSummary[日付 == max(日付) & 分類 %in% 2]$退院者)
     )
   ),
   column(
@@ -104,10 +110,10 @@ fluidRow(
     id = "shipPCRValue",
     # クルーズ船
     descriptionBlock(
-      number = PCR_SHIP$diff,
+      number = mhlwSummary[日付 == max(日付) & 分類 %in% 3]$検査人数 - mhlwSummary[日付 == max(日付) - 1 & 分類 %in% 3]$検査人数,
       number_color = "yellow",
-      number_icon = getChangeIconWrapper(PCR_SHIP$diff, type = "fa"),
-      header = paste(PCR_SHIP$final, ""),
+      number_icon = getChangeIconWrapper(mhlwSummary[日付 == max(日付) & 分類 %in% 3]$検査人数 - mhlwSummary[日付 == max(日付) - 1 & 分類 %in% 3]$検査人数, type = "fa"),
+      header = mhlwSummary[日付 == max(日付) & 分類 %in% 3]$検査人数,
       right_border = F,
       text = i18n$t("検査人数")
     )
@@ -145,12 +151,12 @@ fluidRow(
     width = 1,
     id = "shipDischargedValue",
     descriptionBlock(
-      number = DISCHARGE_SHIP$diff,
+      number = mhlwSummary[日付 == max(日付) & 分類 %in% 3]$退院者 - mhlwSummary[日付 == max(日付) - 1 & 分類 %in% 3]$退院者,
       number_color = "green",
-      number_icon = getChangeIconWrapper(DISCHARGE_SHIP$diff, type = "fa"),
-      header = paste(DISCHARGE_SHIP$final, ""),
+      number_icon = getChangeIconWrapper(mhlwSummary[日付 == max(日付) & 分類 %in% 3]$退院者 - mhlwSummary[日付 == max(日付) - 1 & 分類 %in% 3]$退院者, type = "fa"),
+      header =  mhlwSummary[日付 == max(日付) & 分類 %in% 3]$退院者,
       right_border = F,
-      text = i18n$t("退院者")
+      text = i18n$t("回復者")
     )
   ),
   bsTooltip(

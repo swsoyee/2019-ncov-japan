@@ -12,25 +12,6 @@ byDate$date <- lapply(byDate[, 1], function(x) {
 # 死亡データ
 death <- fread(paste0(DATA_PATH, "death.csv"))
 death[is.na(death)] <- 0
-# 国内の日報
-domesticDailyReport <- fread(paste0(DATA_PATH, "domesticDailyReport.csv"))
-domesticDailyReport$date <- as.Date(as.character(domesticDailyReport$date), "%Y%m%d")
-setnafill(domesticDailyReport, type = "locf")
-# チャーター便の日報
-flightDailyReport <- fread(paste0(DATA_PATH, "flightDailyReport.csv"))
-flightDailyReport$date <- as.Date(as.character(flightDailyReport$date), "%Y%m%d")
-setnafill(flightDailyReport, type = "locf")
-# クルーズ船の日報
-shipDailyReport <- fread(paste0(DATA_PATH, "shipDailyReport.csv"))
-shipDailyReport$date <- as.Date(as.character(shipDailyReport$date), "%Y%m%d")
-setnafill(shipDailyReport, type = "locf")
-# 空港検疫の日報
-airportDailyReport <- fread(paste0(DATA_PATH, "airportDailyReport.csv"))
-airportDailyReport$date <- as.Date(as.character(airportDailyReport$date), "%Y%m%d")
-setnafill(airportDailyReport, type = "locf")
-# コールセンター
-callCenterDailyReport <- fread(paste0(DATA_PATH, "callCenter.csv"))
-callCenterDailyReport$date <- as.Date(as.character(callCenterDailyReport$date), "%Y%m%d")
 # 文言データを取得
 lang <- fread(paste0(DATA_PATH, "lang.csv"))
 langCode <- "ja"
@@ -62,17 +43,6 @@ lightGrey <- "#F5F5F5"
 lightBlue <- "#7BD6F5"
 middleBlue <- "#00C0EF"
 darkBlue <- "#00A7D0"
-
-# ====日報====
-dailyReport <- domesticDailyReport
-dailyReport <- merge(x = domesticDailyReport, y = flightDailyReport, by = "date", all.x = T, suffixes = c(".d", ".f"))
-dailyReport <- merge(x = dailyReport, y = airportDailyReport, by = "date", all.x = T)
-dailyReport <- merge(x = dailyReport, y = shipDailyReport, by = "date", all.x = T)
-dailyReport[, pcr := rowSums(.SD, na.rm = T), .SDcols = c("pcr.d", "pcr.f", "pcr.x", "pcr.y")]
-dailyReport[, discharge := rowSums(.SD, na.rm = T), .SDcols = c("discharge.d", "discharge.f", "discharge.x", "discharge.y")]
-dailyReport[, pcrDiff := pcr - shift(pcr)]
-dailyReport[, dischargeDiff := discharge - shift(discharge)]
-fwrite(x = dailyReport, file = paste0(DATA_PATH, "resultDailyReport.csv"))
 
 
 # ====各都道府県のサマリーテーブル====
@@ -139,18 +109,14 @@ diffSparkline <- sapply(2:ncol(byDate), function(i) {
   return(as.character(htmltools::as.tags(spk_composite(diff, cumsumSpk))))
 })
 
-print("新規退院者カラム作成")
-detailByRegion <- fread(paste0(DATA_PATH, "detailByRegion.csv"))
-detailByRegion[, `日付` := as.Date(as.character(`日付`), "%Y%m%d")]
-detailByRegion[, `都道府県名` := gsub("県", "", `都道府県名`)]
-detailByRegion[, `都道府県名` := gsub("府", "", `都道府県名`)]
-detailByRegion[, `都道府県名` := gsub("東京都", "東京", `都道府県名`)]
-detailByRegion[order(`日付`), dischargedDiff := `退院者` - shift(`退院者`), by = `都道府県名`]
-detailByRegion[is.na(detailByRegion)] <- 0
+print("新規回復者カラム作成")
+mhlwSummary <- fread(file = "50_Data/MHLW/summary.csv")
+mhlwSummary$日付 <- as.Date(as.character(mhlwSummary$日付), "%Y%m%d")
+mhlwSummary[order(日付), dischargedDiff := 退院者 - shift(退院者), by = "都道府県名"]
 
-print("退院推移")
+print("回復推移")
 dischargedDiffSparkline <- sapply(colnames(byDate)[2:48], function(region) {
-  data <- detailByRegion[`都道府県名` == region]
+  data <- mhlwSummary[`都道府県名` == region]
   # 新規
   span <- nrow(data) - dateSpan
   value <- data$dischargedDiff[ifelse(span < 0, 0, span):nrow(data)]
@@ -165,7 +131,7 @@ dischargedDiffSparkline <- sapply(colnames(byDate)[2:48], function(region) {
       type = "bar",
       width = 80,
       barColor = middleGreen,
-      tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> 新規退院{{value}}名",
+      tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> 新規回復{{value}}名",
       tooltipValueLookups = list(
         names = namesSetting
       )
@@ -180,29 +146,19 @@ print("死亡カラム作成")
 deathByRegion <- stack(colSums(death[, 2:ncol(byDate)]))
 
 print("感染者内訳")
-detailSparkLineDt <- detailByRegion[日付 == max(日付)]
+detailSparkLineDt <- mhlwSummary[日付 == max(日付)]
 detailSparkLine <- sapply(detailSparkLineDt$都道府県名, function(region) {
-  # 2020-03-30 厚労省の発表資料の基準は（無症状を除く、PCR陽性者、累積者）三度も変更が有るため、この部分を破棄します。
-  # 厚労省の定義は、死亡後に陽性に確認された人は患者数に含まれていないようで、
-  # マイナスのデータを防ぐため修正します。
-  # region = '千葉' # TEST
-  # fixDiff <- (detailSparkLineDt[都道府県名 == region, 患者数] -
-  #               detailSparkLineDt[都道府県名 == region, 入院中] -
-  #               detailSparkLineDt[都道府県名 == region, 退院者] -
-  #               detailSparkLineDt[都道府県名 == region, 死亡者])
-  # fixConfirmed <- ifelse(fixDiff < 0,
-  #                        detailSparkLineDt[都道府県名 == region, 患者数] - fixDiff,
-  #                        detailSparkLineDt[都道府県名 == region, 患者数])
-  # 2020-03-30 対応分
-
-  confirmed <- ifelse(total[names(total) == region][[1]] > detailSparkLineDt[都道府県名 == region, 患者数],
-    total[names(total) == region][[1]],
-    detailSparkLineDt[都道府県名 == region, 患者数]
+  # 速報値との差分処理
+  regionNew <- ifelse(region == "空港検疫", "検疫職員", region)
+  confirmed <- ifelse(total[names(total) == regionNew][[1]] > detailSparkLineDt[都道府県名 == region, 陽性者],
+    total[names(total) == regionNew][[1]],
+    detailSparkLineDt[都道府県名 == region, 陽性者]
   )
   spk_chr(
     type = "pie",
     values = c(
-      confirmed - sum(detailSparkLineDt[都道府県名 == region, .(入院中, 退院者, 死亡者)]),
+      confirmed - sum(detailSparkLineDt[都道府県名 == region, .(入院中, 退院者, 死亡者)], na.rm = T) -
+        ifelse(region == "クルーズ船", 40, 0),
       detailSparkLineDt[都道府県名 == region, 入院中],
       detailSparkLineDt[都道府県名 == region, 退院者],
       detailSparkLineDt[都道府県名 == region, 死亡者]
@@ -213,7 +169,7 @@ detailSparkLine <- sapply(detailSparkLineDt$都道府県名, function(region) {
       names = list(
         "0" = "情報待ち陽性者",
         "1" = "入院者",
-        "2" = "退院者",
+        "2" = "回復者",
         "3" = "死亡者"
       )
     )
@@ -230,19 +186,17 @@ doubleTimeDay <- lapply(seq(halfCount), function(index) {
 })
 names(doubleTimeDay) <- names(dt)
 
-# 退院者総数
-totalDischarged <- detailByRegion[日付 == max(日付), .(都道府県名, 退院者)]
+# 回復者総数
+totalDischarged <- mhlwSummary[日付 == max(日付), .(都道府県名, 退院者)]
 colnames(totalDischarged) <- c("region", "totalDischarged")
 
 print("都道府県別PCRデータ作成")
-pcrByRegion <- fread(file = paste0(DATA_PATH, "MHLW/pcrByRegion.csv"))
-pcrByRegion$日付 <- as.Date(as.character(pcrByRegion$日付), "%Y%m%d")
-pcrByRegion[, 前日比 := 検査人数 - shift(検査人数), by = c("都道府県略称")]
-pcrByRegion[, 週間平均移動 := round(frollmean(前日比, 7), 0), by = c("都道府県略称")]
-pcrByRegion[, 陽性率 := round(陽性者数 / 検査人数 * 100, 1)]
-pcrByRegionToday <- pcrByRegion[日付 == max(日付)]
-pcrDiffSparkline <- sapply(pcrByRegionToday$都道府県略称, function(region) {
-  data <- pcrByRegion[`都道府県略称` == region]
+mhlwSummary[, 前日比 := 検査人数 - shift(検査人数), by = c("都道府県名")]
+mhlwSummary[, 週間平均移動 := round(frollmean(前日比, 7), 0), by = c("都道府県名")]
+mhlwSummary[, 陽性率 := round(陽性者 / 検査人数 * 100, 1)]
+pcrByRegionToday <- mhlwSummary[日付 == max(日付)]
+pcrDiffSparkline <- sapply(pcrByRegionToday$都道府県名, function(region) {
+  data <- mhlwSummary[都道府県名 == region]
   # 新規
   span <- nrow(data) - dateSpan
   value <- data$前日比[ifelse(span < 0, 0, span):nrow(data)]
@@ -268,8 +222,8 @@ pcrDiffSparkline <- sapply(pcrByRegionToday$都道府県略称, function(region)
   return(diff)
 })
 
-positiveRatioSparkline <- sapply(pcrByRegionToday$都道府県略称, function(region) {
-  data <- pcrByRegion[`都道府県略称` == region]
+positiveRatioSparkline <- sapply(pcrByRegionToday$都道府県名, function(region) {
+  data <- mhlwSummary[都道府県名 == region]
   # 新規
   span <- nrow(data) - dateSpan
   value <- data$陽性率[ifelse(span < 0, 0, span):nrow(data)]
@@ -355,8 +309,9 @@ mergeDt <- merge(mergeDt, area, by.x = "region", by.y = "都道府県略称", al
 mergeDt[, perArea := round(sqrt(可住地面積 / count), 2)]
 mergeDt[, `:=` (コード = NULL, 都道府県 = NULL, 可住地面積 = NULL, 可住地面積割合 = NULL, 宅地面積 = NULL, 宅地面積割合 = NULL)]
 
-mergeDt <- merge(mergeDt, pcrByRegionToday, by.x = "region", by.y = "都道府県略称", all.x =T, no.dups = T, sort = F)
-mergeDt[, `:=` (日付 = NULL, 陽性者数 = NULL)]
+pcrByRegionToday[, `:=` (dischargedDiff = NULL)]
+mergeDt <- merge(mergeDt, pcrByRegionToday, by.x = "region", by.y = "都道府県名", all.x = T, no.dups = T, sort = F)
+mergeDt[, `:=` (日付 = NULL, 陽性者 = NULL, 入院中 = NULL, 退院者 = NULL, 死亡者 = NULL, 確認中 = NULL, 分類 = NULL)]
 mergeDt[, 百万人あたり := round(検査人数 / (population / 1000000), 0)]
 mergeDt[, population := NULL]
 
