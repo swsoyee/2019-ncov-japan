@@ -3,6 +3,7 @@
 ![language](https://img.shields.io/github/languages/top/swsoyee/2019-ncov-japan?style=flat-square)
 ![last commit](https://img.shields.io/github/last-commit/swsoyee/2019-ncov-japan?style=flat-square)
 ![page views](https://img.shields.io/badge/dynamic/json?url=https://cdn.covid-2019.live/static/stats.json&label=pv&query=$.result.totals.pageviews.all&color=orange&style=flat-square)
+[![eRum2020::CovidR](https://badgen.net/https/runkit.io/erum2020-covidr/badge/branches/master/bulletin-board-japan?cache=300)](https://milano-r.github.io/erum2020-covidr-contest/bulletin-board-japan.html)
 
 [`🇯🇵日本語`](https://github.com/swsoyee/2019-ncov-japan/blob/master/README.md) | `🇨🇳中文` | [`🇺🇸English`](https://github.com/swsoyee/2019-ncov-japan/blob/master/README.en.md)
 

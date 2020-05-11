@@ -3,6 +3,7 @@
 ![language](https://img.shields.io/github/languages/top/swsoyee/2019-ncov-japan?style=flat-square)
 ![last commit](https://img.shields.io/github/last-commit/swsoyee/2019-ncov-japan?style=flat-square)
 ![page views](https://img.shields.io/badge/dynamic/json?url=https://cdn.covid-2019.live/static/stats.json&label=pv&query=$.result.totals.pageviews.all&color=orange&style=flat-square)
+[![eRum2020::CovidR](https://badgen.net/https/runkit.io/erum2020-covidr/badge/branches/master/bulletin-board-japan?cache=300)](https://milano-r.github.io/erum2020-covidr-contest/bulletin-board-japan.html)
 
 [`🇯🇵日本語`](https://github.com/swsoyee/2019-ncov-japan/blob/master/README.md) | [`🇨🇳中文`](https://github.com/swsoyee/2019-ncov-japan/blob/master/README.cn.md) | `🇺🇸English`
 
@@ -24,7 +25,7 @@ The data used on this site are all public data sets, mainly divided into the fol
 
 1. Real-time data are collected based on the news media: the number of confirmed diagnoses and deaths are from [News Digest](https://newsdigest.jp/pages/coronavirus/) and the values are consistent with the above-mentioned website.
 2. Aggregated data announced by the [Ministry of Health, Labour and Welfare](https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html), such as number of PCR tests conducted, hospital discharges, calls to the novel coronavirus call center, etc.
-3. Company（[SIGNATE COVID-19 Dataset](https://drive.google.com/drive/folders/1EcVW5JQKMB6zoyfHm8_zLVj---t_hccF)）, dataset collected by other volunteers（[@kenmo_economics](https://twitter.com/kenmo_economics)）and data from open source projects derived from the [Tokyo COVID-19 Information](https://github.com/tokyo-metropolitan-gov/covid19/blob/development/FORKED_SITES.md) (those dataset are updated by the official or the maintainers based on information from the municipality), etc.
+3. Company ([SIGNATE COVID-19 Dataset](https://drive.google.com/drive/folders/1EcVW5JQKMB6zoyfHm8_zLVj---t_hccF)), dataset collected by other volunteers ([@kenmo_economics](https://twitter.com/kenmo_economics)）and data from open source projects derived from the [Tokyo COVID-19 Information](https://github.com/tokyo-metropolitan-gov/covid19/blob/development/FORKED_SITES.md) (those dataset are updated by the official or the maintainers based on information from the municipality), etc.
 
 Due to the complexity of the data, differences in aggregation time periods or standard issues, there are more or less minor differences in values. Statistical standards vary from media to media, so it is normal for values to vary from site to site. Therefore, all charts and values on this site are for reference only. Please be aware that this website and its management team are not responsible for any problems arising from the secondary use of the contents and materials published on this website.
 
