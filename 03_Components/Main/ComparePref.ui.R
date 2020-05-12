@@ -14,6 +14,10 @@ tabPanel(
       echarts4rOutput("comparePrefP1", height = "200px"),
       echarts4rOutput("comparePrefP2", height = "200px"),
       echarts4rOutput("comparePrefP3", height = "200px")
+    ),
+    column(
+      width = 6,
+      echarts4rOutput("prefRadar") %>% withSpinner()
     )
   )
 )

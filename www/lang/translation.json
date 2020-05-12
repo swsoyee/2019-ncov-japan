@@ -517,9 +517,24 @@
       "en": "Discharged: "
     },
     {
+      "ja": "回復率",
+      "cn": "康复率",
+      "en": "Recovered Rate"
+    },
+    {
+      "ja": "回復 / 死亡",
+      "cn": "康复 / 死亡",
+      "en": "Recovered / Death"
+    },
+    {
       "ja": "重傷率：",
       "cn": "重症率：",
       "en": "Severity rate: "
+    },
+    {
+      "ja": "死亡率",
+      "cn": "死亡率",
+      "en": "Mortality rate"
     },
     {
       "ja": "死亡率：",
@@ -1815,6 +1830,36 @@
       "ja": "１週間２倍",
       "cn": "每周翻倍",
       "en": "Doubling in one week"
+    },
+    {
+      "ja": "三週間前",
+      "cn": "三周前",
+      "en": "3 weeks ago"
+    },
+    {
+      "ja": "二週間前",
+      "cn": "两周前",
+      "en": "2 weeks ago"
+    },
+    {
+      "ja": "一週間前",
+      "cn": "一周前",
+      "en": "1 week ago"
+    },
+    {
+      "ja": "現在",
+      "cn": "现在",
+      "en": "Now"
+    },
+    {
+      "ja": "百万人あたりの検査",
+      "cn": "每百万人检测人数",
+      "en": "Tested / M pop"
+    },
+    {
+      "ja": "%sの直近１ヶ月の指標",
+      "cn": "%s最近1个月的各项指标",
+      "en": "Indicators for the Last Month of %s"
     }
   ]
 }
