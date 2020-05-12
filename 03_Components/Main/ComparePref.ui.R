@@ -17,7 +17,8 @@ tabPanel(
     ),
     column(
       width = 6,
-      echarts4rOutput("prefRadar") %>% withSpinner()
+      echarts4rOutput("prefRadar") %>% withSpinner(),
+      helpText(icon("exclamation-circle"), i18n$t("検査人数、百万人あたりの検査および陽性者数の三つの指標は、毎日の増加分を直近7日の移動平均を計算した数値です。"))
     )
   )
 )
