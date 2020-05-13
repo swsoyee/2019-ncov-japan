@@ -49,7 +49,7 @@ fwrite(x = kenmoAreaDataset.en, file = paste0(DATA_PATH, "Kenmo/confirmedNumberB
 
 Update.Signate.Detail <- function(update = F) {
   if (update) {
-    signateDetail <- gsheet2tbl('https://docs.google.com/spreadsheets/d/10MFfRQTblbOpuvOs_yjIYgntpMGBg592dL8veXoPpp4/edit#gid=2113829779')
+    signateDetail <- gsheet2tbl('https://docs.google.com/spreadsheets/d/10MFfRQTblbOpuvOs_yjIYgntpMGBg592dL8veXoPpp4/edit#gid=960903158')
     signateDetail <- data.table(signateDetail)
     fwrite(x = signateDetail, file = paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者.csv'))
     # 都道府県、公表日、性別、年齢====
@@ -90,13 +90,13 @@ saveFileFromApi <- function(jsonResult, patientsFileName, prefCode, pref, NoCol 
 
 # ==== 北海道 ===
 apiUrl <- "https://www.harp.lg.jp/opendata/api/package_show?id=752c577e-0cbe-46e0-bebd-eb47b71b38bf"
-jsonFile <- fromJSON(apiUrl)
+jsonFile <- jsonlite::fromJSON(apiUrl)
 jsonResult <- jsonFile$result$resources
 saveFileFromApi(jsonResult, "patients.csv", 1, "Hokkaido")
 
 # ==== 青森 ====
 apiUrl <- "https://opendata.pref.aomori.lg.jp/api/package_show?id=5e4612ce-1636-41d9-82a3-c5130a79ffe0"
-jsonFile <- fromJSON(apiUrl)
+jsonFile <- jsonlite::fromJSON(apiUrl)
 jsonResult <- jsonFile$result$resources
 sapply(paste0(DATA_PATH, "Pref/Aomori/", list.files(path = paste0(DATA_PATH, "Pref/Aomori"))), file.remove)
 saveFileFromApi(jsonResult, "陽性患者関係.csv", 2, "Aomori", "ＮＯ")
@@ -104,7 +104,7 @@ saveFileFromApi(jsonResult, "陽性患者関係.csv", 2, "Aomori", "ＮＯ")
 
 # ====岩手====
 dataUrl <- "https://raw.githubusercontent.com/MeditationDuck/covid19/development/data/data.json"
-jsonFile <- fromJSON(dataUrl)
+jsonFile <- jsonlite::fromJSON(dataUrl)
 pcr <- data.table(
   date = as.Date(jsonFile$inspections_summary$labels, "%m/%d"),
   検査数 = jsonFile$inspections_summary$data$県内
@@ -127,7 +127,7 @@ fwrite(x = iwateData, file = paste0(DATA_PATH, "Pref/", "Iwate", "/", "summary.c
 
 # ====宮城====
 dataUrl <- "https://raw.githubusercontent.com/code4shiogama/covid19-miyagi/development/data/data.json"
-jsonFile <- fromJSON(dataUrl)
+jsonFile <- jsonlite::fromJSON(dataUrl)
 pcr <- data.table(
   date = as.Date(jsonFile$inspection_persons$labels),
   検査数 = jsonFile$inspection_persons$datasets$data[[1]]
@@ -150,7 +150,7 @@ fwrite(x = miyagiData, file = paste0(DATA_PATH, "Pref/", "Miyagi", "/", "summary
 
 # ====茨城====
 dataUrl <- "https://raw.githubusercontent.com/a01sa01to/covid19-ibaraki/development/data/data.json"
-jsonFile <- fromJSON(dataUrl)
+jsonFile <- jsonlite::fromJSON(dataUrl)
 
 pcr <- data.table(
   date = as.Date(jsonFile$inspection_persons$labels),
@@ -193,7 +193,7 @@ patientSummary <- data.table(as.data.frame.matrix(table(patient$発表日, patie
 dt <- merge(x = contact, y = querent, by.x = "日付", by.y = "日付", all.x = T, no.dups = T)
 dt <- merge(x = dt, y = patientSummary, by.x = "日付", by.y = "rn", no.dups = T, all = T)
 dt[is.na(dt)] <- 0
-dt[, 陽性数 := rowSums(.SD), .SDcols = c("男性", "女性", "非公表")]
+dt[, 陽性数 := rowSums(.SD), .SDcols = unique(patient$性別)]
 dt[, 累積陽性数 := cumsum(.SD), .SDcols = c("陽性数")]
 
 fwrite(x = dt, file = paste0(DATA_PATH, "Pref/Kanagawa/summary.csv"))
