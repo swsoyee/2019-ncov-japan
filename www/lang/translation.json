@@ -302,7 +302,7 @@
       "en": "Patients at present"
     },
     {
-      "ja": "分母には、死亡者・チャーター便で帰国したクルーズ船の乗客40名は含まれていません。",
+      "ja": "分母には死亡者、チャーター便で帰国したクルーズ船の乗客40名が含まれていません。",
       "cn": "分母不包含死亡人数和搭乘包机回国的40名公主号游轮乘客在内。",
       "en": "The denominator does not include the number of fatalities and the 40 passengers of the Cruise DP who returned home country on a air chartered."
     },
@@ -407,7 +407,7 @@
       "en": "New daily"
     },
     {
-      "ja": "日数の計算式は以下のとおりです：",
+      "ja": "日数の計算式は以下になります：",
       "cn": "天数计算方法如下式所示：",
       "en": "The number of days is calculated by the following formula: "
     },
@@ -502,7 +502,7 @@
       "en": "New Recovered (daily)"
     },
     {
-      "ja": "令和2年4月22日から厚労省が公開している退院者・死亡者数には突合作業中の人数が含まれているため、入退院等の状況の合計とPCR検査陽性者数は一致していません。",
+      "ja": "令和2年4月22日から厚労省公開している退院者、死亡者数に突合作業中の人数が含まれていて、入退院等の状況の合計とPCR検査陽性者数は一致しないことが明らかにしました。",
       "cn": "注：2020年4月22日以后厚劳省所发表等出院者、死亡者数据中包含了正处于核实当中数据，导致住出院人数与总体的PCR检测阳性人数合计不相等。",
       "en": "Note: The data on discharges and deaths published by the MHLW after April 22, 2020 include data that are in the process of being verified, resulting in a discrepancy between the number of hospital discharges and the overall number of positive PCR tests."
     },
@@ -552,7 +552,7 @@
       "en": "Notes"
     },
     {
-      "ja": "これまで延べ人数で公表されていたクルーズ船のＰＣＲ検査の結果については、３月５日以後、実員数で精査された結果になったため、３月５日のデータで下方修正されています。",
+      "ja": "これまで延べ人数で公表しましたクルーズ船のＰＣＲ検査の結果について、３月５日以後に実員数で精査した結果になり、３月５日のデータを下方修正しました。",
       "cn": "以累计人次进行发表的公主号游轮的PCR检查结果在3月5日以后进行了人数核查，因此3月5日的数据会有负向修正。",
       "en": "The PCR results of the cruise PD, published in terms of cumulative number of test conducted, were verified after March 5, so the March 5 data will have a negative correction."
     },
@@ -572,7 +572,7 @@
       "en": "Death"
     },
     {
-      "ja": "「令和２年３月４日版」以後は、陽性となった者の濃厚接触者に対する検査も含めた検査実施人数を都道府県に照会し、回答を得たものを公表しています。なお、国内事例のＰＣＲ検査実施人数は、疑似症患者（感染が疑われる者）報告制度の枠組みの中で報告された数を計上しており、各自治体で行った全ての検査結果を反映しているものではありません（退院時の確認検査などは含まず）。",
+      "ja": "「令和２年３月４日版」以後は、陽性となった者の濃厚接触者に対する検査も含めた検査実施人数を都道府県に照会し、回答を得たものを公表している。なお、国内事例のPCR検査実施人数は、疑似症報告制度の枠組みの中で報告が上がった数を計上しており、各自治体で行った全ての検査結果を反映しているものではない（退院時の確認検査などは含まれていない）。",
       "cn": "在《令和2年3月4日版》以后，包括对于与阳性患者有过密切接触的检测人数在内的数据在与各省份的数据进行核对后，得到确认的部分将予以公开。此外，国内确诊的PCR检查实施人数仅计算了属于疑似病症报告规定中的数量，不代表该省份的所有的检查结果数量（如出院时的确认检查等）。",
       "en": "After the Report of March 4, the number of people who conducted the tests, including those who have a close contact with the patients, was referred to the prefectural governments and only confirmed number were published. The number of PCR tests conducted in Japan is the number of reports within the framework of the pseudopathy reporting system, and does not reflect the results of all tests conducted in each municipality (such as confirmation tests at the time of discharge are not included)."
     },
@@ -602,12 +602,12 @@
       "en": "Airport Quarantine"
     },
     {
-      "ja": "死亡（突合作業中）",
+      "ja": "死亡（突合中）",
       "cn": "死亡（确认中）",
       "en": "Death (Confirming)"
     },
     {
-      "ja": "回復（突合作業中）",
+      "ja": "回復（突合中）",
       "cn": "恢复（确认中）",
       "en": "Recovered (Confirming)"
     },
@@ -637,7 +637,7 @@
       "en": "Recovered"
     },
     {
-      "ja": "ダイアモンド・プリンセス号：令和２年３月５日まで延べ人数で公表されていたＰＣＲ検査の結果について、実員数で精査した結果は下記の数値のとおり。<br><br>",
+      "ja": "ダイアモンド・プリンセス号：令和２年３月５日まで延べ人数で公表しましたＰＣＲ検査の結果について、実員数で精査した結果は下記の数値通りです。<br><br>",
       "cn": "钻石公主号：公布到2020年3月5日为止的PCR检查人次数据在进行核查后的人数结果即为如下数值。<br><br>",
       "en": "Diamond Princess: The results of the PCR test, which was announced by the total number of personnel until March 5, 2020, are as follows. <br><br>"
     },
@@ -647,7 +647,7 @@
       "en": "Ref: PCR Test Results of COVID-19 in Passengers and Crew of Cruise Ships under Quarantine at the Port of Yokohama"
     },
     {
-      "ja": "<br><br>※下船した方に対する健康フォローアップ期間中の249人に対するＰＣＲ検査数は含まれていません。",
+      "ja": "<br><br>※下船した方に対する健康フォローアップ期間中の249人に対するPCR検査数は含まれていない。",
       "cn": "<br><br>※在对下船后的249人进行健康跟踪调查期间的进行的PCR检查人数不包含在内",
       "en": "<br><br>※The number of PCR tests on 249 persons during the health follow-up period for disembarked persons was not included."
     },
@@ -657,7 +657,7 @@
       "en": "Diamond Princess: The number of people at the time of departure from Naha Port was 3711. Of these, 1341 are Japanese citizens."
     },
     {
-      "ja": "船会社の医療スタッフとして途中乗船し、PCR陽性となった1名は含めず、チャーター便で帰国した40名を含みます。",
+      "ja": "船会社の医療スタッフとして途中乗船し、PCR陽性となった1名は含めず、チャーター便で帰国した40名を含む。",
       "cn": "不包含一名中途上船的游轮公司医疗人员（PCR显阳性），但包括乘坐包机回国的40名阳性患者在内。",
       "en": "The cruise company\\'s medical staff who was on board en route and tested positive was not included, and 40 patients who returned by air charter were included."
     },
@@ -667,12 +667,12 @@
       "en": "Excludes those returning by air charter."
     },
     {
-      "ja": "この他に、チャーター便で帰国後、3月1日に死亡したとオーストラリア政府が発表した１名がいる。",
+      "ja": "この他にチャーター便で帰国後、3月1日に死亡したとオーストラリア政府が発表した１名がいる。",
       "cn": "据澳洲政府报告，另有一名乘坐包机回国的乘客于3月1日病亡。",
       "en": "According to Australian government, one other patients died on March 1st after returning by air charter."
     },
     {
-      "ja": "感染密度 (km)：『何km四方の土地（可住地面積）に感染者が１人いるか』という指標。",
+      "ja": "感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。",
       "cn": "感染密度 (km)：用于说明每边长为多少km的方形土地（可住地面积）内有1名感染者的指标。",
       "en": "Infection density (km): an indicator of how many km of land (inhabitable area) there is one infected person in a given area."
     },
@@ -682,7 +682,7 @@
       "en": "Tested: Periods in which multiple specimens were counted in duplicate were not included in the total count. The ratio of the number of positives to the number of people tested also represents the ratio only for the period in which duplicates were eliminated. In Chiba Prefecture, 1716 tests were conducted by 20 March, Kanagawa Prefecture 2835 tests including cruise ships were conducted by 22 March, and Osaka Prefecture 2350 tests were conducted by 20 March. The number of people tested in Chiba, Kanagawa, and Osaka prefectures has been recorded since 3/21, 3/23, and 3/21, respectively."
     },
     {
-      "ja": "日均：日次検査人数を週間平均を計算した直近１週間の数値。",
+      "ja": "日均：日次検査人数を週間平均を計算した直近１週間の数値である。",
       "cn": "日均：每日检查人数计算7日移动平均后的最近一周的数值。",
       "en": "Daily (Ave): the value for the most recent week after the seven-day moving average of the number of daily tests conducted."
     },
@@ -782,7 +782,7 @@
       "en": "New confirmed (daily)"
     },
     {
-      "ja": "※この合計値には空港検疫、チャーター便、\n　クルーズ関連の事例などは含まれていません。",
+      "ja": "※こちらの合計値には空港検疫、チャーター便、\n　クルーズ関連の事例などは含まれていない。",
       "cn": "※上诉总计数不包括机场检疫、撤侨包机、\n　游轮相关确诊例。",
       "en": "※ The total do not include airport quarantines,\n  air charter, or cases related to cruises."
     },
@@ -797,7 +797,7 @@
       "en": "1. Data published by MHLW from late March to May 8"
     },
     {
-      "ja": "マイナスの値について：この数値は全て、厚労省により毎日発表されるデータに基づいています。厚労省の発表基準変更（5月8日）に加え、各自治体の報告間に生じた齟齬などによってデータに不整合性が生じることがありますが、当サイトは修正せず、厚労省が発表した数値をそのまま可視化しています。",
+      "ja": "マイナスの値について：こちらの数値は全て厚労省が毎日発表されている数値である。厚労省の発表基準変更（5月8日）たったり、自治体からの報告と齟齬があったりする時、データの不整合性が生じるが、当サイトは修正せずそのまま厚労省が発表した数値を可視化しております。",
       "cn": "关于出现的负值：本表所展示的皆为厚劳省每天所发布的原始数据。由于厚劳省的公布标准发生变更（5月8日）或者是其数值与自治体的报告有数据出入时，则会发生数据一致性问题，本站不对此做任何修正仅将厚劳省每日所发布的数据进行原封不动地可视化。",
       "en": "About the negative values: The table shows the raw data published daily by the MHLW. Due to the change of the publication standards of the MHLW (May 8) or the discrepancy between the data reported by municipalities, there will be data consistency problems, and we does not make any corrections to this, but only visualizes the data published by the MHLW."
     },
@@ -1592,17 +1592,17 @@
       "en": "Positive Rate"
     },
     {
-      "ja": "チャーター便を除く国内事例については、令和2年5月8日公表分から、データソースが従来の厚生労働省が把握した個票を積み上げたものから、各自治体がウェブサイトで公表している数等を積み上げたものに変更されました。また、一部自治体については件数を計上しているため、実際の人数より多くなっています。",
+      "ja": "チャーター便を除く国内事例については、令和2年5月8日公表分から、データソースを従来の厚生労働省が把握した個票を積み上げたものから、各自治体がウェブサイトで公表している数等を積み上げたものに変更した。また、一部自治体について件数を計上しているため、実際の人数より過大である。",
       "cn": "自2020年5月8日的报告起，除撤侨包机以外的国内确诊例外，统计方式从厚生劳动省所掌握的确诊例信息进行汇总变更为以各自治体官网所发表的内容为准进行汇总。此外，部分自治体以检测次数为标准进行统计，因此存在数据比实际人数多的现象。",
       "en": "From May 8, 2020, with respect to domestic cases excluding air charters, the data source was changed from the individual data obtained by the MHLW to the number of cases published by each municipality on its website. In addition, because the number of tests conducted rather than cases (persons tested) is reported for some municipalities, the figures are larger than the number of persons tested."
     },
     {
-      "ja": "令和2年5月8日公表分から、データソースが従来の厚生労働省が把握した個票を積み上げたものから、各自治体がウェブサイトで公表している数等を積み上げたものに変更されました。",
+      "ja": "令和2年5月8日公表分から、データソースを従来の厚生労働省が把握した個票を積み上げたものから、各自治体がウェブサイトで公表している数等を積み上げたものに変更した。",
       "cn": "自2020年5月8日的报告起，除撤侨包机以外的国内确诊例外，统计方式从厚生劳动省所掌握的确诊例信息进行汇总变更为以各自治体官网所发表的内容为准进行汇总。",
       "en": "From May 8, 2020, the data source was changed from the individual data obtained by the MHLW to the number of cases published by each municipality on its website."
     },
     {
-      "ja": "PCR検査実施人数は、一部自治体について件数を計上しているため、実際の人数より多くなっています。",
+      "ja": "PCR検査実施人数は、一部自治体について件数を計上しているため、実際の人数より過大である。",
       "cn": "部分自治体以检测次数为标准进行统计，因此会出现所统数据比实际检测人数多的现象。",
       "en": "Because the number of tests conducted rather than cases (persons tested) is reported for some municipalities, the figures are larger than the number of persons tested."
     },
@@ -1632,12 +1632,12 @@
       "en": "Under developing"
     },
     {
-      "ja": "3月28日以後、厚労省の集計方法が変更され、無症状患者の内訳が公表されなくなったため、入院している無症状患者数についての情報が無くなりました。当サイトではグラフを作成するため、無症状者は一律入院する必要がないと仮定した上で、グラフを作成しています。そのため、該当グラフはあくまで参考です。",
+      "ja": "3月28日以後、厚労省集計方法が変更あり、無症状患者の内訳は公表しないため、無症状患者がどのぐらい入院しているかの情報がなくなりました。こちらではグラフ作成するため、無症状者は一律入院必要ないという仮説を設定した上で、グラフを作りました。よって、該当グラフはあくまで参考です。",
       "cn": "3月28日以后由于厚劳省代汇总方法发生了变化，不再公布无症状患者的详细数据，因此无法得知有多少无症状患者处于住院状态。在此为了绘图方便，进行了无症状患者一律无需住院的假设后才能得到本图。因此该图仅供参考。",
       "en": "After March 28, details of asymptomatic patients will no longer be published due to changes in the method of aggregation by the Ministry of Health, Labour and Welfare, so it is not possible to know how many asymptomatic patients are in hospital. This graph is available only after the assumption that all asymptomatic patients do not need to be hospitalized has been made for the sake of drawing convenience. The figure is therefore for reference only."
     },
     {
-      "ja": "4月22日以後、厚労省の集計方法が変更され、退院者・死亡者数には突合作業中の数値が含まれており、分母（ＰＣＲ検査陽性者）とは一致しないという説明がありました。当サイトではグラフを作成するため、従来通り確定した人数のみでグラフを作成しています。そのため、該当グラフはあくまで参考です。",
+      "ja": "4月22日以後、厚労省集計方法が変更あり、退院者、死亡者数に突合作業中の数値が含まれ、分母（PCR陽性者）と一致しないという説明がありました。こちらではグラフの作成するため、今まで通り確定した人数のみでグラフを作成します。よって、該当グラフはあくまで参考です。",
       "cn": "4月22日以后由于厚劳省代汇总方法发生了变化，汇总中所报的出院死亡人数包含了正在进行核对的数目在内，合计值和PCR阳性患者总数会存在不一致。本图依然采用一直以来的核实数据进行绘制。因此该图仅供参考。",
       "en": "After April 22, due to changes in the method of aggregation by the Ministry of Health, Labour and Welfare, the number of hospital discharges and death reported includes the number of patients undergoing reconciliation, and there is a discrepancy between the pooled values and the total number of PCR-positive. This figure is still drawn using the data that have been verified. The figure is therefore for reference only."
     },
@@ -1692,7 +1692,7 @@
       "en": "New discharged (daily)"
     },
     {
-      "ja": "※突合作業中の%s名退院者はグラフに含まれていないことを予めご了承ください。",
+      "ja": "※突合作業中の%s名退院者はグラフに含まれていないことを予めご了承してください。",
       "cn": "※核实中的%s名出院者的数据不包含在该图中。",
       "en": "※Please note that the graph does not include the %s discharged patients during the confirming."
     },
@@ -1707,7 +1707,7 @@
       "en": "Symptoms confirming."
     },
     {
-      "ja": "確定済みの退院者数は%s名、他にも%s名の退院者は個々の陽性者との突合作業中。従って、入退院等の状況の合計とPCR検査陽性者数は必ずしも一致しない。<br><br>※令和２年４月２２日から厚労省公開している退院者数の基準が変わりました。",
+      "ja": "確定済みの退院者数は%s名、他にも%s名の退院者は個々の陽性者との突合作業中。従って、入退院等の状況の合計とPCR検査陽性者数は一致しない。<br><br>※令和２年４月２２日から厚労省公開している退院者数の基準が変わりました。",
       "cn": "已核实出院%s人，另有%s名出院者的数据正在与阳性患者数据进行核对中。因此入出院的数量总计与PCR阳性患者数存在不一致<br><br>※2020年4月22日以后厚劳省公开的出院数目标准发生了变更。",
       "en": "The number of confirmed discharges is %s and %s others are in the process of being matched against individual positives. Therefore, the total number of admissions and discharges does not correspond to the number of positive PCR test positive. <br><br>※The standard for the number of patients discharged from the Ministry of Health, Labour and Welfare has changed since April 22, 2020."
     },
@@ -1722,17 +1722,17 @@
       "en": "Reverse"
     },
     {
-      "ja": "凡例をクリックすると表示・非表示の切替ができます。",
+      "ja": "凡例クリックすると表示・非表示の切替ができます。",
       "cn": "点击数据项的图例可以在显示与隐藏间切换。",
       "en": "Click on the legend to switch between display and hide."
     },
     {
-      "ja": "こちらは%sの発生状況をまとめたページです。厚労省のまとめより早く状況を把握できますが、県の集計時間は厚労省の発表時間と完全に一致しているわけではないため、タイムラグによる数値の違いが生じる可能性もあります。予めご注意ください。また、速報では陰性から再び陽性になった人は再計算に含めていないため、自治体発表の陽性者数とは数値が異なる場合があります。",
+      "ja": "こちらは%sの発生状況をまとめたページです。厚労省のまとめより早く状況を把握できますが、県の集計時間は厚労省の発表時間と完全に一致していないため、タイムラグによる数値の違いが生じる可能性もありますので、予めご注意ください。また、速報では陰性から再び陽性になった人は再計算に含めていないため、自治体発表の陽性者数と数値が異なる場合があります。",
       "cn": "本页面为%s的疫情发生状况的汇总页面。虽然能比厚劳省的数据能够更先一步了解到最新情况，但由于县的汇总时间和厚劳省的发布时间存在一定的时间差，因此可能会导致数值上的些许差异，敬请注意。此外，速报中的确诊人数不对复阳性患者进行重复计算，因此存在与地方政府所报人数在总数上有些许差别。",
       "en": "Here is a summary of the outbreak in %s. However, please note that the county's aggregation time does not completely coincide with the announcement time of the Ministry of Health, Labour and Welfare, so there may be a difference in the figures due to the time lag. In addition, the realtime number does not include those who have gone from negative to positive again, so the numbers may differ from the one announced by the local government."
     },
     {
-      "ja": "こちらは%sの発生状況をまとめたページです。厚労省のまとめより早く状況を把握できますが、道の集計時間は厚労省の発表時間と完全に一致しているわけではないため、タイムラグによる数値の違いが生じる可能性もあります。予めご注意ください。また、速報では陰性から再び陽性になった人は再計算に含めていないため、自治体発表の陽性者数とは数値が異なる場合があります。",
+      "ja": "こちらは%sの発生状況をまとめたページです。厚労省のまとめより早く状況を把握できますが、道の集計時間は厚労省の発表時間と完全に一致していないため、タイムラグによる数値の違いが生じる可能性もありますので、予めご注意ください。また、速報では陰性から再び陽性になった人は再計算に含めていないため、自治体発表の陽性者数と数値が異なる場合があります。",
       "cn": "本页面为%s的疫情发生状况的汇总页面。虽然能比厚劳省的数据能够更先一步了解到最新情况，但由于道的汇总时间和厚劳省的发布时间存在一定的时间差，因此可能会导致数值上的些许差异，敬请注意。此外，速报中的确诊人数不对复阳性患者进行重复计算，因此存在与地方政府所报人数在总数上有些许差别。",
       "en": "Here is a summary of the outbreak in %s. However, please note that the county's aggregation time does not completely coincide with the announcement time of the Ministry of Health, Labour and Welfare, so there may be a difference in the figures due to the time lag. In addition, the realtime number does not include those who have gone from negative to positive again, so the numbers may differ from the one announced by the local government."
     },
@@ -1792,7 +1792,7 @@
       "en": "Log"
     },
     {
-      "ja": "感染者が10人以上になってから経過した日数",
+      "ja": "感染者が10人以上から経過した日数",
       "cn": "确诊人数到达10人后经过的天数",
       "en": "Number of days that have elapsed since 10 confirmed cases"
     },
