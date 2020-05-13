@@ -91,7 +91,7 @@ tabPanel(
       bsTooltip(
         id = "activePatients",
         placement = "top",
-        title = i18n$t("分母には死亡者、チャーター便で帰国したクルーズ船の乗客40名が含まれていません。")
+        title = i18n$t("分母には死亡者、チャーター便で帰国したクルーズ船の乗客40名は含まれていません。")
       ),
       tagList(icon("shield-alt"), tags$b(i18n$t("感染者報告なし"))),
       uiOutput("saveArea"),
