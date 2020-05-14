@@ -412,7 +412,7 @@
       "en": "New daily"
     },
     {
-      "ja": "日数の計算式は以下になります：",
+      "ja": "日数の計算式は以下のとおりです：",
       "cn": "天数计算方法如下式所示：",
       "en": "The number of days is calculated by the following formula: "
     },
@@ -537,7 +537,7 @@
       "en": "New Recovered (daily)"
     },
     {
-      "ja": "令和2年4月22日から厚労省公開している退院者、死亡者数に突合作業中の人数が含まれていて、入退院等の状況の合計とPCR検査陽性者数は一致しないことが明らかにしました。",
+      "ja": "令和2年4月22日から厚労省が公開している退院者・死亡者数には突合作業中の人数が含まれているため、入退院等の状況の合計とPCR検査陽性者数は一致していません。",
       "cn": "注：2020年4月22日以后厚劳省所发表等出院者、死亡者数据中包含了正处于核实当中数据，导致住出院人数与总体的PCR检测阳性人数合计不相等。",
       "en": "Note: The data on discharges and deaths published by the MHLW after April 22, 2020 include data that are in the process of being verified, resulting in a discrepancy between the number of hospital discharges and the overall number of positive PCR tests."
     },

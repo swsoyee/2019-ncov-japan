@@ -168,7 +168,7 @@ output$confirmedHeatmapWrapper <- renderUI({
 output$confirmedHeatmapDoublingTimeOptions <- renderUI({
   if (input$confirmedHeatmapSelector == "confirmedHeatmapDoublingTime") {
     tagList(
-      tags$p(i18n$t("日数の計算式は以下になります：")),
+      tags$p(i18n$t("日数の計算式は以下のとおりです：")),
       withMathJax("$$7log2 \\div log(\\frac{day_7N}{day_0N})$$"),
       helpText(i18n$t("N：累積感染者数"))
     )
