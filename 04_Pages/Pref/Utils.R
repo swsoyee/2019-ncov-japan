@@ -83,7 +83,8 @@ createValueBox <-
         diffIcon <- icon('lock')
       }
     } else {
-      diff <- '-'
+      diff <- 0
+      diffIcon <- icon('lock')
     }
     
     return(
