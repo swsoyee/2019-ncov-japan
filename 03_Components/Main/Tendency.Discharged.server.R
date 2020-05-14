@@ -127,7 +127,7 @@ output$dischargeSummary <- renderUI({
   tagList(tags$ol(
     tags$li(
       i18n$t(
-        "令和2年4月22日から厚労省公開している退院者、死亡者数に突合作業中の人数が含まれていて、入退院等の状況の合計とPCR検査陽性者数は一致しないことが明らかにしました。"
+        "令和2年4月22日から厚労省が公開している退院者・死亡者数には突合作業中の人数が含まれているため、入退院等の状況の合計とPCR検査陽性者数は一致していません。"
       ),
       tags$a(href = "https://www.mhlw.go.jp/stf/newpage_10989.html", icon("external-link"))
     ),
