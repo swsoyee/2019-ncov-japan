@@ -40,5 +40,6 @@ Due to the complexity of the data, differences in aggregation time periods or st
 
 - R-related technical support: [@uribo](https://github.com/uribo)  
 - Data automation updates: [@emckk](https://github.com/emc-kk)  
+- Japanese Localization: [@kilisame4](https://github.com/kilisame4)  
 
 All interested parties are welcome to join this open source project!

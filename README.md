@@ -40,6 +40,7 @@
 
 - Rの技術サポート：[@uribo](https://github.com/uribo)  
 - データの自動化更新：[@emckk](https://github.com/emc-kk)  
+- 日本語ローカライゼーション：[@kilisame4](https://github.com/kilisame4)  
 
 協力できる有志がいれば、お気軽にご連絡ください。Rのことがわからなくても貢献できることは必ずありますmm。  
 > 例えば日本語の文言の修正、データセットの収集など。
