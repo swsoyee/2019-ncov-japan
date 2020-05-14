@@ -54,7 +54,7 @@ output$confirmedHeatmap <- renderEcharts4r({
       function(params) {
         console.log(params)
         return(`${params.value[0]}<br>${params.value[1]}：${Math.round(params.value[2])}",
-        i18n$t("日"),
+        i18n$t("名"),
         "`)
       }
     "
