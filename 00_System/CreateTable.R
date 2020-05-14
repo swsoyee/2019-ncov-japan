@@ -321,16 +321,16 @@ alertPref <-
     "東京",
     "大阪",
     "北海道",
-    "茨城",
+    # "茨城",
     "埼玉",
     "千葉",
     "神奈川",
-    "石川",
-    "岐阜",
-    "愛知",
+    # "石川",
+    # "岐阜",
+    # "愛知",
     "京都",
-    "兵庫",
-    "福岡"
+    "兵庫" #,
+    # "福岡"
   )
 mergeDt[!(region %in% alertPref), region := paste0("<span style='float:right;'>", region, "</span>")]
 mergeDt[region %in% alertPref, region := paste0("<i class=\"fa fa-exclamation-triangle\"></i>", "<span style='float:right;'>", region, "</span>")]
