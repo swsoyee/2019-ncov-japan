@@ -27,49 +27,7 @@ tabPanel(
           ),
           column(
             width = 6,
-            tags$span(
-              dropdownButton(
-                tags$h4(i18n$t("表示設定")),
-                materialSwitch(
-                  inputId = "showPopupOnMap",
-                  label = i18n$t("日次増加数のポップアップ"),
-                  status = "danger",
-                  value = T
-                ),
-                materialSwitch(
-                  inputId = "replyMapLoop",
-                  label = i18n$t("ループ再生"),
-                  status = "danger",
-                  value = T
-                ),
-                dateRangeInput(
-                  inputId = "mapDateRange",
-                  label = i18n$t("表示日付"),
-                  start = byDate$date[nrow(byDate) - 15],
-                  end = byDate$date[nrow(byDate)],
-                  min = byDate$date[1],
-                  max = byDate$date[nrow(byDate)],
-                  separator = " ~ ",
-                  language = "ja"
-                ),
-                sliderInput(
-                  inputId = "mapFrameSpeed",
-                  label = i18n$t("再生速度（秒/日）"),
-                  min = 0.5,
-                  max = 3,
-                  step = 0.1,
-                  value = 0.8
-                ),
-                circle = F,
-                inline = T,
-                status = "danger",
-                icon = icon("gear"),
-                size = "sm",
-                width = "300px",
-                tooltip = tooltipOptions(title = i18n$t("表示設定"), placement = "top")
-              ),
-              style = "float:right;"
-            )
+            uiOutput("echartsMapPlaySetting")
           ),
         ),
         style = "margin-top:10px;"
