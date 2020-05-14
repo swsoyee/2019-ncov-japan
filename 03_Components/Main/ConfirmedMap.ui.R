@@ -75,6 +75,7 @@ tabPanel(
         style = "margin-top:10px;"
       ),
       uiOutput("comfirmedMapWrapper") %>% withSpinner(proxy.height = "550px"),
+      uiOutput("selectMapBottomButton"),
       # TODO もし全部の都道府県に感染者報告がある場合、こちらのバーを再検討する
       progressBar(
         id = "activePatients",

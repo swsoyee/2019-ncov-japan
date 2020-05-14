@@ -14,15 +14,36 @@ output$comfirmedMapWrapper <- renderUI({
   }
 })
 
+output$selectMapBottomButton <- renderUI({
+  if (input$switchMapVersion == T) {
+    radioGroupButtons(
+      inputId = "selectMapBottomButton",
+      label = NULL,
+      justified = T,
+      choiceNames = c(
+        paste(icon("creative-commons-sampling-plus"), i18n$t("現在")),
+        paste(icon("signal"), i18n$t("累積")),
+        paste(icon("ambulance"), i18n$t("重症"))
+      ),
+      choiceValues = c("active", "total", "severe"),
+      status = "danger"
+    )
+  } else {
+    tags$p()
+  }
+})
+
+simpleMapDataset <- reactive({
+  dt <- merge(x = mapData[date == max(unique(mapData$date), na.rm = T)],
+              y = mapData[date == as.Date(max(unique(mapData$date), na.rm = T)) - 1],
+              by = c("ja", "full_ja", "en", "lat", "lng", "regions"), no.dups = T, sort = F)
+  dt[mhlwSummary[日付 == max(日付)], `:=` (total = count.x, severe = i.重症者, active = i.陽性者 - i.退院者,
+                                          diff = (count.x - count.y)), on = c(ja = "都道府県名")]
+  dt
+})
+
 output$echartsSimpleMap <- renderEcharts4r({
-  mapDt <- cumSumConfirmedByDateAndRegion()
-  # mapDt <- mapData # TEST
-  today <- max(unique(mapDt$date), na.rm = T)
-  yesterday <- as.Date(today) - 1
-  totalData <- mapDt[date == today]
-  yesterdayData <- mapDt[date == yesterday]
-  dt <- merge(x = totalData, y = yesterdayData, by = c("ja", "full_ja", "en", "lat", "lng", "regions"), no.dups = T, sort = F)
-  dt[, diff := (count.x - count.y)]
+  dt <- simpleMapDataset()
   # 本日増加分
   todayTotalIncreaseNumber <- sum(dt$diff, na.rm = T)
   subText <- i18n$t("各都道府県からの新規報告なし")
@@ -38,7 +59,7 @@ output$echartsSimpleMap <- renderEcharts4r({
   map <- dt %>%
     e_charts(translatedRegionName) %>%
     e_map_register("japan", japanMap) %>%
-    e_map(count.x,
+    e_map_(input$selectMapBottomButton,
       map = "japan",
       name = "感染確認数",
       nameMap = useMapNameMap(languageSetting),
@@ -56,8 +77,8 @@ output$echartsSimpleMap <- renderEcharts4r({
       ),
       roam = "move"
     ) %>%
-    e_visual_map(
-      count.x,
+    e_visual_map_(
+      input$selectMapBottomButton,
       top = "20%",
       left = "0%",
       inRange = list(color = c("#DADADA", "#FFCEAB", "#FF9D57", "#FF781E", "#EA5432", "#C02B11", "#8C0B00")),
@@ -77,7 +98,11 @@ output$echartsSimpleMap <- renderEcharts4r({
     e_tooltip(formatter = htmlwidgets::JS(paste0('
       function(params) {
         if(params.value) {
-          return(`${params.name}<br>', i18n$t("累積感染者数："), '${params.value}`)
+          return(`${params.name}<br>', 
+          switch(input$selectMapBottomButton, 
+            active = i18n$t("現在感染者数："),
+            total = i18n$t("累積感染者数："),
+            severe = i18n$t("現在重症者数：")), '${params.value}`)
         } else {
           return("");
         }
@@ -89,23 +114,25 @@ output$echartsSimpleMap <- renderEcharts4r({
     )
 
   # 本日増加分をプロット
-  newToday <- dt[diff > 0]
-  for (i in 1:nrow(newToday)) {
-    map <- map %>%
-      e_mark_point(
-        data = list(
-          name = newToday[i]$ja,
-          coord = c(newToday[i]$lng, newToday[i]$lat),
-          symbolSize = c(7, newToday[i]$diff)
-        ),
-        symbol = "triangle",
-        symbolOffset = c(0, "-50%"),
-        itemStyle = list(
-          color = "#520e05",
-          shadowColor = "white",
-          shadowBlur = 0
+  if (input$selectMapBottomButton == "total") {
+    newToday <- dt[diff > 0]
+    for (i in 1:nrow(newToday)) {
+      map <- map %>%
+        e_mark_point(
+          data = list(
+            name = newToday[i]$ja,
+            coord = c(newToday[i]$lng, newToday[i]$lat),
+            symbolSize = c(7, newToday[i]$diff)
+          ),
+          symbol = "triangle",
+          symbolOffset = c(0, "-50%"),
+          itemStyle = list(
+            color = "#520e05",
+            shadowColor = "white",
+            shadowBlur = 0
+          )
         )
-      )
+    }
   }
   map
 })
