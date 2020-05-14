@@ -57,6 +57,11 @@
       "en": "Iwate COVID-19 Information (Unofficial)"
     },
     {
+      "ja": "宮城県（非公式）新型コロナウイルス感染症対策サイト",
+      "cn": "宫城县（非官方）新型冠状病毒肺炎对策网站",
+      "en": "Miyagi COVID-19 Information (Unofficial)"
+    },
+    {
       "ja": "宮城県",
       "cn": "宫城县",
       "en": "Miyagi"
@@ -432,6 +437,36 @@
       "en": "Positive"
     },
     {
+      "ja": "検査実施件数",
+      "cn": "检测次数",
+      "en": "Number of Tests"
+    },
+    {
+      "ja": "検査実施件数累計",
+      "cn": "合计检测次数",
+      "en": "Number of Tests (total)"
+    },
+    {
+      "ja": "検査実施件数・陽性者数",
+      "cn": "检测次数和阳性人数",
+      "en": "Number of Tests & Positive"
+    },
+    {
+      "ja": "\n注1. 検査開始日：令和２年１月３０日（木）１９時",
+      "cn": "\n注1、检测开始时间：2020年1月30日（周四）19时",
+      "en": "\n* Test Start Date: 7pm, 30 Jan 2020"
+    },
+    {
+      "ja": "注2. PCR検査実施件数は，帰国者・接触者外来を通じて検査を行った数のみを計上しており，退院時の確認検査などは含まれておりません。",
+      "cn": "注2、PCR检测次数仅包括通过归国者、接触者商谈途径进行的检测数，出院时的确认检测不包含在内。",
+      "en": "* The number of PCR tests includes only the number of tests conducted through\n   consultation services for returnees and have been exposed to confirmed persons, \n  and does not include confirmation tests at the time of discharge."
+    },
+    {
+      "ja": "新型コロナウイルス感染症相談窓口（コールセンター）対応状況",
+      "cn": "新型冠状病毒肺炎咨询热线应对情况",
+      "en": "Response of COVID-19 Call Center"
+    },
+    {
       "ja": "検査実施数累計",
       "cn": "检测数累计",
       "en": "Test Conducted (total)"
@@ -580,6 +615,11 @@
       "ja": "帰国者・接触者相談（日次）",
       "cn": "归国者・接触者咨询（每日）",
       "en": "Consultations at returnee/contact (daily)"
+    },
+    {
+      "ja": "帰国者・接触者相談（累計）",
+      "cn": "归国者・接触者咨询（累计）",
+      "en": "Consultations at returnee/contact (total)"
     },
     {
       "ja": "死亡者",
