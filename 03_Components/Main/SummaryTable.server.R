@@ -128,7 +128,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     colorRampPalette(c("#FFFFFF", "#6B7989"))(length(breaksPerMillion) + 1)
 
   datatable(
-    data = dt[, c(1, 8, 12, 7, 9, 14, 15, 10), with = F],
+    data = dt[, c(1, 8, 12, 7, 9, 14, 15, 10), with = F][order(-totalDischarged)],
     colnames = c(
       i18n$t("自治体"),
       i18n$t("内訳"),
@@ -271,9 +271,8 @@ output$confirmedByPrefTable <- renderDataTable({
     seq(0, ceiling(max(dt$perArea[!is.infinite(dt$perArea)], na.rm = T)))
   colorsPerArea <-
     colorRampPalette(c(darkYellow, "#FFFFFF"))(length(breaksPerArea) + 1)
-
   datatable(
-    data = dt[, c(1, 3, 4, 6, 11, 13, 15, 16), with = F],
+    data = dt[, c(1, 3, 4, 6, 11, 13, 15, 16), with = F][order(-today, -totalToday)],
     colnames = c(
       i18n$t("自治体"),
       i18n$t("新規"),
@@ -438,7 +437,7 @@ output$testByPrefTable <- renderDataTable({
     colorRampPalette(c(lightRed, darkRed))(length(breaksPositiveRate) + 1)
 
   datatable(
-    data = dt[, .(region, 検査人数, 検査数推移, 前日比, 週間平均移動, 百万人あたり, 陽性率推移, 陽性率, group)],
+    data = dt[, .(region, 検査人数, 検査数推移, 前日比, 週間平均移動, 百万人あたり, 陽性率推移, 陽性率, group)][order(-前日比, -検査人数)],
     colnames = c(
       i18n$t("自治体"),
       i18n$t("検査人数"),
