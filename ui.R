@@ -73,6 +73,11 @@ shinyUI(
         badgeColor = "black"
       ),
       menuItem(
+        i18n$t("ECMOnet"),
+        tabName = "ecmo",
+        icon = icon("hospital-alt")
+      ),
+      menuItem(
         i18n$t("状況分析"),
         tabName = "academic",
         icon = icon("eye"),
@@ -173,6 +178,14 @@ shinyUI(
           tabName = "caseMap",
           source(
             file = paste0(PAGE_PATH, "CaseMap.R"),
+            local = T,
+            encoding = "UTF-8"
+          )$value
+        ),
+        tabItem(
+          tabName = "ecmo",
+          source(
+            file = paste0(PAGE_PATH, "/ECMO/ECMO.ui.R"),
             local = T,
             encoding = "UTF-8"
           )$value

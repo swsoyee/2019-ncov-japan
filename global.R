@@ -326,6 +326,11 @@ GLOBAL_VALUE <- reactiveValues(
   signateDetail.ageGenderData = fread(file = paste0(DATA_PATH, "Generated/genderAgeData.csv")),
   signateLink = NULL,
   signatePlace = fread(file = paste0(DATA_PATH, "resultSignatePlace.csv")),
+  ECMO = list(
+    ecmoUising = NULL,
+    ecmo = NULL,
+    artificialRespirators = NULL
+  ),
   Academic = list(
     onset_to_confirmed_map = NULL
   ),
