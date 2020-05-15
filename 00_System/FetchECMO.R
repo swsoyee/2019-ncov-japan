@@ -6,7 +6,7 @@ url <- "https://covid19.jsicm.org"
 # page <- read_html(url)
 # page %>% html_nodes("script")
 # list.files(url)
-source <- readLines("https://covid19.jsicm.org/_nuxt/7cd6dc3800dca6449b42.js")
+source <- readLines("https://covid19.jsicm.org/_nuxt/a61a103ff0db7be8db27.js")
 
 jsonData <- str_extract_all(gsub('\"', "", source), "JSON.parse\\(.+?\\)")[[1]]
 
@@ -41,4 +41,4 @@ ecmoSource <- gsub("\\}", ",", str_extract_all(jsonData[3], "date.+?\\}")[[1]])
 ecmoData <- mapply(function(x) do.call(rbind.data.frame, strsplit(strsplit(x, ",")[[1]], ":")), ecmoSource, SIMPLIFY = F)
 ecmoData <- data.table(t(mapply(function(x) x[, 2], ecmoData, USE.NAMES = F)))
 ecmoData <- ecmoData[, .(日付 = V1, 実施中 = V2, 死亡 = V3, 離脱 = as.numeric(V6) + as.numeric(V7))]
-fwrite(x = ecmoData, file = paste0(DATA_PATH, "Collection/ecmo.csv"))
+fwrite(x = unique(ecmoData), file = paste0(DATA_PATH, "Collection/ecmo.csv"))
