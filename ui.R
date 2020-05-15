@@ -75,7 +75,7 @@ shinyUI(
       menuItem(
         i18n$t("ECMOnet"),
         tabName = "ecmo",
-        icon = icon("hospital-alt")
+        icon = icon("hospital")
       ),
       menuItem(
         i18n$t("状況分析"),
