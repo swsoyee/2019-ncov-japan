@@ -108,7 +108,7 @@ output$artificialRespirators <- renderUI({
         3,
         tags$br(),
         tags$b(icon("exclamation-circle"), i18n$t("注意事項")),
-        blockQuote(tags$small("これらのグラフはCRISISに申告された人工呼吸が必要な重症患者さんの推移を地方別、都道府県別に示すものです。現在精度を上げるべく努力しております。全体の流れは把握していると自負しておりますが、かならずしも正確な数が示されている訳ではないことをご理解ください。COVID-19では長期の人工呼吸となる患者さんが多い傾向があります。このあたりも今後このコラムでお示ししていけるように計画しております。ーー2020/5/1記載"))
+        blockQuote(tags$small(i18n$t("これらのグラフはCRISISに申告された人工呼吸が必要な重症患者さんの推移を地方別、都道府県別に示すものです。現在精度を上げるべく努力しております。全体の流れは把握していると自負しておりますが、かならずしも正確な数が示されている訳ではないことをご理解ください。COVID-19では長期の人工呼吸となる患者さんが多い傾向があります。このあたりも今後このコラムでお示ししていけるように計画しております。ーー2020/5/1記載")))
       ),
       column(3, echarts4rOutput("artificialRespirators_1"), style = style),
       column(3, echarts4rOutput("artificialRespirators_2"), style = style),

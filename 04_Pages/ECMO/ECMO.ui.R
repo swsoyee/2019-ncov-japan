@@ -2,12 +2,12 @@ fluidRow(
   boxPlus(
     width = 12, closable = F,
     title = tagList(icon("chart-line"), i18n$t("COVID-19 重症患者状況　日本COVID-19対策ECMOnet集計")),
-    tags$p("このページは、", 
+    tags$p(i18n$t("このページは、"), 
            tags$a(
              icon("external-link-alt"), 
              i18n$t("COVID-19 重症患者状況　日本COVID-19対策ECMOnet集計"), 
              href = "https://covid19.jsicm.org/"), 
-           "のデータ（文言を含む）を一覧できるように、若干異なる可視化方法でデータを表現しています。"
+           i18n$t("のデータ（文言を含む）を一覧できるように、若干異なる可視化方法でデータを表現しています。")
            ),
     blockQuote(
       tags$small(
