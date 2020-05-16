@@ -2000,6 +2000,11 @@
       "ja": "現在患者数：厚労省のデータをもとにして計算しているため、速報部分の感染者数が含まれていません。",
       "cn": "现存患者数：该数值为根据厚劳省所发布的数据进行计算得出，因此速报部分的确诊人数不包含在内。",
       "en": "Active: Since the calculation is based on data from the MHLW, the real-time number are not included."
+    },
+    {
+      "ja": "ECMOnet・重症患者状況へ",
+      "cn": "前往ECMOnet重症患者情况",
+      "en": "Go to ECMOnet page"
     }
   ]
 }
