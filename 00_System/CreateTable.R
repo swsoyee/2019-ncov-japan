@@ -311,7 +311,7 @@ mergeDt[, `:=` (コード = NULL, 都道府県 = NULL, 可住地面積 = NULL, �
 
 pcrByRegionToday[, `:=` (dischargedDiff = NULL)]
 mergeDt <- merge(mergeDt, pcrByRegionToday, by.x = "region", by.y = "都道府県名", all.x = T, no.dups = T, sort = F)
-active <- mergeDt$陽性者 - mergeDt$退院者 - mergeDt$死亡者
+active <- mergeDt$陽性者 - mergeDt$退院者 - ifelse(is.na(mergeDt$死亡者), 0, mergeDt$死亡者)
 mergeDt[, `:=` (日付 = NULL, 陽性者 = NULL, 入院中 = NULL, 退院者 = NULL, 死亡者 = NULL, 確認中 = NULL, 分類 = NULL)]
 mergeDt[, 百万人あたり := round(検査人数 / (population / 1000000), 0)]
 mergeDt[, population := NULL]
