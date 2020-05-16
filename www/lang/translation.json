@@ -1932,9 +1932,19 @@
       "en": "Withdrawal"
     },
     {
+      "ja": "COVID-19 重症患者状況　日本COVID-19対策ECMOnet集計",
+      "cn": "COVID-19 重症患者情况　日本COVID-19对策ECMOnet统计",
+      "en": "COVID-19 Severe case status  COVID-19 Measures of ECMOnet in Japan"
+    },
+    {
+      "ja": "COVID-19重症者における人工呼吸器装着数の推移",
+      "cn": "COVID-19重症患者的人工呼吸机使用情况",
+      "en": "Trends in the Usage of Artificial Respirators in COVID-19 Severe Case"
+    },
+    {
       "ja": "COVID-19重症者におけるECMO装着数の推移",
-      "cn": "COVID-19重症患者的ECMO佩戴情况",
-      "en": "Usage of ECMO in COVID-19 Serious Case"
+      "cn": "COVID-19重症患者的ECMO使用情况",
+      "en": "Trends in the Usage of ECMO in COVID-19 Severe Case"
     },
     {
       "ja": "ECMO装着の方の多くは人工呼吸器も装着しておられるので上記と一部重複のカウントとなります。CRISISに申告のあったECMOの数の推移です。その日のECMOの稼働数とお考えください。CRISISに加入されずECMOを行っている施設も数施設ございます。ーー2020/5/1記載",
