@@ -314,16 +314,16 @@ output$confirmedByPrefTable <- renderDataTable({
     options = list(
       paging = F,
       rowGroup = list(dataSrc = 8),
-      dom = "Bt",
+      dom = "t",
       scrollY = "540px",
       scrollX = T,
-      buttons = list(
-        list(
-          extend = 'colvis', 
-          columns = c(4, 5, 6, 7, 9),
-          text = i18n$t("カラム表示")
-          )
-        ),
+      # buttons = list(
+      #   list(
+      #     extend = 'colvis', 
+      #     columns = c(4, 5, 6, 7, 9),
+      #     text = i18n$t("カラム表示")
+      #     )
+      #   ),
       columnDefs = list(
         list(
           className = "dt-center",
