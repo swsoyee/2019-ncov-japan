@@ -338,9 +338,16 @@ alertPref <-
     "兵庫" #,
     # "福岡"
   )
-mergeDt[!(region %in% alertPref), region := paste0("<span style='float:right;'>", region, "</span>")]
-mergeDt[region %in% alertPref, region := paste0("<i class=\"fa fa-exclamation-triangle\"></i>", "<span style='float:right;'>", region, "</span>")]
 
+for(i in seq(nrow(mergeDt))) {
+  if (mergeDt[i]$region %in% alertPref) {
+    mergeDt[i]$region <- paste0("<i style='color:#DD4B39;' class=\"fa fa-exclamation-triangle\"></i>", "<span style='float:right;'>", mergeDt[i]$region, "</span>")
+  } else if (mergeDt[i]$active == 0 && !is.na(mergeDt[i]$active)) {
+    mergeDt[i]$region <- paste0("<i style='color:#01A65A;' class=\"fa fa-check-circle\"></i>", "<span style='float:right;'>", mergeDt[i]$region, "</span>")
+  } else {
+    mergeDt[i]$region <- paste0("<span style='float:right;'>", mergeDt[i]$region, "</span>")
+  }
+}
 
 # 自治体名前ソート用
 prefNameId <- sprintf('%02d', seq(2:ncol(byDate)))

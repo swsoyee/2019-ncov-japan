@@ -182,7 +182,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
         ),
         list(
           className = "dt-center",
-          width = "18%",
+          width = "16%",
           targets = c(6, 8)
         ),
         list(
