@@ -39,22 +39,24 @@ fluidPage(
         tabPanel(
           title = tagList(icon("th"), i18n$t("感染者数ヒートマップ")),
           fluidRow(
-            column(width = 9,
-                   uiOutput("confirmedHeatmapWrapper") %>% withSpinner(proxy.height = "600px")
+            column(
+              width = 9,
+              uiOutput("confirmedHeatmapWrapper") %>% withSpinner(proxy.height = "600px")
             ),
-            column(width = 3,
-                   tags$div(
-                     radioGroupButtons(
-                       inputId = "confirmedHeatmapSelector",
-                       label = i18n$t("ヒートマップ選択"),
-                       size = "sm", justified = T,
-                       choiceNames = c(i18n$t("日次新規"), i18n$t("倍加時間")),
-                       choiceValues = list("confirmedHeatmap", "confirmedHeatmapDoublingTime"), 
-                       status = "danger"
-                     ),
-                     style = "margin-top:5px;"
-                   ),
-                   uiOutput("confirmedHeatmapDoublingTimeOptions")
+            column(
+              width = 3,
+              tags$div(
+                radioGroupButtons(
+                  inputId = "confirmedHeatmapSelector",
+                  label = i18n$t("ヒートマップ選択"),
+                  size = "sm", justified = T,
+                  choiceNames = c(i18n$t("日次新規"), i18n$t("倍加時間")),
+                  choiceValues = list("confirmedHeatmap", "confirmedHeatmapDoublingTime"),
+                  status = "danger"
+                ),
+                style = "margin-top:5px;"
+              ),
+              uiOutput("confirmedHeatmapDoublingTimeOptions")
             )
           )
         ),
@@ -85,6 +87,21 @@ fluidPage(
   ),
   fluidRow(
     Component.NewsList(),
-    Button.clusterTab(),
+    column(
+      width = 8,
+      actionButton(
+        width = "100%",
+        inputId = "gotoRoutePage",
+        style = paste0("color: #fff; background-color: ", middleRed),
+        label = tagList(
+          i18n$t("感染ルート・クラスターへ"),
+          dashboardLabel(
+            "Beta 0.2",
+            status = "warning"
+          )
+        ),
+        icon = icon("connectdevelop")
+      )
+    )
   )
 )
