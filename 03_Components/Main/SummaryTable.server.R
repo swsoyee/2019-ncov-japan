@@ -287,7 +287,7 @@ output$confirmedByPrefTable <- renderDataTable({
     escape = F,
     # caption = i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。"),
     # extensions = c("Responsive"),
-    extensions = "RowGroup",
+    extensions = c("RowGroup", "Buttons"),
     callback = htmlwidgets::JS(paste0(
       "
       table.rowGroup().",
@@ -298,9 +298,15 @@ output$confirmedByPrefTable <- renderDataTable({
     options = list(
       paging = F,
       rowGroup = list(dataSrc = 7),
-      dom = "t",
+      dom = "Bt",
       scrollY = "540px",
       scrollX = T,
+      buttons = list(
+        list(
+          extend = 'colvis', 
+          columns = c(4, 5, 6, 8)
+          )
+        ),
       columnDefs = list(
         list(
           className = "dt-center",
@@ -324,7 +330,7 @@ output$confirmedByPrefTable <- renderDataTable({
         ),
         list(
           visible = F,
-          targets = 7
+          targets = c(5, 7)
         ),
         list(
           render = JS(
