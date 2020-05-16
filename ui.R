@@ -73,7 +73,7 @@ shinyUI(
         badgeColor = "black"
       ),
       menuItem(
-        i18n$t("ECMOnet"),
+        "ECMOnet",
         tabName = "ecmo",
         icon = icon("hospital")
       ),

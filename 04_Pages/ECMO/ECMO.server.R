@@ -1,9 +1,9 @@
 observeEvent(input$sideBarTab, {
   if (input$sideBarTab == "ecmo" && is.null(GLOBAL_VALUE$ECMO[[1]])) {
     GLOBAL_VALUE$ECMO <- list(
-      ecmoUising = fread(paste0(DATA_PATH, "Collection/ecmoUsing.csv")),
+      ecmoUising = fread(paste0(DATA_PATH, "Collection/ecmoUsing.", languageSetting,".csv")),
       ecmo = fread(paste0(DATA_PATH, "Collection/ecmo.csv")),
-      artificialRespirators = fread(paste0(DATA_PATH, "Collection/artificialRespirators.csv"))
+      artificialRespirators = fread(paste0(DATA_PATH, "Collection/artificialRespirators.", languageSetting,".csv"))
     )
 
     startIndex <- 1

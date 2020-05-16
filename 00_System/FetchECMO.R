@@ -30,12 +30,23 @@ ExtractData <- function(jsonData) {
   return(data)
 }
 
+TranslateECMO <- function(data, filename, languageSetting) {
+  colnames(data) <- convertRegionName(colnames(data), languageSetting)
+  fwrite(x = data[, 1:48], file = paste0(DATA_PATH, "Collection/", filename, ".", languageSetting, ".csv"))
+}
+
 # ECMO 装着数
 ecmoUsingData <- ExtractData(jsonData[2])
-fwrite(x = ecmoUsingData, file = paste0(DATA_PATH, "Collection/ecmoUsing.csv"))
+TranslateECMO(data = ecmoUsingData, filename = "ecmoUsing", "ja")
+TranslateECMO(data = ecmoUsingData, filename = "ecmoUsing", "cn")
+TranslateECMO(data = ecmoUsingData, filename = "ecmoUsing", "en")
+
 # 人工呼吸器都道府県別
 artificialRespiratorsData <- ExtractData(jsonData[5])
-fwrite(x = artificialRespiratorsData, file = paste0(DATA_PATH, "Collection/artificialRespirators.csv"))
+TranslateECMO(data = artificialRespiratorsData, filename = "artificialRespirators", "ja")
+TranslateECMO(data = artificialRespiratorsData, filename = "artificialRespirators", "cn")
+TranslateECMO(data = artificialRespiratorsData, filename = "artificialRespirators", "en")
+
 # 国内のCOVID-19に対するECMO治療の成績累計
 ecmoSource <- gsub("\\}", ",", str_extract_all(jsonData[3], "date.+?\\}")[[1]])
 ecmoData <- mapply(function(x) do.call(rbind.data.frame, strsplit(strsplit(x, ",")[[1]], ":")), ecmoSource, SIMPLIFY = F)
