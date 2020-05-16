@@ -23,7 +23,7 @@ fluidRow(
       ),
       accordionItem(
         id = 12,
-        title = tagList(icon("heartbeat"), "COVID-19重症者におけるECMO装着数の推移"),
+        title = tagList(icon("heartbeat"), i18n$t("COVID-19重症者におけるECMO装着数の推移")),
         collapsed = T,
         uiOutput("ecmoUsing") %>% withSpinner()
       ),

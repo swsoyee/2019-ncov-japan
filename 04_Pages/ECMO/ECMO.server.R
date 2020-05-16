@@ -131,7 +131,7 @@ output$ecmoUsing <- renderUI({
         3,
         tags$br(),
         tags$b(icon("exclamation-circle"), i18n$t("注意事項")),
-        blockQuote(tags$small("ECMO装着の方の多くは人工呼吸器も装着しておられるので上記と一部重複のカウントとなります。CRISISに申告のあったECMOの数の推移です。その日のECMOの稼働数とお考えください。CRISISに加入されずECMOを行っている施設も数施設ございます。ーー2020/5/1記載"))
+        blockQuote(tags$small(i18n$t("ECMO装着の方の多くは人工呼吸器も装着しておられるので上記と一部重複のカウントとなります。CRISISに申告のあったECMOの数の推移です。その日のECMOの稼働数とお考えください。CRISISに加入されずECMOを行っている施設も数施設ございます。ーー2020/5/1記載")))
       ),
       column(3, echarts4rOutput("ecmoUsing_1"), style = style),
       column(3, echarts4rOutput("ecmoUsing_2"), style = style),

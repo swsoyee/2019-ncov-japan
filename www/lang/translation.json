@@ -1932,6 +1932,16 @@
       "en": "Withdrawal"
     },
     {
+      "ja": "COVID-19重症者におけるECMO装着数の推移",
+      "cn": "COVID-19重症患者的ECMO佩戴情况",
+      "en": "Usage of ECMO in COVID-19 Serious Case"
+    },
+    {
+      "ja": "ECMO装着の方の多くは人工呼吸器も装着しておられるので上記と一部重複のカウントとなります。CRISISに申告のあったECMOの数の推移です。その日のECMOの稼働数とお考えください。CRISISに加入されずECMOを行っている施設も数施設ございます。ーー2020/5/1記載",
+      "cn": "使用ECMO的患者大多数同时会佩戴人工呼吸机，因此会与上图数据有所重叠。该图展示的是有向CRISIS报告的ECMO使用数量的变化情况。也可看做是当天ECMO的运行情况。此外还有少数可以使用ECMO进行救助但没有加入CRISIS的医疗机构。ーー注于2020年5月1日",
+      "en": "The following is the usage of ECMOs reported to CRISIS. Most of the patients with ECMOs also using artificial respirators, therefore there are some overlap with the data in the figure above. It could be argued that the number is the usage of ECMO on a given day. There are also a few institutions that can use ECMO for assistance but are not enrolled in CRISIS. (As stated on May 1, 2020)"
+    },
+    {
       "ja": "国内のCOVID-19に対するECMO治療の成績累計",
       "cn": "日本COVID-19患者的ECMO治疗结果",
       "en": "Results of ECMO Treatment for COVID-19 in Japan"
