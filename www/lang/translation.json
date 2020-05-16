@@ -169,12 +169,22 @@
     {
       "ja": "各都道府県の状況",
       "cn": "各省份情况",
-      "en": "The situation in each prefecture"
+      "en": "Situation in Each Prefecture"
+    },
+    {
+      "ja": "5月9までの市区町村の感染者数",
+      "cn": "5月9日为止的各次级行政区域的确诊人数",
+      "en": "Number of Confirmed in Each Municipality Until May 9"
+    },
+    {
+      "ja": "データソース：@kenmo_economics\n※陽性者数は居住地が判明した方のみを集計しているので、県の総計と一致しません。\n※5月9日以後のデータは収集されないため、グラフの更新も中止となります。",
+      "cn": "数据来源：@kenmo_economics\n注1：本图仅统计公布了居住地的患者，因此与该省份的实际确诊人数不一致\n注2：因数据集作者已在5月9日停止收集数据，因此本图暂时不会再进行更新。",
+      "en": "Data source: @kenmo_economics\nNote 1: This figure only counts those whose place of residence is published and therefore does not correspond to the total number of confirmed cases in the province\nNote 2: This figure will not be updated for the time being, as the authors of the dataset stopped collecting data on 9 May."
     },
     {
       "ja": "市区町村の感染者数",
       "cn": "各次级行政区域的确诊人数",
-      "en": "Number of infected in the municipality"
+      "en": "Number of Confirmed in Each Municipality"
     },
     {
       "ja": "開発＆調整中",
