@@ -85,8 +85,10 @@ simpleMapDataset <- reactive({
   dt <- merge(x = mapData[date == max(unique(mapData$date), na.rm = T)],
               y = mapData[date == as.Date(max(unique(mapData$date), na.rm = T)) - 1],
               by = c("ja", "full_ja", "en", "lat", "lng", "regions"), no.dups = T, sort = F)
-  dt[mhlwSummary[日付 == max(日付)], `:=` (total = count.x, severe = i.重症者, active = i.陽性者 - i.退院者,
-                                          diff = (count.x - count.y)), on = c(ja = "都道府県名")]
+  dt[mhlwSummary[日付 == max(日付)], `:=` (total = count.x, 
+                                       severe = i.重症者, 
+                                       active = i.陽性者 - i.退院者 - ifelse(is.na(i.死亡者), 0, i.死亡者),
+                                       diff = (count.x - count.y)), on = c(ja = "都道府県名")]
   dt
 })
 
