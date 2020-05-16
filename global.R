@@ -14,6 +14,7 @@ library(echarts4r)
 library(sparkline)
 library(shinyBS)
 library(shiny.i18n)
+library(countup)
 
 source(file = "01_Settings/Path.R", local = T, encoding = "UTF-8")
 source(file = "02_Utils/Functions.R", local = T, encoding = "UTF-8")
@@ -325,6 +326,11 @@ GLOBAL_VALUE <- reactiveValues(
   signateDetail.ageGenderData = fread(file = paste0(DATA_PATH, "Generated/genderAgeData.csv")),
   signateLink = NULL,
   signatePlace = fread(file = paste0(DATA_PATH, "resultSignatePlace.csv")),
+  ECMO = list(
+    ecmoUising = NULL,
+    ecmo = NULL,
+    artificialRespirators = NULL
+  ),
   Academic = list(
     onset_to_confirmed_map = NULL
   ),

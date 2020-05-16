@@ -57,6 +57,11 @@
       "en": "Iwate COVID-19 Information (Unofficial)"
     },
     {
+      "ja": "宮城県（非公式）新型コロナウイルス感染症対策サイト",
+      "cn": "宫城县（非官方）新型冠状病毒肺炎对策网站",
+      "en": "Miyagi COVID-19 Information (Unofficial)"
+    },
+    {
       "ja": "宮城県",
       "cn": "宫城县",
       "en": "Miyagi"
@@ -432,6 +437,36 @@
       "en": "Positive"
     },
     {
+      "ja": "検査実施件数",
+      "cn": "检测次数",
+      "en": "Number of Tests"
+    },
+    {
+      "ja": "検査実施件数累計",
+      "cn": "合计检测次数",
+      "en": "Number of Tests (total)"
+    },
+    {
+      "ja": "検査実施件数・陽性者数",
+      "cn": "检测次数和阳性人数",
+      "en": "Number of Tests & Positive"
+    },
+    {
+      "ja": "\n注1. 検査開始日：令和２年１月３０日（木）１９時",
+      "cn": "\n注1、检测开始时间：2020年1月30日（周四）19时",
+      "en": "\n* Test Start Date: 7pm, 30 Jan 2020"
+    },
+    {
+      "ja": "注2. PCR検査実施件数は，帰国者・接触者外来を通じて検査を行った数のみを計上しており，退院時の確認検査などは含まれておりません。",
+      "cn": "注2、PCR检测次数仅包括通过归国者、接触者商谈途径进行的检测数，出院时的确认检测不包含在内。",
+      "en": "* The number of PCR tests includes only the number of tests conducted through\n   consultation services for returnees and have been exposed to confirmed persons, \n  and does not include confirmation tests at the time of discharge."
+    },
+    {
+      "ja": "新型コロナウイルス感染症相談窓口（コールセンター）対応状況",
+      "cn": "新型冠状病毒肺炎咨询热线应对情况",
+      "en": "Response of COVID-19 Call Center"
+    },
+    {
       "ja": "検査実施数累計",
       "cn": "检测数累计",
       "en": "Test Conducted (total)"
@@ -517,9 +552,24 @@
       "en": "Discharged: "
     },
     {
+      "ja": "回復率",
+      "cn": "康复率",
+      "en": "Recovered Rate"
+    },
+    {
+      "ja": "回復 / 死亡",
+      "cn": "康复 / 死亡",
+      "en": "Recovered / Death"
+    },
+    {
       "ja": "重傷率：",
       "cn": "重症率：",
       "en": "Severity rate: "
+    },
+    {
+      "ja": "死亡率",
+      "cn": "死亡率",
+      "en": "Mortality rate"
     },
     {
       "ja": "死亡率：",
@@ -567,9 +617,24 @@
       "en": "Consultations at returnee/contact (daily)"
     },
     {
+      "ja": "帰国者・接触者相談（累計）",
+      "cn": "归国者・接触者咨询（累计）",
+      "en": "Consultations at returnee/contact (total)"
+    },
+    {
       "ja": "死亡者",
       "cn": "死亡人数",
       "en": "Death"
+    },
+    {
+      "ja": "現在感染者数：",
+      "cn": "现存感染人数：",
+      "en": "Active Confirmed: "
+    },
+    {
+      "ja": "現在重症者数：",
+      "cn": "现存重症人数：",
+      "en": "Active Severe: "
     },
     {
       "ja": "「令和２年３月４日版」以後は、陽性となった者の濃厚接触者に対する検査も含めた検査実施人数を都道府県に照会し、回答を得たものを公表しています。なお、国内事例のＰＣＲ検査実施人数は、疑似症患者（感染が疑われる者）報告制度の枠組みの中で報告された数を計上しており、各自治体で行った全ての検査結果を反映しているものではありません（退院時の確認検査などは含まず）。",
@@ -1815,6 +1880,116 @@
       "ja": "１週間２倍",
       "cn": "每周翻倍",
       "en": "Doubling in one week"
+    },
+    {
+      "ja": "三週間前",
+      "cn": "三周前",
+      "en": "3 weeks ago"
+    },
+    {
+      "ja": "二週間前",
+      "cn": "两周前",
+      "en": "2 weeks ago"
+    },
+    {
+      "ja": "一週間前",
+      "cn": "一周前",
+      "en": "1 week ago"
+    },
+    {
+      "ja": "現在",
+      "cn": "现在",
+      "en": "Now"
+    },
+    {
+      "ja": "百万人あたりの検査",
+      "cn": "每百万人检测人数",
+      "en": "Tested / M pop"
+    },
+    {
+      "ja": "%sの直近１ヶ月の指標",
+      "cn": "%s最近1个月的各项指标",
+      "en": "Indicators for the Last Month of %s"
+    },
+    {
+      "ja": "実施件数",
+      "cn": "使用次数",
+      "en": "Number of implementation"
+    },
+    {
+      "ja": "このページは、",
+      "cn": "本页面是",
+      "en": "This page is a copy of"
+    },
+    {
+      "ja": "のデータ（文言を含む）を一覧できるように、若干異なる可視化方法でデータを表現しています。",
+      "cn": "的一个副本（包括数据和说明文字），为了能够一览所有状况而采用了和源网页稍有不同的可视化方法进行数据呈现。",
+      "en": ", and the data is presented in a slightly different way of visulization from the source page in order to be able to see all the conditions at a glance."
+    },
+    {
+      "ja": "%s現在",
+      "cn": "%s现状",
+      "en": "Situation of %s"
+    },
+    {
+      "ja": "実施中",
+      "cn": "使用中",
+      "en": "Implementation"
+    },
+    {
+      "ja": "離脱",
+      "cn": "脱离",
+      "en": "Withdrawal"
+    },
+    {
+      "ja": "COVID-19 重症患者状況　日本COVID-19対策ECMOnet集計",
+      "cn": "COVID-19 重症患者情况　日本COVID-19对策ECMOnet统计",
+      "en": "COVID-19 Severe Case Status, Measures of Japan ECMOnet for COVID-19"
+    },
+    {
+      "ja": "COVID-19重症者における人工呼吸器装着数の推移",
+      "cn": "COVID-19重症患者的人工呼吸机使用情况",
+      "en": "Trends in the Usage of Artificial Respirators in COVID-19 Severe Case"
+    },
+    {
+      "ja": "これらのグラフはCRISISに申告された人工呼吸が必要な重症患者さんの推移を地方別、都道府県別に示すものです。現在精度を上げるべく努力しております。全体の流れは把握していると自負しておりますが、かならずしも正確な数が示されている訳ではないことをご理解ください。COVID-19では長期の人工呼吸となる患者さんが多い傾向があります。このあたりも今後このコラムでお示ししていけるように計画しております。ーー2020/5/1記載",
+      "cn": "本图是将向CRISIS报告的需要人工呼吸机辅助的重症患者按地区和都道府县进行可视化的结果。现在我们正努力提高数据的准确度中。虽然我们有足够的信心可让您在图上了解到整体趋势，但不能确保所示数值100%准确无误，敬请谅解。COVID-19的重症患者大多数需要长期的人工呼吸机进行辅助。关于这一点计划今后也会在本页面进行呈现。ーー注于2020年5月1日",
+      "en": "These graphs show the trends in the number of severe cases requiring artificial respiration reported to CRISIS by region and prefecture. We are working hard to improve the accuracy. In COVID-19, there is a tendency for many severe cases to be on long-term artificial respiration. We have a plan about for presenting this in this column in the future. (May 1, 2020)"
+    },
+    {
+      "ja": "このグラフ群は横断的ICU情報探索システム(CRoss Icu Searchable Information System, 略称CRISIS, 非公開) に蓄積されたデータベースを視覚化したものです。このCRISISには日本集中治療医学会専門医認定施設、日本救急医学会救急科専門医指定施設を中心に日本全国570以上の施設が参加されており、それら施設の総ICUベッド数は5500にのぼり、日本全体のICUベッド（6500ベッドほど）の80％をカバーしております。本事業は各病院担当者の方々の善意により忙しい合間を縫って任意に手入力いただいているものです。そのため精度はかなり高いと存じますが完璧なものではないことをご理解いただければ幸いです。当初我々はECMOに関するデータを中心に集めて参りました。しかしながら人工呼吸器を必要とする重症の方々のデータも必要であると改めて認識し、データの精度を高めるよう努力しております。少しずつではございますが改善させ、このコロナ禍を乗り切った暁には重要な資産として次の世代に遺せるものを目指しております。　日本COVID-19対策ECMOnet　2020/5/1記載。",
+      "cn": "本页面为将交叉型ICU检索信息系统（CRoss Icu Searchable Information System，简称CRISIS，非公开）的数据库内容进行可视化的结果。CRISIS的参与者包括了以日本集中治疗医学会专门医许可机构、日本急救医学会急救科专门医指定机构为中心的位于日本全国570所以上的机构在内，所有机构的总ICU床位数在高达5500，占据了日本所有ICU床位（约6500床）的80%。此数据是由各医院负责人在百忙之中抽出宝贵时间亲手搜集整理而成。虽具有极高的准确度但仍可能存有不足之处，敬请各位理解。最初我们仅搜集以ECMO为中心的相关数据，但逐渐地认识到需要人工呼吸机的重症患者数据也极为重要，因此正在竭尽全力地提高数据的准确度。各项改善正在逐步进行中，以期作为成功遏制疫情后的一笔宝贵财富留存给我们的下一代。————日本COVID-19对策ECMOnet　记于2020/5/1。",
+      "en": "These graphs are visualizations of databases accumulated in the CRoss Icu Searchable Information System (CRISIS, unpublished). More than 570 facilities across Japan are participating in this CRISIS, centering on facilities certified by the Japanese Society of Intensive Care Medicine and facilities designated by the Emergency Medicine Department of the Japanese Society of Emergency Medicine, with a total of 5500 ICU beds, covering 80% of the total ICU beds in Japan (about 6500 beds). This project has been voluntarily inputted by the people in charge of each hospital who took time out of their busy schedules. Please understand that although the accuracy is very high, there may be some shortcomings. Initially, we focused on collecting data on ECMO. However, we also recognize the need for data on people with serious illnesses who need artificial respirators, and we are making efforts to improve the accuracy of the data. We are aiming to make improvements, albeit little by little, so that we can bequeath it to the next generation as an important asset when we get over the pandemic. -- Japan ECMOnet for COVID-19, 2020/5/1."
+    },
+    {
+      "ja": "COVID-19重症者におけるECMO装着数の推移",
+      "cn": "COVID-19重症患者的ECMO使用情况",
+      "en": "Trends in the Usage of ECMO in COVID-19 Severe Case"
+    },
+    {
+      "ja": "ECMO装着の方の多くは人工呼吸器も装着しておられるので上記と一部重複のカウントとなります。CRISISに申告のあったECMOの数の推移です。その日のECMOの稼働数とお考えください。CRISISに加入されずECMOを行っている施設も数施設ございます。ーー2020/5/1記載",
+      "cn": "使用ECMO的患者大多数同时会佩戴人工呼吸机，因此会与上图数据有所重叠。该图展示的是有向CRISIS报告的ECMO使用数量的变化情况。也可看做是当天ECMO的运行情况。此外还有少数可以使用ECMO进行救助但没有加入CRISIS的医疗机构。ーー注于2020年5月1日",
+      "en": "The following is the usage of ECMOs reported to CRISIS. Most of the patients with ECMOs also using artificial respirators, therefore there are some overlap with the data in the figure above. It could be argued that the number is the usage of ECMO on a given day. There are also a few institutions that can use ECMO for assistance but are not enrolled in CRISIS. (May 1, 2020)"
+    },
+    {
+      "ja": "国内のCOVID-19に対するECMO治療の成績累計",
+      "cn": "日本COVID-19患者的ECMO治疗结果",
+      "en": "Results of ECMO Treatment for COVID-19 in Japan"
+    },
+    {
+      "ja": "この図はCRISISに申告のあった症例と、それ以外に我々のネットワークで集めたECMO症例の推移をあわらしたものです。あとから判明した症例も多くありますので、過去にさかのぼって日々数が変異しております。したがって上の図の数とここに表す数にも若干の齟齬が生じますのでご了承ください。人工呼吸が必要な患者さんのほぼ5人に1人がECMOも必要と判断されます。ECMOからの生還例ではおおよそ10日間から2週間のECMO装着が必要となります。ーー2020/5/1記載",
+      "cn": "本图展示的是向 CRISIS 报告的和通过我们关系网所了解到的使用ECMO的病例的变化情况。由于不少病例是使用过后才了解到具体详情，因此会有日后进行数据校正的情况发生。所以该图与上图中的数字可能会略有出入。几乎每5个需要人工呼吸机的患者中，就有1个患者同时需要 ECMO 。使用 ECMO 的患者中到脱离生命危险为止大约需要佩戴 ECMO 10天到2周左右。ーー注于2020年5月1日",
+      "en": "This figure shows the changes in the number of ECMO cases reported to CRISIS and other ECMO cases collected by our network. Since there are many cases that have been identified later, the number of cases has changed daily going back to the past. Therefore, please note that there may be a slight discrepancy between the number in the above figure and the number shown here. Almost one in five patients who require artificial respiration will also require an ECMO, and those who survived with the help of ECMO will need to wear the ECMO for approximately 10 days to two weeks. (May 1, 2020)"
+    },
+    {
+      "ja": "ECMO離脱 %s 例（%s%%）、ECMO実施中 %s 例（%s%%）、死亡 %s 例（%s%%）",
+      "cn": "脱离ECMO %s 例（%s%%）, ECMO抢救中 %s 例（%s%%），死亡 %s 例（%s%%）",
+      "en": "ECMO withdrawal %s (%s%%), during ECMO implementation %s (%s%%), death %s (%s%%)"
+    },
+    {
+      "ja": "検査人数、百万人あたりの検査および陽性者数の三つの指標は、毎日の増加分を直近7日の移動平均を計算した数値です。",
+      "cn": "检测人数、每百万人的检测数和阳性患者三项指标，是根据每日的各自增长数计算最近7天的移动平均后所得到的数值。",
+      "en": "The three indicators, number of tests conducted, tests per million, and positive, are the values obtained after calculating the moving average of the last seven days based on the respective daily increases."
     }
   ]
 }

@@ -83,19 +83,20 @@ createValueBox <-
         diffIcon <- icon('lock')
       }
     } else {
-      diff <- '-'
+      diff <- 0
+      diffIcon <- icon('lock')
     }
     
     return(
       valueBox(
         value = tagList(
-          value,
+          countup(value),
           tags$small(paste0('| ' , subValue),
                      style = 'color:white;font-size:16px;margin-top:10px;margin-right:10px;opacity:0.8')
         ),
         subtitle = tagList(
           sparkline,
-          tags$span(diff, diffIcon, subtitle, style = 'float:right')
+          tags$span(countup(diff), diffIcon, subtitle, style = 'float:right')
         ),
         icon = icon(icon),
         color = color,

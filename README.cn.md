@@ -40,5 +40,6 @@
 
 - R相关技术支持：[@uribo](https://github.com/uribo)  
 - 数据的自动化更新：[@emckk](https://github.com/emc-kk)  
+- 日语本地化：[@kilisame4](https://github.com/kilisame4)  
 
 欢迎各方有志人士加入到本开源项目中。
