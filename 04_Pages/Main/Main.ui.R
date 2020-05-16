@@ -88,7 +88,7 @@ fluidPage(
   fluidRow(
     Component.NewsList(),
     column(
-      width = 4,
+      width = 8,
       actionButton(
         width = "100%",
         inputId = "gotoRoutePage",
@@ -102,18 +102,18 @@ fluidPage(
         ),
         icon = icon("connectdevelop")
       )
-    ),
-    column(
-      width = 4,
-      actionButton(
-        width = "100%",
-        inputId = "gotoECMOPage",
-        style = paste0("color: #fff; background-color: ", darkNavy),
-        label = tagList(
-          i18n$t("ECMOnet・重症患者状況へ")
-        ),
-        icon = icon("hospital")
-      )
-    )
+    )#,
+    # column(
+    #   width = 4,
+    #   actionButton(
+    #     width = "100%",
+    #     inputId = "gotoECMOPage",
+    #     style = paste0("color: #fff; background-color: ", darkNavy),
+    #     label = tagList(
+    #       i18n$t("ECMOnet・重症患者状況へ")
+    #     ),
+    #     icon = icon("hospital")
+    #   )
+    # )
   )
 )
