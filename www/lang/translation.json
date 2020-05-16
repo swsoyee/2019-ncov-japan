@@ -1990,6 +1990,11 @@
       "ja": "検査人数、百万人あたりの検査および陽性者数の三つの指標は、毎日の増加分を直近7日の移動平均を計算した数値です。",
       "cn": "检测人数、每百万人的检测数和阳性患者三项指标，是根据每日的各自增长数计算最近7天的移动平均后所得到的数值。",
       "en": "The three indicators, number of tests conducted, tests per million, and positive, are the values obtained after calculating the moving average of the last seven days based on the respective daily increases."
+    },
+    {
+      "ja": "カラム表示",
+      "cn": "列显示",
+      "en": "Column Visibility"
     }
   ]
 }
