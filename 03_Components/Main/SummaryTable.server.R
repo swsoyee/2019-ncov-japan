@@ -34,12 +34,16 @@ observeEvent(input$switchTableVersion, {
       tagList(
         dataTableOutput("confirmedByPrefTable"),
         helpText(
-          icon("street-view"),
-          i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。")
+          icon("chart-bar"),
+          i18n$t("感染者数：本サイトのリアルタイム感染者数は再び陽性になった患者は新規として数えないため、一部のメディアと自治体が発表した数（延べ人数）と一致しない場合があります。")
         ),
         helpText(
           icon("procedures"),
           i18n$t("現在患者数：厚労省のデータをもとにして計算しているため、速報部分の感染者数が含まれていません。")
+        ),
+        helpText(
+          icon("street-view"),
+          i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。")
         )
       )
     })

@@ -2015,6 +2015,11 @@
       "ja": "ECMOnet・重症患者状況へ",
       "cn": "前往ECMOnet重症患者情况",
       "en": "Go to ECMOnet page"
+    },
+    {
+      "ja": "感染者数：本サイトのリアルタイム感染者数は再び陽性になった患者は新規として数えないため、一部のメディアと自治体が発表した数（延べ人数）と一致しない場合があります。",
+      "cn": "确诊人数：本站速报的确诊人数不对复阳患者进行再次统计，因此可能会与部分媒体和自治体所汇报的数值（累计人次）有所不同。",
+      "en": "Confirmed: The real-time number of confirmed cases reported in this site is not counted those testing positive after having fully recovered, so it may differ from the values reported by some media and municipalities (patients testing positive after having fully recovered counted as 1 addition)."
     }
   ]
 }
