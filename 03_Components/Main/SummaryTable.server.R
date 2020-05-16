@@ -36,6 +36,10 @@ observeEvent(input$switchTableVersion, {
         helpText(
           icon("street-view"),
           i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。")
+        ),
+        helpText(
+          icon("procedures"),
+          i18n$t("現在患者数：厚労省のデータをもとにして計算しているため、速報部分の感染者数が含まれていません。")
         )
       )
     })

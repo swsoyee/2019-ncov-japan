@@ -304,7 +304,7 @@
     {
       "ja": "現在患者数",
       "cn": "现存患者数",
-      "en": "Patients at present"
+      "en": "Active"
     },
     {
       "ja": "分母には死亡者、チャーター便で帰国したクルーズ船の乗客40名は含まれていません。",
@@ -1995,6 +1995,11 @@
       "ja": "カラム表示",
       "cn": "列显示",
       "en": "Column Visibility"
+    },
+    {
+      "ja": "現在患者数：厚労省のデータをもとにして計算しているため、速報部分の感染者数が含まれていません。",
+      "cn": "现存患者数：该数值为根据厚劳省所发布的数据进行计算得出，因此速报部分的确诊人数不包含在内。",
+      "en": "Active: Since the calculation is based on data from the MHLW, the real-time number are not included."
     }
   ]
 }
