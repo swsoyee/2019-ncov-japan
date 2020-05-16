@@ -16,6 +16,15 @@ observeEvent(input$sideBarTab, {
       "四国" = c(1, startIndex + 36:39),
       "九州・沖縄" = c(1, startIndex + 40:47)
     )
+    names(groupList) <- c(
+      i18n$t("北海道・東北"),
+      i18n$t("関東"),
+      i18n$t("中部"),
+      i18n$t("近畿"),
+      i18n$t("中国"),
+      i18n$t("四国"),
+      i18n$t("九州・沖縄")
+    )
 
     for (index in seq(length(groupList))) {
       local({
@@ -32,8 +41,8 @@ observeEvent(input$sideBarTab, {
               max = 100,
               axisTick = list(show = F),
               axisLabel = list(inside = T),
-              name = "実施件数",
-              nameTextStyle = list(padding = c(0, 0, 0, 45)),
+              name = i18n$t("実施件数"),
+              nameTextStyle = list(padding = c(0, 0, 0, nchar(i18n$t("実施件数")) * 7 + 10)),
               splitLine = list(lineStyle = list(opacity = 0.2))
             ) %>%
             e_legend(
@@ -64,8 +73,8 @@ observeEvent(input$sideBarTab, {
               max = 20,
               axisTick = list(show = F),
               axisLabel = list(inside = T),
-              name = "実施件数",
-              nameTextStyle = list(padding = c(0, 0, 0, 45)),
+              name = i18n$t("実施件数"),
+              nameTextStyle = list(padding = c(0, 0, 0, nchar(i18n$t("実施件数")) * 7 + 10)),
               splitLine = list(lineStyle = list(opacity = 0.2))
             ) %>%
             e_legend(
@@ -142,15 +151,15 @@ output$ecmo <- renderEcharts4r({
   todaySum <- sum(today[, 2:4])
   GLOBAL_VALUE$ECMO$ecmo %>%
     e_chart(日付) %>%
-    e_area(死亡,
+    e_area(死亡, name = i18n$t("死亡"),
       stack = 1, itemStyle = list(color = darkNavy),
       symbol = "circle", symbolSize = 1, smooth = T
     ) %>%
-    e_area(実施中,
+    e_area(実施中, name = i18n$t("実施中"),
       stack = 1, itemStyle = list(color = darkRed),
       symbol = "circle", symbolSize = 1, smooth = T
     ) %>%
-    e_area(離脱,
+    e_area(離脱, name = i18n$t("離脱"),
       stack = 1, itemStyle = list(color = middleGreen),
       symbol = "circle", symbolSize = 1, smooth = T
     ) %>%
@@ -172,9 +181,9 @@ output$ecmo <- renderEcharts4r({
     ) %>%
     e_tooltip(trigger = "axis") %>%
     e_title(
-      text = sprintf("%s現在", today$日付),
+      text = sprintf(i18n$t("%s現在"), today$日付),
       subtext = sprintf(
-        "ECMO離脱 %s 例（%s%%）、ECMO実施中 %s 例（%s%%）、死亡 %s 例（%s%%）",
+        i18n$t("ECMO離脱 %s 例（%s%%）、ECMO実施中 %s 例（%s%%）、死亡 %s 例（%s%%）"),
         today$離脱, round(today$離脱 / todaySum * 100, 2),
         today$実施中, round(today$実施中 / todaySum * 100, 2),
         today$死亡, round(today$死亡 / todaySum * 100, 2)

@@ -1912,6 +1912,41 @@
       "en": "Indicators for the Last Month of %s"
     },
     {
+      "ja": "実施件数",
+      "cn": "使用次数",
+      "en": "Number of implementation"
+    },
+    {
+      "ja": "%s現在",
+      "cn": "%s现状",
+      "en": "Situation of %s"
+    },
+    {
+      "ja": "実施中",
+      "cn": "使用中",
+      "en": "Implementation"
+    },
+    {
+      "ja": "離脱",
+      "cn": "脱离",
+      "en": "Withdrawal"
+    },
+    {
+      "ja": "国内のCOVID-19に対するECMO治療の成績累計",
+      "cn": "日本COVID-19患者的ECMO治疗结果",
+      "en": "Results of ECMO Treatment for COVID-19 in Japan"
+    },
+    {
+      "ja": "この図はCRISISに申告のあった症例と、それ以外に我々のネットワークで集めたECMO症例の推移をあわらしたものです。あとから判明した症例も多くありますので、過去にさかのぼって日々数が変異しております。したがって上の図の数とここに表す数にも若干の齟齬が生じますのでご了承ください。人工呼吸が必要な患者さんのほぼ5人に1人がECMOも必要と判断されます。ECMOからの生還例ではおおよそ10日間から2週間のECMO装着が必要となります。ーー2020/5/1記載",
+      "cn": "本图展示的是向 CRISIS 报告的和通过我们关系网所了解到的使用ECMO的病例的变化情况。由于不少病例是使用过后才了解到具体详情，因此会有日后进行数据校正的情况发生。所以该图与上图中的数字可能会略有出入。几乎每5个需要人工呼吸机的患者中，就有1个患者同时需要 ECMO 。使用 ECMO 的患者中到脱离生命危险为止大约需要佩戴 ECMO 10天到2周左右。ーー注于2020年5月1日",
+      "en": "This figure shows the changes in the number of ECMO cases reported to CRISIS and other ECMO cases collected by our network. Since there are many cases that have been identified later, the number of cases has changed daily going back to the past. Therefore, please note that there may be a slight discrepancy between the number in the above figure and the number shown here. Almost one in five patients who require artificial respiration will also require an ECMO, and those who survived with the help of ECMO will need to wear the ECMO for approximately 10 days to two weeks. (As stated on May 1, 2020)"
+    },
+    {
+      "ja": "ECMO離脱 %s 例（%s%%）、ECMO実施中 %s 例（%s%%）、死亡 %s 例（%s%%）",
+      "cn": "脱离ECMO %s 例（%s%%）, ECMO抢救中 %s 例（%s%%），死亡 %s 例（%s%%）",
+      "en": "ECMO withdrawal %s (%s%%), during ECMO implementation %s (%s%%), death %s (%s%%)"
+    },
+    {
       "ja": "検査人数、百万人あたりの検査および陽性者数の三つの指標は、毎日の増加分を直近7日の移動平均を計算した数値です。",
       "cn": "检测人数、每百万人的检测数和阳性患者三项指标，是根据每日的各自增长数计算最近7天的移动平均后所得到的数值。",
       "en": "The three indicators, number of tests conducted, tests per million, and positive, are the values obtained after calculating the moving average of the last seven days based on the respective daily increases."
