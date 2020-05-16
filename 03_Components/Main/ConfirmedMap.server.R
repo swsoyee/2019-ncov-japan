@@ -18,7 +18,8 @@ output$echartsMapPlaySetting <- renderUI({
   if(input$switchMapVersion == F) {
     tags$span(
       dropdownButton(
-        tags$h4(i18n$t("表示設定")),
+        tags$h4(icon("eye"), i18n$t("表示設定")),
+        tags$hr(),
         materialSwitch(
           inputId = "showPopupOnMap",
           label = i18n$t("日次増加数のポップアップ"),
@@ -55,6 +56,7 @@ output$echartsMapPlaySetting <- renderUI({
         icon = icon("gear"),
         size = "sm",
         width = "300px",
+        right = T,
         tooltip = tooltipOptions(title = i18n$t("表示設定"), placement = "top")
       ),
       style = "float:right;"
