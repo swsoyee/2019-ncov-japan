@@ -98,7 +98,7 @@ observeEvent(input$switchTableVersion, {
               ),
               tags$li(
                 icon("exclamation-triangle"),
-                i18n$t("一部のデータについて、マイナスになったり大きく増減しているのは、都道府県からの報告に訂正または集計されていないデータを加わった結果になります。参考："), 
+                i18n$t("一部のデータについて、マイナスになったり大きく増減しているのは、都道府県からの報告に訂正または集計されていないデータを加わった結果になります。参考："),
                 tags$a(icon("external-link-alt"), "5/13", href = "https://www.mhlw.go.jp/stf/newpage_11291.html"),
                 tags$a(icon("external-link-alt"), "5/14", href = "https://www.mhlw.go.jp/stf/newpage_11311.html"),
                 tags$a(icon("external-link-alt"), "5/15", href = "https://www.mhlw.go.jp/stf/newpage_11339.html"),
@@ -124,28 +124,6 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
   columnName <- c("death", "perMillionDeath")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
   dt[, zeroContinuousDay := replace(.SD, .SD <= 0, NA), .SDcols = "zeroContinuousDay"]
-  breaksZero <-
-    seq(0, max(ifelse(is.na(dt$zeroContinuousDay), 0, dt$zeroContinuousDay), na.rm = T), 5)
-  colorsZero <-
-    colorRampPalette(c(lightBlue, darkBlue))(length(breaksZero) + 1)
-
-  breaksDeath <-
-    seq(0, max(ifelse(is.na(dt$death), 0, dt$death), na.rm = T), 10)
-  colorsDeath <-
-    colorRampPalette(c(lightNavy, darkNavy))(length(breaksDeath) + 1)
-
-  breaksDischarged <-
-    seq(0, max(ifelse(
-      is.na(dt$totalDischarged), 0, dt$totalDischarged
-    ), na.rm = T), 100)
-  colorsDischarged <-
-    colorRampPalette(c(lightGreen, darkGreen))(length(breaksDischarged) + 1)
-  breaksPerMillion <-
-    seq(0, max(ifelse(
-      is.na(dt$perMillionDeath), 0, dt$perMillionDeath
-    ), na.rm = T))
-  colorsPerMillion <-
-    colorRampPalette(c("#FFFFFF", "#6B7989"))(length(breaksPerMillion) + 1)
 
   datatable(
     dt[, .(region, detailBullet, totalDischarged, dischargeDiff, death, perMillionDeath, zeroContinuousDay, group)],
@@ -186,13 +164,10 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
           targets = 8
         ),
         list(
-          render = JS(
-            "
-                     function(data, type, row, meta) {
+          render = JS("function(data, type, row, meta) {
                         const split = data.split('|');
                         return split[1];
-                    }"
-          ),
+                    }"),
           targets = 1
         )
       ),
@@ -206,22 +181,34 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     spk_add_deps() %>%
     formatStyle(
       columns = "totalDischarged",
-      color = styleInterval(breaksDischarged, colorsDischarged),
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$totalDischarged, colors = c(lightGreen, darkGreen), by = 100)
+      ),
       fontWeight = "bold"
     ) %>%
     formatStyle(
       columns = "death",
-      color = styleInterval(breaksDeath, colorsDeath),
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$death, colors = c(lightNavy, darkNavy), by = 10)
+      ),
       fontWeight = "bold"
     ) %>%
     formatStyle(
       columns = "perMillionDeath",
-      backgroundColor = styleInterval(breaksPerMillion, colorsPerMillion),
+      backgroundColor = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$perMillionDeath, colors = c("#FFFFFF", "#6B7989"), by = 1)
+      ),
       fontWeight = "bold"
     ) %>%
     formatStyle(
       columns = "zeroContinuousDay",
-      color = styleInterval(breaksZero, colorsZero),
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$zeroContinuousDay, colors = c(lightBlue, darkBlue), by = 5)
+      ),
       fontWeight = "bold"
     )
 })
@@ -244,30 +231,6 @@ output$confirmedByPrefTable <- renderDataTable({
   # ０の値を非表示するため、NAに設定るす
   columnName <- c("today", "doubleTimeDay")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
-
-  breaks <-
-    seq(0, max(ifelse(is.na(dt$today), 0, dt$today), na.rm = T))
-  colors <-
-    colorRampPalette(c(lightRed, darkRed))(length(breaks) + 1)
-
-  breaksActive <-
-    seq(0, max(unlist(ifelse(
-      is.na(dt$active), 0, dt$active
-    )), na.rm = T), by = 100)
-  colorsActive <-
-    colorRampPalette(c(lightYellow, darkRed))(length(breaksActive) + 1)
-
-  breaksDoubleTimeDay <-
-    seq(0, max(unlist(ifelse(
-      is.na(dt$doubleTimeDay), 0, dt$doubleTimeDay
-    )), na.rm = T), by = 5)
-  colorsDoubleTimeDay <-
-    colorRampPalette(c(darkRed, lightYellow))(length(breaksDoubleTimeDay) + 1)
-
-  breaksPerMillion <-
-    seq(0, max(ifelse(is.na(dt$perMillion), 0, dt$perMillion), na.rm = T))
-  colorsPerMillion <-
-    colorRampPalette(c("#FFFFFF", darkRed))(length(breaksPerMillion) + 1)
 
   breaksPerArea <-
     seq(0, ceiling(max(dt$perArea[!is.infinite(dt$perArea)], na.rm = T)))
@@ -392,22 +355,34 @@ output$confirmedByPrefTable <- renderDataTable({
     ) %>%
     formatStyle(
       columns = "today",
-      color = styleInterval(breaks, colors),
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$today, colors = c(lightRed, darkRed), by = 5)
+      ),
       fontWeight = "bold"
     ) %>%
     formatStyle(
       columns = "active",
-      color = styleInterval(breaksActive, colorsActive),
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$active, colors = c(lightYellow, darkRed), by = 100)
+      ),
       fontWeight = "bold"
     ) %>%
     formatStyle(
       columns = "doubleTimeDay",
-      color = styleInterval(breaksDoubleTimeDay, colorsDoubleTimeDay),
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$doubleTimeDay, colors = c(darkRed, lightYellow), by = 5)
+      ),
       fontWeight = "bold"
     ) %>%
     formatStyle(
       columns = "perMillion",
-      backgroundColor = styleInterval(breaksPerMillion, colorsPerMillion),
+      backgroundColor = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$perMillion, colors = c("#FFFFFF", darkRed), by = 50)
+      ),
       fontWeight = "bold"
     ) %>%
     formatStyle(
@@ -463,10 +438,6 @@ output$testByPrefTable <- renderDataTable({
       scrollX = T,
       columnDefs = list(
         list(
-          className = "dt-center",
-          targets = 6
-        ),
-        list(
           width = "45px",
           className = "dt-right",
           # targets = i18n$t("前日比")
@@ -485,8 +456,7 @@ output$testByPrefTable <- renderDataTable({
         ),
         list(
           className = "dt-center",
-          # targets = c(i18n$t("検査人数"), i18n$t("検査推移"), i18n$t("陽性率推移"))
-          targets = c(2, 3, 7)
+          targets = c(2, 3, 6, 7)
         ),
         list(
           visible = F,
