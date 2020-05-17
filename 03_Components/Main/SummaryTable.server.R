@@ -427,7 +427,7 @@ output$testByPrefTable <- renderDataTable({
     ),
     escape = F,
     # extensions = c("Responsive"),
-    extensions = "RowGroup",
+    extensions = c("RowGroup", "Buttons"),
     callback = htmlwidgets::JS(paste0(
       "
       table.rowGroup().",
@@ -438,14 +438,19 @@ output$testByPrefTable <- renderDataTable({
     options = list(
       paging = F,
       rowGroup = list(dataSrc = 9),
-      dom = "t",
+      dom = "Bt",
+      buttons = list(
+        list(
+          extend = "colvis",
+          columns = c(8),
+          text = i18n$t("カラム表示")
+        )
+      ),
       scrollY = "540px",
       scrollX = T,
       columnDefs = list(
         list(
           className = "dt-center",
-          width = "13%",
-          # targets = i18n$t("百万人あたり"))
           targets = 6
         ),
         list(
@@ -462,7 +467,6 @@ output$testByPrefTable <- renderDataTable({
         ),
         list(
           className = "dt-left",
-          width = "80px",
           # targets = i18n$t("自治体")
           targets = 1
         ),
@@ -474,7 +478,7 @@ output$testByPrefTable <- renderDataTable({
         ),
         list(
           visible = F,
-          targets = 9
+          targets = 8:9
         ),
         list(
           render = JS(
