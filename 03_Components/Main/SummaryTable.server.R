@@ -200,17 +200,17 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
       columns = "death",
       color = styleInterval(breaksDeath, colorsDeath),
       fontWeight = "bold"
-    ) #%>%
-    # formatStyle(
-    #   columns = "perMillionDeath",
-    #   backgroundColor = styleInterval(breaksPerMillion, colorsPerMillion),
-    #   fontWeight = "bold"
-    # ) %>%
-    # formatStyle(
-    #   columns = "zeroContinuousDay",
-    #   color = styleInterval(breaksZero, colorsZero),
-    #   fontWeight = "bold"
-    # )
+    ) %>%
+    formatStyle(
+      columns = "perMillionDeath",
+      backgroundColor = styleInterval(breaksPerMillion, colorsPerMillion),
+      fontWeight = "bold"
+    ) %>%
+    formatStyle(
+      columns = "zeroContinuousDay",
+      color = styleInterval(breaksZero, colorsZero),
+      fontWeight = "bold"
+    )
 
   # datatable(
   #   data = dt[, c(1, 8, 12, 7, 9, 14, 15, 10
