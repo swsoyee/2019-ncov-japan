@@ -166,7 +166,7 @@ output$echartsSimpleMap <- renderEcharts4r({
     )
 
   # 本日増加分をプロット
-  if (input$selectMapBottomButton == "total") {
+  if (input$selectMapBottomButton %in% c("total", "active")) {
     newToday <- dt[diff > 0]
     for (i in 1:nrow(newToday)) {
       map <- map %>%
