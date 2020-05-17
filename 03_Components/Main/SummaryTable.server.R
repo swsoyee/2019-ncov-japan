@@ -237,10 +237,17 @@ output$confirmedByPrefTable <- renderDataTable({
   colors <-
     colorRampPalette(c(lightRed, darkRed))(length(breaks) + 1)
 
+  breaksActive <-
+    seq(0, max(unlist(ifelse(
+      is.na(dt$active), 0, dt$active
+    )), na.rm = T), by = 100)
+  colorsActive <-
+    colorRampPalette(c(lightYellow, darkRed))(length(breaksActive) + 1)
+
   breaksDoubleTimeDay <-
     seq(0, max(unlist(ifelse(
       is.na(dt$doubleTimeDay), 0, dt$doubleTimeDay
-    )), na.rm = T))
+    )), na.rm = T), by = 5)
   colorsDoubleTimeDay <-
     colorRampPalette(c(darkRed, lightYellow))(length(breaksDoubleTimeDay) + 1)
 
@@ -255,12 +262,13 @@ output$confirmedByPrefTable <- renderDataTable({
     colorRampPalette(c(darkYellow, "#FFFFFF"))(length(breaksPerArea) + 1)
 
   datatable(
-    data = dt[, c(1, 3, 4, 6, 11, 13, 15, 16), with = F],
+    data = dt[, c(1, 3, 4, 6, 25, 11, 13, 15, 16), with = F],
     colnames = c(
       i18n$t("自治体"),
       i18n$t("新規"),
       i18n$t("感染者数"),
       i18n$t("感染推移"),
+      i18n$t("現在患者数"),
       i18n$t("倍加日数"),
       i18n$t("百万人あたり"),
       i18n$t("カテゴリ"),
@@ -269,7 +277,7 @@ output$confirmedByPrefTable <- renderDataTable({
     escape = F,
     # caption = i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。"),
     # extensions = c("Responsive"),
-    extensions = "RowGroup",
+    extensions = c("RowGroup", "Buttons"),
     callback = htmlwidgets::JS(paste0(
       "
       table.rowGroup().",
@@ -279,25 +287,25 @@ output$confirmedByPrefTable <- renderDataTable({
     )),
     options = list(
       paging = F,
-      rowGroup = list(dataSrc = 7),
-      dom = "t",
+      rowGroup = list(dataSrc = 8),
+      dom = "Bt",
+      buttons = list(
+        list(
+          extend = "colvis",
+          columns = c(4, 5, 6, 7, 9),
+          text = i18n$t("カラム表示")
+        )
+      ),
       scrollY = "540px",
       scrollX = T,
       columnDefs = list(
         list(
-          className = "dt-center",
-          width = "15%",
-          targets = c(3, 4)
-        ),
-        list(
           className = "dt-left",
-          width = "80px",
           targets = 1
         ),
         list(
           className = "dt-center",
-          width = "13%",
-          targets = c(5, 6, 8)
+          targets = c(3:7, 9)
         ),
         list(
           width = "30px",
@@ -306,7 +314,7 @@ output$confirmedByPrefTable <- renderDataTable({
         ),
         list(
           visible = F,
-          targets = 7
+          targets = c(6, 8)
         ),
         list(
           render = JS(
@@ -372,6 +380,11 @@ output$confirmedByPrefTable <- renderDataTable({
     formatStyle(
       columns = "today",
       color = styleInterval(breaks, colors),
+      fontWeight = "bold"
+    ) %>%
+    formatStyle(
+      columns = "active",
+      color = styleInterval(breaksActive, colorsActive),
       fontWeight = "bold"
     ) %>%
     formatStyle(
