@@ -190,17 +190,17 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
           ")
     )
   ) %>%
-    spk_add_deps() #%>%
-    # formatStyle(
-    #   columns = "totalDischarged",
-    #   color = styleInterval(breaksDischarged, colorsDischarged),
-    #   fontWeight = "bold"
-    # ) %>%
-    # formatStyle(
-    #   columns = "death",
-    #   color = styleInterval(breaksDeath, colorsDeath),
-    #   fontWeight = "bold"
-    # ) %>%
+    spk_add_deps() %>%
+    formatStyle(
+      columns = "totalDischarged",
+      color = styleInterval(breaksDischarged, colorsDischarged),
+      fontWeight = "bold"
+    ) %>%
+    formatStyle(
+      columns = "death",
+      color = styleInterval(breaksDeath, colorsDeath),
+      fontWeight = "bold"
+    ) #%>%
     # formatStyle(
     #   columns = "perMillionDeath",
     #   backgroundColor = styleInterval(breaksPerMillion, colorsPerMillion),
