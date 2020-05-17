@@ -117,7 +117,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     colorRampPalette(c(lightBlue, darkBlue))(length(breaksZero) + 1)
 
   breaksDeath <-
-    seq(0, max(ifelse(is.na(dt$death), 0, dt$death), na.rm = T), 2)
+    seq(0, max(ifelse(is.na(dt$death), 0, dt$death), na.rm = T), 10)
   colorsDeath <-
     colorRampPalette(c(lightNavy, darkNavy))(length(breaksDeath) + 1)
 
@@ -191,11 +191,11 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     )
   ) %>%
     spk_add_deps() %>%
-    formatStyle(
-      columns = "totalDischarged",
-      color = styleInterval(breaksDischarged, colorsDischarged),
-      fontWeight = "bold"
-    ) %>%
+    # formatStyle(
+    #   columns = "totalDischarged",
+    #   color = styleInterval(breaksDischarged, colorsDischarged),
+    #   fontWeight = "bold"
+    # ) %>%
     formatStyle(
       columns = "death",
       color = styleInterval(breaksDeath, colorsDeath),
