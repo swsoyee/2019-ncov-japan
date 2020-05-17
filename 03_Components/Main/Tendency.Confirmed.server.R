@@ -62,7 +62,7 @@ confirmedDataByDate <- reactive({
   dt$都道府県 <- rowSums(byDate[, c(2:48)])
   if (!is.null(input$regionPicker)) {
     dt <- dt[, c("date", input$regionPicker), with = F]
-    # dt <- dt[, c('date', '北海道', '東京', '神奈川')] # TEST
+    # dt <- dt[, c('date', '都道府県', 'チャーター便', '検疫職員')] # TEST
     dt$total <- cumsum(rowSums(dt[, 2:ncol(dt)]))
     dt[, difference := total - shift(total)]
     setnafill(dt, fill = 0)
@@ -165,10 +165,14 @@ output$oneSideLogConfirmed <- renderEcharts4r({
 # ====新規感染者推移図（一般）====
 output$confirmedLine <- renderEcharts4r({
   dt <- confirmedDataByDate()
+
   if (ncol(dt) > 1) {
-    dt$ma_3 <- round(frollmean(dt$difference, n = 3, fill = 0), 2)
-    dt$ma_5 <- round(frollmean(dt$difference, n = 5, fill = 0), 2)
-    dt$ma_7 <- round(frollmean(dt$difference, n = 7, fill = 0), 2)
+    dt[, `:=`(
+      ma_3 = round(frollmean(difference, n = 3, fill = 0), 2),
+      ma_5 = round(frollmean(difference, n = 5, fill = 0), 2),
+      ma_7 = round(frollmean(difference, n = 7, fill = 0), 2)
+    )]
+
     dt %>%
       e_charts(date) %>%
       e_bar(
@@ -231,7 +235,7 @@ output$confirmedLine <- renderEcharts4r({
       ) %>%
       e_tooltip(trigger = "axis") %>%
       e_datazoom(
-        minValueSpan = 3600 * 24 * 1000 * 7,
+        minValueSpan = 604800000, #3600 * 24 * 1000 * 7,
         bottom = "0%",
         startValue = max(dt$date, na.rm = T) - 28
       )

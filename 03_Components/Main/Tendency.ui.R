@@ -4,7 +4,7 @@ Component.Tendency <- function() {
     title = tagList(icon("chart-line"), i18n$t("国内状況推移")),
     closable = F,
     collapsible = T,
-    collapsed = T,
+    collapsed = F,
     enable_label = T,
     label_text = tagList(i18n$t("もっと見る"), icon("hand-point-right")),
     label_status = "warning",
