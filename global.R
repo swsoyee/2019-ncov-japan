@@ -115,12 +115,6 @@ mhlwSummary <- mhlwSummary[order(都道府県名, 日付)]
 setnafill(mhlwSummary, type = "locf", cols = c("陽性者", "退院者", "検査人数"))
 
 # ====総数基礎集計====
-# PCR
-PCR_WITHIN <- getFinalAndDiff(domesticDailyReport$pcr)
-PCR_SHIP <- getFinalAndDiff(shipDailyReport$pcr)
-PCR_FLIGHT <- getFinalAndDiff(flightDailyReport$pcr)
-PCR_AIRPORT <- getFinalAndDiff(airportDailyReport$pcr)
-
 
 # 確認
 TOTAL_DOMESITC <- sum(byDate[, c(2:48)]) # 日本国内事例のPCR陽性数（クルーズ船関連者除く）
