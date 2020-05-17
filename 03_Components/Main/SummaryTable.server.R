@@ -472,7 +472,6 @@ output$testByPrefTable <- renderDataTable({
         ),
         list(
           className = "dt-center",
-          width = "13%",
           # targets = c(i18n$t("検査人数"), i18n$t("検査推移"), i18n$t("陽性率推移"))
           targets = c(2, 3, 7)
         ),
