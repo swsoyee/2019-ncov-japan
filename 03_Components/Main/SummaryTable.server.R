@@ -158,24 +158,26 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     )),
     options = list(
       paging = F,
-      rowGroup = list(dataSrc = 8),
+      rowGroup = list(dataSrc = -1),
       fixedHeader = T,
       dom = "t",
       scrollY = "540px",
       scrollX = T,
       columnDefs = list(
         list(
+          className = "dt-center",
+          targets = 2:7
+        ),
+        list(
           visible = F,
-          targets = 8
+          targets = -1
         ),
         list(
           render = JS(
-            "
-                     function(data, type, row, meta) {
-                        const split = data.split('|');
-                        return split[1];
-                    }"
-          ),
+            "function(data, type, row, meta) {
+              const split = data.split('|');
+              return split[1];
+       }"),
           targets = 1
         )
       ),
@@ -186,7 +188,27 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
           ")
     )
   ) %>%
-    spk_add_deps()
+    spk_add_deps() %>%
+    formatStyle(
+      columns = "totalDischarged",
+      color = styleInterval(breaksDischarged, colorsDischarged),
+      fontWeight = "bold"
+    ) %>%
+    formatStyle(
+      columns = "death",
+      color = styleInterval(breaksDeath, colorsDeath),
+      fontWeight = "bold"
+    ) %>%
+    formatStyle(
+      columns = "perMillionDeath",
+      backgroundColor = styleInterval(breaksPerMillion, colorsPerMillion),
+      fontWeight = "bold"
+    ) %>%
+    formatStyle(
+      columns = "zeroContinuousDay",
+      color = styleInterval(breaksZero, colorsZero),
+      fontWeight = "bold"
+    )
   # datatable(
   #   data = dt[, c(1, 8, 12, 7, 9, 14, 15, 10
   #                 ), with = F],
