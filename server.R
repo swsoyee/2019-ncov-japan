@@ -42,7 +42,7 @@ shinyServer(function(input, output, session) {
   )
   # ネットワーク系コンポーネント
   source(
-    file = paste0(COMPONENT_PATH, "Network.R"),
+    file = paste0(COMPONENT_PATH, "/Network/Network.R"),
     local = TRUE,
     encoding = "UTF-8"
   )
@@ -66,7 +66,7 @@ shinyServer(function(input, output, session) {
   )
   # 感染ルート
   source(
-    file = paste0(COMPONENT_PATH, "PlotInfectedRoute.R"),
+    file = paste0(COMPONENT_PATH, "Network/PlotInfectedRoute.R"),
     local = TRUE,
     encoding = "UTF-8"
   )
