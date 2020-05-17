@@ -135,7 +135,8 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     colorRampPalette(c("#FFFFFF", "#6B7989"))(length(breaksPerMillion) + 1)
 
   datatable(
-    data = dt[, c(1, 8, 12, 7, 9, 14, 15, 10), with = F],
+    data = dt[, c(1, 8, 12, 7, 9, 14, 15#, 10
+                  ), with = F],
     colnames = c(
       i18n$t("自治体"),
       i18n$t("内訳"),
@@ -143,8 +144,8 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
       i18n$t("回復推移"),
       i18n$t("死亡"),
       i18n$t("百万人あたり"),
-      i18n$t("カテゴリ"),
-      i18n$t("0新規日数")
+      i18n$t("カテゴリ")#,
+      #i18n$t("0新規日数")
     ),
     caption = "",
     escape = F,
@@ -182,7 +183,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
         list(
           className = "dt-center",
           width = "16%",
-          targets = c(6, 8)
+          targets = 6
         ),
         list(
           visible = F,
@@ -230,12 +231,12 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
       columns = "perMillionDeath",
       backgroundColor = styleInterval(breaksPerMillion, colorsPerMillion),
       fontWeight = "bold"
-    ) %>%
-    formatStyle(
-      columns = "zeroContinuousDay",
-      color = styleInterval(breaksZero, colorsZero),
-      fontWeight = "bold"
-    )
+    ) #%>%
+    # formatStyle(
+    #   columns = "zeroContinuousDay",
+    #   color = styleInterval(breaksZero, colorsZero),
+    #   fontWeight = "bold"
+    # )
 })
 
 # TODO データ読み込み専用のところに移動
