@@ -90,11 +90,24 @@ observeEvent(input$switchTableVersion, {
           ),
           accordionItem(
             id = 2,
-            title = i18n$t("2. 5月9日からの集計について"),
+            title = tagList(i18n$t("2. 5月9日からの集計について"), dashboardLabel(status = "warning", i18n$t("必読"))),
             tags$ol(
               tags$li(
-                icon(""),
+                icon("exclamation-triangle"),
                 i18n$t("PCR検査実施人数は、一部自治体について件数を計上しているため、実際の人数より過大である。")
+              ),
+              tags$li(
+                icon("exclamation-triangle"),
+                i18n$t("一部のデータについて、マイナスになったり大きく増減しているのは、都道府県からの報告に訂正または集計されていないデータを加わった結果になります。参考："), 
+                tags$a(icon("external-link-alt"), "5/13", href = "https://www.mhlw.go.jp/stf/newpage_11291.html"),
+                tags$a(icon("external-link-alt"), "5/14", href = "https://www.mhlw.go.jp/stf/newpage_11311.html"),
+                tags$a(icon("external-link-alt"), "5/15", href = "https://www.mhlw.go.jp/stf/newpage_11339.html"),
+                tags$a(icon("external-link-alt"), "5/16", href = "https://www.mhlw.go.jp/stf/newpage_11354.html"),
+                tags$a(icon("external-link-alt"), icon("github"), href = "https://github.com/swsoyee/2019-ncov-japan/issues/389")
+              ),
+              tags$li(
+                icon("exclamation-triangle"),
+                i18n$t("本サイトの陽性率の計算に関しては、3月下旬から5月8日までの間に厚労省が公開している陽性率と同じ計算方法で計算しています。5月8日以後基準変更などがあるため、厚労省側は公式で陽性率の発表しなくなり、自治体が公表しているデータ（陽性率など）を正しい数値であることを見做しています。本サイトは引き続き同じ計算式で厚労省が発表しているデータだけで陽性率を計算しているが、分母（検査人数）の正確さの保証はないため、陽性率の正確さに関する保証は一切ありません。正確の数値を求めている方は各自治体のページをご参考するようお願い致します。")
               )
             )
           )
