@@ -110,8 +110,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
   # dt <- dt[count > 0]
   columnName <- c("death", "perMillionDeath")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
-  
-  dt[, zeroContinuousDay := replace(.SD, .SD <= 0, NA), .SDcols = 'zeroContinuousDay']
+  dt[, zeroContinuousDay := replace(.SD, .SD <= 0, NA), .SDcols = "zeroContinuousDay"]
   breaksZero <-
     seq(0, max(ifelse(is.na(dt$zeroContinuousDay), 0, dt$zeroContinuousDay), na.rm = T), 5)
   colorsZero <-
@@ -233,7 +232,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
       fontWeight = "bold"
     ) %>%
     formatStyle(
-      columns = 'zeroContinuousDay',
+      columns = "zeroContinuousDay",
       color = styleInterval(breaksZero, colorsZero),
       fontWeight = "bold"
     )
@@ -269,13 +268,6 @@ output$confirmedByPrefTable <- renderDataTable({
     )), na.rm = T))
   colorsDoubleTimeDay <-
     colorRampPalette(c(darkRed, lightYellow))(length(breaksDoubleTimeDay) + 1)
-  
-  breaksActive <-
-    seq(0, max(unlist(ifelse(
-      is.na(dt$active), 0, dt$active
-    )), na.rm = T))
-  colorsActive <-
-    colorRampPalette(c(lightYellow, darkRed))(length(breaksActive) + 1)
 
   breaksPerMillion <-
     seq(0, max(ifelse(is.na(dt$perMillion), 0, dt$perMillion), na.rm = T))
@@ -288,22 +280,21 @@ output$confirmedByPrefTable <- renderDataTable({
     colorRampPalette(c(darkYellow, "#FFFFFF"))(length(breaksPerArea) + 1)
 
   datatable(
-    data = dt[, c(1, 3, 4, 6, 25, 11, 13, 15, 16), with = F],
+    data = dt[, c(1, 3, 4, 6, 11, 13, 15, 16), with = F],
     colnames = c(
-      i18n$t("自治体"),       # 1
-      i18n$t("新規"),         # 2
-      i18n$t("感染者数"),     # 3
-      i18n$t("感染推移"),     # 4
-      i18n$t("現在患者数"),   # 5
-      i18n$t("倍加日数"),     # 6
-      i18n$t("百万人あたり"), # 7
-      i18n$t("カテゴリ"),     # 8
-      i18n$t("感染密度(km)")  # 9
+      i18n$t("自治体"),
+      i18n$t("新規"),
+      i18n$t("感染者数"),
+      i18n$t("感染推移"),
+      i18n$t("倍加日数"),
+      i18n$t("百万人あたり"),
+      i18n$t("カテゴリ"),
+      i18n$t("感染密度(km)")
     ),
     escape = F,
     # caption = i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。"),
     # extensions = c("Responsive"),
-    extensions = c("RowGroup", "Buttons"),
+    extensions = "RowGroup",
     callback = htmlwidgets::JS(paste0(
       "
       table.rowGroup().",
@@ -313,17 +304,10 @@ output$confirmedByPrefTable <- renderDataTable({
     )),
     options = list(
       paging = F,
-      rowGroup = list(dataSrc = 8),
-      dom = "Bt",
+      rowGroup = list(dataSrc = 7),
+      dom = "t",
       scrollY = "540px",
       scrollX = T,
-      buttons = list(
-        list(
-          extend = 'colvis', 
-          columns = c(4, 5, 6, 7, 9),
-          text = i18n$t("カラム表示")
-          )
-        ),
       columnDefs = list(
         list(
           className = "dt-center",
@@ -338,7 +322,7 @@ output$confirmedByPrefTable <- renderDataTable({
         list(
           className = "dt-center",
           width = "13%",
-          targets = c(5, 6, 7, 9)
+          targets = c(5, 6, 8)
         ),
         list(
           width = "30px",
@@ -347,7 +331,7 @@ output$confirmedByPrefTable <- renderDataTable({
         ),
         list(
           visible = F,
-          targets = c(6, 8)
+          targets = 7
         ),
         list(
           render = JS(
@@ -418,11 +402,6 @@ output$confirmedByPrefTable <- renderDataTable({
     formatStyle(
       columns = "doubleTimeDay",
       color = styleInterval(breaksDoubleTimeDay, colorsDoubleTimeDay),
-      fontWeight = "bold"
-    ) %>%
-    formatStyle(
-      columns = "active",
-      color = styleInterval(breaksActive, colorsActive),
       fontWeight = "bold"
     ) %>%
     formatStyle(
@@ -549,7 +528,7 @@ output$testByPrefTable <- renderDataTable({
   ) %>%
     spk_add_deps() %>%
     formatCurrency(
-      columns = "検査人数", 
+      columns = "検査人数",
       currency = "",
       digits = 0
     ) %>%
@@ -580,7 +559,7 @@ output$testByPrefTable <- renderDataTable({
       fontWeight = "bold"
     ) %>%
     formatCurrency(
-      columns = "百万人あたり", 
+      columns = "百万人あたり",
       currency = "",
       digits = 0
     ) %>%
