@@ -18,7 +18,8 @@ output$echartsMapPlaySetting <- renderUI({
   if(input$switchMapVersion == F) {
     tags$span(
       dropdownButton(
-        tags$h4(i18n$t("表示設定")),
+        tags$h4(icon("eye"), i18n$t("表示設定")),
+        tags$hr(),
         materialSwitch(
           inputId = "showPopupOnMap",
           label = i18n$t("日次増加数のポップアップ"),
@@ -55,6 +56,7 @@ output$echartsMapPlaySetting <- renderUI({
         icon = icon("gear"),
         size = "sm",
         width = "300px",
+        right = T,
         tooltip = tooltipOptions(title = i18n$t("表示設定"), placement = "top")
       ),
       style = "float:right;"
@@ -85,8 +87,10 @@ simpleMapDataset <- reactive({
   dt <- merge(x = mapData[date == max(unique(mapData$date), na.rm = T)],
               y = mapData[date == as.Date(max(unique(mapData$date), na.rm = T)) - 1],
               by = c("ja", "full_ja", "en", "lat", "lng", "regions"), no.dups = T, sort = F)
-  dt[mhlwSummary[日付 == max(日付)], `:=` (total = count.x, severe = i.重症者, active = i.陽性者 - i.退院者,
-                                          diff = (count.x - count.y)), on = c(ja = "都道府県名")]
+  dt[mhlwSummary[日付 == max(日付)], `:=` (total = count.x, 
+                                       severe = i.重症者, 
+                                       active = i.陽性者 - i.退院者 - ifelse(is.na(i.死亡者), 0, i.死亡者),
+                                       diff = (count.x - count.y)), on = c(ja = "都道府県名")]
   dt
 })
 

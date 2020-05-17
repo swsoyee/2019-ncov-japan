@@ -72,11 +72,11 @@ shinyUI(
         badgeLabel = i18n$t("破棄"),
         badgeColor = "black"
       ),
-      menuItem(
-        "ECMOnet",
-        tabName = "ecmo",
-        icon = icon("hospital")
-      ),
+      # menuItem(
+      #   "ECMOnet",
+      #   tabName = "ecmo",
+      #   icon = icon("hospital")
+      # ),
       menuItem(
         i18n$t("状況分析"),
         tabName = "academic",
@@ -182,14 +182,14 @@ shinyUI(
             encoding = "UTF-8"
           )$value
         ),
-        tabItem(
-          tabName = "ecmo",
-          source(
-            file = paste0(PAGE_PATH, "/ECMO/ECMO.ui.R"),
-            local = T,
-            encoding = "UTF-8"
-          )$value
-        ),
+        # tabItem(
+        #   tabName = "ecmo",
+        #   source(
+        #     file = paste0(PAGE_PATH, "/ECMO/ECMO.ui.R"),
+        #     local = T,
+        #     encoding = "UTF-8"
+        #   )$value
+        # ),
         tabItem(
           tabName = "academic",
           source(

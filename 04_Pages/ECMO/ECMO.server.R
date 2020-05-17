@@ -190,3 +190,14 @@ output$ecmo <- renderEcharts4r({
       )
     )
 })
+
+observeEvent(input$gotoECMOPage, {
+  if (input$gotoECMOPage) {
+    updateTabItems(
+      session = session,
+      inputId = "sideBarTab",
+      selected = "ecmo"
+    )
+  }
+})
+

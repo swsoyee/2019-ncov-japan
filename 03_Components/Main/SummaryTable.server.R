@@ -34,6 +34,14 @@ observeEvent(input$switchTableVersion, {
       tagList(
         dataTableOutput("confirmedByPrefTable"),
         helpText(
+          icon("chart-bar"),
+          i18n$t("感染者数：本サイトのリアルタイム感染者数は再び陽性になった患者は新規として数えないため、一部のメディアと自治体が発表した数（延べ人数）と一致しない場合があります。")
+        ),
+        helpText(
+          icon("procedures"),
+          i18n$t("現在患者数：厚労省のデータをもとにして計算しているため、速報部分の感染者数が含まれていません。")
+        ),
+        helpText(
           icon("street-view"),
           i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。")
         )
@@ -174,7 +182,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
         ),
         list(
           className = "dt-center",
-          width = "18%",
+          width = "16%",
           targets = c(6, 8)
         ),
         list(
@@ -261,6 +269,13 @@ output$confirmedByPrefTable <- renderDataTable({
     )), na.rm = T))
   colorsDoubleTimeDay <-
     colorRampPalette(c(darkRed, lightYellow))(length(breaksDoubleTimeDay) + 1)
+  
+  breaksActive <-
+    seq(0, max(unlist(ifelse(
+      is.na(dt$active), 0, dt$active
+    )), na.rm = T))
+  colorsActive <-
+    colorRampPalette(c(lightYellow, darkRed))(length(breaksActive) + 1)
 
   breaksPerMillion <-
     seq(0, max(ifelse(is.na(dt$perMillion), 0, dt$perMillion), na.rm = T))
@@ -273,21 +288,22 @@ output$confirmedByPrefTable <- renderDataTable({
     colorRampPalette(c(darkYellow, "#FFFFFF"))(length(breaksPerArea) + 1)
 
   datatable(
-    data = dt[, c(1, 3, 4, 6, 11, 13, 15, 16), with = F],
+    data = dt[, c(1, 3, 4, 6, 25, 11, 13, 15, 16), with = F],
     colnames = c(
-      i18n$t("自治体"),
-      i18n$t("新規"),
-      i18n$t("感染者数"),
-      i18n$t("感染推移"),
-      i18n$t("倍加日数"),
-      i18n$t("百万人あたり"),
-      i18n$t("カテゴリ"),
-      i18n$t("感染密度(km)")
+      i18n$t("自治体"),       # 1
+      i18n$t("新規"),         # 2
+      i18n$t("感染者数"),     # 3
+      i18n$t("感染推移"),     # 4
+      i18n$t("現在患者数"),   # 5
+      i18n$t("倍加日数"),     # 6
+      i18n$t("百万人あたり"), # 7
+      i18n$t("カテゴリ"),     # 8
+      i18n$t("感染密度(km)")  # 9
     ),
     escape = F,
     # caption = i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。"),
     # extensions = c("Responsive"),
-    extensions = "RowGroup",
+    extensions = c("RowGroup", "Buttons"),
     callback = htmlwidgets::JS(paste0(
       "
       table.rowGroup().",
@@ -297,10 +313,17 @@ output$confirmedByPrefTable <- renderDataTable({
     )),
     options = list(
       paging = F,
-      rowGroup = list(dataSrc = 7),
-      dom = "t",
+      rowGroup = list(dataSrc = 8),
+      dom = "Bt",
       scrollY = "540px",
       scrollX = T,
+      buttons = list(
+        list(
+          extend = 'colvis', 
+          columns = c(4, 5, 6, 7, 9),
+          text = i18n$t("カラム表示")
+          )
+        ),
       columnDefs = list(
         list(
           className = "dt-center",
@@ -315,7 +338,7 @@ output$confirmedByPrefTable <- renderDataTable({
         list(
           className = "dt-center",
           width = "13%",
-          targets = c(5, 6, 8)
+          targets = c(5, 6, 7, 9)
         ),
         list(
           width = "30px",
@@ -324,7 +347,7 @@ output$confirmedByPrefTable <- renderDataTable({
         ),
         list(
           visible = F,
-          targets = 7
+          targets = c(6, 8)
         ),
         list(
           render = JS(
@@ -395,6 +418,11 @@ output$confirmedByPrefTable <- renderDataTable({
     formatStyle(
       columns = "doubleTimeDay",
       color = styleInterval(breaksDoubleTimeDay, colorsDoubleTimeDay),
+      fontWeight = "bold"
+    ) %>%
+    formatStyle(
+      columns = "active",
+      color = styleInterval(breaksActive, colorsActive),
       fontWeight = "bold"
     ) %>%
     formatStyle(

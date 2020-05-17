@@ -60,7 +60,7 @@ tabPanel(
       boxPad(
         fluidRow(
           column(
-            width = 9,
+            width = 11,
             radioGroupButtons(
               inputId = "switchTableVersion",
               label = NULL,
@@ -75,13 +75,25 @@ tabPanel(
             )
           ),
           column(
-            width = 3,
+            width = 1,
             tags$span(
-              awesomeCheckbox(
-                inputId = "tableShowSetting",
-                label = i18n$t("グルーピング表示"),
+              dropdownButton(
+                tags$h4(icon("eye"), i18n$t("表示設定")),
+                tags$hr(),
+                materialSwitch(
+                  inputId = "tableShowSetting",
+                  label = tagList(icon("object-group"), i18n$t("グルーピング表示")),
+                  status = "danger",
+                  value = T
+                ),
+                circle = F,
+                right = T,
+                inline = T,
                 status = "danger",
-                value = T
+                icon = icon("gear"),
+                size = "sm",
+                width = "300px",
+                tooltip = tooltipOptions(title = i18n$t("表示設定"), placement = "top")
               ),
               style = "float:right;"
             )

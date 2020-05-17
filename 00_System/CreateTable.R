@@ -311,9 +311,15 @@ mergeDt[, `:=` (コード = NULL, 都道府県 = NULL, 可住地面積 = NULL, �
 
 pcrByRegionToday[, `:=` (dischargedDiff = NULL)]
 mergeDt <- merge(mergeDt, pcrByRegionToday, by.x = "region", by.y = "都道府県名", all.x = T, no.dups = T, sort = F)
+active <- mergeDt$陽性者 - mergeDt$退院者 - ifelse(is.na(mergeDt$死亡者), 0, mergeDt$死亡者)
 mergeDt[, `:=` (日付 = NULL, 陽性者 = NULL, 入院中 = NULL, 退院者 = NULL, 死亡者 = NULL, 確認中 = NULL, 分類 = NULL)]
 mergeDt[, 百万人あたり := round(検査人数 / (population / 1000000), 0)]
 mergeDt[, population := NULL]
+
+# 現在患者数
+mergeDt$active <- active
+mergeDt[active < 0, active := 0] # チャーター便の単独対応
+mergeDt[region == "クルーズ船", active := active - 40] # クルーズ船の単独対応
 
 # 13個特定警戒都道府県
 alertPref <-
@@ -332,9 +338,16 @@ alertPref <-
     "兵庫" #,
     # "福岡"
   )
-mergeDt[!(region %in% alertPref), region := paste0("<span style='float:right;'>", region, "</span>")]
-mergeDt[region %in% alertPref, region := paste0("<i class=\"fa fa-exclamation-triangle\"></i>", "<span style='float:right;'>", region, "</span>")]
 
+for(i in seq(nrow(mergeDt))) {
+  if (mergeDt[i]$region %in% alertPref) {
+    mergeDt[i]$region <- paste0("<i style='color:#DD4B39;' class=\"fa fa-exclamation-triangle\"></i>", "<span style='float:right;'>", mergeDt[i]$region, "</span>")
+  } else if (mergeDt[i]$active == 0 && !is.na(mergeDt[i]$active)) {
+    mergeDt[i]$region <- paste0("<i style='color:#01A65A;' class=\"fa fa-check-circle\"></i>", "<span style='float:right;'>", mergeDt[i]$region, "</span>")
+  } else {
+    mergeDt[i]$region <- paste0("<span style='float:right;'>", mergeDt[i]$region, "</span>")
+  }
+}
 
 # 自治体名前ソート用
 prefNameId <- sprintf('%02d', seq(2:ncol(byDate)))

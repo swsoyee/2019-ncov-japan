@@ -169,12 +169,22 @@
     {
       "ja": "各都道府県の状況",
       "cn": "各省份情况",
-      "en": "The situation in each prefecture"
+      "en": "Situation in Each Prefecture"
+    },
+    {
+      "ja": "5月9までの市区町村の感染者数",
+      "cn": "5月9日为止的各次级行政区域的确诊人数",
+      "en": "Number of Confirmed in Each Municipality Until May 9"
+    },
+    {
+      "ja": "データソース：@kenmo_economics\n※陽性者数は居住地が判明した方のみを集計しているので、県の総計と一致しません。\n※5月9日以後のデータは収集されないため、グラフの更新も中止となります。",
+      "cn": "数据来源：@kenmo_economics\n注1：本图仅统计公布了居住地的患者，因此与该省份的实际确诊人数不一致\n注2：因数据集作者已在5月9日停止收集数据，因此本图暂时不会再进行更新。",
+      "en": "Data source: @kenmo_economics\nNote 1: This figure only counts those whose place of residence is published and therefore does not correspond to the total number of confirmed cases in the province\nNote 2: This figure will not be updated for the time being, as the authors of the dataset stopped collecting data on 9 May."
     },
     {
       "ja": "市区町村の感染者数",
       "cn": "各次级行政区域的确诊人数",
-      "en": "Number of infected in the municipality"
+      "en": "Number of Confirmed in Each Municipality"
     },
     {
       "ja": "開発＆調整中",
@@ -304,7 +314,7 @@
     {
       "ja": "現在患者数",
       "cn": "现存患者数",
-      "en": "Patients at present"
+      "en": "Active"
     },
     {
       "ja": "分母には死亡者、チャーター便で帰国したクルーズ船の乗客40名は含まれていません。",
@@ -602,7 +612,7 @@
       "en": "Notes"
     },
     {
-      "ja": "これまで延べ人数で公表されていたクルーズ船のＰＣＲ検査の結果については、３月５日以後、実員数で精査された結果になったため、３月５日のデータで下方修正されています。",
+      "ja": "これまで延べ人数で公表されていたクルーズ船のPCR検査の結果については、3月5日以後、実員数で精査された結果になったため、3月5日のデータで下方修正されています。",
       "cn": "以累计人次进行发表的公主号游轮的PCR检查结果在3月5日以后进行了人数核查，因此3月5日的数据会有负向修正。",
       "en": "The PCR results of the cruise PD, published in terms of cumulative number of test conducted, were verified after March 5, so the March 5 data will have a negative correction."
     },
@@ -637,7 +647,7 @@
       "en": "Active Severe: "
     },
     {
-      "ja": "「令和２年３月４日版」以後は、陽性となった者の濃厚接触者に対する検査も含めた検査実施人数を都道府県に照会し、回答を得たものを公表しています。なお、国内事例のＰＣＲ検査実施人数は、疑似症患者（感染が疑われる者）報告制度の枠組みの中で報告された数を計上しており、各自治体で行った全ての検査結果を反映しているものではありません（退院時の確認検査などは含まず）。",
+      "ja": "「令和2年3月4日版」以後は、陽性となった者の濃厚接触者に対する検査も含めた検査実施人数を都道府県に照会し、回答を得たものを公表しています。なお、国内事例のPCR検査実施人数は、疑似症患者（感染が疑われる者）報告制度の枠組みの中で報告された数を計上しており、各自治体で行った全ての検査結果を反映しているものではありません（退院時の確認検査などは含まず）。",
       "cn": "在《令和2年3月4日版》以后，包括对于与阳性患者有过密切接触的检测人数在内的数据在与各省份的数据进行核对后，得到确认的部分将予以公开。此外，国内确诊的PCR检查实施人数仅计算了属于疑似病症报告规定中的数量，不代表该省份的所有的检查结果数量（如出院时的确认检查等）。",
       "en": "After the Report of March 4, the number of people who conducted the tests, including those who have a close contact with the patients, was referred to the prefectural governments and only confirmed number were published. The number of PCR tests conducted in Japan is the number of reports within the framework of the pseudopathy reporting system, and does not reflect the results of all tests conducted in each municipality (such as confirmation tests at the time of discharge are not included)."
     },
@@ -1672,6 +1682,11 @@
       "en": "Because the number of tests conducted rather than cases (persons tested) is reported for some municipalities, the figures are larger than the number of persons tested."
     },
     {
+      "ja": "一部のデータについて、マイナスになったり大きく増減しているのは、都道府県からの報告に訂正または集計されていないデータを加わった結果になります。参考：",
+      "cn": "部分检测人数为负或突然剧增的情况是由于厚劳省依据都道府县的报告进行数据修正或将没计入的数据进行一次性添加而造成的。可参考：",
+      "en": "Some of the negative or sudden surge in the number was caused by the MHLW's data correction based on reports from prefectures or one-time addition of data that were not counted. Reference: "
+    },
+    {
       "ja": "2. 5月9日からの集計について",
       "cn": "2. 关于5月9日开始的统计",
       "en": "2. Data published by MHLW from May 8"
@@ -1990,6 +2005,26 @@
       "ja": "検査人数、百万人あたりの検査および陽性者数の三つの指標は、毎日の増加分を直近7日の移動平均を計算した数値です。",
       "cn": "检测人数、每百万人的检测数和阳性患者三项指标，是根据每日的各自增长数计算最近7天的移动平均后所得到的数值。",
       "en": "The three indicators, number of tests conducted, tests per million, and positive, are the values obtained after calculating the moving average of the last seven days based on the respective daily increases."
+    },
+    {
+      "ja": "カラム表示",
+      "cn": "列显示",
+      "en": "Column Visibility"
+    },
+    {
+      "ja": "現在患者数：厚労省のデータをもとにして計算しているため、速報部分の感染者数が含まれていません。",
+      "cn": "现存患者数：该数值为根据厚劳省所发布的数据进行计算得出，因此速报部分的确诊人数不包含在内。",
+      "en": "Active: Since the calculation is based on data from the MHLW, the real-time number are not included."
+    },
+    {
+      "ja": "ECMOnet・重症患者状況へ",
+      "cn": "前往ECMOnet重症患者情况",
+      "en": "Go to ECMOnet page"
+    },
+    {
+      "ja": "感染者数：本サイトのリアルタイム感染者数は再び陽性になった患者は新規として数えないため、一部のメディアと自治体が発表した数（延べ人数）と一致しない場合があります。",
+      "cn": "确诊人数：本站速报的确诊人数不对复阳患者进行再次统计，因此可能会与部分媒体和自治体所汇报的数值（累计人次）有所不同。",
+      "en": "Confirmed: The real-time number of confirmed cases reported in this site is not counted those testing positive after having fully recovered, so it may differ from the values reported by some media and municipalities (patients testing positive after having fully recovered counted as 1 addition)."
     }
   ]
 }
