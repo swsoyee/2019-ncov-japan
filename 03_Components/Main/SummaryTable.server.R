@@ -412,26 +412,6 @@ output$testByPrefTable <- renderDataTable({
   columnName <- c("前日比")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
 
-  breaksPerM <-
-    seq(0, max(ifelse(is.na(dt$百万人あたり), 0, dt$百万人あたり), na.rm = T), by = 1000)
-  colorsPerM <-
-    colorRampPalette(c("#FFFFFF", middleYellow))(length(breaksPerM) + 1)
-
-  breaksDaily <-
-    seq(0, max(ifelse(is.na(dt$週間平均移動), 0, dt$週間平均移動), na.rm = T), by = 50)
-  colorsDaily <-
-    colorRampPalette(c(lightYellow, darkYellow))(length(breaksDaily) + 1)
-
-  breaksNew <-
-    seq(0, max(ifelse(is.na(dt$前日比), 0, dt$前日比), na.rm = T), by = 50)
-  colorsNew <-
-    colorRampPalette(c(lightYellow, darkYellow))(length(breaksNew) + 1)
-
-  breaksPositiveRate <-
-    seq(0, max(ifelse(is.na(dt$陽性率), 0, dt$陽性率), na.rm = T))
-  colorsPositiveRate <-
-    colorRampPalette(c(lightRed, darkRed))(length(breaksPositiveRate) + 1)
-
   datatable(
     data = dt[, .(region, 検査人数, 検査数推移, 前日比, 週間平均移動, 百万人あたり, 陽性率推移, 陽性率, group)],
     colnames = c(
@@ -538,12 +518,18 @@ output$testByPrefTable <- renderDataTable({
     ) %>%
     formatStyle(
       columns = "陽性率",
-      color = styleInterval(breaksPositiveRate, colorsPositiveRate),
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$陽性率, colors = c(lightRed, darkRed), by = 4)
+      ),
       fontWeight = "bold"
     ) %>%
     formatStyle(
       columns = "百万人あたり",
-      backgroundColor = styleInterval(breaksPerM, colorsPerM),
+      backgroundColor = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$百万人あたり, colors = c("#FFFFFF", middleYellow), by = 1000)
+      ),
       fontWeight = "bold"
     ) %>%
     formatCurrency(
@@ -553,12 +539,18 @@ output$testByPrefTable <- renderDataTable({
     ) %>%
     formatStyle(
       columns = "週間平均移動",
-      color = styleInterval(breaksDaily, colorsDaily),
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$週間平均移動, colors = c(lightYellow, darkYellow), by = 50)
+      ),
       fontWeight = "bold"
     ) %>%
     formatStyle(
       columns = "前日比",
-      color = styleInterval(breaksNew, colorsNew),
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$前日比, colors = c(lightYellow, darkYellow), by = 50)
+      ),
       fontWeight = "bold"
     )
 })
