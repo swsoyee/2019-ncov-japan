@@ -165,6 +165,10 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
       scrollX = T,
       columnDefs = list(
         list(
+          className = "dt-center",
+          targets = 2:7
+        ),
+        list(
           visible = F,
           targets = 8
         ),
