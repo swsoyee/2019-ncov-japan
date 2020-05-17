@@ -191,7 +191,6 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     )
   ) %>%
     spk_add_deps() %>%
-    # formatStyle(
     formatStyle(
       columns = "totalDischarged",
       color = styleInterval(breaksDischarged, colorsDischarged),
