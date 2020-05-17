@@ -22,8 +22,8 @@ output$detail <- renderDataTable({
     )
   ) %>%
     formatStyle("observationStaus",
-      target = "row",
-      background = styleEqual("終了", "#CCCCCC"),
+                target = "row",
+                background = styleEqual("終了", "#CCCCCC"),
     )
 })
 
@@ -33,14 +33,6 @@ observeEvent(input$switchTableVersion, {
     output$summaryTable <- renderUI({
       tagList(
         dataTableOutput("confirmedByPrefTable"),
-        helpText(
-          icon("chart-bar"),
-          i18n$t("感染者数：本サイトのリアルタイム感染者数は再び陽性になった患者は新規として数えないため、一部のメディアと自治体が発表した数（延べ人数）と一致しない場合があります。")
-        ),
-        helpText(
-          icon("procedures"),
-          i18n$t("現在患者数：厚労省のデータをもとにして計算しているため、速報部分の感染者数が含まれていません。")
-        ),
         helpText(
           icon("street-view"),
           i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。")
@@ -116,12 +108,12 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     seq(0, max(ifelse(is.na(dt$zeroContinuousDay), 0, dt$zeroContinuousDay), na.rm = T), 5)
   colorsZero <-
     colorRampPalette(c(lightBlue, darkBlue))(length(breaksZero) + 1)
-
+  
   breaksDeath <-
     seq(0, max(ifelse(is.na(dt$death), 0, dt$death), na.rm = T), 2)
   colorsDeath <-
     colorRampPalette(c(lightNavy, darkNavy))(length(breaksDeath) + 1)
-
+  
   breaksDischarged <-
     seq(0, max(ifelse(
       is.na(dt$totalDischarged), 0, dt$totalDischarged
@@ -134,7 +126,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     ), na.rm = T))
   colorsPerMillion <-
     colorRampPalette(c("#FFFFFF", "#6B7989"))(length(breaksPerMillion) + 1)
-
+  
   datatable(
     data = dt[, c(1, 8, 12, 7, 9, 14, 15, 10), with = F],
     colnames = c(
@@ -182,7 +174,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
         ),
         list(
           className = "dt-center",
-          width = "16%",
+          width = "18%",
           targets = c(6, 8)
         ),
         list(
@@ -257,12 +249,12 @@ output$confirmedByPrefTable <- renderDataTable({
   # ０の値を非表示するため、NAに設定るす
   columnName <- c("today", "doubleTimeDay")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
-
+  
   breaks <-
     seq(0, max(ifelse(is.na(dt$today), 0, dt$today), na.rm = T))
   colors <-
     colorRampPalette(c(lightRed, darkRed))(length(breaks) + 1)
-
+  
   breaksDoubleTimeDay <-
     seq(0, max(unlist(ifelse(
       is.na(dt$doubleTimeDay), 0, dt$doubleTimeDay
@@ -270,40 +262,32 @@ output$confirmedByPrefTable <- renderDataTable({
   colorsDoubleTimeDay <-
     colorRampPalette(c(darkRed, lightYellow))(length(breaksDoubleTimeDay) + 1)
   
-  breaksActive <-
-    seq(0, max(unlist(ifelse(
-      is.na(dt$active), 0, dt$active
-    )), na.rm = T))
-  colorsActive <-
-    colorRampPalette(c(lightYellow, darkRed))(length(breaksActive) + 1)
-
   breaksPerMillion <-
     seq(0, max(ifelse(is.na(dt$perMillion), 0, dt$perMillion), na.rm = T))
   colorsPerMillion <-
     colorRampPalette(c("#FFFFFF", darkRed))(length(breaksPerMillion) + 1)
-
+  
   breaksPerArea <-
     seq(0, ceiling(max(dt$perArea[!is.infinite(dt$perArea)], na.rm = T)))
   colorsPerArea <-
     colorRampPalette(c(darkYellow, "#FFFFFF"))(length(breaksPerArea) + 1)
-
+  
   datatable(
-    data = dt[, c(1, 3, 4, 6, 25, 11, 13, 15, 16), with = F],
+    data = dt[, c(1, 3, 4, 6, 11, 13, 15, 16), with = F],
     colnames = c(
-      i18n$t("自治体"),       # 1
-      i18n$t("新規"),         # 2
-      i18n$t("感染者数"),     # 3
-      i18n$t("感染推移"),     # 4
-      i18n$t("現在患者数"),   # 5
-      i18n$t("倍加日数"),     # 6
-      i18n$t("百万人あたり"), # 7
-      i18n$t("カテゴリ"),     # 8
-      i18n$t("感染密度(km)")  # 9
+      i18n$t("自治体"),
+      i18n$t("新規"),
+      i18n$t("感染者数"),
+      i18n$t("感染推移"),
+      i18n$t("倍加日数"),
+      i18n$t("百万人あたり"),
+      i18n$t("カテゴリ"),
+      i18n$t("感染密度(km)")
     ),
     escape = F,
     # caption = i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。"),
     # extensions = c("Responsive"),
-    extensions = c("RowGroup"),
+    extensions = "RowGroup",
     callback = htmlwidgets::JS(paste0(
       "
       table.rowGroup().",
@@ -313,17 +297,10 @@ output$confirmedByPrefTable <- renderDataTable({
     )),
     options = list(
       paging = F,
-      rowGroup = list(dataSrc = 8),
+      rowGroup = list(dataSrc = 7),
       dom = "t",
       scrollY = "540px",
       scrollX = T,
-      # buttons = list(
-      #   list(
-      #     extend = 'colvis', 
-      #     columns = c(4, 5, 6, 7, 9),
-      #     text = i18n$t("カラム表示")
-      #     )
-      #   ),
       columnDefs = list(
         list(
           className = "dt-center",
@@ -338,7 +315,7 @@ output$confirmedByPrefTable <- renderDataTable({
         list(
           className = "dt-center",
           width = "13%",
-          targets = c(5, 6, 7, 9)
+          targets = c(5, 6, 8)
         ),
         list(
           width = "30px",
@@ -347,7 +324,7 @@ output$confirmedByPrefTable <- renderDataTable({
         ),
         list(
           visible = F,
-          targets = c(6, 8)
+          targets = 7
         ),
         list(
           render = JS(
@@ -421,11 +398,6 @@ output$confirmedByPrefTable <- renderDataTable({
       fontWeight = "bold"
     ) %>%
     formatStyle(
-      columns = "active",
-      color = styleInterval(breaksActive, colorsActive),
-      fontWeight = "bold"
-    ) %>%
-    formatStyle(
       columns = "perMillion",
       backgroundColor = styleInterval(breaksPerMillion, colorsPerMillion),
       fontWeight = "bold"
@@ -444,27 +416,27 @@ output$testByPrefTable <- renderDataTable({
   # ０の値を非表示するため、NAに設定るす
   columnName <- c("前日比")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
-
+  
   breaksPerM <-
     seq(0, max(ifelse(is.na(dt$百万人あたり), 0, dt$百万人あたり), na.rm = T), by = 1000)
   colorsPerM <-
     colorRampPalette(c("#FFFFFF", middleYellow))(length(breaksPerM) + 1)
-
+  
   breaksDaily <-
     seq(0, max(ifelse(is.na(dt$週間平均移動), 0, dt$週間平均移動), na.rm = T), by = 50)
   colorsDaily <-
     colorRampPalette(c(lightYellow, darkYellow))(length(breaksDaily) + 1)
-
+  
   breaksNew <-
     seq(0, max(ifelse(is.na(dt$前日比), 0, dt$前日比), na.rm = T), by = 50)
   colorsNew <-
     colorRampPalette(c(lightYellow, darkYellow))(length(breaksNew) + 1)
-
+  
   breaksPositiveRate <-
     seq(0, max(ifelse(is.na(dt$陽性率), 0, dt$陽性率), na.rm = T))
   colorsPositiveRate <-
     colorRampPalette(c(lightRed, darkRed))(length(breaksPositiveRate) + 1)
-
+  
   datatable(
     data = dt[, .(region, 検査人数, 検査数推移, 前日比, 週間平均移動, 百万人あたり, 陽性率推移, 陽性率, group)],
     colnames = c(
