@@ -124,7 +124,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
   breaksDischarged <-
     seq(0, max(ifelse(
       is.na(dt$totalDischarged), 0, dt$totalDischarged
-    ), na.rm = T), 2)
+    ), na.rm = T), 100)
   colorsDischarged <-
     colorRampPalette(c(lightGreen, darkGreen))(length(breaksDischarged) + 1)
   breaksPerMillion <-
@@ -192,10 +192,11 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
   ) %>%
     spk_add_deps() %>%
     # formatStyle(
-    #   columns = "totalDischarged",
-    #   color = styleInterval(breaksDischarged, colorsDischarged),
-    #   fontWeight = "bold"
-    # ) %>%
+    formatStyle(
+      columns = "totalDischarged",
+      color = styleInterval(breaksDischarged, colorsDischarged),
+      fontWeight = "bold"
+    ) %>%
     formatStyle(
       columns = "death",
       color = styleInterval(breaksDeath, colorsDeath),
@@ -211,110 +212,6 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
       color = styleInterval(breaksZero, colorsZero),
       fontWeight = "bold"
     )
-
-  # datatable(
-  #   data = dt[, c(1, 8, 12, 7, 9, 14, 15, 10
-  #                 ), with = F],
-  #   colnames = c(
-  #     i18n$t("自治体"),
-  #     i18n$t("内訳"),
-  #     i18n$t("回復"),
-  #     i18n$t("回復推移"),
-  #     i18n$t("死亡"),
-  #     i18n$t("百万人あたり"),
-  #     i18n$t("カテゴリ"),
-  #     i18n$t("0新規日数")
-  #   ),
-  #   caption = "",
-  #   escape = F,
-  #   plugins = "natural",
-  #   # extensions = c("Responsive"),
-  #   extensions = "RowGroup",
-  #   callback = htmlwidgets::JS(paste0(
-  #     "
-  #     table.rowGroup().",
-  #     ifelse(input$tableShowSetting, "enable()", "disable()"),
-  #     ".draw();
-  #   "
-  #   )),
-  #   options = list(
-  #     paging = F,
-  #     rowGroup = list(dataSrc = 7),
-  #     fixedHeader = T,
-  #     dom = "t",
-  #     scrollY = "540px",
-  #     scrollX = T,
-  #     columnDefs = list(
-  #       list(
-  #         className = "dt-left",
-  #         width = "80px",
-  #         targets = 1
-  #       ),
-  #       list(
-  #         className = "dt-center",
-  #         targets = 2:5
-  #       ),
-  #       list(
-  #         width = "30px",
-  #         targets = c(2, 3, 5)
-  #       ),
-  #       list(
-  #         className = "dt-center",
-  #         width = "16%",
-  #         targets = c(6, 8)
-  #       ),
-  #       list(
-  #         visible = F,
-  #         targets = 7
-  #       ),
-  #       list(
-  #         width = "15%",
-  #         targets = 4
-  #       ),
-  #       list(
-  #         render = JS(
-  #           "
-  #            function(data, type, row, meta) {
-  #               const split = data.split('|');
-  #               return split[1];
-  #           }"
-  #         ),
-  #         targets = 1
-  #       )
-  #     ),
-  #     fnDrawCallback = htmlwidgets::JS("
-  #     function() {
-  #       HTMLWidgets.staticRender();
-  #     }
-  #   ")
-  #   )
-  # ) %>%
-  #   spk_add_deps() %>%
-  #   # formatCurrency(
-  #   #   columns = "today",
-  #   #   currency = paste(as.character(icon("caret-up")), " "),
-  #   #   digits = 0
-  #   # ) %>%s
-  #   formatStyle(
-  #     columns = "totalDischarged",
-  #     color = styleInterval(breaksDischarged, colorsDischarged),
-  #     fontWeight = "bold"
-  #   ) %>%
-  #   formatStyle(
-  #     columns = "death",
-  #     color = styleInterval(breaksDeath, colorsDeath),
-  #     fontWeight = "bold"
-  #   ) %>%
-  #   formatStyle(
-  #     columns = "perMillionDeath",
-  #     backgroundColor = styleInterval(breaksPerMillion, colorsPerMillion),
-  #     fontWeight = "bold"
-  #   ) %>%
-  #   formatStyle(
-  #     columns = "zeroContinuousDay",
-  #     color = styleInterval(breaksZero, colorsZero),
-  #     fontWeight = "bold"
-  #   )
 })
 
 # TODO データ読み込み専用のところに移動
