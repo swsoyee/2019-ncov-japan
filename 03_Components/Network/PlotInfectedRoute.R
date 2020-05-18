@@ -25,18 +25,17 @@ output$infectedRouteRegionSelector <- renderUI({
 
 infectedRouteByRegionData <- reactive({
   positiveDetail <- GLOBAL_VALUE$positiveDetail
-  positiveDetail$announceDate <- as.Date(positiveDetail$発表日)
   positiveDetail[`渡航・接触歴` %in% c("", "未"), `渡航・接触歴` := i18n$t("不明")]
-  dt <- positiveDetail[!is.na(announceDate), .(count = .N), by = .(都道府県, announceDate, `渡航・接触歴`)]
-  # input <- list(infectedRouteByRegionPicker = c('東京都', '神奈川県'))
-  dt <- dt[都道府県 %in% input$infectedRouteByRegionPicker]
-  dt[, sum(count), by = .(announceDate, `渡航・接触歴`)]
+  dt <- positiveDetail[!is.na(発表日), .(count = .N), by = .(都道府県, 発表日, `渡航・接触歴`)]
+  # input <- list(infectedRouteByRegionPicker = c('東京都', '神奈川県')) # TEST
+  dt[都道府県 %in% input$infectedRouteByRegionPicker,
+         .(announceDate = as.Date(発表日, "%Y-%m-%d"), V1 = sum(count)), by = c("発表日", "渡航・接触歴")]
 })
 
 output$infectedRouteByRegion <- renderEcharts4r({
   dt <- infectedRouteByRegionData()
   if (nrow(dt) > 0) {
-    dt %>%
+    dt[!is.na(announceDate)] %>%
       group_by(`渡航・接触歴`) %>%
       e_chart(announceDate) %>%
       e_bar(V1, stack = 1) %>%
