@@ -84,8 +84,8 @@ output$selectMapBottomButton <- renderUI({
 })
 
 simpleMapDataset <- reactive({
-  dt <- merge(x = mapData[date == max(unique(mapData$date), na.rm = T)],
-              y = mapData[date == as.Date(max(unique(mapData$date), na.rm = T)) - 1],
+  dt <- merge(x = mapData[, .SD[.N], by = ja],
+              y = mapData[, .SD[.N-1], by = ja],
               by = c("ja", "full_ja", "en", "lat", "lng", "regions"), no.dups = T, sort = F)
   dt[mhlwSummary[日付 == max(日付)], `:=` (total = count.x, 
                                        severe = i.重症者, 
