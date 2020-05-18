@@ -182,6 +182,11 @@
       "en": "Data source: @kenmo_economics\nNote 1: This figure only counts those whose place of residence is published and therefore does not correspond to the total number of confirmed cases in the province\nNote 2: This figure will not be updated for the time being, as the authors of the dataset stopped collecting data on 9 May."
     },
     {
+      "ja": "データソース：@kenmo_economics\n※5月9日以後のデータは収集されないため、グラフの更新も中止となります。",
+      "cn": "数据来源：@kenmo_economics\n注：因数据集作者已在5月9日停止收集数据，因此本图暂时不会再进行更新。",
+      "en": "Data source: @kenmo_economics\nNote: This figure will not be updated for the time being, as the authors of the dataset stopped collecting data on 9 May."
+    },
+    {
       "ja": "市区町村の感染者数",
       "cn": "各次级行政区域的确诊人数",
       "en": "Number of Confirmed in Each Municipality"
