@@ -296,6 +296,17 @@ output$fukuokaPatientTable <- renderDataTable({
   )
 })
 
+observeEvent(input$fukuokaPatientTable_rows_selected, {
+  selectedId <- input$fukuokaPatientTable_rows_selected
+  # フォーカス感染者
+  echarts4rProxy("FukuokaCluster") %>%
+    e_focus_adjacency_p(
+      seriesIndex = 0,
+      index = GLOBAL_VALUE$Fukuoka$nodes[都道府県症例番号 == GLOBAL_VALUE$Fukuoka$nodes[selectedId]$都道府県症例番号, which = T] - 1
+    )
+  # print(GLOBAL_VALUE$Fukuoka$nodes[selectedId]$都道府県症例番号)
+})
+
 # 帰国者・接触者相談センター相談件数 ====
 output$FukuokaContact <- renderEcharts4r({
   call <- GLOBAL_VALUE$Fukuoka$call
