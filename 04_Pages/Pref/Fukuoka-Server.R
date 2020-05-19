@@ -197,3 +197,19 @@ output$FukuokaCluster <- renderEcharts4r({
       )
     )
 })
+
+output$fukuokaPatientTable <- renderDataTable({
+  positiveDetail <- GLOBAL_VALUE$Fukuoka$nodes
+  datatable(
+    positiveDetail[, .(番号 = 都道府県症例番号, 発症日 = as.Date(発症日), 公表日 = as.Date(公表日), 
+                         管轄 = (管理市区町村), 
+                         居住地 = (居住市区町村), 
+                         年代 = (年代), 
+                         性別 = (性別), 職業 = (職業))],
+    # filter = 'top',
+    selection = 'single',
+    options = list(
+      # filter = 'top'
+    )
+  )
+})

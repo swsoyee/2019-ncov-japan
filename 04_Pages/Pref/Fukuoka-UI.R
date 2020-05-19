@@ -84,6 +84,12 @@ fluidPage(
           width = 8,
           echarts4rOutput('FukuokaCluster', height = "600px") %>% withSpinner(proxy.height = "600px")
         )
+      ),
+      fluidRow(
+        column(
+          width = 12,
+          dataTableOutput("fukuokaPatientTable") %>% withSpinner()
+        )
       )
     )
   )
