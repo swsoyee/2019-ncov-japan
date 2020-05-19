@@ -38,7 +38,7 @@ fluidPage(
       fluidRow(
         column(
           width = 6,
-          # echarts4rOutput("FukuokaContact") %>% withSpinner()
+          echarts4rOutput("FukuokaContact") %>% withSpinner()
         ),
         column(
           width = 6,

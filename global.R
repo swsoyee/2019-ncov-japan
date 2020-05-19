@@ -346,7 +346,8 @@ GLOBAL_VALUE <- reactiveValues(
     updateTime = NULL,
     patients = NULL,
     nodes = NULL,
-    edges = NULL
+    edges = NULL,
+    call = NULL
   ),
   Google = list(
     mobility = NULL,

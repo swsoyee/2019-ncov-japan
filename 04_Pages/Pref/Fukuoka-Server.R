@@ -5,13 +5,14 @@ observeEvent(input$sideBarTab, {
     #   patients = NULL,
     #   updateTime = NULL,
     #   nodes = NULL,
-    #   edges = NULL
+    #   edges = NULL,
+    #   call = NULL
     # )) # TEST
 
     fileList <- list.files(paste0(DATA_PATH, "Pref/Fukuoka/"))
 
-    indexName <- c("patients", "nodes", "edges")
-    fileName <- c("patients.csv", "nodes.csv", "edges.csv")
+    indexName <- c("patients", "nodes", "edges", "call")
+    fileName <- c("patients.csv", "nodes.csv", "edges.csv", "call.csv")
 
     for (i in 1:length(indexName)) {
       GLOBAL_VALUE$Fukuoka <- loadDataFromFile(
@@ -77,7 +78,8 @@ output$FukuokaInfectedRoute <- renderEcharts4r({
     e_grid(
       left = "5%",
       right = "5%"
-    )
+    ) %>%
+    e_group("fukuokaBar")
 })
 
 output$FukuokaResidentialTreeMap <- renderEcharts4r({
@@ -100,6 +102,7 @@ output$FukuokaResidentialTreeMap <- renderEcharts4r({
         sprintf("計：%s名", sum(dt$value))
       )
     ) %>%
+    e_tooltip() %>%
     e_labels(formatter = htmlwidgets::JS(
       "
       function(param) {
@@ -212,4 +215,34 @@ output$fukuokaPatientTable <- renderDataTable({
       # filter = 'top'
     )
   )
+})
+
+output$FukuokaContact <- renderEcharts4r({
+  call <- GLOBAL_VALUE$Fukuoka$call
+  call[, `:=` (年月日 = as.Date(年月日), 累計 = cumsum(件数))]
+  call %>%
+    e_chart(年月日) %>%
+    e_bar(件数, itemStyle = list(color = lightBlue), name = i18n$t("新規")) %>%
+    e_line(累計, name = i18n$t("累計"), itemStyle = list(color = darkNavy), y_index = 1, symbolSize = 1) %>%
+    e_title(text = "帰国者・接触者相談センター相談件数", 
+            subtext = paste0(
+              sprintf("最終更新日：%s", max(call$年月日)), "   ",
+              sprintf("計：%s件", tail(call$累計, n = 1))
+            )) %>%
+    e_y_axis(splitLine = list(show = F), index = 1) %>%
+    e_y_axis(axisLabel = list(inside = T),
+             axisTick = list(show = F),
+             splitLine = list(lineStyle = list(opacity = 0.2))) %>%
+    e_x_axis(splitLine = list(lineStyle = list(opacity = 0.2))) %>%
+    e_grid(left = '5%', right = '5%') %>%
+    e_legend(
+      type = "scroll",
+      orient = "vertical",
+      left = "18%",
+      top = "15%",
+      right = "15%"
+    ) %>%
+    e_tooltip(trigger = "axis") %>%
+    e_group("fukuokaBar") %>%
+    e_connect_group("fukuokaBar")
 })
