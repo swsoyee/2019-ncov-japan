@@ -52,6 +52,11 @@ Update.Signate.Detail <- function(update = F) {
     signateDetail <- gsheet2tbl('https://docs.google.com/spreadsheets/d/10MFfRQTblbOpuvOs_yjIYgntpMGBg592dL8veXoPpp4/edit#gid=960903158')
     signateDetail <- data.table(signateDetail)
     fwrite(x = signateDetail, file = paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者.csv'))
+    
+    signateRelation <- gsheet2tbl('https://docs.google.com/spreadsheets/d/1NQ3xrnRi6ta82QtitpJFmIYGvO0wZBmBU5H9EfUGtts/edit#gid=1227116169')
+    signateRelation <- data.table(signateRelation)
+    fwrite(x = signateRelation, file = paste0(DATA_PATH, 'Signate/relation.csv'))
+    
     # 都道府県、公表日、性別、年齢====
     source(file = "02_Utils/ConfirmedPyramidData.R")
     fwrite(x = Signate.ConfirmedPyramidData(signateDetail), file = paste0(DATA_PATH, "Generated/genderAgeData.csv"))
