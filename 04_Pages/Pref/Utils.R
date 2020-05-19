@@ -91,7 +91,7 @@ createValueBox <-
       valueBox(
         value = tagList(
           countup(value),
-          tags$small(paste0('| ' , subValue),
+          tags$small('| ' , subValue,
                      style = 'color:white;font-size:16px;margin-top:10px;margin-right:10px;opacity:0.8')
         ),
         subtitle = tagList(

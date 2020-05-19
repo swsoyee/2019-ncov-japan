@@ -1,5 +1,5 @@
 observeEvent(input$sideBarTab, {
-  if (input$sideBarTab == "fukuoka" && is.null(GLOBAL_VALUE$Fukuoka[[1]])) {
+  if (input$sideBarTab == "fukuoka" && is.null(GLOBAL_VALUE$Fukuoka$patients)) {
     # GLOBAL_VALUE <- list(Fukuoka = list(
     #   summary = NULL,
     #   patients = NULL,
@@ -37,6 +37,74 @@ observeEvent(input$sideBarTab, {
   }
 })
 
+output$FukuokaValueBoxes <- renderUI({
+  totalPCR <- sum(GLOBAL_VALUE$Fukuoka$test$件数)
+  positiveDt <- GLOBAL_VALUE$Fukuoka$patients[, (計 = .N), by = "公表_年月日"]
+  totalPositive <- sum(positiveDt$V1)
+  discharge <- mhlwSummary[都道府県名 == "福岡"]
+  discharge[, 日次退院者 := 退院者 - shift(退院者)]
+  totalDischarge <- tail(discharge$退院者, n = 1)
+  totalDeath <- sum(death$福岡)
+
+  dischargeRate <- paste0(
+    round(
+      totalDischarge / (totalPositive - totalDeath)  * 100, 2
+    ), '%'
+  )
+  deathRate <- paste0(
+    round(
+      totalDeath / totalPositive * 100, 2
+    ), '%'
+  )
+  
+  return(
+    tagList(
+      fluidRow(
+        createValueBox(value = totalPCR, # TODO 今はけんものデータを使ってる
+                       subValue = tagList(
+                         tags$span(id = "fukuokaTest", icon("info-circle"))
+                         ), 
+                       sparkline = createSparklineInValueBox(GLOBAL_VALUE$Fukuoka$test, '件数'),
+                       subtitle = i18n$t("検査数"),
+                       icon = 'vials',
+                       color = 'yellow', 
+                       diff = tail(GLOBAL_VALUE$Fukuoka$test$件数, n = 1)
+        ),
+        bsTooltip(id = "fukuokaTest", "民間検査実施分が含まれていません。"),
+        createValueBox(value = totalPositive,
+                       subValue = paste0(i18n$t('速報：'), sum(byDate$福岡, na.rm = T)), 
+                       sparkline = createSparklineInValueBox(
+                         positiveDt, 
+                         'V1'),
+                       subtitle = i18n$t("陽性者数"),
+                       icon = 'procedures',
+                       color = 'red', 
+                       diff = tail(positiveDt$V1, n = 1)
+        )
+      ),
+      fluidRow(
+        createValueBox(value = totalDischarge, # TODO 今は厚労省のデータを使ってる
+                       subValue = dischargeRate, # TODO
+                       sparkline = createSparklineInValueBox(discharge, '日次退院者'),
+                       subtitle = i18n$t("回復者数"),
+                       icon = 'user-shield',
+                       color = 'green',
+                       diff = tail(discharge$日次退院者, n = 1)
+        ),
+        createValueBox(value = totalDeath, # TODO 公式データまだない
+                       subValue = deathRate,
+                       sparkline = createSparklineInValueBox(death, '福岡'),
+                       subtitle = i18n$t("死亡者数"),
+                       icon = 'bible',
+                       color = 'navy',
+                       diff = tail(death$福岡, n = 1)
+        )
+      )
+    )
+  )
+})
+
+# 陽性患者の感染経路====
 output$FukuokaInfectedRoute <- renderEcharts4r({
   dt <- GLOBAL_VALUE$Fukuoka$patients
   dt <- dt[, lapply(.SD, function(x) {
@@ -90,6 +158,7 @@ output$FukuokaInfectedRoute <- renderEcharts4r({
     )
 })
 
+# 市区町村別の感染者数====
 output$FukuokaResidentialTreeMap <- renderEcharts4r({
   dt <- GLOBAL_VALUE$Fukuoka$patients
   dt <- data.table(
@@ -120,6 +189,7 @@ output$FukuokaResidentialTreeMap <- renderEcharts4r({
     ), position = "center")
 })
 
+# 福岡県のクラスターネットワーク ====
 output$FukuokaCluster <- renderEcharts4r({
   positiveDetail <- GLOBAL_VALUE$Fukuoka$nodes
   relationDt <- GLOBAL_VALUE$Fukuoka$edges
@@ -209,6 +279,7 @@ output$FukuokaCluster <- renderEcharts4r({
     )
 })
 
+# 陽性者テーブル ====
 output$fukuokaPatientTable <- renderDataTable({
   positiveDetail <- GLOBAL_VALUE$Fukuoka$nodes
   datatable(
@@ -225,6 +296,7 @@ output$fukuokaPatientTable <- renderDataTable({
   )
 })
 
+# 帰国者・接触者相談センター相談件数 ====
 output$FukuokaContact <- renderEcharts4r({
   call <- GLOBAL_VALUE$Fukuoka$call
   call[, `:=` (年月日 = as.Date(年月日), 累計 = cumsum(件数))]
@@ -254,6 +326,7 @@ output$FukuokaContact <- renderEcharts4r({
     e_group("fukuokaBar")
 })
 
+# 検査実施数 ====
 output$FukuokaTest <- renderEcharts4r({
   test <- GLOBAL_VALUE$Fukuoka$test
   test[, `:=` (年月日 = as.Date(年月日), 累計 = cumsum(件数))]
