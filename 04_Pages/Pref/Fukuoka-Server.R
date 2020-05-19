@@ -44,11 +44,13 @@ output$FukuokaInfectedRoute <- renderEcharts4r({
   }),
   .SD = c("感染経路不明", "濃厚接触者", "海外渡航歴有"), by = "公表_年月日"
   ]
-  dt[, 公表_年月日 := as.Date(公表_年月日)] %>%
+  dt[, `:=` (公表_年月日 = as.Date(公表_年月日), 
+                   累計 = cumsum(感染経路不明 + 濃厚接触者 + 海外渡航歴有))] %>%
     e_chart(公表_年月日) %>%
     e_bar(感染経路不明, stack = 1, itemStyle = list(color = "#E9546B")) %>%
     e_bar(濃厚接触者, stack = 1, itemStyle = list(color = "#025BAC")) %>%
     e_bar(海外渡航歴有, stack = 1, itemStyle = list(color = "#4C4C4C")) %>%
+    e_line(累計, itemStyle = list(color = darkRed), symbolSize = 1, y_index = 1) %>%
     e_x_axis(
       splitLine = list(
         lineStyle = list(opacity = 0.2)
@@ -60,6 +62,12 @@ output$FukuokaInfectedRoute <- renderEcharts4r({
       ),
       axisLabel = list(inside = T),
       axisTick = list(show = F)
+    ) %>%
+    e_y_axis(
+      index = 1,
+      splitLine = list(
+        show = F
+      )
     ) %>%
     e_tooltip(trigger = "axis") %>%
     e_title(
@@ -78,9 +86,8 @@ output$FukuokaInfectedRoute <- renderEcharts4r({
     ) %>%
     e_grid(
       left = "5%",
-      right = "5%"
-    ) %>%
-    e_group("fukuokaBar")
+      right = "10%"
+    )
 })
 
 output$FukuokaResidentialTreeMap <- renderEcharts4r({
