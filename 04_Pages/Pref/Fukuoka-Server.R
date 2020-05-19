@@ -304,7 +304,84 @@ observeEvent(input$fukuokaPatientTable_rows_selected, {
       seriesIndex = 0,
       index = GLOBAL_VALUE$Fukuoka$nodes[都道府県症例番号 == GLOBAL_VALUE$Fukuoka$nodes[selectedId]$都道府県症例番号, which = T] - 1
     )
-  # print(GLOBAL_VALUE$Fukuoka$nodes[selectedId]$都道府県症例番号)
+})
+
+output$fukuokaProfile <- renderUI({
+  selectedId <- input$fukuokaPatientTable_rows_selected
+  if(!is.null(selectedId)) {
+    profile <- GLOBAL_VALUE$Fukuoka$nodes[都道府県症例番号 == GLOBAL_VALUE$Fukuoka$nodes[selectedId]$都道府県症例番号]
+    
+    age <- ifelse(profile$年代 != "", profile$年代, i18n$t("不明"))
+    gender <- tagList(icon("venus-mars"), profile$性別)
+    if (profile$性別 == "男性") {
+      gender <- tagList(icon("mars"), i18n$t("男性"))
+    } else if (profile$性別 == "女性") {
+      gender <- tagList(icon("venus"), i18n$t("女性"))
+    }
+    
+    # リンク分割
+    outerLinks <- strsplit(profile$情報源, split = ";")[[1]]
+    outerLinkTags <-
+      tagList(lapply(1:length(outerLinks), function(i) {
+        tags$a(
+          href = outerLinks[i],
+          icon("link"),
+          i18n$t("外部リンク"),
+          style = "float: right!important;"
+        )
+      }))
+
+    boxPlus(
+      title = tagList(icon("id-card"), i18n$t("公開された感染者情報")),
+      width = 12,
+      closable = F,
+      boxProfile(
+        title = profile$都道府県症例番号,
+        src = ifelse(profile$性別 == '男性', 'Icon/male.png', 'Icon/female.png'),
+        subtitle = tagList(gender),
+        boxProfileItemList(
+          bordered = TRUE,
+          boxProfileItem(
+            title = tagList(icon("user-clock"), i18n$t("年代")),
+            description = age
+          ),
+          boxProfileItem(
+            title = tagList(icon("bullhorn"), i18n$t("公表日")),
+            description = profile$公表日
+          ),
+          boxProfileItem(
+            title = tagList(icon("user-tie"), i18n$t("職業")),
+            description = profile$職業
+          ),
+          boxProfileItem(
+            title = tagList(icon("home"), i18n$t("居住地")),
+            description = paste(profile$居住都道府県, profile$居住市区町村)
+          ),
+          boxProfileItem(
+            title = tagList(icon("external-link-alt"), i18n$t("情報源")),
+            description = outerLinkTags
+          ),
+        )
+      ),
+      footer = tagList(
+        tags$b(icon("handshake"), i18n$t("濃厚接触者状況")),
+        tags$p(tags$small(HTML(gsub(pattern = "\n", replacement = "<br>", profile$濃厚接触者状況)))),
+        tags$hr(),
+        tags$b(icon("procedures"), i18n$t("症状・経過")),
+        tags$p(tags$small(HTML(gsub(pattern = "\n", replacement = "<br>", profile$`症状・経過`)))),
+        tags$hr(),
+        tags$b(icon("walking"), i18n$t("行動歴")),
+        tags$p(tags$small(HTML(gsub(pattern = "\n", replacement = "<br>", profile$行動歴))))
+      )
+    )
+  } else {
+    boxPlus(
+      title = tagList(icon("id-card"), i18n$t("公開された感染者情報")),
+      width = 12,
+      closable = F,
+      "詳細テーブルをクリックすると感染者の詳細情報が表示されます。"
+    )
+  }
 })
 
 # 帰国者・接触者相談センター相談件数 ====

@@ -68,17 +68,6 @@ fluidPage(
       label_text = tagList("クリックして", icon("hand-point-right")),
       label_status = "warning",
       title = tagList("県内の感染者"),
-      # fluidRow(
-      #   column(
-      #     width = 8,
-      #     # leafletOutput('hokkaidoConfirmedMap', height = '500px') %>% withSpinner(),
-      #     # dataTableOutput('hokkaidoPatientTable') %>% withSpinner(),
-      #   ),
-      #   column(
-      #     width = 4,
-      #     # uiOutput('hokkaidoProfile') %>% withSpinner()
-      #   )
-      # ) # ,
       fluidRow(
         column(
           width = 8,
@@ -90,15 +79,20 @@ fluidPage(
             helpText(
               icon("shapes"), "シンボル：デフォルトは円形。ダイヤモンド：医療従事者。"
             )
-          )
-        )
-      ),
-      fluidRow(
-        column(
-          width = 12,
+          ),
           dataTableOutput("fukuokaPatientTable") %>% withSpinner()
+        ),
+        column(
+          width = 4,
+          uiOutput("fukuokaProfile") %>% withSpinner()
         )
-      )
+      )#,
+      # fluidRow(
+      #   column(
+      #     width = 12,
+      #     dataTableOutput("fukuokaPatientTable") %>% withSpinner()
+      #   )
+      # )
     )
   )
 )
