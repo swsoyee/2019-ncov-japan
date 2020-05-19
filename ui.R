@@ -36,13 +36,13 @@ shinyUI(
         icon = icon("city"),
         menuSubItem(
           text = i18n$t("北海道"),
-          tabName = "hokkaido",
-          icon = icon("fish")
+          tabName = "hokkaido"#,
+          # icon = icon("fish")
         ),
         menuSubItem(
           text = i18n$t("青森県"),
-          tabName = "aomori",
-          icon = icon("apple-alt")
+          tabName = "aomori"#,
+          # icon = icon("apple-alt")
         ),
         menuSubItem(
           text = i18n$t("岩手県"),
@@ -62,6 +62,11 @@ shinyUI(
         menuSubItem(
           text = i18n$t("神奈川県"),
           tabName = "kanagawa" # ,
+          # icon = icon('apple-alt')
+        ),
+        menuSubItem(
+          text = i18n$t("福岡県"),
+          tabName = "fukuoka" # ,
           # icon = icon('apple-alt')
         )
       ),
@@ -170,6 +175,14 @@ shinyUI(
           tabName = "kanagawa",
           source(
             file = paste0(PAGE_PATH, "Pref/Kanagawa-UI.R"),
+            local = T,
+            encoding = "UTF-8"
+          )$value
+        ),
+        tabItem(
+          tabName = "fukuoka",
+          source(
+            file = paste0(PAGE_PATH, "Pref/Fukuoka-UI.R"),
             local = T,
             encoding = "UTF-8"
           )$value

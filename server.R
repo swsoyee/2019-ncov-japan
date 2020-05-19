@@ -118,6 +118,8 @@ shinyServer(function(input, output, session) {
     local = TRUE,
     encoding = "UTF-8"
   )
+  # 福岡県
+  source(file = paste0(PAGE_PATH, "Pref/Fukuoka-Server.R"), local = TRUE, encoding = "UTF-8")
 
   observeEvent(input$switchCaseMap, {
     updateTabItems(session, "sideBarTab", "caseMap")
