@@ -6,13 +6,14 @@ observeEvent(input$sideBarTab, {
     #   updateTime = NULL,
     #   nodes = NULL,
     #   edges = NULL,
-    #   call = NULL
+    #   call = NULL,
+    #   test = NULL
     # )) # TEST
 
     fileList <- list.files(paste0(DATA_PATH, "Pref/Fukuoka/"))
 
-    indexName <- c("patients", "nodes", "edges", "call")
-    fileName <- c("patients.csv", "nodes.csv", "edges.csv", "call.csv")
+    indexName <- c("patients", "nodes", "edges", "call", "test")
+    fileName <- c("patients.csv", "nodes.csv", "edges.csv", "call.csv", "test.csv")
 
     for (i in 1:length(indexName)) {
       GLOBAL_VALUE$Fukuoka <- loadDataFromFile(
@@ -234,7 +235,7 @@ output$FukuokaContact <- renderEcharts4r({
              axisTick = list(show = F),
              splitLine = list(lineStyle = list(opacity = 0.2))) %>%
     e_x_axis(splitLine = list(lineStyle = list(opacity = 0.2))) %>%
-    e_grid(left = '5%', right = '5%') %>%
+    e_grid(left = '5%', right = '10%') %>%
     e_legend(
       type = "scroll",
       orient = "vertical",
@@ -243,6 +244,40 @@ output$FukuokaContact <- renderEcharts4r({
       right = "15%"
     ) %>%
     e_tooltip(trigger = "axis") %>%
+    e_group("fukuokaBar")
+})
+
+output$FukuokaTest <- renderEcharts4r({
+  test <- GLOBAL_VALUE$Fukuoka$test
+  test[, `:=` (年月日 = as.Date(年月日), 累計 = cumsum(件数))]
+  setnafill(test, fill = 0, cols = c("福岡市", "北九州市", "福岡県"))
+  test %>%
+    e_chart(年月日) %>%
+    e_bar(福岡市, stack = 1, itemStyle = list(color = darkYellow)) %>%
+    e_bar(北九州市, stack = 1, itemStyle = list(color = middleYellow)) %>%
+    e_bar(福岡県, stack = 1, itemStyle = list(color = lightYellow)) %>%
+    e_line(累計, stack = 1, itemStyle = list(color = darkYellow), symbolSize = 1, y_index = 1) %>%
+    e_y_axis(splitLine = list(show = F), index = 1) %>%
+    e_y_axis(axisLabel = list(inside = T),
+             axisTick = list(show = F),
+             splitLine = list(lineStyle = list(opacity = 0.2))) %>%
+    e_x_axis(splitLine = list(lineStyle = list(opacity = 0.2))) %>%
+    e_grid(left = '5%', right = '10%', top = "20%") %>%
+    e_legend(
+      type = "scroll",
+      orient = "vertical",
+      left = "18%",
+      top = "20%",
+      right = "15%"
+    ) %>%
+    e_tooltip(trigger = "axis") %>%
+    e_title(text = "検査実施数", 
+            subtext = paste0(
+              sprintf("最終更新日：%s", max(test$年月日)), "   ",
+              sprintf("計：%s件", sum(test$件数)), 
+              "\n※ 福岡県は福岡市、北九州市以外の自治体の合計です。",
+              "\n※ 民間検査実施分が含まれていません。"
+            )) %>%
     e_group("fukuokaBar") %>%
     e_connect_group("fukuokaBar")
 })

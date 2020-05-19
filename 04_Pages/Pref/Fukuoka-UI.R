@@ -42,13 +42,13 @@ fluidPage(
         ),
         column(
           width = 6,
-          echarts4rOutput("FukuokaInfectedRoute") %>% withSpinner()
+          echarts4rOutput("FukuokaTest") %>% withSpinner()
         )
       ),
       fluidRow(
         column(
           width = 6,
-          # echarts4rOutput("FukuokaContact") %>% withSpinner()
+          echarts4rOutput("FukuokaInfectedRoute") %>% withSpinner()
         ),
         column(
           width = 6,
