@@ -3,13 +3,15 @@ observeEvent(input$sideBarTab, {
     # GLOBAL_VALUE <- list(Fukuoka = list(
     #   summary = NULL,
     #   patients = NULL,
-    #   updateTime = NULL
+    #   updateTime = NULL,
+    #   nodes = NULL,
+    #   edges = NULL
     # )) # TEST
 
     fileList <- list.files(paste0(DATA_PATH, "Pref/Fukuoka/"))
 
-    indexName <- c("patients")
-    fileName <- c("patients.csv")
+    indexName <- c("patients", "nodes", "edges")
+    fileName <- c("patients.csv", "nodes.csv", "edges.csv")
 
     for (i in 1:length(indexName)) {
       GLOBAL_VALUE$Fukuoka <- loadDataFromFile(
@@ -60,8 +62,10 @@ output$FukuokaInfectedRoute <- renderEcharts4r({
     e_tooltip(trigger = "axis") %>%
     e_title(
       text = sprintf("%sの陽性患者の感染経路", i18n$t("福岡県")),
-      subtext = paste0(sprintf("最終更新日：%s", max(GLOBAL_VALUE$Fukuoka$patients$公表_年月日)), "   ",
-                       sprintf("計：%s名", sum(dt$感染経路不明, dt$濃厚接触者, dt$海外渡航歴有))),
+      subtext = paste0(
+        sprintf("最終更新日：%s", max(GLOBAL_VALUE$Fukuoka$patients$公表_年月日)), "   ",
+        sprintf("計：%s名", sum(dt$感染経路不明, dt$濃厚接触者, dt$海外渡航歴有))
+      ),
     ) %>%
     e_legend(
       type = "scroll",
@@ -80,16 +84,22 @@ output$FukuokaResidentialTreeMap <- renderEcharts4r({
   dt <- GLOBAL_VALUE$Fukuoka$patients
   dt <- data.table(
     gsub(pattern = "市", replacement = "市,", dt$居住地)
-    )[, c("main", "sub") := tstrsplit(V1, ",", fixed=TRUE)]
+  )[, c("main", "sub") := tstrsplit(V1, ",", fixed = TRUE)]
   dt <- dt[, .(value = .N), by = c("main", "sub")]
-  dt[is.na(sub),  sub := "内"]
+  dt[is.na(sub), sub := "内"]
   dt[, .(value = sum(value)), by = c("main", "sub")] %>%
     e_charts() %>%
-    e_treemap(main, sub, value, upperLabel = list(show = T, color = "#222"),
-              left = "1%", right = "1%", bottom = "10%") %>%
-    e_title(text = "市区町村別の感染者数",
-            subtext = paste0(sprintf("最終更新日：%s", max(GLOBAL_VALUE$Fukuoka$patients$公表_年月日)), "   ",
-                             sprintf("計：%s名", sum(dt$value)))) %>%
+    e_treemap(main, sub, value,
+      upperLabel = list(show = T, color = "#222"),
+      left = "1%", right = "1%", bottom = "10%"
+    ) %>%
+    e_title(
+      text = "市区町村別の感染者数",
+      subtext = paste0(
+        sprintf("最終更新日：%s", max(GLOBAL_VALUE$Fukuoka$patients$公表_年月日)), "   ",
+        sprintf("計：%s名", sum(dt$value))
+      )
+    ) %>%
     e_labels(formatter = htmlwidgets::JS(
       "
       function(param) {
@@ -98,4 +108,92 @@ output$FukuokaResidentialTreeMap <- renderEcharts4r({
       "
     ), position = "center")
 })
-  
+
+output$FukuokaCluster <- renderEcharts4r({
+  positiveDetail <- GLOBAL_VALUE$Fukuoka$nodes
+  relationDt <- GLOBAL_VALUE$Fukuoka$edges
+  e_charts() %>%
+    e_graph(
+      layout = "force",
+      roam = T,
+      draggable = T,
+      symbolKeepAspect = T,
+      focusNodeAdjacency = T
+    ) %>%
+    e_graph_nodes(
+      nodes = positiveDetail,
+      names = 都道府県症例番号,
+      value = label,
+      size = size,
+      symbol = symbol,
+      category = 性別
+    ) %>%
+    e_graph_edges(
+      relationDt,
+      source = 都道府県症例番号1,
+      target = 都道府県症例番号2
+    ) %>%
+    e_tooltip(formatter = htmlwidgets::JS("
+    function(params) {
+      const text = params.value.split('|')
+      return(`
+        番号：${text[0]}<br>
+        公表日：${text[1]}<br>
+        年代：${text[2]}
+      `)
+    }
+  ")) %>%
+    e_labels(
+      formatter = htmlwidgets::JS(paste0("
+    function(params) {
+      const text = params.value.split('|')
+      if(Date.parse(text[1]) >= Date.parse('", (Sys.Date() - 7), "')) {
+        return(`{oneWeek|${text[0]}}`)
+      } else if(Date.parse(text[1]) >= Date.parse('", (Sys.Date() - 14), "')) {
+        return(`{twoWeek|${text[0]}}`)
+      } else if(Date.parse(text[1]) >= Date.parse('", (Sys.Date() - 21), "')) {
+        return(`{threeWeek|${text[0]}}`)
+      } else {
+        return('')
+      }
+    }
+  ")),
+      rich = list(
+        oneWeek = list(
+          borderColor = "auto",
+          color = "black",
+          backgroundColor = "white",
+          borderWidth = 4,
+          borderRadius = 2,
+          padding = 3,
+          fontSize = 8
+        ),
+        twoWeek = list(
+          borderColor = "auto",
+          color = "black",
+          backgroundColor = "white",
+          borderWidth = 2,
+          borderRadius = 2,
+          padding = 3,
+          fontSize = 8
+        ),
+        threeWeek = list(
+          borderColor = "auto",
+          color = "black",
+          backgroundColor = "white",
+          borderWidth = 0.5,
+          borderRadius = 2,
+          padding = 3,
+          fontSize = 8
+        )
+      )
+    ) %>%
+    e_title(
+      text = "福岡県のクラスターネットワーク",
+      subtext = sprintf(
+        "公表日：%s - %s",
+        min(positiveDetail$公表日),
+        max(positiveDetail$公表日)
+      )
+    )
+})

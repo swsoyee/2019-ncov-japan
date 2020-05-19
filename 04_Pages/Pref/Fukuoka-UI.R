@@ -67,24 +67,24 @@ fluidPage(
       enable_label = T,
       label_text = tagList("クリックして", icon("hand-point-right")),
       label_status = "warning",
-      # title = tagList(icon('map-marked-alt'), '道内の感染者'),
-      fluidRow(
-        column(
-          width = 8,
-          # leafletOutput('hokkaidoConfirmedMap', height = '500px') %>% withSpinner(),
-          # dataTableOutput('hokkaidoPatientTable') %>% withSpinner(),
-        ),
-        column(
-          width = 4,
-          # uiOutput('hokkaidoProfile') %>% withSpinner()
-        )
-      ) # ,
+      title = tagList("県内の感染者"),
       # fluidRow(
       #   column(
       #     width = 8,
-      #     dataTableOutput('hokkaidoPatientTable') %>% withSpinner(),
+      #     # leafletOutput('hokkaidoConfirmedMap', height = '500px') %>% withSpinner(),
+      #     # dataTableOutput('hokkaidoPatientTable') %>% withSpinner(),
+      #   ),
+      #   column(
+      #     width = 4,
+      #     # uiOutput('hokkaidoProfile') %>% withSpinner()
       #   )
-      # )
+      # ) # ,
+      fluidRow(
+        column(
+          width = 8,
+          echarts4rOutput('FukuokaCluster', height = "600px") %>% withSpinner(proxy.height = "600px")
+        )
+      )
     )
   )
 )

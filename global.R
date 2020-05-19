@@ -344,7 +344,9 @@ GLOBAL_VALUE <- reactiveValues(
   Fukuoka = list(
     summary = NULL,
     updateTime = NULL,
-    patients = NULL
+    patients = NULL,
+    nodes = NULL,
+    edges = NULL
   ),
   Google = list(
     mobility = NULL,
