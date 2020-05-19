@@ -82,7 +82,15 @@ fluidPage(
       fluidRow(
         column(
           width = 8,
-          echarts4rOutput('FukuokaCluster', height = "600px") %>% withSpinner(proxy.height = "600px")
+          echarts4rOutput('FukuokaCluster', height = "600px") %>% withSpinner(proxy.height = "600px"),
+          tagList(
+            helpText(
+              icon("id-card"), "番号：公表日は三週間以内の感染者のみ番号を表示しています。また、番号のボーダーの太さは公表日（直近一週間、二週間、三週間）を示しています。太いほど時間が近い。"
+            ),
+            helpText(
+              icon("shapes"), "シンボル：デフォルトは円形。ダイヤモンド：医療従事者。"
+            )
+          )
         )
       ),
       fluidRow(
