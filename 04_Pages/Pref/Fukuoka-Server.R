@@ -60,7 +60,7 @@ output$FukuokaInfectedRoute <- renderEcharts4r({
     e_tooltip(trigger = "axis") %>%
     e_title(
       text = sprintf("%sの陽性患者の感染経路", i18n$t("福岡県")),
-      subtext = paste0(sprintf("最終更新日：%s", max(dt$公表_年月日)), "   ",
+      subtext = paste0(sprintf("最終更新日：%s", max(GLOBAL_VALUE$Fukuoka$patients$公表_年月日)), "   ",
                        sprintf("計：%s名", sum(dt$感染経路不明, dt$濃厚接触者, dt$海外渡航歴有))),
     ) %>%
     e_legend(
@@ -75,3 +75,27 @@ output$FukuokaInfectedRoute <- renderEcharts4r({
       right = "5%"
     )
 })
+
+output$FukuokaResidentialTreeMap <- renderEcharts4r({
+  dt <- GLOBAL_VALUE$Fukuoka$patients
+  dt <- data.table(
+    gsub(pattern = "市", replacement = "市,", dt$居住地)
+    )[, c("main", "sub") := tstrsplit(V1, ",", fixed=TRUE)]
+  dt <- dt[, .(value = .N), by = c("main", "sub")]
+  dt[is.na(sub),  sub := "内"]
+  dt[, .(value = sum(value)), by = c("main", "sub")] %>%
+    e_charts() %>%
+    e_treemap(main, sub, value, upperLabel = list(show = T, color = "#222"),
+              left = "1%", right = "1%", bottom = "10%") %>%
+    e_title(text = "市区町村別の感染者数",
+            subtext = paste0(sprintf("最終更新日：%s", max(GLOBAL_VALUE$Fukuoka$patients$公表_年月日)), "   ",
+                             sprintf("計：%s名", sum(dt$value)))) %>%
+    e_labels(formatter = htmlwidgets::JS(
+      "
+      function(param) {
+        return(`${param.name}: ${param.value}`)
+      }
+      "
+    ), position = "center")
+})
+  
