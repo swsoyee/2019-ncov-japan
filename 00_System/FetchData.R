@@ -7,11 +7,11 @@ source(file = "01_Settings/Path.R", local = T, encoding = "UTF-8")
 source(file = "00_System/Generate.ProcessData.R", local = T, encoding = "UTF-8")
 
 # ====けんもデータ====
-positiveDetail <- gsheet2tbl("docs.google.com/spreadsheets/d/1Cy4W9hYhGmABq1GuhLOkM92iYss0qy03Y1GeTv4bCyg/edit#gid=1196047345")
-fwrite(x = positiveDetail, file = paste0(DATA_PATH, "positiveDetail.csv"))
-
-provincePCR <- gsheet2tbl("docs.google.com/spreadsheets/d/1Cy4W9hYhGmABq1GuhLOkM92iYss0qy03Y1GeTv4bCyg/edit#gid=845297461")
-fwrite(x = provincePCR, file = paste0(DATA_PATH, "provincePCR.csv"))
+# positiveDetail <- gsheet2tbl("docs.google.com/spreadsheets/d/1Cy4W9hYhGmABq1GuhLOkM92iYss0qy03Y1GeTv4bCyg/edit#gid=1196047345")
+# fwrite(x = positiveDetail, file = paste0(DATA_PATH, "positiveDetail.csv"))
+# 
+# provincePCR <- gsheet2tbl("docs.google.com/spreadsheets/d/1Cy4W9hYhGmABq1GuhLOkM92iYss0qy03Y1GeTv4bCyg/edit#gid=845297461")
+# fwrite(x = provincePCR, file = paste0(DATA_PATH, "provincePCR.csv"))
 
 # 市レベル
 # provinceAttr <- fread(paste0(DATA_PATH, "Signate/prefMaster.csv"))
@@ -26,22 +26,22 @@ fwrite(x = provincePCR, file = paste0(DATA_PATH, "provincePCR.csv"))
 # 
 # provinceAttr <- provinceAttr[, .(都道府県, regionName)]
 
-kenmoAreaDataset <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1Cy4W9hYhGmABq1GuhLOkM92iYss0qy03Y1GeTv4bCyg/edit#gid=491635333")
-fwrite(x = kenmoAreaDataset, file = paste0(DATA_PATH, "Kenmo/confirmedNumberByCity.ja.csv"))
-# Translate
-translateSubData <- fread(paste0(DATA_PATH, "Collection/cityMaster.csv"))
+# kenmoAreaDataset <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1Cy4W9hYhGmABq1GuhLOkM92iYss0qy03Y1GeTv4bCyg/edit#gid=491635333")
+# fwrite(x = kenmoAreaDataset, file = paste0(DATA_PATH, "Kenmo/confirmedNumberByCity.ja.csv"))
+# # Translate
+# translateSubData <- fread(paste0(DATA_PATH, "Collection/cityMaster.csv"))
 
 translateColumn <- function(data, column, language, language_data) {
   data <- data.table(data)
   data[[column]] <- language_data[match(data[[column]], language_data[["ja"]])][[language]]
   return(data)
 }
-kenmoAreaDataset.cn <- translateColumn(data = kenmoAreaDataset, column = "県名", language = "cn", language_data = translateSubData)
-kenmoAreaDataset.cn <- translateColumn(data = kenmoAreaDataset.cn, column = "市名", language = "cn", language_data = translateSubData)
-fwrite(x = kenmoAreaDataset.cn, file = paste0(DATA_PATH, "Kenmo/confirmedNumberByCity.cn.csv"))
-kenmoAreaDataset.en <- translateColumn(data = kenmoAreaDataset, column = "県名", language = "en", language_data = translateSubData)
-kenmoAreaDataset.en <- translateColumn(data = kenmoAreaDataset.en, column = "市名", language = "en", language_data = translateSubData)
-fwrite(x = kenmoAreaDataset.en, file = paste0(DATA_PATH, "Kenmo/confirmedNumberByCity.en.csv"))
+# kenmoAreaDataset.cn <- translateColumn(data = kenmoAreaDataset, column = "県名", language = "cn", language_data = translateSubData)
+# kenmoAreaDataset.cn <- translateColumn(data = kenmoAreaDataset.cn, column = "市名", language = "cn", language_data = translateSubData)
+# fwrite(x = kenmoAreaDataset.cn, file = paste0(DATA_PATH, "Kenmo/confirmedNumberByCity.cn.csv"))
+# kenmoAreaDataset.en <- translateColumn(data = kenmoAreaDataset, column = "県名", language = "en", language_data = translateSubData)
+# kenmoAreaDataset.en <- translateColumn(data = kenmoAreaDataset.en, column = "市名", language = "en", language_data = translateSubData)
+# fwrite(x = kenmoAreaDataset.en, file = paste0(DATA_PATH, "Kenmo/confirmedNumberByCity.en.csv"))
 
 # ====SIGNATEデータ====
 # signatePlace <- gsheet2tbl('docs.google.com/spreadsheets/d/1CnQOf6eN18Kw5Q6ScE_9tFoyddk4FBwFZqZpt_tMOm4/edit#gid=103322372')
@@ -64,7 +64,7 @@ Update.Signate.Detail <- function(update = F) {
     source(file = paste0(DATA_PATH, "Academic/onset2ConfirmedMap.R"))
   }
 }
-Update.Signate.Detail(update = T)
+# Update.Signate.Detail(update = T)
 
 #
 # signateLink <- gsheet2tbl('https://docs.google.com/spreadsheets/d/1CnQOf6eN18Kw5Q6ScE_9tFoyddk4FBwFZqZpt_tMOm4/edit#gid=57719256')
