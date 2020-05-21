@@ -30,5 +30,98 @@ positiveDetail[, `:=` (label = paste(sep = "|", 都道府県症例番号, 公表
                        symbol = ifelse(医療従事者ﾌﾗｸﾞ == 1, "diamond", "circle"),
                        size = sapply(年代, function(x) {yearList[match(x, names(yearList))][[1]]}))]
 
+fukuokaOffical <- fread(paste0(DATA_PATH, "Pref/", pref, "/patients.csv"))
+
+fukuokaOffical[性別 == "男性", flag := "2.男性"]
+fukuokaOffical[性別 == "女性", flag := "1.女性"]
+fukuokaOffical[感染経路不明 == 1, flag := "3.感染経路不明"]
+
+positiveDetail <- positiveDetail[fukuokaOffical, flag := i.flag, on = c(症例番号 = "No")][order(flag)]
 fwrite(x = positiveDetail, file = paste0(DATA_PATH, "Pref/", pref, "/nodes.csv"))
 fwrite(x = relationDt, file = paste0(DATA_PATH, "Pref/", pref, "/edges.csv"))
+
+# e_charts() %>%
+#   e_graph(
+#     layout = "force",
+#     roam = T,
+#     draggable = T,
+#     symbolKeepAspect = T,
+#     focusNodeAdjacency = T
+#   ) %>%
+#   e_graph_nodes(
+#     nodes = positiveDetail,
+#     names = 都道府県症例番号,
+#     value = label,
+#     size = size,
+#     symbol = symbol,
+#     category = flag
+#   ) %>%
+#   e_graph_edges(
+#     relationDt,
+#     source = 都道府県症例番号1,
+#     target = 都道府県症例番号2
+#   ) %>%
+#   e_tooltip(formatter = htmlwidgets::JS("
+#     function(params) {
+#       const text = params.value.split('|')
+#       return(`
+#         番号：${text[0]}<br>
+#         公表日：${text[1]}<br>
+#         年代：${text[2]}
+#       `)
+#     }
+#   ")) %>%
+#   e_labels(
+#     formatter = htmlwidgets::JS(paste0("
+#     function(params) {
+#       const text = params.value.split('|')
+#       if(Date.parse(text[1]) >= Date.parse('", (Sys.Date() - 7), "')) {
+#         return(`{oneWeek|${text[0]}}`)
+#       } else if(Date.parse(text[1]) >= Date.parse('", (Sys.Date() - 14), "')) {
+#         return(`{twoWeek|${text[0]}}`)
+#       } else if(Date.parse(text[1]) >= Date.parse('", (Sys.Date() - 21), "')) {
+#         return(`{threeWeek|${text[0]}}`)
+#       } else {
+#         return('')
+#       }
+#     }
+#   ")),
+#     rich = list(
+#       oneWeek = list(
+#         borderColor = "auto",
+#         color = "black",
+#         backgroundColor = "white",
+#         borderWidth = 4,
+#         borderRadius = 2,
+#         padding = 3,
+#         fontSize = 8
+#       ),
+#       twoWeek = list(
+#         borderColor = "auto",
+#         color = "black",
+#         backgroundColor = "white",
+#         borderWidth = 2,
+#         borderRadius = 2,
+#         padding = 3,
+#         fontSize = 8
+#       ),
+#       threeWeek = list(
+#         borderColor = "auto",
+#         color = "black",
+#         backgroundColor = "white",
+#         borderWidth = 0.5,
+#         borderRadius = 2,
+#         padding = 3,
+#         fontSize = 8
+#       )
+#     )
+#   ) %>%
+#   e_title(
+#     text = "福岡県のクラスターネットワーク",
+#     subtext = sprintf(
+#       "公表日：%s - %s\n感染経路不明率：%s%%",
+#       min(positiveDetail$公表日),
+#       max(positiveDetail$公表日),
+#       round(nrow(positiveDetail[flag == "3.感染経路不明"]) / nrow(positiveDetail) * 100, 2)
+#     )
+#   )
