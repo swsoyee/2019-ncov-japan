@@ -34,7 +34,7 @@ observeEvent(input$sideBarTab, {
 
 output$AomoriValueBoxes <- renderUI({
   data <- GLOBAL_VALUE$Aomori$summary
-  data <- data[検査日時 != ""]
+  data <- data[nchar(検査日時) < 11][検査日時 != ""]
   totalPositive <- sum(data$陽性数, na.rm = T)
   totalPCR <- sum(data$実施数, na.rm = T)
   # totalDischarge <-  sum(data$治療終了数, na.rm = T) # TODO 公式データまだない、とりあえず厚労省から計算
@@ -61,7 +61,7 @@ output$AomoriValueBoxes <- renderUI({
       fluidRow(
         createValueBox(value = totalPCR,
                        subValue = paste0(i18n$t('陽性率：'), positiveRate), 
-                       sparkline = createSparklineInValueBox(data, '実施数', length = 10),
+                       sparkline = createSparklineInValueBox(data, '実施数'),
                        subtitle = i18n$t("検査数"),
                        icon = 'vials',
                        color = 'yellow', 
@@ -69,7 +69,7 @@ output$AomoriValueBoxes <- renderUI({
         ),
         createValueBox(value = totalPositive,
                        subValue = paste0(i18n$t('速報：'), sum(byDate[, 3, with = T], na.rm = T)), 
-                       sparkline = createSparklineInValueBox(data, '陽性数', length = 10),
+                       sparkline = createSparklineInValueBox(data, '陽性数'),
                        subtitle = i18n$t("陽性者数"),
                        icon = 'procedures',
                        color = 'red', 
@@ -79,7 +79,7 @@ output$AomoriValueBoxes <- renderUI({
       fluidRow(
         createValueBox(value = totalDischarge, # TODO 公式データまだない
                        subValue = dischargeRate, 
-                       sparkline = createSparklineInValueBox(mhlw, '日次退院者', length = 19),
+                       sparkline = createSparklineInValueBox(mhlw, '日次退院者'),
                        subtitle = i18n$t("回復者数"),
                        icon = 'user-shield',
                        color = 'green',
@@ -87,7 +87,7 @@ output$AomoriValueBoxes <- renderUI({
         ),
         createValueBox(value = totalDeath, # TODO 公式データまだない
                        subValue = deathRate, 
-                       sparkline = createSparklineInValueBox(data, '死亡数', length = 10),
+                       sparkline = createSparklineInValueBox(data, '死亡数'),
                        subtitle = i18n$t("死亡者数"),
                        icon = 'bible',
                        color = 'navy',
