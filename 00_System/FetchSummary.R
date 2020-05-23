@@ -104,7 +104,9 @@
 #   "20200518" = "https://www.mhlw.go.jp/content/10906000/000631428.pdf",
 #   "20200519" = "https://www.mhlw.go.jp/content/10906000/000631887.pdf",
 #   "20200520" = "https://www.mhlw.go.jp/content/10906000/000632211.pdf",
-#   "20200521" = "https://www.mhlw.go.jp/content/10906000/000632553.pdf"
+#   "20200521" = "https://www.mhlw.go.jp/content/10906000/000632553.pdf",
+#   "20200522" = "https://www.mhlw.go.jp/content/10906000/000632894.pdf",
+#   "20200523" = "https://www.mhlw.go.jp/content/10906000/000633030.pdf"
 # )
 # 
 # for (i in names(location)) {
@@ -112,6 +114,10 @@
 #     out <- tabulizer::extract_tables(location[i][[1]], method = "lattice")
 # 
 #     dt <- data.table(out[[1]])
+#     # 沖縄処理
+#     dt[49] <- dt[49, c(1:3, 6:7, 10:11, 4, 5, 8, 9)]
+#     dt[, `:=` (V8 = NULL, V9 = NULL, V10 = NULL, V11 = NULL)]
+#     
 #     colnames(dt) <- c("都道府県名", "陽性者", "検査人数", "入院中", "重症者", "退院者", "死亡者")
 #     dt <- dt[3:(nrow(dt) - 1)]
 #     dt[grepl("その他", 都道府県名), 都道府県名 := "伊客船"]
