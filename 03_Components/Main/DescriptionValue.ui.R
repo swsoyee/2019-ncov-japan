@@ -25,12 +25,13 @@ fluidRow(
     title = paste0(
       i18n$t("チャーター便を除く国内事例については、令和2年5月8日公表分から、データソースを従来の厚生労働省が把握した個票を積み上げたものから、各自治体がウェブサイトで公表している数等を積み上げたものに変更した。また、一部自治体について件数を計上しているため、実際の人数より過大である。"),
       sprintf(
-        i18n$t("<hr>国内：%s (%s)<br>空港検疫：%s (+%s)<br>チャーター便：%s"),
-        sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0]$検査人数),
+        i18n$t("<hr>国内：%s (%s)<br>空港検疫：%s (+%s)<br>チャーター便：%s<br>コスタ・アトランチカ号：%s"),
+        sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0 & 都道府県名 != "伊客船"]$検査人数),
         getDiffValueAndSign(sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0]$検査人数) - sum(mhlwSummary[日付 == (max(日付) - 1) & 分類 %in% 0]$検査人数)),
         sum(mhlwSummary[日付 == max(日付) & 分類 %in% 1]$検査人数),
         sum(mhlwSummary[日付 == max(日付) & 分類 %in% 1]$検査人数) - sum(mhlwSummary[日付 == (max(日付) - 1) & 分類 %in% 1]$検査人数),
-        sum(mhlwSummary[日付 == max(日付) & 分類 %in% 2]$検査人数)
+        sum(mhlwSummary[日付 == max(日付) & 分類 %in% 2]$検査人数),
+        mhlwSummary[日付 == max(日付) & 都道府県名== "伊客船"]$検査人数
       )
     )
   ),

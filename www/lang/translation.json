@@ -657,9 +657,9 @@
       "en": "After the Report of March 4, the number of people who conducted the tests, including those who have a close contact with the patients, was referred to the prefectural governments and only confirmed number were published. The number of PCR tests conducted in Japan is the number of reports within the framework of the pseudopathy reporting system, and does not reflect the results of all tests conducted in each municipality (such as confirmation tests at the time of discharge are not included)."
     },
     {
-      "ja": "<hr>国内：%s (%s)<br>空港検疫：%s (+%s)<br>チャーター便：%s",
-      "cn": "<hr>国内：%s (%s)<br>机场检疫：%s (+%s)<br>撤侨包机：%s",
-      "en": "<hr>Domestic: %s (%s)<br>Airport quarantine: %s (+%s)<br>Air charter: %s"
+      "ja": "<hr>国内：%s (%s)<br>空港検疫：%s (+%s)<br>チャーター便：%s<br>コスタ・アトランチカ号：%s",
+      "cn": "<hr>国内：%s (%s)<br>机场检疫：%s (+%s)<br>撤侨包机：%s<br>歌诗达大西洋号：%s",
+      "en": "<hr>Domestic: %s (%s)<br>Airport quarantine: %s (+%s)<br>Air charter: %s<br>Costa Atlantica: %s"
     },
     {
       "ja": "国内事例：%s (+%s)<br>チャーター便：%s<br>コスタ・アトランチカ号：%s",
