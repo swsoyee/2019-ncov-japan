@@ -52,7 +52,7 @@ tabPanel(
         placement = "top",
         title = i18n$t("分母には死亡者、チャーター便で帰国したクルーズ船の乗客40名は含まれていません。")
       ),
-      tagList(icon("shield-alt"), tags$b(i18n$t("感染者報告なし"))),
+      tagList(icon("shield-alt"), tags$b(i18n$t("感染者なし"))),
       uiOutput("saveArea"),
     ),
     column(

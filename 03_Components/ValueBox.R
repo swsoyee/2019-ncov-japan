@@ -41,6 +41,9 @@ output$todayDeath <- renderUI({
 })
 
 output$saveArea <- renderUI({
+  # 感染者なしの地域
+  regionZero <- mhlwSummary[日付 == max(日付) & (陽性者 == 退院者 + 死亡者)]$都道府県名
+  regionZero <- regionZero[regionZero != "チャーター便"]
   if (length(regionZero) > 0) {
     elements <- list()
     for (i in 1:length(regionZero)) {

@@ -211,8 +211,6 @@ DEATH_JAPAN_DIFF <- DEATH_WITHIN_DIFF + DEATH_SHIP_DIFF # 日本領土内のPCR�
 # 地域選択に表示する項目名
 regionName <- colSums(byDate[, 2:ncol(byDate)])
 regionNamePref <- regionName[1:47]
-# 感染者確認されていない地域
-regionZero <- names(regionNamePref[regionNamePref == 0])
 regionNamePref <- sort(regionNamePref[regionNamePref > 0], decreasing = T)
 regionNamePrefName <- paste0(sapply(names(regionNamePref), i18n$t), " (", regionNamePref, ")")
 regionNameOther <- regionName[48:length(regionName)]

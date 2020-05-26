@@ -337,9 +337,9 @@
       "en": "Infection reported"
     },
     {
-      "ja": "感染者報告なし",
-      "cn": "无确诊报告",
-      "en": "No reported"
+      "ja": "感染者なし",
+      "cn": "无确诊患者",
+      "en": "No Active"
     },
     {
       "ja": "再生速度（秒/日）",
