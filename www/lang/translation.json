@@ -82,6 +82,21 @@
       "en": "Kanagawa"
     },
     {
+      "ja": "福岡県",
+      "cn": "福冈县",
+      "en": "Fukuoka"
+    },
+    {
+      "ja": "九州地方",
+      "cn": "九州地方",
+      "en": "Kyushu Region"
+    },
+    {
+      "ja": "自治体オープンデータのCKAN",
+      "cn": "自治体公开数据CKAN",
+      "en": "Open Data CKAN"
+    },
+    {
       "ja": "事例マップ",
       "cn": "案例地图",
       "en": "Case Map"
