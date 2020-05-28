@@ -220,3 +220,44 @@ fwrite(x = data.table(contact), file = paste0(DATA_PATH, "Pref/Fukuoka/call.csv"
 # jsonFile <- fromJSON(jsonUrl)
 # jsonFile$patients
 # test <- signateDetail[都道府県コード == 47]
+
+# Get world data from FIND
+coronavirus <- data.table(read.csv("https://raw.githubusercontent.com/dsbb-finddx/FIND_Cov_19_Tracker/update_data/input_data/coronavirus.csv"))
+population <- data.table(read.csv("https://raw.githubusercontent.com/dsbb-finddx/FIND_Cov_19_Tracker/update_data/input_data/countries_codes_and_coordinates.csv"))
+
+coronavirus[population, population := i.population, on = c(jhu_ID = "jhu_ID")]
+
+country_name_converter <- list(
+  "United States" = "USA",
+  "China" = "Mainland China",
+  "Korea" = "Republic of Korea",
+  "Dem. Rep. Congo" = "Democratic Republic of the Congo",
+  "S. Sudan" = "South Sudan",
+  "Central African Rep." = "Central African Republic",
+  "Tanzania" = "United Republic of Tanzania",
+  "Iran" = "Iran (Islamic Republic of)",
+  "W. Sahara" = "Western Sahara",
+  "United Kingdom" = "UK",
+  "Dominican Rep." = "Dominican Republic",
+  "Lao PDR" = "Lao People's Democratic Republic",
+  "Guinea-Bissau" = "Guinea Bissau",
+  "Côte d'Ivoire" = "Cote d'Ivoire",
+  "Congo" = "Republic of the Congo",
+  "Syria" = "Syrian Arab Republic",
+  "Palestine" = "Occupied Palestinian Territory",
+  "Moldova" = "Republic of Moldova",
+  "Bosnia and Herz." = "Bosnia and Herzegovina",
+  "Macedonia" = "North Macedonia",
+  "Czech Rep." = "Czech Republic",
+  "Eq. Guinea" = "Equatorial Guinea",
+  "Bahamas" = "The Bahamas"
+)
+
+coronavirus[, country_name_id := country]
+coronavirus[country %in% country_name_converter,
+            country_name_id := names(country_name_converter[match(country, country_name_converter)])]
+
+coronavirus[, casesPer100k := round(cases / population * 10^5, 2)]
+setnafill(coronavirus, type = "const", fill = 0, cols = c("casesPer100k"))
+fwrite(coronavirus, paste0(DATA_PATH, 'FIND/world.csv'))
+

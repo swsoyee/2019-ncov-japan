@@ -98,6 +98,14 @@ shinyUI(
         badgeColor = "black"
       ),
       menuItem(
+        # Google
+        "World",
+        tabName = "world",
+        icon = icon("globe"),
+        badgeLabel = "V 0.1",
+        badgeColor = "black"
+      ),
+      menuItem(
         i18n$t("サイトについて"),
         tabName = "about",
         icon = icon("readme"),
@@ -215,6 +223,14 @@ shinyUI(
           tabName = "google",
           source(
             file = paste0(PAGE_PATH, "/Google/PrefMobility.ui.R"),
+            local = T,
+            encoding = "UTF-8"
+          )$value
+        ),
+        tabItem(
+          tabName = "world",
+          source(
+            file = paste0(PAGE_PATH, "/World/World.ui.R"),
             local = T,
             encoding = "UTF-8"
           )$value
