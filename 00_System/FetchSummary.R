@@ -112,7 +112,8 @@
 #   "20200526" = "https://www.mhlw.go.jp/content/10906000/000633684.pdf",
 #   "20200527" = "https://www.mhlw.go.jp/content/10906000/000634251.pdf",
 #   "20200528" = "https://www.mhlw.go.jp/content/10906000/000634785.pdf",
-#   "20200529" = "https://www.mhlw.go.jp/content/10906000/000635194.pdf"
+#   "20200529" = "https://www.mhlw.go.jp/content/10906000/000635194.pdf",
+#   "20200530" = "https://www.mhlw.go.jp/content/10906000/000635510.pdf"
 # )
 # 
 # for (i in names(location)) {
@@ -121,8 +122,8 @@
 # 
 #     dt <- data.table(out[[1]])
 #     # 沖縄処理
-#     dt[49] <- dt[49, c(1:3, 6:7, 10:11, 4, 5, 8, 9)]
-#     dt[, `:=` (V8 = NULL, V9 = NULL, V10 = NULL, V11 = NULL)]
+#     dt[49] <- dt[49, c(1:3, 6:7, 10, 13, 4, 5, 8, 9, 11, 12)]
+#     dt[, `:=` (V8 = NULL, V9 = NULL, V10 = NULL, V11 = NULL, V12 = NULL, V13 = NULL)]
 # 
 #     colnames(dt) <- c("都道府県名", "陽性者", "検査人数", "入院中", "重症者", "退院者", "死亡者")
 #     dt <- dt[3:(nrow(dt) - 1)]
