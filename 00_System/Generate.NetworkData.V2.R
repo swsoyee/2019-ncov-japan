@@ -37,14 +37,20 @@ positiveDetail$size <- unlist(positiveDetail$size)
 
 fukuokaOffical <- fread(paste0(DATA_PATH, "Pref/", pref, "/patients.csv"))
 
-fukuokaOffical[性別 == "男性", flag := "2.男性"]
-fukuokaOffical[性別 == "女性", flag := "1.女性"]
-# fukuokaOffical[感染経路不明 == 1, flag := "3.感染経路不明"]
+fukuokaOffical[性別 == "男性", flag := "男性"]
+fukuokaOffical[性別 == "女性", flag := "女性"]
+# fukuokaOffical[感染経路不明 == 1, flag := "感染経路不明"]
+# fukuokaOffical[is.na(flag), flag := "リンクあり"]
+fukuokaOffical[感染経路不明 == 1, link := 1]
 
-positiveDetail <- positiveDetail[fukuokaOffical, flag := i.flag, on = c(症例番号 = "No")][order(flag)]
+positiveDetail <- positiveDetail[fukuokaOffical, flag := i.flag, on = c(症例番号 = "No")]
 
 fwrite(x = positiveDetail, file = paste0(DATA_PATH, "Pref/", pref, "/nodes.csv"))
 fwrite(x = relationDt, file = paste0(DATA_PATH, "Pref/", pref, "/edges.csv"))
+
+cutoffDate <- '2020/05/17'
+positiveDetail <- positiveDetail[公表日 > cutoffDate]
+fukuokaOffical <- fukuokaOffical[as.Date(公表_年月日) > as.Date(cutoffDate)]
 
 e_charts() %>%
   e_graph(
@@ -83,12 +89,13 @@ e_charts() %>%
     formatter = htmlwidgets::JS(paste0("
     function(params) {
       const text = params.value.split('|')
+      const id = text[0].split('-')[1]
       if(Date.parse(text[1]) >= Date.parse('", (Sys.Date() - 7), "')) {
-        return(`{oneWeek|${text[0]}}`)
+        return(`{oneWeek|${id}}`)
       } else if(Date.parse(text[1]) >= Date.parse('", (Sys.Date() - 14), "')) {
-        return(`{twoWeek|${text[0]}}`)
+        return(`{twoWeek|${id}}`)
       } else if(Date.parse(text[1]) >= Date.parse('", (Sys.Date() - 21), "')) {
-        return(`{threeWeek|${text[0]}}`)
+        return(`{threeWeek|${id}}`)
       } else {
         return('')
       }
@@ -130,6 +137,9 @@ e_charts() %>%
       "公表日：%s - %s\n感染経路不明率：%s%%",
       min(positiveDetail$公表日),
       max(positiveDetail$公表日),
-      round(nrow(positiveDetail[flag == "3.感染経路不明"]) / nrow(positiveDetail) * 100, 2)
+      round(sum(fukuokaOffical$link, na.rm = T)/ nrow(fukuokaOffical) * 100, 2)
     )
-  )
+  ) %>% 
+  # e_theme_custom('{"color":["#304554", "#C23532"]}')
+  e_theme_custom('{"color":["#C23532", "#304554"]}')
+  # e_theme_custom('{"color":["#F5CA09", "#585E5D"]}')
