@@ -2052,6 +2052,11 @@
       "en": "Must Read"
     },
     {
+      "ja": "検疫職員：国職員（横浜港のクルーズ船対応）・空港検疫での判明者などを含まれています。",
+      "cn": "检疫相关：包含机关工作人员（公主号游轮处理）和在机场检疫中确诊的患者。",
+      "en": "Quarantine: It includes state officials (for cruise ships at the Port of Yokohama) and those identified in airport quarantine."
+    },
+    {
       "ja": "本サイトの陽性率の計算に関しては、3月下旬から5月8日までの間に厚労省が公開している陽性率と同じ計算方法で計算しています。5月8日以後基準変更などがあるため、厚労省側は公式で陽性率の発表しなくなり、自治体が公表しているデータ（陽性率など）を正しい数値であることを見做しています。本サイトは引き続き同じ計算式で厚労省が発表しているデータだけで陽性率を計算しているが、分母（検査人数）の正確さの保証はないため、陽性率の正確さに関する保証は一切ありません。正確の数値を求めている方は各自治体のページをご参考するようお願い致します。",
       "cn": "本页面计算阳性率所使用的计算方法是和厚劳省在3月下旬至5月8日这段公布阳性率时期所采用的同样方法计算而出的。5月8日以后由于数据公布标准等有变，厚劳省不再统一公布阳性率，而以各自治体所公布的数据（阳性率等）为准。本网站虽然继续使用厚劳省公布的数据以同样方法进行计算，但由于分母（检测人数）存在不确定性，因为无法对所得阳性率的准确度作任何保证。如您想得知准确的数据请参考各地区政府部门的信息发布页。",
       "en": "The method used to calculate the positive rate on this page is the same as that used by the MHLW for the period from late March to May 8. After May 8, due to changes in data release standards, the MHLW no longer publishes the positive rate uniformly, but instead uses the data published by each municipality (positive rate, etc.). Although this website continues to use data published by the MHLW for calculations using the same methodology, there is uncertainty in the denominator (number of people tested) and no assurance can be given as to the accuracy of the positive rates. For accurate data, please refer to the information pages of each regional government department."

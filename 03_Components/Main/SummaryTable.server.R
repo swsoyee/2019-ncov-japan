@@ -34,6 +34,10 @@ observeEvent(input$switchTableVersion, {
       tagList(
         dataTableOutput("confirmedByPrefTable"),
         helpText(
+          icon("exclamation-circle"),
+          i18n$t("検疫職員：国職員（横浜港のクルーズ船対応）・空港検疫での判明者などを含まれています。")
+        ),
+        helpText(
           icon("chart-bar"),
           i18n$t("感染者数：本サイトのリアルタイム感染者数は再び陽性になった患者は新規として数えないため、一部のメディアと自治体が発表した数（延べ人数）と一致しない場合があります。")
         ),
