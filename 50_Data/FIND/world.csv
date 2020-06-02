@@ -16272,8 +16272,8 @@ France,2020-05-29,129,186923,559,28717,52,France,,65274000,France,286.37
 Germany,2020-05-29,129,182922,726,8504,34,Germany,,83784000,Germany,218.33
 India,2020-05-29,129,173491,8105,4980,269,India,,1380004000,India,12.57
 Turkey,2020-05-29,129,162120,1141,4489,28,Turkey,,84339000,Turkey,192.22
+Peru,2020-05-29,129,148285,6506,4230,131,Peru,,32972000,Peru,449.73
 Iran,2020-05-29,129,146668,2819,7677,50,Iran (Islamic Republic of),,83993000,Iran,174.62
-Peru,2020-05-29,129,141779,0,4099,0,Peru,,32972000,Peru,430
 Canada,2020-05-29,129,90909,933,7063,81,Canada,,37742000,Canada,240.87
 Chile,2020-05-29,129,90638,3695,944,54,Chile,,19116000,Chile,474.15
 Mexico,2020-05-29,129,84627,3227,9415,371,Mexico,,128933000,Mexico,65.64
@@ -16462,7 +16462,7 @@ France,2020-05-30,130,188752,1829,28774,57,France,,65274000,France,289.17
 Germany,2020-05-30,130,183189,267,8530,26,Germany,,83784000,Germany,218.64
 India,2020-05-30,130,181827,8336,5185,205,India,,1380004000,India,13.18
 Turkey,2020-05-30,130,163103,983,4515,26,Turkey,,84339000,Turkey,193.39
-Peru,2020-05-30,130,155671,13892,4371,272,Peru,,32972000,Peru,472.13
+Peru,2020-05-30,130,155671,7386,4371,141,Peru,,32972000,Peru,472.13
 Iran,2020-05-30,130,148950,2282,7734,57,Iran (Islamic Republic of),,83993000,Iran,177.34
 Chile,2020-05-30,130,94858,4220,997,53,Chile,,19116000,Chile,496.22
 Canada,2020-05-30,130,91681,772,7159,96,Canada,,37742000,Canada,242.92
@@ -16641,4 +16641,384 @@ Seychelles,2020-05-30,130,11,0,0,0,Seychelles,,98000,Seychelles,11.22
 MSZaandam,2020-05-30,130,9,0,2,0,MS Zaandam,,,MS Zaandam,0
 WesternSahara,2020-05-30,130,9,0,1,0,Western Sahara,,597000,W. Sahara,1.51
 PapuaNewGuinea,2020-05-30,130,8,0,0,0,Papua New Guinea,,8947000,Papua New Guinea,0.09
-Lesotho,2020-05-30,130,2,0,0,0,Lesotho,31 5月 08:00 GMT,2142000,Lesotho,0.09
+Lesotho,2020-05-30,130,2,0,0,0,Lesotho,,2142000,Lesotho,0.09
+US,2020-05-31,131,1790172,20007,104381,605,USA,,331003000,United States,540.83
+Brazil,2020-05-31,131,514849,16409,29314,480,Brazil,,212559000,Brazil,242.21
+Russia,2020-05-31,131,405843,9268,4693,138,Russia,,145934000,Russia,278.1
+UnitedKingdom,2020-05-31,131,276156,1937,38571,113,UK,,67886000,United Kingdom,406.79
+Spain,2020-05-31,131,239479,251,27127,2,Spain,,46755000,Spain,512.2
+Italy,2020-05-31,131,232997,333,33415,75,Italy,,60462000,Italy,385.36
+India,2020-05-31,131,190609,8782,5408,223,India,,1380004000,India,13.81
+France,2020-05-31,131,189009,257,28805,31,France,,65274000,France,289.56
+Germany,2020-05-31,131,183410,221,8540,10,Germany,,83784000,Germany,218.91
+Peru,2020-05-31,131,164476,8805,4506,135,Peru,,32972000,Peru,498.84
+Turkey,2020-05-31,131,163942,839,4540,25,Turkey,,84339000,Turkey,194.38
+Iran,2020-05-31,131,151466,2516,7797,63,Iran (Islamic Republic of),,83993000,Iran,180.33
+Chile,2020-05-31,131,99688,4830,1054,57,Chile,,19116000,Chile,521.49
+Canada,2020-05-31,131,92479,798,7374,215,Canada,,37742000,Canada,245.03
+Mexico,2020-05-31,131,90664,3152,9930,151,Mexico,,128933000,Mexico,70.32
+SaudiArabia,2020-05-31,131,85261,1877,503,23,Saudi Arabia,,34814000,Saudi Arabia,244.9
+China,2020-05-31,131,83017,16,4634,0,Mainland China,,1439324000,China,5.77
+Pakistan,2020-05-31,131,69496,3039,1483,88,Pakistan,,220892000,Pakistan,31.46
+Belgium,2020-05-31,131,58381,195,9467,14,Belgium,,11590000,Belgium,503.72
+Qatar,2020-05-31,131,56910,1648,38,2,Qatar,,2881000,Qatar,1975.36
+Bangladesh,2020-05-31,131,47153,2545,650,40,Bangladesh,,164689000,Bangladesh,28.63
+Netherlands,2020-05-31,131,46645,185,5975,5,Netherlands,,17135000,Netherlands,272.22
+Belarus,2020-05-31,131,42556,898,235,6,Belarus,,9449000,Belarus,450.38
+Ecuador,2020-05-31,131,39098,527,3358,24,Ecuador,,17643000,Ecuador,221.61
+Sweden,2020-05-31,131,37542,429,4395,0,Sweden,,10099000,Sweden,371.74
+Singapore,2020-05-31,131,34884,518,23,0,Singapore,,5850000,Singapore,596.31
+UnitedArabEmirates,2020-05-31,131,34557,661,264,2,United Arab Emirates,,9890000,United Arab Emirates,349.41
+SouthAfrica,2020-05-31,131,32683,1716,683,40,South Africa,,59309000,South Africa,55.11
+Portugal,2020-05-31,131,32500,297,1410,14,Portugal,,10197000,Portugal,318.72
+Switzerland,2020-05-31,131,30862,17,1920,1,Switzerland,,8655000,Switzerland,356.58
+Colombia,2020-05-31,131,27219,485,916,25,Colombia,,50883000,Colombia,53.49
+Kuwait,2020-05-31,131,27043,851,212,7,Kuwait,,4271000,Kuwait,633.18
+Indonesia,2020-05-31,131,26473,700,1613,40,Indonesia,,273524000,Indonesia,9.68
+Ireland,2020-05-31,131,24990,61,1652,1,Ireland,,4938000,Ireland,506.08
+Egypt,2020-05-31,131,24985,1536,959,46,Egypt,,102334000,Egypt,24.42
+Poland,2020-05-31,131,23786,215,1064,3,Poland,,37847000,Poland,62.85
+Ukraine,2020-05-31,131,23672,468,708,12,Ukraine,,43734000,Ukraine,54.13
+Romania,2020-05-31,131,19257,124,1266,7,Romania,,19238000,Romania,100.1
+Philippines,2020-05-31,131,18086,862,957,7,Philippines,,109581000,Philippines,16.5
+DominicanRepublic,2020-05-31,131,17285,377,502,4,Dominican Republic,,10848000,Dominican Rep.,159.34
+Israel,2020-05-31,131,17071,59,285,1,Israel,,8656000,Israel,197.22
+Argentina,2020-05-31,131,16851,637,539,11,Argentina,,45196000,Argentina,37.28
+Japan,2020-05-31,131,16751,35,898,4,Japan,,126476000,Japan,13.24
+Austria,2020-05-31,131,16731,46,668,0,Austria,,9006000,Austria,185.78
+Afghanistan,2020-05-31,131,15205,680,257,8,Afghanistan,,38928000,Afghanistan,39.06
+Panama,2020-05-31,131,13463,445,336,6,Panama,,4315000,Panama,312
+Denmark,2020-05-31,131,11869,36,574,3,Denmark,,5792000,Denmark,204.92
+RepublicofKorea,2020-05-31,131,11503,35,271,1,Republic of Korea,,51269000,Korea,22.44
+Oman,2020-05-31,131,11437,1014,49,7,Oman,,5107000,Oman,223.95
+Serbia,2020-05-31,131,11412,31,243,1,Serbia,,8737000,Serbia,130.62
+Bahrain,2020-05-31,131,11398,605,19,2,Bahrain,,1702000,Bahrain,669.68
+Kazakhstan,2020-05-31,131,10858,476,40,2,Kazakhstan,,18777000,Kazakhstan,57.83
+Nigeria,2020-05-31,131,10162,307,287,14,Nigeria,,206140000,Nigeria,4.93
+Bolivia,2020-05-31,131,9982,390,313,3,Bolivia,,11673000,Bolivia,85.51
+Algeria,2020-05-31,131,9394,127,653,7,Algeria,,43851000,Algeria,21.42
+Armenia,2020-05-31,131,9282,355,131,4,Armenia,,2963000,Armenia,313.26
+Czechia,2020-05-31,131,9268,38,320,1,Czech Republic,,10709000,Czech Rep.,86.54
+Norway,2020-05-31,131,8440,3,236,0,Norway,,5421000,Norway,155.69
+Moldova,2020-05-31,131,8251,153,295,4,Republic of Moldova,,4034000,Moldova,204.54
+Ghana,2020-05-31,131,8070,302,36,1,Ghana,,31073000,Ghana,25.97
+Malaysia,2020-05-31,131,7819,57,115,0,Malaysia,,32366000,Malaysia,24.16
+Morocco,2020-05-31,131,7807,27,205,1,Morocco,,36911000,Morocco,21.15
+Australia,2020-05-31,131,7202,10,103,0,Australia,,25500000,Australia,28.24
+Finland,2020-05-31,131,6859,33,320,4,Finland,,5541000,Finland,123.79
+Iraq,2020-05-31,131,6439,260,205,10,Iraq,,40223000,Iraq,16.01
+Cameroon,2020-05-31,131,5904,0,191,0,Cameroon,,26546000,Cameroon,22.24
+Azerbaijan,2020-05-31,131,5494,248,63,2,Azerbaijan,,10139000,Azerbaijan,54.19
+Honduras,2020-05-31,131,5202,108,212,11,Honduras,,9905000,Honduras,52.52
+Guatemala,2020-05-31,131,5087,348,108,6,Guatemala,,17916000,Guatemala,28.39
+Sudan,2020-05-31,131,5026,226,286,24,Sudan,,43849000,Sudan,11.46
+Luxembourg,2020-05-31,131,4018,2,110,0,Luxembourg,,626000,Luxembourg,641.85
+Tajikistan,2020-05-31,131,3930,123,47,0,Tajikistan,,9538000,Tajikistan,41.2
+Hungary,2020-05-31,131,3876,9,526,2,Hungary,,9660000,Hungary,40.12
+Guinea,2020-05-31,131,3706,0,23,0,Guinea,,13133000,Guinea,28.22
+Senegal,2020-05-31,131,3645,110,42,0,Senegal,,16744000,Senegal,21.77
+Uzbekistan,2020-05-31,131,3623,77,15,1,Uzbekistan,,33469000,Uzbekistan,10.82
+Djibouti,2020-05-31,131,3354,160,24,2,Djibouti,,988000,Djibouti,339.47
+Thailand,2020-05-31,131,3081,4,57,0,Thailand,,69800000,Thailand,4.41
+DemocraticRepublicoftheCongo,2020-05-31,131,3070,104,72,3,Democratic Republic of the Congo,,89561000,Dem. Rep. Congo,3.43
+Greece,2020-05-31,131,2917,2,175,0,Greece,,10423000,Greece,27.99
+CotedIvoire,2020-05-31,131,2833,34,33,0,Cote d'Ivoire,,26378000,Côte d'Ivoire,10.74
+Gabon,2020-05-31,131,2655,0,17,0,Gabon,,2226000,Gabon,119.27
+ElSalvador,2020-05-31,131,2517,122,46,0,El Salvador,,6486000,El Salvador,38.81
+Bulgaria,2020-05-31,131,2513,14,140,1,Bulgaria,,6948000,Bulgaria,36.17
+BosniaandHerzegovina,2020-05-31,131,2510,16,153,0,Bosnia and Herzegovina,,3281000,Bosnia and Herz.,76.5
+Croatia,2020-05-31,131,2246,0,103,0,Croatia,,4105000,Croatia,54.71
+NorthMacedonia,2020-05-31,131,2226,62,133,2,North Macedonia,,2083000,Macedonia,106.87
+Haiti,2020-05-31,131,2124,259,44,3,Haiti,,11403000,Haiti,18.63
+Cuba,2020-05-31,131,2045,20,83,0,Cuba,,11327000,Cuba,18.05
+Somalia,2020-05-31,131,1976,60,78,5,Somalia,,15893000,Somalia,12.43
+Kenya,2020-05-31,131,1962,74,64,1,Kenya,,53771000,Kenya,3.65
+Estonia,2020-05-31,131,1869,4,68,1,Estonia,,1327000,Estonia,140.84
+Iceland,2020-05-31,131,1806,0,10,0,Iceland,,341000,Iceland,529.62
+Maldives,2020-05-31,131,1773,101,5,0,Maldives,,541000,Maldives,327.73
+Kyrgyzstan,2020-05-31,131,1748,26,16,0,Kyrgyzstan,,6524000,Kyrgyzstan,26.79
+Lithuania,2020-05-31,131,1675,5,70,0,Lithuania,,2722000,Lithuania,61.54
+SriLanka,2020-05-31,131,1633,13,10,0,Sri Lanka,,21413000,Sri Lanka,7.63
+Nepal,2020-05-31,131,1572,171,8,2,Nepal,,29137000,Nepal,5.4
+Slovakia,2020-05-31,131,1521,0,28,0,Slovakia,,5460000,Slovakia,27.86
+Venezuela,2020-05-31,131,1510,51,14,0,Venezuela,,28436000,Venezuela,5.31
+NewZealand,2020-05-31,131,1504,0,22,0,New Zealand,,4822000,New Zealand,31.19
+Slovenia,2020-05-31,131,1473,0,108,0,Slovenia,,2079000,Slovenia,70.85
+EquatorialGuinea,2020-05-31,131,1306,0,12,0,Equatorial Guinea,,1403000,Eq. Guinea,93.09
+Mali,2020-05-31,131,1265,15,77,1,Mali,,20251000,Mali,6.25
+GuineaBissau,2020-05-31,131,1256,0,8,0,Guinea Bissau,,1968000,Guinea-Bissau,63.82
+Lebanon,2020-05-31,131,1220,29,27,1,Lebanon,,6825000,Lebanon,17.88
+Ethiopia,2020-05-31,131,1172,109,11,3,Ethiopia,,114964000,Ethiopia,1.02
+Albania,2020-05-31,131,1137,15,33,0,Albania,,2878000,Albania,39.51
+HongKong,2020-05-31,131,1084,2,4,0,Hong Kong,,7497000,Hong Kong,14.46
+Tunisia,2020-05-31,131,1077,1,48,0,Tunisia,,11819000,Tunisia,9.11
+Latvia,2020-05-31,131,1066,1,24,0,Latvia,,1886000,Latvia,56.52
+Kosovo,2020-05-31,131,1064,0,30,0,Kosovo,,1800000,Kosovo,59.11
+Zambia,2020-05-31,131,1057,0,7,0,Zambia,,18384000,Zambia,5.75
+CostaRica,2020-05-31,131,1056,9,10,0,Costa Rica,,5094000,Costa Rica,20.73
+CentralAfricanRepublic,2020-05-31,131,1011,49,2,1,Central African Republic,,4830000,Central African Rep.,20.93
+SouthSudan,2020-05-31,131,994,0,10,0,South Sudan,,8260490,S. Sudan,12.03
+Paraguay,2020-05-31,131,986,22,11,0,Paraguay,,7133000,Paraguay,13.82
+Niger,2020-05-31,131,958,2,64,0,Niger,,24207000,Niger,3.96
+Cyprus,2020-05-31,131,944,0,17,0,Cyprus,,1207000,Cyprus,78.21
+SierraLeone,2020-05-31,131,861,9,46,0,Sierra Leone,,7977000,Sierra Leone,10.79
+BurkinaFaso,2020-05-31,131,847,0,53,0,Burkina Faso,,20903000,Burkina Faso,4.05
+Uruguay,2020-05-31,131,823,2,22,0,Uruguay,,3474000,Uruguay,23.69
+Georgia,2020-05-31,131,783,26,12,0,Georgia,,3989000,Georgia,19.63
+Chad,2020-05-31,131,778,19,65,0,Chad,,16426000,Chad,4.74
+Madagascar,2020-05-31,131,771,13,6,0,Madagascar,,27691000,Madagascar,2.78
+Andorra,2020-05-31,131,764,0,51,0,Andorra,,77000,Andorra,992.21
+Nicaragua,2020-05-31,131,759,0,35,0,Nicaragua,,6625000,Nicaragua,11.46
+Jordan,2020-05-31,131,739,5,9,0,Jordan,,10203000,Jordan,7.24
+DiamondPrincessCruiseShip,2020-05-31,131,712,0,13,0,Diamond Princess Cruise Ship,,,Diamond Princess Cruise Ship,0
+SanMarino,2020-05-31,131,671,0,42,0,San Marino,,34000,San Marino,1973.53
+Malta,2020-05-31,131,618,0,9,0,Malta,,442000,Malta,139.82
+Congo,2020-05-31,131,611,40,20,1,Republic of the Congo,,5518000,Congo,11.07
+Jamaica,2020-05-31,131,586,5,9,0,Jamaica,,2961000,Jamaica,19.79
+Mauritania,2020-05-31,131,530,47,23,3,Mauritania,,4650000,Mauritania,11.4
+Tanzania,2020-05-31,131,509,0,21,0,United Republic of Tanzania,,59734000,Tanzania,0.85
+SaoTomeandPrincipe,2020-05-31,131,483,4,12,0,Sao Tome and Principe,,219000,Sao Tome and Principe,220.55
+occupiedPalestinianterritory,2020-05-31,131,448,1,3,0,Occupied Palestinian Territory,,5101000,Palestine,8.78
+Taiwan,2020-05-31,131,442,0,7,0,Taiwan,,23817000,Taiwan,1.86
+Togo,2020-05-31,131,442,9,13,0,Togo,,8279000,Togo,5.34
+CapeVerde,2020-05-31,131,435,14,4,0,Cape Verde,,556000,Cape Verde,78.24
+Uganda,2020-05-31,131,417,4,0,0,Uganda,,45741000,Uganda,0.91
+Rwanda,2020-05-31,131,370,11,1,0,Rwanda,,12952000,Rwanda,2.86
+Mauritius,2020-05-31,131,335,0,10,0,Mauritius,,1272000,Mauritius,26.34
+Vietnam,2020-05-31,131,328,0,0,0,Vietnam,,97339000,Vietnam,0.34
+Montenegro,2020-05-31,131,324,0,9,0,Montenegro,,628000,Montenegro,51.59
+Yemen,2020-05-31,131,323,13,80,3,Yemen,,29826000,Yemen,1.08
+Liberia,2020-05-31,131,288,8,27,0,Liberia,,5058000,Liberia,5.69
+Eswatini,2020-05-31,131,285,2,2,0,Eswatini,,1160000,Eswatini,24.57
+Malawi,2020-05-31,131,284,5,4,0,Malawi,,19130000,Malawi,1.48
+Mozambique,2020-05-31,131,254,10,2,0,Mozambique,,31255000,Mozambique,0.81
+Benin,2020-05-31,131,232,8,3,0,Benin,,12123000,Benin,1.91
+Myanmar,2020-05-31,131,224,0,6,0,Myanmar,,54410000,Myanmar,0.41
+Mongolia,2020-05-31,131,179,0,0,0,Mongolia,,3278000,Mongolia,5.46
+Zimbabwe,2020-05-31,131,178,4,4,0,Zimbabwe,,14863000,Zimbabwe,1.2
+Libya,2020-05-31,131,156,26,5,0,Libya,,6871000,Libya,2.27
+Guyana,2020-05-31,131,153,1,12,0,Guyana,,787000,Guyana,19.44
+Brunei,2020-05-31,131,141,0,2,0,Brunei,,437000,Brunei,32.27
+Cambodia,2020-05-31,131,125,0,0,0,Cambodia,,16719000,Cambodia,0.75
+SyrianArabRepublic,2020-05-31,131,122,0,5,1,Syrian Arab Republic,,17501000,Syria,0.7
+TrinidadandTobago,2020-05-31,131,117,0,8,0,Trinidad and Tobago,,1399000,Trinidad and Tobago,8.36
+Comoros,2020-05-31,131,106,0,2,0,Comoros,,870000,Comoros,12.18
+TheBahamas,2020-05-31,131,102,0,11,0,The Bahamas,,393000,Bahamas,25.95
+Monaco,2020-05-31,131,99,0,4,0,Monaco,,39000,Monaco,253.85
+Barbados,2020-05-31,131,92,0,7,0,Barbados,,287000,Barbados,32.06
+Angola,2020-05-31,131,86,2,4,0,Angola,,32866000,Angola,0.26
+Liechtenstein,2020-05-31,131,82,0,1,0,Liechtenstein,,38000,Liechtenstein,215.79
+Burundi,2020-05-31,131,63,0,1,0,Burundi,,11891000,Burundi,0.53
+Macao,2020-05-31,131,45,0,0,0,Macao,,649000,Macao,6.93
+Bhutan,2020-05-31,131,43,10,0,0,Bhutan,,772000,Bhutan,5.57
+Eritrea,2020-05-31,131,39,0,0,0,Eritrea,,3546000,Eritrea,1.1
+Botswana,2020-05-31,131,35,0,1,0,Botswana,,2352000,Botswana,1.49
+AntiguaandBarbuda,2020-05-31,131,26,1,3,0,Antigua and Barbuda,,98000,Antigua and Barbuda,26.53
+SaintVincentandtheGrenadines,2020-05-31,131,26,0,0,0,Saint Vincent and the Grenadines,,111000,Saint Vincent and the Grenadines,23.42
+TheGambia,2020-05-31,131,25,0,1,0,The Gambia,,2417000,The Gambia,1.03
+Namibia,2020-05-31,131,24,1,0,0,Namibia,,2541000,Namibia,0.94
+EastTimor,2020-05-31,131,24,0,0,0,Timor-Leste,,1318000,Timor-Leste,1.82
+Grenada,2020-05-31,131,23,0,0,0,Grenada,,113000,Grenada,20.35
+Suriname,2020-05-31,131,23,9,1,0,Suriname,,587000,Suriname,3.92
+Laos,2020-05-31,131,19,0,0,0,Lao People's Democratic Republic,,7276000,Lao PDR,0.26
+Belize,2020-05-31,131,18,0,2,0,Belize,,398000,Belize,4.52
+Fiji,2020-05-31,131,18,0,0,0,Fiji,,896000,Fiji,2.01
+SaintLucia,2020-05-31,131,18,0,0,0,Saint Lucia,,184000,Saint Lucia,9.78
+Dominica,2020-05-31,131,16,0,0,0,Dominica,,72000,Dominica,22.22
+SaintKittsandNevis,2020-05-31,131,15,0,0,0,Saint Kitts and Nevis,,53000,Saint Kitts and Nevis,28.3
+HolySee,2020-05-31,131,12,0,0,0,Holy See (Vatican City),,1000,Holy See (Vatican City),1200
+Seychelles,2020-05-31,131,11,0,0,0,Seychelles,,98000,Seychelles,11.22
+MSZaandam,2020-05-31,131,9,0,2,0,MS Zaandam,,,MS Zaandam,0
+WesternSahara,2020-05-31,131,9,0,1,0,Western Sahara,,597000,W. Sahara,1.51
+PapuaNewGuinea,2020-05-31,131,8,0,0,0,Papua New Guinea,,8947000,Papua New Guinea,0.09
+Lesotho,2020-05-31,131,2,0,0,0,Lesotho,,2142000,Lesotho,0.09
+US,2020-06-01,132,1811360,21188,105165,784,USA,,331003000,United States,547.23
+Brazil,2020-06-01,132,526447,11598,29937,623,Brazil,,212559000,Brazil,247.67
+Russia,2020-06-01,132,414328,8485,4849,156,Russia,,145934000,Russia,283.91
+UnitedKingdom,2020-06-01,132,277736,1580,39127,556,UK,,67886000,United Kingdom,409.12
+Spain,2020-06-01,132,239638,159,27127,0,Spain,,46755000,Spain,512.54
+Italy,2020-06-01,132,233197,200,33475,60,Italy,,60462000,Italy,385.69
+India,2020-06-01,132,198370,7761,5608,200,India,,1380004000,India,14.37
+France,2020-06-01,132,189348,339,28836,31,France,,65274000,France,290.08
+Germany,2020-06-01,132,183594,184,8555,15,Germany,,83784000,Germany,219.13
+Peru,2020-06-01,132,170039,5563,4634,128,Peru,,32972000,Peru,515.71
+Turkey,2020-06-01,132,164769,827,4563,23,Turkey,,84339000,Turkey,195.37
+Iran,2020-06-01,132,154445,2979,7878,81,Iran (Islamic Republic of),,83993000,Iran,183.88
+Chile,2020-06-01,132,105158,5470,1113,59,Chile,,19116000,Chile,550.1
+Mexico,2020-06-01,132,93435,2771,10167,237,Mexico,,128933000,Mexico,72.47
+Canada,2020-06-01,132,93288,809,7404,30,Canada,,37742000,Canada,247.17
+SaudiArabia,2020-06-01,132,87142,1881,525,22,Saudi Arabia,,34814000,Saudi Arabia,250.31
+China,2020-06-01,132,83022,5,4634,0,Mainland China,,1439324000,China,5.77
+Pakistan,2020-06-01,132,72460,2964,1543,60,Pakistan,,220892000,Pakistan,32.8
+Belgium,2020-06-01,132,58517,136,9486,19,Belgium,,11590000,Belgium,504.89
+Qatar,2020-06-01,132,58433,1523,40,2,Qatar,,2881000,Qatar,2028.22
+Bangladesh,2020-06-01,132,49534,2381,672,22,Bangladesh,,164689000,Bangladesh,30.08
+Netherlands,2020-06-01,132,46749,104,5981,6,Netherlands,,17135000,Netherlands,272.83
+Belarus,2020-06-01,132,43403,847,240,5,Belarus,,9449000,Belarus,459.34
+Ecuador,2020-06-01,132,39098,0,3358,0,Ecuador,,17643000,Ecuador,221.61
+Sweden,2020-06-01,132,37814,272,4403,8,Sweden,,10099000,Sweden,374.43
+Singapore,2020-06-01,132,35292,408,24,1,Singapore,,5850000,Singapore,603.28
+UnitedArabEmirates,2020-06-01,132,35192,635,266,2,United Arab Emirates,,9890000,United Arab Emirates,355.83
+SouthAfrica,2020-06-01,132,34357,1674,705,22,South Africa,,59309000,South Africa,57.93
+Portugal,2020-06-01,132,32700,200,1424,14,Portugal,,10197000,Portugal,320.68
+Switzerland,2020-06-01,132,30871,9,1920,0,Switzerland,,8655000,Switzerland,356.68
+Colombia,2020-06-01,132,29384,2165,963,47,Colombia,,50883000,Colombia,57.75
+Kuwait,2020-06-01,132,27762,719,220,8,Kuwait,,4271000,Kuwait,650.01
+Indonesia,2020-06-01,132,26940,467,1641,28,Indonesia,,273524000,Indonesia,9.85
+Egypt,2020-06-01,132,26384,1399,1005,46,Egypt,,102334000,Egypt,25.78
+Ireland,2020-06-01,132,25062,72,1650,0,Ireland,,4938000,Ireland,507.53
+Ukraine,2020-06-01,132,24562,890,724,16,Ukraine,,43734000,Ukraine,56.16
+Poland,2020-06-01,132,24165,379,1074,10,Poland,,37847000,Poland,63.85
+Romania,2020-06-01,132,19398,141,1276,10,Romania,,19238000,Romania,100.83
+Philippines,2020-06-01,132,18638,552,960,3,Philippines,,109581000,Philippines,17.01
+DominicanRepublic,2020-06-01,132,17572,287,502,0,Dominican Republic,,10848000,Dominican Rep.,161.98
+Argentina,2020-06-01,132,17415,564,556,17,Argentina,,45196000,Argentina,38.53
+Israel,2020-06-01,132,17169,98,285,0,Israel,,8656000,Israel,198.35
+Japan,2020-06-01,132,16787,36,899,1,Japan,,126476000,Japan,13.27
+Austria,2020-06-01,132,16733,2,668,0,Austria,,9006000,Austria,185.8
+Afghanistan,2020-06-01,132,15750,545,265,8,Afghanistan,,38928000,Afghanistan,40.46
+Panama,2020-06-01,132,13837,374,344,8,Panama,,4315000,Panama,320.67
+Oman,2020-06-01,132,12223,786,50,1,Oman,,5107000,Oman,239.34
+Denmark,2020-06-01,132,11899,30,576,2,Denmark,,5792000,Denmark,205.44
+Bahrain,2020-06-01,132,11871,473,19,0,Bahrain,,1702000,Bahrain,697.47
+RepublicofKorea,2020-06-01,132,11541,38,272,1,Republic of Korea,,51269000,Korea,22.51
+Serbia,2020-06-01,132,11430,18,244,1,Serbia,,8737000,Serbia,130.82
+Kazakhstan,2020-06-01,132,11308,450,41,1,Kazakhstan,,18777000,Kazakhstan,60.22
+Nigeria,2020-06-01,132,10578,416,299,12,Nigeria,,206140000,Nigeria,5.13
+Bolivia,2020-06-01,132,10531,549,343,30,Bolivia,,11673000,Bolivia,90.22
+Algeria,2020-06-01,132,9513,119,661,8,Algeria,,43851000,Algeria,21.69
+Armenia,2020-06-01,132,9492,210,139,8,Armenia,,2963000,Armenia,320.35
+Czechia,2020-06-01,132,9302,34,321,1,Czech Republic,,10709000,Czech Rep.,86.86
+Norway,2020-06-01,132,8446,6,236,0,Norway,,5421000,Norway,155.8
+Moldova,2020-06-01,132,8360,109,305,10,Republic of Moldova,,4034000,Moldova,207.24
+Ghana,2020-06-01,132,8070,0,36,0,Ghana,,31073000,Ghana,25.97
+Malaysia,2020-06-01,132,7857,38,115,0,Malaysia,,32366000,Malaysia,24.28
+Morocco,2020-06-01,132,7833,26,205,0,Morocco,,36911000,Morocco,21.22
+Australia,2020-06-01,132,7221,19,102,0,Australia,,25500000,Australia,28.32
+Finland,2020-06-01,132,6885,26,318,0,Finland,,5541000,Finland,124.26
+Iraq,2020-06-01,132,6868,429,215,10,Iraq,,40223000,Iraq,17.07
+Cameroon,2020-06-01,132,6397,493,199,8,Cameroon,,26546000,Cameroon,24.1
+Azerbaijan,2020-06-01,132,5662,168,68,5,Azerbaijan,,10139000,Azerbaijan,55.84
+Honduras,2020-06-01,132,5362,160,217,5,Honduras,,9905000,Honduras,54.13
+Guatemala,2020-06-01,132,5336,249,116,8,Guatemala,,17916000,Guatemala,29.78
+Sudan,2020-06-01,132,5173,147,298,12,Sudan,,43849000,Sudan,11.8
+Luxembourg,2020-06-01,132,4019,1,110,0,Luxembourg,,626000,Luxembourg,642.01
+Tajikistan,2020-06-01,132,4013,83,47,0,Tajikistan,,9538000,Tajikistan,42.07
+Hungary,2020-06-01,132,3892,16,527,1,Hungary,,9660000,Hungary,40.29
+Guinea,2020-06-01,132,3844,138,23,0,Guinea,,13133000,Guinea,29.27
+Senegal,2020-06-01,132,3739,94,42,0,Senegal,,16744000,Senegal,22.33
+Uzbekistan,2020-06-01,132,3702,79,15,0,Uzbekistan,,33469000,Uzbekistan,11.06
+Djibouti,2020-06-01,132,3569,215,24,0,Djibouti,,988000,Djibouti,361.23
+DemocraticRepublicoftheCongo,2020-06-01,132,3195,125,72,0,Democratic Republic of the Congo,,89561000,Dem. Rep. Congo,3.57
+Thailand,2020-06-01,132,3082,1,57,0,Thailand,,69800000,Thailand,4.42
+CotedIvoire,2020-06-01,132,2951,118,33,0,Cote d'Ivoire,,26378000,Côte d'Ivoire,11.19
+Greece,2020-06-01,132,2918,1,179,4,Greece,,10423000,Greece,28
+Gabon,2020-06-01,132,2655,0,17,0,Gabon,,2226000,Gabon,119.27
+ElSalvador,2020-06-01,132,2582,65,46,0,El Salvador,,6486000,El Salvador,39.81
+BosniaandHerzegovina,2020-06-01,132,2524,14,154,1,Bosnia and Herzegovina,,3281000,Bosnia and Herz.,76.93
+Bulgaria,2020-06-01,132,2519,6,140,0,Bulgaria,,6948000,Bulgaria,36.26
+NorthMacedonia,2020-06-01,132,2315,89,140,7,North Macedonia,,2083000,Macedonia,111.14
+Croatia,2020-06-01,132,2246,0,103,0,Croatia,,4105000,Croatia,54.71
+Haiti,2020-06-01,132,2226,102,45,1,Haiti,,11403000,Haiti,19.52
+Cuba,2020-06-01,132,2083,38,83,0,Cuba,,11327000,Cuba,18.39
+Somalia,2020-06-01,132,2023,47,79,1,Somalia,,15893000,Somalia,12.73
+Kenya,2020-06-01,132,2021,59,69,5,Kenya,,53771000,Kenya,3.76
+Estonia,2020-06-01,132,1870,1,68,0,Estonia,,1327000,Estonia,140.92
+Maldives,2020-06-01,132,1829,56,6,1,Maldives,,541000,Maldives,338.08
+Kyrgyzstan,2020-06-01,132,1817,69,16,0,Kyrgyzstan,,6524000,Kyrgyzstan,27.85
+Nepal,2020-06-01,132,1811,239,8,0,Nepal,,29137000,Nepal,6.22
+Iceland,2020-06-01,132,1806,0,10,0,Iceland,,341000,Iceland,529.62
+Lithuania,2020-06-01,132,1678,3,70,0,Lithuania,,2722000,Lithuania,61.65
+Venezuela,2020-06-01,132,1662,152,17,3,Venezuela,,28436000,Venezuela,5.84
+SriLanka,2020-06-01,132,1643,10,11,1,Sri Lanka,,21413000,Sri Lanka,7.67
+Slovakia,2020-06-01,132,1522,1,28,0,Slovakia,,5460000,Slovakia,27.88
+NewZealand,2020-06-01,132,1504,0,22,0,New Zealand,,4822000,New Zealand,31.19
+Slovenia,2020-06-01,132,1473,0,109,1,Slovenia,,2079000,Slovenia,70.85
+GuineaBissau,2020-06-01,132,1339,83,8,0,Guinea Bissau,,1968000,Guinea-Bissau,68.04
+Mali,2020-06-01,132,1315,50,78,1,Mali,,20251000,Mali,6.49
+EquatorialGuinea,2020-06-01,132,1306,0,12,0,Equatorial Guinea,,1403000,Eq. Guinea,93.09
+Ethiopia,2020-06-01,132,1257,85,12,1,Ethiopia,,114964000,Ethiopia,1.09
+Lebanon,2020-06-01,132,1233,13,27,0,Lebanon,,6825000,Lebanon,18.07
+Albania,2020-06-01,132,1143,6,33,0,Albania,,2878000,Albania,39.72
+Zambia,2020-06-01,132,1089,32,7,0,Zambia,,18384000,Zambia,5.92
+HongKong,2020-06-01,132,1087,3,4,0,Hong Kong,,7497000,Hong Kong,14.5
+CostaRica,2020-06-01,132,1084,28,10,0,Costa Rica,,5094000,Costa Rica,21.28
+Tunisia,2020-06-01,132,1084,7,48,0,Tunisia,,11819000,Tunisia,9.17
+CentralAfricanRepublic,2020-06-01,132,1069,58,4,2,Central African Republic,,4830000,Central African Rep.,22.13
+Latvia,2020-06-01,132,1066,0,24,0,Latvia,,1886000,Latvia,56.52
+Kosovo,2020-06-01,132,1064,0,30,0,Kosovo,,1800000,Kosovo,59.11
+Paraguay,2020-06-01,132,995,9,11,0,Paraguay,,7133000,Paraguay,13.95
+SouthSudan,2020-06-01,132,994,0,10,0,South Sudan,,8260490,S. Sudan,12.03
+Niger,2020-06-01,132,958,0,65,1,Niger,,24207000,Niger,3.96
+Cyprus,2020-06-01,132,949,5,17,0,Cyprus,,1207000,Cyprus,78.62
+SierraLeone,2020-06-01,132,865,4,46,0,Sierra Leone,,7977000,Sierra Leone,10.84
+BurkinaFaso,2020-06-01,132,847,0,53,0,Burkina Faso,,20903000,Burkina Faso,4.05
+Madagascar,2020-06-01,132,826,55,6,0,Madagascar,,27691000,Madagascar,2.98
+Uruguay,2020-06-01,132,825,2,23,1,Uruguay,,3474000,Uruguay,23.75
+Georgia,2020-06-01,132,794,11,12,0,Georgia,,3989000,Georgia,19.9
+Chad,2020-06-01,132,790,12,66,1,Chad,,16426000,Chad,4.81
+Andorra,2020-06-01,132,765,1,51,0,Andorra,,77000,Andorra,993.51
+Nicaragua,2020-06-01,132,759,0,35,0,Nicaragua,,6625000,Nicaragua,11.46
+Jordan,2020-06-01,132,746,7,9,0,Jordan,,10203000,Jordan,7.31
+DiamondPrincessCruiseShip,2020-06-01,132,712,0,13,0,Diamond Princess Cruise Ship,,,Diamond Princess Cruise Ship,0
+SanMarino,2020-06-01,132,671,0,42,0,San Marino,,34000,San Marino,1973.53
+Malta,2020-06-01,132,619,1,9,0,Malta,,442000,Malta,140.05
+Congo,2020-06-01,132,611,0,20,0,Republic of the Congo,,5518000,Congo,11.07
+Jamaica,2020-06-01,132,588,2,9,0,Jamaica,,2961000,Jamaica,19.86
+Mauritania,2020-06-01,132,588,58,23,0,Mauritania,,4650000,Mauritania,12.65
+Tanzania,2020-06-01,132,509,0,21,0,United Republic of Tanzania,,59734000,Tanzania,0.85
+SaoTomeandPrincipe,2020-06-01,132,484,1,12,0,Sao Tome and Principe,,219000,Sao Tome and Principe,221
+CapeVerde,2020-06-01,132,458,23,4,0,Cape Verde,,556000,Cape Verde,82.37
+Uganda,2020-06-01,132,457,40,0,0,Uganda,,45741000,Uganda,1
+occupiedPalestinianterritory,2020-06-01,132,449,1,3,0,Occupied Palestinian Territory,,5101000,Palestine,8.8
+Taiwan,2020-06-01,132,443,1,7,0,Taiwan,,23817000,Taiwan,1.86
+Togo,2020-06-01,132,443,1,13,0,Togo,,8279000,Togo,5.35
+Rwanda,2020-06-01,132,377,7,1,0,Rwanda,,12952000,Rwanda,2.91
+Yemen,2020-06-01,132,354,31,84,4,Yemen,,29826000,Yemen,1.19
+Malawi,2020-06-01,132,336,52,4,0,Malawi,,19130000,Malawi,1.76
+Mauritius,2020-06-01,132,335,0,10,0,Mauritius,,1272000,Mauritius,26.34
+Vietnam,2020-06-01,132,328,0,0,0,Vietnam,,97339000,Vietnam,0.34
+Montenegro,2020-06-01,132,324,0,9,0,Montenegro,,628000,Montenegro,51.59
+Liberia,2020-06-01,132,296,8,27,0,Liberia,,5058000,Liberia,5.85
+Eswatini,2020-06-01,132,293,8,3,1,Eswatini,,1160000,Eswatini,25.26
+Mozambique,2020-06-01,132,254,0,2,0,Mozambique,,31255000,Mozambique,0.81
+Benin,2020-06-01,132,243,11,3,0,Benin,,12123000,Benin,2
+Myanmar,2020-06-01,132,228,4,6,0,Myanmar,,54410000,Myanmar,0.42
+Zimbabwe,2020-06-01,132,203,25,4,0,Zimbabwe,,14863000,Zimbabwe,1.37
+Mongolia,2020-06-01,132,185,6,0,0,Mongolia,,3278000,Mongolia,5.64
+Libya,2020-06-01,132,168,12,5,0,Libya,,6871000,Libya,2.45
+Guyana,2020-06-01,132,153,0,12,0,Guyana,,787000,Guyana,19.44
+Brunei,2020-06-01,132,141,0,2,0,Brunei,,437000,Brunei,32.27
+Cambodia,2020-06-01,132,125,0,0,0,Cambodia,,16719000,Cambodia,0.75
+SyrianArabRepublic,2020-06-01,132,123,1,5,0,Syrian Arab Republic,,17501000,Syria,0.7
+TrinidadandTobago,2020-06-01,132,117,0,8,0,Trinidad and Tobago,,1399000,Trinidad and Tobago,8.36
+Comoros,2020-06-01,132,106,0,2,0,Comoros,,870000,Comoros,12.18
+TheBahamas,2020-06-01,132,102,0,11,0,The Bahamas,,393000,Bahamas,25.95
+Monaco,2020-06-01,132,99,0,4,0,Monaco,,39000,Monaco,253.85
+Barbados,2020-06-01,132,92,0,7,0,Barbados,,287000,Barbados,32.06
+Angola,2020-06-01,132,86,0,4,0,Angola,,32866000,Angola,0.26
+Liechtenstein,2020-06-01,132,82,0,1,0,Liechtenstein,,38000,Liechtenstein,215.79
+Burundi,2020-06-01,132,63,0,1,0,Burundi,,11891000,Burundi,0.53
+Macao,2020-06-01,132,45,0,0,0,Macao,,649000,Macao,6.93
+Suriname,2020-06-01,132,44,21,1,0,Suriname,,587000,Suriname,7.5
+Bhutan,2020-06-01,132,43,0,0,0,Bhutan,,772000,Bhutan,5.57
+Eritrea,2020-06-01,132,39,0,0,0,Eritrea,,3546000,Eritrea,1.1
+Botswana,2020-06-01,132,38,3,1,0,Botswana,,2352000,Botswana,1.62
+AntiguaandBarbuda,2020-06-01,132,26,0,3,0,Antigua and Barbuda,,98000,Antigua and Barbuda,26.53
+SaintVincentandtheGrenadines,2020-06-01,132,26,0,0,0,Saint Vincent and the Grenadines,,111000,Saint Vincent and the Grenadines,23.42
+Namibia,2020-06-01,132,25,1,0,0,Namibia,,2541000,Namibia,0.98
+TheGambia,2020-06-01,132,25,0,1,0,The Gambia,,2417000,The Gambia,1.03
+EastTimor,2020-06-01,132,24,0,0,0,Timor-Leste,,1318000,Timor-Leste,1.82
+Grenada,2020-06-01,132,23,0,0,0,Grenada,,113000,Grenada,20.35
+Laos,2020-06-01,132,19,0,0,0,Lao People's Democratic Republic,,7276000,Lao PDR,0.26
+Belize,2020-06-01,132,18,0,2,0,Belize,,398000,Belize,4.52
+Fiji,2020-06-01,132,18,0,0,0,Fiji,,896000,Fiji,2.01
+SaintLucia,2020-06-01,132,18,0,0,0,Saint Lucia,,184000,Saint Lucia,9.78
+Dominica,2020-06-01,132,16,0,0,0,Dominica,,72000,Dominica,22.22
+SaintKittsandNevis,2020-06-01,132,15,0,0,0,Saint Kitts and Nevis,,53000,Saint Kitts and Nevis,28.3
+HolySee,2020-06-01,132,12,0,0,0,Holy See (Vatican City),,1000,Holy See (Vatican City),1200
+Seychelles,2020-06-01,132,11,0,0,0,Seychelles,,98000,Seychelles,11.22
+MSZaandam,2020-06-01,132,9,0,2,0,MS Zaandam,,,MS Zaandam,0
+WesternSahara,2020-06-01,132,9,0,1,0,Western Sahara,,597000,W. Sahara,1.51
+PapuaNewGuinea,2020-06-01,132,8,0,0,0,Papua New Guinea,,8947000,Papua New Guinea,0.09
+Lesotho,2020-06-01,132,2,0,0,0,Lesotho,02 6月 12:00 GMT,2142000,Lesotho,0.09
