@@ -79,3 +79,45 @@ output$worldConfirmed <- renderEcharts4r({
       e_tooltip()
   }
 })
+
+output$countryLine <- renderEcharts4r({
+  data <- GLOBAL_VALUE$World
+  world <- data[, .(cases = sum(cases), 
+                    new_cases = sum(new_cases), 
+                    deaths = sum(deaths), 
+                    new_deaths = sum(new_deaths)), 
+                by = "date"]
+  world %>%
+    e_chart(date) %>%
+    e_line(cases, name = "Positive tests", symbol = "circle", smooth = T, symbolSize = 1, itemStyle = list(color = darkRed)) %>%
+    e_line(deaths, name = "Death", symbol = "circle", smooth = T, symbolSize = 1, itemStyle = list(color = darkNavy)) %>%
+    e_bar(new_deaths, name = "New Death", itemStyle = list(color = darkNavy), y_index = 1, stack = 1) %>%
+    e_bar(new_cases, name = "New positive", itemStyle = list(color = darkRed), y_index = 1, stack = 1) %>%
+    e_x_axis(
+      splitLine = list(lineStyle = list(opacity = 0.2))
+      ) %>%
+    e_y_axis(
+      splitLine = list(lineStyle = list(opacity = 0.2)),
+      name = "Cumulative",
+      axisLabel = list(inside = T),
+      nameTextStyle = list(padding = c(0, 0, 0, 40)),
+      axisTick = list(show = F),
+      type = "log"
+      ) %>%
+    e_y_axis(
+      splitLine = list(lineStyle = list(opacity = 0.2)),
+      name = "New",
+      axisTick = list(show = F),
+      index = 1
+    ) %>%
+    e_legend(
+      type = "scroll",
+      orient = "vertical",
+      left = "25%",
+      top = "15%",
+      right = "15%"
+    ) %>%
+    e_tooltip(trigger = "axis") %>%
+    e_grid(left = "5%", right = "15%") %>%
+    e_title(text = "Report Number")
+})
