@@ -33,6 +33,15 @@ worldData <- reactive({
   }
 })
 
+selectedCountryNameForLineChart <- reactive({
+  if (!is.null(input$worldConfirmed_clicked_data)) {
+    data <- GLOBAL_VALUE$World[country_name_id == input$worldConfirmed_clicked_data$name]
+  } else {
+    data <- GLOBAL_VALUE$World
+  }
+  return(data)
+})
+
 output$worldConfirmed <- renderEcharts4r({
   # print(input$selectWorldDay[1])
   if (!is.null(worldData())) {
@@ -70,7 +79,6 @@ output$worldConfirmed <- renderEcharts4r({
       ) %>%
       e_timeline_opts(
         playInterval = 500,
-        loop = F,
         left = "0%",
         right = "0%",
         currentIndex = length(unique(coronavirus$date)) - 1
@@ -81,21 +89,28 @@ output$worldConfirmed <- renderEcharts4r({
 })
 
 output$countryLine <- renderEcharts4r({
-  data <- GLOBAL_VALUE$World
-  world <- data[, .(cases = sum(cases), 
-                    new_cases = sum(new_cases), 
-                    deaths = sum(deaths), 
-                    new_deaths = sum(new_deaths)), 
-                by = "date"]
-  world %>%
+  data <- selectedCountryNameForLineChart()
+  world <- data[, .(
+    cases = sum(cases),
+    new_cases = sum(new_cases),
+    deaths = sum(deaths),
+    new_deaths = sum(new_deaths)
+  ),
+  by = "date"
+  ]
+  
+  totalConfirmed <- tail(world$cases, n = 1)
+  totalDeaths <- tail(world$deaths, n = 1)
+
+  world[deaths == 0, deaths := NA] %>%
     e_chart(date) %>%
-    e_line(cases, name = "Positive tests", symbol = "circle", smooth = T, symbolSize = 1, itemStyle = list(color = darkRed)) %>%
+    e_line(cases, name = "Positive", symbol = "circle", smooth = T, symbolSize = 1, itemStyle = list(color = darkRed)) %>%
     e_line(deaths, name = "Death", symbol = "circle", smooth = T, symbolSize = 1, itemStyle = list(color = darkNavy)) %>%
     e_bar(new_deaths, name = "New Death", itemStyle = list(color = darkNavy), y_index = 1, stack = 1) %>%
     e_bar(new_cases, name = "New positive", itemStyle = list(color = darkRed), y_index = 1, stack = 1) %>%
     e_x_axis(
       splitLine = list(lineStyle = list(opacity = 0.2))
-      ) %>%
+    ) %>%
     e_y_axis(
       splitLine = list(lineStyle = list(opacity = 0.2)),
       name = "Cumulative",
@@ -103,7 +118,7 @@ output$countryLine <- renderEcharts4r({
       nameTextStyle = list(padding = c(0, 0, 0, 40)),
       axisTick = list(show = F),
       type = "log"
-      ) %>%
+    ) %>%
     e_y_axis(
       splitLine = list(lineStyle = list(opacity = 0.2)),
       name = "New",
@@ -112,12 +127,21 @@ output$countryLine <- renderEcharts4r({
     ) %>%
     e_legend(
       type = "scroll",
-      orient = "vertical",
-      left = "25%",
-      top = "15%",
-      right = "15%"
+      left = "1%",
+      bottom = "1%"
     ) %>%
     e_tooltip(trigger = "axis") %>%
-    e_grid(left = "5%", right = "15%") %>%
-    e_title(text = "Report Number")
+    e_grid(left = "5%", right = "15%", top = "25%") %>%
+    e_title(
+      text = sprintf(
+        "%s",
+        ifelse(is.null(input$worldConfirmed_clicked_data$name), "World", input$worldConfirmed_clicked_data$name)
+      ), 
+      subtext = sprintf(
+        "Total Positive: %s\nTotal Deaths: %s (%s%%)",
+        totalConfirmed, 
+        totalDeaths,
+        round(totalDeaths / totalConfirmed * 100, 2)
+      )
+    )
 })
