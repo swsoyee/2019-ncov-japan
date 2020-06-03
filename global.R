@@ -347,7 +347,9 @@ GLOBAL_VALUE <- reactiveValues(
     edges = NULL,
     call = NULL
   ),
-  World = NULL,
+  World = list(
+    PositiveAndDeath = NULL
+  ),
   Google = list(
     mobility = NULL,
     table = NULL

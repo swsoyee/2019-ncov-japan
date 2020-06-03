@@ -1,11 +1,11 @@
 observeEvent(input$sideBarTab, {
-  if (input$sideBarTab == "world" && is.null(GLOBAL_VALUE$World)) {
+  if (input$sideBarTab == "world" && is.null(GLOBAL_VALUE$World$PositiveAndDeath)) {
     # GLOBAL_VALUE <- list(
     #   World = NULL
     # ) # TEST
 
-    GLOBAL_VALUE$World <- fread(paste0(DATA_PATH, "FIND/world.csv"))
-    GLOBAL_VALUE$World[, date := as.Date(date)]
+    GLOBAL_VALUE$World$PositiveAndDeath <- fread(paste0(DATA_PATH, "FIND/world.csv"))
+    GLOBAL_VALUE$World$PositiveAndDeath[, date := as.Date(date)]
   }
 })
 
@@ -13,10 +13,10 @@ output$worldConfirmedDateSelector <- renderUI({
   dateRangeInput(
     inputId = "selectWorldDay",
     label = i18n$t("日付選択"),
-    min = min(GLOBAL_VALUE$World$date),
-    max = max(GLOBAL_VALUE$World$date),
-    start = max(GLOBAL_VALUE$World$date) - 30,
-    end = max(GLOBAL_VALUE$World$date),
+    min = min(GLOBAL_VALUE$World$PositiveAndDeath$date),
+    max = max(GLOBAL_VALUE$World$PositiveAndDeath$date),
+    start = max(GLOBAL_VALUE$World$PositiveAndDeath$date) - 30,
+    end = max(GLOBAL_VALUE$World$PositiveAndDeath$date),
     separator = " - ",
     format = "yyyy年m月d日",
     language = languageSetting
@@ -26,7 +26,7 @@ output$worldConfirmedDateSelector <- renderUI({
 worldData <- reactive({
   if (length(input$selectWorldDay) > 0) {
     return(
-      GLOBAL_VALUE$World[date >= as.Date(input$selectWorldDay[1]) & date <= as.Date(input$selectWorldDay[2])]
+      GLOBAL_VALUE$World$PositiveAndDeath[date >= as.Date(input$selectWorldDay[1]) & date <= as.Date(input$selectWorldDay[2])]
     )
   } else {
     return(NULL)
@@ -35,9 +35,9 @@ worldData <- reactive({
 
 selectedCountryNameForLineChart <- reactive({
   if (length(input$worldConfirmed_clicked_data) == 2) {
-    data <- GLOBAL_VALUE$World[country_name_id == input$worldConfirmed_clicked_data$name]
+    data <- GLOBAL_VALUE$World$PositiveAndDeath[country_name_id == input$worldConfirmed_clicked_data$name]
   } else {
-    data <- GLOBAL_VALUE$World
+    data <- GLOBAL_VALUE$World$PositiveAndDeath
   }
   return(data)
 })
