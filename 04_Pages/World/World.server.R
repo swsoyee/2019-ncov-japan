@@ -34,7 +34,7 @@ worldData <- reactive({
 })
 
 selectedCountryNameForLineChart <- reactive({
-  if (!is.null(input$worldConfirmed_clicked_data)) {
+  if (length(input$worldConfirmed_clicked_data) == 2) {
     data <- GLOBAL_VALUE$World[country_name_id == input$worldConfirmed_clicked_data$name]
   } else {
     data <- GLOBAL_VALUE$World
@@ -101,7 +101,11 @@ output$countryLine <- renderEcharts4r({
   
   totalConfirmed <- tail(world$cases, n = 1)
   totalDeaths <- tail(world$deaths, n = 1)
-
+  lineTitle <- ifelse(
+    "name" %in% names(input$worldConfirmed_clicked_data),
+    input$worldConfirmed_clicked_data$name,
+    "World"
+  )
   world[deaths == 0, deaths := NA] %>%
     e_chart(date) %>%
     e_line(cases, name = "Positive", symbol = "circle", smooth = T, symbolSize = 1, itemStyle = list(color = darkRed)) %>%
@@ -135,7 +139,7 @@ output$countryLine <- renderEcharts4r({
     e_title(
       text = sprintf(
         "%s",
-        ifelse(is.null(input$worldConfirmed_clicked_data$name), "World", input$worldConfirmed_clicked_data$name)
+        lineTitle
       ), 
       subtext = sprintf(
         "Total Positive: %s\nTotal Deaths: %s (%s%%)",
