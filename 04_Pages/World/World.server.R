@@ -1,11 +1,16 @@
 observeEvent(input$sideBarTab, {
   if (input$sideBarTab == "world" && is.null(GLOBAL_VALUE$World$PositiveAndDeath)) {
     # GLOBAL_VALUE <- list(
-    #   World = NULL
+    #   World = list(
+    #     PositiveAndDeath = NULL,
+    #     Test = NULL
+    #   )
     # ) # TEST
 
     GLOBAL_VALUE$World$PositiveAndDeath <- fread(paste0(DATA_PATH, "FIND/world.csv"))
     GLOBAL_VALUE$World$PositiveAndDeath[, date := as.Date(date)]
+    GLOBAL_VALUE$World$Test <- fread(paste0(DATA_PATH, "FIND/worldTest.csv"))
+    GLOBAL_VALUE$World$Test[, date := as.Date(date)]
   }
 })
 
@@ -26,7 +31,10 @@ output$worldConfirmedDateSelector <- renderUI({
 worldData <- reactive({
   if (length(input$selectWorldDay) > 0) {
     return(
-      GLOBAL_VALUE$World$PositiveAndDeath[date >= as.Date(input$selectWorldDay[1]) & date <= as.Date(input$selectWorldDay[2])]
+      list(
+        case = GLOBAL_VALUE$World$PositiveAndDeath[date >= as.Date(input$selectWorldDay[1]) & date <= as.Date(input$selectWorldDay[2])],
+        test = GLOBAL_VALUE$World$Test[date >= as.Date(input$selectWorldDay[1]) & date <= as.Date(input$selectWorldDay[2])]
+      )
     )
   } else {
     return(NULL)
@@ -43,39 +51,71 @@ selectedCountryNameForLineChart <- reactive({
 })
 
 output$worldConfirmed <- renderEcharts4r({
-  # print(input$selectWorldDay[1])
   if (!is.null(worldData())) {
-    coronavirus <- worldData()
+    worldMapSelector <- input$switchWorldMap
+    coronavirus <- switch(worldMapSelector,
+      worldCase = worldData()$case,
+      worldTest = worldData()$test
+    )
+    columnNameForMap <- switch(worldMapSelector,
+      worldCase = "casesPer100k",
+      worldTest = "testsPer100k"
+    )
+    mapName <- switch(worldMapSelector,
+      worldCase = "Number of Cases/100k Population",
+      worldTest = "Number of Test/100k Population"
+    )
+    colorScale <- switch(worldMapSelector,
+      worldCase = c("#ffffff", "#cd4652"),
+      worldTest = c("#ffffff", "#43abb6", "#602B59")
+    )
+    splitList <- switch(worldMapSelector,
+                        worldCase = list(
+                          list(min = 500),
+                          list(min = 200, max = 500),
+                          list(min = 100, max = 200),
+                          list(min = 50, max = 100),
+                          list(min = 20, max = 50),
+                          list(min = 10, max = 20),
+                          list(min = 5, max = 10),
+                          list(min = 0, max = 5),
+                          list(min = 0, max = 1),
+                          list(value = 0)
+                        ),
+                        worldTest = list(
+                          list(min = 5000),
+                          list(min = 2500, max = 5000),
+                          list(min = 1200, max = 2500),
+                          list(min = 600, max = 1200),
+                          list(min = 300, max = 600),
+                          list(min = 200, max = 300),
+                          list(min = 60, max = 200),
+                          list(min = 30, max = 60),
+                          list(min = 0, max = 30),
+                          list(value = 0)
+                        )
+    )
+
     coronavirus %>%
       group_by(date) %>%
       e_charts(country_name_id, timeline = TRUE) %>%
-      e_map(casesPer100k,
-        name = "Number of cases/100k population",
+      e_map_(columnNameForMap,
+        name = mapName,
         itemStyle = list(
           borderWidth = 0.2,
           borderColor = "#9C9C9C"
         ),
         scaleLimit = list(max = 2.5, min = 1),
+        zoom = 1.2,
         roam = TRUE
       ) %>%
-      e_visual_map(
-        casesPer100k,
+      e_visual_map_(
+        columnNameForMap,
         type = "piecewise",
         bottom = "20%",
         left = "0%",
-        inRange = list(color = c("#FFFFFF", "#B03C2D")),
-        splitList = list(
-          list(min = 500),
-          list(min = 200, max = 500),
-          list(min = 100, max = 200),
-          list(min = 50, max = 100),
-          list(min = 20, max = 50),
-          list(min = 10, max = 20),
-          list(min = 5, max = 10),
-          list(min = 0, max = 5),
-          list(min = 0, max = 1),
-          list(value = 0)
-        )
+        inRange = list(color = colorScale),
+        splitList = splitList
       ) %>%
       e_timeline_opts(
         playInterval = 500,
@@ -83,7 +123,7 @@ output$worldConfirmed <- renderEcharts4r({
         right = "0%",
         currentIndex = length(unique(coronavirus$date)) - 1
       ) %>%
-      e_title(text = "Number of cases/100k population") %>%
+      e_title(text = mapName) %>%
       e_tooltip()
   }
 })
@@ -98,7 +138,7 @@ output$countryLine <- renderEcharts4r({
   ),
   by = "date"
   ]
-  
+
   totalConfirmed <- tail(world$cases, n = 1)
   totalDeaths <- tail(world$deaths, n = 1)
   lineTitle <- ifelse(
@@ -140,10 +180,10 @@ output$countryLine <- renderEcharts4r({
       text = sprintf(
         "%s",
         lineTitle
-      ), 
+      ),
       subtext = sprintf(
         "Total Positive: %s\nTotal Deaths: %s (%s%%)",
-        totalConfirmed, 
+        totalConfirmed,
         totalDeaths,
         round(totalDeaths / totalConfirmed * 100, 2)
       )
