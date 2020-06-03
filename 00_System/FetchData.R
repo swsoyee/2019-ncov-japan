@@ -261,3 +261,10 @@ coronavirus[, casesPer100k := round(cases / population * 10^5, 2)]
 setnafill(coronavirus, type = "const", fill = 0, cols = c("casesPer100k"))
 fwrite(coronavirus, paste0(DATA_PATH, 'FIND/world.csv'))
 
+coronavirusTest <- read.csv("https://raw.githubusercontent.com/dsbb-finddx/FIND_Cov_19_Tracker/master/input_data/coronavirus_tests.csv")
+coronavirusTest <- data.table(coronavirusTest)
+coronavirusTest[, country_name_id := country]
+coronavirusTest[country %in% country_name_converter,
+                country_name_id := names(country_name_converter[match(country, country_name_converter)])]
+coronavirusTest[, `:=` (ind = NULL, X = NULL)]
+fwrite(coronavirusTest, paste0(DATA_PATH, 'FIND/worldTest.csv'))
