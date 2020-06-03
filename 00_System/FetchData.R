@@ -264,6 +264,17 @@ fwrite(coronavirus, paste0(DATA_PATH, 'FIND/world.csv'))
 coronavirusTest <- read.csv("https://raw.githubusercontent.com/dsbb-finddx/FIND_Cov_19_Tracker/master/input_data/coronavirus_tests.csv")
 coronavirusTest <- data.table(coronavirusTest)
 coronavirusTest[, country_name_id := country]
+
+# popId <- unique(population$jhu_ID)
+# testId <- unique(coronavirusTest$jhu_ID)
+convertJhuIdInTest <- list(
+  "SouthSudan" = "South Sudan",
+  "Tanzania" = "UnitedRepublicofTanzania",
+  "Laos" = "LaoPeople'sDemocraticRepublic"
+  # Scotland?
+)
+coronavirusTest[jhu_ID %in% convertJhuIdInTest,
+                jhu_ID := names(convertJhuIdInTest[match(jhu_ID, convertJhuIdInTest)])]
 coronavirusTest[population, population := i.population, on = c(jhu_ID = "jhu_ID")]
 
 coronavirusTest[country %in% country_name_converter,
