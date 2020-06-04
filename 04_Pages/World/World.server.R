@@ -2,15 +2,11 @@ observeEvent(input$sideBarTab, {
   if (input$sideBarTab == "world" && is.null(GLOBAL_VALUE$World$PositiveAndDeath)) {
     # GLOBAL_VALUE <- list(
     #   World = list(
-    #     PositiveAndDeath = NULL,
-    #     Test = NULL
+    #     Summary = NULL
     #   )
     # ) # TEST
-
-    GLOBAL_VALUE$World$PositiveAndDeath <- fread(paste0(DATA_PATH, "FIND/world.csv"))
-    GLOBAL_VALUE$World$PositiveAndDeath[, date := as.Date(date)]
-    GLOBAL_VALUE$World$Test <- fread(paste0(DATA_PATH, "FIND/worldTest.csv"))
-    GLOBAL_VALUE$World$Test[, date := as.Date(date)]
+    GLOBAL_VALUE$World$Summary <- fread(paste0(DATA_PATH, "FIND/worldSummary.csv"))
+    GLOBAL_VALUE$World$Summary[, date := as.Date(date)]
   }
 })
 
@@ -18,10 +14,10 @@ output$worldConfirmedDateSelector <- renderUI({
   dateRangeInput(
     inputId = "selectWorldDay",
     label = i18n$t("日付選択"),
-    min = min(GLOBAL_VALUE$World$PositiveAndDeath$date),
-    max = max(GLOBAL_VALUE$World$PositiveAndDeath$date),
-    start = max(GLOBAL_VALUE$World$PositiveAndDeath$date) - 30,
-    end = max(GLOBAL_VALUE$World$PositiveAndDeath$date),
+    min = min(GLOBAL_VALUE$World$Summary$date),
+    max = max(GLOBAL_VALUE$World$Summary$date),
+    start = max(GLOBAL_VALUE$World$Summary$date) - 30,
+    end = max(GLOBAL_VALUE$World$Summary$date),
     separator = " - ",
     format = "yyyy年m月d日",
     language = languageSetting
@@ -31,10 +27,7 @@ output$worldConfirmedDateSelector <- renderUI({
 worldData <- reactive({
   if (length(input$selectWorldDay) > 0) {
     return(
-      list(
-        case = GLOBAL_VALUE$World$PositiveAndDeath[date >= as.Date(input$selectWorldDay[1]) & date <= as.Date(input$selectWorldDay[2])],
-        test = GLOBAL_VALUE$World$Test[date >= as.Date(input$selectWorldDay[1]) & date <= as.Date(input$selectWorldDay[2])]
-      )
+      GLOBAL_VALUE$World$Summary[date >= as.Date(input$selectWorldDay[1]) & date <= as.Date(input$selectWorldDay[2])]
     )
   } else {
     return(NULL)
@@ -43,9 +36,9 @@ worldData <- reactive({
 
 selectedCountryNameForLineChart <- reactive({
   if (length(input$worldConfirmed_clicked_data) == 2) {
-    data <- GLOBAL_VALUE$World$PositiveAndDeath[country_name_id == input$worldConfirmed_clicked_data$name]
+    data <- GLOBAL_VALUE$World$Summary[country_name_id == input$worldConfirmed_clicked_data$name]
   } else {
-    data <- GLOBAL_VALUE$World$PositiveAndDeath
+    data <- GLOBAL_VALUE$World$Summary
   }
   return(data)
 })
@@ -53,47 +46,59 @@ selectedCountryNameForLineChart <- reactive({
 output$worldConfirmed <- renderEcharts4r({
   if (!is.null(worldData())) {
     worldMapSelector <- input$switchWorldMap
-    coronavirus <- switch(worldMapSelector,
-      worldCase = worldData()$case,
-      worldTest = worldData()$test
-    )
+    coronavirus <- worldData()
     columnNameForMap <- switch(worldMapSelector,
       worldCase = "casesPer100k",
-      worldTest = "testsPer100k"
+      worldTest = "testsPer100k",
+      worldRate = "test_cum"
     )
     mapName <- switch(worldMapSelector,
       worldCase = "Number of Cases/100k Population",
-      worldTest = "Number of Test/100k Population"
+      worldTest = "Number of Test/100k Population",
+      worldRate = "Number of Cases/Test"
     )
     colorScale <- switch(worldMapSelector,
       worldCase = c("#ffffff", "#cd4652"),
-      worldTest = c("#ffffff", "#43abb6", "#602B59")
+      worldTest = c("#ffffff", "#43abb6", "#602B59"),
+      worldRate = c("#ffffff", "#43abb6", "#602B59")
     )
     splitList <- switch(worldMapSelector,
-                        worldCase = list(
-                          list(min = 500),
-                          list(min = 200, max = 500),
-                          list(min = 100, max = 200),
-                          list(min = 50, max = 100),
-                          list(min = 20, max = 50),
-                          list(min = 10, max = 20),
-                          list(min = 5, max = 10),
-                          list(min = 0, max = 5),
-                          list(min = 0, max = 1),
-                          list(value = 0)
-                        ),
-                        worldTest = list(
-                          list(min = 5000),
-                          list(min = 2500, max = 5000),
-                          list(min = 1200, max = 2500),
-                          list(min = 600, max = 1200),
-                          list(min = 300, max = 600),
-                          list(min = 200, max = 300),
-                          list(min = 60, max = 200),
-                          list(min = 30, max = 60),
-                          list(min = 0, max = 30),
-                          list(value = 0)
-                        )
+      worldCase = list(
+        list(min = 500),
+        list(min = 200, max = 500),
+        list(min = 100, max = 200),
+        list(min = 50, max = 100),
+        list(min = 20, max = 50),
+        list(min = 10, max = 20),
+        list(min = 5, max = 10),
+        list(min = 0, max = 5),
+        list(min = 0, max = 1),
+        list(value = 0)
+      ),
+      worldTest = list(
+        list(min = 5000),
+        list(min = 2500, max = 5000),
+        list(min = 1200, max = 2500),
+        list(min = 600, max = 1200),
+        list(min = 300, max = 600),
+        list(min = 200, max = 300),
+        list(min = 60, max = 200),
+        list(min = 30, max = 60),
+        list(min = 0, max = 30),
+        list(value = 0)
+      ),
+      worldRate = list(
+        list(min = 0.6),
+        list(min = 0.4, max = 0.6),
+        list(min = 0.2, max = 0.4),
+        list(min = 0.12, max = 0.2),
+        list(min = 0.08, max = 0.12),
+        list(min = 0.04, max = 0.06),
+        list(min = 0.02, max = 0.04),
+        list(min = 0.01, max = 0.02),
+        list(min = 0, max = 0.01),
+        list(value = 0)
+      ),
     )
 
     coronavirus %>%
@@ -137,7 +142,7 @@ output$countryLine <- renderEcharts4r({
     new_deaths = sum(new_deaths)
   ),
   by = "date"
-  ]
+  ][order(date)]
 
   totalConfirmed <- tail(world$cases, n = 1)
   totalDeaths <- tail(world$deaths, n = 1)
@@ -146,6 +151,7 @@ output$countryLine <- renderEcharts4r({
     input$worldConfirmed_clicked_data$name,
     "World"
   )
+
   world[deaths == 0, deaths := NA] %>%
     e_chart(date) %>%
     e_line(cases, name = "Positive", symbol = "circle", smooth = T, symbolSize = 1, itemStyle = list(color = darkRed)) %>%
