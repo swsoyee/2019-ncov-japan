@@ -259,7 +259,6 @@ coronavirus[country %in% country_name_converter,
 
 coronavirus[, casesPer100k := round(cases / population * 10^5, 2)]
 setnafill(coronavirus, type = "const", fill = 0, cols = c("casesPer100k"))
-fwrite(coronavirus, paste0(DATA_PATH, 'FIND/world.csv'))
 
 coronavirusTest <- read.csv("https://raw.githubusercontent.com/dsbb-finddx/FIND_Cov_19_Tracker/master/input_data/coronavirus_tests.csv")
 coronavirusTest <- data.table(coronavirusTest)
@@ -282,4 +281,13 @@ coronavirusTest[country %in% country_name_converter,
 
 coronavirusTest[, testsPer100k := round(tests_cumulative / population * 10^5, 2)]
 coronavirusTest[, `:=` (ind = NULL, X = NULL)]
-fwrite(coronavirusTest, paste0(DATA_PATH, 'FIND/worldTest.csv'))
+
+coronavirus <- coronavirus[coronavirusTest, `:=` (new_tests = i.new_tests,
+                               tests_cumulative = i.tests_cumulative
+                               ),
+            on = c(date = "date", country_name_id = "country_name_id")][order(country_name_id, date)]
+coronavirus[, tests_cumulative  := tests_cumulative[1], by = .(country_name_id, cumsum(!is.na(tests_cumulative)))]
+coronavirus[, `:=` (testsPer100k = round(tests_cumulative / population * 10^5, 0.2),
+                    positiveRate = round(cases / tests_cumulative, 2))]
+
+fwrite(coronavirus, paste0(DATA_PATH, 'FIND/worldSummary.csv'))
