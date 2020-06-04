@@ -50,7 +50,7 @@ output$worldConfirmed <- renderEcharts4r({
     columnNameForMap <- switch(worldMapSelector,
       worldCase = "casesPer100k",
       worldTest = "testsPer100k",
-      worldRate = "test_cum"
+      worldRate = "positiveRate"
     )
     mapName <- switch(worldMapSelector,
       worldCase = "Number of Cases/100k Population",
@@ -88,17 +88,22 @@ output$worldConfirmed <- renderEcharts4r({
         list(value = 0)
       ),
       worldRate = list(
-        list(min = 0.6),
-        list(min = 0.4, max = 0.6),
-        list(min = 0.2, max = 0.4),
-        list(min = 0.12, max = 0.2),
-        list(min = 0.08, max = 0.12),
-        list(min = 0.04, max = 0.06),
-        list(min = 0.02, max = 0.04),
-        list(min = 0.01, max = 0.02),
-        list(min = 0, max = 0.01),
-        list(value = 0)
+        list(min = 60),
+        list(min = 40, max = 60),
+        list(min = 20, max = 40),
+        list(min = 12, max = 20),
+        list(min = 8, max = 12),
+        list(min = 4, max = 6),
+        list(min = 2, max = 4),
+        list(min = 1, max = 2),
+        list(min = 0, max = 1),
+        list(min = 0, max = 0)
       ),
+    )
+    legendFormatter <- switch(worldMapSelector,
+      worldCase = NULL,
+      worldTest =  NULL,
+      worldRate = "{value}% - {value2}%"
     )
 
     coronavirus %>%
@@ -120,7 +125,8 @@ output$worldConfirmed <- renderEcharts4r({
         bottom = "20%",
         left = "0%",
         inRange = list(color = colorScale),
-        splitList = splitList
+        splitList = splitList,
+        formatter = legendFormatter
       ) %>%
       e_timeline_opts(
         playInterval = 500,

@@ -288,6 +288,6 @@ coronavirus <- coronavirus[coronavirusTest, `:=` (new_tests = i.new_tests,
             on = c(date = "date", country_name_id = "country_name_id")][order(country_name_id, date)]
 coronavirus[, tests_cumulative  := tests_cumulative[1], by = .(country_name_id, cumsum(!is.na(tests_cumulative)))]
 coronavirus[, `:=` (testsPer100k = round(tests_cumulative / population * 10^5, 0.2),
-                    positiveRate = round(cases / tests_cumulative, 2))]
+                    positiveRate = round(cases / tests_cumulative * 100, 2))]
 
 fwrite(coronavirus, paste0(DATA_PATH, 'FIND/worldSummary.csv'))

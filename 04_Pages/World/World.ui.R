@@ -12,9 +12,10 @@ fluidRow(
           justified = T,
           choiceNames = c(
             paste(icon("procedures"), i18n$t("感染")),
-            paste(icon("vials"), i18n$t("検査"))
+            paste(icon("vials"), i18n$t("検査")),
+            paste(icon("user-plus"), i18n$t("陽性率"))
           ),
-          choiceValues = c("worldCase", "worldTest"),
+          choiceValues = c("worldCase", "worldTest", "worldRate"),
           status = "danger"
         ),
         uiOutput("worldConfirmedDateSelector"),
