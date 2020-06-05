@@ -106,9 +106,15 @@ output$worldConfirmed <- renderEcharts4r({
       worldRate = "{value}% - {value2}%"
     )
 
-    coronavirus %>%
-      group_by(date) %>%
-      e_charts(country_name_id, timeline = TRUE) %>%
+    if(!input$switchWorldMapVersion) {
+      coronavirus <- coronavirus %>%
+        group_by(date)
+    } else {
+      coronavirus <- coronavirus[date == max(date)]
+    }
+
+    map <- coronavirus %>%
+      e_charts(country_name_id, timeline = !input$switchWorldMapVersion) %>%
       e_map_(columnNameForMap,
         name = mapName,
         itemStyle = list(
@@ -128,14 +134,36 @@ output$worldConfirmed <- renderEcharts4r({
         splitList = splitList,
         formatter = legendFormatter
       ) %>%
-      e_timeline_opts(
-        playInterval = 500,
-        left = "0%",
-        right = "0%",
-        currentIndex = length(unique(coronavirus$date)) - 1
-      ) %>%
       e_title(text = mapName) %>%
       e_tooltip()
+    
+    if(!input$switchWorldMapVersion) {
+      timeSeriesTitle <- lapply(unique(coronavirus$date), function(i) {
+        return(
+          list(
+            text = mapName,
+            subtext = i
+          )
+        )
+      })
+
+      map %>%
+        e_timeline_opts(
+          playInterval = 500,
+          left = "0%",
+          right = "0%",
+          currentIndex = length(unique(coronavirus$date)) - 1
+        ) %>%
+        e_timeline_serie(
+          title = timeSeriesTitle
+        )
+    } else {
+      map %>%
+        e_title(
+          text = mapName, 
+          subtext = max(coronavirus$date)
+        )
+    }
   }
 })
 
