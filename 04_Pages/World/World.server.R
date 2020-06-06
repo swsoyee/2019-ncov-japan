@@ -290,3 +290,7 @@ output$countryTestLine <- renderEcharts4r({
     e_connect_group("worldLine")
 })
 
+output$worldSummaryTable <- renderDataTable({
+  data <- GLOBAL_VALUE$World$Summary
+  datatable(data)
+})

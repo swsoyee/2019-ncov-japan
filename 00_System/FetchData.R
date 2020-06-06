@@ -9,13 +9,13 @@ source(file = "00_System/Generate.ProcessData.R", local = T, encoding = "UTF-8")
 # ====けんもデータ====
 # positiveDetail <- gsheet2tbl("docs.google.com/spreadsheets/d/1Cy4W9hYhGmABq1GuhLOkM92iYss0qy03Y1GeTv4bCyg/edit#gid=1196047345")
 # fwrite(x = positiveDetail, file = paste0(DATA_PATH, "positiveDetail.csv"))
-# 
+#
 # provincePCR <- gsheet2tbl("docs.google.com/spreadsheets/d/1Cy4W9hYhGmABq1GuhLOkM92iYss0qy03Y1GeTv4bCyg/edit#gid=845297461")
 # fwrite(x = provincePCR, file = paste0(DATA_PATH, "provincePCR.csv"))
 
 # 市レベル
 # provinceAttr <- fread(paste0(DATA_PATH, "Signate/prefMaster.csv"))
-# 
+#
 # provinceAttr[都道府県コード %in% 1:7, regionName := "北海道・東北地方"]
 # provinceAttr[都道府県コード %in% 8:14, regionName := "関東地方"]
 # provinceAttr[都道府県コード %in% 15:23, regionName := "中部地方"]
@@ -23,7 +23,7 @@ source(file = "00_System/Generate.ProcessData.R", local = T, encoding = "UTF-8")
 # provinceAttr[都道府県コード %in% 31:35, regionName := "中国地方"]
 # provinceAttr[都道府県コード %in% 36:39, regionName := "四国地方"]
 # provinceAttr[都道府県コード %in% 40:47, regionName := "九州地方・沖縄"]
-# 
+#
 # provinceAttr <- provinceAttr[, .(都道府県, regionName)]
 
 # kenmoAreaDataset <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1Cy4W9hYhGmABq1GuhLOkM92iYss0qy03Y1GeTv4bCyg/edit#gid=491635333")
@@ -49,14 +49,14 @@ translateColumn <- function(data, column, language, language_data) {
 
 Update.Signate.Detail <- function(update = F) {
   if (update) {
-    signateDetail <- gsheet2tbl('https://docs.google.com/spreadsheets/d/10MFfRQTblbOpuvOs_yjIYgntpMGBg592dL8veXoPpp4/edit#gid=960903158')
+    signateDetail <- gsheet2tbl("https://docs.google.com/spreadsheets/d/10MFfRQTblbOpuvOs_yjIYgntpMGBg592dL8veXoPpp4/edit#gid=960903158")
     signateDetail <- data.table(signateDetail)
-    fwrite(x = signateDetail, file = paste0(DATA_PATH, 'SIGNATE COVID-2019 Dataset - 罹患者.csv'))
-    
-    signateRelation <- gsheet2tbl('https://docs.google.com/spreadsheets/d/1NQ3xrnRi6ta82QtitpJFmIYGvO0wZBmBU5H9EfUGtts/edit#gid=1227116169')
+    fwrite(x = signateDetail, file = paste0(DATA_PATH, "SIGNATE COVID-2019 Dataset - 罹患者.csv"))
+
+    signateRelation <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1NQ3xrnRi6ta82QtitpJFmIYGvO0wZBmBU5H9EfUGtts/edit#gid=1227116169")
     signateRelation <- data.table(signateRelation)
-    fwrite(x = signateRelation, file = paste0(DATA_PATH, 'Signate/relation.csv'))
-    
+    fwrite(x = signateRelation, file = paste0(DATA_PATH, "Signate/relation.csv"))
+
     # 都道府県、公表日、性別、年齢====
     source(file = "02_Utils/ConfirmedPyramidData.R")
     fwrite(x = Signate.ConfirmedPyramidData(signateDetail), file = paste0(DATA_PATH, "Generated/genderAgeData.csv"))
@@ -221,7 +221,7 @@ fwrite(x = data.table(contact), file = paste0(DATA_PATH, "Pref/Fukuoka/call.csv"
 # jsonFile$patients
 # test <- signateDetail[都道府県コード == 47]
 
-# Get world data from FIND
+# ====Get world data from FIND====
 coronavirus <- data.table(read.csv("https://raw.githubusercontent.com/dsbb-finddx/FIND_Cov_19_Tracker/update_data/input_data/coronavirus.csv"))
 population <- data.table(read.csv("https://raw.githubusercontent.com/dsbb-finddx/FIND_Cov_19_Tracker/update_data/input_data/countries_codes_and_coordinates.csv"))
 
@@ -254,8 +254,10 @@ country_name_converter <- list(
 )
 
 coronavirus[, country_name_id := country]
-coronavirus[country %in% country_name_converter,
-            country_name_id := names(country_name_converter[match(country, country_name_converter)])]
+coronavirus[
+  country %in% country_name_converter,
+  country_name_id := names(country_name_converter[match(country, country_name_converter)])
+]
 
 coronavirus[, casesPer100k := round(cases / population * 10^5, 2)]
 setnafill(coronavirus, type = "const", fill = 0, cols = c("casesPer100k"))
@@ -272,22 +274,54 @@ convertJhuIdInTest <- list(
   "Laos" = "LaoPeople'sDemocraticRepublic"
   # Scotland?
 )
-coronavirusTest[jhu_ID %in% convertJhuIdInTest,
-                jhu_ID := names(convertJhuIdInTest[match(jhu_ID, convertJhuIdInTest)])]
+coronavirusTest[
+  jhu_ID %in% convertJhuIdInTest,
+  jhu_ID := names(convertJhuIdInTest[match(jhu_ID, convertJhuIdInTest)])
+]
 coronavirusTest[population, population := i.population, on = c(jhu_ID = "jhu_ID")]
 
-coronavirusTest[country %in% country_name_converter,
-                country_name_id := names(country_name_converter[match(country, country_name_converter)])]
+coronavirusTest[
+  country %in% country_name_converter,
+  country_name_id := names(country_name_converter[match(country, country_name_converter)])
+]
 
 coronavirusTest[, testsPer100k := round(tests_cumulative / population * 10^5, 2)]
-coronavirusTest[, `:=` (ind = NULL, X = NULL)]
+coronavirusTest[, `:=`(ind = NULL, X = NULL)]
 
-coronavirus <- coronavirus[coronavirusTest, `:=` (new_tests = i.new_tests,
-                               tests_cumulative = i.tests_cumulative
-                               ),
-            on = c(date = "date", country_name_id = "country_name_id")][order(country_name_id, date)]
-coronavirus[, tests_cumulative  := tests_cumulative[1], by = .(country_name_id, cumsum(!is.na(tests_cumulative)))]
-coronavirus[, `:=` (testsPer100k = round(tests_cumulative / population * 10^5, 0.2),
-                    positiveRate = round(cases / tests_cumulative * 100, 2))]
+coronavirus <- coronavirus[coronavirusTest, `:=`(
+  new_tests = i.new_tests,
+  tests_cumulative = i.tests_cumulative
+),
+on = c(date = "date", country_name_id = "country_name_id")
+][order(country_name_id, date)]
+coronavirus[, tests_cumulative := tests_cumulative[1], by = .(country_name_id, cumsum(!is.na(tests_cumulative)))]
+coronavirus[, `:=`(
+  testsPer100k = round(tests_cumulative / population * 10^5, 2),
+  positiveRate = round(cases / tests_cumulative * 100, 2)
+)]
 
-fwrite(coronavirus, paste0(DATA_PATH, 'FIND/worldSummary.csv'))
+fwrite(coronavirus, paste0(DATA_PATH, "FIND/worldSummary.csv"))
+
+coronavirus[, date := as.Date(as.character(date))]
+coronavirusSummary <-
+  coronavirus[
+    date == max(date),
+    .(
+      Country = country,
+      Tests = tests_cumulative,
+      `Tests/100K pop` = testsPer100k,
+      Cases = cases,
+      `New Cases` = new_cases,
+      `Cases/100K pop` = casesPer100k,
+      Deaths = deaths,
+      `New Deaths` = new_deaths,
+      `Deaths/100K pop` = round(deaths / population * 10^5, 2)
+    )
+  ][order(-Cases)]
+
+datatable(coronavirusSummary)
+
+
+
+
+
