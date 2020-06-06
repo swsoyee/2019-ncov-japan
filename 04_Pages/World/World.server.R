@@ -229,3 +229,61 @@ output$countryLine <- renderEcharts4r({
       )
     )
 })
+
+output$countryTestLine <- renderEcharts4r({
+  data <- selectedCountryNameForLineChart()
+  world <- data[, .(
+    test = sum(tests_cumulative, na.rm = T),
+    new_tests = sum(new_tests, na.rm = T)
+  ),
+  by = "date"
+  ][order(date)]
+  
+  totalTest <- tail(world$tests_cumulative, n = 1)
+
+  lineTitle <- ifelse(
+    "name" %in% names(input$worldConfirmed_clicked_data),
+    input$worldConfirmed_clicked_data$name,
+    "World"
+  )
+  
+  world[test == 0, test := NA] %>%
+    e_chart(date) %>%
+    e_line(test, name = "Tests (Total)", symbol = "circle", smooth = T, symbolSize = 1, itemStyle = list(color = darkYellow)) %>%
+    e_bar(new_tests, name = "New Tests", itemStyle = list(color = lightYellow), y_index = 1, stack = 1) %>%
+    e_x_axis(
+      splitLine = list(lineStyle = list(opacity = 0.2))
+    ) %>%
+    e_y_axis(
+      splitLine = list(lineStyle = list(opacity = 0.2)),
+      name = "Cumulative",
+      axisLabel = list(inside = T),
+      nameTextStyle = list(padding = c(0, 0, 0, 40)),
+      axisTick = list(show = F),
+      type = "log"
+    ) %>%
+    e_y_axis(
+      splitLine = list(lineStyle = list(opacity = 0.2)),
+      name = "New",
+      axisTick = list(show = F),
+      index = 1
+    ) %>%
+    e_legend(
+      type = "scroll",
+      left = "1%",
+      bottom = "1%"
+    ) %>%
+    e_tooltip(trigger = "axis") %>%
+    e_grid(left = "5%", right = "15%") %>%
+    e_title(
+      text = sprintf(
+        "%s",
+        lineTitle
+      ),
+      subtext = sprintf(
+        "Total Test: %s",
+        totalTest
+      )
+    )
+})
+

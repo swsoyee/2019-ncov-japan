@@ -45,7 +45,8 @@ fluidRow(
       ),
       column(
         width = 4,
-        echarts4rOutput("countryLine") %>% withSpinner()
+        echarts4rOutput("countryLine", height = "350px") %>% withSpinner(),
+        echarts4rOutput("countryTestLine", height = "350px") %>% withSpinner()
       )
     )
   )
