@@ -227,7 +227,8 @@ output$countryLine <- renderEcharts4r({
         totalDeaths,
         round(totalDeaths / totalConfirmed * 100, 2)
       )
-    )
+    ) %>%
+    e_group("worldLine")
 })
 
 output$countryTestLine <- renderEcharts4r({
@@ -284,6 +285,8 @@ output$countryTestLine <- renderEcharts4r({
         "Total Test: %s",
         totalTest
       )
-    )
+    ) %>%
+    e_group("worldLine") %>%
+    e_connect_group("worldLine")
 })
 
