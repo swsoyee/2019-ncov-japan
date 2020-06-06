@@ -319,9 +319,66 @@ coronavirusSummary <-
     )
   ][order(-Cases)]
 
-datatable(coronavirusSummary)
+fwrite(coronavirusSummary, paste0(DATA_PATH, "FIND/worldSummaryTable.csv"))
 
-
-
-
-
+# datatable(
+#   coronavirusSummary,
+#   options = list(
+#     paging = F,
+#     scrollY = "540px"
+#   )
+#   ) %>%
+#   formatRound(
+#     columns = c("Tests", "Cases", "New Cases", "Deaths", "New Deaths"),
+#     digits = 0
+#     ) %>%
+#   formatRound(
+#     columns = c("Tests/100K pop", "Cases/100K pop", "Deaths/100K pop")
+#   ) %>%
+#   formatStyle(
+#     columns = "Tests",
+#     background = styleColorBar(c(0, max(coronavirusSummary$Tests, na.rm = T)), middleYellow, angle = -90),
+#     backgroundSize = "98% 18%",
+#     backgroundRepeat = "no-repeat",
+#     backgroundPosition = "bottom"
+#   ) %>%
+#   formatStyle(
+#     columns = "Cases",
+#     background = styleColorBar(c(0, max(coronavirusSummary$Cases, na.rm = T)), middleRed, angle = -90),
+#     backgroundSize = "98% 18%",
+#     backgroundRepeat = "no-repeat",
+#     backgroundPosition = "bottom"
+#   ) %>%
+#   formatStyle(
+#     columns = "Deaths",
+#     background = styleColorBar(c(0, max(coronavirusSummary$Deaths, na.rm = T)), darkNavy, angle = -90),
+#     backgroundSize = "98% 18%",
+#     backgroundRepeat = "no-repeat",
+#     backgroundPosition = "bottom"
+#   ) %>%
+#   formatStyle(
+#     columns = c("Tests/100K pop"),
+#     color = do.call(
+#       styleInterval,
+#       generateColorStyle(data = coronavirusSummary$`Tests/100K pop`, colors = c(lightRed, lightGreen), by = 1000)
+#     ),
+#     fontWeight = "bold"
+#   ) %>%
+#   formatStyle(
+#     columns = c("Cases/100K pop"),
+#     color = do.call(
+#       styleInterval,
+#       generateColorStyle(data = coronavirusSummary$`Cases/100K pop`, colors = c(lightRed, darkRed), by = 100)
+#     ),
+#     fontWeight = "bold"
+#   ) %>%
+#   formatStyle(
+#     columns = c("Deaths/100K pop"),
+#     color = do.call(
+#       styleInterval,
+#       generateColorStyle(data = coronavirusSummary$`Deaths/100K pop`, colors = c(lightNavy, "black"), by = 1)
+#     ),
+#     fontWeight = "bold"
+#   )
+# 
+# 

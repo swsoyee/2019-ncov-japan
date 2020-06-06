@@ -49,5 +49,11 @@ fluidRow(
         echarts4rOutput("countryTestLine", height = "350px") %>% withSpinner()
       )
     )
+  ),
+  boxPlus(
+    width = 12,
+    closable = F,
+    title = "Summary",
+    dataTableOutput("worldSummaryTable") %>% withSpinner()
   )
 )

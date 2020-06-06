@@ -348,7 +348,8 @@ GLOBAL_VALUE <- reactiveValues(
     call = NULL
   ),
   World = list(
-    Summary = NULL
+    Summary = NULL,
+    SummaryTable = NULL
   ),
   Google = list(
     mobility = NULL,
