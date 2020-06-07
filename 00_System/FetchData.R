@@ -305,40 +305,81 @@ fwrite(coronavirus, paste0(DATA_PATH, "FIND/worldSummary.csv"))
 coronavirus[, date := as.Date(as.character(date))]
 
 dateSpan <- 21
-testsSparkline <- sapply(unique(as.character(coronavirus$country_name_id)), function(index) {
-  # 新規値
-  value <- tail(coronavirus[country_name_id == index, new_tests], n = dateSpan)
-  # 累計値
-  cumsumValue <- tail(coronavirus[country_name_id == index, tests_cumulative], n = dateSpan)
-  # 日付
-  date <- tail(coronavirus[country_name_id == index, date], n = dateSpan)
-  colorMapSetting <- rep(middleYellow, length(value))
-  colorMapSetting[length(value)] <- darkYellow
-  namesSetting <- as.list(date)
-  names(namesSetting) <- 0:(length(value) - 1)
-  # 新規
-  diff <- sparkline(
-    values = value,
-    type = "bar",
-    chartRangeMin = 0,
-    width = 80,
-    tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> New {{value}}",
-    tooltipValueLookups = list(
-      names = namesSetting
-    ),
-    colorMap = colorMapSetting
-  )
-  # 累計
-  cumsumSpk <- sparkline(
-    values = cumsumValue,
-    type = "line",
-    width = 80,
-    fillColor = F,
-    lineColor = darkYellow,
-    tooltipFormat = "<span style='color: {{color}}'>&#9679;</span> Total {{y}}"
-  )
-  return(as.character(htmltools::as.tags(spk_composite(diff, cumsumSpk))))
-})
+
+createSparkLine <- function(bar, line, lightColor, darkColor) {
+  sparkline <- sapply(unique(as.character(coronavirus$country_name_id)), function(index) {
+    # 新規値
+    value <- tail(coronavirus[country_name_id == index][[bar]], n = dateSpan)
+    # 累計値
+    cumsumValue <- tail(coronavirus[country_name_id == index][[line]], n = dateSpan)
+    # 日付
+    date <- tail(coronavirus[country_name_id == index, date], n = dateSpan)
+    colorMapSetting <- rep(lightColor, length(value))
+    colorMapSetting[length(value)] <- darkColor
+    namesSetting <- as.list(date)
+    names(namesSetting) <- 0:(length(value) - 1)
+    # 新規
+    diff <- sparkline(
+      values = value,
+      type = "bar",
+      chartRangeMin = 0,
+      width = 80,
+      tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> New {{value}}",
+      tooltipValueLookups = list(
+        names = namesSetting
+      ),
+      colorMap = colorMapSetting
+    )
+    # 累計
+    cumsumSpk <- sparkline(
+      values = cumsumValue,
+      type = "line",
+      width = 80,
+      fillColor = F,
+      lineColor = darkColor,
+      tooltipFormat = "<span style='color: {{color}}'>&#9679;</span> Total {{y}}"
+    )
+    return(as.character(htmltools::as.tags(spk_composite(diff, cumsumSpk))))
+  })
+  return(sparkline)
+}
+
+testsSparkline <- createSparkLine(bar = "new_tests", line = "tests_cumulative", lightYellow, darkYellow)
+
+# testsSparkline <- sapply(unique(as.character(coronavirus$country_name_id)), function(index) {
+#   # 新規値
+#   value <- tail(coronavirus[country_name_id == index, new_tests], n = dateSpan)
+#   # 累計値
+#   cumsumValue <- tail(coronavirus[country_name_id == index, tests_cumulative], n = dateSpan)
+#   # 日付
+#   date <- tail(coronavirus[country_name_id == index, date], n = dateSpan)
+#   colorMapSetting <- rep(middleYellow, length(value))
+#   colorMapSetting[length(value)] <- darkYellow
+#   namesSetting <- as.list(date)
+#   names(namesSetting) <- 0:(length(value) - 1)
+#   # 新規
+#   diff <- sparkline(
+#     values = value,
+#     type = "bar",
+#     chartRangeMin = 0,
+#     width = 80,
+#     tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> New {{value}}",
+#     tooltipValueLookups = list(
+#       names = namesSetting
+#     ),
+#     colorMap = colorMapSetting
+#   )
+#   # 累計
+#   cumsumSpk <- sparkline(
+#     values = cumsumValue,
+#     type = "line",
+#     width = 80,
+#     fillColor = F,
+#     lineColor = darkYellow,
+#     tooltipFormat = "<span style='color: {{color}}'>&#9679;</span> Total {{y}}"
+#   )
+#   return(as.character(htmltools::as.tags(spk_composite(diff, cumsumSpk))))
+# })
 
 coronavirusSummary <-
   coronavirus[
