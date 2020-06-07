@@ -307,9 +307,9 @@ coronavirus[, date := as.Date(as.character(date))]
 dateSpan <- 21
 testsSparkline <- sapply(unique(as.character(coronavirus$country_name_id)), function(index) {
   # 新規値
-  value <- tail(coronavirus[country_name_id == index, new_cases], n = dateSpan)
+  value <- tail(coronavirus[country_name_id == index, new_tests], n = dateSpan)
   # 累計値
-  cumsumValue <- tail(coronavirus[country_name_id == index, cases], n = dateSpan)
+  cumsumValue <- tail(coronavirus[country_name_id == index, tests_cumulative], n = dateSpan)
   # 日付
   date <- tail(coronavirus[country_name_id == index, date], n = dateSpan)
   colorMapSetting <- rep(middleYellow, length(value))
