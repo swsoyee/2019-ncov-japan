@@ -344,7 +344,9 @@ createSparkLine <- function(bar, line, lightColor, darkColor) {
   return(sparkline)
 }
 
-testsSparkline <- createSparkLine(bar = "new_tests", line = "tests_cumulative", lightYellow, darkYellow)
+testsSparkline <- createSparkLine(bar = "new_tests", line = "tests_cumulative", middleYellow, darkYellow)
+casesSparkline <- createSparkLine(bar = "new_cases", line = "cases", middleRed, darkRed)
+deathsSparkline <- createSparkLine(bar = "new_deaths", line = "deaths", middelNavy, darkNavy)
 
 # testsSparkline <- sapply(unique(as.character(coronavirus$country_name_id)), function(index) {
 #   # 新規値
@@ -401,9 +403,17 @@ coronavirusSummary <-
 coronavirusSummary[, `Test Trends` := lapply(country_name_id, function(x){
   testsSparkline[which(x == names(testsSparkline))]
 })]
+coronavirusSummary[, `Cases Trends` := lapply(country_name_id, function(x){
+  casesSparkline[which(x == names(casesSparkline))]
+})]
+coronavirusSummary[, `Deaths Trends` := lapply(country_name_id, function(x){
+  deathsSparkline[which(x == names(deathsSparkline))]
+})]
 
 coronavirusSummary[, country_name_id := NULL]
 coronavirusSummary[, `Test Trends` := gsub("\\n", "", `Test Trends`)]
+coronavirusSummary[, `Cases Trends` := gsub("\\n", "", `Cases Trends`)]
+coronavirusSummary[, `Deaths Trends` := gsub("\\n", "", `Deaths Trends`)]
 
 fwrite(coronavirusSummary, file = paste0(DATA_PATH, "FIND/worldSummaryTable.csv"), sep = "@", quote = F)
 

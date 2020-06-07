@@ -301,14 +301,14 @@ output$worldSummaryTable <- renderDataTable({
         th(rowspan = 2, "Rank"),
         th(rowspan = 2, "Country"),
         th(colspan = 3, tagList(icon("vials"), "Tests")),
-        th(colspan = 3, tagList(icon("procedures"), "Cases")),
-        th(colspan = 3, tagList(icon("bible"), "Deaths"))
+        th(colspan = 4, tagList(icon("procedures"), "Cases")),
+        th(colspan = 4, tagList(icon("bible"), "Deaths"))
       ),
       tr(
         lapply(
           c(
             c("Total", "Trends", "Per 100K pop"),
-            rep(c("Total", "New", "Per 100K pop"), 2)
+            rep(c("Total", "Trends", "New", "Per 100K pop"), 2)
           ),
           th
         )
@@ -319,13 +319,14 @@ output$worldSummaryTable <- renderDataTable({
   datatable(
     coronavirusSummary[, .(Country,
                            Tests, `Test Trends`, `Tests/100K pop`,
-                           Cases, `New Cases`, `Cases/100K pop`,
-                           Deaths, `New Deaths`, `Deaths/100K pop`)],
+                           Cases, `Cases Trends`, `New Cases`, `Cases/100K pop`,
+                           Deaths, `Deaths Trends`, `New Deaths`, `Deaths/100K pop`)],
     container = sketch_summary,
     escape = F,
     options = list(
-      paging = F,
-      scrollY = "540px",
+      # paging = F,
+      # scrollY = "540px",
+      scrollX = T,
       fnDrawCallback = htmlwidgets::JS("
             function() {
               HTMLWidgets.staticRender();
