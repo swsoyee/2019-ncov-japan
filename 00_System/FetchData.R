@@ -347,41 +347,30 @@ createSparkLine <- function(bar, line, lightColor, darkColor) {
 testsSparkline <- createSparkLine(bar = "new_tests", line = "tests_cumulative", middleYellow, darkYellow)
 casesSparkline <- createSparkLine(bar = "new_cases", line = "cases", middleRed, darkRed)
 deathsSparkline <- createSparkLine(bar = "new_deaths", line = "deaths", middelNavy, darkNavy)
-
-# testsSparkline <- sapply(unique(as.character(coronavirus$country_name_id)), function(index) {
-#   # 新規値
-#   value <- tail(coronavirus[country_name_id == index, new_tests], n = dateSpan)
-#   # 累計値
-#   cumsumValue <- tail(coronavirus[country_name_id == index, tests_cumulative], n = dateSpan)
-#   # 日付
-#   date <- tail(coronavirus[country_name_id == index, date], n = dateSpan)
-#   colorMapSetting <- rep(middleYellow, length(value))
-#   colorMapSetting[length(value)] <- darkYellow
-#   namesSetting <- as.list(date)
-#   names(namesSetting) <- 0:(length(value) - 1)
-#   # 新規
-#   diff <- sparkline(
-#     values = value,
-#     type = "bar",
-#     chartRangeMin = 0,
-#     width = 80,
-#     tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> New {{value}}",
-#     tooltipValueLookups = list(
-#       names = namesSetting
-#     ),
-#     colorMap = colorMapSetting
-#   )
-#   # 累計
-#   cumsumSpk <- sparkline(
-#     values = cumsumValue,
-#     type = "line",
-#     width = 80,
-#     fillColor = F,
-#     lineColor = darkYellow,
-#     tooltipFormat = "<span style='color: {{color}}'>&#9679;</span> Total {{y}}"
-#   )
-#   return(as.character(htmltools::as.tags(spk_composite(diff, cumsumSpk))))
-# })
+positiveRatioSparkline <- sapply(unique(as.character(coronavirus$country_name_id)), function(index) {
+  value <- tail(coronavirus[country_name_id == index, .(round(new_cases/new_tests * 100, 2))], n = dateSpan)[[1]]
+  # 日付
+  date <- tail(coronavirus[country_name_id == index, date], n = dateSpan)
+  namesSetting <- as.list(date)
+  names(namesSetting) <- 0:(length(date) - 1)
+  
+  if (length(value) > 0) {
+    diff <- spk_chr(
+      values = value,
+      type = "line",
+      width = 80,
+      lineColor = darkRed,
+      fillColor = "#f2b3aa",
+      tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> Rate：{{y}}%",
+      tooltipValueLookups = list(
+        names = namesSetting
+      )
+    )
+  } else {
+    diff <- NA
+  }
+  return(diff)
+})
 
 coronavirusSummary <-
   coronavirus[
@@ -409,11 +398,15 @@ coronavirusSummary[, `Cases Trends` := lapply(country_name_id, function(x){
 coronavirusSummary[, `Deaths Trends` := lapply(country_name_id, function(x){
   deathsSparkline[which(x == names(deathsSparkline))]
 })]
+coronavirusSummary[, `Cases/Tests` := lapply(country_name_id, function(x){
+  positiveRatioSparkline[which(x == names(positiveRatioSparkline))]
+})]
 
 coronavirusSummary[, country_name_id := NULL]
 coronavirusSummary[, `Test Trends` := gsub("\\n", "", `Test Trends`)]
 coronavirusSummary[, `Cases Trends` := gsub("\\n", "", `Cases Trends`)]
 coronavirusSummary[, `Deaths Trends` := gsub("\\n", "", `Deaths Trends`)]
+coronavirusSummary[, `Cases/Tests` := gsub("\\n", "", `Cases/Tests`)]
 
 fwrite(coronavirusSummary, file = paste0(DATA_PATH, "FIND/worldSummaryTable.csv"), sep = "@", quote = F)
 

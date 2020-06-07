@@ -302,7 +302,8 @@ output$worldSummaryTable <- renderDataTable({
         th(rowspan = 2, "Country"),
         th(colspan = 3, tagList(icon("vials"), "Tests")),
         th(colspan = 4, tagList(icon("procedures"), "Cases")),
-        th(colspan = 4, tagList(icon("bible"), "Deaths"))
+        th(colspan = 4, tagList(icon("bible"), "Deaths")),
+        th(rowspan = 2, tagList("Cases/Tests"))
       ),
       tr(
         lapply(
@@ -320,7 +321,8 @@ output$worldSummaryTable <- renderDataTable({
     coronavirusSummary[, .(Country,
                            Tests, `Test Trends`, `Tests/100K pop`,
                            Cases, `Cases Trends`, `New Cases`, `Cases/100K pop`,
-                           Deaths, `Deaths Trends`, `New Deaths`, `Deaths/100K pop`)],
+                           Deaths, `Deaths Trends`, `New Deaths`, `Deaths/100K pop`,
+                           `Cases/Tests`)],
     container = sketch_summary,
     escape = F,
     options = list(
