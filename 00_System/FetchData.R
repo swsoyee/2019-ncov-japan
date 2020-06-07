@@ -303,6 +303,43 @@ coronavirus[, `:=`(
 fwrite(coronavirus, paste0(DATA_PATH, "FIND/worldSummary.csv"))
 
 coronavirus[, date := as.Date(as.character(date))]
+
+dateSpan <- 21
+testsSparkline <- sapply(unique(as.character(coronavirus$country_name_id)), function(index) {
+  # 新規値
+  value <- tail(coronavirus[country_name_id == index, new_cases], n = dateSpan)
+  # 累計値
+  cumsumValue <- tail(coronavirus[country_name_id == index, cases], n = dateSpan)
+  # 日付
+  date <- tail(coronavirus[country_name_id == index, date], n = dateSpan)
+  colorMapSetting <- rep(middleYellow, length(value))
+  colorMapSetting[length(value)] <- darkYellow
+  namesSetting <- as.list(date)
+  names(namesSetting) <- 0:(length(value) - 1)
+  # 新規
+  diff <- sparkline(
+    values = value,
+    type = "bar",
+    chartRangeMin = 0,
+    width = 80,
+    tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> New {{value}}",
+    tooltipValueLookups = list(
+      names = namesSetting
+    ),
+    colorMap = colorMapSetting
+  )
+  # 累計
+  cumsumSpk <- sparkline(
+    values = cumsumValue,
+    type = "line",
+    width = 80,
+    fillColor = F,
+    lineColor = darkYellow,
+    tooltipFormat = "<span style='color: {{color}}'>&#9679;</span> Total {{y}}"
+  )
+  return(as.character(htmltools::as.tags(spk_composite(diff, cumsumSpk))))
+})
+
 coronavirusSummary <-
   coronavirus[
     date == max(date),
@@ -315,111 +352,119 @@ coronavirusSummary <-
       `Cases/100K pop` = casesPer100k,
       Deaths = deaths,
       `New Deaths` = new_deaths,
-      `Deaths/100K pop` = round(deaths / population * 10^5, 2)
+      `Deaths/100K pop` = round(deaths / population * 10^5, 2),
+      country_name_id
     )
   ][order(-Cases)]
 
-fwrite(coronavirusSummary, paste0(DATA_PATH, "FIND/worldSummaryTable.csv"))
+coronavirusSummary[, `Test Trends` := lapply(country_name_id, function(x){
+  testsSparkline[which(x == names(testsSparkline))]
+})]
 
-sketch_summary <- htmltools::withTags(table(
-  class = "display",
-  thead(
-    tr(
-      th(rowspan = 2, "Rank"),
-      th(rowspan = 2, "Country"),
-      th(colspan = 2, tagList(icon("vials"), "Tests")),
-      th(colspan = 3, "Cases"),
-      th(colspan = 3, "Deaths")
-    ),
-    tr(
-      lapply(
-        c(
-          c("Total", "Per 100K pop"),
-          rep(c("Total", "New", "Per 100K pop"), 2)
-          ),
-        th
-      )
-    )
-  )
-))
+coronavirusSummary[, country_name_id := NULL]
+coronavirusSummary[, `Test Trends` := gsub("\\n", "", `Test Trends`)]
 
-datatable(
-  coronavirusSummary,
-  container = sketch_summary,
-  escape = F,
-  options = list(
-    paging = F,
-    scrollY = "540px"
-  )
-) %>%
-  formatRound(
-    columns = c("Tests", "Cases", "New Cases", "Deaths", "New Deaths"),
-    digits = 0
-  ) %>%
-  formatRound(
-    columns = c("Tests/100K pop", "Cases/100K pop", "Deaths/100K pop"),
-    digits = 0
-  ) %>%
-  formatStyle(
-    columns = "Tests",
-    color = do.call(
-      styleInterval,
-      generateColorStyle(data = coronavirusSummary$Tests, colors = c(lightYellow, darkYellow), by = 10^6),
-    ),
-    background = styleColorBar(c(0, max(coronavirusSummary$Tests, na.rm = T)), middleYellow, angle = -90),
-    backgroundSize = "98% 18%",
-    backgroundRepeat = "no-repeat",
-    backgroundPosition = "bottom",
-    fontWeight = "bold"
-  ) %>%
-  formatStyle(
-    columns = "Cases",
-    background = styleColorBar(c(0, max(coronavirusSummary$Cases, na.rm = T)), middleRed, angle = -90),
-    color = do.call(
-      styleInterval,
-      generateColorStyle(data = coronavirusSummary$Cases, colors = c(lightRed, darkRed), by = 10^6),
-    ),
-    backgroundSize = "98% 18%",
-    backgroundRepeat = "no-repeat",
-    backgroundPosition = "bottom",
-    fontWeight = "bold"
-  ) %>%
-  formatStyle(
-    columns = "New Cases",
-    color = do.call(
-      styleInterval,
-      generateColorStyle(data = coronavirusSummary$`New Cases`, colors = c(lightRed, darkRed), by = 100),
-    ),
-    fontWeight = "bold"
-  ) %>%
-  formatStyle(
-    columns = "Deaths",
-    background = styleColorBar(c(0, max(coronavirusSummary$Deaths, na.rm = T)), darkNavy, angle = -90),
-    backgroundSize = "98% 18%",
-    backgroundRepeat = "no-repeat",
-    backgroundPosition = "bottom"
-  ) %>%
-  formatStyle(
-    columns = c("Tests/100K pop"),
-    backgroundColor = do.call(
-      styleInterval,
-      generateColorStyle(data = coronavirusSummary$`Tests/100K pop`, colors = c("#FFFFFF", darkYellow), by = 10^4)
-    ),
-    fontWeight = "bold"
-  ) %>%
-  formatStyle(
-    columns = c("Cases/100K pop"),
-    backgroundColor = do.call(
-      styleInterval,
-      generateColorStyle(data = coronavirusSummary$`Cases/100K pop`, colors = c("#FFFFFF", darkRed), by = 100)
-    ),
-    fontWeight = "bold"
-  ) %>%
-  formatStyle(
-    columns = c("Deaths/100K pop"),
-    backgroundColor = do.call(
-      styleInterval,
-      generateColorStyle(data = coronavirusSummary$`Deaths/100K pop`, colors = c("#FFFFFF", darkNavy), by = 1)
-    ),
-    fontWeight = "bold"
-  )
+fwrite(coronavirusSummary, file = paste0(DATA_PATH, "FIND/worldSummaryTable.csv"), sep = "@", quote = F)
+
+# sketch_summary <- htmltools::withTags(table(
+#   class = "display",
+#   thead(
+#     tr(
+#       th(rowspan = 2, "Rank"),
+#       th(rowspan = 2, "Country"),
+#       th(colspan = 2, tagList(icon("vials"), "Tests")),
+#       th(colspan = 3, "Cases"),
+#       th(colspan = 3, "Deaths")
+#     ),
+#     tr(
+#       lapply(
+#         c(
+#           c("Total", "Per 100K pop"),
+#           rep(c("Total", "New", "Per 100K pop"), 2)
+#           ),
+#         th
+#       )
+#     )
+#   )
+# ))
+#
+# datatable(
+#   coronavirusSummary,
+#   container = sketch_summary,
+#   escape = F,
+#   options = list(
+#     paging = F,
+#     scrollY = "540px"
+#   )
+# ) %>%
+#   formatRound(
+#     columns = c("Tests", "Cases", "New Cases", "Deaths", "New Deaths"),
+#     digits = 0
+#   ) %>%
+#   formatRound(
+#     columns = c("Tests/100K pop", "Cases/100K pop", "Deaths/100K pop"),
+#     digits = 0
+#   ) %>%
+#   formatStyle(
+#     columns = "Tests",
+#     color = do.call(
+#       styleInterval,
+#       generateColorStyle(data = coronavirusSummary$Tests, colors = c(lightYellow, darkYellow), by = 10^6),
+#     ),
+#     background = styleColorBar(c(0, max(coronavirusSummary$Tests, na.rm = T)), middleYellow, angle = -90),
+#     backgroundSize = "98% 18%",
+#     backgroundRepeat = "no-repeat",
+#     backgroundPosition = "bottom",
+#     fontWeight = "bold"
+#   ) %>%
+#   formatStyle(
+#     columns = "Cases",
+#     background = styleColorBar(c(0, max(coronavirusSummary$Cases, na.rm = T)), middleRed, angle = -90),
+#     color = do.call(
+#       styleInterval,
+#       generateColorStyle(data = coronavirusSummary$Cases, colors = c(lightRed, darkRed), by = 10^6),
+#     ),
+#     backgroundSize = "98% 18%",
+#     backgroundRepeat = "no-repeat",
+#     backgroundPosition = "bottom",
+#     fontWeight = "bold"
+#   ) %>%
+#   formatStyle(
+#     columns = "New Cases",
+#     color = do.call(
+#       styleInterval,
+#       generateColorStyle(data = coronavirusSummary$`New Cases`, colors = c(lightRed, darkRed), by = 100),
+#     ),
+#     fontWeight = "bold"
+#   ) %>%
+#   formatStyle(
+#     columns = "Deaths",
+#     background = styleColorBar(c(0, max(coronavirusSummary$Deaths, na.rm = T)), darkNavy, angle = -90),
+#     backgroundSize = "98% 18%",
+#     backgroundRepeat = "no-repeat",
+#     backgroundPosition = "bottom"
+#   ) %>%
+#   formatStyle(
+#     columns = c("Tests/100K pop"),
+#     backgroundColor = do.call(
+#       styleInterval,
+#       generateColorStyle(data = coronavirusSummary$`Tests/100K pop`, colors = c("#FFFFFF", darkYellow), by = 10^4)
+#     ),
+#     fontWeight = "bold"
+#   ) %>%
+#   formatStyle(
+#     columns = c("Cases/100K pop"),
+#     backgroundColor = do.call(
+#       styleInterval,
+#       generateColorStyle(data = coronavirusSummary$`Cases/100K pop`, colors = c("#FFFFFF", darkRed), by = 100)
+#     ),
+#     fontWeight = "bold"
+#   ) %>%
+#   formatStyle(
+#     columns = c("Deaths/100K pop"),
+#     backgroundColor = do.call(
+#       styleInterval,
+#       generateColorStyle(data = coronavirusSummary$`Deaths/100K pop`, colors = c("#FFFFFF", darkNavy), by = 1)
+#     ),
+#     fontWeight = "bold"
+#   )

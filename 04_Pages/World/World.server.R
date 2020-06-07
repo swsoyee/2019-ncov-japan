@@ -2,12 +2,13 @@ observeEvent(input$sideBarTab, {
   if (input$sideBarTab == "world" && is.null(GLOBAL_VALUE$World$PositiveAndDeath)) {
     # GLOBAL_VALUE <- list(
     #   World = list(
-    #     Summary = NULL
+    #     Summary = NULL,
+    #     SummaryTable = NULL
     #   )
     # ) # TEST
     GLOBAL_VALUE$World$Summary <- fread(paste0(DATA_PATH, "FIND/worldSummary.csv"))
     GLOBAL_VALUE$World$Summary[, date := as.Date(date)]
-    GLOBAL_VALUE$World$SummaryTable <- fread(paste0(DATA_PATH, "FIND/worldSummaryTable.csv"))
+    GLOBAL_VALUE$World$SummaryTable <- fread(paste0(DATA_PATH, "FIND/worldSummaryTable.csv"), sep = "@")
   }
 })
 
@@ -299,14 +300,14 @@ output$worldSummaryTable <- renderDataTable({
       tr(
         th(rowspan = 2, "Rank"),
         th(rowspan = 2, "Country"),
-        th(colspan = 2, tagList(icon("vials"), "Tests")),
+        th(colspan = 3, tagList(icon("vials"), "Tests")),
         th(colspan = 3, tagList(icon("procedures"), "Cases")),
         th(colspan = 3, tagList(icon("bible"), "Deaths"))
       ),
       tr(
         lapply(
           c(
-            c("Total", "Per 100K pop"),
+            c("Total", "Trends", "Per 100K pop"),
             rep(c("Total", "New", "Per 100K pop"), 2)
           ),
           th
@@ -316,14 +317,23 @@ output$worldSummaryTable <- renderDataTable({
   ))
 
   datatable(
-    coronavirusSummary,
+    coronavirusSummary[, .(Country,
+                           Tests, `Test Trends`, `Tests/100K pop`,
+                           Cases, `New Cases`, `Cases/100K pop`,
+                           Deaths, `New Deaths`, `Deaths/100K pop`)],
     container = sketch_summary,
     escape = F,
     options = list(
       paging = F,
-      scrollY = "540px"
+      scrollY = "540px",
+      fnDrawCallback = htmlwidgets::JS("
+            function() {
+              HTMLWidgets.staticRender();
+            }
+          ")
     )
   ) %>%
+    spk_add_deps() %>%
     formatRound(
       columns = c("Tests", "Cases", "New Cases", "Deaths", "New Deaths"),
       digits = 0
