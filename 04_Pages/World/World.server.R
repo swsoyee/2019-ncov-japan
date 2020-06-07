@@ -103,11 +103,11 @@ output$worldConfirmed <- renderEcharts4r({
     )
     legendFormatter <- switch(worldMapSelector,
       worldCase = NULL,
-      worldTest =  NULL,
+      worldTest = NULL,
       worldRate = "{value}% - {value2}%"
     )
 
-    if(!input$switchWorldMapVersion) {
+    if (!input$switchWorldMapVersion) {
       coronavirus <- coronavirus %>%
         group_by(date)
     } else {
@@ -137,8 +137,8 @@ output$worldConfirmed <- renderEcharts4r({
       ) %>%
       e_title(text = mapName) %>%
       e_tooltip()
-    
-    if(!input$switchWorldMapVersion) {
+
+    if (!input$switchWorldMapVersion) {
       timeSeriesTitle <- lapply(unique(coronavirus$date), function(i) {
         return(
           list(
@@ -161,7 +161,7 @@ output$worldConfirmed <- renderEcharts4r({
     } else {
       map %>%
         e_title(
-          text = mapName, 
+          text = mapName,
           subtext = max(coronavirus$date)
         )
     }
@@ -240,7 +240,7 @@ output$countryTestLine <- renderEcharts4r({
   ),
   by = "date"
   ][order(date)]
-  
+
   totalTest <- tail(world$tests_cumulative, n = 1)
 
   lineTitle <- ifelse(
@@ -248,7 +248,7 @@ output$countryTestLine <- renderEcharts4r({
     input$worldConfirmed_clicked_data$name,
     "World"
   )
-  
+
   world[test == 0, test := NA] %>%
     e_chart(date) %>%
     e_line(test, name = "Tests (Total)", symbol = "circle", smooth = T, symbolSize = 1, itemStyle = list(color = darkYellow)) %>%
@@ -293,8 +293,32 @@ output$countryTestLine <- renderEcharts4r({
 
 output$worldSummaryTable <- renderDataTable({
   coronavirusSummary <- GLOBAL_VALUE$World$SummaryTable
+  sketch_summary <- htmltools::withTags(table(
+    class = "display",
+    thead(
+      tr(
+        th(rowspan = 2, "Rank"),
+        th(rowspan = 2, "Country"),
+        th(colspan = 2, tagList(icon("vials"), "Tests")),
+        th(colspan = 3, tagList(icon("procedures"), "Cases")),
+        th(colspan = 3, tagList(icon("bible"), "Deaths"))
+      ),
+      tr(
+        lapply(
+          c(
+            c("Total", "Per 100K pop"),
+            rep(c("Total", "New", "Per 100K pop"), 2)
+          ),
+          th
+        )
+      )
+    )
+  ))
+
   datatable(
     coronavirusSummary,
+    container = sketch_summary,
+    escape = F,
     options = list(
       paging = F,
       scrollY = "540px"
@@ -305,21 +329,40 @@ output$worldSummaryTable <- renderDataTable({
       digits = 0
     ) %>%
     formatRound(
-      columns = c("Tests/100K pop", "Cases/100K pop", "Deaths/100K pop")
+      columns = c("Tests/100K pop", "Cases/100K pop", "Deaths/100K pop"),
+      digits = 0
     ) %>%
     formatStyle(
       columns = "Tests",
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = coronavirusSummary$Tests, colors = c(lightYellow, darkYellow), by = 10^6),
+      ),
       background = styleColorBar(c(0, max(coronavirusSummary$Tests, na.rm = T)), middleYellow, angle = -90),
       backgroundSize = "98% 18%",
       backgroundRepeat = "no-repeat",
-      backgroundPosition = "bottom"
+      backgroundPosition = "bottom",
+      fontWeight = "bold"
     ) %>%
     formatStyle(
       columns = "Cases",
       background = styleColorBar(c(0, max(coronavirusSummary$Cases, na.rm = T)), middleRed, angle = -90),
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = coronavirusSummary$Cases, colors = c(lightRed, darkRed), by = 10^6),
+      ),
       backgroundSize = "98% 18%",
       backgroundRepeat = "no-repeat",
-      backgroundPosition = "bottom"
+      backgroundPosition = "bottom",
+      fontWeight = "bold"
+    ) %>%
+    formatStyle(
+      columns = "New Cases",
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = coronavirusSummary$`New Cases`, colors = c(lightRed, darkRed), by = 100),
+      ),
+      fontWeight = "bold"
     ) %>%
     formatStyle(
       columns = "Deaths",
@@ -330,25 +373,25 @@ output$worldSummaryTable <- renderDataTable({
     ) %>%
     formatStyle(
       columns = c("Tests/100K pop"),
-      color = do.call(
+      backgroundColor = do.call(
         styleInterval,
-        generateColorStyle(data = coronavirusSummary$`Tests/100K pop`, colors = c(lightRed, lightGreen), by = 1000)
+        generateColorStyle(data = coronavirusSummary$`Tests/100K pop`, colors = c("#FFFFFF", darkYellow), by = 10^4)
       ),
       fontWeight = "bold"
     ) %>%
     formatStyle(
       columns = c("Cases/100K pop"),
-      color = do.call(
+      backgroundColor = do.call(
         styleInterval,
-        generateColorStyle(data = coronavirusSummary$`Cases/100K pop`, colors = c(lightRed, darkRed), by = 100)
+        generateColorStyle(data = coronavirusSummary$`Cases/100K pop`, colors = c("#FFFFFF", darkRed), by = 100)
       ),
       fontWeight = "bold"
     ) %>%
     formatStyle(
       columns = c("Deaths/100K pop"),
-      color = do.call(
+      backgroundColor = do.call(
         styleInterval,
-        generateColorStyle(data = coronavirusSummary$`Deaths/100K pop`, colors = c(lightNavy, "black"), by = 1)
+        generateColorStyle(data = coronavirusSummary$`Deaths/100K pop`, colors = c("#FFFFFF", darkNavy), by = 1)
       ),
       fontWeight = "bold"
     )
