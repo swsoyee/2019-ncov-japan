@@ -193,6 +193,7 @@ patient <- data.table(read.csv("http://www.pref.kanagawa.jp/osirase/1369/data/cs
 patient$性別 <- as.character(patient$性別)
 # patient[性別 == '', 性別 := '調査中']
 patient[性別 == "−", 性別 := "非公表"]
+patient <- patient[年代 != ""]
 patientSummary <- data.table(as.data.frame.matrix(table(patient$発表日, patient$性別)), keep.rownames = T)
 
 dt <- merge(x = contact, y = querent, by.x = "日付", by.y = "日付", all.x = T, no.dups = T)
