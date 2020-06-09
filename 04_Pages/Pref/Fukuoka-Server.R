@@ -387,15 +387,15 @@ output$fukuokaProfile <- renderUI({
 # 帰国者・接触者相談センター相談件数 ====
 output$FukuokaContact <- renderEcharts4r({
   call <- GLOBAL_VALUE$Fukuoka$call
-  call[, `:=` (年月日 = as.Date(年月日), 累計 = cumsum(件数))]
+  call[, `:=` (日付 = as.Date(日付))]
   call %>%
-    e_chart(年月日) %>%
-    e_bar(件数, itemStyle = list(color = lightBlue), name = i18n$t("新規")) %>%
-    e_line(累計, name = i18n$t("累計"), itemStyle = list(color = darkNavy), y_index = 1, symbolSize = 1) %>%
+    e_chart(日付) %>%
+    e_bar(合計, itemStyle = list(color = lightBlue), name = i18n$t("新規")) %>%
+    e_line(専用ダイヤル累計, name = i18n$t("累計"), itemStyle = list(color = darkNavy), y_index = 1, symbolSize = 1) %>%
     e_title(text = "帰国者・接触者相談センター相談件数", 
             subtext = paste0(
-              sprintf("最終更新日：%s", max(call$年月日)), "   ",
-              sprintf("計：%s件", tail(call$累計, n = 1))
+              sprintf("最終更新日：%s", max(call$日付)), "   ",
+              sprintf("計：%s件", tail(call$専用ダイヤル累計, n = 1))
             )) %>%
     e_y_axis(splitLine = list(show = F), index = 1) %>%
     e_y_axis(axisLabel = list(inside = T),
