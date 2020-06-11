@@ -52,7 +52,7 @@ output$recoveredLine <- renderEcharts4r({
     ) %>%
     e_line(
       死亡突合中,
-      name = i18n$t("死亡（突合中）"),
+      name = i18n$t("死亡（突合作業中）"),
       stack = "1",
       itemStyle = list(normal = list(color = darkNavy)),
       areaStyle = list(opacity = 0.4),
@@ -79,7 +79,7 @@ output$recoveredLine <- renderEcharts4r({
     ) %>%
     e_line(
       回復突合中,
-      name = i18n$t("回復（突合中）"),
+      name = i18n$t("回復（突合作業中）"),
       stack = "1",
       itemStyle = list(normal = list(color = middleGreen)),
       areaStyle = list(opacity = 0.4),

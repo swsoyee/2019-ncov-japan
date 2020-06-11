@@ -667,12 +667,12 @@
       "en": "Airport Quarantine"
     },
     {
-      "ja": "死亡（突合中）",
+      "ja": "死亡（突合作業中）",
       "cn": "死亡（确认中）",
       "en": "Death (Confirming)"
     },
     {
-      "ja": "回復（突合中）",
+      "ja": "回復（突合作業中）",
       "cn": "恢复（确认中）",
       "en": "Recovered (Confirming)"
     },
