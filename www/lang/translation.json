@@ -352,6 +352,16 @@
       "en": "Infection reported"
     },
     {
+      "ja": "感染者ゼロの都道府県",
+      "cn": "无确诊患者都道府县",
+      "en": "Province of No Active"
+    },
+    {
+      "ja": "回復者数は厚労省発表の数値を使用しているため、メディアの速報より1日遅れる可能性があります。",
+      "cn": "由于康复人数引用自厚劳省的数据，因此可能会与媒体快讯有1天的滞后时间。",
+      "en": "The number of recovered is based on figures released by MHLW, so there is a possibility of a delay of one day from the preliminary media report."
+    },
+    {
       "ja": "感染者なし",
       "cn": "无确诊患者",
       "en": "No Active"

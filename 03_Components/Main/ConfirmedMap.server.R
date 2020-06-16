@@ -91,6 +91,7 @@ simpleMapDataset <- reactive({
                                        severe = i.重症者, 
                                        active = i.陽性者 - i.退院者 - ifelse(is.na(i.死亡者), 0, i.死亡者),
                                        diff = (count.x - count.y)), on = c(ja = "都道府県名")]
+  setnafill(dt, fill = 0, cols = "severe")
   dt
 })
 

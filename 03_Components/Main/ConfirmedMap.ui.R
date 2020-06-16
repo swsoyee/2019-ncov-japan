@@ -52,7 +52,23 @@ tabPanel(
         placement = "top",
         title = i18n$t("分母には死亡者、チャーター便で帰国したクルーズ船の乗客40名は含まれていません。")
       ),
-      tagList(icon("shield-alt"), tags$b(i18n$t("感染者なし"))),
+      progressBar(
+        id = "activeRegions",
+        value = mhlwSummary[日付 == max(日付) & 分類 == 0 & 都道府県名 != "伊客船" & 入院中 == 0, .N],
+        total = 47,
+        title = tagList(
+          icon("shield-alt"),
+          i18n$t("感染者ゼロの都道府県")
+        ),
+        striped = T,
+        status = "success",
+        display_pct = T
+      ),
+      bsTooltip(
+        id = "activeRegions",
+        placement = "top",
+        title = i18n$t("回復者数は厚労省発表の数値を使用しているため、メディアの速報より1日遅れる可能性があります。")
+      ),
       uiOutput("saveArea"),
     ),
     column(
