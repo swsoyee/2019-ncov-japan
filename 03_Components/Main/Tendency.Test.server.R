@@ -83,6 +83,10 @@ output$pcrLine <- renderEcharts4r({
       xAxis = "2020-06-18", itemStyle = list(color = darkRed),
       label = list(formatter = "※")
     ), symbol = "none") %>%
+    e_mark_line(data = list(
+      xAxis = "2020-06-19", itemStyle = list(color = darkRed),
+      label = list(formatter = "※")
+    ), symbol = "none") %>%
     e_title(text = i18n$t("日次新規・累積検査人数の推移")) %>%
     e_datazoom(
       minValueSpan = 3600 * 24 * 1000 * 7,

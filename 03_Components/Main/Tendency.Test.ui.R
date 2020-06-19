@@ -60,6 +60,7 @@ tabPanel(
           tags$a(icon("external-link-alt"), "5/15", href = "https://www.mhlw.go.jp/stf/newpage_11339.html"),
           tags$a(icon("external-link-alt"), "5/16", href = "https://www.mhlw.go.jp/stf/newpage_11354.html"),
           tags$a(icon("external-link-alt"), "6/18", href = "https://www.mhlw.go.jp/stf/newpage_11961.html"),
+          tags$a(icon("external-link-alt"), "6/19", href = "https://www.mhlw.go.jp/stf/newpage_11993.html"),
           tags$a(icon("external-link-alt"), icon("github"), href = "https://github.com/swsoyee/2019-ncov-japan/issues/389")
           ),
         ),
