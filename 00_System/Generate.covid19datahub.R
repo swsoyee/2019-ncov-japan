@@ -27,7 +27,7 @@ data <- data %>% mutate(type = ifelse(is.na(name_en), "other", "prefecture"))
 # ほかの英語名を追加する
 data$name_en[data$name_ja == "クルーズ船"] <- "Diamond Princess"
 data$name_en[data$name_ja == "チャーター便"] <- "charter flights"
-data$name_en[data$name_ja == "検疫職員"] <- "airport quarantine"
+data$name_en[data$name_ja == "検疫職員"] <- "Quarantine"
 data$name_en[data$name_ja == "伊客船"] <- "Costa Atlantica"
 
 # 変数名を英語にする
@@ -43,4 +43,3 @@ data <- data %>% group_by(name_ja) %>%
 
 data %>% select(date, tests, confirmed, deaths, recovered, hosp, name_ja, name_en, type) %>%
   write_csv("50_Data/covid19_jp.csv")
-
