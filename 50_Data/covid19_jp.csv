@@ -46,8 +46,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-01-15,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-01-15,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-01-15,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-01-15,NA,0,0,NA,NA,チャーター便,charter flights,other
-2020-01-15,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-01-15,NA,0,0,NA,NA,チャーター便,Charter Flight,other
+2020-01-15,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-01-15,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-01-15,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-01-16,NA,0,0,NA,NA,北海道,Hokkaido,prefecture
@@ -97,8 +97,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-01-16,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-01-16,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-01-16,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-01-16,NA,0,0,NA,NA,チャーター便,charter flights,other
-2020-01-16,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-01-16,NA,0,0,NA,NA,チャーター便,Charter Flight,other
+2020-01-16,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-01-16,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-01-16,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-01-17,NA,0,0,NA,NA,北海道,Hokkaido,prefecture
@@ -148,8 +148,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-01-17,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-01-17,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-01-17,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-01-17,NA,0,0,NA,NA,チャーター便,charter flights,other
-2020-01-17,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-01-17,NA,0,0,NA,NA,チャーター便,Charter Flight,other
+2020-01-17,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-01-17,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-01-17,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-01-18,NA,0,0,NA,NA,北海道,Hokkaido,prefecture
@@ -199,8 +199,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-01-18,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-01-18,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-01-18,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-01-18,NA,0,0,NA,NA,チャーター便,charter flights,other
-2020-01-18,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-01-18,NA,0,0,NA,NA,チャーター便,Charter Flight,other
+2020-01-18,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-01-18,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-01-18,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-01-19,NA,0,0,NA,NA,北海道,Hokkaido,prefecture
@@ -250,8 +250,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-01-19,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-01-19,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-01-19,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-01-19,NA,0,0,NA,NA,チャーター便,charter flights,other
-2020-01-19,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-01-19,NA,0,0,NA,NA,チャーター便,Charter Flight,other
+2020-01-19,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-01-19,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-01-19,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-01-20,NA,0,0,NA,NA,北海道,Hokkaido,prefecture
@@ -301,8 +301,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-01-20,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-01-20,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-01-20,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-01-20,NA,0,0,NA,NA,チャーター便,charter flights,other
-2020-01-20,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-01-20,NA,0,0,NA,NA,チャーター便,Charter Flight,other
+2020-01-20,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-01-20,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-01-20,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-01-21,NA,0,0,NA,NA,北海道,Hokkaido,prefecture
@@ -352,8 +352,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-01-21,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-01-21,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-01-21,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-01-21,NA,0,0,NA,NA,チャーター便,charter flights,other
-2020-01-21,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-01-21,NA,0,0,NA,NA,チャーター便,Charter Flight,other
+2020-01-21,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-01-21,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-01-21,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-01-22,NA,0,0,NA,NA,北海道,Hokkaido,prefecture
@@ -403,8 +403,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-01-22,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-01-22,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-01-22,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-01-22,NA,0,0,NA,NA,チャーター便,charter flights,other
-2020-01-22,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-01-22,NA,0,0,NA,NA,チャーター便,Charter Flight,other
+2020-01-22,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-01-22,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-01-22,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-01-23,NA,0,0,NA,NA,北海道,Hokkaido,prefecture
@@ -454,8 +454,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-01-23,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-01-23,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-01-23,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-01-23,NA,0,0,NA,NA,チャーター便,charter flights,other
-2020-01-23,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-01-23,NA,0,0,NA,NA,チャーター便,Charter Flight,other
+2020-01-23,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-01-23,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-01-23,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-01-24,NA,0,0,NA,NA,北海道,Hokkaido,prefecture
@@ -505,8 +505,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-01-24,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-01-24,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-01-24,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-01-24,NA,0,0,NA,NA,チャーター便,charter flights,other
-2020-01-24,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-01-24,NA,0,0,NA,NA,チャーター便,Charter Flight,other
+2020-01-24,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-01-24,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-01-24,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-01-25,NA,0,0,NA,NA,北海道,Hokkaido,prefecture
@@ -556,8 +556,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-01-25,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-01-25,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-01-25,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-01-25,NA,0,0,NA,NA,チャーター便,charter flights,other
-2020-01-25,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-01-25,NA,0,0,NA,NA,チャーター便,Charter Flight,other
+2020-01-25,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-01-25,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-01-25,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-01-26,NA,0,0,NA,NA,北海道,Hokkaido,prefecture
@@ -607,8 +607,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-01-26,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-01-26,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-01-26,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-01-26,NA,0,0,NA,NA,チャーター便,charter flights,other
-2020-01-26,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-01-26,NA,0,0,NA,NA,チャーター便,Charter Flight,other
+2020-01-26,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-01-26,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-01-26,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-01-27,NA,0,0,NA,NA,北海道,Hokkaido,prefecture
@@ -658,8 +658,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-01-27,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-01-27,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-01-27,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-01-27,NA,0,0,NA,NA,チャーター便,charter flights,other
-2020-01-27,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-01-27,NA,0,0,NA,NA,チャーター便,Charter Flight,other
+2020-01-27,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-01-27,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-01-27,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-01-28,NA,1,0,NA,NA,北海道,Hokkaido,prefecture
@@ -709,8 +709,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-01-28,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-01-28,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-01-28,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-01-28,NA,0,0,NA,NA,チャーター便,charter flights,other
-2020-01-28,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-01-28,NA,0,0,NA,NA,チャーター便,Charter Flight,other
+2020-01-28,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-01-28,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-01-28,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-01-29,NA,1,0,NA,NA,北海道,Hokkaido,prefecture
@@ -760,8 +760,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-01-29,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-01-29,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-01-29,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-01-29,NA,0,0,NA,NA,チャーター便,charter flights,other
-2020-01-29,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-01-29,NA,0,0,NA,NA,チャーター便,Charter Flight,other
+2020-01-29,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-01-29,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-01-29,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-01-30,NA,1,0,NA,NA,北海道,Hokkaido,prefecture
@@ -811,8 +811,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-01-30,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-01-30,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-01-30,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-01-30,NA,3,0,NA,NA,チャーター便,charter flights,other
-2020-01-30,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-01-30,NA,3,0,NA,NA,チャーター便,Charter Flight,other
+2020-01-30,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-01-30,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-01-30,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-01-31,NA,1,0,NA,NA,北海道,Hokkaido,prefecture
@@ -862,8 +862,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-01-31,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-01-31,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-01-31,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-01-31,NA,5,0,NA,NA,チャーター便,charter flights,other
-2020-01-31,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-01-31,NA,5,0,NA,NA,チャーター便,Charter Flight,other
+2020-01-31,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-01-31,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-01-31,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-01,NA,1,0,NA,NA,北海道,Hokkaido,prefecture
@@ -913,8 +913,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-01,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-01,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-01,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-01,NA,8,0,NA,NA,チャーター便,charter flights,other
-2020-02-01,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-01,NA,8,0,NA,NA,チャーター便,Charter Flight,other
+2020-02-01,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-02-01,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-01,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-02,NA,1,0,NA,NA,北海道,Hokkaido,prefecture
@@ -964,8 +964,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-02,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-02,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-02,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-02,NA,8,0,NA,NA,チャーター便,charter flights,other
-2020-02-02,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-02,NA,8,0,NA,NA,チャーター便,Charter Flight,other
+2020-02-02,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-02-02,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-02,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-03,NA,1,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1015,8 +1015,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-03,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-03,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-03,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-03,NA,8,0,NA,NA,チャーター便,charter flights,other
-2020-02-03,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-03,NA,8,0,NA,NA,チャーター便,Charter Flight,other
+2020-02-03,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-02-03,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-03,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-04,NA,1,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1066,8 +1066,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-04,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-04,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-04,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-04,NA,9,0,NA,NA,チャーター便,charter flights,other
-2020-02-04,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-04,NA,9,0,NA,NA,チャーター便,Charter Flight,other
+2020-02-04,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-02-04,NA,0,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-04,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-05,NA,1,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1117,8 +1117,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-05,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-05,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-05,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-05,NA,9,0,NA,NA,チャーター便,charter flights,other
-2020-02-05,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-05,NA,9,0,NA,NA,チャーター便,Charter Flight,other
+2020-02-05,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-02-05,31,10,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-05,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-06,NA,1,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1168,8 +1168,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-06,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-06,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-06,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-06,566,9,0,0,9,チャーター便,charter flights,other
-2020-02-06,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-06,566,9,0,0,9,チャーター便,Charter Flight,other
+2020-02-06,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-02-06,NA,20,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-06,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-07,NA,1,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1219,8 +1219,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-07,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-07,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-07,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-07,566,9,0,0,9,チャーター便,charter flights,other
-2020-02-07,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-07,566,9,0,0,9,チャーター便,Charter Flight,other
+2020-02-07,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-02-07,273,61,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-07,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-08,NA,1,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1270,8 +1270,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-08,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-08,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-08,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-08,NA,10,0,0,3,チャーター便,charter flights,other
-2020-02-08,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-08,NA,10,0,0,3,チャーター便,Charter Flight,other
+2020-02-08,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-02-08,279,64,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-08,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-09,NA,1,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1321,8 +1321,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-09,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-09,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-09,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-09,NA,10,0,0,3,チャーター便,charter flights,other
-2020-02-09,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-09,NA,10,0,0,3,チャーター便,Charter Flight,other
+2020-02-09,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-02-09,336,70,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-09,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-10,NA,1,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1372,8 +1372,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-10,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-10,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-10,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-10,764,10,0,0,10,チャーター便,charter flights,other
-2020-02-10,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-10,764,10,0,0,10,チャーター便,Charter Flight,other
+2020-02-10,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-02-10,439,135,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-10,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-11,NA,1,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1423,8 +1423,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-11,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-11,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-11,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-11,764,12,0,0,3,チャーター便,charter flights,other
-2020-02-11,NA,0,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-11,764,12,0,0,3,チャーター便,Charter Flight,other
+2020-02-11,NA,0,0,NA,NA,検疫職員,Quarantine,other
 2020-02-11,NA,135,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-11,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-12,NA,1,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1474,8 +1474,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-12,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-12,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-12,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-12,764,12,0,0,12,チャーター便,charter flights,other
-2020-02-12,NA,1,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-12,764,12,0,0,12,チャーター便,Charter Flight,other
+2020-02-12,NA,1,0,NA,NA,検疫職員,Quarantine,other
 2020-02-12,NA,174,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-12,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-13,NA,1,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1525,8 +1525,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-13,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-13,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-13,NA,0,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-13,764,12,0,0,12,チャーター便,charter flights,other
-2020-02-13,NA,1,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-13,764,12,0,0,12,チャーター便,Charter Flight,other
+2020-02-13,NA,1,0,NA,NA,検疫職員,Quarantine,other
 2020-02-13,713,218,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-13,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-14,NA,2,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1576,8 +1576,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-14,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-14,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-14,NA,1,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-14,764,13,0,1,11,チャーター便,charter flights,other
-2020-02-14,NA,2,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-14,764,13,0,1,11,チャーター便,Charter Flight,other
+2020-02-14,NA,2,0,NA,NA,検疫職員,Quarantine,other
 2020-02-14,NA,218,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-14,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-15,NA,2,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1627,8 +1627,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-15,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-15,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-15,NA,1,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-15,764,13,0,NA,NA,チャーター便,charter flights,other
-2020-02-15,NA,2,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-15,764,13,0,NA,NA,チャーター便,Charter Flight,other
+2020-02-15,NA,2,0,NA,NA,検疫職員,Quarantine,other
 2020-02-15,930,285,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-15,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-16,NA,2,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1678,8 +1678,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-16,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-16,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-16,NA,1,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-16,764,13,0,NA,NA,チャーター便,charter flights,other
-2020-02-16,NA,2,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-16,764,13,0,NA,NA,チャーター便,Charter Flight,other
+2020-02-16,NA,2,0,NA,NA,検疫職員,Quarantine,other
 2020-02-16,1219,355,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-16,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-17,NA,2,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1729,8 +1729,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-17,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-17,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-17,NA,1,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-17,764,13,0,5,8,チャーター便,charter flights,other
-2020-02-17,NA,3,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-17,764,13,0,5,8,チャーター便,Charter Flight,other
+2020-02-17,NA,3,0,NA,NA,検疫職員,Quarantine,other
 2020-02-17,1723,454,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-17,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-18,NA,2,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1780,8 +1780,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-18,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-18,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-18,NA,1,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-18,764,13,0,6,7,チャーター便,charter flights,other
-2020-02-18,NA,3,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-18,764,13,0,6,7,チャーター便,Charter Flight,other
+2020-02-18,NA,3,0,NA,NA,検疫職員,Quarantine,other
 2020-02-18,2404,542,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-18,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-19,NA,4,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1831,8 +1831,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-19,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-19,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-19,NA,2,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-19,764,14,0,6,7,チャーター便,charter flights,other
-2020-02-19,NA,3,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-19,764,14,0,6,7,チャーター便,Charter Flight,other
+2020-02-19,NA,3,0,NA,NA,検疫職員,Quarantine,other
 2020-02-19,3011,621,0,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-19,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-20,NA,5,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1882,8 +1882,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-20,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-20,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-20,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-20,829,14,0,6,8,チャーター便,charter flights,other
-2020-02-20,NA,5,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-20,829,14,0,6,8,チャーター便,Charter Flight,other
+2020-02-20,NA,5,0,NA,NA,検疫職員,Quarantine,other
 2020-02-20,3063,634,2,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-20,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-21,NA,8,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1933,8 +1933,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-21,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-21,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-21,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-21,829,14,0,7,7,チャーター便,charter flights,other
-2020-02-21,NA,5,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-21,829,14,0,7,7,チャーター便,Charter Flight,other
+2020-02-21,NA,5,0,NA,NA,検疫職員,Quarantine,other
 2020-02-21,3063,634,2,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-21,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-22,NA,17,0,NA,NA,北海道,Hokkaido,prefecture
@@ -1984,8 +1984,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-22,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-22,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-22,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-22,829,14,0,7,8,チャーター便,charter flights,other
-2020-02-22,NA,5,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-22,829,14,0,7,8,チャーター便,Charter Flight,other
+2020-02-22,NA,5,0,NA,NA,検疫職員,Quarantine,other
 2020-02-22,NA,634,2,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-22,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-23,NA,26,0,NA,NA,北海道,Hokkaido,prefecture
@@ -2035,8 +2035,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-23,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-23,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-23,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-23,829,14,0,7,8,チャーター便,charter flights,other
-2020-02-23,NA,5,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-23,829,14,0,7,8,チャーター便,Charter Flight,other
+2020-02-23,NA,5,0,NA,NA,検疫職員,Quarantine,other
 2020-02-23,3894,691,3,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-23,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-24,NA,30,0,NA,NA,北海道,Hokkaido,prefecture
@@ -2086,8 +2086,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-24,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-24,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-24,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-24,829,14,0,9,6,チャーター便,charter flights,other
-2020-02-24,NA,7,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-24,829,14,0,9,6,チャーター便,Charter Flight,other
+2020-02-24,NA,7,0,NA,NA,検疫職員,Quarantine,other
 2020-02-24,3894,691,3,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-24,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-25,NA,35,0,NA,NA,北海道,Hokkaido,prefecture
@@ -2137,8 +2137,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-25,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-25,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-25,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-25,829,14,0,9,6,チャーター便,charter flights,other
-2020-02-25,NA,7,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-25,829,14,0,9,6,チャーター便,Charter Flight,other
+2020-02-25,NA,7,0,NA,NA,検疫職員,Quarantine,other
 2020-02-25,3894,691,4,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-25,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-26,NA,39,1,NA,NA,北海道,Hokkaido,prefecture
@@ -2188,8 +2188,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-26,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-26,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-26,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-26,829,14,0,9,6,チャーター便,charter flights,other
-2020-02-26,NA,7,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-26,829,14,0,9,6,チャーター便,Charter Flight,other
+2020-02-26,NA,7,0,NA,NA,検疫職員,Quarantine,other
 2020-02-26,3894,705,4,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-26,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-27,NA,54,2,NA,NA,北海道,Hokkaido,prefecture
@@ -2239,8 +2239,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-27,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-27,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-27,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-27,829,14,0,10,5,チャーター便,charter flights,other
-2020-02-27,NA,8,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-27,829,14,0,10,5,チャーター便,Charter Flight,other
+2020-02-27,NA,8,0,NA,NA,検疫職員,Quarantine,other
 2020-02-27,4061,705,4,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-27,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-28,NA,66,2,NA,NA,北海道,Hokkaido,prefecture
@@ -2290,8 +2290,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-28,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-28,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-28,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-28,829,14,0,11,4,チャーター便,charter flights,other
-2020-02-28,NA,9,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-28,829,14,0,11,4,チャーター便,Charter Flight,other
+2020-02-28,NA,9,0,NA,NA,検疫職員,Quarantine,other
 2020-02-28,4061,705,6,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-28,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-02-29,NA,70,2,NA,NA,北海道,Hokkaido,prefecture
@@ -2341,8 +2341,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-02-29,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-02-29,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-02-29,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-02-29,829,14,0,11,4,チャーター便,charter flights,other
-2020-02-29,NA,9,0,NA,NA,検疫職員,airport quarantine,other
+2020-02-29,829,14,0,11,4,チャーター便,Charter Flight,other
+2020-02-29,NA,9,0,NA,NA,検疫職員,Quarantine,other
 2020-02-29,4061,705,6,NA,NA,クルーズ船,Diamond Princess,other
 2020-02-29,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-01,NA,72,3,NA,NA,北海道,Hokkaido,prefecture
@@ -2392,8 +2392,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-01,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-03-01,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-01,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-03-01,829,14,0,11,4,チャーター便,charter flights,other
-2020-03-01,NA,9,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-01,829,14,0,11,4,チャーター便,Charter Flight,other
+2020-03-01,NA,9,0,NA,NA,検疫職員,Quarantine,other
 2020-03-01,4061,705,6,100,NA,クルーズ船,Diamond Princess,other
 2020-03-01,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-02,NA,77,3,NA,NA,北海道,Hokkaido,prefecture
@@ -2443,8 +2443,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-02,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-03-02,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-02,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-03-02,829,14,0,11,4,チャーター便,charter flights,other
-2020-03-02,NA,9,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-02,829,14,0,11,4,チャーター便,Charter Flight,other
+2020-03-02,NA,9,0,NA,NA,検疫職員,Quarantine,other
 2020-03-02,4061,706,6,NA,NA,クルーズ船,Diamond Princess,other
 2020-03-02,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-03,NA,79,3,NA,NA,北海道,Hokkaido,prefecture
@@ -2494,8 +2494,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-03,NA,0,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-03-03,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-03,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-03-03,829,14,0,11,4,チャーター便,charter flights,other
-2020-03-03,NA,9,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-03,829,14,0,11,4,チャーター便,Charter Flight,other
+2020-03-03,NA,9,0,NA,NA,検疫職員,Quarantine,other
 2020-03-03,4089,706,6,164,NA,クルーズ船,Diamond Princess,other
 2020-03-03,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-04,NA,82,3,NA,NA,北海道,Hokkaido,prefecture
@@ -2545,8 +2545,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-04,NA,1,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-03-04,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-04,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-03-04,829,14,0,11,4,チャーター便,charter flights,other
-2020-03-04,NA,10,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-04,829,14,0,11,4,チャーター便,Charter Flight,other
+2020-03-04,NA,10,0,NA,NA,検疫職員,Quarantine,other
 2020-03-04,4089,688,6,181,NA,クルーズ船,Diamond Princess,other
 2020-03-04,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-05,NA,83,3,NA,NA,北海道,Hokkaido,prefecture
@@ -2596,8 +2596,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-05,NA,1,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-03-05,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-05,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-03-05,829,14,0,11,4,チャーター便,charter flights,other
-2020-03-05,NA,11,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-05,829,14,0,11,4,チャーター便,Charter Flight,other
+2020-03-05,NA,11,0,NA,NA,検疫職員,Quarantine,other
 2020-03-05,3618,696,6,199,NA,クルーズ船,Diamond Princess,other
 2020-03-05,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-06,NA,90,3,NA,NA,北海道,Hokkaido,prefecture
@@ -2647,8 +2647,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-06,NA,1,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-03-06,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-06,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-03-06,829,14,0,13,2,チャーター便,charter flights,other
-2020-03-06,NA,11,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-06,829,14,0,13,2,チャーター便,Charter Flight,other
+2020-03-06,NA,11,0,NA,NA,検疫職員,Quarantine,other
 2020-03-06,3618,696,6,242,NA,クルーズ船,Diamond Princess,other
 2020-03-06,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-07,NA,98,3,NA,NA,北海道,Hokkaido,prefecture
@@ -2698,8 +2698,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-07,NA,1,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-03-07,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-07,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-03-07,829,14,0,13,2,チャーター便,charter flights,other
-2020-03-07,NA,11,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-07,829,14,0,13,2,チャーター便,Charter Flight,other
+2020-03-07,NA,11,0,NA,NA,検疫職員,Quarantine,other
 2020-03-07,3618,696,7,245,NA,クルーズ船,Diamond Princess,other
 2020-03-07,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-08,NA,101,3,NA,NA,北海道,Hokkaido,prefecture
@@ -2749,8 +2749,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-08,NA,1,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-03-08,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-08,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-03-08,829,14,0,13,2,チャーター便,charter flights,other
-2020-03-08,NA,11,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-08,829,14,0,13,2,チャーター便,Charter Flight,other
+2020-03-08,NA,11,0,NA,NA,検疫職員,Quarantine,other
 2020-03-08,3618,696,7,245,NA,クルーズ船,Diamond Princess,other
 2020-03-08,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-09,NA,108,3,NA,NA,北海道,Hokkaido,prefecture
@@ -2800,8 +2800,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-09,NA,1,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-03-09,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-09,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-03-09,829,14,0,13,2,チャーター便,charter flights,other
-2020-03-09,NA,11,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-09,829,14,0,13,2,チャーター便,Charter Flight,other
+2020-03-09,NA,11,0,NA,NA,検疫職員,Quarantine,other
 2020-03-09,3618,696,7,245,NA,クルーズ船,Diamond Princess,other
 2020-03-09,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-10,NA,111,3,NA,NA,北海道,Hokkaido,prefecture
@@ -2851,8 +2851,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-10,NA,1,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-03-10,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-10,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-03-10,829,14,0,13,2,チャーター便,charter flights,other
-2020-03-10,NA,11,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-10,829,14,0,13,2,チャーター便,Charter Flight,other
+2020-03-10,NA,11,0,NA,NA,検疫職員,Quarantine,other
 2020-03-10,3618,696,7,325,NA,クルーズ船,Diamond Princess,other
 2020-03-10,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-11,NA,118,3,NA,NA,北海道,Hokkaido,prefecture
@@ -2902,8 +2902,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-11,NA,1,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-03-11,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-11,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-03-11,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-11,NA,11,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-11,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-11,NA,11,0,NA,NA,検疫職員,Quarantine,other
 2020-03-11,3618,696,7,357,NA,クルーズ船,Diamond Princess,other
 2020-03-11,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-12,NA,128,4,NA,NA,北海道,Hokkaido,prefecture
@@ -2953,8 +2953,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-12,NA,1,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-03-12,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-12,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-03-12,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-12,NA,11,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-12,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-12,NA,11,0,NA,NA,検疫職員,Quarantine,other
 2020-03-12,3618,697,7,388,NA,クルーズ船,Diamond Princess,other
 2020-03-12,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-13,NA,137,4,NA,NA,北海道,Hokkaido,prefecture
@@ -3004,8 +3004,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-13,NA,1,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-03-13,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-13,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-03-13,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-13,NA,13,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-13,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-13,NA,13,0,NA,NA,検疫職員,Quarantine,other
 2020-03-13,3618,697,7,390,NA,クルーズ船,Diamond Princess,other
 2020-03-13,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-14,NA,144,4,NA,NA,北海道,Hokkaido,prefecture
@@ -3055,8 +3055,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-14,NA,1,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-03-14,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-14,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-03-14,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-14,NA,13,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-14,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-14,NA,13,0,NA,NA,検疫職員,Quarantine,other
 2020-03-14,3618,697,7,456,NA,クルーズ船,Diamond Princess,other
 2020-03-14,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-15,NA,148,5,NA,NA,北海道,Hokkaido,prefecture
@@ -3106,8 +3106,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-15,NA,1,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-03-15,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-15,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-03-15,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-15,NA,15,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-15,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-15,NA,15,0,NA,NA,検疫職員,Quarantine,other
 2020-03-15,3618,712,7,458,NA,クルーズ船,Diamond Princess,other
 2020-03-15,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-16,NA,152,6,NA,NA,北海道,Hokkaido,prefecture
@@ -3157,8 +3157,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-16,NA,1,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-03-16,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-16,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-03-16,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-16,NA,15,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-16,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-16,NA,15,0,NA,NA,検疫職員,Quarantine,other
 2020-03-16,3618,712,7,458,NA,クルーズ船,Diamond Princess,other
 2020-03-16,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-17,NA,152,6,NA,NA,北海道,Hokkaido,prefecture
@@ -3208,8 +3208,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-17,NA,3,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-03-17,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-17,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-03-17,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-17,NA,15,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-17,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-17,NA,15,0,NA,NA,検疫職員,Quarantine,other
 2020-03-17,3618,712,7,508,NA,クルーズ船,Diamond Princess,other
 2020-03-17,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-18,NA,154,6,NA,NA,北海道,Hokkaido,prefecture
@@ -3259,8 +3259,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-18,NA,3,0,NA,NA,宮崎,Miyazaki,prefecture
 2020-03-18,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-18,NA,3,0,NA,NA,沖縄,Okinawa,prefecture
-2020-03-18,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-18,NA,17,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-18,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-18,NA,17,0,NA,NA,検疫職員,Quarantine,other
 2020-03-18,3618,712,7,527,NA,クルーズ船,Diamond Princess,other
 2020-03-18,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-19,NA,157,6,69,77,北海道,Hokkaido,prefecture
@@ -3310,8 +3310,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-19,NA,3,0,0,3,宮崎,Miyazaki,prefecture
 2020-03-19,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-19,NA,3,0,2,1,沖縄,Okinawa,prefecture
-2020-03-19,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-19,NA,17,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-19,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-19,NA,17,0,NA,NA,検疫職員,Quarantine,other
 2020-03-19,3618,712,7,551,NA,クルーズ船,Diamond Princess,other
 2020-03-19,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-20,NA,158,6,69,80,北海道,Hokkaido,prefecture
@@ -3361,8 +3361,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-20,NA,3,0,0,3,宮崎,Miyazaki,prefecture
 2020-03-20,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-20,NA,3,0,2,1,沖縄,Okinawa,prefecture
-2020-03-20,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-20,NA,21,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-20,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-20,NA,21,0,NA,NA,検疫職員,Quarantine,other
 2020-03-20,3618,712,8,567,NA,クルーズ船,Diamond Princess,other
 2020-03-20,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-21,NA,159,6,69,82,北海道,Hokkaido,prefecture
@@ -3412,8 +3412,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-21,NA,3,0,0,3,宮崎,Miyazaki,prefecture
 2020-03-21,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-21,NA,3,0,2,1,沖縄,Okinawa,prefecture
-2020-03-21,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-21,NA,26,0,NA,NA,検疫職員,airport quarantine,other
+2020-03-21,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-21,NA,26,0,NA,NA,検疫職員,Quarantine,other
 2020-03-21,3618,712,8,567,NA,クルーズ船,Diamond Princess,other
 2020-03-21,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-22,NA,162,6,81,71,北海道,Hokkaido,prefecture
@@ -3463,8 +3463,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-22,NA,3,0,0,3,宮崎,Miyazaki,prefecture
 2020-03-22,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-22,NA,3,0,2,1,沖縄,Okinawa,prefecture
-2020-03-22,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-22,1173,27,0,0,16,検疫職員,airport quarantine,other
+2020-03-22,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-22,1173,27,0,0,16,検疫職員,Quarantine,other
 2020-03-22,3618,712,8,574,NA,クルーズ船,Diamond Princess,other
 2020-03-22,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-23,NA,162,6,83,72,北海道,Hokkaido,prefecture
@@ -3514,8 +3514,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-23,NA,3,0,0,3,宮崎,Miyazaki,prefecture
 2020-03-23,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-23,NA,4,0,2,1,沖縄,Okinawa,prefecture
-2020-03-23,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-23,1189,28,0,0,17,検疫職員,airport quarantine,other
+2020-03-23,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-23,1189,28,0,0,17,検疫職員,Quarantine,other
 2020-03-23,3618,712,10,587,NA,クルーズ船,Diamond Princess,other
 2020-03-23,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-24,1775,163,6,90,65,北海道,Hokkaido,prefecture
@@ -3565,8 +3565,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-24,197,3,0,0,3,宮崎,Miyazaki,prefecture
 2020-03-24,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-24,263,5,0,2,1,沖縄,Okinawa,prefecture
-2020-03-24,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-24,1417,28,0,1,17,検疫職員,airport quarantine,other
+2020-03-24,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-24,1417,28,0,1,17,検疫職員,Quarantine,other
 2020-03-24,3618,712,10,590,NA,クルーズ船,Diamond Princess,other
 2020-03-24,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-25,1794,167,7,93,63,北海道,Hokkaido,prefecture
@@ -3616,8 +3616,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-25,205,3,0,1,2,宮崎,Miyazaki,prefecture
 2020-03-25,NA,0,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-25,271,5,0,2,2,沖縄,Okinawa,prefecture
-2020-03-25,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-25,1426,33,0,1,17,検疫職員,airport quarantine,other
+2020-03-25,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-25,1426,33,0,1,17,検疫職員,Quarantine,other
 2020-03-25,3618,712,10,597,NA,クルーズ船,Diamond Princess,other
 2020-03-25,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-26,1821,168,7,98,61,北海道,Hokkaido,prefecture
@@ -3667,8 +3667,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-26,222,3,0,1,2,宮崎,Miyazaki,prefecture
 2020-03-26,NA,1,0,NA,NA,鹿児島,Kagoshima,prefecture
 2020-03-26,271,6,0,2,2,沖縄,Okinawa,prefecture
-2020-03-26,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-26,1484,33,0,1,22,検疫職員,airport quarantine,other
+2020-03-26,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-26,1484,33,0,1,22,検疫職員,Quarantine,other
 2020-03-26,3618,712,10,601,NA,クルーズ船,Diamond Princess,other
 2020-03-26,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-27,1929,169,7,98,62,北海道,Hokkaido,prefecture
@@ -3718,8 +3718,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-27,235,3,0,1,2,宮崎,Miyazaki,prefecture
 2020-03-27,215,1,0,0,1,鹿児島,Kagoshima,prefecture
 2020-03-27,285,6,0,2,2,沖縄,Okinawa,prefecture
-2020-03-27,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-27,1513,41,0,1,22,検疫職員,airport quarantine,other
+2020-03-27,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-27,1513,41,0,1,22,検疫職員,Quarantine,other
 2020-03-27,3618,712,10,603,NA,クルーズ船,Diamond Princess,other
 2020-03-27,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-28,1976,171,7,114,47,北海道,Hokkaido,prefecture
@@ -3769,8 +3769,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-28,236,3,0,1,2,宮崎,Miyazaki,prefecture
 2020-03-28,219,1,0,0,1,鹿児島,Kagoshima,prefecture
 2020-03-28,303,8,0,2,4,沖縄,Okinawa,prefecture
-2020-03-28,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-28,1530,41,0,1,30,検疫職員,airport quarantine,other
+2020-03-28,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-28,1530,41,0,1,30,検疫職員,Quarantine,other
 2020-03-28,3618,712,10,603,NA,クルーズ船,Diamond Princess,other
 2020-03-28,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-29,1976,175,7,121,44,北海道,Hokkaido,prefecture
@@ -3820,8 +3820,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-29,241,3,0,1,2,宮崎,Miyazaki,prefecture
 2020-03-29,219,1,0,0,1,鹿児島,Kagoshima,prefecture
 2020-03-29,303,8,0,2,4,沖縄,Okinawa,prefecture
-2020-03-29,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-29,1530,41,0,1,30,検疫職員,airport quarantine,other
+2020-03-29,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-29,1530,41,0,1,30,検疫職員,Quarantine,other
 2020-03-29,3618,712,10,603,NA,クルーズ船,Diamond Princess,other
 2020-03-29,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-30,1976,176,7,121,48,北海道,Hokkaido,prefecture
@@ -3871,8 +3871,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-30,242,3,0,1,2,宮崎,Miyazaki,prefecture
 2020-03-30,219,1,0,0,1,鹿児島,Kagoshima,prefecture
 2020-03-30,303,9,0,2,6,沖縄,Okinawa,prefecture
-2020-03-30,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-30,1530,61,0,1,30,検疫職員,airport quarantine,other
+2020-03-30,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-30,1530,61,0,1,30,検疫職員,Quarantine,other
 2020-03-30,3618,712,11,603,NA,クルーズ船,Diamond Princess,other
 2020-03-30,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-03-31,2076,176,7,121,49,北海道,Hokkaido,prefecture
@@ -3922,8 +3922,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-03-31,272,3,0,1,2,宮崎,Miyazaki,prefecture
 2020-03-31,263,1,0,0,1,鹿児島,Kagoshima,prefecture
 2020-03-31,332,9,0,2,7,沖縄,Okinawa,prefecture
-2020-03-31,829,14,0,15,0,チャーター便,charter flights,other
-2020-03-31,1580,66,0,1,50,検疫職員,airport quarantine,other
+2020-03-31,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-03-31,1580,66,0,1,50,検疫職員,Quarantine,other
 2020-03-31,3618,712,11,619,NA,クルーズ船,Diamond Princess,other
 2020-03-31,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-01,2096,180,7,124,46,北海道,Hokkaido,prefecture
@@ -3973,8 +3973,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-01,284,3,0,1,2,宮崎,Miyazaki,prefecture
 2020-04-01,265,2,0,0,1,鹿児島,Kagoshima,prefecture
 2020-04-01,356,9,0,2,7,沖縄,Okinawa,prefecture
-2020-04-01,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-01,1677,70,0,1,55,検疫職員,airport quarantine,other
+2020-04-01,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-01,1677,70,0,1,55,検疫職員,Quarantine,other
 2020-04-01,3618,712,11,619,NA,クルーズ船,Diamond Princess,other
 2020-04-01,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-02,2096,183,8,131,44,北海道,Hokkaido,prefecture
@@ -4024,8 +4024,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-02,284,3,0,1,2,宮崎,Miyazaki,prefecture
 2020-04-02,265,3,0,0,2,鹿児島,Kagoshima,prefecture
 2020-04-02,356,9,0,2,7,沖縄,Okinawa,prefecture
-2020-04-02,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-02,1679,70,0,1,59,検疫職員,airport quarantine,other
+2020-04-02,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-02,1679,70,0,1,59,検疫職員,Quarantine,other
 2020-04-02,3618,712,11,619,NA,クルーズ船,Diamond Princess,other
 2020-04-02,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-03,2218,188,8,131,46,北海道,Hokkaido,prefecture
@@ -4075,8 +4075,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-03,326,7,0,1,2,宮崎,Miyazaki,prefecture
 2020-04-03,308,3,0,0,3,鹿児島,Kagoshima,prefecture
 2020-04-03,399,11,0,2,7,沖縄,Okinawa,prefecture
-2020-04-03,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-03,1930,74,0,1,60,検疫職員,airport quarantine,other
+2020-04-03,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-03,1930,74,0,1,60,検疫職員,Quarantine,other
 2020-04-03,3618,712,11,619,NA,クルーズ船,Diamond Princess,other
 2020-04-03,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-04,2296,191,8,131,46,北海道,Hokkaido,prefecture
@@ -4126,8 +4126,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-04,338,8,0,1,2,宮崎,Miyazaki,prefecture
 2020-04-04,346,3,0,0,3,鹿児島,Kagoshima,prefecture
 2020-04-04,430,16,0,2,7,沖縄,Okinawa,prefecture
-2020-04-04,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-04,2061,74,0,1,64,検疫職員,airport quarantine,other
+2020-04-04,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-04,2061,74,0,1,64,検疫職員,Quarantine,other
 2020-04-04,3618,712,11,619,NA,クルーズ船,Diamond Princess,other
 2020-04-04,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-05,2296,191,8,130,55,北海道,Hokkaido,prefecture
@@ -4177,8 +4177,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-05,346,10,0,2,2,宮崎,Miyazaki,prefecture
 2020-04-05,346,3,0,0,3,鹿児島,Kagoshima,prefecture
 2020-04-05,430,16,0,2,7,沖縄,Okinawa,prefecture
-2020-04-05,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-05,3547,79,0,1,64,検疫職員,airport quarantine,other
+2020-04-05,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-05,3547,79,0,1,64,検疫職員,Quarantine,other
 2020-04-05,3618,712,11,619,NA,クルーズ船,Diamond Princess,other
 2020-04-05,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-06,2296,191,9,130,56,北海道,Hokkaido,prefecture
@@ -4228,8 +4228,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-06,356,11,0,2,4,宮崎,Miyazaki,prefecture
 2020-04-06,346,3,0,0,3,鹿児島,Kagoshima,prefecture
 2020-04-06,430,22,0,2,7,沖縄,Okinawa,prefecture
-2020-04-06,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-06,4862,83,0,2,68,検疫職員,airport quarantine,other
+2020-04-06,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-06,4862,83,0,2,68,検疫職員,Quarantine,other
 2020-04-06,3618,712,11,619,NA,クルーズ船,Diamond Princess,other
 2020-04-06,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-07,2445,195,9,141,44,北海道,Hokkaido,prefecture
@@ -4279,8 +4279,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-07,425,12,0,3,4,宮崎,Miyazaki,prefecture
 2020-04-07,414,3,0,0,3,鹿児島,Kagoshima,prefecture
 2020-04-07,480,33,0,2,13,沖縄,Okinawa,prefecture
-2020-04-07,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-07,6125,83,0,2,72,検疫職員,airport quarantine,other
+2020-04-07,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-07,6125,83,0,2,72,検疫職員,Quarantine,other
 2020-04-07,3618,712,11,620,NA,クルーズ船,Diamond Princess,other
 2020-04-07,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-08,2476,205,9,143,46,北海道,Hokkaido,prefecture
@@ -4330,8 +4330,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-08,453,16,0,3,4,宮崎,Miyazaki,prefecture
 2020-04-08,449,4,0,0,3,鹿児島,Kagoshima,prefecture
 2020-04-08,521,38,0,2,25,沖縄,Okinawa,prefecture
-2020-04-08,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-08,7768,95,0,2,72,検疫職員,airport quarantine,other
+2020-04-08,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-08,7768,95,0,2,72,検疫職員,Quarantine,other
 2020-04-08,3618,712,11,638,NA,クルーズ船,Diamond Princess,other
 2020-04-08,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-09,2488,223,10,146,53,北海道,Hokkaido,prefecture
@@ -4381,8 +4381,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-09,498,16,0,3,9,宮崎,Miyazaki,prefecture
 2020-04-09,483,4,0,0,3,鹿児島,Kagoshima,prefecture
 2020-04-09,588,41,0,3,29,沖縄,Okinawa,prefecture
-2020-04-09,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-09,9274,95,0,2,84,検疫職員,airport quarantine,other
+2020-04-09,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-09,9274,95,0,2,84,検疫職員,Quarantine,other
 2020-04-09,3618,712,11,638,NA,クルーズ船,Diamond Princess,other
 2020-04-09,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-10,2488,236,10,145,71,北海道,Hokkaido,prefecture
@@ -4432,8 +4432,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-10,545,16,0,3,13,宮崎,Miyazaki,prefecture
 2020-04-10,483,4,0,0,3,鹿児島,Kagoshima,prefecture
 2020-04-10,619,48,0,3,39,沖縄,Okinawa,prefecture
-2020-04-10,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-10,10817,97,0,2,84,検疫職員,airport quarantine,other
+2020-04-10,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-10,10817,97,0,2,84,検疫職員,Quarantine,other
 2020-04-10,3618,712,12,639,NA,クルーズ船,Diamond Princess,other
 2020-04-10,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-11,2690,252,10,148,80,北海道,Hokkaido,prefecture
@@ -4483,8 +4483,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-11,585,17,0,3,13,宮崎,Miyazaki,prefecture
 2020-04-11,523,4,0,0,3,鹿児島,Kagoshima,prefecture
 2020-04-11,680,56,0,3,46,沖縄,Okinawa,prefecture
-2020-04-11,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-11,12071,126,0,2,86,検疫職員,airport quarantine,other
+2020-04-11,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-11,12071,126,0,2,86,検疫職員,Quarantine,other
 2020-04-11,3618,712,12,644,NA,クルーズ船,Diamond Princess,other
 2020-04-11,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-12,2836,264,11,158,86,北海道,Hokkaido,prefecture
@@ -4534,8 +4534,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-12,612,17,0,3,14,宮崎,Miyazaki,prefecture
 2020-04-12,523,4,0,0,4,鹿児島,Kagoshima,prefecture
 2020-04-12,680,65,0,3,46,沖縄,Okinawa,prefecture
-2020-04-12,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-12,13420,126,0,2,115,検疫職員,airport quarantine,other
+2020-04-12,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-12,13420,126,0,2,115,検疫職員,Quarantine,other
 2020-04-12,3618,712,12,644,NA,クルーズ船,Diamond Princess,other
 2020-04-12,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-13,2836,269,11,158,98,北海道,Hokkaido,prefecture
@@ -4585,8 +4585,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-13,612,17,0,3,14,宮崎,Miyazaki,prefecture
 2020-04-13,523,4,0,0,4,鹿児島,Kagoshima,prefecture
 2020-04-13,680,72,0,3,63,沖縄,Okinawa,prefecture
-2020-04-13,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-13,14741,130,0,2,115,検疫職員,airport quarantine,other
+2020-04-13,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-13,14741,130,0,2,115,検疫職員,Quarantine,other
 2020-04-13,3618,712,12,644,NA,クルーズ船,Diamond Princess,other
 2020-04-13,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-14,3257,287,13,161,100,北海道,Hokkaido,prefecture
@@ -4636,8 +4636,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-14,703,17,0,3,14,宮崎,Miyazaki,prefecture
 2020-04-14,614,4,0,0,4,鹿児島,Kagoshima,prefecture
 2020-04-14,816,76,0,3,69,沖縄,Okinawa,prefecture
-2020-04-14,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-14,15921,130,0,2,119,検疫職員,airport quarantine,other
+2020-04-14,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-14,15921,130,0,2,119,検疫職員,Quarantine,other
 2020-04-14,3618,712,12,644,NA,クルーズ船,Diamond Princess,other
 2020-04-14,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-15,3297,310,14,161,106,北海道,Hokkaido,prefecture
@@ -4687,8 +4687,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-15,733,17,0,3,14,宮崎,Miyazaki,prefecture
 2020-04-15,628,4,0,0,4,鹿児島,Kagoshima,prefecture
 2020-04-15,856,86,0,3,73,沖縄,Okinawa,prefecture
-2020-04-15,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-15,16982,134,0,2,119,検疫職員,airport quarantine,other
+2020-04-15,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-15,16982,134,0,2,119,検疫職員,Quarantine,other
 2020-04-15,3618,712,13,645,NA,クルーズ船,Diamond Princess,other
 2020-04-15,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-16,3473,332,14,161,128,北海道,Hokkaido,prefecture
@@ -4738,8 +4738,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-16,790,17,0,4,13,宮崎,Miyazaki,prefecture
 2020-04-16,699,4,0,0,4,鹿児島,Kagoshima,prefecture
 2020-04-16,931,94,1,3,83,沖縄,Okinawa,prefecture
-2020-04-16,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-16,18049,134,0,2,123,検疫職員,airport quarantine,other
+2020-04-16,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-16,18049,134,0,2,123,検疫職員,Quarantine,other
 2020-04-16,3618,712,13,645,NA,クルーズ船,Diamond Princess,other
 2020-04-16,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-17,3625,364,16,163,159,北海道,Hokkaido,prefecture
@@ -4789,8 +4789,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-17,802,17,0,4,13,宮崎,Miyazaki,prefecture
 2020-04-17,657,6,0,1,3,鹿児島,Kagoshima,prefecture
 2020-04-17,1025,101,1,6,79,沖縄,Okinawa,prefecture
-2020-04-17,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-17,18743,135,0,2,123,検疫職員,airport quarantine,other
+2020-04-17,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-17,18743,135,0,2,123,検疫職員,Quarantine,other
 2020-04-17,3618,712,13,645,NA,クルーズ船,Diamond Princess,other
 2020-04-17,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-18,3735,402,18,171,185,北海道,Hokkaido,prefecture
@@ -4840,8 +4840,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-18,841,17,0,4,13,宮崎,Miyazaki,prefecture
 2020-04-18,732,7,0,1,5,鹿児島,Kagoshima,prefecture
 2020-04-18,1030,110,1,6,94,沖縄,Okinawa,prefecture
-2020-04-18,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-18,19446,136,0,2,124,検疫職員,airport quarantine,other
+2020-04-18,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-18,19446,136,0,2,124,検疫職員,Quarantine,other
 2020-04-18,3618,712,13,644,NA,クルーズ船,Diamond Princess,other
 2020-04-18,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-19,3768,429,18,171,220,北海道,Hokkaido,prefecture
@@ -4891,8 +4891,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-19,841,17,0,4,13,宮崎,Miyazaki,prefecture
 2020-04-19,734,8,0,1,6,鹿児島,Kagoshima,prefecture
 2020-04-19,1030,115,3,6,94,沖縄,Okinawa,prefecture
-2020-04-19,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-19,20292,137,0,2,125,検疫職員,airport quarantine,other
+2020-04-19,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-19,20292,137,0,2,125,検疫職員,Quarantine,other
 2020-04-19,3618,712,13,644,NA,クルーズ船,Diamond Princess,other
 2020-04-19,NA,0,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-20,3987,446,21,171,245,北海道,Hokkaido,prefecture
@@ -4942,8 +4942,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-20,841,17,0,4,13,宮崎,Miyazaki,prefecture
 2020-04-20,734,10,0,1,7,鹿児島,Kagoshima,prefecture
 2020-04-20,1213,121,3,6,103,沖縄,Okinawa,prefecture
-2020-04-20,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-20,21070,139,0,2,126,検疫職員,airport quarantine,other
+2020-04-20,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-20,21070,139,0,2,126,検疫職員,Quarantine,other
 2020-04-20,3618,712,13,645,NA,クルーズ船,Diamond Princess,other
 2020-04-20,4,0,0,0,1,伊客船,Costa Atlantica,other
 2020-04-21,4245,468,23,171,262,北海道,Hokkaido,prefecture
@@ -4993,8 +4993,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-21,925,17,0,4,13,宮崎,Miyazaki,prefecture
 2020-04-21,841,10,0,1,9,鹿児島,Kagoshima,prefecture
 2020-04-21,1292,125,3,11,107,沖縄,Okinawa,prefecture
-2020-04-21,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-21,21903,140,0,2,128,検疫職員,airport quarantine,other
+2020-04-21,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-21,21903,140,0,2,128,検疫職員,Quarantine,other
 2020-04-21,3618,712,13,645,NA,クルーズ船,Diamond Princess,other
 2020-04-21,4,1,0,0,1,伊客船,Costa Atlantica,other
 2020-04-22,4554,490,25,179,273,北海道,Hokkaido,prefecture
@@ -5044,8 +5044,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-22,943,17,0,4,13,宮崎,Miyazaki,prefecture
 2020-04-22,852,10,0,2,8,鹿児島,Kagoshima,prefecture
 2020-04-22,1420,130,3,11,111,沖縄,Okinawa,prefecture
-2020-04-22,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-22,22328,142,0,2,129,検疫職員,airport quarantine,other
+2020-04-22,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-22,22328,142,0,2,129,検疫職員,Quarantine,other
 2020-04-22,3618,712,13,645,NA,クルーズ船,Diamond Princess,other
 2020-04-22,NA,34,0,NA,NA,伊客船,Costa Atlantica,other
 2020-04-23,4803,535,25,188,285,北海道,Hokkaido,prefecture
@@ -5095,8 +5095,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-23,965,17,0,4,13,宮崎,Miyazaki,prefecture
 2020-04-23,895,10,0,2,8,鹿児島,Kagoshima,prefecture
 2020-04-23,1583,132,4,11,116,沖縄,Okinawa,prefecture
-2020-04-23,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-23,23046,143,0,2,130,検疫職員,airport quarantine,other
+2020-04-23,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-23,23046,143,0,2,130,検疫職員,Quarantine,other
 2020-04-23,3618,712,13,645,NA,クルーズ船,Diamond Princess,other
 2020-04-23,61,48,0,0,34,伊客船,Costa Atlantica,other
 2020-04-24,5112,557,25,195,320,北海道,Hokkaido,prefecture
@@ -5146,8 +5146,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-24,993,17,0,7,10,宮崎,Miyazaki,prefecture
 2020-04-24,1017,10,0,2,8,鹿児島,Kagoshima,prefecture
 2020-04-24,1589,133,4,11,118,沖縄,Okinawa,prefecture
-2020-04-24,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-24,23404,143,0,2,131,検疫職員,airport quarantine,other
+2020-04-24,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-24,23404,143,0,2,131,検疫職員,Quarantine,other
 2020-04-24,3618,712,13,645,NA,クルーズ船,Diamond Princess,other
 2020-04-24,127,91,0,0,48,伊客船,Costa Atlantica,other
 2020-04-25,5362,596,25,196,341,北海道,Hokkaido,prefecture
@@ -5197,8 +5197,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-25,1010,17,0,7,10,宮崎,Miyazaki,prefecture
 2020-04-25,1109,10,0,3,7,鹿児島,Kagoshima,prefecture
 2020-04-25,1715,134,4,11,118,沖縄,Okinawa,prefecture
-2020-04-25,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-25,23925,146,0,2,131,検疫職員,airport quarantine,other
+2020-04-25,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-25,23925,146,0,2,131,検疫職員,Quarantine,other
 2020-04-25,3618,712,13,649,NA,クルーズ船,Diamond Princess,other
 2020-04-25,335,148,0,0,91,伊客船,Costa Atlantica,other
 2020-04-26,5362,610,25,201,375,北海道,Hokkaido,prefecture
@@ -5248,8 +5248,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-26,1010,17,0,7,10,宮崎,Miyazaki,prefecture
 2020-04-26,1109,10,0,3,7,鹿児島,Kagoshima,prefecture
 2020-04-26,1715,137,4,11,118,沖縄,Okinawa,prefecture
-2020-04-26,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-26,24612,148,0,2,134,検疫職員,airport quarantine,other
+2020-04-26,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-26,24612,148,0,2,134,検疫職員,Quarantine,other
 2020-04-26,3618,712,13,649,NA,クルーズ船,Diamond Princess,other
 2020-04-26,623,148,0,0,148,伊客船,Costa Atlantica,other
 2020-04-27,5362,645,26,202,388,北海道,Hokkaido,prefecture
@@ -5299,8 +5299,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-27,1010,17,0,8,9,宮崎,Miyazaki,prefecture
 2020-04-27,1109,10,0,3,7,鹿児島,Kagoshima,prefecture
 2020-04-27,1715,137,4,11,118,沖縄,Okinawa,prefecture
-2020-04-27,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-27,25407,149,0,2,136,検疫職員,airport quarantine,other
+2020-04-27,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-27,25407,149,0,2,136,検疫職員,Quarantine,other
 2020-04-27,3618,712,13,649,NA,クルーズ船,Diamond Princess,other
 2020-04-27,623,148,0,0,148,伊客船,Costa Atlantica,other
 2020-04-28,6149,683,27,202,422,北海道,Hokkaido,prefecture
@@ -5350,8 +5350,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-28,1053,17,0,9,8,宮崎,Miyazaki,prefecture
 2020-04-28,1176,10,0,4,6,鹿児島,Kagoshima,prefecture
 2020-04-28,1896,141,4,23,110,沖縄,Okinawa,prefecture
-2020-04-28,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-28,26139,152,0,2,137,検疫職員,airport quarantine,other
+2020-04-28,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-28,26139,152,0,2,137,検疫職員,Quarantine,other
 2020-04-28,3618,712,13,651,NA,クルーズ船,Diamond Princess,other
 2020-04-28,623,148,0,0,148,伊客船,Costa Atlantica,other
 2020-04-29,6312,721,27,202,460,北海道,Hokkaido,prefecture
@@ -5401,8 +5401,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-29,1068,17,0,10,7,宮崎,Miyazaki,prefecture
 2020-04-29,1199,10,0,4,6,鹿児島,Kagoshima,prefecture
 2020-04-29,1918,141,4,24,113,沖縄,Okinawa,prefecture
-2020-04-29,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-29,26731,154,0,2,140,検疫職員,airport quarantine,other
+2020-04-29,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-29,26731,154,0,2,140,検疫職員,Quarantine,other
 2020-04-29,3618,712,13,651,NA,クルーズ船,Diamond Princess,other
 2020-04-29,623,148,0,0,148,伊客船,Costa Atlantica,other
 2020-04-30,6312,762,29,209,491,北海道,Hokkaido,prefecture
@@ -5452,8 +5452,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-04-30,1068,17,0,10,7,宮崎,Miyazaki,prefecture
 2020-04-30,1199,10,0,4,6,鹿児島,Kagoshima,prefecture
 2020-04-30,1918,142,5,24,113,沖縄,Okinawa,prefecture
-2020-04-30,829,14,0,15,0,チャーター便,charter flights,other
-2020-04-30,27442,156,0,2,142,検疫職員,airport quarantine,other
+2020-04-30,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-04-30,27442,156,0,2,142,検疫職員,Quarantine,other
 2020-04-30,3618,712,13,651,NA,クルーズ船,Diamond Princess,other
 2020-04-30,623,148,0,0,148,伊客船,Costa Atlantica,other
 2020-05-01,6892,785,37,209,531,北海道,Hokkaido,prefecture
@@ -5503,8 +5503,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-01,1105,17,0,11,6,宮崎,Miyazaki,prefecture
 2020-05-01,1260,10,0,4,6,鹿児島,Kagoshima,prefecture
 2020-05-01,2113,142,5,24,114,沖縄,Okinawa,prefecture
-2020-05-01,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-01,28078,156,0,2,144,検疫職員,airport quarantine,other
+2020-05-01,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-01,28078,156,0,2,144,検疫職員,Quarantine,other
 2020-05-01,3618,712,13,651,NA,クルーズ船,Diamond Princess,other
 2020-05-01,623,148,0,0,148,伊客船,Costa Atlantica,other
 2020-05-02,7054,818,40,248,513,北海道,Hokkaido,prefecture
@@ -5554,8 +5554,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-02,1122,17,0,11,6,宮崎,Miyazaki,prefecture
 2020-05-02,1287,10,0,4,6,鹿児島,Kagoshima,prefecture
 2020-05-02,2155,142,5,24,114,沖縄,Okinawa,prefecture
-2020-05-02,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-02,28669,157,0,2,144,検疫職員,airport quarantine,other
+2020-05-02,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-02,28669,157,0,2,144,検疫職員,Quarantine,other
 2020-05-02,3618,712,13,651,NA,クルーズ船,Diamond Princess,other
 2020-05-02,623,148,0,0,148,伊客船,Costa Atlantica,other
 2020-05-03,7054,843,41,248,546,北海道,Hokkaido,prefecture
@@ -5605,8 +5605,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-03,1122,17,0,11,6,宮崎,Miyazaki,prefecture
 2020-05-03,1287,10,0,4,6,鹿児島,Kagoshima,prefecture
 2020-05-03,2211,142,5,24,114,沖縄,Okinawa,prefecture
-2020-05-03,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-03,29375,157,0,2,145,検疫職員,airport quarantine,other
+2020-05-03,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-03,29375,157,0,2,145,検疫職員,Quarantine,other
 2020-05-03,3618,712,13,651,NA,クルーズ船,Diamond Princess,other
 2020-05-03,623,148,0,0,148,伊客船,Costa Atlantica,other
 2020-05-04,7054,874,43,248,566,北海道,Hokkaido,prefecture
@@ -5656,8 +5656,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-04,1122,17,0,11,6,宮崎,Miyazaki,prefecture
 2020-05-04,1287,10,0,4,6,鹿児島,Kagoshima,prefecture
 2020-05-04,2211,142,5,24,114,沖縄,Okinawa,prefecture
-2020-05-04,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-04,30176,157,0,2,145,検疫職員,airport quarantine,other
+2020-05-04,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-04,30176,157,0,2,145,検疫職員,Quarantine,other
 2020-05-04,3618,712,13,651,NA,クルーズ船,Diamond Princess,other
 2020-05-04,623,149,0,0,148,伊客船,Costa Atlantica,other
 2020-05-05,7054,885,45,254,589,北海道,Hokkaido,prefecture
@@ -5707,8 +5707,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-05,1122,17,0,11,6,宮崎,Miyazaki,prefecture
 2020-05-05,1287,10,0,4,6,鹿児島,Kagoshima,prefecture
 2020-05-05,2211,142,5,24,114,沖縄,Okinawa,prefecture
-2020-05-05,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-05,30868,157,0,2,145,検疫職員,airport quarantine,other
+2020-05-05,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-05,30868,157,0,2,145,検疫職員,Quarantine,other
 2020-05-05,3618,712,13,651,NA,クルーズ船,Diamond Princess,other
 2020-05-05,623,149,0,0,149,伊客船,Costa Atlantica,other
 2020-05-06,7054,907,46,286,562,北海道,Hokkaido,prefecture
@@ -5758,8 +5758,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-06,1122,17,0,11,6,宮崎,Miyazaki,prefecture
 2020-05-06,1287,10,0,4,6,鹿児島,Kagoshima,prefecture
 2020-05-06,2211,142,5,24,114,沖縄,Okinawa,prefecture
-2020-05-06,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-06,31232,158,0,2,145,検疫職員,airport quarantine,other
+2020-05-06,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-06,31232,158,0,2,145,検疫職員,Quarantine,other
 2020-05-06,3618,712,13,651,NA,クルーズ船,Diamond Princess,other
 2020-05-06,623,149,0,0,149,伊客船,Costa Atlantica,other
 2020-05-07,7054,921,47,286,585,北海道,Hokkaido,prefecture
@@ -5809,8 +5809,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-07,1122,17,0,11,6,宮崎,Miyazaki,prefecture
 2020-05-07,1287,10,0,5,5,鹿児島,Kagoshima,prefecture
 2020-05-07,2312,142,5,24,114,沖縄,Okinawa,prefecture
-2020-05-07,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-07,31638,160,0,2,146,検疫職員,airport quarantine,other
+2020-05-07,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-07,31638,160,0,2,146,検疫職員,Quarantine,other
 2020-05-07,3618,712,13,651,NA,クルーズ船,Diamond Princess,other
 2020-05-07,623,149,0,0,149,伊客船,Costa Atlantica,other
 2020-05-08,7827,927,48,302,581,北海道,Hokkaido,prefecture
@@ -5860,8 +5860,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-08,1192,17,0,11,6,宮崎,Miyazaki,prefecture
 2020-05-08,1378,10,0,5,5,鹿児島,Kagoshima,prefecture
 2020-05-08,2366,142,5,24,114,沖縄,Okinawa,prefecture
-2020-05-08,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-08,31638,161,0,2,148,検疫職員,airport quarantine,other
+2020-05-08,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-08,31638,161,0,2,148,検疫職員,Quarantine,other
 2020-05-08,3618,712,13,651,NA,クルーズ船,Diamond Princess,other
 2020-05-08,623,149,0,0,149,伊客船,Costa Atlantica,other
 2020-05-09,8013,938,51,394,487,北海道,Hokkaido,prefecture
@@ -5911,8 +5911,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-09,1213,17,0,11,6,宮崎,Miyazaki,prefecture
 2020-05-09,1446,10,0,7,NA,鹿児島,Kagoshima,prefecture
 2020-05-09,2403,142,5,82,55,沖縄,Okinawa,prefecture
-2020-05-09,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-09,32125,161,0,2,149,検疫職員,airport quarantine,other
+2020-05-09,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-09,32125,161,0,2,149,検疫職員,Quarantine,other
 2020-05-09,3618,712,13,651,NA,クルーズ船,Diamond Princess,other
 2020-05-09,623,149,0,0,NA,伊客船,Costa Atlantica,other
 2020-05-10,8319,947,56,424,462,北海道,Hokkaido,prefecture
@@ -5962,8 +5962,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-10,3466,17,0,12,5,宮崎,Miyazaki,prefecture
 2020-05-10,1213,10,0,7,NA,鹿児島,Kagoshima,prefecture
 2020-05-10,1446,142,5,82,55,沖縄,Okinawa,prefecture
-2020-05-10,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-10,32949,163,0,2,149,検疫職員,airport quarantine,other
+2020-05-10,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-10,32949,163,0,2,149,検疫職員,Quarantine,other
 2020-05-10,3618,712,13,651,NA,クルーズ船,Diamond Princess,other
 2020-05-10,2403,149,0,0,NA,伊客船,Costa Atlantica,other
 2020-05-11,8676,957,62,444,450,北海道,Hokkaido,prefecture
@@ -6013,8 +6013,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-11,1213,17,0,12,5,宮崎,Miyazaki,prefecture
 2020-05-11,1500,10,0,8,NA,鹿児島,Kagoshima,prefecture
 2020-05-11,2483,142,5,92,45,沖縄,Okinawa,prefecture
-2020-05-11,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-11,33530,163,0,2,151,検疫職員,airport quarantine,other
+2020-05-11,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-11,33530,163,0,2,151,検疫職員,Quarantine,other
 2020-05-11,3618,712,13,651,NA,クルーズ船,Diamond Princess,other
 2020-05-11,623,149,0,0,6,伊客船,Costa Atlantica,other
 2020-05-12,8945,970,68,459,439,北海道,Hokkaido,prefecture
@@ -6064,8 +6064,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-12,1243,17,0,12,5,宮崎,Miyazaki,prefecture
 2020-05-12,1513,10,0,8,NA,鹿児島,Kagoshima,prefecture
 2020-05-12,2511,142,6,96,41,沖縄,Okinawa,prefecture
-2020-05-12,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-12,34174,165,0,2,151,検疫職員,airport quarantine,other
+2020-05-12,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-12,34174,165,0,2,151,検疫職員,Quarantine,other
 2020-05-12,3618,712,13,651,NA,クルーズ船,Diamond Princess,other
 2020-05-12,623,149,0,0,6,伊客船,Costa Atlantica,other
 2020-05-13,9160,974,70,472,432,北海道,Hokkaido,prefecture
@@ -6115,8 +6115,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-13,1250,17,0,12,5,宮崎,Miyazaki,prefecture
 2020-05-13,1544,10,0,8,3,鹿児島,Kagoshima,prefecture
 2020-05-13,2535,142,6,106,30,沖縄,Okinawa,prefecture
-2020-05-13,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-13,34807,166,0,2,153,検疫職員,airport quarantine,other
+2020-05-13,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-13,34807,166,0,2,153,検疫職員,Quarantine,other
 2020-05-13,3618,712,13,651,NA,クルーズ船,Diamond Princess,other
 2020-05-13,623,149,0,0,6,伊客船,Costa Atlantica,other
 2020-05-14,9406,980,72,502,409,北海道,Hokkaido,prefecture
@@ -6166,8 +6166,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-14,1268,17,0,12,5,宮崎,Miyazaki,prefecture
 2020-05-14,1516,10,0,8,3,鹿児島,Kagoshima,prefecture
 2020-05-14,2608,142,6,111,25,沖縄,Okinawa,prefecture
-2020-05-14,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-14,35499,166,0,2,154,検疫職員,airport quarantine,other
+2020-05-14,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-14,35499,166,0,2,154,検疫職員,Quarantine,other
 2020-05-14,3618,712,13,651,NA,クルーズ船,Diamond Princess,other
 2020-05-14,623,149,0,0,6,伊客船,Costa Atlantica,other
 2020-05-15,9690,988,73,519,394,北海道,Hokkaido,prefecture
@@ -6217,8 +6217,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-15,1278,17,0,12,5,宮崎,Miyazaki,prefecture
 2020-05-15,1536,10,0,7,3,鹿児島,Kagoshima,prefecture
 2020-05-15,2643,142,6,115,21,沖縄,Okinawa,prefecture
-2020-05-15,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-15,35730,166,0,2,154,検疫職員,airport quarantine,other
+2020-05-15,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-15,35730,166,0,2,154,検疫職員,Quarantine,other
 2020-05-15,3618,712,13,653,NA,クルーズ船,Diamond Princess,other
 2020-05-15,623,149,0,0,6,伊客船,Costa Atlantica,other
 2020-05-16,9938,995,74,528,389,北海道,Hokkaido,prefecture
@@ -6268,8 +6268,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-16,1290,17,0,13,4,宮崎,Miyazaki,prefecture
 2020-05-16,1585,10,0,7,3,鹿児島,Kagoshima,prefecture
 2020-05-16,2643,142,6,115,21,沖縄,Okinawa,prefecture
-2020-05-16,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-16,36255,168,0,2,154,検疫職員,airport quarantine,other
+2020-05-16,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-16,36255,168,0,2,154,検疫職員,Quarantine,other
 2020-05-16,3618,712,13,653,NA,クルーズ船,Diamond Princess,other
 2020-05-16,623,149,0,0,6,伊客船,Costa Atlantica,other
 2020-05-17,10183,1002,75,560,366,北海道,Hokkaido,prefecture
@@ -6319,8 +6319,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-17,1290,17,0,14,3,宮崎,Miyazaki,prefecture
 2020-05-17,1599,10,0,7,3,鹿児島,Kagoshima,prefecture
 2020-05-17,2693,142,6,124,12,沖縄,Okinawa,prefecture
-2020-05-17,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-17,36833,168,0,2,156,検疫職員,airport quarantine,other
+2020-05-17,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-17,36833,168,0,2,156,検疫職員,Quarantine,other
 2020-05-17,3618,712,13,653,NA,クルーズ船,Diamond Princess,other
 2020-05-17,623,149,0,0,6,伊客船,Costa Atlantica,other
 2020-05-18,10485,1003,76,589,343,北海道,Hokkaido,prefecture
@@ -6370,8 +6370,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-18,1290,17,0,14,3,宮崎,Miyazaki,prefecture
 2020-05-18,1616,10,0,7,3,鹿児島,Kagoshima,prefecture
 2020-05-18,2724,142,6,123,13,沖縄,Okinawa,prefecture
-2020-05-18,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-18,37490,168,0,2,156,検疫職員,airport quarantine,other
+2020-05-18,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-18,37490,168,0,2,156,検疫職員,Quarantine,other
 2020-05-18,3618,712,13,653,NA,クルーズ船,Diamond Princess,other
 2020-05-18,623,149,0,0,5,伊客船,Costa Atlantica,other
 2020-05-19,10770,1006,77,601,338,北海道,Hokkaido,prefecture
@@ -6421,8 +6421,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-19,1308,17,0,14,3,宮崎,Miyazaki,prefecture
 2020-05-19,1616,10,0,7,3,鹿児島,Kagoshima,prefecture
 2020-05-19,2735,142,6,124,12,沖縄,Okinawa,prefecture
-2020-05-19,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-19,38222,168,0,2,156,検疫職員,airport quarantine,other
+2020-05-19,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-19,38222,168,0,2,156,検疫職員,Quarantine,other
 2020-05-19,3618,712,13,653,NA,クルーズ船,Diamond Princess,other
 2020-05-19,623,149,0,2,5,伊客船,Costa Atlantica,other
 2020-05-20,10885,1007,77,620,319,北海道,Hokkaido,prefecture
@@ -6472,8 +6472,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-20,1314,17,0,14,3,宮崎,Miyazaki,prefecture
 2020-05-20,1623,10,0,7,3,鹿児島,Kagoshima,prefecture
 2020-05-20,2752,142,6,126,10,沖縄,Okinawa,prefecture
-2020-05-20,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-20,38704,168,0,2,156,検疫職員,airport quarantine,other
+2020-05-20,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-20,38704,168,0,2,156,検疫職員,Quarantine,other
 2020-05-20,3618,712,13,653,NA,クルーズ船,Diamond Princess,other
 2020-05-20,623,149,0,2,5,伊客船,Costa Atlantica,other
 2020-05-21,11072,1012,78,642,299,北海道,Hokkaido,prefecture
@@ -6523,8 +6523,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-21,1324,17,0,14,3,宮崎,Miyazaki,prefecture
 2020-05-21,1653,10,0,8,2,鹿児島,Kagoshima,prefecture
 2020-05-21,2773,142,6,128,8,沖縄,Okinawa,prefecture
-2020-05-21,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-21,39346,169,0,2,156,検疫職員,airport quarantine,other
+2020-05-21,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-21,39346,169,0,2,156,検疫職員,Quarantine,other
 2020-05-21,3618,712,13,653,NA,クルーズ船,Diamond Princess,other
 2020-05-21,NA,149,0,106,5,伊客船,Costa Atlantica,other
 2020-05-22,11435,1017,78,670,272,北海道,Hokkaido,prefecture
@@ -6574,8 +6574,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-22,1333,17,0,14,3,宮崎,Miyazaki,prefecture
 2020-05-22,1666,10,0,9,1,鹿児島,Kagoshima,prefecture
 2020-05-22,2795,142,6,129,7,沖縄,Okinawa,prefecture
-2020-05-22,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-22,39701,169,0,2,157,検疫職員,airport quarantine,other
+2020-05-22,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-22,39701,169,0,2,157,検疫職員,Quarantine,other
 2020-05-22,3618,712,13,653,NA,クルーズ船,Diamond Princess,other
 2020-05-22,NA,149,0,108,3,伊客船,Costa Atlantica,other
 2020-05-23,11648,1025,79,687,259,北海道,Hokkaido,prefecture
@@ -6625,8 +6625,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-23,1339,17,0,14,3,宮崎,Miyazaki,prefecture
 2020-05-23,1685,10,0,9,1,鹿児島,Kagoshima,prefecture
 2020-05-23,2806,142,6,130,6,沖縄,Okinawa,prefecture
-2020-05-23,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-23,40203,170,0,2,157,検疫職員,airport quarantine,other
+2020-05-23,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-23,40203,170,0,2,157,検疫職員,Quarantine,other
 2020-05-23,3618,712,13,653,NA,クルーズ船,Diamond Princess,other
 2020-05-23,NA,149,0,112,37,伊客船,Costa Atlantica,other
 2020-05-24,11853,1040,81,711,241,北海道,Hokkaido,prefecture
@@ -6676,8 +6676,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-24,1339,17,0,15,2,宮崎,Miyazaki,prefecture
 2020-05-24,1685,10,0,9,1,鹿児島,Kagoshima,prefecture
 2020-05-24,2806,142,6,130,6,沖縄,Okinawa,prefecture
-2020-05-24,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-24,40703,172,0,2,157,検疫職員,airport quarantine,other
+2020-05-24,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-24,40703,172,0,2,157,検疫職員,Quarantine,other
 2020-05-24,3618,712,13,653,NA,クルーズ船,Diamond Princess,other
 2020-05-24,NA,149,0,112,37,伊客船,Costa Atlantica,other
 2020-05-25,12072,1043,83,726,234,北海道,Hokkaido,prefecture
@@ -6727,8 +6727,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-25,1339,17,0,15,2,宮崎,Miyazaki,prefecture
 2020-05-25,1685,10,0,9,1,鹿児島,Kagoshima,prefecture
 2020-05-25,2821,142,6,130,6,沖縄,Okinawa,prefecture
-2020-05-25,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-25,41297,173,0,151,10,検疫職員,airport quarantine,other
+2020-05-25,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-25,41297,173,0,151,10,検疫職員,Quarantine,other
 2020-05-25,3618,712,13,653,NA,クルーズ船,Diamond Princess,other
 2020-05-25,NA,149,0,113,36,伊客船,Costa Atlantica,other
 2020-05-26,12285,1052,84,734,239,北海道,Hokkaido,prefecture
@@ -6778,8 +6778,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-26,1351,17,0,16,1,宮崎,Miyazaki,prefecture
 2020-05-26,1713,10,0,9,1,鹿児島,Kagoshima,prefecture
 2020-05-26,2826,142,6,131,5,沖縄,Okinawa,prefecture
-2020-05-26,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-26,41942,177,0,152,11,検疫職員,airport quarantine,other
+2020-05-26,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-26,41942,177,0,152,11,検疫職員,Quarantine,other
 2020-05-26,3618,712,13,654,NA,クルーズ船,Diamond Princess,other
 2020-05-26,NA,149,0,113,36,伊客船,Costa Atlantica,other
 2020-05-27,12497,1057,85,736,238,北海道,Hokkaido,prefecture
@@ -6829,8 +6829,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-27,1358,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-05-27,1739,10,0,10,0,鹿児島,Kagoshima,prefecture
 2020-05-27,2829,142,6,131,5,沖縄,Okinawa,prefecture
-2020-05-27,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-27,42391,180,0,152,15,検疫職員,airport quarantine,other
+2020-05-27,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-27,42391,180,0,152,15,検疫職員,Quarantine,other
 2020-05-27,3618,712,13,654,NA,クルーズ船,Diamond Princess,other
 2020-05-27,NA,149,0,121,28,伊客船,Costa Atlantica,other
 2020-05-28,12686,1063,86,755,227,北海道,Hokkaido,prefecture
@@ -6880,8 +6880,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-28,1362,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-05-28,1745,10,0,10,0,鹿児島,Kagoshima,prefecture
 2020-05-28,2836,142,6,131,5,沖縄,Okinawa,prefecture
-2020-05-28,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-28,43097,182,0,153,17,検疫職員,airport quarantine,other
+2020-05-28,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-28,43097,182,0,153,17,検疫職員,Quarantine,other
 2020-05-28,3618,712,13,654,NA,クルーズ船,Diamond Princess,other
 2020-05-28,NA,149,0,144,5,伊客船,Costa Atlantica,other
 2020-05-29,12982,1066,86,763,223,北海道,Hokkaido,prefecture
@@ -6931,8 +6931,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-29,1363,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-05-29,1852,10,0,10,0,鹿児島,Kagoshima,prefecture
 2020-05-29,2843,142,6,132,4,沖縄,Okinawa,prefecture
-2020-05-29,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-29,43600,192,0,154,18,検疫職員,airport quarantine,other
+2020-05-29,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-29,43600,192,0,154,18,検疫職員,Quarantine,other
 2020-05-29,3618,712,13,654,NA,クルーズ船,Diamond Princess,other
 2020-05-29,NA,149,0,147,2,伊客船,Costa Atlantica,other
 2020-05-30,13329,1070,86,770,222,北海道,Hokkaido,prefecture
@@ -6982,8 +6982,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-30,1368,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-05-30,1859,10,0,10,0,鹿児島,Kagoshima,prefecture
 2020-05-30,2847,142,6,132,4,沖縄,Okinawa,prefecture
-2020-05-30,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-30,44191,196,0,154,28,検疫職員,airport quarantine,other
+2020-05-30,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-30,44191,196,0,154,28,検疫職員,Quarantine,other
 2020-05-30,3618,712,13,654,NA,クルーズ船,Diamond Princess,other
 2020-05-30,NA,149,0,147,2,伊客船,Costa Atlantica,other
 2020-05-31,13628,1074,86,783,212,北海道,Hokkaido,prefecture
@@ -7033,8 +7033,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-05-31,1368,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-05-31,1859,10,0,10,0,鹿児島,Kagoshima,prefecture
 2020-05-31,2852,142,6,133,3,沖縄,Okinawa,prefecture
-2020-05-31,829,14,0,15,0,チャーター便,charter flights,other
-2020-05-31,44783,200,0,154,32,検疫職員,airport quarantine,other
+2020-05-31,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-05-31,44783,200,0,154,32,検疫職員,Quarantine,other
 2020-05-31,3618,712,13,654,NA,クルーズ船,Diamond Princess,other
 2020-05-31,NA,149,0,147,2,伊客船,Costa Atlantica,other
 2020-06-01,14000,1079,87,799,200,北海道,Hokkaido,prefecture
@@ -7084,8 +7084,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-01,1368,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-01,1859,10,0,10,0,鹿児島,Kagoshima,prefecture
 2020-06-01,2863,142,6,133,3,沖縄,Okinawa,prefecture
-2020-06-01,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-01,45640,201,0,154,36,検疫職員,airport quarantine,other
+2020-06-01,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-01,45640,201,0,154,36,検疫職員,Quarantine,other
 2020-06-01,3618,712,13,654,NA,クルーズ船,Diamond Princess,other
 2020-06-01,NA,149,0,147,2,伊客船,Costa Atlantica,other
 2020-06-02,14421,1082,87,810,195,北海道,Hokkaido,prefecture
@@ -7135,8 +7135,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-02,1386,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-02,1871,10,0,10,0,鹿児島,Kagoshima,prefecture
 2020-06-02,2870,142,6,133,3,沖縄,Okinawa,prefecture
-2020-06-02,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-02,46892,202,0,154,37,検疫職員,airport quarantine,other
+2020-06-02,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-02,46892,202,0,154,37,検疫職員,Quarantine,other
 2020-06-02,3618,712,13,654,NA,クルーズ船,Diamond Princess,other
 2020-06-02,NA,149,0,147,2,伊客船,Costa Atlantica,other
 2020-06-03,14593,1085,88,812,197,北海道,Hokkaido,prefecture
@@ -7186,8 +7186,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-03,1391,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-03,1880,10,0,10,0,鹿児島,Kagoshima,prefecture
 2020-06-03,2872,142,7,133,3,沖縄,Okinawa,prefecture
-2020-06-03,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-03,47640,206,0,154,38,検疫職員,airport quarantine,other
+2020-06-03,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-03,47640,206,0,154,38,検疫職員,Quarantine,other
 2020-06-03,3618,712,13,654,NA,クルーズ船,Diamond Princess,other
 2020-06-03,NA,149,0,147,2,伊客船,Costa Atlantica,other
 2020-06-04,14714,1088,90,821,191,北海道,Hokkaido,prefecture
@@ -7237,8 +7237,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-04,1402,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-04,1918,10,0,10,0,鹿児島,Kagoshima,prefecture
 2020-06-04,2880,142,7,133,2,沖縄,Okinawa,prefecture
-2020-06-04,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-04,48575,209,0,162,34,検疫職員,airport quarantine,other
+2020-06-04,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-04,48575,209,0,162,34,検疫職員,Quarantine,other
 2020-06-04,3618,712,13,654,NA,クルーズ船,Diamond Princess,other
 2020-06-04,NA,149,0,147,2,伊客船,Costa Atlantica,other
 2020-06-05,14931,1092,90,831,183,北海道,Hokkaido,prefecture
@@ -7288,8 +7288,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-05,1407,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-05,1964,10,0,10,0,鹿児島,Kagoshima,prefecture
 2020-06-05,2895,142,7,133,2,沖縄,Okinawa,prefecture
-2020-06-05,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-05,49303,212,0,162,37,検疫職員,airport quarantine,other
+2020-06-05,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-05,49303,212,0,162,37,検疫職員,Quarantine,other
 2020-06-05,3618,712,13,654,NA,クルーズ船,Diamond Princess,other
 2020-06-05,NA,149,0,148,1,伊客船,Costa Atlantica,other
 2020-06-06,15221,1100,90,849,166,北海道,Hokkaido,prefecture
@@ -7339,8 +7339,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-06,1414,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-06,1964,10,0,10,0,鹿児島,Kagoshima,prefecture
 2020-06-06,2908,142,7,133,2,沖縄,Okinawa,prefecture
-2020-06-06,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-06,50067,213,0,163,39,検疫職員,airport quarantine,other
+2020-06-06,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-06,50067,213,0,163,39,検疫職員,Quarantine,other
 2020-06-06,3618,712,13,654,NA,クルーズ船,Diamond Princess,other
 2020-06-06,NA,149,0,148,1,伊客船,Costa Atlantica,other
 2020-06-07,15427,1104,90,863,156,北海道,Hokkaido,prefecture
@@ -7390,8 +7390,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-07,1414,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-07,1982,10,0,10,0,鹿児島,Kagoshima,prefecture
 2020-06-07,2908,142,7,133,2,沖縄,Okinawa,prefecture
-2020-06-07,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-07,51012,219,0,163,40,検疫職員,airport quarantine,other
+2020-06-07,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-07,51012,219,0,163,40,検疫職員,Quarantine,other
 2020-06-07,3618,712,13,654,NA,クルーズ船,Diamond Princess,other
 2020-06-07,NA,149,0,148,1,伊客船,Costa Atlantica,other
 2020-06-08,15713,1108,91,869,158,北海道,Hokkaido,prefecture
@@ -7441,8 +7441,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-08,1414,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-08,1998,10,0,10,0,鹿児島,Kagoshima,prefecture
 2020-06-08,2908,142,7,133,2,沖縄,Okinawa,prefecture
-2020-06-08,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-08,52057,219,0,163,46,検疫職員,airport quarantine,other
+2020-06-08,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-08,52057,219,0,163,46,検疫職員,Quarantine,other
 2020-06-08,3618,712,13,654,NA,クルーズ船,Diamond Princess,other
 2020-06-08,NA,149,0,148,1,伊客船,Costa Atlantica,other
 2020-06-09,16024,1115,91,881,150,北海道,Hokkaido,prefecture
@@ -7492,8 +7492,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-09,1434,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-09,2009,10,0,10,0,鹿児島,Kagoshima,prefecture
 2020-06-09,2908,142,7,133,2,沖縄,Okinawa,prefecture
-2020-06-09,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-09,53155,234,0,163,46,検疫職員,airport quarantine,other
+2020-06-09,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-09,53155,234,0,163,46,検疫職員,Quarantine,other
 2020-06-09,3618,712,13,655,NA,クルーズ船,Diamond Princess,other
 2020-06-09,NA,149,0,148,1,伊客船,Costa Atlantica,other
 2020-06-10,16302,1120,91,888,146,北海道,Hokkaido,prefecture
@@ -7543,8 +7543,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-10,1441,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-10,2009,10,0,10,0,鹿児島,Kagoshima,prefecture
 2020-06-10,2925,142,7,135,0,沖縄,Okinawa,prefecture
-2020-06-10,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-10,53870,236,0,163,61,検疫職員,airport quarantine,other
+2020-06-10,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-10,53870,236,0,163,61,検疫職員,Quarantine,other
 2020-06-10,3618,712,13,655,NA,クルーズ船,Diamond Princess,other
 2020-06-10,NA,149,0,148,1,伊客船,Costa Atlantica,other
 2020-06-11,16456,1127,91,906,135,北海道,Hokkaido,prefecture
@@ -7594,8 +7594,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-11,1453,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-11,2049,10,0,10,0,鹿児島,Kagoshima,prefecture
 2020-06-11,2930,142,7,135,0,沖縄,Okinawa,prefecture
-2020-06-11,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-11,54697,237,0,168,58,検疫職員,airport quarantine,other
+2020-06-11,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-11,54697,237,0,168,58,検疫職員,Quarantine,other
 2020-06-11,3618,712,13,655,NA,クルーズ船,Diamond Princess,other
 2020-06-11,NA,149,0,148,1,伊客船,Costa Atlantica,other
 2020-06-12,16633,1137,91,921,125,北海道,Hokkaido,prefecture
@@ -7645,8 +7645,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-12,1461,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-12,2157,11,0,10,0,鹿児島,Kagoshima,prefecture
 2020-06-12,2935,142,7,135,0,沖縄,Okinawa,prefecture
-2020-06-12,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-12,55346,242,0,170,57,検疫職員,airport quarantine,other
+2020-06-12,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-12,55346,242,0,170,57,検疫職員,Quarantine,other
 2020-06-12,3618,712,13,655,NA,クルーズ船,Diamond Princess,other
 2020-06-12,NA,149,0,148,1,伊客船,Costa Atlantica,other
 2020-06-13,16866,1146,91,931,122,北海道,Hokkaido,prefecture
@@ -7696,8 +7696,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-13,1470,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-13,2163,11,0,10,1,鹿児島,Kagoshima,prefecture
 2020-06-13,2940,142,7,135,0,沖縄,Okinawa,prefecture
-2020-06-13,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-13,56148,245,0,170,62,検疫職員,airport quarantine,other
+2020-06-13,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-13,56148,245,0,170,62,検疫職員,Quarantine,other
 2020-06-13,3618,712,13,655,NA,クルーズ船,Diamond Princess,other
 2020-06-13,NA,149,0,148,1,伊客船,Costa Atlantica,other
 2020-06-14,17153,1153,91,943,120,北海道,Hokkaido,prefecture
@@ -7747,8 +7747,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-14,1470,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-14,2163,11,0,10,1,鹿児島,Kagoshima,prefecture
 2020-06-14,2949,142,7,135,0,沖縄,Okinawa,prefecture
-2020-06-14,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-14,57209,259,0,177,58,検疫職員,airport quarantine,other
+2020-06-14,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-14,57209,259,0,177,58,検疫職員,Quarantine,other
 2020-06-14,3618,712,13,655,NA,クルーズ船,Diamond Princess,other
 2020-06-14,NA,149,0,148,1,伊客船,Costa Atlantica,other
 2020-06-15,17390,1159,91,950,122,北海道,Hokkaido,prefecture
@@ -7798,8 +7798,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-15,1470,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-15,2289,11,0,10,1,鹿児島,Kagoshima,prefecture
 2020-06-15,2957,142,7,135,0,沖縄,Okinawa,prefecture
-2020-06-15,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-15,57209,271,0,178,58,検疫職員,airport quarantine,other
+2020-06-15,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-15,57209,271,0,178,58,検疫職員,Quarantine,other
 2020-06-15,3618,712,13,655,NA,クルーズ船,Diamond Princess,other
 2020-06-15,NA,149,0,148,1,伊客船,Costa Atlantica,other
 2020-06-16,17706,1161,92,956,123,北海道,Hokkaido,prefecture
@@ -7849,8 +7849,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-16,1480,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-16,2305,11,0,10,1,鹿児島,Kagoshima,prefecture
 2020-06-16,2962,142,7,135,0,沖縄,Okinawa,prefecture
-2020-06-16,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-16,59605,273,0,178,83,検疫職員,airport quarantine,other
+2020-06-16,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-16,59605,273,0,178,83,検疫職員,Quarantine,other
 2020-06-16,3618,712,13,655,NA,クルーズ船,Diamond Princess,other
 2020-06-16,NA,149,0,148,1,伊客船,Costa Atlantica,other
 2020-06-17,17875,1167,92,959,126,北海道,Hokkaido,prefecture
@@ -7900,8 +7900,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-17,1487,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-17,2305,11,0,10,1,鹿児島,Kagoshima,prefecture
 2020-06-17,2966,142,7,135,0,沖縄,Okinawa,prefecture
-2020-06-17,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-17,60483,276,0,178,85,検疫職員,airport quarantine,other
+2020-06-17,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-17,60483,276,0,178,85,検疫職員,Quarantine,other
 2020-06-17,3618,712,13,655,NA,クルーズ船,Diamond Princess,other
 2020-06-17,NA,149,0,148,1,伊客船,Costa Atlantica,other
 2020-06-18,18021,1172,93,970,116,北海道,Hokkaido,prefecture
@@ -7951,8 +7951,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-18,1494,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-18,2341,11,0,10,1,鹿児島,Kagoshima,prefecture
 2020-06-18,2976,142,7,135,0,沖縄,Okinawa,prefecture
-2020-06-18,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-18,61354,279,0,178,88,検疫職員,airport quarantine,other
+2020-06-18,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-18,61354,279,0,178,88,検疫職員,Quarantine,other
 2020-06-18,3618,712,13,655,NA,クルーズ船,Diamond Princess,other
 2020-06-18,NA,149,0,148,1,伊客船,Costa Atlantica,other
 2020-06-19,18301,1175,94,977,115,北海道,Hokkaido,prefecture
@@ -8002,8 +8002,8 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-19,1504,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-19,2384,11,0,10,1,鹿児島,Kagoshima,prefecture
 2020-06-19,2983,142,7,135,0,沖縄,Okinawa,prefecture
-2020-06-19,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-19,62125,282,0,182,87,検疫職員,airport quarantine,other
+2020-06-19,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-19,62125,282,0,182,87,検疫職員,Quarantine,other
 2020-06-19,3618,712,13,655,NA,クルーズ船,Diamond Princess,other
 2020-06-19,NA,149,0,148,1,伊客船,Costa Atlantica,other
 2020-06-20,18606,1178,94,988,108,北海道,Hokkaido,prefecture
@@ -8053,7 +8053,58 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-20,1509,17,0,17,0,宮崎,Miyazaki,prefecture
 2020-06-20,2413,11,0,10,1,鹿児島,Kagoshima,prefecture
 2020-06-20,2986,142,7,135,0,沖縄,Okinawa,prefecture
-2020-06-20,829,14,0,15,0,チャーター便,charter flights,other
-2020-06-20,62944,282,0,182,90,検疫職員,airport quarantine,other
+2020-06-20,829,14,0,15,0,チャーター便,Charter Flight,other
+2020-06-20,62944,282,0,182,90,検疫職員,Quarantine,other
 2020-06-20,3618,712,13,658,NA,クルーズ船,Diamond Princess,other
 2020-06-20,NA,149,0,148,1,伊客船,Costa Atlantica,other
+2020-06-21,NA,1180,95,NA,NA,北海道,Hokkaido,prefecture
+2020-06-21,NA,27,1,NA,NA,青森,Aomori,prefecture
+2020-06-21,NA,0,0,NA,NA,岩手,Iwate,prefecture
+2020-06-21,NA,89,1,NA,NA,宮城,Miyagi,prefecture
+2020-06-21,NA,15,0,NA,NA,秋田,Akita,prefecture
+2020-06-21,NA,69,0,NA,NA,山形,Yamagata,prefecture
+2020-06-21,NA,82,0,NA,NA,福島,Fukushima,prefecture
+2020-06-21,NA,170,10,NA,NA,茨城,Ibaraki,prefecture
+2020-06-21,NA,66,0,NA,NA,栃木,Tochigi,prefecture
+2020-06-21,NA,151,19,NA,NA,群馬,Gunma,prefecture
+2020-06-21,NA,1027,64,NA,NA,埼玉,Saitama,prefecture
+2020-06-21,NA,921,45,NA,NA,千葉,Chiba,prefecture
+2020-06-21,NA,5783,320,NA,NA,東京,Tokyo,prefecture
+2020-06-21,NA,1429,94,NA,NA,神奈川,Kanagawa,prefecture
+2020-06-21,NA,83,0,NA,NA,新潟,Niigata,prefecture
+2020-06-21,NA,227,22,NA,NA,富山,Toyama,prefecture
+2020-06-21,NA,299,27,NA,NA,石川,Ishikawa,prefecture
+2020-06-21,NA,122,8,NA,NA,福井,Fukui,prefecture
+2020-06-21,NA,71,1,NA,NA,山梨,Yamanashi,prefecture
+2020-06-21,NA,77,0,NA,NA,長野,Nagano,prefecture
+2020-06-21,NA,156,7,NA,NA,岐阜,Gifu,prefecture
+2020-06-21,NA,80,1,NA,NA,静岡,Shizuoka,prefecture
+2020-06-21,NA,519,34,NA,NA,愛知,Aichi,prefecture
+2020-06-21,NA,44,1,NA,NA,三重,Mie,prefecture
+2020-06-21,NA,101,1,NA,NA,滋賀,Shiga,prefecture
+2020-06-21,NA,365,18,NA,NA,京都,Kyoto,prefecture
+2020-06-21,NA,1809,86,NA,NA,大阪,Osaka,prefecture
+2020-06-21,NA,702,43,NA,NA,兵庫,Hyogo,prefecture
+2020-06-21,NA,87,2,NA,NA,奈良,Nara,prefecture
+2020-06-21,NA,63,3,NA,NA,和歌山,Wakayama,prefecture
+2020-06-21,NA,3,0,NA,NA,鳥取,Tottori,prefecture
+2020-06-21,NA,24,0,NA,NA,島根,Shimane,prefecture
+2020-06-21,NA,24,0,NA,NA,岡山,Okayama,prefecture
+2020-06-21,NA,164,3,NA,NA,広島,Hiroshima,prefecture
+2020-06-21,NA,36,0,NA,NA,山口,Yamaguchi,prefecture
+2020-06-21,NA,5,1,NA,NA,徳島,Tokushima,prefecture
+2020-06-21,NA,28,0,NA,NA,香川,Kagawa,prefecture
+2020-06-21,NA,82,4,NA,NA,愛媛,Ehime,prefecture
+2020-06-21,NA,74,3,NA,NA,高知,Kochi,prefecture
+2020-06-21,NA,832,29,NA,NA,福岡,Fukuoka,prefecture
+2020-06-21,NA,45,0,NA,NA,佐賀,Saga,prefecture
+2020-06-21,NA,17,1,NA,NA,長崎,Nagasaki,prefecture
+2020-06-21,NA,47,3,NA,NA,熊本,Kumamoto,prefecture
+2020-06-21,NA,60,1,NA,NA,大分,Oita,prefecture
+2020-06-21,NA,17,0,NA,NA,宮崎,Miyazaki,prefecture
+2020-06-21,NA,11,0,NA,NA,鹿児島,Kagoshima,prefecture
+2020-06-21,NA,142,7,NA,NA,沖縄,Okinawa,prefecture
+2020-06-21,NA,14,0,NA,NA,チャーター便,Charter Flight,other
+2020-06-21,NA,282,0,NA,NA,検疫職員,Quarantine,other
+2020-06-21,NA,712,13,NA,NA,クルーズ船,Diamond Princess,other
+2020-06-21,NA,149,0,NA,NA,伊客船,Costa Atlantica,other
