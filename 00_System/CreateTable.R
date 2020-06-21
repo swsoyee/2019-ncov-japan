@@ -384,3 +384,7 @@ mapDt <- mapDt[, .(date, variable, 都道府県, `name-en`, value, regions, lat,
 # カラム名変更
 colnames(mapDt) <- c("date", "ja", "full_ja", "en", "count", "regions", "lat", "lng")
 fwrite(x = mapDt, file = paste0(DATA_PATH, "result.map.csv"))
+
+# ====COVID DATA HUB====
+source(file = "00_System/Generate.covid19datahub.R")
+
