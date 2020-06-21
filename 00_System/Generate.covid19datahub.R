@@ -26,7 +26,7 @@ data <- data %>% mutate(type = ifelse(is.na(name_en), "other", "prefecture"))
 
 # ほかの英語名を追加する
 data$name_en[data$name_ja == "クルーズ船"] <- "Diamond Princess"
-data$name_en[data$name_ja == "チャーター便"] <- "charter flights"
+data$name_en[data$name_ja == "チャーター便"] <- "Charter Flight"
 data$name_en[data$name_ja == "検疫職員"] <- "Quarantine"
 data$name_en[data$name_ja == "伊客船"] <- "Costa Atlantica"
 
