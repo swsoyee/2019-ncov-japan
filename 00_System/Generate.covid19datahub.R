@@ -9,7 +9,6 @@ df2 <- read_csv("50_Data/death.csv") %>% pivot_longer(-1, names_to = "name_ja", 
 df2[is.na(df2)] <- 0
 df3 <- read_csv("50_Data/MHLW/summary.csv")
 df3$都道府県名[df3$都道府県名 == "空港検疫"] <- "検疫職員"
-df4 <- read_csv("50_Data/result.map.csv")
 
 # =====データ合併=====
 data <- left_join(df1, df2, by = c("date", "name_ja"))
