@@ -8159,7 +8159,7 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-22,65272,292,0,182,97,検疫職員,Quarantine,other
 2020-06-22,3618,712,13,658,NA,クルーズ船,Diamond Princess,other
 2020-06-22,NA,149,0,148,1,伊客船,Costa Atlantica,other
-2020-06-23,NA,1182,97,NA,NA,北海道,Hokkaido,prefecture
+2020-06-23,NA,1183,97,NA,NA,北海道,Hokkaido,prefecture
 2020-06-23,NA,27,1,NA,NA,青森,Aomori,prefecture
 2020-06-23,NA,0,0,NA,NA,岩手,Iwate,prefecture
 2020-06-23,NA,90,1,NA,NA,宮城,Miyagi,prefecture
@@ -8188,7 +8188,7 @@ date,tests,confirmed,deaths,recovered,hosp,name_ja,name_en,type
 2020-06-23,NA,1809,86,NA,NA,大阪,Osaka,prefecture
 2020-06-23,NA,703,43,NA,NA,兵庫,Hyogo,prefecture
 2020-06-23,NA,87,2,NA,NA,奈良,Nara,prefecture
-2020-06-23,NA,63,3,NA,NA,和歌山,Wakayama,prefecture
+2020-06-23,NA,64,3,NA,NA,和歌山,Wakayama,prefecture
 2020-06-23,NA,3,0,NA,NA,鳥取,Tottori,prefecture
 2020-06-23,NA,24,0,NA,NA,島根,Shimane,prefecture
 2020-06-23,NA,24,0,NA,NA,岡山,Okayama,prefecture
