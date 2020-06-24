@@ -26,17 +26,19 @@ data <- left_join(data, df4, by = "name_ja")
 
 # =====データ整形=====
 # administrative_area_level変数を追加する
-data$administrative_area_level <- 2
-data$administrative_area_level_1 <- "Japan"
+data <- data %>% mutate(
+  administrative_area_level = ifelse(name_ja %in% c("チャーター便", "検疫職員", "クルーズ船", "伊客船"), 1, 2),
+  administrative_area_level_1 = "Japan"
+)
 
 # 英語の都道府県名を追加する
 prefectures <- jpnprefs %>% mutate(name_ja = str_remove(prefecture, "県|都$|府"),
                                    administrative_area_level_2 = str_remove(prefecture_en, "-.+")) %>%
-  select(name_ja, administrative_area_level_2)
+  select(jis_code, name_ja, administrative_area_level_2)
 data <- left_join(data, prefectures, by = "name_ja")
 
 # タイプを追加する
-data <- data %>% mutate(type = ifelse(is.na(administrative_area_level_2), "other", "prefecture"))
+# data <- data %>% mutate(type = ifelse(is.na(administrative_area_level_2), "other", "prefecture"))
 
 # ほかの英語名を追加する
 data$administrative_area_level_2[data$name_ja == "クルーズ船"] <- "Diamond Princess"
@@ -51,32 +53,43 @@ data <- data %>% mutate(date = ymd(date),
                         tests = `検査人数`,
                         recovered = `退院者`,
                         hosp = `入院中`,
-                        vent = NA,
-                        icu = NA,
+                        vent = "",
+                        icu = "",
                         severe = `重症者`)
 
 # 累計感染者数と累計死亡者数を計算する
 data <- data %>% group_by(administrative_area_level_2) %>%
   mutate(confirmed = cumsum(new_cases), deaths = cumsum(new_deaths)) %>%
   select(date, tests, confirmed, deaths, recovered, hosp, vent, icu, severe, population,
-         administrative_area_level, administrative_area_level_1, administrative_area_level_2, type)
+         administrative_area_level, administrative_area_level_1, administrative_area_level_2, jis_code)
 
 # 5月8日以前の国レベルデータを読み込む
-data_national1 <- read_csv("50_Data/domesticDailyReport.csv") %>%
+domestic <- read_csv("50_Data/domesticDailyReport.csv") %>%
+  select(date, pcr, positive, death, discharge, hospitalize, severe) %>%
+  rename_at(vars(-date), function(x) str_c(x,"_d"))
+airport <- read_csv("50_Data/airportDailyReport.csv") %>%
+  select(date, pcr, positive, death, discharge, hospitalized, severe) %>%
+  rename_at(vars(-date), function(x) str_c(x,"_a"))
+flight <- read_csv("50_Data/flightDailyReport.csv") %>%
+  select(date, pcr, positive, death, discharge, hospitalize, severe) %>%
+  rename_at(vars(-date), function(x) str_c(x,"_f"))
+
+data_national1 <- domestic %>% left_join(airport, by = "date") %>% left_join(flight, by = "date") %>%
+  group_by(date) %>%
   transmute(date = ymd(date),
-            tests = pcr,
-            confirmed = positive,
-            deaths = death,
-            recovered = discharge,
-            hosp = hospitalize,
-            vent = NA,
-            icu = NA,
-            severe = severe,
+            tests = ifelse((is.na(pcr_d) & is.na(pcr_a) & is.na(pcr_f)), NA, sum(pcr_d, pcr_a, pcr_f, na.rm = TRUE)),
+            confirmed = ifelse(is.na(positive_d) & is.na(positive_a) & is.na(positive_f), NA, sum(positive_d, positive_a, positive_f, na.rm = TRUE)),
+            deaths = ifelse(is.na(death_d) & is.na(death_a) & is.na(death_f), NA, sum(death_d, death_a, death_f, na.rm = TRUE)),
+            recovered = ifelse(is.na(discharge_d) & is.na(discharge_a) & is.na(discharge_f), NA, sum(discharge_d, discharge_a, discharge_f, na.rm = TRUE)),
+            hosp = ifelse(is.na(hospitalize_d) & is.na(hospitalized_a) & is.na(hospitalize_f), NA, sum(hospitalize_d, hospitalized_a, hospitalize_f, na.rm = TRUE)),
+            vent = "",
+            icu = "",
+            severe = ifelse(is.na(severe_d) & is.na(severe_a) & is.na(severe_f), NA, sum(severe_d, severe_a, severe_f, na.rm = TRUE)),
             population = 126216142,
             administrative_area_level = 1,
             administrative_area_level_1 = "Japan",
             administrative_area_level_2 = "",
-            type = "nation")
+            jis_code = "")
 
 # 5月8日以前の全国感染者数を計算する
 data_national2 <- data %>% ungroup() %>%
@@ -88,13 +101,14 @@ data_national2 <- data %>% ungroup() %>%
             deaths = sum(deaths, na.rm = TRUE),
             recovered = sum(recovered, na.rm = TRUE),
             hosp = sum(hosp, na.rm = TRUE),
-            vent = NA,
-            icu = NA,
+            vent = "",
+            icu = "",
             severe = sum(severe, na.rm = TRUE),
             population = sum(population, na.rm = TRUE),
             administrative_area_level = 1,
             administrative_area_level_1 = "Japan",
             administrative_area_level_2 = "",
-            type = "nation") %>% distinct()
+            jis_code = "") %>% distinct()
 
-bind_rows(data_national1, data_national2, data) %>% write_csv("50_Data/covid19_jp.csv")
+bind_rows(data_national1, data_national2, data) %>% map_df(as.character) %>%
+  replace(is.na(.), "") %>% write_csv("50_Data/covid19_jp.csv")
