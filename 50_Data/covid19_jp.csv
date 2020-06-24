@@ -138,7 +138,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-06-21,412669,17881,955,16104,801,NA,NA,59,126216142,1,Japan,,nation
 2020-06-22,417951,17924,956,16129,829,NA,NA,59,126216142,1,Japan,,nation
 2020-06-23,424767,17981,960,16208,798,NA,NA,62,126216142,1,Japan,,nation
-2020-06-24,0,18047,965,0,0,NA,NA,0,126216142,1,Japan,,nation
+2020-06-24,0,18048,965,0,0,NA,NA,0,126216142,1,Japan,,nation
 2020-01-15,NA,0,0,NA,NA,NA,NA,NA,5248552,2,Japan,Hokkaido,prefecture
 2020-01-15,NA,0,0,NA,NA,NA,NA,NA,1246138,2,Japan,Aomori,prefecture
 2020-01-15,NA,0,0,NA,NA,NA,NA,NA,1226430,2,Japan,Iwate,prefecture
@@ -8353,7 +8353,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-06-24,NA,1193,98,NA,NA,NA,NA,NA,5248552,2,Japan,Hokkaido,prefecture
 2020-06-24,NA,27,1,NA,NA,NA,NA,NA,1246138,2,Japan,Aomori,prefecture
 2020-06-24,NA,0,0,NA,NA,NA,NA,NA,1226430,2,Japan,Iwate,prefecture
-2020-06-24,NA,90,1,NA,NA,NA,NA,NA,2303160,2,Japan,Miyagi,prefecture
+2020-06-24,NA,91,1,NA,NA,NA,NA,NA,2303160,2,Japan,Miyagi,prefecture
 2020-06-24,NA,15,0,NA,NA,NA,NA,NA,965968,2,Japan,Akita,prefecture
 2020-06-24,NA,69,0,NA,NA,NA,NA,NA,1077057,2,Japan,Yamagata,prefecture
 2020-06-24,NA,82,0,NA,NA,NA,NA,NA,1847950,2,Japan,Fukushima,prefecture
