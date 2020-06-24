@@ -138,7 +138,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-06-21,412669,17881,955,16104,801,NA,NA,59,126216142,1,Japan,,nation
 2020-06-22,417951,17924,956,16129,829,NA,NA,59,126216142,1,Japan,,nation
 2020-06-23,424767,17981,960,16208,798,NA,NA,62,126216142,1,Japan,,nation
-2020-06-24,0,17992,965,0,0,NA,NA,0,126216142,1,Japan,,nation
+2020-06-24,0,18047,965,0,0,NA,NA,0,126216142,1,Japan,,nation
 2020-01-15,NA,0,0,NA,NA,NA,NA,NA,5248552,2,Japan,Hokkaido,prefecture
 2020-01-15,NA,0,0,NA,NA,NA,NA,NA,1246138,2,Japan,Aomori,prefecture
 2020-01-15,NA,0,0,NA,NA,NA,NA,NA,1226430,2,Japan,Iwate,prefecture
@@ -8362,7 +8362,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-06-24,NA,151,19,NA,NA,NA,NA,NA,1937626,2,Japan,Gunma,prefecture
 2020-06-24,NA,1050,64,NA,NA,NA,NA,NA,7337330,2,Japan,Saitama,prefecture
 2020-06-24,NA,926,45,NA,NA,NA,NA,NA,6279026,2,Japan,Chiba,prefecture
-2020-06-24,NA,5840,323,NA,NA,NA,NA,NA,13942856,2,Japan,Tokyo,prefecture
+2020-06-24,NA,5895,323,NA,NA,NA,NA,NA,13942856,2,Japan,Tokyo,prefecture
 2020-06-24,NA,1430,94,NA,NA,NA,NA,NA,9200166,2,Japan,Kanagawa,prefecture
 2020-06-24,NA,83,0,NA,NA,NA,NA,NA,2222004,2,Japan,Niigata,prefecture
 2020-06-24,NA,227,22,NA,NA,NA,NA,NA,1042998,2,Japan,Toyama,prefecture
