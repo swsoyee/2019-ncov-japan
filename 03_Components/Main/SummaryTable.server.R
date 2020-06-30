@@ -35,7 +35,7 @@ observeEvent(input$switchTableVersion, {
         dataTableOutput("confirmedByPrefTable"),
         helpText(
           icon("street-view"),
-          i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。")
+          i18n$t("感染密度 (km)：『何km四方の土地（可住地面積）に感染者が１人いるか』という指標。")
         )
       )
     })
@@ -102,7 +102,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
   # dt <- dt[count > 0]
   columnName <- c("death", "perMillionDeath")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
-  
+
   dt[, zeroContinuousDay := replace(.SD, .SD <= 0, NA), .SDcols = 'zeroContinuousDay']
   breaksZero <-
     seq(0, max(ifelse(is.na(dt$zeroContinuousDay), 0, dt$zeroContinuousDay), na.rm = T), 5)
@@ -285,7 +285,7 @@ output$confirmedByPrefTable <- renderDataTable({
       i18n$t("感染密度(km)")
     ),
     escape = F,
-    # caption = i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。"),
+    # caption = i18n$t("感染密度 (km)：『何km四方の土地（可住地面積）に感染者が１人いるか』という指標。"),
     # extensions = c("Responsive"),
     extensions = "RowGroup",
     callback = htmlwidgets::JS(paste0(
@@ -521,7 +521,7 @@ output$testByPrefTable <- renderDataTable({
   ) %>%
     spk_add_deps() %>%
     formatCurrency(
-      columns = "検査人数", 
+      columns = "検査人数",
       currency = "",
       digits = 0
     ) %>%
@@ -552,7 +552,7 @@ output$testByPrefTable <- renderDataTable({
       fontWeight = "bold"
     ) %>%
     formatCurrency(
-      columns = "百万人あたり", 
+      columns = "百万人あたり",
       currency = "",
       digits = 0
     ) %>%
