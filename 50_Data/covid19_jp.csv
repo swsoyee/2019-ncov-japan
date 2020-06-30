@@ -144,7 +144,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-06-27,446589,18353,971,16448,869,,,48,126216142,1,Japan,,
 2020-06-28,451772,18466,971,16501,906,,,45,126216142,1,Japan,,
 2020-06-29,454609,18576,971,16553,939,,,43,126216142,1,Japan,,
-2020-06-30,0,18579,971,0,0,,,0,126216142,1,Japan,,
+2020-06-30,0,18592,971,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -8662,7 +8662,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-06-29,73594,318,1,189,117,,,0,,1,Japan,Quarantine,
 2020-06-29,3618,712,13,658,,,,1,,1,Japan,Diamond Princess,
 2020-06-29,,149,0,148,1,,,,,1,Japan,Costa Atlantica,
-2020-06-30,,1233,99,,,,,,5248552,2,Japan,Hokkaido,01
+2020-06-30,,1246,99,,,,,,5248552,2,Japan,Hokkaido,01
 2020-06-30,,27,1,,,,,,1246138,2,Japan,Aomori,02
 2020-06-30,,0,0,,,,,,1226430,2,Japan,Iwate,03
 2020-06-30,,94,1,,,,,,2303160,2,Japan,Miyagi,04
