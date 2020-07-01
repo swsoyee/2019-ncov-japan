@@ -47,7 +47,7 @@ observeEvent(input$switchTableVersion, {
         ),
         helpText(
           icon("street-view"),
-          i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。")
+          i18n$t("感染密度 (km)：『何km四方の土地（可住地面積）に感染者が１人いるか』という指標。")
         )
       )
     })
@@ -257,7 +257,7 @@ output$confirmedByPrefTable <- renderDataTable({
       i18n$t("感染密度(km)")
     ),
     escape = F,
-    # caption = i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。"),
+    # caption = i18n$t("感染密度 (km)：『何km四方の土地（可住地面積）に感染者が１人いるか』という指標。"),
     # extensions = c("Responsive"),
     extensions = c("RowGroup", "Buttons"),
     callback = htmlwidgets::JS(paste0(

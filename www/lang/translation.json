@@ -742,7 +742,7 @@
       "en": "Recovered"
     },
     {
-      "ja": "ダイアモンド・プリンセス号：令和２年３月５日まで延べ人数で公表しましたＰＣＲ検査の結果について、実員数で精査した結果は下記の数値通りです。<br><br>",
+      "ja": "ダイアモンド・プリンセス号：令和２年３月５日まで延べ人数で公表されていたＰＣＲ検査の結果について、実員数で精査した結果は下記の数値のとおりです。<br><br>",
       "cn": "钻石公主号：公布到2020年3月5日为止的PCR检查人次数据在进行核查后的人数结果即为如下数值。<br><br>",
       "en": "Diamond Princess: The results of the PCR test, which was announced by the total number of personnel until March 5, 2020, are as follows. <br><br>"
     },
@@ -777,7 +777,7 @@
       "en": "According to Australian government, one other patients died on March 1st after returning by air charter."
     },
     {
-      "ja": "感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。",
+      "ja": "感染密度 (km)：『何km四方の土地（可住地面積）に感染者が１人いるか』という指標。",
       "cn": "感染密度 (km)：用于说明每边长为多少km的方形土地（可住地面积）内有1名感染者的指标。",
       "en": "Infection density (km): an indicator of how many km of land (inhabitable area) there is one infected person in a given area."
     },
