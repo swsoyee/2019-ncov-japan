@@ -747,7 +747,7 @@
       "en": "Tested: Periods in which multiple specimens were counted in duplicate were not included in the total count. The ratio of the number of positives to the number of people tested also represents the ratio only for the period in which duplicates were eliminated. In Chiba Prefecture, 1716 tests were conducted by 20 March, Kanagawa Prefecture 2835 tests including cruise ships were conducted by 22 March, and Osaka Prefecture 2350 tests were conducted by 20 March. The number of people tested in Chiba, Kanagawa, and Osaka prefectures has been recorded since 3/21, 3/23, and 3/21, respectively."
     },
     {
-      "ja": "日均：日次検査人数を週間平均を計算した直近１週間の数値である。",
+      "ja": "１日平均：日ごとの感染者平均を１週間分まとめたものの、直近１週間の値。",
       "cn": "日均：每日检查人数计算7日移动平均后的最近一周的数值。",
       "en": "Daily (Ave): the value for the most recent week after the seven-day moving average of the number of daily tests conducted."
     },
@@ -1567,7 +1567,7 @@
       "en": "Trends of Test"
     },
     {
-      "ja": "日均",
+      "ja": "１日平均",
       "cn": "日均",
       "en": "Daily (Ave)"
     },

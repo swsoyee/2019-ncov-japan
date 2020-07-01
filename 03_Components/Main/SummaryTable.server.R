@@ -49,7 +49,7 @@ observeEvent(input$switchTableVersion, {
         dataTableOutput("testByPrefTable"),
         helpText(
           icon("calculator"), "1. ",
-          i18n$t("日均：日次検査人数を週間平均を計算した直近１週間の数値である。")
+          i18n$t("１日平均：日ごとの感染者平均を１週間分まとめたものの、直近１週間の値。")
         ),
         helpText(
           icon("exclamation-circle"), "2. ",
@@ -102,7 +102,7 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
   # dt <- dt[count > 0]
   columnName <- c("death", "perMillionDeath")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
-  
+
   dt[, zeroContinuousDay := replace(.SD, .SD <= 0, NA), .SDcols = 'zeroContinuousDay']
   breaksZero <-
     seq(0, max(ifelse(is.na(dt$zeroContinuousDay), 0, dt$zeroContinuousDay), na.rm = T), 5)
@@ -444,7 +444,7 @@ output$testByPrefTable <- renderDataTable({
       i18n$t("検査人数"),
       i18n$t("検査推移"),
       i18n$t("前日比"),
-      i18n$t("日均"),
+      i18n$t("１日平均"),
       i18n$t("百万人あたり"),
       i18n$t("陽性率推移"),
       i18n$t("陽性率"),
@@ -482,7 +482,7 @@ output$testByPrefTable <- renderDataTable({
         list(
           width = "30px",
           className = "dt-right",
-          # targets = i18n$t("日均")
+          # targets = i18n$t("１日平均")
           targets = 5
         ),
         list(
