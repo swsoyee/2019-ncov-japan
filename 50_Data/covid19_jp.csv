@@ -146,7 +146,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-06-29,454609,18576,971,16553,939,,,43,126216142,1,Japan,,
 2020-06-30,461446,18714,973,16627,984,,,42,126216142,1,Japan,,
 2020-07-01,467444,18841,975,16726,1016,,,40,126216142,1,Japan,,
-2020-07-02,0,18980,976,0,0,,,0,126216142,1,Japan,,
+2020-07-02,0,18990,976,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -8792,7 +8792,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-02,,44,1,,,,,,1779770,2,Japan,Mie,24
 2020-07-02,,103,1,,,,,,1413959,2,Japan,Shiga,25
 2020-07-02,,383,18,,,,,,2583140,2,Japan,Kyoto,26
-2020-07-02,,1843,86,,,,,,8823453,2,Japan,Osaka,27
+2020-07-02,,1851,86,,,,,,8823453,2,Japan,Osaka,27
 2020-07-02,,709,45,,,,,,5463609,2,Japan,Hyogo,28
 2020-07-02,,87,2,,,,,,1331330,2,Japan,Nara,29
 2020-07-02,,64,3,,,,,,923721,2,Japan,Wakayama,30
@@ -8814,6 +8814,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-02,,20,0,,,,,,1599984,2,Japan,Kagoshima,46
 2020-07-02,,142,7,,,,,,1454184,2,Japan,Okinawa,47
 2020-07-02,,14,0,,,,,,,1,Japan,Charter Flight,
-2020-07-02,,324,1,,,,,,,1,Japan,Quarantine,
+2020-07-02,,326,1,,,,,,,1,Japan,Quarantine,
 2020-07-02,,712,13,,,,,,,1,Japan,Diamond Princess,
 2020-07-02,,149,0,,,,,,,1,Japan,Costa Atlantica,
