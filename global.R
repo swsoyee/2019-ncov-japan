@@ -34,7 +34,9 @@ i18n <- suppressWarnings(Translator$new(translation_json_path = "www/lang/transl
 i18n$set_translation_language("ja")
 
 languageSetting <- ifelse(length(i18n$translation_language) == 0, "ja", i18n$translation_language)
-
+if(length(i18n$translation_language) == 0) {
+  e_common(font_family = "HiraMinProN-W3")
+}
 # マップのソースの読み込み
 japanMap <- jsonlite::read_json(paste0(DATA_PATH, "Echarts/japan.json"))
 # TODO ここで変換せず、ローカルで変換すべき
