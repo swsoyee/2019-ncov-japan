@@ -82,6 +82,21 @@
       "en": "Kanagawa"
     },
     {
+      "ja": "福岡県",
+      "cn": "福冈县",
+      "en": "Fukuoka"
+    },
+    {
+      "ja": "九州地方",
+      "cn": "九州地方",
+      "en": "Kyushu Region"
+    },
+    {
+      "ja": "自治体オープンデータのCKAN",
+      "cn": "自治体公开数据CKAN",
+      "en": "Open Data CKAN"
+    },
+    {
       "ja": "事例マップ",
       "cn": "案例地图",
       "en": "Case Map"
@@ -180,6 +195,11 @@
       "ja": "データソース：@kenmo_economics\n※陽性者数は居住地が判明した方のみを集計しているので、県の総計と一致しません。\n※5月9日以後のデータは収集されないため、グラフの更新も中止となります。",
       "cn": "数据来源：@kenmo_economics\n注1：本图仅统计公布了居住地的患者，因此与该省份的实际确诊人数不一致\n注2：因数据集作者已在5月9日停止收集数据，因此本图暂时不会再进行更新。",
       "en": "Data source: @kenmo_economics\nNote 1: This figure only counts those whose place of residence is published and therefore does not correspond to the total number of confirmed cases in the province\nNote 2: This figure will not be updated for the time being, as the authors of the dataset stopped collecting data on 9 May."
+    },
+    {
+      "ja": "データソース：@kenmo_economics\n※5月9日以後のデータは収集されないため、グラフの更新も中止となります。",
+      "cn": "数据来源：@kenmo_economics\n注：因数据集作者已在5月9日停止收集数据，因此本图暂时不会再进行更新。",
+      "en": "Data source: @kenmo_economics\nNote: This figure will not be updated for the time being, as the authors of the dataset stopped collecting data on 9 May."
     },
     {
       "ja": "市区町村の感染者数",
@@ -332,9 +352,19 @@
       "en": "Infection reported"
     },
     {
-      "ja": "感染者報告なし",
-      "cn": "无确诊报告",
-      "en": "No reported"
+      "ja": "感染者ゼロの都道府県",
+      "cn": "无确诊患者都道府县",
+      "en": "Province of No Active"
+    },
+    {
+      "ja": "回復者数は厚労省発表の数値を使用しているため、メディアの速報より1日遅れる可能性があります。",
+      "cn": "由于康复人数引用自厚劳省的数据，因此可能会与媒体快讯有1天的滞后时间。",
+      "en": "The number of recovered is based on figures released by MHLW, so there is a possibility of a delay of one day from the preliminary media report."
+    },
+    {
+      "ja": "感染者なし",
+      "cn": "无确诊患者",
+      "en": "No Active"
     },
     {
       "ja": "再生速度（秒/日）",
@@ -652,9 +682,9 @@
       "en": "After the Report of March 4, the number of people who conducted the tests, including those who have a close contact with the patients, was referred to the prefectural governments and only confirmed number were published. The number of PCR tests conducted in Japan is the number of reports within the framework of the pseudopathy reporting system, and does not reflect the results of all tests conducted in each municipality (such as confirmation tests at the time of discharge are not included)."
     },
     {
-      "ja": "<hr>国内：%s (%s)<br>空港検疫：%s (+%s)<br>チャーター便：%s",
-      "cn": "<hr>国内：%s (%s)<br>机场检疫：%s (+%s)<br>撤侨包机：%s",
-      "en": "<hr>Domestic: %s (%s)<br>Airport quarantine: %s (+%s)<br>Air charter: %s"
+      "ja": "<hr>国内：%s (%s)<br>空港検疫：%s (+%s)<br>チャーター便：%s<br>コスタ・アトランチカ号：%s",
+      "cn": "<hr>国内：%s (%s)<br>机场检疫：%s (+%s)<br>撤侨包机：%s<br>歌诗达大西洋号：%s",
+      "en": "<hr>Domestic: %s (%s)<br>Airport quarantine: %s (+%s)<br>Air charter: %s<br>Costa Atlantica: %s"
     },
     {
       "ja": "国内事例：%s (+%s)<br>チャーター便：%s<br>コスタ・アトランチカ号：%s",
@@ -677,12 +707,12 @@
       "en": "Airport Quarantine"
     },
     {
-      "ja": "死亡（突合中）",
+      "ja": "死亡（突合作業中）",
       "cn": "死亡（确认中）",
       "en": "Death (Confirming)"
     },
     {
-      "ja": "回復（突合中）",
+      "ja": "回復（突合作業中）",
       "cn": "恢复（确认中）",
       "en": "Recovered (Confirming)"
     },
@@ -712,7 +742,7 @@
       "en": "Recovered"
     },
     {
-      "ja": "ダイアモンド・プリンセス号：令和２年３月５日まで延べ人数で公表しましたＰＣＲ検査の結果について、実員数で精査した結果は下記の数値通りです。<br><br>",
+      "ja": "ダイアモンド・プリンセス号：令和２年３月５日まで延べ人数で公表されていたＰＣＲ検査の結果について、実員数で精査した結果は下記の数値のとおりです。<br><br>",
       "cn": "钻石公主号：公布到2020年3月5日为止的PCR检查人次数据在进行核查后的人数结果即为如下数值。<br><br>",
       "en": "Diamond Princess: The results of the PCR test, which was announced by the total number of personnel until March 5, 2020, are as follows. <br><br>"
     },
@@ -747,7 +777,7 @@
       "en": "According to Australian government, one other patients died on March 1st after returning by air charter."
     },
     {
-      "ja": "感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。",
+      "ja": "感染密度 (km)：『何km四方の土地（可住地面積）に感染者が１人いるか』という指標。",
       "cn": "感染密度 (km)：用于说明每边长为多少km的方形土地（可住地面积）内有1名感染者的指标。",
       "en": "Infection density (km): an indicator of how many km of land (inhabitable area) there is one infected person in a given area."
     },
@@ -2025,6 +2055,21 @@
       "ja": "感染者数：本サイトのリアルタイム感染者数は再び陽性になった患者は新規として数えないため、一部のメディアと自治体が発表した数（延べ人数）と一致しない場合があります。",
       "cn": "确诊人数：本站速报的确诊人数不对复阳患者进行再次统计，因此可能会与部分媒体和自治体所汇报的数值（累计人次）有所不同。",
       "en": "Confirmed: The real-time number of confirmed cases reported in this site is not counted those testing positive after having fully recovered, so it may differ from the values reported by some media and municipalities (patients testing positive after having fully recovered counted as 1 addition)."
+    },
+    {
+      "ja": "必読",
+      "cn": "必读",
+      "en": "Must Read"
+    },
+    {
+      "ja": "検疫職員：国職員（横浜港のクルーズ船対応）・空港検疫での判明者などを含まれています。",
+      "cn": "检疫相关：包含机关工作人员（公主号游轮处理）和在机场检疫中确诊的患者。",
+      "en": "Quarantine: It includes state officials (for cruise ships at the Port of Yokohama) and those identified in airport quarantine."
+    },
+    {
+      "ja": "本サイトの陽性率の計算に関しては、3月下旬から5月8日までの間に厚労省が公開している陽性率と同じ計算方法で計算しています。5月8日以後基準変更などがあるため、厚労省側は公式で陽性率の発表しなくなり、自治体が公表しているデータ（陽性率など）を正しい数値であることを見做しています。本サイトは引き続き同じ計算式で厚労省が発表しているデータだけで陽性率を計算しているが、分母（検査人数）の正確さの保証はないため、陽性率の正確さに関する保証は一切ありません。正確の数値を求めている方は各自治体のページをご参考するようお願い致します。",
+      "cn": "本页面计算阳性率所使用的计算方法是和厚劳省在3月下旬至5月8日这段公布阳性率时期所采用的同样方法计算而出的。5月8日以后由于数据公布标准等有变，厚劳省不再统一公布阳性率，而以各自治体所公布的数据（阳性率等）为准。本网站虽然继续使用厚劳省公布的数据以同样方法进行计算，但由于分母（检测人数）存在不确定性，因为无法对所得阳性率的准确度作任何保证。如您想得知准确的数据请参考各地区政府部门的信息发布页。",
+      "en": "The method used to calculate the positive rate on this page is the same as that used by the MHLW for the period from late March to May 8. After May 8, due to changes in data release standards, the MHLW no longer publishes the positive rate uniformly, but instead uses the data published by each municipality (positive rate, etc.). Although this website continues to use data published by the MHLW for calculations using the same methodology, there is uncertainty in the denominator (number of people tested) and no assurance can be given as to the accuracy of the positive rates. For accurate data, please refer to the information pages of each regional government department."
     }
   ]
 }

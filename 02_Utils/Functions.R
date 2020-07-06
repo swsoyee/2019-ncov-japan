@@ -64,3 +64,9 @@ getDiffValueAndSign <- function(number) {
     return(number)
   }
 }
+
+generateColorStyle <- function(data, colors, by) {
+  breaks <- seq(0, max(ifelse(is.na(data), 0, data), na.rm = T), by = by)
+  colorPanel <- colorRampPalette(colors)(length(breaks) + 1)
+  return(list(cuts = breaks, values = colorPanel))
+}

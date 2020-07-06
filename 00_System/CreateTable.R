@@ -324,18 +324,18 @@ mergeDt[region == "クルーズ船", active := active - 40] # クルーズ船の
 # 13個特定警戒都道府県
 alertPref <-
   c(
-    "東京",
-    "大阪",
-    "北海道",
+    # "東京",
+    # "大阪",
+    # "北海道",
     # "茨城",
-    "埼玉",
-    "千葉",
-    "神奈川",
+    # "埼玉",
+    # "千葉",
+    # "神奈川",
     # "石川",
     # "岐阜",
     # "愛知",
-    "京都",
-    "兵庫" #,
+    # "京都",
+    # "兵庫",
     # "福岡"
   )
 
@@ -384,3 +384,7 @@ mapDt <- mapDt[, .(date, variable, 都道府県, `name-en`, value, regions, lat,
 # カラム名変更
 colnames(mapDt) <- c("date", "ja", "full_ja", "en", "count", "regions", "lat", "lng")
 fwrite(x = mapDt, file = paste0(DATA_PATH, "result.map.csv"))
+
+# ====COVID DATA HUB====
+source(file = "00_System/Generate.covid19datahub.R")
+

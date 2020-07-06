@@ -14,6 +14,7 @@ shinyServer(function(input, output, session) {
   source(file = paste0(COMPONENT_PATH, "Main/ConfirmedCityTreemap.server.R"), local = T, encoding = "UTF-8")
   source(file = paste0(COMPONENT_PATH, "Academic/onset2ConfirmedMap.server.R"), local = T, encoding = "UTF-8")
   source(file = paste0(COMPONENT_PATH, "Google/PrefMobility.server.R"), local = T, encoding = "UTF-8")
+  source(file = paste0(PAGE_PATH, "World/World.server.R"), local = T, encoding = "UTF-8")
   # source(file = paste0(PAGE_PATH, "ECMO/ECMO.server.R"), local = T, encoding = "UTF-8")
 
   # マップ関連コンポーネント
@@ -42,7 +43,7 @@ shinyServer(function(input, output, session) {
   )
   # ネットワーク系コンポーネント
   source(
-    file = paste0(COMPONENT_PATH, "Network.R"),
+    file = paste0(COMPONENT_PATH, "/Network/Network.R"),
     local = TRUE,
     encoding = "UTF-8"
   )
@@ -66,7 +67,7 @@ shinyServer(function(input, output, session) {
   )
   # 感染ルート
   source(
-    file = paste0(COMPONENT_PATH, "PlotInfectedRoute.R"),
+    file = paste0(COMPONENT_PATH, "Network/PlotInfectedRoute.R"),
     local = TRUE,
     encoding = "UTF-8"
   )
@@ -118,6 +119,8 @@ shinyServer(function(input, output, session) {
     local = TRUE,
     encoding = "UTF-8"
   )
+  # 福岡県
+  source(file = paste0(PAGE_PATH, "Pref/Fukuoka-Server.R"), local = TRUE, encoding = "UTF-8")
 
   observeEvent(input$switchCaseMap, {
     updateTabItems(session, "sideBarTab", "caseMap")

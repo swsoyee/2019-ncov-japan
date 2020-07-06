@@ -41,6 +41,9 @@ output$todayDeath <- renderUI({
 })
 
 output$saveArea <- renderUI({
+  # 感染者なしの地域
+  dt <- simpleMapDataset()
+  regionZero <- dt[order(regions)][active == 0, ja]
   if (length(regionZero) > 0) {
     elements <- list()
     for (i in 1:length(regionZero)) {

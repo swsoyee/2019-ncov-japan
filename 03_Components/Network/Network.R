@@ -136,7 +136,8 @@ output$profile <- renderUI({
         width = 12,
         closable = F,
         boxProfile(
-          title = profile[1],
+          title = profile[1], 
+          src = ifelse(profile[4] == '男性', 'Icon/male.png', 'Icon/female.png'),
           subtitle = tagList(gender, statusBadge),
           boxProfileItemList(
             bordered = TRUE,

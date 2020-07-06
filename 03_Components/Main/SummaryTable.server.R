@@ -34,8 +34,20 @@ observeEvent(input$switchTableVersion, {
       tagList(
         dataTableOutput("confirmedByPrefTable"),
         helpText(
+          icon("exclamation-circle"),
+          i18n$t("検疫職員：国職員（横浜港のクルーズ船対応）・空港検疫での判明者などを含まれています。")
+        ),
+        helpText(
+          icon("chart-bar"),
+          i18n$t("感染者数：本サイトのリアルタイム感染者数は再び陽性になった患者は新規として数えないため、一部のメディアと自治体が発表した数（延べ人数）と一致しない場合があります。")
+        ),
+        helpText(
+          icon("procedures"),
+          i18n$t("現在患者数：厚労省のデータをもとにして計算しているため、速報部分の感染者数が含まれていません。")
+        ),
+        helpText(
           icon("street-view"),
-          i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。")
+          i18n$t("感染密度 (km)：『何km四方の土地（可住地面積）に感染者が１人いるか』という指標。")
         )
       )
     })
@@ -82,11 +94,26 @@ observeEvent(input$switchTableVersion, {
           ),
           accordionItem(
             id = 2,
-            title = i18n$t("2. 5月9日からの集計について"),
+            title = tagList(i18n$t("2. 5月9日からの集計について"), dashboardLabel(status = "warning", i18n$t("必読"))),
             tags$ol(
               tags$li(
-                icon(""),
+                icon("exclamation-triangle"),
                 i18n$t("PCR検査実施人数は、一部自治体について件数を計上しているため、実際の人数より過大である。")
+              ),
+              tags$li(
+                icon("exclamation-triangle"),
+                i18n$t("一部のデータについて、マイナスになったり大きく増減しているのは、都道府県からの報告に訂正または集計されていないデータを加わった結果になります。参考："),
+                tags$a(icon("external-link-alt"), "5/13", href = "https://www.mhlw.go.jp/stf/newpage_11291.html"),
+                tags$a(icon("external-link-alt"), "5/14", href = "https://www.mhlw.go.jp/stf/newpage_11311.html"),
+                tags$a(icon("external-link-alt"), "5/15", href = "https://www.mhlw.go.jp/stf/newpage_11339.html"),
+                tags$a(icon("external-link-alt"), "5/16", href = "https://www.mhlw.go.jp/stf/newpage_11354.html"),
+                tags$a(icon("external-link-alt"), "6/18", href = "https://www.mhlw.go.jp/stf/newpage_11961.html"),
+                tags$a(icon("external-link-alt"), "6/19", href = "https://www.mhlw.go.jp/stf/newpage_11993.html"),
+                tags$a(icon("external-link-alt"), icon("github"), href = "https://github.com/swsoyee/2019-ncov-japan/issues/389")
+              ),
+              tags$li(
+                icon("exclamation-triangle"),
+                i18n$t("本サイトの陽性率の計算に関しては、3月下旬から5月8日までの間に厚労省が公開している陽性率と同じ計算方法で計算しています。5月8日以後基準変更などがあるため、厚労省側は公式で陽性率の発表しなくなり、自治体が公表しているデータ（陽性率など）を正しい数値であることを見做しています。本サイトは引き続き同じ計算式で厚労省が発表しているデータだけで陽性率を計算しているが、分母（検査人数）の正確さの保証はないため、陽性率の正確さに関する保証は一切ありません。正確の数値を求めている方は各自治体のページをご参考するようお願い致します。")
               )
             )
           )
@@ -102,18 +129,19 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
   # dt <- dt[count > 0]
   columnName <- c("death", "perMillionDeath")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
-  
+  < < < < < < < HEAD
+
   dt[, zeroContinuousDay := replace(.SD, .SD <= 0, NA), .SDcols = 'zeroContinuousDay']
   breaksZero <-
     seq(0, max(ifelse(is.na(dt$zeroContinuousDay), 0, dt$zeroContinuousDay), na.rm = T), 5)
   colorsZero <-
     colorRampPalette(c(lightBlue, darkBlue))(length(breaksZero) + 1)
-  
+
   breaksDeath <-
     seq(0, max(ifelse(is.na(dt$death), 0, dt$death), na.rm = T), 2)
   colorsDeath <-
     colorRampPalette(c(lightNavy, darkNavy))(length(breaksDeath) + 1)
-  
+
   breaksDischarged <-
     seq(0, max(ifelse(
       is.na(dt$totalDischarged), 0, dt$totalDischarged
@@ -126,9 +154,14 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     ), na.rm = T))
   colorsPerMillion <-
     colorRampPalette(c("#FFFFFF", "#6B7989"))(length(breaksPerMillion) + 1)
-  
+
+  == == == =
+  dt[, zeroContinuousDay := replace(.SD, .SD <= 0, NA), .SDcols = "zeroContinuousDay"]
+
+  > > > > > > > master
   datatable(
-    data = dt[, c(1, 8, 12, 7, 9, 14, 15, 10), with = F],
+    dt[, .(region, detailBullet, totalDischarged, dischargeDiff, death, perMillionDeath, zeroContinuousDay, group)],
+    escape = F,
     colnames = c(
       i18n$t("自治体"),
       i18n$t("内訳"),
@@ -136,36 +169,29 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
       i18n$t("回復推移"),
       i18n$t("死亡"),
       i18n$t("百万人あたり"),
-      i18n$t("カテゴリ"),
-      i18n$t("0新規日数")
+      i18n$t("0新規日数"),
+      i18n$t("カテゴリ")
     ),
-    caption = "",
-    escape = F,
     plugins = "natural",
-    # extensions = c("Responsive"),
     extensions = "RowGroup",
     callback = htmlwidgets::JS(paste0(
       "
-      table.rowGroup().",
+        table.rowGroup().",
       ifelse(input$tableShowSetting, "enable()", "disable()"),
       ".draw();
-    "
+      "
     )),
     options = list(
       paging = F,
-      rowGroup = list(dataSrc = 7),
+      rowGroup = list(dataSrc = 8),
       fixedHeader = T,
       dom = "t",
       scrollY = "540px",
       scrollX = T,
       columnDefs = list(
         list(
-          className = "dt-left",
-          width = "80px",
-          targets = 1
-        ),
-        list(
           className = "dt-center",
+  < < < < < < < HEAD
           targets = 2:5
         ),
         list(
@@ -176,57 +202,60 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
           className = "dt-center",
           width = "18%",
           targets = c(6, 8)
+  == == == =
+          targets = 2:7
+  > > > > > > > master
         ),
         list(
           visible = F,
-          targets = 7
+          targets = 8
         ),
         list(
-          width = "15%",
-          targets = 4
-        ),
-        list(
-          render = JS(
-            "
-             function(data, type, row, meta) {
-                const split = data.split('|');
-                return split[1];
-            }"
-          ),
+          render = JS("function(data, type, row, meta) {
+                        const split = data.split('|');
+                        return split[1];
+                    }"),
           targets = 1
         )
       ),
       fnDrawCallback = htmlwidgets::JS("
-      function() {
-        HTMLWidgets.staticRender();
-      }
-    ")
+            function() {
+              HTMLWidgets.staticRender();
+            }
+          ")
     )
   ) %>%
     spk_add_deps() %>%
-    # formatCurrency(
-    #   columns = "today",
-    #   currency = paste(as.character(icon("caret-up")), " "),
-    #   digits = 0
-    # ) %>%s
     formatStyle(
       columns = "totalDischarged",
-      color = styleInterval(breaksDischarged, colorsDischarged),
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$totalDischarged, colors = c(lightGreen, darkGreen), by = 100)
+      ),
       fontWeight = "bold"
     ) %>%
     formatStyle(
       columns = "death",
-      color = styleInterval(breaksDeath, colorsDeath),
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$death, colors = c(lightNavy, darkNavy), by = 10)
+      ),
       fontWeight = "bold"
     ) %>%
     formatStyle(
       columns = "perMillionDeath",
-      backgroundColor = styleInterval(breaksPerMillion, colorsPerMillion),
+      backgroundColor = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$perMillionDeath, colors = c("#FFFFFF", "#6B7989"), by = 1)
+      ),
       fontWeight = "bold"
     ) %>%
     formatStyle(
-      columns = 'zeroContinuousDay',
-      color = styleInterval(breaksZero, colorsZero),
+      columns = "zeroContinuousDay",
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$zeroContinuousDay, colors = c(lightBlue, darkBlue), by = 5)
+      ),
       fontWeight = "bold"
     )
 })
@@ -249,29 +278,33 @@ output$confirmedByPrefTable <- renderDataTable({
   # ０の値を非表示するため、NAに設定るす
   columnName <- c("today", "doubleTimeDay")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
-  
+  < < < < < < < HEAD
+
   breaks <-
     seq(0, max(ifelse(is.na(dt$today), 0, dt$today), na.rm = T))
   colors <-
     colorRampPalette(c(lightRed, darkRed))(length(breaks) + 1)
-  
+
   breaksDoubleTimeDay <-
     seq(0, max(unlist(ifelse(
       is.na(dt$doubleTimeDay), 0, dt$doubleTimeDay
     )), na.rm = T))
   colorsDoubleTimeDay <-
     colorRampPalette(c(darkRed, lightYellow))(length(breaksDoubleTimeDay) + 1)
-  
+
   breaksPerMillion <-
     seq(0, max(ifelse(is.na(dt$perMillion), 0, dt$perMillion), na.rm = T))
   colorsPerMillion <-
     colorRampPalette(c("#FFFFFF", darkRed))(length(breaksPerMillion) + 1)
-  
+
+  == == == =
+
+  > > > > > > > master
   breaksPerArea <-
     seq(0, ceiling(max(dt$perArea[!is.infinite(dt$perArea)], na.rm = T)))
   colorsPerArea <-
     colorRampPalette(c(darkYellow, "#FFFFFF"))(length(breaksPerArea) + 1)
-  
+
   datatable(
     data = dt[, c(1, 3, 4, 6, 11, 13, 15, 16), with = F],
     colnames = c(
@@ -279,14 +312,18 @@ output$confirmedByPrefTable <- renderDataTable({
       i18n$t("新規"),
       i18n$t("感染者数"),
       i18n$t("感染推移"),
+  < < < < < < < HEAD
+  == == == =
+      i18n$t("現在患者数"),
+  > > > > > > > master
       i18n$t("倍加日数"),
       i18n$t("百万人あたり"),
       i18n$t("カテゴリ"),
       i18n$t("感染密度(km)")
     ),
     escape = F,
-    # caption = i18n$t("感染密度 (km)：何km四方の土地（可住地面積）に感染者が１人いるかという指標である。"),
-    # extensions = c("Responsive"),
+  # caption = i18n$t("感染密度 (km)：『何km四方の土地（可住地面積）に感染者が１人いるか』という指標。"),
+  # extensions = c("Responsive"),
     extensions = "RowGroup",
     callback = htmlwidgets::JS(paste0(
       "
@@ -297,25 +334,35 @@ output$confirmedByPrefTable <- renderDataTable({
     )),
     options = list(
       paging = F,
+  < < < < < < < HEAD
       rowGroup = list(dataSrc = 7),
       dom = "t",
+  == == == =
+      rowGroup = list(dataSrc = 8),
+      dom = "Bt",
+      buttons = list(
+        list(
+          extend = "colvis",
+          columns = c(4, 5, 6, 7, 9),
+          text = i18n$t("カラム表示")
+        )
+      ),
+  > > > > > > > master
       scrollY = "540px",
       scrollX = T,
       columnDefs = list(
         list(
-          className = "dt-center",
-          width = "15%",
-          targets = c(3, 4)
-        ),
-        list(
           className = "dt-left",
-          width = "80px",
           targets = 1
         ),
         list(
           className = "dt-center",
+  < < < < < < < HEAD
           width = "13%",
           targets = c(5, 6, 8)
+  == == == =
+          targets = c(3:7, 9)
+  > > > > > > > master
         ),
         list(
           width = "30px",
@@ -389,17 +436,37 @@ output$confirmedByPrefTable <- renderDataTable({
     ) %>%
     formatStyle(
       columns = "today",
-      color = styleInterval(breaks, colors),
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$today, colors = c(lightRed, darkRed), by = 5)
+      ),
       fontWeight = "bold"
     ) %>%
     formatStyle(
+      columns = "active",
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$active, colors = c(lightYellow, darkRed), by = 100)
+      ),
+      fontWeight = "bold"
+    ) %>%
+    formatStyle(
+  < < < < < < < HEAD
+  == == == =
       columns = "doubleTimeDay",
-      color = styleInterval(breaksDoubleTimeDay, colorsDoubleTimeDay),
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$doubleTimeDay, colors = c(darkRed, lightYellow), by = 5)
+      ),
       fontWeight = "bold"
     ) %>%
     formatStyle(
+  > > > > > > > master
       columns = "perMillion",
-      backgroundColor = styleInterval(breaksPerMillion, colorsPerMillion),
+      backgroundColor = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$perMillion, colors = c("#FFFFFF", darkRed), by = 50)
+      ),
       fontWeight = "bold"
     ) %>%
     formatStyle(
@@ -416,27 +483,31 @@ output$testByPrefTable <- renderDataTable({
   # ０の値を非表示するため、NAに設定るす
   columnName <- c("前日比")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
-  
+  < < < < < < < HEAD
+
   breaksPerM <-
     seq(0, max(ifelse(is.na(dt$百万人あたり), 0, dt$百万人あたり), na.rm = T), by = 1000)
   colorsPerM <-
     colorRampPalette(c("#FFFFFF", middleYellow))(length(breaksPerM) + 1)
-  
+
   breaksDaily <-
     seq(0, max(ifelse(is.na(dt$週間平均移動), 0, dt$週間平均移動), na.rm = T), by = 50)
   colorsDaily <-
     colorRampPalette(c(lightYellow, darkYellow))(length(breaksDaily) + 1)
-  
+
   breaksNew <-
     seq(0, max(ifelse(is.na(dt$前日比), 0, dt$前日比), na.rm = T), by = 50)
   colorsNew <-
     colorRampPalette(c(lightYellow, darkYellow))(length(breaksNew) + 1)
-  
+
   breaksPositiveRate <-
     seq(0, max(ifelse(is.na(dt$陽性率), 0, dt$陽性率), na.rm = T))
   colorsPositiveRate <-
     colorRampPalette(c(lightRed, darkRed))(length(breaksPositiveRate) + 1)
-  
+
+  == == == =
+
+  > > > > > > > master
   datatable(
     data = dt[, .(region, 検査人数, 検査数推移, 前日比, 週間平均移動, 百万人あたり, 陽性率推移, 陽性率, group)],
     colnames = c(
@@ -451,8 +522,8 @@ output$testByPrefTable <- renderDataTable({
       i18n$t("カテゴリ")
     ),
     escape = F,
-    # extensions = c("Responsive"),
-    extensions = "RowGroup",
+  # extensions = c("Responsive"),
+    extensions = c("RowGroup", "Buttons"),
     callback = htmlwidgets::JS(paste0(
       "
       table.rowGroup().",
@@ -463,43 +534,41 @@ output$testByPrefTable <- renderDataTable({
     options = list(
       paging = F,
       rowGroup = list(dataSrc = 9),
-      dom = "t",
+      dom = "Bt",
+      buttons = list(
+        list(
+          extend = "colvis",
+          columns = c(8),
+          text = i18n$t("カラム表示")
+        )
+      ),
       scrollY = "540px",
       scrollX = T,
       columnDefs = list(
         list(
-          className = "dt-center",
-          width = "13%",
-          # targets = i18n$t("百万人あたり"))
-          targets = 6
-        ),
-        list(
           width = "45px",
           className = "dt-right",
-          # targets = i18n$t("前日比")
+  # targets = i18n$t("前日比")
           targets = 4
         ),
         list(
           width = "30px",
           className = "dt-right",
-          # targets = i18n$t("日均")
+  # targets = i18n$t("日均")
           targets = 5
         ),
         list(
           className = "dt-left",
-          width = "80px",
-          # targets = i18n$t("自治体")
+  # targets = i18n$t("自治体")
           targets = 1
         ),
         list(
           className = "dt-center",
-          width = "13%",
-          # targets = c(i18n$t("検査人数"), i18n$t("検査推移"), i18n$t("陽性率推移"))
-          targets = c(2, 3, 7)
+          targets = c(2, 3, 6, 7)
         ),
         list(
           visible = F,
-          targets = 9
+          targets = 8:9
         ),
         list(
           render = JS(
@@ -521,7 +590,7 @@ output$testByPrefTable <- renderDataTable({
   ) %>%
     spk_add_deps() %>%
     formatCurrency(
-      columns = "検査人数", 
+      columns = "検査人数",
       currency = "",
       digits = 0
     ) %>%
@@ -543,27 +612,39 @@ output$testByPrefTable <- renderDataTable({
     ) %>%
     formatStyle(
       columns = "陽性率",
-      color = styleInterval(breaksPositiveRate, colorsPositiveRate),
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$陽性率, colors = c(lightRed, darkRed), by = 4)
+      ),
       fontWeight = "bold"
     ) %>%
     formatStyle(
       columns = "百万人あたり",
-      backgroundColor = styleInterval(breaksPerM, colorsPerM),
+      backgroundColor = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$百万人あたり, colors = c("#FFFFFF", middleYellow), by = 1000)
+      ),
       fontWeight = "bold"
     ) %>%
     formatCurrency(
-      columns = "百万人あたり", 
+      columns = "百万人あたり",
       currency = "",
       digits = 0
     ) %>%
     formatStyle(
       columns = "週間平均移動",
-      color = styleInterval(breaksDaily, colorsDaily),
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$週間平均移動, colors = c(lightYellow, darkYellow), by = 50)
+      ),
       fontWeight = "bold"
     ) %>%
     formatStyle(
       columns = "前日比",
-      color = styleInterval(breaksNew, colorsNew),
+      color = do.call(
+        styleInterval,
+        generateColorStyle(data = dt$前日比, colors = c(lightYellow, darkYellow), by = 50)
+      ),
       fontWeight = "bold"
     )
 })

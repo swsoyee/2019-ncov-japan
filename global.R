@@ -115,12 +115,6 @@ mhlwSummary <- mhlwSummary[order(都道府県名, 日付)]
 setnafill(mhlwSummary, type = "locf", cols = c("陽性者", "退院者", "検査人数"))
 
 # ====総数基礎集計====
-# PCR
-PCR_WITHIN <- getFinalAndDiff(domesticDailyReport$pcr)
-PCR_SHIP <- getFinalAndDiff(shipDailyReport$pcr)
-PCR_FLIGHT <- getFinalAndDiff(flightDailyReport$pcr)
-PCR_AIRPORT <- getFinalAndDiff(airportDailyReport$pcr)
-
 
 # 確認
 TOTAL_DOMESITC <- sum(byDate[, c(2:48)]) # 日本国内事例のPCR陽性数（クルーズ船関連者除く）
@@ -217,8 +211,6 @@ DEATH_JAPAN_DIFF <- DEATH_WITHIN_DIFF + DEATH_SHIP_DIFF # 日本領土内のPCR�
 # 地域選択に表示する項目名
 regionName <- colSums(byDate[, 2:ncol(byDate)])
 regionNamePref <- regionName[1:47]
-# 感染者確認されていない地域
-regionZero <- names(regionNamePref[regionNamePref == 0])
 regionNamePref <- sort(regionNamePref[regionNamePref > 0], decreasing = T)
 regionNamePrefName <- paste0(sapply(names(regionNamePref), i18n$t), " (", regionNamePref, ")")
 regionNameOther <- regionName[48:length(regionName)]
@@ -346,6 +338,18 @@ GLOBAL_VALUE <- reactiveValues(
   Kanagawa = list(
     summary = NULL,
     updateTime = NULL
+  ),
+  Fukuoka = list(
+    summary = NULL,
+    updateTime = NULL,
+    patients = NULL,
+    nodes = NULL,
+    edges = NULL,
+    call = NULL
+  ),
+  World = list(
+    Summary = NULL,
+    SummaryTable = NULL
   ),
   Google = list(
     mobility = NULL,

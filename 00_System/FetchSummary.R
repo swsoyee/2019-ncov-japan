@@ -99,7 +99,58 @@
 #   "20200513" = "https://www.mhlw.go.jp/content/10906000/000630162.pdf",
 #   "20200514" = "https://www.mhlw.go.jp/content/10906000/000630534.pdf",
 #   "20200515" = "https://www.mhlw.go.jp/content/10906000/000630924.pdf",
-#   "20200516" = "https://www.mhlw.go.jp/content/10906000/000631063.pdf"
+#   "20200516" = "https://www.mhlw.go.jp/content/10906000/000631063.pdf",
+#   "20200517" = "https://www.mhlw.go.jp/content/10906000/000631149.pdf",
+#   "20200518" = "https://www.mhlw.go.jp/content/10906000/000631428.pdf",
+#   "20200519" = "https://www.mhlw.go.jp/content/10906000/000631887.pdf",
+#   "20200520" = "https://www.mhlw.go.jp/content/10906000/000632211.pdf",
+#   "20200521" = "https://www.mhlw.go.jp/content/10906000/000632553.pdf",
+#   "20200522" = "https://www.mhlw.go.jp/content/10906000/000632894.pdf",
+#   "20200523" = "https://www.mhlw.go.jp/content/10906000/000633030.pdf",
+#   "20200524" = "https://www.mhlw.go.jp/content/10906000/000633053.pdf",
+#   "20200525" = "https://www.mhlw.go.jp/content/10906000/000633317.pdf",
+#   "20200526" = "https://www.mhlw.go.jp/content/10906000/000633684.pdf",
+#   "20200527" = "https://www.mhlw.go.jp/content/10906000/000634251.pdf",
+#   "20200528" = "https://www.mhlw.go.jp/content/10906000/000634785.pdf",
+#   "20200529" = "https://www.mhlw.go.jp/content/10906000/000635194.pdf",
+#   "20200530" = "https://www.mhlw.go.jp/content/10906000/000635510.pdf",
+#   "20200531" = "https://www.mhlw.go.jp/content/10906000/000635537.pdf",
+#   "20200601" = "https://www.mhlw.go.jp/content/10906000/000635775.pdf",
+#   "20200602" = "https://www.mhlw.go.jp/content/10906000/000636131.pdf",
+#   "20200603" = "https://www.mhlw.go.jp/content/10906000/000636580.pdf",
+#   "20200604" = "https://www.mhlw.go.jp/content/10906000/000636974.pdf",
+#   "20200605" = "https://www.mhlw.go.jp/content/10906000/000637373.pdf",
+#   "20200606" = "https://www.mhlw.go.jp/content/10906000/000637517.pdf",
+#   "20200607" = "https://www.mhlw.go.jp/content/10906000/000637546.pdf",
+#   "20200608" = "https://www.mhlw.go.jp/content/10906000/000637898.pdf",
+#   "20200609" = "https://www.mhlw.go.jp/content/10906000/000638331.pdf",
+#   "20200610" = "https://www.mhlw.go.jp/content/10906000/000638689.pdf",
+#   "20200611" = "https://www.mhlw.go.jp/content/10906000/000638963.pdf",
+#   "20200612" = "https://www.mhlw.go.jp/content/10906000/000639340.pdf",
+#   "20200613" = "https://www.mhlw.go.jp/content/10906000/000639746.pdf",
+#   "20200614" = "https://www.mhlw.go.jp/content/10906000/000639768.pdf",
+#   "20200615" = "https://www.mhlw.go.jp/content/10906000/000640012.pdf",
+#   "20200616" = "https://www.mhlw.go.jp/content/10906000/000640391.pdf",
+#   "20200617" = "https://www.mhlw.go.jp/content/10906000/000640744.pdf",
+#   "20200618" = "https://www.mhlw.go.jp/content/10906000/000641279.pdf",
+#   "20200619" = "https://www.mhlw.go.jp/content/10906000/000641749.pdf",
+#   "20200620" = "https://www.mhlw.go.jp/content/10906000/000641953.pdf",
+#   "20200621" = "https://www.mhlw.go.jp/content/10906000/000641965.pdf",
+#   "20200622" = "https://www.mhlw.go.jp/content/10906000/000642110.pdf",
+#   "20200623" = "https://www.mhlw.go.jp/content/10906000/000642429.pdf",
+#   "20200624" = "https://www.mhlw.go.jp/content/10906000/000642770.pdf",
+#   "20200625" = "https://www.mhlw.go.jp/content/10906000/000643524.pdf",
+#   "20200626" = "https://www.mhlw.go.jp/content/10906000/000644137.pdf",
+#   "20200627" = "https://www.mhlw.go.jp/content/10906000/000644324.pdf",
+#   "20200628" = "https://www.mhlw.go.jp/content/10906000/000644366.pdf",
+#   "20200629" = "https://www.mhlw.go.jp/content/10906000/000644581.pdf",
+#   "20200630" = "https://www.mhlw.go.jp/content/10906000/000645008.pdf",
+#   "20200701" = "https://www.mhlw.go.jp/content/10906000/000645319.pdf",
+#   "20200702" = "https://www.mhlw.go.jp/content/10906000/000645664.pdf",
+#   "20200703" = "https://www.mhlw.go.jp/content/10906000/000646191.pdf",
+#   "20200704" = "https://www.mhlw.go.jp/content/10906000/000646571.pdf",
+#   "20200705" = "https://www.mhlw.go.jp/content/10906000/000646607.pdf",
+#   "20200706" = "https://www.mhlw.go.jp/content/10906000/000646810.pdf"
 # )
 # 
 # for (i in names(location)) {
@@ -107,6 +158,10 @@
 #     out <- tabulizer::extract_tables(location[i][[1]], method = "lattice")
 # 
 #     dt <- data.table(out[[1]])
+#     # 沖縄処理
+#     # dt[49] <- dt[49, c(1:3, 6:7, 10, 13, 4, 5, 8, 9, 11, 12)]
+#     # dt[, `:=` (V8 = NULL, V9 = NULL, V10 = NULL, V11 = NULL, V12 = NULL, V13 = NULL)]
+# 
 #     colnames(dt) <- c("都道府県名", "陽性者", "検査人数", "入院中", "重症者", "退院者", "死亡者")
 #     dt <- dt[3:(nrow(dt) - 1)]
 #     dt[grepl("その他", 都道府県名), 都道府県名 := "伊客船"]
