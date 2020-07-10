@@ -154,7 +154,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-07,509993,20151,979,17190,1806,,,36,126216142,1,Japan,,
 2020-07-08,518210,20358,981,17325,1862,,,35,126216142,1,Japan,,
 2020-07-09,527546,20713,981,17461,1920,,,38,126216142,1,Japan,,
-2020-07-10,0,21140,981,0,0,,,0,126216142,1,Japan,,
+2020-07-10,0,21144,981,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -9190,7 +9190,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-10,,71,1,,,,,,1077057,2,Japan,Yamagata,06
 2020-07-10,,83,0,,,,,,1847950,2,Japan,Fukushima,07
 2020-07-10,,196,10,,,,,,2868041,2,Japan,Ibaraki,08
-2020-07-10,,90,0,,,,,,1942312,2,Japan,Tochigi,09
+2020-07-10,,93,0,,,,,,1942312,2,Japan,Tochigi,09
 2020-07-10,,155,19,,,,,,1937626,2,Japan,Gunma,10
 2020-07-10,,1392,66,,,,,,7337330,2,Japan,Saitama,11
 2020-07-10,,1068,46,,,,,,6279026,2,Japan,Chiba,12
@@ -9223,7 +9223,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-10,,74,3,,,,,,697674,2,Japan,Kochi,39
 2020-07-10,,901,33,,,,,,5110113,2,Japan,Fukuoka,40
 2020-07-10,,45,0,,,,,,814211,2,Japan,Saga,41
-2020-07-10,,19,1,,,,,,1325205,2,Japan,Nagasaki,42
+2020-07-10,,20,1,,,,,,1325205,2,Japan,Nagasaki,42
 2020-07-10,,48,3,,,,,,1746740,2,Japan,Kumamoto,43
 2020-07-10,,60,1,,,,,,1134431,2,Japan,Oita,44
 2020-07-10,,18,0,,,,,,1072077,2,Japan,Miyazaki,45
