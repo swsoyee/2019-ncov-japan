@@ -155,7 +155,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-08,518210,20358,981,17325,1862,,,35,126216142,1,Japan,,
 2020-07-09,527546,20713,981,17461,1920,,,38,126216142,1,Japan,,
 2020-07-10,0,21145,981,0,0,,,0,126216142,1,Japan,,
-2020-07-11,0,21181,982,0,0,,,0,126216142,1,Japan,,
+2020-07-11,0,21187,982,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -9237,7 +9237,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-11,,1273,101,,,,,,5248552,2,Japan,Hokkaido,01
 2020-07-11,,30,1,,,,,,1246138,2,Japan,Aomori,02
 2020-07-11,,0,0,,,,,,1226430,2,Japan,Iwate,03
-2020-07-11,,102,1,,,,,,2303160,2,Japan,Miyagi,04
+2020-07-11,,104,1,,,,,,2303160,2,Japan,Miyagi,04
 2020-07-11,,15,0,,,,,,965968,2,Japan,Akita,05
 2020-07-11,,71,1,,,,,,1077057,2,Japan,Yamagata,06
 2020-07-11,,83,0,,,,,,1847950,2,Japan,Fukushima,07
@@ -9247,8 +9247,8 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-11,,1393,66,,,,,,7337330,2,Japan,Saitama,11
 2020-07-11,,1071,46,,,,,,6279026,2,Japan,Chiba,12
 2020-07-11,,7515,325,,,,,,13942856,2,Japan,Tokyo,13
-2020-07-11,,1690,98,,,,,,9200166,2,Japan,Kanagawa,14
-2020-07-11,,85,0,,,,,,2222004,2,Japan,Niigata,15
+2020-07-11,,1691,98,,,,,,9200166,2,Japan,Kanagawa,14
+2020-07-11,,86,0,,,,,,2222004,2,Japan,Niigata,15
 2020-07-11,,230,22,,,,,,1042998,2,Japan,Toyama,16
 2020-07-11,,300,27,,,,,,1137181,2,Japan,Ishikawa,17
 2020-07-11,,122,8,,,,,,767742,2,Japan,Fukui,18
@@ -9280,7 +9280,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-11,,60,1,,,,,,1134431,2,Japan,Oita,44
 2020-07-11,,18,0,,,,,,1072077,2,Japan,Miyazaki,45
 2020-07-11,,132,0,,,,,,1599984,2,Japan,Kagoshima,46
-2020-07-11,,146,7,,,,,,1454184,2,Japan,Okinawa,47
+2020-07-11,,148,7,,,,,,1454184,2,Japan,Okinawa,47
 2020-07-11,,14,0,,,,,,,1,Japan,Charter Flight,
 2020-07-11,,371,1,,,,,,,1,Japan,Quarantine,
 2020-07-11,,712,13,,,,,,,1,Japan,Diamond Princess,
