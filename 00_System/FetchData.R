@@ -114,13 +114,17 @@ pcr <- data.table(
   date = as.Date(jsonFile$inspections_summary$labels, "%m/%d"),
   検査数 = jsonFile$inspections_summary$data$県内
 )
+contactUrl <- "https://raw.githubusercontent.com/MeditationDuck/covid19/development/data/data.contacts.json"
+contactJsonFile <- jsonlite::fromJSON(contactUrl)
 contact <- data.table(
-  date = as.Date(jsonFile$contacts$data$日付),
-  相談件数 = jsonFile$contacts$data$小計
+  date = as.Date(contactJsonFile$contacts$data$日付),
+  相談件数 = contactJsonFile$contacts$data$小計
 )
+querentUrl <- "https://raw.githubusercontent.com/MeditationDuck/covid19/development/data/data.querents.json"
+querentJsonFile <- jsonlite::fromJSON(querentUrl)
 querent <- data.table(
-  date = as.Date(jsonFile$querents$data$日付),
-  一般相談 = jsonFile$querents$data$小計
+  date = as.Date(querentJsonFile$querents$data$日付),
+  一般相談 = querentJsonFile$querents$data$小計
 )
 iwateData <- merge(x = pcr, y = contact, by = "date", no.dups = T, all = T)
 iwateData <- merge(x = iwateData, y = querent, by = "date", no.dups = T, all = T)
