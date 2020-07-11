@@ -155,7 +155,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-08,518210,20358,981,17325,1862,,,35,126216142,1,Japan,,
 2020-07-09,527546,20713,981,17461,1920,,,38,126216142,1,Japan,,
 2020-07-10,0,21145,981,0,0,,,0,126216142,1,Japan,,
-2020-07-11,0,21165,982,0,0,,,0,126216142,1,Japan,,
+2020-07-11,0,21174,982,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -9234,7 +9234,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-10,,371,1,,,,,,,1,Japan,Quarantine,
 2020-07-10,,712,13,,,,,,,1,Japan,Diamond Princess,
 2020-07-10,,149,0,,,,,,,1,Japan,Costa Atlantica,
-2020-07-11,,1272,101,,,,,,5248552,2,Japan,Hokkaido,01
+2020-07-11,,1273,101,,,,,,5248552,2,Japan,Hokkaido,01
 2020-07-11,,30,1,,,,,,1246138,2,Japan,Aomori,02
 2020-07-11,,0,0,,,,,,1226430,2,Japan,Iwate,03
 2020-07-11,,102,1,,,,,,2303160,2,Japan,Miyagi,04
@@ -9244,7 +9244,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-11,,196,10,,,,,,2868041,2,Japan,Ibaraki,08
 2020-07-11,,93,0,,,,,,1942312,2,Japan,Tochigi,09
 2020-07-11,,155,19,,,,,,1937626,2,Japan,Gunma,10
-2020-07-11,,1392,66,,,,,,7337330,2,Japan,Saitama,11
+2020-07-11,,1393,66,,,,,,7337330,2,Japan,Saitama,11
 2020-07-11,,1071,46,,,,,,6279026,2,Japan,Chiba,12
 2020-07-11,,7515,325,,,,,,13942856,2,Japan,Tokyo,13
 2020-07-11,,1690,98,,,,,,9200166,2,Japan,Kanagawa,14
@@ -9263,11 +9263,11 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-11,,1967,86,,,,,,8823453,2,Japan,Osaka,27
 2020-07-11,,731,45,,,,,,5463609,2,Japan,Hyogo,28
 2020-07-11,,102,2,,,,,,1331330,2,Japan,Nara,29
-2020-07-11,,73,3,,,,,,923721,2,Japan,Wakayama,30
+2020-07-11,,77,3,,,,,,923721,2,Japan,Wakayama,30
 2020-07-11,,4,0,,,,,,555663,2,Japan,Tottori,31
 2020-07-11,,24,0,,,,,,673891,2,Japan,Shimane,32
 2020-07-11,,27,0,,,,,,1891346,2,Japan,Okayama,33
-2020-07-11,,171,3,,,,,,2807987,2,Japan,Hiroshima,34
+2020-07-11,,174,3,,,,,,2807987,2,Japan,Hiroshima,34
 2020-07-11,,36,0,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-07-11,,10,1,,,,,,728633,2,Japan,Tokushima,36
 2020-07-11,,29,0,,,,,,956069,2,Japan,Kagawa,37
