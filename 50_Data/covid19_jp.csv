@@ -155,7 +155,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-08,518210,20358,981,17325,1862,,,35,126216142,1,Japan,,
 2020-07-09,527546,20713,981,17461,1920,,,38,126216142,1,Japan,,
 2020-07-10,0,21145,981,0,0,,,0,126216142,1,Japan,,
-2020-07-11,0,21152,981,0,0,,,0,126216142,1,Japan,,
+2020-07-11,0,21165,982,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -9237,7 +9237,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-11,,1272,101,,,,,,5248552,2,Japan,Hokkaido,01
 2020-07-11,,30,1,,,,,,1246138,2,Japan,Aomori,02
 2020-07-11,,0,0,,,,,,1226430,2,Japan,Iwate,03
-2020-07-11,,101,1,,,,,,2303160,2,Japan,Miyagi,04
+2020-07-11,,102,1,,,,,,2303160,2,Japan,Miyagi,04
 2020-07-11,,15,0,,,,,,965968,2,Japan,Akita,05
 2020-07-11,,71,1,,,,,,1077057,2,Japan,Yamagata,06
 2020-07-11,,83,0,,,,,,1847950,2,Japan,Fukushima,07
@@ -9247,7 +9247,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-11,,1392,66,,,,,,7337330,2,Japan,Saitama,11
 2020-07-11,,1071,46,,,,,,6279026,2,Japan,Chiba,12
 2020-07-11,,7515,325,,,,,,13942856,2,Japan,Tokyo,13
-2020-07-11,,1681,97,,,,,,9200166,2,Japan,Kanagawa,14
+2020-07-11,,1690,98,,,,,,9200166,2,Japan,Kanagawa,14
 2020-07-11,,85,0,,,,,,2222004,2,Japan,Niigata,15
 2020-07-11,,230,22,,,,,,1042998,2,Japan,Toyama,16
 2020-07-11,,300,27,,,,,,1137181,2,Japan,Ishikawa,17
@@ -9261,7 +9261,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-11,,104,1,,,,,,1413959,2,Japan,Shiga,25
 2020-07-11,,430,18,,,,,,2583140,2,Japan,Kyoto,26
 2020-07-11,,1967,86,,,,,,8823453,2,Japan,Osaka,27
-2020-07-11,,728,45,,,,,,5463609,2,Japan,Hyogo,28
+2020-07-11,,731,45,,,,,,5463609,2,Japan,Hyogo,28
 2020-07-11,,102,2,,,,,,1331330,2,Japan,Nara,29
 2020-07-11,,73,3,,,,,,923721,2,Japan,Wakayama,30
 2020-07-11,,4,0,,,,,,555663,2,Japan,Tottori,31
