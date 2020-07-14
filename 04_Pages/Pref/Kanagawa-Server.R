@@ -52,7 +52,7 @@ output$kanagawaPatientSummary <- renderEcharts4r({
     e_chart(日付) %>%
     e_bar(男性, stack = 1, y_index= 1, color = darkNavy) %>%
     e_bar(女性, stack = 1, y_index= 1, color = middleRed) %>%
-    # e_bar(非公表, stack = 1, y_index= 1, color = darkBlue) %>%
+    e_bar(非公表, stack = 1, y_index= 1, color = darkBlue) %>%
     # e_bar(調査中, stack = 1, y_index= 1, color = darkYellow) %>%
     e_line(累積陽性数, y_index = 0, color = darkRed) %>%
     e_mark_line(data = list(xAxis = '2020-04-07', label = list(formatter = i18n$t("4月7日\n緊急事態宣言"))), symbol = 'circle') %>%
@@ -128,7 +128,7 @@ output$kanagawaValueBoxes <- renderUI({
                        subtitle = i18n$t("死亡者数"),
                        icon = 'bible',
                        color = 'navy',
-                       diff = tail(death[, 15, with = F], n = 1)
+                       diff = death[.N, .(神奈川)][[1]]
         )
       )
     )

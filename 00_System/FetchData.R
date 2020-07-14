@@ -195,9 +195,8 @@ querent[, 相談対応件数累計 := cumsum(相談対応件数)]
 
 patient <- data.table(read.csv("http://www.pref.kanagawa.jp/osirase/1369/data/csv/patient.csv", fileEncoding = "cp932"))
 patient$性別 <- as.character(patient$性別)
-# patient[性別 == '', 性別 := '調査中']
-patient[性別 == "−", 性別 := "非公表"]
-patient <- patient[年代 != ""]
+patient[年代 %in% c('−', ''), 年代 := '非公表']
+patient[性別 %in% c("−", ''), 性別 := "非公表"]
 patientSummary <- data.table(as.data.frame.matrix(table(patient$発表日, patient$性別)), keep.rownames = T)
 
 dt <- merge(x = contact, y = querent, by.x = "日付", by.y = "日付", all.x = T, no.dups = T)
