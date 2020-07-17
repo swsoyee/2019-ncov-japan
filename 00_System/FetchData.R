@@ -214,7 +214,7 @@ fwrite(x = data.table(patient), file = paste0(DATA_PATH, "Pref/Fukuoka/patients.
 testUrl <- "https://ckan.open-governmentdata.org/dataset/ef64c68a-d89e-4b1b-a53f-d2535ebfa3a1/resource/aab43191-40d0-4a6a-9724-a9030a596009/download/400009_pref_fukuoka_covid19_exam.csv"
 test <- read.csv(file(testUrl))
 fwrite(x = data.table(test), file = paste0(DATA_PATH, "Pref/Fukuoka/test.csv"))
-contactUrl <- "https://ckan.open-governmentdata.org/dataset/f08d93ce-119a-4e0f-bd23-2a5f00d1d944/resource/a69a2ac1-349b-4f43-a554-f95c07010528/download/400009_pref_fukuoka_covid19_kikokusyasessyokusya.csv"
+contactUrl <- "https://ckan.open-governmentdata.org/dataset/f08d93ce-119a-4e0f-bd23-2a5f00d1d944/resource/b99a3d57-64e0-4cfa-b701-53713cca7df2/download/400009_pref_fukuoka_covid19_kikokusyasessyokusya.csv"
 contact <- read.csv(file(contactUrl))
 fwrite(x = data.table(contact), file = paste0(DATA_PATH, "Pref/Fukuoka/call.csv"))
 # ====大分====

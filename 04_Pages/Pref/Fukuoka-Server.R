@@ -387,7 +387,8 @@ output$fukuokaProfile <- renderUI({
 # 帰国者・接触者相談センター相談件数 ====
 output$FukuokaContact <- renderEcharts4r({
   call <- GLOBAL_VALUE$Fukuoka$call
-  call[, `:=` (日付 = as.Date(日付))]
+  # call[, `:=` (日付 = as.Date(日付))] # 20200717 から変更
+  call[, `:=` (日付 = as.Date(年月日), 合計 = 件数, 専用ダイヤル累計 = cumsum(件数))]
   call %>%
     e_chart(日付) %>%
     e_bar(合計, itemStyle = list(color = lightBlue), name = i18n$t("新規")) %>%
