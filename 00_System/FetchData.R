@@ -187,25 +187,25 @@ fwrite(x = dt, file = paste0(DATA_PATH, "Pref/", "Ibaraki", "/", "summary.csv"))
 #                   dailyCheck = jsonFile$inspections_summary$data$県内)
 
 # ====神奈川====
-contact <- data.table(read.csv("http://www.pref.kanagawa.jp/osirase/1369/data/csv/contacts.csv", fileEncoding = "cp932"))
-contact[, 専用ダイヤル累計 := cumsum(合計)]
-
-querent <- data.table(read.csv("http://www.pref.kanagawa.jp/osirase/1369/data/csv/querent.csv", fileEncoding = "cp932"))
-querent[, 相談対応件数累計 := cumsum(相談対応件数)]
-
-patient <- data.table(read.csv("http://www.pref.kanagawa.jp/osirase/1369/data/csv/patient.csv", fileEncoding = "cp932"))
-patient$性別 <- as.character(patient$性別)
-patient[年代 %in% c('−', ''), 年代 := '非公表']
-patient[性別 %in% c("−", ''), 性別 := "非公表"]
-patientSummary <- data.table(as.data.frame.matrix(table(patient$発表日, patient$性別)), keep.rownames = T)
-
-dt <- merge(x = contact, y = querent, by.x = "日付", by.y = "日付", all.x = T, no.dups = T)
-dt <- merge(x = dt, y = patientSummary, by.x = "日付", by.y = "rn", no.dups = T, all = T)
-dt[is.na(dt)] <- 0
-dt[, 陽性数 := rowSums(.SD), .SDcols = unique(patient$性別)]
-dt[, 累積陽性数 := cumsum(.SD), .SDcols = c("陽性数")]
-
-fwrite(x = dt, file = paste0(DATA_PATH, "Pref/Kanagawa/summary.csv"))
+# contact <- data.table(read.csv("http://www.pref.kanagawa.jp/osirase/1369/data/csv/contacts.csv", fileEncoding = "cp932"))
+# contact[, 専用ダイヤル累計 := cumsum(合計)]
+# 
+# querent <- data.table(read.csv("http://www.pref.kanagawa.jp/osirase/1369/data/csv/querent.csv", fileEncoding = "cp932"))
+# querent[, 相談対応件数累計 := cumsum(相談対応件数)]
+# 
+# patient <- data.table(read.csv("http://www.pref.kanagawa.jp/osirase/1369/data/csv/patient.csv", fileEncoding = "cp932"))
+# patient$性別 <- as.character(patient$性別)
+# patient[年代 %in% c('−', ''), 年代 := '非公表']
+# patient[性別 %in% c("−", ''), 性別 := "非公表"]
+# patientSummary <- data.table(as.data.frame.matrix(table(patient$発表日, patient$性別)), keep.rownames = T)
+# 
+# dt <- merge(x = contact, y = querent, by.x = "日付", by.y = "日付", all.x = T, no.dups = T)
+# dt <- merge(x = dt, y = patientSummary, by.x = "日付", by.y = "rn", no.dups = T, all = T)
+# dt[is.na(dt)] <- 0
+# dt[, 陽性数 := rowSums(.SD), .SDcols = unique(patient$性別)]
+# dt[, 累積陽性数 := cumsum(.SD), .SDcols = c("陽性数")]
+# 
+# fwrite(x = dt, file = paste0(DATA_PATH, "Pref/Kanagawa/summary.csv"))
 
 # ====福岡====
 patientUrl <- "https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/c27769a2-8634-47aa-9714-7e21c4038dd4/download/400009_pref_fukuoka_covid19_patients.csv"
