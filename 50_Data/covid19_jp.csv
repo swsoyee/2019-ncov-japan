@@ -164,7 +164,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-17,617049,24200,984,19091,3383,,,39,126216142,1,Japan,,
 2020-07-18,626149,24862,985,19361,3772,,,41,126216142,1,Japan,,
 2020-07-19,634997,25372,985,19565,4089,,,43,126216142,1,Japan,,
-2020-07-20,0,25692,985,0,0,,,0,126216142,1,Japan,,
+2020-07-20,0,25706,985,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -9710,7 +9710,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-20,,75,1,,,,,,1077057,2,Japan,Yamagata,06
 2020-07-20,,84,0,,,,,,1847950,2,Japan,Fukushima,07
 2020-07-20,,226,10,,,,,,2868041,2,Japan,Ibaraki,08
-2020-07-20,,133,0,,,,,,1942312,2,Japan,Tochigi,09
+2020-07-20,,134,0,,,,,,1942312,2,Japan,Tochigi,09
 2020-07-20,,167,19,,,,,,1937626,2,Japan,Gunma,10
 2020-07-20,,1751,67,,,,,,7337330,2,Japan,Saitama,11
 2020-07-20,,1309,46,,,,,,6279026,2,Japan,Chiba,12
@@ -9734,7 +9734,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-20,,93,3,,,,,,923721,2,Japan,Wakayama,30
 2020-07-20,,5,0,,,,,,555663,2,Japan,Tottori,31
 2020-07-20,,25,0,,,,,,673891,2,Japan,Shimane,32
-2020-07-20,,41,0,,,,,,1891346,2,Japan,Okayama,33
+2020-07-20,,42,0,,,,,,1891346,2,Japan,Okayama,33
 2020-07-20,,209,3,,,,,,2807987,2,Japan,Hiroshima,34
 2020-07-20,,41,0,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-07-20,,10,1,,,,,,728633,2,Japan,Tokushima,36
@@ -9742,7 +9742,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-20,,83,5,,,,,,1338811,2,Japan,Ehime,38
 2020-07-20,,76,3,,,,,,697674,2,Japan,Kochi,39
 2020-07-20,,1026,33,,,,,,5110113,2,Japan,Fukuoka,40
-2020-07-20,,45,0,,,,,,814211,2,Japan,Saga,41
+2020-07-20,,46,0,,,,,,814211,2,Japan,Saga,41
 2020-07-20,,40,1,,,,,,1325205,2,Japan,Nagasaki,42
 2020-07-20,,50,3,,,,,,1746740,2,Japan,Kumamoto,43
 2020-07-20,,60,1,,,,,,1134431,2,Japan,Oita,44
@@ -9750,6 +9750,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-20,,170,0,,,,,,1599984,2,Japan,Kagoshima,46
 2020-07-20,,153,7,,,,,,1454184,2,Japan,Okinawa,47
 2020-07-20,,14,0,,,,,,,1,Japan,Charter Flight,
-2020-07-20,,465,1,,,,,,,1,Japan,Quarantine,
+2020-07-20,,476,1,,,,,,,1,Japan,Quarantine,
 2020-07-20,,712,13,,,,,,,1,Japan,Diamond Princess,
 2020-07-20,,149,0,,,,,,,1,Japan,Costa Atlantica,
