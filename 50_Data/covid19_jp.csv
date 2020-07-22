@@ -166,7 +166,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-19,634997,25372,985,19565,4089,,,43,126216142,1,Japan,,
 2020-07-20,639821,25791,987,19751,4348,,,47,126216142,1,Japan,,
 2020-07-21,655780,26422,988,20149,4580,,,52,126216142,1,Japan,,
-2020-07-22,0,26733,988,0,0,,,0,126216142,1,Japan,,
+2020-07-22,0,26752,988,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -9809,7 +9809,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-22,,1350,102,,,,,,5248552,2,Japan,Hokkaido,01
 2020-07-22,,31,1,,,,,,1246138,2,Japan,Aomori,02
 2020-07-22,,0,0,,,,,,1226430,2,Japan,Iwate,03
-2020-07-22,,136,1,,,,,,2303160,2,Japan,Miyagi,04
+2020-07-22,,138,1,,,,,,2303160,2,Japan,Miyagi,04
 2020-07-22,,15,0,,,,,,965968,2,Japan,Akita,05
 2020-07-22,,75,1,,,,,,1077057,2,Japan,Yamagata,06
 2020-07-22,,84,0,,,,,,1847950,2,Japan,Fukushima,07
@@ -9819,7 +9819,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-22,,1826,69,,,,,,7337330,2,Japan,Saitama,11
 2020-07-22,,1324,46,,,,,,6279026,2,Japan,Chiba,12
 2020-07-22,,10054,327,,,,,,13942856,2,Japan,Tokyo,13
-2020-07-22,,2039,98,,,,,,9200166,2,Japan,Kanagawa,14
+2020-07-22,,2054,98,,,,,,9200166,2,Japan,Kanagawa,14
 2020-07-22,,91,0,,,,,,2222004,2,Japan,Niigata,15
 2020-07-22,,233,22,,,,,,1042998,2,Japan,Toyama,16
 2020-07-22,,306,27,,,,,,1137181,2,Japan,Ishikawa,17
@@ -9846,7 +9846,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-22,,83,5,,,,,,1338811,2,Japan,Ehime,38
 2020-07-22,,77,3,,,,,,697674,2,Japan,Kochi,39
 2020-07-22,,1106,33,,,,,,5110113,2,Japan,Fukuoka,40
-2020-07-22,,47,0,,,,,,814211,2,Japan,Saga,41
+2020-07-22,,49,0,,,,,,814211,2,Japan,Saga,41
 2020-07-22,,50,1,,,,,,1325205,2,Japan,Nagasaki,42
 2020-07-22,,51,3,,,,,,1746740,2,Japan,Kumamoto,43
 2020-07-22,,60,1,,,,,,1134431,2,Japan,Oita,44
