@@ -166,7 +166,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-19,634997,25372,985,19565,4089,,,43,126216142,1,Japan,,
 2020-07-20,639821,25791,987,19751,4348,,,47,126216142,1,Japan,,
 2020-07-21,655780,26422,988,20149,4580,,,52,126216142,1,Japan,,
-2020-07-22,0,26424,988,0,0,,,0,126216142,1,Japan,,
+2020-07-22,0,26431,988,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -9819,8 +9819,8 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-22,,1826,69,,,,,,7337330,2,Japan,Saitama,11
 2020-07-22,,1324,46,,,,,,6279026,2,Japan,Chiba,12
 2020-07-22,,9816,327,,,,,,13942856,2,Japan,Tokyo,13
-2020-07-22,,2035,98,,,,,,9200166,2,Japan,Kanagawa,14
-2020-07-22,,90,0,,,,,,2222004,2,Japan,Niigata,15
+2020-07-22,,2039,98,,,,,,9200166,2,Japan,Kanagawa,14
+2020-07-22,,91,0,,,,,,2222004,2,Japan,Niigata,15
 2020-07-22,,233,22,,,,,,1042998,2,Japan,Toyama,16
 2020-07-22,,306,27,,,,,,1137181,2,Japan,Ishikawa,17
 2020-07-22,,126,8,,,,,,767742,2,Japan,Fukui,18
@@ -9829,7 +9829,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-22,,194,7,,,,,,1988931,2,Japan,Gifu,21
 2020-07-22,,113,1,,,,,,3639226,2,Japan,Shizuoka,22
 2020-07-22,,710,34,,,,,,7552873,2,Japan,Aichi,23
-2020-07-22,,56,1,,,,,,1779770,2,Japan,Mie,24
+2020-07-22,,57,1,,,,,,1779770,2,Japan,Mie,24
 2020-07-22,,117,1,,,,,,1413959,2,Japan,Shiga,25
 2020-07-22,,586,18,,,,,,2583140,2,Japan,Kyoto,26
 2020-07-22,,2541,86,,,,,,8823453,2,Japan,Osaka,27
@@ -9837,7 +9837,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-22,,158,2,,,,,,1331330,2,Japan,Nara,29
 2020-07-22,,96,3,,,,,,923721,2,Japan,Wakayama,30
 2020-07-22,,5,0,,,,,,555663,2,Japan,Tottori,31
-2020-07-22,,25,0,,,,,,673891,2,Japan,Shimane,32
+2020-07-22,,26,0,,,,,,673891,2,Japan,Shimane,32
 2020-07-22,,43,0,,,,,,1891346,2,Japan,Okayama,33
 2020-07-22,,216,3,,,,,,2807987,2,Japan,Hiroshima,34
 2020-07-22,,41,0,,,,,,1355495,2,Japan,Yamaguchi,35
