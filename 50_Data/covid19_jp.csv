@@ -166,7 +166,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-19,634997,25372,985,19565,4089,,,43,126216142,1,Japan,,
 2020-07-20,639821,25791,987,19751,4348,,,47,126216142,1,Japan,,
 2020-07-21,655780,26422,988,20149,4580,,,52,126216142,1,Japan,,
-2020-07-22,0,26422,988,0,0,,,0,126216142,1,Japan,,
+2020-07-22,0,26424,988,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -9820,7 +9820,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-22,,1324,46,,,,,,6279026,2,Japan,Chiba,12
 2020-07-22,,9816,327,,,,,,13942856,2,Japan,Tokyo,13
 2020-07-22,,2035,98,,,,,,9200166,2,Japan,Kanagawa,14
-2020-07-22,,89,0,,,,,,2222004,2,Japan,Niigata,15
+2020-07-22,,90,0,,,,,,2222004,2,Japan,Niigata,15
 2020-07-22,,233,22,,,,,,1042998,2,Japan,Toyama,16
 2020-07-22,,306,27,,,,,,1137181,2,Japan,Ishikawa,17
 2020-07-22,,126,8,,,,,,767742,2,Japan,Fukui,18
@@ -9844,7 +9844,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-22,,10,1,,,,,,728633,2,Japan,Tokushima,36
 2020-07-22,,44,0,,,,,,956069,2,Japan,Kagawa,37
 2020-07-22,,83,5,,,,,,1338811,2,Japan,Ehime,38
-2020-07-22,,76,3,,,,,,697674,2,Japan,Kochi,39
+2020-07-22,,77,3,,,,,,697674,2,Japan,Kochi,39
 2020-07-22,,1106,33,,,,,,5110113,2,Japan,Fukuoka,40
 2020-07-22,,47,0,,,,,,814211,2,Japan,Saga,41
 2020-07-22,,47,1,,,,,,1325205,2,Japan,Nagasaki,42
