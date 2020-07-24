@@ -168,7 +168,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-21,655780,26421,988,20149,4580,,,52,126216142,1,Japan,,
 2020-07-22,670619,27216,989,20645,4666,,,55,126216142,1,Japan,,
 2020-07-23,688036,28198,991,21029,5000,,,59,126216142,1,Japan,,
-2020-07-24,0,28823,992,0,0,,,0,126216142,1,Japan,,
+2020-07-24,0,28842,993,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -9917,13 +9917,13 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-24,,15,0,,,,,,965968,2,Japan,Akita,05
 2020-07-24,,75,1,,,,,,1077057,2,Japan,Yamagata,06
 2020-07-24,,86,0,,,,,,1847950,2,Japan,Fukushima,07
-2020-07-24,,237,10,,,,,,2868041,2,Japan,Ibaraki,08
+2020-07-24,,239,10,,,,,,2868041,2,Japan,Ibaraki,08
 2020-07-24,,147,0,,,,,,1942312,2,Japan,Tochigi,09
 2020-07-24,,177,19,,,,,,1937626,2,Japan,Gunma,10
-2020-07-24,,1955,70,,,,,,7337330,2,Japan,Saitama,11
+2020-07-24,,1958,71,,,,,,7337330,2,Japan,Saitama,11
 2020-07-24,,1423,46,,,,,,6279026,2,Japan,Chiba,12
 2020-07-24,,10680,327,,,,,,13942856,2,Japan,Tokyo,13
-2020-07-24,,2178,98,,,,,,9200166,2,Japan,Kanagawa,14
+2020-07-24,,2181,98,,,,,,9200166,2,Japan,Kanagawa,14
 2020-07-24,,91,0,,,,,,2222004,2,Japan,Niigata,15
 2020-07-24,,235,22,,,,,,1042998,2,Japan,Toyama,16
 2020-07-24,,310,27,,,,,,1137181,2,Japan,Ishikawa,17
@@ -9934,7 +9934,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-24,,130,1,,,,,,3639226,2,Japan,Shizuoka,22
 2020-07-24,,932,35,,,,,,7552873,2,Japan,Aichi,23
 2020-07-24,,61,1,,,,,,1779770,2,Japan,Mie,24
-2020-07-24,,145,1,,,,,,1413959,2,Japan,Shiga,25
+2020-07-24,,151,1,,,,,,1413959,2,Japan,Shiga,25
 2020-07-24,,640,19,,,,,,2583140,2,Japan,Kyoto,26
 2020-07-24,,2887,86,,,,,,8823453,2,Japan,Osaka,27
 2020-07-24,,941,45,,,,,,5463609,2,Japan,Hyogo,28
@@ -9958,6 +9958,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-24,,200,0,,,,,,1599984,2,Japan,Kagoshima,46
 2020-07-24,,172,7,,,,,,1454184,2,Japan,Okinawa,47
 2020-07-24,,14,0,,,,,,,1,Japan,Charter Flight,
-2020-07-24,,510,1,,,,,,,1,Japan,Quarantine,
+2020-07-24,,515,1,,,,,,,1,Japan,Quarantine,
 2020-07-24,,712,13,,,,,,,1,Japan,Diamond Princess,
 2020-07-24,,149,0,,,,,,,1,Japan,Costa Atlantica,
