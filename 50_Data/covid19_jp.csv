@@ -169,7 +169,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-22,670619,27216,989,20645,4666,,,55,126216142,1,Japan,,
 2020-07-23,688036,28197,991,21029,5000,,,59,126216142,1,Japan,,
 2020-07-24,697512,28965,994,21321,5635,,,68,126216142,1,Japan,,
-2020-07-25,0,29489,995,0,0,,,0,126216142,1,Japan,,
+2020-07-25,0,29501,995,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -9975,7 +9975,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-25,,1996,71,,,,,,7337330,2,Japan,Saitama,11
 2020-07-25,,1429,46,,,,,,6279026,2,Japan,Chiba,12
 2020-07-25,,10975,327,,,,,,13942856,2,Japan,Tokyo,13
-2020-07-25,,2188,98,,,,,,9200166,2,Japan,Kanagawa,14
+2020-07-25,,2199,98,,,,,,9200166,2,Japan,Kanagawa,14
 2020-07-25,,91,0,,,,,,2222004,2,Japan,Niigata,15
 2020-07-25,,235,22,,,,,,1042998,2,Japan,Toyama,16
 2020-07-25,,310,27,,,,,,1137181,2,Japan,Ishikawa,17
@@ -9997,7 +9997,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-25,,58,0,,,,,,1891346,2,Japan,Okayama,33
 2020-07-25,,252,3,,,,,,2807987,2,Japan,Hiroshima,34
 2020-07-25,,46,0,,,,,,1355495,2,Japan,Yamaguchi,35
-2020-07-25,,11,1,,,,,,728633,2,Japan,Tokushima,36
+2020-07-25,,12,1,,,,,,728633,2,Japan,Tokushima,36
 2020-07-25,,45,0,,,,,,956069,2,Japan,Kagawa,37
 2020-07-25,,84,5,,,,,,1338811,2,Japan,Ehime,38
 2020-07-25,,78,3,,,,,,697674,2,Japan,Kochi,39
