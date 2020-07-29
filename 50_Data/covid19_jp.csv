@@ -173,7 +173,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-26,715283,30607,997,21757,6597,,,66,126216142,1,Japan,,
 2020-07-27,720501,31204,998,22111,6861,,,67,126216142,1,Japan,,
 2020-07-28,746229,32185,1001,22806,7131,,,76,126216142,1,Japan,,
-2020-07-29,0,33292,1003,0,0,,,0,126216142,1,Japan,,
+2020-07-29,0,33309,1003,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -10170,7 +10170,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-28,114713,563,1,236,303,,,0,,1,Japan,Quarantine,
 2020-07-28,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-07-28,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-07-29,,1384,103,,,,,,5248552,2,Japan,Hokkaido,01
+2020-07-29,,1385,103,,,,,,5248552,2,Japan,Hokkaido,01
 2020-07-29,,31,1,,,,,,1246138,2,Japan,Aomori,02
 2020-07-29,,0,0,,,,,,1226430,2,Japan,Iwate,03
 2020-07-29,,153,1,,,,,,2303160,2,Japan,Miyagi,04
@@ -10178,7 +10178,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-29,,75,1,,,,,,1077057,2,Japan,Yamagata,06
 2020-07-29,,86,0,,,,,,1847950,2,Japan,Fukushima,07
 2020-07-29,,266,10,,,,,,2868041,2,Japan,Ibaraki,08
-2020-07-29,,169,0,,,,,,1942312,2,Japan,Tochigi,09
+2020-07-29,,175,0,,,,,,1942312,2,Japan,Tochigi,09
 2020-07-29,,183,19,,,,,,1937626,2,Japan,Gunma,10
 2020-07-29,,2176,72,,,,,,7337330,2,Japan,Saitama,11
 2020-07-29,,1562,48,,,,,,6279026,2,Japan,Chiba,12
@@ -10192,7 +10192,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-29,,101,0,,,,,,2049023,2,Japan,Nagano,20
 2020-07-29,,282,7,,,,,,1988931,2,Japan,Gifu,21
 2020-07-29,,233,1,,,,,,3639226,2,Japan,Shizuoka,22
-2020-07-29,,1437,35,,,,,,7552873,2,Japan,Aichi,23
+2020-07-29,,1445,35,,,,,,7552873,2,Japan,Aichi,23
 2020-07-29,,83,1,,,,,,1779770,2,Japan,Mie,24
 2020-07-29,,163,1,,,,,,1413959,2,Japan,Shiga,25
 2020-07-29,,749,20,,,,,,2583140,2,Japan,Kyoto,26
@@ -10204,7 +10204,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-29,,29,0,,,,,,673891,2,Japan,Shimane,32
 2020-07-29,,69,0,,,,,,1891346,2,Japan,Okayama,33
 2020-07-29,,297,3,,,,,,2807987,2,Japan,Hiroshima,34
-2020-07-29,,50,0,,,,,,1355495,2,Japan,Yamaguchi,35
+2020-07-29,,52,0,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-07-29,,18,1,,,,,,728633,2,Japan,Tokushima,36
 2020-07-29,,46,0,,,,,,956069,2,Japan,Kagawa,37
 2020-07-29,,89,5,,,,,,1338811,2,Japan,Ehime,38
