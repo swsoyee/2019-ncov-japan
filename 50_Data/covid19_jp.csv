@@ -173,7 +173,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-26,715283,30607,997,21757,6597,,,66,126216142,1,Japan,,
 2020-07-27,720501,31204,998,22111,6861,,,67,126216142,1,Japan,,
 2020-07-28,746229,32185,1001,22806,7131,,,76,126216142,1,Japan,,
-2020-07-29,0,32206,1001,0,0,,,0,126216142,1,Japan,,
+2020-07-29,0,32251,1001,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -10216,7 +10216,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-29,,62,1,,,,,,1134431,2,Japan,Oita,44
 2020-07-29,,94,0,,,,,,1072077,2,Japan,Miyazaki,45
 2020-07-29,,229,1,,,,,,1599984,2,Japan,Kagoshima,46
-2020-07-29,,231,7,,,,,,1454184,2,Japan,Okinawa,47
+2020-07-29,,276,7,,,,,,1454184,2,Japan,Okinawa,47
 2020-07-29,,14,0,,,,,,,1,Japan,Charter Flight,
 2020-07-29,,563,1,,,,,,,1,Japan,Quarantine,
 2020-07-29,,712,13,,,,,,,1,Japan,Diamond Princess,
