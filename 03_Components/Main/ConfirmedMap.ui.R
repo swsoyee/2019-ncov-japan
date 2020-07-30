@@ -34,7 +34,6 @@ tabPanel(
       ),
       uiOutput("comfirmedMapWrapper") %>% withSpinner(proxy.height = "550px"),
       uiOutput("selectMapBottomButton"),
-      # TODO もし全部の都道府県に感染者報告がある場合、こちらのバーを再検討する
       progressBar(
         id = "activePatients",
         value = TOTAL_JAPAN - DEATH_JAPAN - 40 - sum(mhlwSummary[日付 == max(日付)]$退院者),
@@ -64,6 +63,7 @@ tabPanel(
         status = "success",
         display_pct = T
       ),
+      tags$small(i18n$t("回復者数は厚労省発表の数値を使用しているため、メディアの速報より1日遅れる可能性があります。")),
       bsTooltip(
         id = "activeRegions",
         placement = "top",
