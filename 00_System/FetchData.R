@@ -126,12 +126,18 @@ querent <- data.table(
   date = as.Date(querentJsonFile$querents$data$日付),
   一般相談 = querentJsonFile$querents$data$小計
 )
+positive <- data.table(
+  date = as.Date(jsonFile$patients_summary$data$日付),
+  陽性数 = jsonFile$patients_summary$data$小計
+)
 iwateData <- merge(x = pcr, y = contact, by = "date", no.dups = T, all = T)
 iwateData <- merge(x = iwateData, y = querent, by = "date", no.dups = T, all = T)
+iwateData <- merge(x = iwateData, y = positive, by = "date", no.dups = T, all = T)
 iwateData[is.na(iwateData)] <- 0
 iwateData[, 検査数累計 := cumsum(検査数)]
 iwateData[, 相談件数累計 := cumsum(相談件数)]
 iwateData[, 一般相談累計 := cumsum(一般相談)]
+iwateData[, 陽性数累計 := cumsum(陽性数)]
 fwrite(x = iwateData, file = paste0(DATA_PATH, "Pref/", "Iwate", "/", "summary.csv"))
 
 # ====宮城====

@@ -32,7 +32,7 @@ observeEvent(input$sideBarTab, {
 
 output$IwateValueBoxes <- renderUI({
   data <- GLOBAL_VALUE$Iwate$summary
-  totalPositive <- sum(data$陽性数, na.rm = T)
+  totalPositive <- sum(data$陽性数累計, na.rm = T)
   totalPCR <- tail(data$検査数累計, n = 1)
   totalDischarge <-  sum(data$治療終了数, na.rm = T) # TODO 公式データまだない
   totalDeath <- sum(data$死亡数, na.rm = T) # TODO 公式データまだない
