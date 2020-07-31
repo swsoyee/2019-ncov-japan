@@ -175,7 +175,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-28,746229,32184,1001,22806,7131,,,76,126216142,1,Japan,,
 2020-07-29,765346,33448,1005,23501,7379,,,81,126216142,1,Japan,,
 2020-07-30,785224,34749,1006,24174,7846,,,90,126216142,1,Japan,,
-2020-07-31,0,35310,1006,0,0,,,0,126216142,1,Japan,,
+2020-07-31,0,35351,1006,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -10287,7 +10287,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-31,,2252,72,,,,,,7337330,2,Japan,Saitama,11
 2020-07-31,,1614,48,,,,,,6279026,2,Japan,Chiba,12
 2020-07-31,,12691,330,,,,,,13942856,2,Japan,Tokyo,13
-2020-07-31,,2425,99,,,,,,9200166,2,Japan,Kanagawa,14
+2020-07-31,,2441,99,,,,,,9200166,2,Japan,Kanagawa,14
 2020-07-31,,110,0,,,,,,2222004,2,Japan,Niigata,15
 2020-07-31,,238,22,,,,,,1042998,2,Japan,Toyama,16
 2020-07-31,,320,27,,,,,,1137181,2,Japan,Ishikawa,17
@@ -10301,7 +10301,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-31,,168,1,,,,,,1413959,2,Japan,Shiga,25
 2020-07-31,,758,20,,,,,,2583140,2,Japan,Kyoto,26
 2020-07-31,,3841,89,,,,,,8823453,2,Japan,Osaka,27
-2020-07-31,,1197,45,,,,,,5463609,2,Japan,Hyogo,28
+2020-07-31,,1220,45,,,,,,5463609,2,Japan,Hyogo,28
 2020-07-31,,222,2,,,,,,1331330,2,Japan,Nara,29
 2020-07-31,,142,3,,,,,,923721,2,Japan,Wakayama,30
 2020-07-31,,11,0,,,,,,555663,2,Japan,Tottori,31
@@ -10317,7 +10317,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-31,,74,0,,,,,,814211,2,Japan,Saga,41
 2020-07-31,,70,2,,,,,,1325205,2,Japan,Nagasaki,42
 2020-07-31,,172,3,,,,,,1746740,2,Japan,Kumamoto,43
-2020-07-31,,64,1,,,,,,1134431,2,Japan,Oita,44
+2020-07-31,,66,1,,,,,,1134431,2,Japan,Oita,44
 2020-07-31,,131,0,,,,,,1072077,2,Japan,Miyazaki,45
 2020-07-31,,236,1,,,,,,1599984,2,Japan,Kagoshima,46
 2020-07-31,,324,7,,,,,,1454184,2,Japan,Okinawa,47
