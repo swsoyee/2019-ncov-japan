@@ -175,7 +175,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-28,746229,32184,1001,22806,7131,,,76,126216142,1,Japan,,
 2020-07-29,765346,33448,1005,23501,7379,,,81,126216142,1,Japan,,
 2020-07-30,785224,34749,1006,24174,7846,,,90,126216142,1,Japan,,
-2020-07-31,0,35176,1006,0,0,,,0,126216142,1,Japan,,
+2020-07-31,0,35183,1006,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -10297,7 +10297,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-31,,312,7,,,,,,1988931,2,Japan,Gifu,21
 2020-07-31,,260,1,,,,,,3639226,2,Japan,Shizuoka,22
 2020-07-31,,1605,35,,,,,,7552873,2,Japan,Aichi,23
-2020-07-31,,89,1,,,,,,1779770,2,Japan,Mie,24
+2020-07-31,,91,1,,,,,,1779770,2,Japan,Mie,24
 2020-07-31,,168,1,,,,,,1413959,2,Japan,Shiga,25
 2020-07-31,,758,20,,,,,,2583140,2,Japan,Kyoto,26
 2020-07-31,,3841,89,,,,,,8823453,2,Japan,Osaka,27
@@ -10306,7 +10306,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-31,,142,3,,,,,,923721,2,Japan,Wakayama,30
 2020-07-31,,11,0,,,,,,555663,2,Japan,Tottori,31
 2020-07-31,,29,0,,,,,,673891,2,Japan,Shimane,32
-2020-07-31,,76,0,,,,,,1891346,2,Japan,Okayama,33
+2020-07-31,,77,0,,,,,,1891346,2,Japan,Okayama,33
 2020-07-31,,306,3,,,,,,2807987,2,Japan,Hiroshima,34
 2020-07-31,,52,0,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-07-31,,25,1,,,,,,728633,2,Japan,Tokushima,36
@@ -10315,7 +10315,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-31,,80,3,,,,,,697674,2,Japan,Kochi,39
 2020-07-31,,1749,33,,,,,,5110113,2,Japan,Fukuoka,40
 2020-07-31,,74,0,,,,,,814211,2,Japan,Saga,41
-2020-07-31,,66,2,,,,,,1325205,2,Japan,Nagasaki,42
+2020-07-31,,70,2,,,,,,1325205,2,Japan,Nagasaki,42
 2020-07-31,,172,3,,,,,,1746740,2,Japan,Kumamoto,43
 2020-07-31,,64,1,,,,,,1134431,2,Japan,Oita,44
 2020-07-31,,121,0,,,,,,1072077,2,Japan,Miyazaki,45
