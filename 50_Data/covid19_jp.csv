@@ -175,7 +175,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-28,746229,32184,1001,22806,7131,,,76,126216142,1,Japan,,
 2020-07-29,765346,33448,1005,23501,7379,,,81,126216142,1,Japan,,
 2020-07-30,785224,34749,1006,24174,7846,,,90,126216142,1,Japan,,
-2020-07-31,0,35491,1006,0,0,,,0,126216142,1,Japan,,
+2020-07-31,0,35628,1006,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -10275,7 +10275,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-30,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-07-30,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
 2020-07-31,,1409,103,,,,,,5248552,2,Japan,Hokkaido,01
-2020-07-31,,31,1,,,,,,1246138,2,Japan,Aomori,02
+2020-07-31,,32,1,,,,,,1246138,2,Japan,Aomori,02
 2020-07-31,,3,0,,,,,,1226430,2,Japan,Iwate,03
 2020-07-31,,158,1,,,,,,2303160,2,Japan,Miyagi,04
 2020-07-31,,17,0,,,,,,965968,2,Japan,Akita,05
@@ -10296,7 +10296,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-31,,105,0,,,,,,2049023,2,Japan,Nagano,20
 2020-07-31,,312,7,,,,,,1988931,2,Japan,Gifu,21
 2020-07-31,,269,1,,,,,,3639226,2,Japan,Shizuoka,22
-2020-07-31,,1681,35,,,,,,7552873,2,Japan,Aichi,23
+2020-07-31,,1797,35,,,,,,7552873,2,Japan,Aichi,23
 2020-07-31,,99,1,,,,,,1779770,2,Japan,Mie,24
 2020-07-31,,168,1,,,,,,1413959,2,Japan,Shiga,25
 2020-07-31,,758,20,,,,,,2583140,2,Japan,Kyoto,26
@@ -10313,10 +10313,10 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-31,,46,0,,,,,,956069,2,Japan,Kagawa,37
 2020-07-31,,89,5,,,,,,1338811,2,Japan,Ehime,38
 2020-07-31,,80,3,,,,,,697674,2,Japan,Kochi,39
-2020-07-31,,1749,33,,,,,,5110113,2,Japan,Fukuoka,40
+2020-07-31,,1763,33,,,,,,5110113,2,Japan,Fukuoka,40
 2020-07-31,,74,0,,,,,,814211,2,Japan,Saga,41
 2020-07-31,,71,2,,,,,,1325205,2,Japan,Nagasaki,42
-2020-07-31,,173,3,,,,,,1746740,2,Japan,Kumamoto,43
+2020-07-31,,179,3,,,,,,1746740,2,Japan,Kumamoto,43
 2020-07-31,,66,1,,,,,,1134431,2,Japan,Oita,44
 2020-07-31,,141,0,,,,,,1072077,2,Japan,Miyazaki,45
 2020-07-31,,236,1,,,,,,1599984,2,Japan,Kagoshima,46
