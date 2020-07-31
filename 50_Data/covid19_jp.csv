@@ -175,7 +175,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-28,746229,32184,1001,22806,7131,,,76,126216142,1,Japan,,
 2020-07-29,765346,33448,1005,23501,7379,,,81,126216142,1,Japan,,
 2020-07-30,785224,34749,1006,24174,7846,,,90,126216142,1,Japan,,
-2020-07-31,0,34750,1006,0,0,,,0,126216142,1,Japan,,
+2020-07-31,0,34754,1006,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -10279,7 +10279,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-31,,3,0,,,,,,1226430,2,Japan,Iwate,03
 2020-07-31,,158,1,,,,,,2303160,2,Japan,Miyagi,04
 2020-07-31,,17,0,,,,,,965968,2,Japan,Akita,05
-2020-07-31,,75,1,,,,,,1077057,2,Japan,Yamagata,06
+2020-07-31,,76,1,,,,,,1077057,2,Japan,Yamagata,06
 2020-07-31,,87,0,,,,,,1847950,2,Japan,Fukushima,07
 2020-07-31,,280,10,,,,,,2868041,2,Japan,Ibaraki,08
 2020-07-31,,191,0,,,,,,1942312,2,Japan,Tochigi,09
@@ -10293,7 +10293,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-31,,320,27,,,,,,1137181,2,Japan,Ishikawa,17
 2020-07-31,,137,8,,,,,,767742,2,Japan,Fukui,18
 2020-07-31,,93,1,,,,,,812056,2,Japan,Yamanashi,19
-2020-07-31,,103,0,,,,,,2049023,2,Japan,Nagano,20
+2020-07-31,,105,0,,,,,,2049023,2,Japan,Nagano,20
 2020-07-31,,312,7,,,,,,1988931,2,Japan,Gifu,21
 2020-07-31,,249,1,,,,,,3639226,2,Japan,Shizuoka,22
 2020-07-31,,1605,35,,,,,,7552873,2,Japan,Aichi,23
@@ -10306,7 +10306,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-07-31,,142,3,,,,,,923721,2,Japan,Wakayama,30
 2020-07-31,,11,0,,,,,,555663,2,Japan,Tottori,31
 2020-07-31,,29,0,,,,,,673891,2,Japan,Shimane,32
-2020-07-31,,75,0,,,,,,1891346,2,Japan,Okayama,33
+2020-07-31,,76,0,,,,,,1891346,2,Japan,Okayama,33
 2020-07-31,,306,3,,,,,,2807987,2,Japan,Hiroshima,34
 2020-07-31,,52,0,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-07-31,,25,1,,,,,,728633,2,Japan,Tokushima,36
