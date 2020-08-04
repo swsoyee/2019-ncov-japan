@@ -179,7 +179,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-01,824748,37865,1012,25497,9294,,,80,126216142,1,Japan,,
 2020-08-02,836404,39195,1012,25900,9751,,,83,126216142,1,Japan,,
 2020-08-03,849115,40156,1017,26482,10770,,,87,126216142,1,Japan,,
-2020-08-04,0,40751,1017,0,0,,,0,126216142,1,Japan,,
+2020-08-04,0,40852,1017,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -10495,7 +10495,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-04,,2506,73,,,,,,7337330,2,Japan,Saitama,11
 2020-08-04,,1816,50,,,,,,6279026,2,Japan,Chiba,12
 2020-08-04,,14022,333,,,,,,13942856,2,Japan,Tokyo,13
-2020-08-04,,2681,99,,,,,,9200166,2,Japan,Kanagawa,14
+2020-08-04,,2684,99,,,,,,9200166,2,Japan,Kanagawa,14
 2020-08-04,,118,0,,,,,,2222004,2,Japan,Niigata,15
 2020-08-04,,250,22,,,,,,1042998,2,Japan,Toyama,16
 2020-08-04,,323,27,,,,,,1137181,2,Japan,Ishikawa,17
@@ -10511,7 +10511,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-04,,4527,91,,,,,,8823453,2,Japan,Osaka,27
 2020-08-04,,1371,45,,,,,,5463609,2,Japan,Hyogo,28
 2020-08-04,,269,2,,,,,,1331330,2,Japan,Nara,29
-2020-08-04,,169,3,,,,,,923721,2,Japan,Wakayama,30
+2020-08-04,,170,3,,,,,,923721,2,Japan,Wakayama,30
 2020-08-04,,18,0,,,,,,555663,2,Japan,Tottori,31
 2020-08-04,,29,0,,,,,,673891,2,Japan,Shimane,32
 2020-08-04,,93,0,,,,,,1891346,2,Japan,Okayama,33
@@ -10523,12 +10523,12 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-04,,82,3,,,,,,697674,2,Japan,Kochi,39
 2020-08-04,,2262,35,,,,,,5110113,2,Japan,Fukuoka,40
 2020-08-04,,107,0,,,,,,814211,2,Japan,Saga,41
-2020-08-04,,130,2,,,,,,1325205,2,Japan,Nagasaki,42
+2020-08-04,,134,2,,,,,,1325205,2,Japan,Nagasaki,42
 2020-08-04,,273,4,,,,,,1746740,2,Japan,Kumamoto,43
 2020-08-04,,73,1,,,,,,1134431,2,Japan,Oita,44
-2020-08-04,,197,0,,,,,,1072077,2,Japan,Miyazaki,45
+2020-08-04,,207,0,,,,,,1072077,2,Japan,Miyazaki,45
 2020-08-04,,256,1,,,,,,1599984,2,Japan,Kagoshima,46
-2020-08-04,,554,7,,,,,,1454184,2,Japan,Okinawa,47
+2020-08-04,,637,7,,,,,,1454184,2,Japan,Okinawa,47
 2020-08-04,,14,0,,,,,,,1,Japan,Charter Flight,
 2020-08-04,,633,1,,,,,,,1,Japan,Quarantine,
 2020-08-04,,712,13,,,,,,,1,Japan,Diamond Princess,
