@@ -1,6 +1,7 @@
 library(rjson)
 library(jsonlite)
 library(data.table)
+library(sparkline)
 # library(gsheet)
 
 source(file = "01_Settings/Path.R", local = T, encoding = "UTF-8")
