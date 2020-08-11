@@ -186,7 +186,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-08,986101,47402,1043,31300,12938,,,140,126216142,1,Japan,,
 2020-08-09,999777,48845,1048,32307,13262,,,156,126216142,1,Japan,,
 2020-08-10,1016197,49684,1053,33049,13668,,,161,126216142,1,Japan,,
-2020-08-11,0,49733,1053,0,0,,,0,126216142,1,Japan,,
+2020-08-11,0,49755,1053,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -10846,7 +10846,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-10,134698,685,1,238,430,,,0,,1,Japan,Quarantine,
 2020-08-10,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-08-10,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-08-11,,1545,103,,,,,,5248552,2,Japan,Hokkaido,01
+2020-08-11,,1559,103,,,,,,5248552,2,Japan,Hokkaido,01
 2020-08-11,,32,1,,,,,,1246138,2,Japan,Aomori,02
 2020-08-11,,7,0,,,,,,1226430,2,Japan,Iwate,03
 2020-08-11,,182,1,,,,,,2303160,2,Japan,Miyagi,04
@@ -10859,7 +10859,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-11,,2916,78,,,,,,7337330,2,Japan,Saitama,11
 2020-08-11,,2194,54,,,,,,6279026,2,Japan,Chiba,12
 2020-08-11,,16064,334,,,,,,13942856,2,Japan,Tokyo,13
-2020-08-11,,3299,103,,,,,,9200166,2,Japan,Kanagawa,14
+2020-08-11,,3306,103,,,,,,9200166,2,Japan,Kanagawa,14
 2020-08-11,,127,0,,,,,,2222004,2,Japan,Niigata,15
 2020-08-11,,293,22,,,,,,1042998,2,Japan,Toyama,16
 2020-08-11,,376,28,,,,,,1137181,2,Japan,Ishikawa,17
@@ -10888,7 +10888,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-11,,3075,37,,,,,,5110113,2,Japan,Fukuoka,40
 2020-08-11,,155,0,,,,,,814211,2,Japan,Saga,41
 2020-08-11,,167,3,,,,,,1325205,2,Japan,Nagasaki,42
-2020-08-11,,356,5,,,,,,1746740,2,Japan,Kumamoto,43
+2020-08-11,,357,5,,,,,,1746740,2,Japan,Kumamoto,43
 2020-08-11,,92,1,,,,,,1134431,2,Japan,Oita,44
 2020-08-11,,263,0,,,,,,1072077,2,Japan,Miyazaki,45
 2020-08-11,,277,3,,,,,,1599984,2,Japan,Kagoshima,46
