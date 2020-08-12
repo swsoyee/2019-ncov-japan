@@ -44,11 +44,11 @@ shinyUI(
           tabName = "aomori"#,
           # icon = icon("apple-alt")
         ),
-        menuSubItem(
-          text = i18n$t("岩手県"),
-          tabName = "iwate" # ,
-          # icon = icon('apple-alt')
-        ),
+        # menuSubItem(
+        #   text = i18n$t("岩手県"),
+        #   tabName = "iwate" # ,
+        #   # icon = icon('apple-alt')
+        # ),
         menuSubItem(
           text = i18n$t("宮城県"),
           tabName = "miyagi" # ,
