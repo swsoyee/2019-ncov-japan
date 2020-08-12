@@ -21,13 +21,6 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
       - uses: r-lib/actions/setup-r@v1
-      - uses: actions/cache@v1
-        if: startsWith(runner.os, 'macOS')
-        with:
-          path: ~/Library/Application Support/renv
-          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-renv-
       - name: Install Package Dependencies
         run: |-
           Rscript -e "install.packages(c('data.table', 'sparkline', 'purrr', 'jsonlite', 'reshape2', 'tidyverse', 'lubridate', 'jpndistrict'))"
