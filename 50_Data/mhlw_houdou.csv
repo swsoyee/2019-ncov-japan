@@ -1,4 +1,4 @@
-id,date,title,link,pre,resident
+﻿id,date,title,link,pre,resident
 1,20200116,新型コロナウイルスに関連した肺炎の患者の発生について（1例目）,https://www.mhlw.go.jp/stf/newpage_08906.html,神奈川,日本
 2,20200124,新型コロナウイルスに関連した肺炎の患者の発生について（2例目）,https://www.mhlw.go.jp/stf/newpage_09079.html,東京,中国
 3,20200125,新型コロナウイルスに関連した肺炎の患者の発生について（3例目）,https://www.mhlw.go.jp/stf/newpage_09099.html,東京,中国
@@ -4810,3 +4810,4 @@ id,date,title,link,pre,resident
 4809,20200811,大阪で1人死亡 計97人に 新型コロナウイルス,https://www3.nhk.or.jp/news/html/20200811/k10012563111000.html,大阪,日本
 4810,20200811,東京 新たに188人が新型コロナウイルスに感染,https://www3.nhk.or.jp/news/html/20200811/k10012562081000.html,東京,日本
 4811,20200811,島根 松江 新たに4人感染確認 4日間で100人確認に 新型コロナ,https://www3.nhk.or.jp/news/html/20200811/k10012563201000.html,島根,日本
+4812,20200812,感染徳島1,-,徳島,日本
