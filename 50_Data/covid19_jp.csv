@@ -188,7 +188,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-10,1016197,49683,1053,33049,13668,,,161,126216142,1,Japan,,
 2020-08-11,1024235,50382,1060,33970,13683,,,171,126216142,1,Japan,,
 2020-08-12,1058164,51360,1065,34883,14040,,,177,126216142,1,Japan,,
-2020-08-13,0,51427,1066,0,0,,,0,126216142,1,Japan,,
+2020-08-13,0,51432,1066,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -10982,7 +10982,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-13,,186,4,,,,,,923721,2,Japan,Wakayama,30
 2020-08-13,,21,0,,,,,,555663,2,Japan,Tottori,31
 2020-08-13,,132,0,,,,,,673891,2,Japan,Shimane,32
-2020-08-13,,116,0,,,,,,1891346,2,Japan,Okayama,33
+2020-08-13,,118,0,,,,,,1891346,2,Japan,Okayama,33
 2020-08-13,,425,3,,,,,,2807987,2,Japan,Hiroshima,34
 2020-08-13,,80,0,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-08-13,,70,1,,,,,,728633,2,Japan,Tokushima,36
@@ -10994,7 +10994,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-13,,172,3,,,,,,1325205,2,Japan,Nagasaki,42
 2020-08-13,,370,5,,,,,,1746740,2,Japan,Kumamoto,43
 2020-08-13,,93,1,,,,,,1134431,2,Japan,Oita,44
-2020-08-13,,269,0,,,,,,1072077,2,Japan,Miyazaki,45
+2020-08-13,,272,0,,,,,,1072077,2,Japan,Miyazaki,45
 2020-08-13,,277,4,,,,,,1599984,2,Japan,Kagoshima,46
 2020-08-13,,1307,10,,,,,,1454184,2,Japan,Okinawa,47
 2020-08-13,,14,0,,,,,,,1,Japan,Charter Flight,
