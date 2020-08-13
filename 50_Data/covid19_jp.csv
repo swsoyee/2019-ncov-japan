@@ -188,7 +188,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-10,1016197,49683,1053,33049,13668,,,161,126216142,1,Japan,,
 2020-08-11,1024235,50382,1060,33970,13683,,,171,126216142,1,Japan,,
 2020-08-12,1058164,51360,1065,34883,14040,,,177,126216142,1,Japan,,
-2020-08-13,0,52505,1070,0,0,,,0,126216142,1,Japan,,
+2020-08-13,0,52530,1070,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -10957,10 +10957,10 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-13,,36,0,,,,,,965968,2,Japan,Akita,05
 2020-08-13,,76,1,,,,,,1077057,2,Japan,Yamagata,06
 2020-08-13,,101,0,,,,,,1847950,2,Japan,Fukushima,07
-2020-08-13,,428,10,,,,,,2868041,2,Japan,Ibaraki,08
+2020-08-13,,431,10,,,,,,2868041,2,Japan,Ibaraki,08
 2020-08-13,,263,1,,,,,,1942312,2,Japan,Tochigi,09
 2020-08-13,,254,19,,,,,,1937626,2,Japan,Gunma,10
-2020-08-13,,3036,79,,,,,,7337330,2,Japan,Saitama,11
+2020-08-13,,3053,79,,,,,,7337330,2,Japan,Saitama,11
 2020-08-13,,2290,55,,,,,,6279026,2,Japan,Chiba,12
 2020-08-13,,16680,336,,,,,,13942856,2,Japan,Tokyo,13
 2020-08-13,,3515,105,,,,,,9200166,2,Japan,Kanagawa,14
@@ -10983,7 +10983,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-13,,21,0,,,,,,555663,2,Japan,Tottori,31
 2020-08-13,,132,0,,,,,,673891,2,Japan,Shimane,32
 2020-08-13,,118,0,,,,,,1891346,2,Japan,Okayama,33
-2020-08-13,,425,3,,,,,,2807987,2,Japan,Hiroshima,34
+2020-08-13,,426,3,,,,,,2807987,2,Japan,Hiroshima,34
 2020-08-13,,80,0,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-08-13,,70,1,,,,,,728633,2,Japan,Tokushima,36
 2020-08-13,,61,0,,,,,,956069,2,Japan,Kagawa,37
@@ -10992,7 +10992,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-13,,3348,39,,,,,,5110113,2,Japan,Fukuoka,40
 2020-08-13,,173,0,,,,,,814211,2,Japan,Saga,41
 2020-08-13,,173,3,,,,,,1325205,2,Japan,Nagasaki,42
-2020-08-13,,375,5,,,,,,1746740,2,Japan,Kumamoto,43
+2020-08-13,,379,5,,,,,,1746740,2,Japan,Kumamoto,43
 2020-08-13,,93,1,,,,,,1134431,2,Japan,Oita,44
 2020-08-13,,274,0,,,,,,1072077,2,Japan,Miyazaki,45
 2020-08-13,,277,4,,,,,,1599984,2,Japan,Kagoshima,46
