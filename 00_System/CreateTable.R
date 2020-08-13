@@ -88,7 +88,8 @@ diffSparkline <- sapply(2:ncol(byDate), function(i) {
   # 新規
   diff <- sparkline(
     values = value,
-    type = "bar",
+    type = "bar", 
+    elementId = paste0("newCasesSparkline",i),
     chartRangeMin = 0,
     width = 80,
     tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> 新規{{value}}名",
@@ -100,7 +101,8 @@ diffSparkline <- sapply(2:ncol(byDate), function(i) {
   # 累計
   cumsumSpk <- sparkline(
     values = cumsumValue,
-    type = "line",
+    type = "line", 
+    elementId = paste0("cumulativeCasesSparkline", i),
     width = 80,
     fillColor = F,
     lineColor = darkRed,
@@ -129,6 +131,7 @@ dischargedDiffSparkline <- sapply(colnames(byDate)[2:48], function(region) {
     diff <- spk_chr(
       values = value,
       type = "bar",
+      elementId = paste0("recover", region),
       width = 80,
       barColor = middleGreen,
       tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> 新規回復{{value}}名",
@@ -156,6 +159,7 @@ detailSparkLine <- sapply(detailSparkLineDt$都道府県名, function(region) {
   )
   spk_chr(
     type = "pie",
+    elementId = paste0("casesDetailPie", region),
     values = c(
       confirmed - sum(detailSparkLineDt[都道府県名 == region, .(入院中, 退院者, 死亡者)], na.rm = T) -
         ifelse(region == "クルーズ船", 40, 0),
@@ -209,6 +213,7 @@ pcrDiffSparkline <- sapply(pcrByRegionToday$都道府県名, function(region) {
     diff <- spk_chr(
       values = value,
       type = "bar",
+      elementId = paste0("pcrDetail", region),
       width = 80,
       barColor = middleYellow,
       tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> 新規{{value}}",
@@ -235,7 +240,8 @@ positiveRatioSparkline <- sapply(pcrByRegionToday$都道府県名, function(regi
   if (length(value) > 0) {
     diff <- spk_chr(
       values = value,
-      type = "line",
+      type = "line", 
+      elementId = paste0("positiveRatio", region),
       width = 80,
       lineColor = darkRed,
       fillColor = "#f2b3aa",
