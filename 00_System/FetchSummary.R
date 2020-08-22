@@ -196,14 +196,15 @@
 #   "20200818" = "https://www.mhlw.go.jp/content/10906000/000660161.pdf",
 #   "20200819" = "https://www.mhlw.go.jp/content/10906000/000660643.pdf",
 #   "20200820" = "https://www.mhlw.go.jp/content/10906000/000661109.pdf",
-#   "20200821" = "https://www.mhlw.go.jp/content/10906000/000661604.pdf"
+#   "20200821" = "https://www.mhlw.go.jp/content/10906000/000661604.pdf",
+#   "20200822" = "https://www.mhlw.go.jp/content/10906000/000661892.pdf"
 # )
 # 
 # for (i in names(location)) {
 #   if (!i %in% dataset$日付) {
 #     out <- tabulizer::extract_tables(location[i][[1]], method = "lattice")
 # 
-#     dt <- data.table(out[[1]])
+#     dt <- data.table(out[[ifelse(length(out) > 1, 2, 1)]])
 #     # 沖縄処理
 #     # dt[49] <- dt[49, c(1:3, 6:7, 10, 13, 4, 5, 8, 9, 11, 12)]
 #     # dt[, `:=` (V8 = NULL, V9 = NULL, V10 = NULL, V11 = NULL, V12 = NULL, V13 = NULL)]
