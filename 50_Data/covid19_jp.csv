@@ -198,7 +198,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-20,1259422,59951,1159,45251,11925,,,237,126216142,1,Japan,,
 2020-08-21,1282693,60984,1174,46450,11913,,,243,126216142,1,Japan,,
 2020-08-22,1306128,61966,1180,47609,11764,,,243,126216142,1,Japan,,
-2020-08-23,0,62000,1180,0,0,,,0,126216142,1,Japan,,
+2020-08-23,0,62022,1180,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -11470,7 +11470,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-22,151321,741,1,562,167,,,0,,1,Japan,Quarantine,
 2020-08-22,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-08-22,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-08-23,,1677,103,,,,,,5248552,2,Japan,Hokkaido,01
+2020-08-23,,1687,103,,,,,,5248552,2,Japan,Hokkaido,01
 2020-08-23,,33,1,,,,,,1246138,2,Japan,Aomori,02
 2020-08-23,,11,0,,,,,,1226430,2,Japan,Iwate,03
 2020-08-23,,191,2,,,,,,2303160,2,Japan,Miyagi,04
@@ -11483,7 +11483,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-23,,3527,85,,,,,,7337330,2,Japan,Saitama,11
 2020-08-23,,2726,59,,,,,,6279026,2,Japan,Chiba,12
 2020-08-23,,19121,350,,,,,,13942856,2,Japan,Tokyo,13
-2020-08-23,,4364,108,,,,,,9200166,2,Japan,Kanagawa,14
+2020-08-23,,4371,108,,,,,,9200166,2,Japan,Kanagawa,14
 2020-08-23,,139,0,,,,,,2222004,2,Japan,Niigata,15
 2020-08-23,,339,23,,,,,,1042998,2,Japan,Toyama,16
 2020-08-23,,550,30,,,,,,1137181,2,Japan,Ishikawa,17
@@ -11497,7 +11497,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-23,,384,4,,,,,,1413959,2,Japan,Shiga,25
 2020-08-23,,1306,21,,,,,,2583140,2,Japan,Kyoto,26
 2020-08-23,,7720,129,,,,,,8823453,2,Japan,Osaka,27
-2020-08-23,,2125,49,,,,,,5463609,2,Japan,Hyogo,28
+2020-08-23,,2129,49,,,,,,5463609,2,Japan,Hyogo,28
 2020-08-23,,469,3,,,,,,1331330,2,Japan,Nara,29
 2020-08-23,,225,4,,,,,,923721,2,Japan,Wakayama,30
 2020-08-23,,22,0,,,,,,555663,2,Japan,Tottori,31
@@ -11511,7 +11511,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-23,,107,3,,,,,,697674,2,Japan,Kochi,39
 2020-08-23,,4043,48,,,,,,5110113,2,Japan,Fukuoka,40
 2020-08-23,,216,0,,,,,,814211,2,Japan,Saga,41
-2020-08-23,,198,3,,,,,,1325205,2,Japan,Nagasaki,42
+2020-08-23,,199,3,,,,,,1325205,2,Japan,Nagasaki,42
 2020-08-23,,465,7,,,,,,1746740,2,Japan,Kumamoto,43
 2020-08-23,,138,1,,,,,,1134431,2,Japan,Oita,44
 2020-08-23,,338,1,,,,,,1072077,2,Japan,Miyazaki,45
