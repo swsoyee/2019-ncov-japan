@@ -198,7 +198,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-20,1259422,59951,1159,45251,11925,,,237,126216142,1,Japan,,
 2020-08-21,1282693,60984,1174,46450,11913,,,243,126216142,1,Japan,,
 2020-08-22,1306128,61966,1180,47609,11764,,,243,126216142,1,Japan,,
-2020-08-23,0,62701,1189,0,0,,,0,126216142,1,Japan,,
+2020-08-23,0,62708,1189,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -11488,7 +11488,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-23,,341,23,,,,,,1042998,2,Japan,Toyama,16
 2020-08-23,,566,31,,,,,,1137181,2,Japan,Ishikawa,17
 2020-08-23,,163,8,,,,,,767742,2,Japan,Fukui,18
-2020-08-23,,163,1,,,,,,812056,2,Japan,Yamanashi,19
+2020-08-23,,166,1,,,,,,812056,2,Japan,Yamanashi,19
 2020-08-23,,172,0,,,,,,2049023,2,Japan,Nagano,20
 2020-08-23,,539,9,,,,,,1988931,2,Japan,Gifu,21
 2020-08-23,,440,1,,,,,,3639226,2,Japan,Shizuoka,22
@@ -11504,7 +11504,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-23,,134,0,,,,,,673891,2,Japan,Shimane,32
 2020-08-23,,137,0,,,,,,1891346,2,Japan,Okayama,33
 2020-08-23,,444,3,,,,,,2807987,2,Japan,Hiroshima,34
-2020-08-23,,105,0,,,,,,1355495,2,Japan,Yamaguchi,35
+2020-08-23,,109,0,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-08-23,,106,3,,,,,,728633,2,Japan,Tokushima,36
 2020-08-23,,71,1,,,,,,956069,2,Japan,Kagawa,37
 2020-08-23,,114,6,,,,,,1338811,2,Japan,Ehime,38
