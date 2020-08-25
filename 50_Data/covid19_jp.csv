@@ -200,7 +200,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-22,1306128,61966,1180,47609,11764,,,243,126216142,1,Japan,,
 2020-08-23,1321079,62710,1189,48531,11873,,,254,126216142,1,Japan,,
 2020-08-24,1333884,63203,1202,49308,11846,,,259,126216142,1,Japan,,
-2020-08-25,0,63465,1204,0,0,,,0,126216142,1,Japan,,
+2020-08-25,0,63470,1204,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -11574,7 +11574,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-24,154776,752,1,609,128,,,0,,1,Japan,Quarantine,
 2020-08-24,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-08-24,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-08-25,,1705,103,,,,,,5248552,2,Japan,Hokkaido,01
+2020-08-25,,1706,103,,,,,,5248552,2,Japan,Hokkaido,01
 2020-08-25,,33,1,,,,,,1246138,2,Japan,Aomori,02
 2020-08-25,,12,0,,,,,,1226430,2,Japan,Iwate,03
 2020-08-25,,192,2,,,,,,2303160,2,Japan,Miyagi,04
@@ -11595,7 +11595,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-25,,167,1,,,,,,812056,2,Japan,Yamanashi,19
 2020-08-25,,185,0,,,,,,2049023,2,Japan,Nagano,20
 2020-08-25,,543,9,,,,,,1988931,2,Japan,Gifu,21
-2020-08-25,,450,1,,,,,,3639226,2,Japan,Shizuoka,22
+2020-08-25,,453,1,,,,,,3639226,2,Japan,Shizuoka,22
 2020-08-25,,4233,57,,,,,,7552873,2,Japan,Aichi,23
 2020-08-25,,349,2,,,,,,1779770,2,Japan,Mie,24
 2020-08-25,,401,4,,,,,,1413959,2,Japan,Shiga,25
@@ -11615,7 +11615,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-25,,109,3,,,,,,697674,2,Japan,Kochi,39
 2020-08-25,,4156,51,,,,,,5110113,2,Japan,Fukuoka,40
 2020-08-25,,222,0,,,,,,814211,2,Japan,Saga,41
-2020-08-25,,207,3,,,,,,1325205,2,Japan,Nagasaki,42
+2020-08-25,,208,3,,,,,,1325205,2,Japan,Nagasaki,42
 2020-08-25,,474,7,,,,,,1746740,2,Japan,Kumamoto,43
 2020-08-25,,140,1,,,,,,1134431,2,Japan,Oita,44
 2020-08-25,,349,1,,,,,,1072077,2,Japan,Miyazaki,45
