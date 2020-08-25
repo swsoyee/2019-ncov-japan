@@ -39,11 +39,11 @@ shinyUI(
           tabName = "hokkaido"#,
           # icon = icon("fish")
         ),
-        menuSubItem(
-          text = i18n$t("青森県"),
-          tabName = "aomori"#,
-          # icon = icon("apple-alt")
-        ),
+        # menuSubItem(
+        #   text = i18n$t("青森県"),
+        #   tabName = "aomori"#,
+        #   # icon = icon("apple-alt")
+        # ),
         # menuSubItem(
         #   text = i18n$t("岩手県"),
         #   tabName = "iwate" # ,
