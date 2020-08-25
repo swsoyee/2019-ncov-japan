@@ -200,7 +200,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-22,1306128,61966,1180,47609,11764,,,243,126216142,1,Japan,,
 2020-08-23,1321079,62710,1189,48531,11873,,,254,126216142,1,Japan,,
 2020-08-24,1333884,63203,1202,49308,11846,,,259,126216142,1,Japan,,
-2020-08-25,0,63229,1202,0,0,,,0,126216142,1,Japan,,
+2020-08-25,0,63246,1202,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -11585,7 +11585,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-25,,289,1,,,,,,1942312,2,Japan,Tochigi,09
 2020-08-25,,384,19,,,,,,1937626,2,Japan,Gunma,10
 2020-08-25,,3588,85,,,,,,7337330,2,Japan,Saitama,11
-2020-08-25,,2787,59,,,,,,6279026,2,Japan,Chiba,12
+2020-08-25,,2790,59,,,,,,6279026,2,Japan,Chiba,12
 2020-08-25,,19428,352,,,,,,13942856,2,Japan,Tokyo,13
 2020-08-25,,4453,112,,,,,,9200166,2,Japan,Kanagawa,14
 2020-08-25,,139,0,,,,,,2222004,2,Japan,Niigata,15
@@ -11601,7 +11601,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-25,,401,4,,,,,,1413959,2,Japan,Shiga,25
 2020-08-25,,1326,21,,,,,,2583140,2,Japan,Kyoto,26
 2020-08-25,,7901,131,,,,,,8823453,2,Japan,Osaka,27
-2020-08-25,,2137,49,,,,,,5463609,2,Japan,Hyogo,28
+2020-08-25,,2148,49,,,,,,5463609,2,Japan,Hyogo,28
 2020-08-25,,479,3,,,,,,1331330,2,Japan,Nara,29
 2020-08-25,,227,4,,,,,,923721,2,Japan,Wakayama,30
 2020-08-25,,22,0,,,,,,555663,2,Japan,Tottori,31
@@ -11618,7 +11618,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-25,,207,3,,,,,,1325205,2,Japan,Nagasaki,42
 2020-08-25,,474,7,,,,,,1746740,2,Japan,Kumamoto,43
 2020-08-25,,140,1,,,,,,1134431,2,Japan,Oita,44
-2020-08-25,,346,1,,,,,,1072077,2,Japan,Miyazaki,45
+2020-08-25,,349,1,,,,,,1072077,2,Japan,Miyazaki,45
 2020-08-25,,346,9,,,,,,1599984,2,Japan,Kagoshima,46
 2020-08-25,,1911,23,,,,,,1454184,2,Japan,Okinawa,47
 2020-08-25,,14,0,,,,,,,1,Japan,Charter Flight,
