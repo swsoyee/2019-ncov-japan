@@ -200,7 +200,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-22,1306128,61966,1180,47609,11764,,,243,126216142,1,Japan,,
 2020-08-23,1321079,62710,1189,48531,11873,,,254,126216142,1,Japan,,
 2020-08-24,1333884,63203,1202,49308,11846,,,259,126216142,1,Japan,,
-2020-08-25,0,63912,1209,0,0,,,0,126216142,1,Japan,,
+2020-08-25,0,63915,1210,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -11578,7 +11578,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-25,,33,1,,,,,,1246138,2,Japan,Aomori,02
 2020-08-25,,12,0,,,,,,1226430,2,Japan,Iwate,03
 2020-08-25,,192,2,,,,,,2303160,2,Japan,Miyagi,04
-2020-08-25,,43,0,,,,,,965968,2,Japan,Akita,05
+2020-08-25,,44,0,,,,,,965968,2,Japan,Akita,05
 2020-08-25,,77,1,,,,,,1077057,2,Japan,Yamagata,06
 2020-08-25,,134,0,,,,,,1847950,2,Japan,Fukushima,07
 2020-08-25,,512,12,,,,,,2868041,2,Japan,Ibaraki,08
@@ -11599,7 +11599,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-25,,4275,58,,,,,,7552873,2,Japan,Aichi,23
 2020-08-25,,349,2,,,,,,1779770,2,Japan,Mie,24
 2020-08-25,,415,4,,,,,,1413959,2,Japan,Shiga,25
-2020-08-25,,1343,21,,,,,,2583140,2,Japan,Kyoto,26
+2020-08-25,,1343,22,,,,,,2583140,2,Japan,Kyoto,26
 2020-08-25,,8020,131,,,,,,8823453,2,Japan,Osaka,27
 2020-08-25,,2160,49,,,,,,5463609,2,Japan,Hyogo,28
 2020-08-25,,484,3,,,,,,1331330,2,Japan,Nara,29
@@ -11616,7 +11616,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-25,,4209,51,,,,,,5110113,2,Japan,Fukuoka,40
 2020-08-25,,222,0,,,,,,814211,2,Japan,Saga,41
 2020-08-25,,208,3,,,,,,1325205,2,Japan,Nagasaki,42
-2020-08-25,,477,7,,,,,,1746740,2,Japan,Kumamoto,43
+2020-08-25,,479,7,,,,,,1746740,2,Japan,Kumamoto,43
 2020-08-25,,140,1,,,,,,1134431,2,Japan,Oita,44
 2020-08-25,,351,1,,,,,,1072077,2,Japan,Miyazaki,45
 2020-08-25,,348,9,,,,,,1599984,2,Japan,Kagoshima,46
