@@ -203,7 +203,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-25,1357628,63919,1216,50413,11330,,,252,126216142,1,Japan,,
 2020-08-26,1376783,64821,1229,51673,10754,,,246,126216142,1,Japan,,
 2020-08-27,1397400,65685,1240,52806,10418,,,238,126216142,1,Japan,,
-2020-08-28,0,65739,1240,0,0,,,0,126216142,1,Japan,,
+2020-08-28,0,65746,1240,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -11741,7 +11741,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-28,,295,1,,,,,,1942312,2,Japan,Tochigi,09
 2020-08-28,,426,19,,,,,,1937626,2,Japan,Gunma,10
 2020-08-28,,3746,86,,,,,,7337330,2,Japan,Saitama,11
-2020-08-28,,2908,61,,,,,,6279026,2,Japan,Chiba,12
+2020-08-28,,2912,61,,,,,,6279026,2,Japan,Chiba,12
 2020-08-28,,20096,356,,,,,,13942856,2,Japan,Tokyo,13
 2020-08-28,,4661,116,,,,,,9200166,2,Japan,Kanagawa,14
 2020-08-28,,140,0,,,,,,2222004,2,Japan,Niigata,15
@@ -11753,7 +11753,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-28,,551,9,,,,,,1988931,2,Japan,Gifu,21
 2020-08-28,,473,1,,,,,,3639226,2,Japan,Shizuoka,22
 2020-08-28,,4364,60,,,,,,7552873,2,Japan,Aichi,23
-2020-08-28,,355,2,,,,,,1779770,2,Japan,Mie,24
+2020-08-28,,356,2,,,,,,1779770,2,Japan,Mie,24
 2020-08-28,,428,4,,,,,,1413959,2,Japan,Shiga,25
 2020-08-28,,1401,22,,,,,,2583140,2,Japan,Kyoto,26
 2020-08-28,,8233,138,,,,,,8823453,2,Japan,Osaka,27
@@ -11763,7 +11763,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-28,,22,0,,,,,,555663,2,Japan,Tottori,31
 2020-08-28,,137,0,,,,,,673891,2,Japan,Shimane,32
 2020-08-28,,143,0,,,,,,1891346,2,Japan,Okayama,33
-2020-08-28,,447,3,,,,,,2807987,2,Japan,Hiroshima,34
+2020-08-28,,449,3,,,,,,2807987,2,Japan,Hiroshima,34
 2020-08-28,,149,0,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-08-28,,127,4,,,,,,728633,2,Japan,Tokushima,36
 2020-08-28,,75,1,,,,,,956069,2,Japan,Kagawa,37
