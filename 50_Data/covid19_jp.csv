@@ -206,7 +206,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-28,1420589,66558,1260,53976,10153,,,227,126216142,1,Japan,,
 2020-08-29,1440826,67401,1271,55321,9783,,,230,126216142,1,Japan,,
 2020-08-30,1455610,68000,1285,56144,9785,,,234,126216142,1,Japan,,
-2020-08-31,0,68036,1285,0,0,,,0,126216142,1,Japan,,
+2020-08-31,0,68059,1285,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -11932,7 +11932,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-31,,145,1,,,,,,1134431,2,Japan,Oita,44
 2020-08-31,,357,1,,,,,,1072077,2,Japan,Miyazaki,45
 2020-08-31,,361,11,,,,,,1599984,2,Japan,Kagoshima,46
-2020-08-31,,2117,27,,,,,,1454184,2,Japan,Okinawa,47
+2020-08-31,,2140,27,,,,,,1454184,2,Japan,Okinawa,47
 2020-08-31,,14,0,,,,,,,1,Japan,Charter Flight,
 2020-08-31,,783,1,,,,,,,1,Japan,Quarantine,
 2020-08-31,,712,13,,,,,,,1,Japan,Diamond Princess,
