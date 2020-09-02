@@ -208,7 +208,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-08-30,1455610,67996,1285,56144,9785,,,234,126216142,1,Japan,,
 2020-08-31,1467132,68433,1299,56787,9736,,,236,126216142,1,Japan,,
 2020-09-01,1490975,69066,1314,57816,9224,,,234,126216142,1,Japan,,
-2020-09-02,0,69293,1316,0,0,,,0,126216142,1,Japan,,
+2020-09-02,0,69301,1316,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -11990,7 +11990,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-01,168061,800,1,678,103,,,0,,1,Japan,Quarantine,
 2020-09-01,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-09-01,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-09-02,,1780,103,,,,,,5248552,2,Japan,Hokkaido,01
+2020-09-02,,1781,103,,,,,,5248552,2,Japan,Hokkaido,01
 2020-09-02,,35,1,,,,,,1246138,2,Japan,Aomori,02
 2020-09-02,,22,0,,,,,,1226430,2,Japan,Iwate,03
 2020-09-02,,210,2,,,,,,2303160,2,Japan,Miyagi,04
@@ -12011,7 +12011,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-02,,172,4,,,,,,812056,2,Japan,Yamanashi,19
 2020-09-02,,268,1,,,,,,2049023,2,Japan,Nagano,20
 2020-09-02,,558,10,,,,,,1988931,2,Japan,Gifu,21
-2020-09-02,,481,1,,,,,,3639226,2,Japan,Shizuoka,22
+2020-09-02,,483,1,,,,,,3639226,2,Japan,Shizuoka,22
 2020-09-02,,4561,68,,,,,,7552873,2,Japan,Aichi,23
 2020-09-02,,376,2,,,,,,1779770,2,Japan,Mie,24
 2020-09-02,,452,6,,,,,,1413959,2,Japan,Shiga,25
@@ -12023,7 +12023,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-02,,22,0,,,,,,555663,2,Japan,Tottori,31
 2020-09-02,,137,0,,,,,,673891,2,Japan,Shimane,32
 2020-09-02,,144,1,,,,,,1891346,2,Japan,Okayama,33
-2020-09-02,,450,3,,,,,,2807987,2,Japan,Hiroshima,34
+2020-09-02,,451,3,,,,,,2807987,2,Japan,Hiroshima,34
 2020-09-02,,173,0,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-09-02,,137,4,,,,,,728633,2,Japan,Tokushima,36
 2020-09-02,,79,1,,,,,,956069,2,Japan,Kagawa,37
@@ -12032,7 +12032,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-02,,4622,63,,,,,,5110113,2,Japan,Fukuoka,40
 2020-09-02,,237,0,,,,,,814211,2,Japan,Saga,41
 2020-09-02,,232,3,,,,,,1325205,2,Japan,Nagasaki,42
-2020-09-02,,523,7,,,,,,1746740,2,Japan,Kumamoto,43
+2020-09-02,,527,7,,,,,,1746740,2,Japan,Kumamoto,43
 2020-09-02,,150,2,,,,,,1134431,2,Japan,Oita,44
 2020-09-02,,359,1,,,,,,1072077,2,Japan,Miyazaki,45
 2020-09-02,,363,11,,,,,,1599984,2,Japan,Kagoshima,46
