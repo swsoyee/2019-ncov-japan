@@ -331,7 +331,7 @@ mergeDt[region == "クルーズ船", active := active - 40] # クルーズ船の
 alertPref <-
   c(
     "東京",
-    "大阪",
+    # "大阪",
     # "北海道",
     # "茨城",
     # "埼玉",
