@@ -194,6 +194,7 @@ Afghanistan,2020-09-02,225,38243,47,1409,3,Afghanistan,,38928000,Afghanistan,98.
 Afghanistan,2020-09-03,226,38288,45,1409,0,Afghanistan,,38928000,Afghanistan,98.36,0,102598,263.56,37.32
 Afghanistan,2020-09-04,227,38304,16,1409,0,Afghanistan,,38928000,Afghanistan,98.4,0,102598,263.56,37.33
 Afghanistan,2020-09-05,228,38324,20,1409,0,Afghanistan,,38928000,Afghanistan,98.45,0,102598,263.56,37.35
+Afghanistan,2020-09-06,229,38398,74,1412,3,Afghanistan,,38928000,Afghanistan,98.64,0,102598,263.56,37.43
 Albania,2020-03-09,48,2,2,0,0,Albania,,2878000,Albania,0.07,,,,
 Albania,2020-03-10,49,10,8,0,0,Albania,,2878000,Albania,0.35,,,,
 Albania,2020-03-11,50,12,2,1,1,Albania,,2878000,Albania,0.42,,,,
@@ -375,6 +376,7 @@ Albania,2020-09-02,225,9728,122,296,6,Albania,,2878000,Albania,338.01,0,62837,21
 Albania,2020-09-03,226,9844,116,301,5,Albania,,2878000,Albania,342.04,0,62837,2183.36,15.67
 Albania,2020-09-04,227,9967,123,306,5,Albania,,2878000,Albania,346.32,0,62837,2183.36,15.86
 Albania,2020-09-05,228,10102,135,312,6,Albania,,2878000,Albania,351.01,0,62837,2183.36,16.08
+Albania,2020-09-06,229,10255,153,316,4,Albania,,2878000,Albania,356.32,0,62837,2183.36,16.32
 Algeria,2020-02-25,35,1,1,0,0,Algeria,,43851000,Algeria,0,,,,
 Algeria,2020-02-26,36,1,0,0,0,Algeria,,43851000,Algeria,0,,,,
 Algeria,2020-02-27,37,1,0,0,0,Algeria,,43851000,Algeria,0,,,,
@@ -569,6 +571,7 @@ Algeria,2020-09-02,225,45158,325,1523,5,Algeria,,43851000,Algeria,102.98,0,13375
 Algeria,2020-09-03,226,45469,311,1529,6,Algeria,,43851000,Algeria,103.69,0,133757,305.03,33.99
 Algeria,2020-09-04,227,45773,304,1539,10,Algeria,,43851000,Algeria,104.38,0,133757,305.03,34.22
 Algeria,2020-09-05,228,46071,298,1549,10,Algeria,,43851000,Algeria,105.06,0,133757,305.03,34.44
+Algeria,2020-09-06,229,46364,293,1556,7,Algeria,,43851000,Algeria,105.73,0,133757,305.03,34.66
 Andorra,2020-03-02,41,1,1,0,0,Andorra,,77000,Andorra,1.3,,,,
 Andorra,2020-03-03,42,1,0,0,0,Andorra,,77000,Andorra,1.3,,,,
 Andorra,2020-03-04,43,1,0,0,0,Andorra,,77000,Andorra,1.3,,,,
@@ -757,6 +760,7 @@ Andorra,2020-09-02,225,1199,15,53,0,Andorra,,77000,Andorra,1557.14,,,,
 Andorra,2020-09-03,226,1199,0,53,0,Andorra,,77000,Andorra,1557.14,,,,
 Andorra,2020-09-04,227,1215,16,53,0,Andorra,,77000,Andorra,1577.92,,,,
 Andorra,2020-09-05,228,1215,0,53,0,Andorra,,77000,Andorra,1577.92,,,,
+Andorra,2020-09-06,229,1215,0,53,0,Andorra,,77000,Andorra,1577.92,,,,
 Angola,2020-03-20,59,1,1,0,0,Angola,,32866000,Angola,0,,,,
 Angola,2020-03-21,60,2,1,0,0,Angola,,32866000,Angola,0.01,,,,
 Angola,2020-03-22,61,2,0,0,0,Angola,,32866000,Angola,0.01,13,13,0.04,15.38
@@ -927,6 +931,7 @@ Angola,2020-09-02,225,2777,48,112,3,Angola,,32866000,Angola,8.45,0,67623,205.75,
 Angola,2020-09-03,226,2805,28,113,1,Angola,,32866000,Angola,8.53,0,67623,205.75,4.15
 Angola,2020-09-04,227,2876,71,115,2,Angola,,32866000,Angola,8.75,0,67623,205.75,4.25
 Angola,2020-09-05,228,2935,59,117,2,Angola,,32866000,Angola,8.93,0,67623,205.75,4.34
+Angola,2020-09-06,229,2965,30,117,0,Angola,,32866000,Angola,9.02,0,67623,205.75,4.38
 AntiguaandBarbuda,2020-03-13,52,1,1,0,0,Antigua and Barbuda,,98000,Antigua and Barbuda,1.02,,,,
 AntiguaandBarbuda,2020-03-14,53,1,0,0,0,Antigua and Barbuda,,98000,Antigua and Barbuda,1.02,,,,
 AntiguaandBarbuda,2020-03-15,54,1,0,0,0,Antigua and Barbuda,,98000,Antigua and Barbuda,1.02,,,,
@@ -1104,6 +1109,7 @@ AntiguaandBarbuda,2020-09-02,225,94,0,3,0,Antigua and Barbuda,,98000,Antigua and
 AntiguaandBarbuda,2020-09-03,226,95,1,3,0,Antigua and Barbuda,,98000,Antigua and Barbuda,96.94,0,57,58.16,166.67
 AntiguaandBarbuda,2020-09-04,227,95,0,3,0,Antigua and Barbuda,,98000,Antigua and Barbuda,96.94,0,57,58.16,166.67
 AntiguaandBarbuda,2020-09-05,228,95,0,3,0,Antigua and Barbuda,,98000,Antigua and Barbuda,96.94,0,57,58.16,166.67
+AntiguaandBarbuda,2020-09-06,229,95,0,3,0,Antigua and Barbuda,,98000,Antigua and Barbuda,96.94,0,57,58.16,166.67
 Argentina,2020-03-03,42,1,1,0,0,Argentina,,45196000,Argentina,0,,,,
 Argentina,2020-03-04,43,1,0,0,0,Argentina,,45196000,Argentina,0,,,,
 Argentina,2020-03-05,44,1,0,0,0,Argentina,,45196000,Argentina,0,,,,
@@ -1291,6 +1297,7 @@ Argentina,2020-09-02,225,439172,10933,9118,199,Argentina,,45196000,Argentina,971
 Argentina,2020-09-03,226,451198,12026,9361,243,Argentina,,45196000,Argentina,998.31,0,1300866,2878.28,34.68
 Argentina,2020-09-04,227,461882,10684,9623,262,Argentina,,45196000,Argentina,1021.95,0,1300866,2878.28,35.51
 Argentina,2020-09-05,228,471806,9924,9739,116,Argentina,,45196000,Argentina,1043.91,0,1300866,2878.28,36.27
+Argentina,2020-09-06,229,478792,6986,9859,120,Argentina,,45196000,Argentina,1059.37,0,1300866,2878.28,36.81
 Armenia,2020-03-01,40,1,1,0,0,Armenia,,2963000,Armenia,0.03,,,,
 Armenia,2020-03-02,41,1,0,0,0,Armenia,,2963000,Armenia,0.03,,,,
 Armenia,2020-03-03,42,1,0,0,0,Armenia,,2963000,Armenia,0.03,,,,
@@ -1480,6 +1487,7 @@ Armenia,2020-09-02,225,44075,197,884,3,Armenia,,2963000,Armenia,1487.51,2460,209
 Armenia,2020-09-03,226,44271,196,887,3,Armenia,,2963000,Armenia,1494.13,1892,211281,7130.64,20.95
 Armenia,2020-09-04,227,44461,190,891,4,Armenia,,2963000,Armenia,1500.54,2363,213644,7210.39,20.81
 Armenia,2020-09-05,228,44649,188,895,4,Armenia,,2963000,Armenia,1506.88,0,213644,7210.39,20.9
+Armenia,2020-09-06,229,44783,134,897,2,Armenia,,2963000,Armenia,1511.41,4495,218139,7362.1,20.53
 Australia,2020-01-26,5,4,4,0,0,Australia,,25500000,Australia,0.02,,,,
 Australia,2020-01-27,6,5,1,0,0,Australia,,25500000,Australia,0.02,,,,
 Australia,2020-01-28,7,5,0,0,0,Australia,,25500000,Australia,0.02,,,,
@@ -1704,6 +1712,7 @@ Australia,2020-09-02,225,26049,126,678,15,Australia,,25500000,Australia,102.15,6
 Australia,2020-09-03,226,26136,87,737,59,Australia,,25500000,Australia,102.49,70983,6390778,25061.87,0.41
 Australia,2020-09-04,227,26207,71,748,11,Australia,,25500000,Australia,102.77,136703,6527481,25597.96,0.4
 Australia,2020-09-05,228,26278,71,753,5,Australia,,25500000,Australia,103.05,0,6527481,25597.96,0.4
+Australia,2020-09-06,229,26321,43,762,9,Australia,,25500000,Australia,103.22,129867,6657348,26107.25,0.4
 Austria,2020-02-25,35,2,2,0,0,Austria,,9006000,Austria,0.02,,,,
 Austria,2020-02-26,36,2,0,0,0,Austria,,9006000,Austria,0.02,,,,
 Austria,2020-02-27,37,3,1,0,0,Austria,,9006000,Austria,0.03,,,,
@@ -1898,6 +1907,7 @@ Austria,2020-09-02,225,27969,327,734,0,Austria,,9006000,Austria,310.56,17441,121
 Austria,2020-09-03,226,28372,403,735,1,Austria,,9006000,Austria,315.03,11689,1222257,13571.59,2.32
 Austria,2020-09-04,227,28729,357,735,0,Austria,,9006000,Austria,319,14232,1236489,13729.61,2.32
 Austria,2020-09-05,228,29087,358,735,0,Austria,,9006000,Austria,322.97,0,1236489,13729.61,2.35
+Austria,2020-09-06,229,29271,184,736,1,Austria,,9006000,Austria,325.02,19336,1255825,13944.31,2.33
 Azerbaijan,2020-03-01,40,3,3,0,0,Azerbaijan,,10139000,Azerbaijan,0.03,,,,
 Azerbaijan,2020-03-02,41,3,0,0,0,Azerbaijan,,10139000,Azerbaijan,0.03,,,,
 Azerbaijan,2020-03-03,42,3,0,0,0,Azerbaijan,,10139000,Azerbaijan,0.03,,,,
@@ -2087,6 +2097,7 @@ Azerbaijan,2020-09-02,225,36732,154,538,2,Azerbaijan,,10139000,Azerbaijan,362.28
 Azerbaijan,2020-09-03,226,36899,167,541,3,Azerbaijan,,10139000,Azerbaijan,363.93,6869,942265,9293.47,3.92
 Azerbaijan,2020-09-04,227,37031,132,543,2,Azerbaijan,,10139000,Azerbaijan,365.23,7048,949313,9362.98,3.9
 Azerbaijan,2020-09-05,228,37192,161,545,2,Azerbaijan,,10139000,Azerbaijan,366.82,0,949313,9362.98,3.92
+Azerbaijan,2020-09-06,229,37329,137,548,3,Azerbaijan,,10139000,Azerbaijan,368.17,13791,963104,9499,3.88
 TheBahamas,2020-03-16,55,1,1,0,0,The Bahamas,,393000,Bahamas,0.25,,,,
 TheBahamas,2020-03-17,56,1,0,0,0,The Bahamas,,393000,Bahamas,0.25,,,,
 TheBahamas,2020-03-18,57,1,0,0,0,The Bahamas,,393000,Bahamas,0.25,,,,
@@ -2261,6 +2272,7 @@ TheBahamas,2020-09-02,225,2337,61,50,0,The Bahamas,,393000,Bahamas,594.66,0,7690
 TheBahamas,2020-09-03,226,2386,49,50,0,The Bahamas,,393000,Bahamas,607.12,0,7690,1956.74,31.03
 TheBahamas,2020-09-04,227,2386,0,50,0,The Bahamas,,393000,Bahamas,607.12,0,7690,1956.74,31.03
 TheBahamas,2020-09-05,228,2476,90,55,5,The Bahamas,,393000,Bahamas,630.03,0,7690,1956.74,32.2
+TheBahamas,2020-09-06,229,2506,30,56,1,The Bahamas,,393000,Bahamas,637.66,0,7690,1956.74,32.59
 Bahrain,2020-02-24,34,1,1,0,0,Bahrain,,1702000,Bahrain,0.06,,,,
 Bahrain,2020-02-25,35,23,22,0,0,Bahrain,,1702000,Bahrain,1.35,,,,
 Bahrain,2020-02-26,36,33,10,0,0,Bahrain,,1702000,Bahrain,1.94,,,,
@@ -2456,6 +2468,7 @@ Bahrain,2020-09-02,225,52807,367,190,0,Bahrain,,1702000,Bahrain,3102.64,10749,11
 Bahrain,2020-09-03,226,53433,626,190,0,Bahrain,,1702000,Bahrain,3139.42,9992,1128829,66323.68,4.73
 Bahrain,2020-09-04,227,54095,662,195,5,Bahrain,,1702000,Bahrain,3178.32,11734,1140563,67013.1,4.74
 Bahrain,2020-09-05,228,54771,676,196,1,Bahrain,,1702000,Bahrain,3218.04,0,1140563,67013.1,4.8
+Bahrain,2020-09-06,229,55415,644,199,3,Bahrain,,1702000,Bahrain,3255.88,21786,1162349,68293.13,4.77
 Bangladesh,2020-03-08,47,3,3,0,0,Bangladesh,,164689000,Bangladesh,0,,,,
 Bangladesh,2020-03-09,48,3,0,0,0,Bangladesh,,164689000,Bangladesh,0,,,,
 Bangladesh,2020-03-10,49,3,0,0,0,Bangladesh,,164689000,Bangladesh,0,,,,
@@ -2638,6 +2651,7 @@ Bangladesh,2020-09-02,225,317528,2582,4351,35,Bangladesh,,164689000,Bangladesh,1
 Bangladesh,2020-09-03,226,319686,2158,4383,32,Bangladesh,,164689000,Bangladesh,194.11,14422,1592038,966.69,20.08
 Bangladesh,2020-09-04,227,321615,1929,4412,29,Bangladesh,,164689000,Bangladesh,195.29,13073,1605111,974.63,20.04
 Bangladesh,2020-09-05,228,323565,1950,4447,35,Bangladesh,,164689000,Bangladesh,196.47,0,1605111,974.63,20.16
+Bangladesh,2020-09-06,229,325157,1592,4479,32,Bangladesh,,164689000,Bangladesh,197.44,0,1605111,974.63,20.26
 Barbados,2020-03-17,56,2,2,0,0,Barbados,,287000,Barbados,0.7,,,,
 Barbados,2020-03-18,57,2,0,0,0,Barbados,,287000,Barbados,0.7,,,,
 Barbados,2020-03-19,58,5,3,0,0,Barbados,,287000,Barbados,1.74,,,,
@@ -2811,6 +2825,7 @@ Barbados,2020-09-02,225,176,0,7,0,Barbados,,287000,Barbados,61.32,160,17492,6094
 Barbados,2020-09-03,226,177,1,7,0,Barbados,,287000,Barbados,61.67,0,17492,6094.77,1.01
 Barbados,2020-09-04,227,178,1,7,0,Barbados,,287000,Barbados,62.02,0,17492,6094.77,1.02
 Barbados,2020-09-05,228,178,0,7,0,Barbados,,287000,Barbados,62.02,0,17492,6094.77,1.02
+Barbados,2020-09-06,229,178,0,7,0,Barbados,,287000,Barbados,62.02,0,17492,6094.77,1.02
 Belarus,2020-02-28,38,1,1,0,0,Belarus,,9449000,Belarus,0.01,,,,
 Belarus,2020-02-29,39,1,0,0,0,Belarus,,9449000,Belarus,0.01,,,,
 Belarus,2020-03-01,40,1,0,0,0,Belarus,,9449000,Belarus,0.01,,,,
@@ -3002,6 +3017,7 @@ Belarus,2020-09-02,225,72141,179,691,5,Belarus,,9449000,Belarus,763.48,0,1534792
 Belarus,2020-09-03,226,72302,161,696,5,Belarus,,9449000,Belarus,765.18,0,1534792,16242.9,4.71
 Belarus,2020-09-04,227,72485,183,701,5,Belarus,,9449000,Belarus,767.12,0,1534792,16242.9,4.72
 Belarus,2020-09-05,228,72663,178,705,4,Belarus,,9449000,Belarus,769,0,1534792,16242.9,4.73
+Belarus,2020-09-06,229,72859,196,711,6,Belarus,,9449000,Belarus,771.08,0,1534792,16242.9,4.75
 Belgium,2020-02-04,14,1,1,0,0,Belgium,,11590000,Belgium,0.01,,,,
 Belgium,2020-02-05,15,1,0,0,0,Belgium,,11590000,Belgium,0.01,,,,
 Belgium,2020-02-06,16,1,0,0,0,Belgium,,11590000,Belgium,0.01,,,,
@@ -3217,6 +3233,7 @@ Belgium,2020-09-02,225,85911,424,9898,1,Belgium,,11590000,Belgium,741.25,634,228
 Belgium,2020-09-03,226,86544,633,9899,1,Belgium,,11590000,Belgium,746.71,1907,2336975,20163.72,3.7
 Belgium,2020-09-04,227,87174,630,9901,2,Belgium,,11590000,Belgium,752.15,1461,2364713,20403.05,3.69
 Belgium,2020-09-05,228,87825,651,9906,5,Belgium,,11590000,Belgium,757.77,0,2364713,20403.05,3.71
+Belgium,2020-09-06,229,88367,542,9907,1,Belgium,,11590000,Belgium,762.44,620,2415673,20842.74,3.66
 Belize,2020-03-23,62,1,1,0,0,Belize,,398000,Belize,0.25,,,,
 Belize,2020-03-24,63,1,0,0,0,Belize,,398000,Belize,0.25,,,,
 Belize,2020-03-25,64,2,1,0,0,Belize,,398000,Belize,0.5,13,13,3.27,15.38
@@ -3384,6 +3401,7 @@ Belize,2020-09-02,225,1101,51,13,0,Belize,,398000,Belize,276.63,261,8721,2191.21
 Belize,2020-09-03,226,1101,0,13,0,Belize,,398000,Belize,276.63,0,8721,2191.21,12.62
 Belize,2020-09-04,227,1152,51,15,2,Belize,,398000,Belize,289.45,0,8721,2191.21,13.21
 Belize,2020-09-05,228,1194,42,15,0,Belize,,398000,Belize,300,0,8721,2191.21,13.69
+Belize,2020-09-06,229,1194,0,15,0,Belize,,398000,Belize,300,0,8721,2191.21,13.69
 Benin,2020-03-16,55,1,1,0,0,Benin,,12123000,Benin,0.01,,,,
 Benin,2020-03-17,56,1,0,0,0,Benin,,12123000,Benin,0.01,,,,
 Benin,2020-03-18,57,2,1,0,0,Benin,,12123000,Benin,0.02,,,,
@@ -3558,6 +3576,7 @@ Benin,2020-09-02,225,2194,49,40,0,Benin,,12123000,Benin,18.1,0,81930,675.82,2.68
 Benin,2020-09-03,226,2194,0,40,0,Benin,,12123000,Benin,18.1,0,81930,675.82,2.68
 Benin,2020-09-04,227,2194,0,40,0,Benin,,12123000,Benin,18.1,0,81930,675.82,2.68
 Benin,2020-09-05,228,2213,19,40,0,Benin,,12123000,Benin,18.25,0,81930,675.82,2.7
+Benin,2020-09-06,229,2213,0,40,0,Benin,,12123000,Benin,18.25,12867,94797,781.96,2.33
 Bhutan,2020-03-06,45,1,1,0,0,Bhutan,,772000,Bhutan,0.13,,,,
 Bhutan,2020-03-07,46,1,0,0,0,Bhutan,,772000,Bhutan,0.13,,,,
 Bhutan,2020-03-08,47,1,0,0,0,Bhutan,,772000,Bhutan,0.13,,,,
@@ -3742,6 +3761,7 @@ Bhutan,2020-09-02,225,227,0,0,0,Bhutan,,772000,Bhutan,29.4,0,97402,12616.84,0.23
 Bhutan,2020-09-03,226,227,0,0,0,Bhutan,,772000,Bhutan,29.4,0,97402,12616.84,0.23
 Bhutan,2020-09-04,227,228,1,0,0,Bhutan,,772000,Bhutan,29.53,0,97402,12616.84,0.23
 Bhutan,2020-09-05,228,228,0,0,0,Bhutan,,772000,Bhutan,29.53,0,97402,12616.84,0.23
+Bhutan,2020-09-06,229,228,0,0,0,Bhutan,,772000,Bhutan,29.53,0,97402,12616.84,0.23
 Bolivia,2020-03-11,50,2,2,0,0,Bolivia,,11673000,Bolivia,0.02,,,,
 Bolivia,2020-03-12,51,2,0,0,0,Bolivia,,11673000,Bolivia,0.02,,,,
 Bolivia,2020-03-13,52,3,1,0,0,Bolivia,,11673000,Bolivia,0.03,,,,
@@ -3921,6 +3941,7 @@ Bolivia,2020-09-02,225,117928,661,5203,102,Bolivia,,11673000,Bolivia,1010.26,0,2
 Bolivia,2020-09-03,226,118781,853,5288,85,Bolivia,,11673000,Bolivia,1017.57,0,243331,2084.56,48.81
 Bolivia,2020-09-04,227,119580,799,5343,55,Bolivia,,11673000,Bolivia,1024.42,0,243331,2084.56,49.14
 Bolivia,2020-09-05,228,120241,661,5398,55,Bolivia,,11673000,Bolivia,1030.08,0,243331,2084.56,49.41
+Bolivia,2020-09-06,229,120769,528,5398,0,Bolivia,,11673000,Bolivia,1034.6,0,243331,2084.56,49.63
 BosniaandHerzegovina,2020-03-05,44,2,2,0,0,Bosnia and Herzegovina,,3281000,Bosnia and Herz.,0.06,,,,
 BosniaandHerzegovina,2020-03-06,45,2,0,0,0,Bosnia and Herzegovina,,3281000,Bosnia and Herz.,0.06,,,,
 BosniaandHerzegovina,2020-03-07,46,3,1,0,0,Bosnia and Herzegovina,,3281000,Bosnia and Herz.,0.09,,,,
@@ -4106,6 +4127,7 @@ BosniaandHerzegovina,2020-09-02,225,20517,283,627,7,Bosnia and Herzegovina,,3281
 BosniaandHerzegovina,2020-09-03,226,20804,287,636,9,Bosnia and Herzegovina,,3281000,Bosnia and Herz.,634.07,1316,123832,3774.22,16.8
 BosniaandHerzegovina,2020-09-04,227,21142,338,639,3,Bosnia and Herzegovina,,3281000,Bosnia and Herz.,644.38,1298,125130,3813.78,16.9
 BosniaandHerzegovina,2020-09-05,228,21439,297,651,12,Bosnia and Herzegovina,,3281000,Bosnia and Herz.,653.43,0,125130,3813.78,17.13
+BosniaandHerzegovina,2020-09-06,229,21560,121,655,4,Bosnia and Herzegovina,,3281000,Bosnia and Herz.,657.12,1677,126807,3864.89,17
 Botswana,2020-03-30,69,3,3,0,0,Botswana,,2352000,Botswana,0.13,0,259,11.01,1.16
 Botswana,2020-03-31,70,4,1,1,1,Botswana,,2352000,Botswana,0.17,0,259,11.01,1.54
 Botswana,2020-04-01,71,4,0,1,0,Botswana,,2352000,Botswana,0.17,334,593,25.21,0.67
@@ -4266,6 +4288,7 @@ Botswana,2020-09-02,225,1724,0,6,0,Botswana,,2352000,Botswana,73.3,7181,116728,4
 Botswana,2020-09-03,226,1724,0,6,0,Botswana,,2352000,Botswana,73.3,0,116728,4962.93,1.48
 Botswana,2020-09-04,227,2002,278,8,2,Botswana,,2352000,Botswana,85.12,0,116728,4962.93,1.72
 Botswana,2020-09-05,228,2002,0,8,0,Botswana,,2352000,Botswana,85.12,0,116728,4962.93,1.72
+Botswana,2020-09-06,229,2002,0,8,0,Botswana,,2352000,Botswana,85.12,0,116728,4962.93,1.72
 Brazil,2020-02-26,36,1,1,0,0,Brazil,,212559000,Brazil,0,,,,
 Brazil,2020-02-27,37,1,0,0,0,Brazil,,212559000,Brazil,0,,,,
 Brazil,2020-02-28,38,1,0,0,0,Brazil,,212559000,Brazil,0,,,,
@@ -4459,6 +4482,7 @@ Brazil,2020-09-02,225,3997865,46934,123780,1184,Brazil,,212559000,Brazil,1880.83
 Brazil,2020-09-03,226,4041638,43773,124614,834,Brazil,,212559000,Brazil,1901.42,30672,14408116,6778.41,28.05
 Brazil,2020-09-04,227,4091801,50163,125502,888,Brazil,,212559000,Brazil,1925.02,0,14408116,6778.41,28.4
 Brazil,2020-09-05,228,4123000,31199,126203,701,Brazil,,212559000,Brazil,1939.7,0,14408116,6778.41,28.62
+Brazil,2020-09-06,229,4137521,14521,126650,447,Brazil,,212559000,Brazil,1946.53,0,14408116,6778.41,28.72
 Brunei,2020-03-09,48,1,1,0,0,Brunei,,437000,Brunei,0.23,,,,
 Brunei,2020-03-10,49,1,0,0,0,Brunei,,437000,Brunei,0.23,,,,
 Brunei,2020-03-11,50,11,10,0,0,Brunei,,437000,Brunei,2.52,100,100,22.88,11
@@ -4640,6 +4664,7 @@ Brunei,2020-09-02,225,144,0,3,0,Brunei,,437000,Brunei,32.95,0,52185,11941.65,0.2
 Brunei,2020-09-03,226,145,1,3,0,Brunei,,437000,Brunei,33.18,265,52450,12002.29,0.28
 Brunei,2020-09-04,227,145,0,3,0,Brunei,,437000,Brunei,33.18,585,53035,12136.16,0.27
 Brunei,2020-09-05,228,145,0,3,0,Brunei,,437000,Brunei,33.18,0,53035,12136.16,0.27
+Brunei,2020-09-06,229,145,0,3,0,Brunei,,437000,Brunei,33.18,0,53035,12136.16,0.27
 Bulgaria,2020-03-08,47,4,4,0,0,Bulgaria,,6948000,Bulgaria,0.06,,,,
 Bulgaria,2020-03-09,48,4,0,0,0,Bulgaria,,6948000,Bulgaria,0.06,,,,
 Bulgaria,2020-03-10,49,4,0,0,0,Bulgaria,,6948000,Bulgaria,0.06,,,,
@@ -4822,6 +4847,7 @@ Bulgaria,2020-09-02,225,16617,163,648,6,Bulgaria,,6948000,Bulgaria,239.16,6784,4
 Bulgaria,2020-09-03,226,16775,158,658,10,Bulgaria,,6948000,Bulgaria,241.44,5443,421240,6062.75,3.98
 Bulgaria,2020-09-04,227,16954,179,665,7,Bulgaria,,6948000,Bulgaria,244.01,7026,428266,6163.87,3.96
 Bulgaria,2020-09-05,228,17050,96,671,6,Bulgaria,,6948000,Bulgaria,245.39,0,428266,6163.87,3.98
+Bulgaria,2020-09-06,229,17089,39,676,5,Bulgaria,,6948000,Bulgaria,245.96,11487,439753,6329.2,3.89
 BurkinaFaso,2020-03-10,49,1,1,0,0,Burkina Faso,,20903000,Burkina Faso,0,,,,
 BurkinaFaso,2020-03-11,50,2,1,0,0,Burkina Faso,,20903000,Burkina Faso,0.01,,,,
 BurkinaFaso,2020-03-12,51,2,0,0,0,Burkina Faso,,20903000,Burkina Faso,0.01,,,,
@@ -5002,6 +5028,7 @@ BurkinaFaso,2020-09-02,225,1370,0,55,0,Burkina Faso,,20903000,Burkina Faso,6.55,
 BurkinaFaso,2020-09-03,226,1375,5,55,0,Burkina Faso,,20903000,Burkina Faso,6.58,419,32358,154.8,4.25
 BurkinaFaso,2020-09-04,227,1408,33,55,0,Burkina Faso,,20903000,Burkina Faso,6.74,1305,33663,161.04,4.18
 BurkinaFaso,2020-09-05,228,1408,0,55,0,Burkina Faso,,20903000,Burkina Faso,6.74,0,33663,161.04,4.18
+BurkinaFaso,2020-09-06,229,1452,44,55,0,Burkina Faso,,20903000,Burkina Faso,6.95,1328,34991,167.4,4.15
 Burundi,2020-03-31,70,2,2,0,0,Burundi,,11891000,Burundi,0.02,,,,
 Burundi,2020-04-01,71,2,0,0,0,Burundi,,11891000,Burundi,0.02,,,,
 Burundi,2020-04-02,72,3,1,0,0,Burundi,,11891000,Burundi,0.03,,,,
@@ -5161,6 +5188,7 @@ Burundi,2020-09-02,225,448,3,1,0,Burundi,,11891000,Burundi,3.77,0,24659,207.38,1
 Burundi,2020-09-03,226,448,0,1,0,Burundi,,11891000,Burundi,3.77,0,24659,207.38,1.82
 Burundi,2020-09-04,227,451,3,1,0,Burundi,,11891000,Burundi,3.79,0,24659,207.38,1.83
 Burundi,2020-09-05,228,460,9,1,0,Burundi,,11891000,Burundi,3.87,0,24659,207.38,1.87
+Burundi,2020-09-06,229,462,2,1,0,Burundi,,11891000,Burundi,3.89,0,24659,207.38,1.87
 Cambodia,2020-01-27,6,1,1,0,0,Cambodia,,16719000,Cambodia,0.01,,,,
 Cambodia,2020-01-28,7,1,0,0,0,Cambodia,,16719000,Cambodia,0.01,,,,
 Cambodia,2020-01-29,8,1,0,0,0,Cambodia,,16719000,Cambodia,0.01,,,,
@@ -5384,6 +5412,7 @@ Cambodia,2020-09-02,225,274,0,0,0,Cambodia,,16719000,Cambodia,1.64,0,5768,34.5,4
 Cambodia,2020-09-03,226,274,0,0,0,Cambodia,,16719000,Cambodia,1.64,0,5768,34.5,4.75
 Cambodia,2020-09-04,227,274,0,0,0,Cambodia,,16719000,Cambodia,1.64,0,5768,34.5,4.75
 Cambodia,2020-09-05,228,274,0,0,0,Cambodia,,16719000,Cambodia,1.64,0,5768,34.5,4.75
+Cambodia,2020-09-06,229,274,0,0,0,Cambodia,,16719000,Cambodia,1.64,0,5768,34.5,4.75
 Cameroon,2020-03-06,45,1,1,0,0,Cameroon,,26546000,Cameroon,0,,,,
 Cameroon,2020-03-07,46,1,0,0,0,Cameroon,,26546000,Cameroon,0,,,,
 Cameroon,2020-03-08,47,2,1,0,0,Cameroon,,26546000,Cameroon,0.01,,,,
@@ -5568,6 +5597,7 @@ Cameroon,2020-09-02,225,19460,51,415,1,Cameroon,,26546000,Cameroon,73.31,0,23269
 Cameroon,2020-09-03,226,19604,144,415,0,Cameroon,,26546000,Cameroon,73.85,0,232696,876.58,8.42
 Cameroon,2020-09-04,227,19604,0,415,0,Cameroon,,26546000,Cameroon,73.85,0,232696,876.58,8.42
 Cameroon,2020-09-05,228,19604,0,415,0,Cameroon,,26546000,Cameroon,73.85,0,232696,876.58,8.42
+Cameroon,2020-09-06,229,19604,0,415,0,Cameroon,,26546000,Cameroon,73.85,0,232696,876.58,8.42
 Canada,2020-01-26,5,1,1,0,0,Canada,,37742000,Canada,0,,,,
 Canada,2020-01-27,6,1,0,0,0,Canada,,37742000,Canada,0,,,,
 Canada,2020-01-28,7,2,1,0,0,Canada,,37742000,Canada,0.01,,,,
@@ -5792,6 +5822,7 @@ Canada,2020-09-02,225,131941,519,9182,3,Canada,,37742000,Canada,349.59,41157,554
 Canada,2020-09-03,226,132527,586,9189,7,Canada,,37742000,Canada,351.14,44595,5590068,14811.27,2.37
 Canada,2020-09-04,227,133141,614,9190,1,Canada,,37742000,Canada,352.77,48635,5638703,14940.13,2.36
 Canada,2020-09-05,228,133511,370,9192,2,Canada,,37742000,Canada,353.75,0,5638703,14940.13,2.37
+Canada,2020-09-06,229,133890,379,9194,2,Canada,,37742000,Canada,354.75,97108,5735811,15197.42,2.33
 CapeVerde,2020-03-20,59,1,1,0,0,Cape Verde,,556000,Cape Verde,0.18,,,,
 CapeVerde,2020-03-21,60,3,2,0,0,Cape Verde,,556000,Cape Verde,0.54,,,,
 CapeVerde,2020-03-22,61,3,0,0,0,Cape Verde,,556000,Cape Verde,0.54,,,,
@@ -5962,6 +5993,7 @@ CapeVerde,2020-09-02,225,4048,78,41,1,Cape Verde,,556000,Cape Verde,728.06,0,739
 CapeVerde,2020-09-03,226,4125,77,41,0,Cape Verde,,556000,Cape Verde,741.91,0,73900,13291.37,5.58
 CapeVerde,2020-09-04,227,4200,75,41,0,Cape Verde,,556000,Cape Verde,755.4,0,73900,13291.37,5.68
 CapeVerde,2020-09-05,228,4275,75,42,1,Cape Verde,,556000,Cape Verde,768.88,0,73900,13291.37,5.78
+CapeVerde,2020-09-06,229,4330,55,42,0,Cape Verde,,556000,Cape Verde,778.78,0,73900,13291.37,5.86
 CentralAfricanRepublic,2020-03-15,54,1,1,0,0,Central African Republic,,4830000,Central African Rep.,0.02,,,,
 CentralAfricanRepublic,2020-03-16,55,1,0,0,0,Central African Republic,,4830000,Central African Rep.,0.02,,,,
 CentralAfricanRepublic,2020-03-17,56,1,0,0,0,Central African Republic,,4830000,Central African Rep.,0.02,,,,
@@ -6137,6 +6169,7 @@ CentralAfricanRepublic,2020-09-02,225,4712,1,62,0,Central African Republic,,4830
 CentralAfricanRepublic,2020-09-03,226,4729,17,62,0,Central African Republic,,4830000,Central African Rep.,97.91,73,31199,645.94,15.16
 CentralAfricanRepublic,2020-09-04,227,4729,0,62,0,Central African Republic,,4830000,Central African Rep.,97.91,17,31216,646.29,15.15
 CentralAfricanRepublic,2020-09-05,228,4729,0,62,0,Central African Republic,,4830000,Central African Rep.,97.91,0,31216,646.29,15.15
+CentralAfricanRepublic,2020-09-06,229,4729,0,62,0,Central African Republic,,4830000,Central African Rep.,97.91,23,31239,646.77,15.14
 Chad,2020-03-19,58,1,1,0,0,Chad,,16426000,Chad,0.01,,,,
 Chad,2020-03-20,59,1,0,0,0,Chad,,16426000,Chad,0.01,,,,
 Chad,2020-03-21,60,1,0,0,0,Chad,,16426000,Chad,0.01,,,,
@@ -6308,6 +6341,7 @@ Chad,2020-09-02,225,1017,0,77,0,Chad,,16426000,Chad,6.19,479,16328,99.4,6.23
 Chad,2020-09-03,226,1018,1,77,0,Chad,,16426000,Chad,6.2,603,16931,103.07,6.01
 Chad,2020-09-04,227,1023,5,77,0,Chad,,16426000,Chad,6.23,440,17371,105.75,5.89
 Chad,2020-09-05,228,1034,11,77,0,Chad,,16426000,Chad,6.29,0,17371,105.75,5.95
+Chad,2020-09-06,229,1039,5,79,2,Chad,,16426000,Chad,6.33,1087,18458,112.37,5.63
 Chile,2020-02-23,33,2,2,0,0,Chile,,19116000,Chile,0.01,,,,
 Chile,2020-02-24,34,2,0,0,0,Chile,,19116000,Chile,0.01,,,,
 Chile,2020-02-25,35,2,0,0,0,Chile,,19116000,Chile,0.01,,,,
@@ -6504,6 +6538,7 @@ Chile,2020-09-02,225,414739,1594,11344,23,Chile,,19116000,Chile,2169.59,22746,24
 Chile,2020-09-03,226,416501,1762,11422,78,Chile,,19116000,Chile,2178.81,27242,2508750,13123.82,16.6
 Chile,2020-09-04,227,418469,1968,11494,72,Chile,,19116000,Chile,2189.1,31968,2540718,13291.05,16.47
 Chile,2020-09-05,228,420434,1965,11551,57,Chile,,19116000,Chile,2199.38,0,2540718,13291.05,16.55
+Chile,2020-09-06,229,422510,2076,11592,41,Chile,,19116000,Chile,2210.24,69884,2610602,13656.63,16.18
 China,2020-01-22,1,547,547,17,17,Mainland China,,1439324000,China,0.04,,,,
 China,2020-01-23,2,639,92,18,1,Mainland China,,1439324000,China,0.04,,,,
 China,2020-01-24,3,916,277,26,8,Mainland China,,1439324000,China,0.06,,,,
@@ -6732,6 +6767,7 @@ China,2020-09-02,225,85077,12,4634,0,Mainland China,,1439324000,China,5.91,0,320
 China,2020-09-03,226,85102,25,4634,0,Mainland China,,1439324000,China,5.91,0,320000,22.23,26.59
 China,2020-09-04,227,85112,10,4634,0,Mainland China,,1439324000,China,5.91,0,320000,22.23,26.6
 China,2020-09-05,228,85122,10,4634,0,Mainland China,,1439324000,China,5.91,0,320000,22.23,26.6
+China,2020-09-06,229,85134,12,4634,0,Mainland China,,1439324000,China,5.91,0,320000,22.23,26.6
 Colombia,2020-03-06,45,1,1,0,0,Colombia,,50883000,Colombia,0,,,,
 Colombia,2020-03-07,46,1,0,0,0,Colombia,,50883000,Colombia,0,,,,
 Colombia,2020-03-08,47,1,0,0,0,Colombia,,50883000,Colombia,0,,,,
@@ -6916,6 +6952,7 @@ Colombia,2020-09-02,225,633321,9295,20345,295,Colombia,,50883000,Colombia,1244.6
 Colombia,2020-09-03,226,641574,8253,20618,273,Colombia,,50883000,Colombia,1260.88,0,2647702,5203.51,24.23
 Colombia,2020-09-04,227,641574,0,20618,0,Colombia,,50883000,Colombia,1260.88,0,2647702,5203.51,24.23
 Colombia,2020-09-05,228,650055,8481,20886,268,Colombia,,50883000,Colombia,1277.55,0,2647702,5203.51,24.55
+Colombia,2020-09-06,229,666521,16466,21412,526,Colombia,,50883000,Colombia,1309.91,105330,2753032,5410.51,24.21
 Comoros,2020-04-30,100,1,1,0,0,Comoros,,870000,Comoros,0.11,,,,
 Comoros,2020-05-01,101,1,0,0,0,Comoros,,870000,Comoros,0.11,,,,
 Comoros,2020-05-02,102,3,2,0,0,Comoros,,870000,Comoros,0.34,,,,
@@ -7045,6 +7082,7 @@ Comoros,2020-09-02,225,427,0,7,0,Comoros,,870000,Comoros,49.08,0,2342,269.2,18.2
 Comoros,2020-09-03,226,448,21,7,0,Comoros,,870000,Comoros,51.49,0,2342,269.2,19.13
 Comoros,2020-09-04,227,448,0,7,0,Comoros,,870000,Comoros,51.49,0,2342,269.2,19.13
 Comoros,2020-09-05,228,452,4,7,0,Comoros,,870000,Comoros,51.95,0,2342,269.2,19.3
+Comoros,2020-09-06,229,452,0,7,0,Comoros,,870000,Comoros,51.95,0,2342,269.2,19.3
 Congo,2020-03-15,54,1,1,0,0,Republic of the Congo,,5518000,Congo,0.02,,,,
 Congo,2020-03-16,55,1,0,0,0,Republic of the Congo,,5518000,Congo,0.02,,,,
 Congo,2020-03-17,56,1,0,0,0,Republic of the Congo,,5518000,Congo,0.02,,,,
@@ -7220,6 +7258,7 @@ Congo,2020-09-02,225,4628,649,102,24,Republic of the Congo,,5518000,Congo,83.87,
 Congo,2020-09-03,226,4628,0,102,0,Republic of the Congo,,5518000,Congo,83.87,0,29653,537.39,15.61
 Congo,2020-09-04,227,4628,0,102,0,Republic of the Congo,,5518000,Congo,83.87,0,29653,537.39,15.61
 Congo,2020-09-05,228,4628,0,102,0,Republic of the Congo,,5518000,Congo,83.87,0,29653,537.39,15.61
+Congo,2020-09-06,229,4628,0,102,0,Republic of the Congo,,5518000,Congo,83.87,1636,31289,567.04,14.79
 CostaRica,2020-03-06,45,1,1,0,0,Costa Rica,,5094000,Costa Rica,0.02,,,,
 CostaRica,2020-03-07,46,1,0,0,0,Costa Rica,,5094000,Costa Rica,0.02,,,,
 CostaRica,2020-03-08,47,5,4,0,0,Costa Rica,,5094000,Costa Rica,0.1,,,,
@@ -7404,6 +7443,7 @@ CostaRica,2020-09-02,225,43305,1121,453,10,Costa Rica,,5094000,Costa Rica,850.12
 CostaRica,2020-09-03,226,44458,1153,460,7,Costa Rica,,5094000,Costa Rica,872.75,4772,156466,3071.57,28.41
 CostaRica,2020-09-04,227,45680,1222,469,9,Costa Rica,,5094000,Costa Rica,896.74,0,156466,3071.57,29.19
 CostaRica,2020-09-05,228,46920,1240,478,9,Costa Rica,,5094000,Costa Rica,921.08,0,156466,3071.57,29.99
+CostaRica,2020-09-06,229,46920,0,478,0,Costa Rica,,5094000,Costa Rica,921.08,0,156466,3071.57,29.99
 Croatia,2020-02-25,35,1,1,0,0,Croatia,,4105000,Croatia,0.02,,,,
 Croatia,2020-02-26,36,3,2,0,0,Croatia,,4105000,Croatia,0.07,,,,
 Croatia,2020-02-27,37,3,0,0,0,Croatia,,4105000,Croatia,0.07,,,,
@@ -7598,6 +7638,7 @@ Croatia,2020-09-02,225,10725,311,191,4,Croatia,,4105000,Croatia,261.27,4122,1753
 Croatia,2020-09-03,226,11094,369,194,3,Croatia,,4105000,Croatia,270.26,4492,179838,4380.95,6.17
 Croatia,2020-09-04,227,11428,334,195,1,Croatia,,4105000,Croatia,278.39,4074,183912,4480.19,6.21
 Croatia,2020-09-05,228,11739,311,197,2,Croatia,,4105000,Croatia,285.97,0,183912,4480.19,6.38
+Croatia,2020-09-06,229,11964,225,198,1,Croatia,,4105000,Croatia,291.45,7448,191360,4661.63,6.25
 Cuba,2020-03-12,51,3,3,0,0,Cuba,,11327000,Cuba,0.03,,,,
 Cuba,2020-03-13,52,4,1,0,0,Cuba,,11327000,Cuba,0.04,,,,
 Cuba,2020-03-14,53,4,0,0,0,Cuba,,11327000,Cuba,0.04,,,,
@@ -7776,6 +7817,7 @@ Cuba,2020-09-02,225,4126,61,98,3,Cuba,,11327000,Cuba,36.43,0,403181,3559.47,1.02
 Cuba,2020-09-03,226,4214,88,100,2,Cuba,,11327000,Cuba,37.2,0,403181,3559.47,1.05
 Cuba,2020-09-04,227,4266,52,100,0,Cuba,,11327000,Cuba,37.66,0,403181,3559.47,1.06
 Cuba,2020-09-05,228,4298,32,100,0,Cuba,,11327000,Cuba,37.94,0,403181,3559.47,1.07
+Cuba,2020-09-06,229,4309,11,101,1,Cuba,,11327000,Cuba,38.04,0,403181,3559.47,1.07
 Cyprus,2020-03-09,48,2,2,0,0,Cyprus,,1207000,Cyprus,0.17,,,,
 Cyprus,2020-03-10,49,3,1,0,0,Cyprus,,1207000,Cyprus,0.25,,,,
 Cyprus,2020-03-11,50,6,3,0,0,Cyprus,,1207000,Cyprus,0.5,,,,
@@ -7957,6 +7999,7 @@ Cyprus,2020-09-02,225,1495,5,21,0,Cyprus,,1207000,Cyprus,123.86,306211,306211,25
 Cyprus,2020-09-03,226,1498,3,21,0,Cyprus,,1207000,Cyprus,124.11,4792,311003,25766.61,0.48
 Cyprus,2020-09-04,227,1502,4,21,0,Cyprus,,1207000,Cyprus,124.44,0,311003,25766.61,0.48
 Cyprus,2020-09-05,228,1507,5,21,0,Cyprus,,1207000,Cyprus,124.86,0,311003,25766.61,0.48
+Cyprus,2020-09-06,229,1509,2,21,0,Cyprus,,1207000,Cyprus,125.02,0,311003,25766.61,0.49
 Czechia,2020-03-01,40,3,3,0,0,Czech Republic,,10709000,Czech Rep.,0.03,11,211,1.97,1.42
 Czechia,2020-03-02,41,3,0,0,0,Czech Republic,,10709000,Czech Rep.,0.03,51,262,2.45,1.15
 Czechia,2020-03-03,42,5,2,0,0,Czech Republic,,10709000,Czech Rep.,0.05,78,340,3.17,1.47
@@ -8146,6 +8189,7 @@ Czechia,2020-09-02,225,25773,656,425,0,Czech Republic,,10709000,Czech Rep.,240.6
 Czechia,2020-09-03,226,26452,679,426,1,Czech Republic,,10709000,Czech Rep.,247.01,11233,934453,8725.87,2.83
 Czechia,2020-09-04,227,27249,797,429,3,Czech Republic,,10709000,Czech Rep.,254.45,11511,945964,8833.36,2.88
 Czechia,2020-09-05,228,27752,503,431,2,Czech Republic,,10709000,Czech Rep.,259.15,0,945964,8833.36,2.93
+Czechia,2020-09-06,229,28156,404,436,5,Czech Republic,,10709000,Czech Rep.,262.92,20210,966174,9022.07,2.91
 CotedIvoire,2020-03-11,50,1,1,0,0,Cote d'Ivoire,,26378000,Côte d'Ivoire,0,,,,
 CotedIvoire,2020-03-12,51,1,0,0,0,Cote d'Ivoire,,26378000,Côte d'Ivoire,0,,,,
 CotedIvoire,2020-03-13,52,1,0,0,0,Cote d'Ivoire,,26378000,Côte d'Ivoire,0,,,,
@@ -8325,6 +8369,7 @@ CotedIvoire,2020-09-02,225,18161,58,117,0,Cote d'Ivoire,,26378000,Côte d'Ivoire
 CotedIvoire,2020-09-03,226,18208,47,119,2,Cote d'Ivoire,,26378000,Côte d'Ivoire,69.03,0,125085,474.2,14.56
 CotedIvoire,2020-09-04,227,18269,61,119,0,Cote d'Ivoire,,26378000,Côte d'Ivoire,69.26,0,125085,474.2,14.61
 CotedIvoire,2020-09-05,228,18472,203,119,0,Cote d'Ivoire,,26378000,Côte d'Ivoire,70.03,0,125085,474.2,14.77
+CotedIvoire,2020-09-06,229,18588,116,119,0,Cote d'Ivoire,,26378000,Côte d'Ivoire,70.47,0,125085,474.2,14.86
 DemocraticRepublicoftheCongo,2020-03-11,50,1,1,0,0,Democratic Republic of the Congo,,89561000,Dem. Rep. Congo,0,,,,
 DemocraticRepublicoftheCongo,2020-03-12,51,1,0,0,0,Democratic Republic of the Congo,,89561000,Dem. Rep. Congo,0,,,,
 DemocraticRepublicoftheCongo,2020-03-13,52,2,1,0,0,Democratic Republic of the Congo,,89561000,Dem. Rep. Congo,0,,,,
@@ -8504,6 +8549,7 @@ DemocraticRepublicoftheCongo,2020-09-02,225,10114,10,259,0,Democratic Republic o
 DemocraticRepublicoftheCongo,2020-09-03,226,10125,11,259,0,Democratic Republic of the Congo,,89561000,Dem. Rep. Congo,11.31,0,56376,62.95,17.96
 DemocraticRepublicoftheCongo,2020-09-04,227,10149,24,259,0,Democratic Republic of the Congo,,89561000,Dem. Rep. Congo,11.33,266,56642,63.24,17.92
 DemocraticRepublicoftheCongo,2020-09-05,228,10178,29,259,0,Democratic Republic of the Congo,,89561000,Dem. Rep. Congo,11.36,0,56642,63.24,17.97
+DemocraticRepublicoftheCongo,2020-09-06,229,10210,32,260,1,Democratic Republic of the Congo,,89561000,Dem. Rep. Congo,11.4,187,56829,63.45,17.97
 Denmark,2020-02-27,37,1,1,0,0,Denmark,,5792000,Denmark,0.02,,,,
 Denmark,2020-02-28,38,1,0,0,0,Denmark,,5792000,Denmark,0.02,,,,
 Denmark,2020-02-29,39,3,2,0,0,Denmark,,5792000,Denmark,0.05,,,,
@@ -8696,6 +8742,7 @@ Denmark,2020-09-02,225,17620,111,626,1,Denmark,,5792000,Denmark,304.21,32890,252
 Denmark,2020-09-03,226,17800,180,626,0,Denmark,,5792000,Denmark,307.32,39875,2566628,44313.33,0.69
 Denmark,2020-09-04,227,17974,174,627,1,Denmark,,5792000,Denmark,310.32,38759,2605387,44982.51,0.69
 Denmark,2020-09-05,228,18163,189,627,0,Denmark,,5792000,Denmark,313.59,0,2605387,44982.51,0.7
+Denmark,2020-09-06,229,18310,147,627,0,Denmark,,5792000,Denmark,316.13,74292,2679679,46265.18,0.68
 DiamondPrincessCruiseShip,2020-02-07,17,61,61,0,0,Diamond Princess Cruise Ship,,,Diamond Princess Cruise Ship,0,,,,
 DiamondPrincessCruiseShip,2020-02-08,18,61,0,0,0,Diamond Princess Cruise Ship,,,Diamond Princess Cruise Ship,0,,,,
 DiamondPrincessCruiseShip,2020-02-09,19,64,3,0,0,Diamond Princess Cruise Ship,,,Diamond Princess Cruise Ship,0,,,,
@@ -8908,6 +8955,7 @@ DiamondPrincessCruiseShip,2020-09-02,225,712,0,13,0,Diamond Princess Cruise Ship
 DiamondPrincessCruiseShip,2020-09-03,226,712,0,13,0,Diamond Princess Cruise Ship,,,Diamond Princess Cruise Ship,0,,,,
 DiamondPrincessCruiseShip,2020-09-04,227,712,0,13,0,Diamond Princess Cruise Ship,,,Diamond Princess Cruise Ship,0,,,,
 DiamondPrincessCruiseShip,2020-09-05,228,712,0,13,0,Diamond Princess Cruise Ship,,,Diamond Princess Cruise Ship,0,,,,
+DiamondPrincessCruiseShip,2020-09-06,229,712,0,13,0,Diamond Princess Cruise Ship,,,Diamond Princess Cruise Ship,0,,,,
 Djibouti,2020-03-18,57,1,1,0,0,Djibouti,,988000,Djibouti,0.1,,,,
 Djibouti,2020-03-19,58,1,0,0,0,Djibouti,,988000,Djibouti,0.1,,,,
 Djibouti,2020-03-20,59,1,0,0,0,Djibouti,,988000,Djibouti,0.1,,,,
@@ -9080,6 +9128,7 @@ Djibouti,2020-09-02,225,5387,0,60,0,Djibouti,,988000,Djibouti,545.24,410,67780,6
 Djibouti,2020-09-03,226,5387,0,60,0,Djibouti,,988000,Djibouti,545.24,362,68142,6896.96,7.91
 Djibouti,2020-09-04,227,5387,0,60,0,Djibouti,,988000,Djibouti,545.24,0,68142,6896.96,7.91
 Djibouti,2020-09-05,228,5387,0,60,0,Djibouti,,988000,Djibouti,545.24,0,68142,6896.96,7.91
+Djibouti,2020-09-06,229,5388,1,61,1,Djibouti,,988000,Djibouti,545.34,714,68856,6969.23,7.83
 Dominica,2020-03-22,61,1,1,0,0,Dominica,,72000,Dominica,1.39,,,,
 Dominica,2020-03-23,62,2,1,0,0,Dominica,,72000,Dominica,2.78,,,,
 Dominica,2020-03-24,63,2,0,0,0,Dominica,,72000,Dominica,2.78,,,,
@@ -9248,6 +9297,7 @@ Dominica,2020-09-02,225,20,0,0,0,Dominica,,72000,Dominica,27.78,0,2077,2884.72,0
 Dominica,2020-09-03,226,20,0,0,0,Dominica,,72000,Dominica,27.78,0,2077,2884.72,0.96
 Dominica,2020-09-04,227,20,0,0,0,Dominica,,72000,Dominica,27.78,0,2077,2884.72,0.96
 Dominica,2020-09-05,228,22,2,0,0,Dominica,,72000,Dominica,30.56,0,2077,2884.72,1.06
+Dominica,2020-09-06,229,22,0,0,0,Dominica,,72000,Dominica,30.56,0,2077,2884.72,1.06
 DominicanRepublic,2020-03-01,40,1,1,0,0,Dominican Republic,,10848000,Dominican Rep.,0.01,,,,
 DominicanRepublic,2020-03-02,41,1,0,0,0,Dominican Republic,,10848000,Dominican Rep.,0.01,,,,
 DominicanRepublic,2020-03-03,42,1,0,0,0,Dominican Republic,,10848000,Dominican Rep.,0.01,,,,
@@ -9437,6 +9487,7 @@ DominicanRepublic,2020-09-02,225,95627,648,1765,27,Dominican Republic,,10848000,
 DominicanRepublic,2020-09-03,226,96629,1002,1801,36,Dominican Republic,,10848000,Dominican Rep.,890.75,0,376121,3467.19,25.69
 DominicanRepublic,2020-09-04,227,96629,0,1801,0,Dominican Republic,,10848000,Dominican Rep.,890.75,0,376121,3467.19,25.69
 DominicanRepublic,2020-09-05,228,98776,2147,1840,39,Dominican Republic,,10848000,Dominican Rep.,910.55,0,376121,3467.19,26.26
+DominicanRepublic,2020-09-06,229,99333,557,1845,5,Dominican Republic,,10848000,Dominican Rep.,915.68,0,376121,3467.19,26.41
 Ecuador,2020-03-01,40,6,6,0,0,Ecuador,,17643000,Ecuador,0.03,,,,
 Ecuador,2020-03-02,41,6,0,0,0,Ecuador,,17643000,Ecuador,0.03,,,,
 Ecuador,2020-03-03,42,7,1,0,0,Ecuador,,17643000,Ecuador,0.04,,,,
@@ -9626,6 +9677,7 @@ Ecuador,2020-09-02,225,115457,1148,6619,48,Ecuador,,17643000,Ecuador,654.41,0,32
 Ecuador,2020-09-03,226,116360,903,6648,29,Ecuador,,17643000,Ecuador,659.53,11278,340207,1928.28,34.2
 Ecuador,2020-09-04,227,117175,815,6674,26,Ecuador,,17643000,Ecuador,664.14,0,340207,1928.28,34.44
 Ecuador,2020-09-05,228,118045,870,6724,50,Ecuador,,17643000,Ecuador,669.08,0,340207,1928.28,34.7
+Ecuador,2020-09-06,229,118045,0,6724,0,Ecuador,,17643000,Ecuador,669.08,0,340207,1928.28,34.7
 Egypt,2020-02-14,24,1,1,0,0,Egypt,,102334000,Egypt,0,,,,
 Egypt,2020-02-15,25,1,0,0,0,Egypt,,102334000,Egypt,0,,,,
 Egypt,2020-02-16,26,1,0,0,0,Egypt,,102334000,Egypt,0,,,,
@@ -9831,6 +9883,7 @@ Egypt,2020-09-02,225,99280,165,5461,21,Egypt,,102334000,Egypt,97.02,0,469238,458
 Egypt,2020-09-03,226,99425,145,5479,18,Egypt,,102334000,Egypt,97.16,0,469238,458.54,21.19
 Egypt,2020-09-04,227,99582,157,5495,16,Egypt,,102334000,Egypt,97.31,0,469238,458.54,21.22
 Egypt,2020-09-05,228,99712,130,5511,16,Egypt,,102334000,Egypt,97.44,0,469238,458.54,21.25
+Egypt,2020-09-06,229,99863,151,5530,19,Egypt,,102334000,Egypt,97.59,0,469238,458.54,21.28
 ElSalvador,2020-03-19,58,1,1,0,0,El Salvador,,6486000,El Salvador,0.02,0,91,1.4,1.1
 ElSalvador,2020-03-20,59,1,0,0,0,El Salvador,,6486000,El Salvador,0.02,0,91,1.4,1.1
 ElSalvador,2020-03-21,60,3,2,0,0,El Salvador,,6486000,El Salvador,0.05,196,287,4.42,1.05
@@ -10002,6 +10055,7 @@ ElSalvador,2020-09-02,225,25904,84,731,7,El Salvador,,6486000,El Salvador,399.38
 ElSalvador,2020-09-03,226,26000,96,739,8,El Salvador,,6486000,El Salvador,400.86,4972,325239,5014.48,7.99
 ElSalvador,2020-09-04,227,26099,99,744,5,El Salvador,,6486000,El Salvador,402.39,0,325239,5014.48,8.02
 ElSalvador,2020-09-05,228,26206,107,752,8,El Salvador,,6486000,El Salvador,404.04,0,325239,5014.48,8.06
+ElSalvador,2020-09-06,229,26308,102,759,7,El Salvador,,6486000,El Salvador,405.61,0,325239,5014.48,8.09
 EquatorialGuinea,2020-03-15,54,1,1,0,0,Equatorial Guinea,,1403000,Eq. Guinea,0.07,,,,
 EquatorialGuinea,2020-03-16,55,1,0,0,0,Equatorial Guinea,,1403000,Eq. Guinea,0.07,,,,
 EquatorialGuinea,2020-03-17,56,1,0,0,0,Equatorial Guinea,,1403000,Eq. Guinea,0.07,,,,
@@ -10177,6 +10231,7 @@ EquatorialGuinea,2020-09-02,225,4965,0,83,0,Equatorial Guinea,,1403000,Eq. Guine
 EquatorialGuinea,2020-09-03,226,4965,0,83,0,Equatorial Guinea,,1403000,Eq. Guinea,353.88,0,53443,3809.19,9.29
 EquatorialGuinea,2020-09-04,227,4972,7,83,0,Equatorial Guinea,,1403000,Eq. Guinea,354.38,0,53443,3809.19,9.3
 EquatorialGuinea,2020-09-05,228,4972,0,83,0,Equatorial Guinea,,1403000,Eq. Guinea,354.38,0,53443,3809.19,9.3
+EquatorialGuinea,2020-09-06,229,4972,0,83,0,Equatorial Guinea,,1403000,Eq. Guinea,354.38,731,54174,3861.3,9.18
 Eritrea,2020-03-21,60,1,1,0,0,Eritrea,,3546000,Eritrea,0.03,,,,
 Eritrea,2020-03-22,61,1,0,0,0,Eritrea,,3546000,Eritrea,0.03,,,,
 Eritrea,2020-03-23,62,1,0,0,0,Eritrea,,3546000,Eritrea,0.03,,,,
@@ -10346,6 +10401,7 @@ Eritrea,2020-09-02,225,319,0,0,0,Eritrea,,3546000,Eritrea,9,0,9870,278.34,3.23
 Eritrea,2020-09-03,226,330,11,0,0,Eritrea,,3546000,Eritrea,9.31,0,9870,278.34,3.34
 Eritrea,2020-09-04,227,330,0,0,0,Eritrea,,3546000,Eritrea,9.31,0,9870,278.34,3.34
 Eritrea,2020-09-05,228,330,0,0,0,Eritrea,,3546000,Eritrea,9.31,0,9870,278.34,3.34
+Eritrea,2020-09-06,229,330,0,0,0,Eritrea,,3546000,Eritrea,9.31,0,9870,278.34,3.34
 Estonia,2020-02-27,37,1,1,0,0,Estonia,,1327000,Estonia,0.08,,,,
 Estonia,2020-02-28,38,1,0,0,0,Estonia,,1327000,Estonia,0.08,,,,
 Estonia,2020-02-29,39,1,0,0,0,Estonia,,1327000,Estonia,0.08,,,,
@@ -10538,6 +10594,7 @@ Estonia,2020-09-02,225,2415,20,64,0,Estonia,,1327000,Estonia,181.99,1586,151940,
 Estonia,2020-09-03,226,2441,26,64,0,Estonia,,1327000,Estonia,183.95,2272,154212,11621.1,1.58
 Estonia,2020-09-04,227,2456,15,64,0,Estonia,,1327000,Estonia,185.08,2064,156276,11776.64,1.57
 Estonia,2020-09-05,228,2491,35,64,0,Estonia,,1327000,Estonia,187.72,0,156276,11776.64,1.59
+Estonia,2020-09-06,229,2516,25,64,0,Estonia,,1327000,Estonia,189.6,3424,159700,12034.66,1.58
 Eswatini,2020-03-14,53,1,1,0,0,Eswatini,,1160000,Eswatini,0.09,,,,
 Eswatini,2020-03-15,54,1,0,0,0,Eswatini,,1160000,Eswatini,0.09,,,,
 Eswatini,2020-03-16,55,1,0,0,0,Eswatini,,1160000,Eswatini,0.09,,,,
@@ -10714,6 +10771,7 @@ Eswatini,2020-09-02,225,4668,50,94,0,Eswatini,,1160000,Eswatini,402.41,0,36940,3
 Eswatini,2020-09-03,226,4720,52,94,0,Eswatini,,1160000,Eswatini,406.9,623,37563,3238.19,12.57
 Eswatini,2020-09-04,227,4780,60,94,0,Eswatini,,1160000,Eswatini,412.07,0,37563,3238.19,12.73
 Eswatini,2020-09-05,228,4819,39,94,0,Eswatini,,1160000,Eswatini,415.43,0,37563,3238.19,12.83
+Eswatini,2020-09-06,229,4853,34,94,0,Eswatini,,1160000,Eswatini,418.36,1455,39018,3363.62,12.44
 Ethiopia,2020-03-13,52,1,1,0,0,Ethiopia,,114964000,Ethiopia,0,,,,
 Ethiopia,2020-03-14,53,1,0,0,0,Ethiopia,,114964000,Ethiopia,0,,,,
 Ethiopia,2020-03-15,54,1,0,0,0,Ethiopia,,114964000,Ethiopia,0,,,,
@@ -10891,6 +10949,7 @@ Ethiopia,2020-09-02,225,54409,1105,846,18,Ethiopia,,114964000,Ethiopia,47.33,181
 Ethiopia,2020-09-03,226,55213,804,856,10,Ethiopia,,114964000,Ethiopia,48.03,21360,949813,826.18,5.81
 Ethiopia,2020-09-04,227,56516,1303,880,24,Ethiopia,,114964000,Ethiopia,49.16,20778,970591,844.26,5.82
 Ethiopia,2020-09-05,228,57466,950,897,17,Ethiopia,,114964000,Ethiopia,49.99,0,970591,844.26,5.92
+Ethiopia,2020-09-06,229,58672,1206,918,21,Ethiopia,,114964000,Ethiopia,51.04,48256,1018847,886.23,5.76
 Fiji,2020-03-19,58,1,1,0,0,Fiji,,896000,Fiji,0.11,,,,
 Fiji,2020-03-20,59,1,0,0,0,Fiji,,896000,Fiji,0.11,,,,
 Fiji,2020-03-21,60,1,0,0,0,Fiji,,896000,Fiji,0.11,,,,
@@ -11062,6 +11121,7 @@ Fiji,2020-09-02,225,29,0,2,0,Fiji,,896000,Fiji,3.24,0,7986,891.29,0.36
 Fiji,2020-09-03,226,29,0,2,0,Fiji,,896000,Fiji,3.24,0,7986,891.29,0.36
 Fiji,2020-09-04,227,29,0,2,0,Fiji,,896000,Fiji,3.24,0,7986,891.29,0.36
 Fiji,2020-09-05,228,31,2,2,0,Fiji,,896000,Fiji,3.46,0,7986,891.29,0.39
+Fiji,2020-09-06,229,31,0,2,0,Fiji,,896000,Fiji,3.46,0,7986,891.29,0.39
 Finland,2020-01-29,8,1,1,0,0,Finland,,5541000,Finland,0.02,,,,
 Finland,2020-01-30,9,1,0,0,0,Finland,,5541000,Finland,0.02,,,,
 Finland,2020-01-31,10,1,0,0,0,Finland,,5541000,Finland,0.02,,,,
@@ -11283,6 +11343,7 @@ Finland,2020-09-02,225,8161,19,336,0,Finland,,5541000,Finland,147.28,20600,68900
 Finland,2020-09-03,226,8200,39,336,0,Finland,,5541000,Finland,147.99,13300,702300,12674.61,1.17
 Finland,2020-09-04,227,8225,25,336,0,Finland,,5541000,Finland,148.44,13500,715800,12918.25,1.15
 Finland,2020-09-05,228,8261,36,336,0,Finland,,5541000,Finland,149.09,0,715800,12918.25,1.15
+Finland,2020-09-06,229,8291,30,336,0,Finland,,5541000,Finland,149.63,0,715800,12918.25,1.16
 France,2020-01-24,3,2,2,0,0,France,,65274000,France,0,,,,
 France,2020-01-25,4,3,1,0,0,France,,65274000,France,0,,,,
 France,2020-01-26,5,3,0,0,0,France,,65274000,France,0,,,,
@@ -11509,6 +11570,7 @@ France,2020-09-02,225,331060,7092,30692,26,France,,65274000,France,507.19,93578,
 France,2020-09-03,226,338220,7160,30712,20,France,,65274000,France,518.15,43757,6598795,10109.38,5.13
 France,2020-09-04,227,347267,9047,30730,18,France,,65274000,France,532.01,170415,6769210,10370.45,5.13
 France,2020-09-05,228,347267,0,30730,0,France,,65274000,France,532.01,0,6769210,10370.45,5.13
+France,2020-09-06,229,347268,1,30730,0,France,,65274000,France,532.02,467914,7237124,11087.3,4.8
 Gabon,2020-03-14,53,1,1,0,0,Gabon,,2226000,Gabon,0.04,,,,
 Gabon,2020-03-15,54,1,0,0,0,Gabon,,2226000,Gabon,0.04,,,,
 Gabon,2020-03-16,55,1,0,0,0,Gabon,,2226000,Gabon,0.04,,,,
@@ -11685,6 +11747,7 @@ Gabon,2020-09-02,225,8538,5,53,0,Gabon,,2226000,Gabon,383.56,0,118395,5318.73,7.
 Gabon,2020-09-03,226,8538,0,53,0,Gabon,,2226000,Gabon,383.56,3913,122308,5494.52,6.98
 Gabon,2020-09-04,227,8601,63,53,0,Gabon,,2226000,Gabon,386.39,0,122308,5494.52,7.03
 Gabon,2020-09-05,228,8601,0,53,0,Gabon,,2226000,Gabon,386.39,0,122308,5494.52,7.03
+Gabon,2020-09-06,229,8601,0,53,0,Gabon,,2226000,Gabon,386.39,0,122308,5494.52,7.03
 Georgia,2020-02-26,36,1,1,0,0,Georgia,,3989000,Georgia,0.03,17,47,1.18,2.13
 Georgia,2020-02-27,37,1,0,0,0,Georgia,,3989000,Georgia,0.03,13,60,1.5,1.67
 Georgia,2020-02-28,38,1,0,0,0,Georgia,,3989000,Georgia,0.03,37,97,2.43,1.03
@@ -11878,6 +11941,7 @@ Georgia,2020-09-02,225,1548,38,19,0,Georgia,,3989000,Georgia,38.81,0,196723,4931
 Georgia,2020-09-03,226,1568,20,19,0,Georgia,,3989000,Georgia,39.31,0,196723,4931.64,0.8
 Georgia,2020-09-04,227,1596,28,19,0,Georgia,,3989000,Georgia,40.01,0,196723,4931.64,0.81
 Georgia,2020-09-05,228,1621,25,19,0,Georgia,,3989000,Georgia,40.64,0,196723,4931.64,0.82
+Georgia,2020-09-06,229,1650,29,19,0,Georgia,,3989000,Georgia,41.36,0,196723,4931.64,0.84
 Germany,2020-01-27,6,1,1,0,0,Germany,,83784000,Germany,0,,,,
 Germany,2020-01-28,7,4,3,0,0,Germany,,83784000,Germany,0,,,,
 Germany,2020-01-29,8,4,0,0,0,Germany,,83784000,Germany,0,,,,
@@ -12101,6 +12165,7 @@ Germany,2020-09-02,225,247411,1396,9322,15,Germany,,83784000,Germany,295.3,0,112
 Germany,2020-09-03,226,248840,1429,9322,0,Germany,,83784000,Germany,297,0,11208091,13377.36,2.22
 Germany,2020-09-04,227,250283,1443,9327,5,Germany,,83784000,Germany,298.72,0,11208091,13377.36,2.23
 Germany,2020-09-05,228,251058,775,9329,2,Germany,,83784000,Germany,299.65,0,11208091,13377.36,2.24
+Germany,2020-09-06,229,251728,670,9330,1,Germany,,83784000,Germany,300.45,0,11208091,13377.36,2.25
 Ghana,2020-03-14,53,3,3,0,0,Ghana,,31073000,Ghana,0.01,,,,
 Ghana,2020-03-15,54,6,3,0,0,Ghana,,31073000,Ghana,0.02,,,,
 Ghana,2020-03-16,55,6,0,0,0,Ghana,,31073000,Ghana,0.02,,,,
@@ -12277,6 +12342,7 @@ Ghana,2020-09-02,225,44658,198,276,0,Ghana,,31073000,Ghana,143.72,1896,444081,14
 Ghana,2020-09-03,226,44713,55,280,4,Ghana,,31073000,Ghana,143.9,1572,445653,1434.21,10.03
 Ghana,2020-09-04,227,44777,64,283,3,Ghana,,31073000,Ghana,144.1,555,446208,1436,10.04
 Ghana,2020-09-05,228,44777,0,283,0,Ghana,,31073000,Ghana,144.1,0,446208,1436,10.04
+Ghana,2020-09-06,229,44777,0,283,0,Ghana,,31073000,Ghana,144.1,659,446867,1438.12,10.02
 Greece,2020-02-26,36,1,1,0,0,Greece,,10423000,Greece,0.01,,,,
 Greece,2020-02-27,37,3,2,0,0,Greece,,10423000,Greece,0.03,,,,
 Greece,2020-02-28,38,4,1,0,0,Greece,,10423000,Greece,0.04,,,,
@@ -12470,6 +12536,7 @@ Greece,2020-09-02,225,10757,233,273,2,Greece,,10423000,Greece,103.2,0,966346,927
 Greece,2020-09-03,226,10998,241,278,5,Greece,,10423000,Greece,105.52,0,966346,9271.28,1.14
 Greece,2020-09-04,227,11200,202,279,1,Greece,,10423000,Greece,107.45,0,966346,9271.28,1.16
 Greece,2020-09-05,228,11386,186,280,1,Greece,,10423000,Greece,109.24,0,966346,9271.28,1.18
+Greece,2020-09-06,229,11524,138,284,4,Greece,,10423000,Greece,110.56,0,966346,9271.28,1.19
 Grenada,2020-03-22,61,1,1,0,0,Grenada,,113000,Grenada,0.88,0,18,15.93,5.56
 Grenada,2020-03-23,62,1,0,0,0,Grenada,,113000,Grenada,0.88,0,18,15.93,5.56
 Grenada,2020-03-24,63,1,0,0,0,Grenada,,113000,Grenada,0.88,0,18,15.93,5.56
@@ -12638,12 +12705,13 @@ Grenada,2020-09-02,225,24,0,0,0,Grenada,,113000,Grenada,21.24,0,5465,4836.28,0.4
 Grenada,2020-09-03,226,24,0,0,0,Grenada,,113000,Grenada,21.24,0,5465,4836.28,0.44
 Grenada,2020-09-04,227,24,0,0,0,Grenada,,113000,Grenada,21.24,0,5465,4836.28,0.44
 Grenada,2020-09-05,228,24,0,0,0,Grenada,,113000,Grenada,21.24,0,5465,4836.28,0.44
+Grenada,2020-09-06,229,24,0,0,0,Grenada,,113000,Grenada,21.24,0,5465,4836.28,0.44
 Guatemala,2020-03-14,53,1,1,0,0,Guatemala,,17916000,Guatemala,0.01,,,,
 Guatemala,2020-03-15,54,1,0,0,0,Guatemala,,17916000,Guatemala,0.01,,,,
 Guatemala,2020-03-16,55,2,1,1,1,Guatemala,,17916000,Guatemala,0.01,,,,
 Guatemala,2020-03-17,56,6,4,1,0,Guatemala,,17916000,Guatemala,0.03,,,,
-Guatemala,2020-03-18,57,6,0,1,0,Guatemala,,17916000,Guatemala,0.03,,,,
-Guatemala,2020-03-19,58,9,3,1,0,Guatemala,,17916000,Guatemala,0.05,208,208,1.16,4.33
+Guatemala,2020-03-18,57,6,0,1,0,Guatemala,,17916000,Guatemala,0.03,208,208,1.16,2.88
+Guatemala,2020-03-19,58,9,3,1,0,Guatemala,,17916000,Guatemala,0.05,0,208,1.16,4.33
 Guatemala,2020-03-20,59,12,3,1,0,Guatemala,,17916000,Guatemala,0.07,0,208,1.16,5.77
 Guatemala,2020-03-21,60,17,5,1,0,Guatemala,,17916000,Guatemala,0.09,0,208,1.16,8.17
 Guatemala,2020-03-22,61,19,2,1,0,Guatemala,,17916000,Guatemala,0.11,0,208,1.16,9.13
@@ -12814,6 +12882,7 @@ Guatemala,2020-09-02,225,75644,751,2790,12,Guatemala,,17916000,Guatemala,422.21,
 Guatemala,2020-09-03,226,76358,714,2804,14,Guatemala,,17916000,Guatemala,426.2,0,208,1.16,36710.58
 Guatemala,2020-09-04,227,77040,682,2825,21,Guatemala,,17916000,Guatemala,430.01,0,208,1.16,37038.46
 Guatemala,2020-09-05,228,77481,441,2845,20,Guatemala,,17916000,Guatemala,432.47,0,208,1.16,37250.48
+Guatemala,2020-09-06,229,77683,202,2852,7,Guatemala,,17916000,Guatemala,433.6,0,208,1.16,37347.6
 Guinea,2020-03-13,52,1,1,0,0,Guinea,,13133000,Guinea,0.01,,,,
 Guinea,2020-03-14,53,1,0,0,0,Guinea,,13133000,Guinea,0.01,,,,
 Guinea,2020-03-15,54,1,0,0,0,Guinea,,13133000,Guinea,0.01,,,,
@@ -12991,6 +13060,7 @@ Guinea,2020-09-02,225,9479,0,59,0,Guinea,,13133000,Guinea,72.18,0,80576,613.54,1
 Guinea,2020-09-03,226,9579,100,61,2,Guinea,,13133000,Guinea,72.94,0,80576,613.54,11.89
 Guinea,2020-09-04,227,9649,70,61,0,Guinea,,13133000,Guinea,73.47,0,80576,613.54,11.98
 Guinea,2020-09-05,228,9649,0,61,0,Guinea,,13133000,Guinea,73.47,0,80576,613.54,11.98
+Guinea,2020-09-06,229,9798,149,61,0,Guinea,,13133000,Guinea,74.61,0,80576,613.54,12.16
 GuineaBissau,2020-03-25,64,2,2,0,0,Guinea Bissau,,1968000,Guinea-Bissau,0.1,,,,
 GuineaBissau,2020-03-26,65,2,0,0,0,Guinea Bissau,,1968000,Guinea-Bissau,0.1,,,,
 GuineaBissau,2020-03-27,66,2,0,0,0,Guinea Bissau,,1968000,Guinea-Bissau,0.1,,,,
@@ -13156,6 +13226,7 @@ GuineaBissau,2020-09-02,225,2205,0,34,0,Guinea Bissau,,1968000,Guinea-Bissau,112
 GuineaBissau,2020-09-03,226,2205,0,34,0,Guinea Bissau,,1968000,Guinea-Bissau,112.04,0,11753,597.21,18.76
 GuineaBissau,2020-09-04,227,2245,40,38,4,Guinea Bissau,,1968000,Guinea-Bissau,114.08,0,11753,597.21,19.1
 GuineaBissau,2020-09-05,228,2245,0,38,0,Guinea Bissau,,1968000,Guinea-Bissau,114.08,0,11753,597.21,19.1
+GuineaBissau,2020-09-06,229,2245,0,38,0,Guinea Bissau,,1968000,Guinea-Bissau,114.08,0,11753,597.21,19.1
 Guyana,2020-03-12,51,1,1,1,1,Guyana,,787000,Guyana,0.13,,,,
 Guyana,2020-03-13,52,1,0,1,0,Guyana,,787000,Guyana,0.13,,,,
 Guyana,2020-03-14,53,1,0,1,0,Guyana,,787000,Guyana,0.13,,,,
@@ -13334,6 +13405,7 @@ Guyana,2020-09-02,225,1382,9,41,0,Guyana,,787000,Guyana,175.6,0,4641,589.71,29.7
 Guyana,2020-09-03,226,1401,19,44,3,Guyana,,787000,Guyana,178.02,0,4641,589.71,30.19
 Guyana,2020-09-04,227,1401,0,44,0,Guyana,,787000,Guyana,178.02,0,4641,589.71,30.19
 Guyana,2020-09-05,228,1459,58,46,2,Guyana,,787000,Guyana,185.39,0,4641,589.71,31.44
+Guyana,2020-09-06,229,1468,9,46,0,Guyana,,787000,Guyana,186.53,0,4641,589.71,31.63
 Haiti,2020-03-20,59,2,2,0,0,Haiti,,11403000,Haiti,0.02,,,,
 Haiti,2020-03-21,60,2,0,0,0,Haiti,,11403000,Haiti,0.02,,,,
 Haiti,2020-03-22,61,2,0,0,0,Haiti,,11403000,Haiti,0.02,,,,
@@ -13504,6 +13576,7 @@ Haiti,2020-09-02,225,8258,28,206,3,Haiti,,11403000,Haiti,72.42,,,,
 Haiti,2020-09-03,226,8301,43,210,4,Haiti,,11403000,Haiti,72.8,,,,
 Haiti,2020-09-04,227,8326,25,212,2,Haiti,,11403000,Haiti,73.02,,,,
 Haiti,2020-09-05,228,8336,10,212,0,Haiti,,11403000,Haiti,73.1,,,,
+Haiti,2020-09-06,229,8360,24,214,2,Haiti,,11403000,Haiti,73.31,,,,
 HolySee,2020-03-06,45,1,1,0,0,Holy See (Vatican City),,1000,Holy See (Vatican City),100,,,,
 HolySee,2020-03-07,46,1,0,0,0,Holy See (Vatican City),,1000,Holy See (Vatican City),100,,,,
 HolySee,2020-03-08,47,1,0,0,0,Holy See (Vatican City),,1000,Holy See (Vatican City),100,,,,
@@ -13688,6 +13761,7 @@ HolySee,2020-09-02,225,12,0,0,0,Holy See (Vatican City),,1000,Holy See (Vatican 
 HolySee,2020-09-03,226,12,0,0,0,Holy See (Vatican City),,1000,Holy See (Vatican City),1200,,,,
 HolySee,2020-09-04,227,12,0,0,0,Holy See (Vatican City),,1000,Holy See (Vatican City),1200,,,,
 HolySee,2020-09-05,228,12,0,0,0,Holy See (Vatican City),,1000,Holy See (Vatican City),1200,,,,
+HolySee,2020-09-06,229,12,0,0,0,Holy See (Vatican City),,1000,Holy See (Vatican City),1200,,,,
 Honduras,2020-03-11,50,2,2,0,0,Honduras,,9905000,Honduras,0.02,,,,
 Honduras,2020-03-12,51,2,0,0,0,Honduras,,9905000,Honduras,0.02,,,,
 Honduras,2020-03-13,52,2,0,0,0,Honduras,,9905000,Honduras,0.02,,,,
@@ -13867,6 +13941,7 @@ Honduras,2020-09-02,225,62526,757,1924,36,Honduras,,9905000,Honduras,631.26,0,68
 Honduras,2020-09-03,226,63158,632,1954,30,Honduras,,9905000,Honduras,637.64,0,68840,695,91.75
 Honduras,2020-09-04,227,63798,640,1984,30,Honduras,,9905000,Honduras,644.1,0,68840,695,92.68
 Honduras,2020-09-05,228,64352,554,2006,22,Honduras,,9905000,Honduras,649.69,0,68840,695,93.48
+Honduras,2020-09-06,229,64764,412,2007,1,Honduras,,9905000,Honduras,653.85,0,68840,695,94.08
 HongKong,2020-01-23,2,2,2,0,0,Hong Kong,,7497000,Hong Kong,0.03,,,,
 HongKong,2020-01-24,3,2,0,0,0,Hong Kong,,7497000,Hong Kong,0.03,,,,
 HongKong,2020-01-25,4,5,3,0,0,Hong Kong,,7497000,Hong Kong,0.07,,,,
@@ -14094,6 +14169,7 @@ HongKong,2020-09-02,225,4830,8,93,3,Hong Kong,,7497000,Hong Kong,64.43,0,780415,
 HongKong,2020-09-03,226,4838,8,94,1,Hong Kong,,7497000,Hong Kong,64.53,0,780415,10409.7,0.62
 HongKong,2020-09-04,227,4850,12,94,0,Hong Kong,,7497000,Hong Kong,64.69,0,780415,10409.7,0.62
 HongKong,2020-09-05,228,4857,7,94,0,Hong Kong,,7497000,Hong Kong,64.79,0,780415,10409.7,0.62
+HongKong,2020-09-06,229,4878,21,96,2,Hong Kong,,7497000,Hong Kong,65.07,0,780415,10409.7,0.63
 Hungary,2020-03-04,43,2,2,0,0,Hungary,,9660000,Hungary,0.02,,,,
 Hungary,2020-03-05,44,2,0,0,0,Hungary,,9660000,Hungary,0.02,,,,
 Hungary,2020-03-06,45,2,0,0,0,Hungary,,9660000,Hungary,0.02,,,,
@@ -14280,6 +14356,7 @@ Hungary,2020-09-02,225,6622,365,619,3,Hungary,,9660000,Hungary,68.55,7589,437531
 Hungary,2020-09-03,226,6923,301,620,1,Hungary,,9660000,Hungary,71.67,7516,445047,4607.11,1.56
 Hungary,2020-09-04,227,7382,459,621,1,Hungary,,9660000,Hungary,76.42,7091,452138,4680.52,1.63
 Hungary,2020-09-05,228,7892,510,624,3,Hungary,,9660000,Hungary,81.7,0,452138,4680.52,1.75
+Hungary,2020-09-06,229,8387,495,624,0,Hungary,,9660000,Hungary,86.82,17862,470000,4865.42,1.78
 Iceland,2020-02-28,38,1,1,0,0,Iceland,,341000,Iceland,0.29,13,36,10.56,2.78
 Iceland,2020-02-29,39,1,0,0,0,Iceland,,341000,Iceland,0.29,32,68,19.94,1.47
 Iceland,2020-03-01,40,3,2,0,0,Iceland,,341000,Iceland,0.88,22,90,26.39,3.33
@@ -14471,6 +14548,7 @@ Iceland,2020-09-02,225,2121,5,10,0,Iceland,,341000,Iceland,621.99,1635,218917,64
 Iceland,2020-09-03,226,2128,7,10,0,Iceland,,341000,Iceland,624.05,1981,220898,64779.47,0.96
 Iceland,2020-09-04,227,2135,7,10,0,Iceland,,341000,Iceland,626.1,1463,222361,65208.5,0.96
 Iceland,2020-09-05,228,2136,1,10,0,Iceland,,341000,Iceland,626.39,0,222361,65208.5,0.96
+Iceland,2020-09-06,229,2141,5,10,0,Iceland,,341000,Iceland,627.86,0,222361,65208.5,0.96
 India,2020-01-30,9,1,1,0,0,India,,1380004000,India,0,,,,
 India,2020-01-31,10,1,0,0,0,India,,1380004000,India,0,,,,
 India,2020-02-01,11,1,0,0,0,India,,1380004000,India,0,,,,
@@ -14691,6 +14769,7 @@ India,2020-09-02,225,3853406,83883,67376,1043,India,,1380004000,India,279.23,101
 India,2020-09-03,226,3936747,83341,68472,1096,India,,1380004000,India,285.27,1172179,45509380,3297.77,8.65
 India,2020-09-04,227,4023179,86432,69561,1089,India,,1380004000,India,291.53,1169765,46679145,3382.54,8.62
 India,2020-09-05,228,4113811,90632,70626,1065,India,,1380004000,India,298.1,0,46679145,3382.54,8.81
+India,2020-09-06,229,4204613,90802,71642,1016,India,,1380004000,India,304.68,2152000,48831145,3538.48,8.61
 Indonesia,2020-03-02,41,2,2,0,0,Indonesia,,273524000,Indonesia,0,,,,
 Indonesia,2020-03-03,42,2,0,0,0,Indonesia,,273524000,Indonesia,0,,,,
 Indonesia,2020-03-04,43,2,0,0,0,Indonesia,,273524000,Indonesia,0,,,,
@@ -14878,7 +14957,8 @@ Indonesia,2020-09-01,224,177571,2775,7505,88,Indonesia,,273524000,Indonesia,64.9
 Indonesia,2020-09-02,225,180646,3075,7616,111,Indonesia,,273524000,Indonesia,66.04,21508,1333985,487.7,13.54
 Indonesia,2020-09-03,226,184268,3622,7750,134,Indonesia,,273524000,Indonesia,67.37,19306,1353291,494.76,13.62
 Indonesia,2020-09-04,227,187537,3269,7832,82,Indonesia,,273524000,Indonesia,68.56,18100,1371391,501.38,13.67
-Indonesia,2020-09-05,228,190665,3128,7940,108,Indonesia,,273524000,Indonesia,69.71,0,2128038,778.01,8.96
+Indonesia,2020-09-05,228,190665,3128,7940,108,Indonesia,,273524000,Indonesia,69.71,0,1371391,501.38,13.9
+Indonesia,2020-09-06,229,194109,3444,8025,85,Indonesia,,273524000,Indonesia,70.97,30122,1401513,512.39,13.85
 Iran,2020-02-19,29,2,2,2,2,Iran (Islamic Republic of),,83993000,Iran,0,,,,
 Iran,2020-02-20,30,5,3,2,0,Iran (Islamic Republic of),,83993000,Iran,0.01,,,,
 Iran,2020-02-21,31,18,13,4,2,Iran (Islamic Republic of),,83993000,Iran,0.02,,,,
@@ -15079,6 +15159,7 @@ Iran,2020-09-02,225,378752,1858,21797,125,Iran (Islamic Republic of),,83993000,I
 Iran,2020-09-03,226,380746,1994,21926,129,Iran (Islamic Republic of),,83993000,Iran,453.31,0,3256122,3876.66,11.69
 Iran,2020-09-04,227,382772,2026,22044,118,Iran (Islamic Republic of),,83993000,Iran,455.72,0,3256122,3876.66,11.76
 Iran,2020-09-05,228,384666,1894,22154,110,Iran (Islamic Republic of),,83993000,Iran,457.97,0,3256122,3876.66,11.81
+Iran,2020-09-06,229,386658,1992,22293,139,Iran (Islamic Republic of),,83993000,Iran,460.35,0,3256122,3876.66,11.87
 Iraq,2020-02-24,34,1,1,0,0,Iraq,,40223000,Iraq,0,,,,
 Iraq,2020-02-25,35,1,0,0,0,Iraq,,40223000,Iraq,0,,,,
 Iraq,2020-02-26,36,5,4,0,0,Iraq,,40223000,Iraq,0.01,,,,
@@ -15274,6 +15355,7 @@ Iraq,2020-09-02,225,242284,3946,7201,78,Iraq,,40223000,Iraq,602.35,0,1624331,403
 Iraq,2020-09-03,226,247039,4755,7275,74,Iraq,,40223000,Iraq,614.17,0,1624331,4038.31,15.21
 Iraq,2020-09-04,227,252075,5036,7359,84,Iraq,,40223000,Iraq,626.69,0,1624331,4038.31,15.52
 Iraq,2020-09-05,228,256719,4644,7422,63,Iraq,,40223000,Iraq,638.24,0,1624331,4038.31,15.8
+Iraq,2020-09-06,229,260370,3651,7512,90,Iraq,,40223000,Iraq,647.32,0,1624331,4038.31,16.03
 Ireland,2020-02-29,39,1,1,0,0,Ireland,,4938000,Ireland,0.02,,,,
 Ireland,2020-03-01,40,1,0,0,0,Ireland,,4938000,Ireland,0.02,,,,
 Ireland,2020-03-02,41,1,0,0,0,Ireland,,4938000,Ireland,0.02,,,,
@@ -15457,13 +15539,14 @@ Ireland,2020-08-26,218,28363,162,1777,0,Ireland,,4938000,Ireland,574.38,7665,790
 Ireland,2020-08-27,219,28453,90,1777,0,Ireland,,4938000,Ireland,576.2,12274,802572,16252.98,3.55
 Ireland,2020-08-28,220,28578,125,1777,0,Ireland,,4938000,Ireland,578.74,0,802572,16252.98,3.56
 Ireland,2020-08-29,221,28720,142,1777,0,Ireland,,4938000,Ireland,581.61,0,802572,16252.98,3.58
-Ireland,2020-08-30,222,28760,40,1777,0,Ireland,,4938000,Ireland,582.42,0,3,0.06,958666.67
-Ireland,2020-08-31,223,28811,51,1777,0,Ireland,,4938000,Ireland,583.45,0,3,0.06,960366.67
-Ireland,2020-09-01,224,29025,214,1777,0,Ireland,,4938000,Ireland,587.79,844703,844706,17106.24,3.44
+Ireland,2020-08-30,222,28760,40,1777,0,Ireland,,4938000,Ireland,582.42,0,802572,16252.98,3.58
+Ireland,2020-08-31,223,28811,51,1777,0,Ireland,,4938000,Ireland,583.45,0,802572,16252.98,3.59
+Ireland,2020-09-01,224,29025,214,1777,0,Ireland,,4938000,Ireland,587.79,42134,844706,17106.24,3.44
 Ireland,2020-09-02,225,29114,89,1777,0,Ireland,,4938000,Ireland,589.59,7301,852007,17254.09,3.42
 Ireland,2020-09-03,226,29206,92,1777,0,Ireland,,4938000,Ireland,591.45,12501,864508,17507.25,3.38
-Ireland,2020-09-04,227,29303,97,1777,0,Ireland,,4938000,Ireland,593.42,878572,878572,17792.06,3.34
+Ireland,2020-09-04,227,29303,97,1777,0,Ireland,,4938000,Ireland,593.42,14064,878572,17792.06,3.34
 Ireland,2020-09-05,228,29534,231,1777,0,Ireland,,4938000,Ireland,598.1,0,878572,17792.06,3.36
+Ireland,2020-09-06,229,29672,138,1777,0,Ireland,,4938000,Ireland,600.89,0,878572,17792.06,3.38
 Israel,2020-02-21,31,1,1,0,0,Israel,,8656000,Israel,0.01,,,,
 Israel,2020-02-22,32,1,0,0,0,Israel,,8656000,Israel,0.01,,,,
 Israel,2020-02-23,33,1,0,0,0,Israel,,8656000,Israel,0.01,,,,
@@ -15662,6 +15745,7 @@ Israel,2020-09-02,225,121464,2926,969,12,Israel,,8656000,Israel,1403.23,0,110680
 Israel,2020-09-03,226,124455,2991,985,16,Israel,,8656000,Israel,1437.79,0,1106807,12786.59,11.24
 Israel,2020-09-04,227,126419,1964,993,8,Israel,,8656000,Israel,1460.48,0,1106807,12786.59,11.42
 Israel,2020-09-05,228,128936,2517,1007,14,Israel,,8656000,Israel,1489.56,0,1106807,12786.59,11.65
+Israel,2020-09-06,229,130644,1708,1019,12,Israel,,8656000,Israel,1509.29,0,1106807,12786.59,11.8
 Italy,2020-01-31,10,2,2,0,0,Italy,,60462000,Italy,0,,,,
 Italy,2020-02-01,11,2,0,0,0,Italy,,60462000,Italy,0,,,,
 Italy,2020-02-02,12,2,0,0,0,Italy,,60462000,Italy,0,,,,
@@ -15881,6 +15965,7 @@ Italy,2020-09-02,225,271515,1326,35497,6,Italy,,60462000,Italy,449.07,102959,882
 Italy,2020-09-03,226,272912,1397,35507,10,Italy,,60462000,Italy,451.38,92790,8921658,14755.81,3.06
 Italy,2020-09-04,227,274644,1732,35518,11,Italy,,60462000,Italy,454.24,113085,9034743,14942.85,3.04
 Italy,2020-09-05,228,276338,1694,35534,16,Italy,,60462000,Italy,457.04,0,9034743,14942.85,3.06
+Italy,2020-09-06,229,277634,1296,35541,7,Italy,,60462000,Italy,459.19,184514,9219257,15248.02,3.01
 Jamaica,2020-03-11,50,1,1,0,0,Jamaica,,2961000,Jamaica,0.03,,,,
 Jamaica,2020-03-12,51,2,1,0,0,Jamaica,,2961000,Jamaica,0.07,,,,
 Jamaica,2020-03-13,52,8,6,0,0,Jamaica,,2961000,Jamaica,0.27,,,,
@@ -16060,6 +16145,7 @@ Jamaica,2020-09-02,225,2683,224,24,3,Jamaica,,2961000,Jamaica,90.61,0,33170,1120
 Jamaica,2020-09-03,226,2896,213,29,5,Jamaica,,2961000,Jamaica,97.8,0,33170,1120.23,8.73
 Jamaica,2020-09-04,227,2964,68,30,1,Jamaica,,2961000,Jamaica,100.1,0,33170,1120.23,8.94
 Jamaica,2020-09-05,228,3024,60,32,2,Jamaica,,2961000,Jamaica,102.13,0,33170,1120.23,9.12
+Jamaica,2020-09-06,229,3103,79,33,1,Jamaica,,2961000,Jamaica,104.8,0,33170,1120.23,9.35
 Japan,2020-01-22,1,2,2,0,0,Japan,,126476000,Japan,0,,,,
 Japan,2020-01-23,2,2,0,0,0,Japan,,126476000,Japan,0,,,,
 Japan,2020-01-24,3,2,0,0,0,Japan,,126476000,Japan,0,,,,
@@ -16288,6 +16374,7 @@ Japan,2020-09-02,225,69619,596,1327,14,Japan,,126476000,Japan,55.05,0,943962,746
 Japan,2020-09-03,226,70278,659,1334,7,Japan,,126476000,Japan,55.57,0,943962,746.36,7.45
 Japan,2020-09-04,227,70866,588,1352,18,Japan,,126476000,Japan,56.03,0,943962,746.36,7.51
 Japan,2020-09-05,228,71467,601,1361,9,Japan,,126476000,Japan,56.51,0,943962,746.36,7.57
+Japan,2020-09-06,229,71918,451,1366,5,Japan,,126476000,Japan,56.86,0,943962,746.36,7.62
 Jordan,2020-03-03,42,1,1,0,0,Jordan,,10203000,Jordan,0.01,,,,
 Jordan,2020-03-04,43,1,0,0,0,Jordan,,10203000,Jordan,0.01,,,,
 Jordan,2020-03-05,44,1,0,0,0,Jordan,,10203000,Jordan,0.01,,,,
@@ -16475,6 +16562,7 @@ Jordan,2020-09-02,225,2161,64,15,0,Jordan,,10203000,Jordan,21.18,10847,850088,83
 Jordan,2020-09-03,226,2233,72,15,0,Jordan,,10203000,Jordan,21.89,11242,861330,8441.93,0.26
 Jordan,2020-09-04,227,2301,68,16,1,Jordan,,10203000,Jordan,22.55,11875,873205,8558.32,0.26
 Jordan,2020-09-05,228,2353,52,16,0,Jordan,,10203000,Jordan,23.06,0,873205,8558.32,0.27
+Jordan,2020-09-06,229,2411,58,16,0,Jordan,,10203000,Jordan,23.63,21193,894398,8766.03,0.27
 Kazakhstan,2020-03-13,52,4,4,0,0,Kazakhstan,,18777000,Kazakhstan,0.02,0,5093,27.12,0.08
 Kazakhstan,2020-03-14,53,6,2,0,0,Kazakhstan,,18777000,Kazakhstan,0.03,0,5093,27.12,0.12
 Kazakhstan,2020-03-15,54,9,3,0,0,Kazakhstan,,18777000,Kazakhstan,0.05,0,5093,27.12,0.18
@@ -16652,6 +16740,7 @@ Kazakhstan,2020-09-02,225,106032,88,1588,0,Kazakhstan,,18777000,Kazakhstan,564.6
 Kazakhstan,2020-09-03,226,106121,89,1588,0,Kazakhstan,,18777000,Kazakhstan,565.16,137118,2571562,13695.28,4.13
 Kazakhstan,2020-09-04,227,106225,104,1588,0,Kazakhstan,,18777000,Kazakhstan,565.72,0,2571562,13695.28,4.13
 Kazakhstan,2020-09-05,228,106301,76,1588,0,Kazakhstan,,18777000,Kazakhstan,566.12,0,2571562,13695.28,4.13
+Kazakhstan,2020-09-06,229,106361,60,1588,0,Kazakhstan,,18777000,Kazakhstan,566.44,0,2571562,13695.28,4.14
 Kenya,2020-03-13,52,1,1,0,0,Kenya,,53771000,Kenya,0,0,23,0.04,4.35
 Kenya,2020-03-14,53,1,0,0,0,Kenya,,53771000,Kenya,0,0,23,0.04,4.35
 Kenya,2020-03-15,54,3,2,0,0,Kenya,,53771000,Kenya,0.01,88,111,0.21,2.7
@@ -16829,6 +16918,7 @@ Kenya,2020-09-02,225,34493,178,581,4,Kenya,,53771000,Kenya,64.15,1682,456088,848
 Kenya,2020-09-03,226,34705,212,585,4,Kenya,,53771000,Kenya,64.54,3474,459562,854.67,7.55
 Kenya,2020-09-04,227,34884,179,589,4,Kenya,,53771000,Kenya,64.88,3937,463499,861.99,7.53
 Kenya,2020-09-05,228,35020,136,594,5,Kenya,,53771000,Kenya,65.13,0,463499,861.99,7.56
+Kenya,2020-09-06,229,35103,83,597,3,Kenya,,53771000,Kenya,65.28,10978,474477,882.4,7.4
 RepublicofKorea,2020-01-22,1,1,1,0,0,Republic of Korea,,51269000,Korea,0,,,,
 RepublicofKorea,2020-01-23,2,1,0,0,0,Republic of Korea,,51269000,Korea,0,,,,
 RepublicofKorea,2020-01-24,3,2,1,0,0,Republic of Korea,,51269000,Korea,0,,,,
@@ -17057,6 +17147,7 @@ RepublicofKorea,2020-09-02,225,20644,195,329,3,Republic of Korea,,51269000,Korea
 RepublicofKorea,2020-09-03,226,20842,198,331,2,Republic of Korea,,51269000,Korea,40.65,20257,2000552,3902.07,1.04
 RepublicofKorea,2020-09-04,227,21010,168,333,2,Republic of Korea,,51269000,Korea,40.98,18354,2018906,3937.87,1.04
 RepublicofKorea,2020-09-05,228,21177,167,334,1,Republic of Korea,,51269000,Korea,41.31,0,2018906,3937.87,1.05
+RepublicofKorea,2020-09-06,229,21296,119,336,2,Republic of Korea,,51269000,Korea,41.54,27029,2045935,3990.59,1.04
 Kosovo,2020-03-14,53,2,2,0,0,Kosovo,,1800000,Kosovo,0.11,,,,
 Kosovo,2020-03-15,54,5,3,0,0,Kosovo,,1800000,Kosovo,0.28,,,,
 Kosovo,2020-03-16,55,13,8,0,0,Kosovo,,1800000,Kosovo,0.72,,,,
@@ -17233,6 +17324,7 @@ Kosovo,2020-09-02,225,12683,0,488,0,Kosovo,,1800000,Kosovo,704.61,0,41615,2311.9
 Kosovo,2020-09-03,226,12683,0,488,0,Kosovo,,1800000,Kosovo,704.61,0,41615,2311.94,30.48
 Kosovo,2020-09-04,227,12683,0,488,0,Kosovo,,1800000,Kosovo,704.61,0,41615,2311.94,30.48
 Kosovo,2020-09-05,228,12683,0,488,0,Kosovo,,1800000,Kosovo,704.61,0,41615,2311.94,30.48
+Kosovo,2020-09-06,229,12683,0,488,0,Kosovo,,1800000,Kosovo,704.61,0,41615,2311.94,30.48
 Kuwait,2020-02-24,34,1,1,0,0,Kuwait,,4271000,Kuwait,0.02,,,,
 Kuwait,2020-02-25,35,11,10,0,0,Kuwait,,4271000,Kuwait,0.26,,,,
 Kuwait,2020-02-26,36,26,15,0,0,Kuwait,,4271000,Kuwait,0.61,,,,
@@ -17428,6 +17520,7 @@ Kuwait,2020-09-02,225,86478,667,535,1,Kuwait,,4271000,Kuwait,2024.77,,,,
 Kuwait,2020-09-03,226,87378,900,536,1,Kuwait,,4271000,Kuwait,2045.84,,,,
 Kuwait,2020-09-04,227,88243,865,537,1,Kuwait,,4271000,Kuwait,2066.1,,,,
 Kuwait,2020-09-05,228,88963,720,540,3,Kuwait,,4271000,Kuwait,2082.95,,,,
+Kuwait,2020-09-06,229,89582,619,544,4,Kuwait,,4271000,Kuwait,2097.45,,,,
 Kyrgyzstan,2020-03-18,57,3,3,0,0,Kyrgyzstan,,6524000,Kyrgyzstan,0.05,0,1545,23.68,0.19
 Kyrgyzstan,2020-03-19,58,3,0,0,0,Kyrgyzstan,,6524000,Kyrgyzstan,0.05,0,1545,23.68,0.19
 Kyrgyzstan,2020-03-20,59,6,3,0,0,Kyrgyzstan,,6524000,Kyrgyzstan,0.09,0,1545,23.68,0.39
@@ -17600,6 +17693,7 @@ Kyrgyzstan,2020-09-02,225,44036,78,1059,0,Kyrgyzstan,,6524000,Kyrgyzstan,674.98,
 Kyrgyzstan,2020-09-03,226,44135,99,1059,0,Kyrgyzstan,,6524000,Kyrgyzstan,676.5,0,66150,1013.95,66.72
 Kyrgyzstan,2020-09-04,227,44199,64,1060,1,Kyrgyzstan,,6524000,Kyrgyzstan,677.48,0,66150,1013.95,66.82
 Kyrgyzstan,2020-09-05,228,44293,94,1060,0,Kyrgyzstan,,6524000,Kyrgyzstan,678.92,0,66150,1013.95,66.96
+Kyrgyzstan,2020-09-06,229,44403,110,1060,0,Kyrgyzstan,,6524000,Kyrgyzstan,680.61,0,66150,1013.95,67.12
 Laos,2020-03-24,63,2,2,0,0,Lao People's Democratic Republic,,7276000,Lao PDR,0.03,0,53,0.73,3.77
 Laos,2020-03-25,64,3,1,0,0,Lao People's Democratic Republic,,7276000,Lao PDR,0.04,0,53,0.73,5.66
 Laos,2020-03-26,65,6,3,0,0,Lao People's Democratic Republic,,7276000,Lao PDR,0.08,0,53,0.73,11.32
@@ -17766,6 +17860,7 @@ Laos,2020-09-02,225,22,0,0,0,Lao People's Democratic Republic,,7276000,Lao PDR,0
 Laos,2020-09-03,226,22,0,0,0,Lao People's Democratic Republic,,7276000,Lao PDR,0.3,0,53,0.73,41.51
 Laos,2020-09-04,227,22,0,0,0,Lao People's Democratic Republic,,7276000,Lao PDR,0.3,0,53,0.73,41.51
 Laos,2020-09-05,228,22,0,0,0,Lao People's Democratic Republic,,7276000,Lao PDR,0.3,0,53,0.73,41.51
+Laos,2020-09-06,229,22,0,0,0,Lao People's Democratic Republic,,7276000,Lao PDR,0.3,0,53,0.73,41.51
 Latvia,2020-03-02,41,1,1,0,0,Latvia,,1886000,Latvia,0.05,0,6,0.32,16.67
 Latvia,2020-03-03,42,1,0,0,0,Latvia,,1886000,Latvia,0.05,0,6,0.32,16.67
 Latvia,2020-03-04,43,1,0,0,0,Latvia,,1886000,Latvia,0.05,18,24,1.27,4.17
@@ -17954,6 +18049,7 @@ Latvia,2020-09-02,225,1406,2,34,0,Latvia,,1886000,Latvia,74.55,2532,256350,13592
 Latvia,2020-09-03,226,1410,4,34,0,Latvia,,1886000,Latvia,74.76,2445,258795,13721.9,0.54
 Latvia,2020-09-04,227,1416,6,35,1,Latvia,,1886000,Latvia,75.08,1903,260698,13822.8,0.54
 Latvia,2020-09-05,228,1425,9,35,0,Latvia,,1886000,Latvia,75.56,0,260698,13822.8,0.55
+Latvia,2020-09-06,229,1428,3,35,0,Latvia,,1886000,Latvia,75.72,3560,264258,14011.56,0.54
 Lebanon,2020-02-21,31,1,1,0,0,Lebanon,,6825000,Lebanon,0.01,,,,
 Lebanon,2020-02-22,32,1,0,0,0,Lebanon,,6825000,Lebanon,0.01,,,,
 Lebanon,2020-02-23,33,1,0,0,0,Lebanon,,6825000,Lebanon,0.01,,,,
@@ -18152,6 +18248,7 @@ Lebanon,2020-09-02,225,18375,598,177,6,Lebanon,,6825000,Lebanon,269.23,10713,536
 Lebanon,2020-09-03,226,18963,588,179,2,Lebanon,,6825000,Lebanon,277.85,9081,545350,7990.48,3.48
 Lebanon,2020-09-04,227,19490,527,183,4,Lebanon,,6825000,Lebanon,285.57,17680,563030,8249.52,3.46
 Lebanon,2020-09-05,228,20011,521,187,4,Lebanon,,6825000,Lebanon,293.2,0,563030,8249.52,3.55
+Lebanon,2020-09-06,229,20426,415,191,4,Lebanon,,6825000,Lebanon,299.28,18214,581244,8516.4,3.51
 Lesotho,2020-05-13,113,1,1,0,0,Lesotho,,2142000,Lesotho,0.05,0,37,1.73,2.7
 Lesotho,2020-05-14,114,1,0,0,0,Lesotho,,2142000,Lesotho,0.05,0,37,1.73,2.7
 Lesotho,2020-05-15,115,1,0,0,0,Lesotho,,2142000,Lesotho,0.05,560,597,27.87,0.17
@@ -18268,6 +18365,7 @@ Lesotho,2020-09-02,225,1085,0,31,0,Lesotho,,2142000,Lesotho,50.65,0,15023,701.35
 Lesotho,2020-09-03,226,1085,0,31,0,Lesotho,,2142000,Lesotho,50.65,1010,16033,748.51,6.77
 Lesotho,2020-09-04,227,1148,63,31,0,Lesotho,,2142000,Lesotho,53.59,0,16033,748.51,7.16
 Lesotho,2020-09-05,228,1148,0,31,0,Lesotho,,2142000,Lesotho,53.59,0,16033,748.51,7.16
+Lesotho,2020-09-06,229,1148,0,31,0,Lesotho,,2142000,Lesotho,53.59,0,16033,748.51,7.16
 Liberia,2020-03-16,55,1,1,0,0,Liberia,,5058000,Liberia,0.02,,,,
 Liberia,2020-03-17,56,1,0,0,0,Liberia,,5058000,Liberia,0.02,,,,
 Liberia,2020-03-18,57,2,1,0,0,Liberia,,5058000,Liberia,0.04,,,,
@@ -18442,6 +18540,7 @@ Liberia,2020-09-02,225,1305,0,82,0,Liberia,,5058000,Liberia,25.8,0,12586,248.83,
 Liberia,2020-09-03,226,1306,1,82,0,Liberia,,5058000,Liberia,25.82,0,12586,248.83,10.38
 Liberia,2020-09-04,227,1306,0,82,0,Liberia,,5058000,Liberia,25.82,0,12586,248.83,10.38
 Liberia,2020-09-05,228,1306,0,82,0,Liberia,,5058000,Liberia,25.82,0,12586,248.83,10.38
+Liberia,2020-09-06,229,1307,1,82,0,Liberia,,5058000,Liberia,25.84,0,12586,248.83,10.38
 Libya,2020-03-24,63,1,1,0,0,Libya,,6871000,Libya,0.01,,,,
 Libya,2020-03-25,64,1,0,0,0,Libya,,6871000,Libya,0.01,,,,
 Libya,2020-03-26,65,1,0,0,0,Libya,,6871000,Libya,0.01,,,,
@@ -18608,6 +18707,7 @@ Libya,2020-09-02,225,15156,532,250,8,Libya,,6871000,Libya,220.58,2807,114255,166
 Libya,2020-09-03,226,15773,617,254,4,Libya,,6871000,Libya,229.56,0,114255,1662.86,13.81
 Libya,2020-09-04,227,16445,672,262,8,Libya,,6871000,Libya,239.34,0,114255,1662.86,14.39
 Libya,2020-09-05,228,17094,649,272,10,Libya,,6871000,Libya,248.78,0,114255,1662.86,14.96
+Libya,2020-09-06,229,17749,655,285,13,Libya,,6871000,Libya,258.32,16978,131233,1909.95,13.52
 Liechtenstein,2020-03-04,43,1,1,0,0,Liechtenstein,,38000,Liechtenstein,2.63,,,,
 Liechtenstein,2020-03-05,44,1,0,0,0,Liechtenstein,,38000,Liechtenstein,2.63,,,,
 Liechtenstein,2020-03-06,45,1,0,0,0,Liechtenstein,,38000,Liechtenstein,2.63,,,,
@@ -18794,6 +18894,7 @@ Liechtenstein,2020-09-02,225,107,0,1,0,Liechtenstein,,38000,Liechtenstein,281.58
 Liechtenstein,2020-09-03,226,107,0,1,0,Liechtenstein,,38000,Liechtenstein,281.58,,,,
 Liechtenstein,2020-09-04,227,107,0,1,0,Liechtenstein,,38000,Liechtenstein,281.58,,,,
 Liechtenstein,2020-09-05,228,107,0,1,0,Liechtenstein,,38000,Liechtenstein,281.58,,,,
+Liechtenstein,2020-09-06,229,107,0,1,0,Liechtenstein,,38000,Liechtenstein,281.58,,,,
 Lithuania,2020-02-28,38,1,1,0,0,Lithuania,,2722000,Lithuania,0.04,,,,
 Lithuania,2020-02-29,39,1,0,0,0,Lithuania,,2722000,Lithuania,0.04,,,,
 Lithuania,2020-03-01,40,1,0,0,0,Lithuania,,2722000,Lithuania,0.04,,,,
@@ -18985,6 +19086,7 @@ Lithuania,2020-09-02,225,2958,29,86,0,Lithuania,,2722000,Lithuania,108.67,5159,6
 Lithuania,2020-09-03,226,2978,20,86,0,Lithuania,,2722000,Lithuania,109.4,9799,658662,24197.72,0.45
 Lithuania,2020-09-04,227,3004,26,86,0,Lithuania,,2722000,Lithuania,110.36,0,658662,24197.72,0.46
 Lithuania,2020-09-05,228,3040,36,86,0,Lithuania,,2722000,Lithuania,111.68,0,658662,24197.72,0.46
+Lithuania,2020-09-06,229,3083,43,86,0,Lithuania,,2722000,Lithuania,113.26,0,658662,24197.72,0.47
 Luxembourg,2020-02-29,39,1,1,0,0,Luxembourg,,626000,Luxembourg,0.16,,,,
 Luxembourg,2020-03-01,40,1,0,0,0,Luxembourg,,626000,Luxembourg,0.16,,,,
 Luxembourg,2020-03-02,41,1,0,0,0,Luxembourg,,626000,Luxembourg,0.16,,,,
@@ -19175,6 +19277,7 @@ Luxembourg,2020-09-02,225,6745,120,124,0,Luxembourg,,626000,Luxembourg,1077.48,0
 Luxembourg,2020-09-03,226,6811,66,124,0,Luxembourg,,626000,Luxembourg,1088.02,0,449807,71854.15,1.51
 Luxembourg,2020-09-04,227,6854,43,124,0,Luxembourg,,626000,Luxembourg,1094.89,0,449807,71854.15,1.52
 Luxembourg,2020-09-05,228,6896,42,124,0,Luxembourg,,626000,Luxembourg,1101.6,0,449807,71854.15,1.53
+Luxembourg,2020-09-06,229,6950,54,124,0,Luxembourg,,626000,Luxembourg,1110.22,0,449807,71854.15,1.55
 MSZaandam,2020-03-28,67,2,2,0,0,MS Zaandam,,,MS Zaandam,0,,,,
 MSZaandam,2020-03-29,68,2,0,0,0,MS Zaandam,,,MS Zaandam,0,,,,
 MSZaandam,2020-03-30,69,2,0,0,0,MS Zaandam,,,MS Zaandam,0,,,,
@@ -19336,7 +19439,8 @@ MSZaandam,2020-09-01,224,9,0,2,0,MS Zaandam,,,MS Zaandam,0,,,,
 MSZaandam,2020-09-02,225,9,0,2,0,MS Zaandam,,,MS Zaandam,0,,,,
 MSZaandam,2020-09-03,226,9,0,2,0,MS Zaandam,,,MS Zaandam,0,,,,
 MSZaandam,2020-09-04,227,9,0,2,0,MS Zaandam,,,MS Zaandam,0,,,,
-MSZaandam,2020-09-05,228,9,0,2,0,MS Zaandam,06 9月 12:00 GMT,,MS Zaandam,0,,,,
+MSZaandam,2020-09-05,228,9,0,2,0,MS Zaandam,,,MS Zaandam,0,,,,
+MSZaandam,2020-09-06,229,9,0,2,0,MS Zaandam,07 9月 14:00 GMT,,MS Zaandam,0,,,,
 Macao,2020-01-22,1,1,1,0,0,Macao,,649000,Macao,0.15,,,,
 Macao,2020-01-23,2,2,1,0,0,Macao,,649000,Macao,0.31,,,,
 Macao,2020-01-24,3,2,0,0,0,Macao,,649000,Macao,0.31,,,,
@@ -19565,6 +19669,7 @@ Macao,2020-09-02,225,46,0,0,0,Macao,,649000,Macao,7.09,,,,
 Macao,2020-09-03,226,46,0,0,0,Macao,,649000,Macao,7.09,,,,
 Macao,2020-09-04,227,46,0,0,0,Macao,,649000,Macao,7.09,,,,
 Macao,2020-09-05,228,46,0,0,0,Macao,,649000,Macao,7.09,,,,
+Macao,2020-09-06,229,46,0,0,0,Macao,,649000,Macao,7.09,,,,
 NorthMacedonia,2020-02-26,36,1,1,0,0,North Macedonia,,2083000,Macedonia,0.05,,,,
 NorthMacedonia,2020-02-27,37,1,0,0,0,North Macedonia,,2083000,Macedonia,0.05,,,,
 NorthMacedonia,2020-02-28,38,1,0,0,0,North Macedonia,,2083000,Macedonia,0.05,,,,
@@ -19758,6 +19863,7 @@ NorthMacedonia,2020-09-02,225,14600,145,606,2,North Macedonia,,2083000,Macedonia
 NorthMacedonia,2020-09-03,226,14762,162,606,0,North Macedonia,,2083000,Macedonia,708.69,0,128995,6192.75,11.44
 NorthMacedonia,2020-09-04,227,14871,109,609,3,North Macedonia,,2083000,Macedonia,713.92,0,128995,6192.75,11.53
 NorthMacedonia,2020-09-05,228,14998,127,614,5,North Macedonia,,2083000,Macedonia,720.02,0,128995,6192.75,11.63
+NorthMacedonia,2020-09-06,229,15090,92,617,3,North Macedonia,,2083000,Macedonia,724.44,0,128995,6192.75,11.7
 Madagascar,2020-03-20,59,3,3,0,0,Madagascar,,27691000,Madagascar,0.01,,,,
 Madagascar,2020-03-21,60,3,0,0,0,Madagascar,,27691000,Madagascar,0.01,,,,
 Madagascar,2020-03-22,61,3,0,0,0,Madagascar,,27691000,Madagascar,0.01,,,,
@@ -19928,6 +20034,7 @@ Madagascar,2020-09-02,225,15023,66,196,1,Madagascar,,27691000,Madagascar,54.25,6
 Madagascar,2020-09-03,226,15106,83,197,1,Madagascar,,27691000,Madagascar,54.55,0,64330,232.31,23.48
 Madagascar,2020-09-04,227,15187,81,198,1,Madagascar,,27691000,Madagascar,54.84,1163,65493,236.51,23.19
 Madagascar,2020-09-05,228,15269,82,199,1,Madagascar,,27691000,Madagascar,55.14,0,65493,236.51,23.31
+Madagascar,2020-09-06,229,15319,50,200,1,Madagascar,,27691000,Madagascar,55.32,1694,67187,242.63,22.8
 Malawi,2020-04-02,72,3,3,0,0,Malawi,,19130000,Malawi,0.02,,,,
 Malawi,2020-04-03,73,3,0,0,0,Malawi,,19130000,Malawi,0.02,,,,
 Malawi,2020-04-04,74,4,1,0,0,Malawi,,19130000,Malawi,0.02,,,,
@@ -20085,6 +20192,7 @@ Malawi,2020-09-02,225,5579,3,175,0,Malawi,,19130000,Malawi,29.16,117,45622,238.4
 Malawi,2020-09-03,226,5593,14,175,0,Malawi,,19130000,Malawi,29.24,167,45789,239.36,12.21
 Malawi,2020-09-04,227,5608,15,175,0,Malawi,,19130000,Malawi,29.32,247,46036,240.65,12.18
 Malawi,2020-09-05,228,5611,3,175,0,Malawi,,19130000,Malawi,29.33,0,46036,240.65,12.19
+Malawi,2020-09-06,229,5614,3,175,0,Malawi,,19130000,Malawi,29.35,600,46636,243.78,12.04
 Malaysia,2020-01-25,4,3,3,0,0,Malaysia,,32366000,Malaysia,0.01,,,,
 Malaysia,2020-01-26,5,4,1,0,0,Malaysia,,32366000,Malaysia,0.01,,,,
 Malaysia,2020-01-27,6,4,0,0,0,Malaysia,,32366000,Malaysia,0.01,,,,
@@ -20310,6 +20418,7 @@ Malaysia,2020-09-02,225,9360,6,128,0,Malaysia,,32366000,Malaysia,28.92,0,297342,
 Malaysia,2020-09-03,226,9374,14,128,0,Malaysia,,32366000,Malaysia,28.96,0,297342,918.69,3.15
 Malaysia,2020-09-04,227,9385,11,128,0,Malaysia,,32366000,Malaysia,29,0,297342,918.69,3.16
 Malaysia,2020-09-05,228,9391,6,128,0,Malaysia,,32366000,Malaysia,29.02,0,297342,918.69,3.16
+Malaysia,2020-09-06,229,9397,6,128,0,Malaysia,,32366000,Malaysia,29.03,0,297342,918.69,3.16
 Maldives,2020-03-08,47,4,4,0,0,Maldives,,541000,Maldives,0.74,,,,
 Maldives,2020-03-09,48,4,0,0,0,Maldives,,541000,Maldives,0.74,,,,
 Maldives,2020-03-10,49,6,2,0,0,Maldives,,541000,Maldives,1.11,,,,
@@ -20492,6 +20601,7 @@ Maldives,2020-09-02,225,8140,137,29,0,Maldives,,541000,Maldives,1504.62,,,,
 Maldives,2020-09-03,226,8281,141,29,0,Maldives,,541000,Maldives,1530.68,,,,
 Maldives,2020-09-04,227,8361,80,29,0,Maldives,,541000,Maldives,1545.47,,,,
 Maldives,2020-09-05,228,8486,125,29,0,Maldives,,541000,Maldives,1568.58,,,,
+Maldives,2020-09-06,229,8584,98,29,0,Maldives,,541000,Maldives,1586.69,,,,
 Mali,2020-03-25,64,2,2,0,0,Mali,,20251000,Mali,0.01,,,,
 Mali,2020-03-26,65,4,2,0,0,Mali,,20251000,Mali,0.02,,,,
 Mali,2020-03-27,66,11,7,0,0,Mali,,20251000,Mali,0.05,,,,
@@ -20657,6 +20767,7 @@ Mali,2020-09-02,225,2802,25,126,0,Mali,,20251000,Mali,13.84,0,34353,169.64,8.16
 Mali,2020-09-03,226,2807,5,126,0,Mali,,20251000,Mali,13.86,0,34353,169.64,8.17
 Mali,2020-09-04,227,2814,7,126,0,Mali,,20251000,Mali,13.9,0,34353,169.64,8.19
 Mali,2020-09-05,228,2833,19,126,0,Mali,,20251000,Mali,13.99,0,34353,169.64,8.25
+Mali,2020-09-06,229,2842,9,127,1,Mali,,20251000,Mali,14.03,0,34353,169.64,8.27
 Malta,2020-03-07,46,3,3,0,0,Malta,,442000,Malta,0.68,,,,
 Malta,2020-03-08,47,3,0,0,0,Malta,,442000,Malta,0.68,550,550,124.43,0.55
 Malta,2020-03-09,48,3,0,0,0,Malta,,442000,Malta,0.68,0,550,124.43,0.55
@@ -20840,6 +20951,7 @@ Malta,2020-09-02,225,1931,22,13,1,Malta,,442000,Malta,436.88,2067,194576,44021.7
 Malta,2020-09-03,226,1965,34,13,0,Malta,,442000,Malta,444.57,2438,197014,44573.3,1
 Malta,2020-09-04,227,1984,19,13,0,Malta,,442000,Malta,448.87,1869,198883,44996.15,1
 Malta,2020-09-05,228,2014,30,14,1,Malta,,442000,Malta,455.66,0,198883,44996.15,1.01
+Malta,2020-09-06,229,2039,25,14,0,Malta,,442000,Malta,461.31,0,198883,44996.15,1.03
 Mauritania,2020-03-14,53,1,1,0,0,Mauritania,,4650000,Mauritania,0.02,,,,
 Mauritania,2020-03-15,54,1,0,0,0,Mauritania,,4650000,Mauritania,0.02,,,,
 Mauritania,2020-03-16,55,1,0,0,0,Mauritania,,4650000,Mauritania,0.02,,,,
@@ -21016,6 +21128,7 @@ Mauritania,2020-09-02,225,7089,14,160,1,Mauritania,,4650000,Mauritania,152.45,33
 Mauritania,2020-09-03,226,7106,17,160,0,Mauritania,,4650000,Mauritania,152.82,0,73094,1571.91,9.72
 Mauritania,2020-09-04,227,7126,20,160,0,Mauritania,,4650000,Mauritania,153.25,0,73094,1571.91,9.75
 Mauritania,2020-09-05,228,7134,8,160,0,Mauritania,,4650000,Mauritania,153.42,0,73094,1571.91,9.76
+Mauritania,2020-09-06,229,7142,8,160,0,Mauritania,,4650000,Mauritania,153.59,0,73094,1571.91,9.77
 Mauritius,2020-03-18,57,3,3,0,0,Mauritius,,1272000,Mauritius,0.24,,,,
 Mauritius,2020-03-19,58,3,0,0,0,Mauritius,,1272000,Mauritius,0.24,,,,
 Mauritius,2020-03-20,59,12,9,0,0,Mauritius,,1272000,Mauritius,0.94,,,,
@@ -21188,6 +21301,7 @@ Mauritius,2020-09-02,225,356,0,10,0,Mauritius,,1272000,Mauritius,27.99,0,221234,
 Mauritius,2020-09-03,226,356,0,10,0,Mauritius,,1272000,Mauritius,27.99,0,221234,17392.61,0.16
 Mauritius,2020-09-04,227,356,0,10,0,Mauritius,,1272000,Mauritius,27.99,0,221234,17392.61,0.16
 Mauritius,2020-09-05,228,356,0,10,0,Mauritius,,1272000,Mauritius,27.99,0,221234,17392.61,0.16
+Mauritius,2020-09-06,229,356,0,10,0,Mauritius,,1272000,Mauritius,27.99,0,221234,17392.61,0.16
 Mexico,2020-02-28,38,1,1,0,0,Mexico,,128933000,Mexico,0,,,,
 Mexico,2020-02-29,39,4,3,0,0,Mexico,,128933000,Mexico,0,,,,
 Mexico,2020-03-01,40,5,1,0,0,Mexico,,128933000,Mexico,0,,,,
@@ -21379,6 +21493,7 @@ Mexico,2020-09-02,225,610957,4921,65816,575,Mexico,,128933000,Mexico,473.86,1464
 Mexico,2020-09-03,226,616894,5937,66329,513,Mexico,,128933000,Mexico,478.46,32910,1393033,1080.43,44.28
 Mexico,2020-09-04,227,623090,6196,66851,522,Mexico,,128933000,Mexico,483.27,0,1393033,1080.43,44.73
 Mexico,2020-09-05,228,629409,6319,67326,475,Mexico,,128933000,Mexico,488.17,0,1393033,1080.43,45.18
+Mexico,2020-09-06,229,634023,4614,67558,232,Mexico,,128933000,Mexico,491.75,0,1393033,1080.43,45.51
 Moldova,2020-03-08,47,1,1,0,0,Republic of Moldova,,4034000,Moldova,0.02,,,,
 Moldova,2020-03-09,48,1,0,0,0,Republic of Moldova,,4034000,Moldova,0.02,,,,
 Moldova,2020-03-10,49,3,2,0,0,Republic of Moldova,,4034000,Moldova,0.07,,,,
@@ -21561,6 +21676,7 @@ Moldova,2020-09-02,225,37740,532,1024,16,Republic of Moldova,,4034000,Moldova,93
 Moldova,2020-09-03,226,38372,632,1036,12,Republic of Moldova,,4034000,Moldova,951.21,,,,
 Moldova,2020-09-04,227,38906,534,1047,11,Republic of Moldova,,4034000,Moldova,964.45,,,,
 Moldova,2020-09-05,228,39473,567,1063,16,Republic of Moldova,,4034000,Moldova,978.51,,,,
+Moldova,2020-09-06,229,39797,324,1063,0,Republic of Moldova,,4034000,Moldova,986.54,,,,
 Monaco,2020-02-29,39,1,1,0,0,Monaco,,39000,Monaco,2.56,,,,
 Monaco,2020-03-01,40,1,0,0,0,Monaco,,39000,Monaco,2.56,,,,
 Monaco,2020-03-02,41,1,0,0,0,Monaco,,39000,Monaco,2.56,,,,
@@ -21751,6 +21867,7 @@ Monaco,2020-09-02,225,142,0,1,0,Monaco,,39000,Monaco,364.1,,,,
 Monaco,2020-09-03,226,143,1,1,0,Monaco,,39000,Monaco,366.67,,,,
 Monaco,2020-09-04,227,147,4,1,0,Monaco,,39000,Monaco,376.92,,,,
 Monaco,2020-09-05,228,147,0,1,0,Monaco,,39000,Monaco,376.92,,,,
+Monaco,2020-09-06,229,147,0,1,0,Monaco,,39000,Monaco,376.92,,,,
 Mongolia,2020-03-10,49,1,1,0,0,Mongolia,,3278000,Mongolia,0.03,,,,
 Mongolia,2020-03-11,50,1,0,0,0,Mongolia,,3278000,Mongolia,0.03,,,,
 Mongolia,2020-03-12,51,1,0,0,0,Mongolia,,3278000,Mongolia,0.03,,,,
@@ -21931,6 +22048,7 @@ Mongolia,2020-09-02,225,306,0,0,0,Mongolia,,3278000,Mongolia,9.33,,,,
 Mongolia,2020-09-03,226,310,4,0,0,Mongolia,,3278000,Mongolia,9.46,,,,
 Mongolia,2020-09-04,227,310,0,0,0,Mongolia,,3278000,Mongolia,9.46,,,,
 Mongolia,2020-09-05,228,310,0,0,0,Mongolia,,3278000,Mongolia,9.46,,,,
+Mongolia,2020-09-06,229,310,0,0,0,Mongolia,,3278000,Mongolia,9.46,,,,
 Montenegro,2020-03-17,56,2,2,0,0,Montenegro,,628000,Montenegro,0.32,,,,
 Montenegro,2020-03-18,57,2,0,0,0,Montenegro,,628000,Montenegro,0.32,,,,
 Montenegro,2020-03-19,58,3,1,0,0,Montenegro,,628000,Montenegro,0.48,,,,
@@ -22104,6 +22222,7 @@ Montenegro,2020-09-02,225,5019,102,104,2,Montenegro,,628000,Montenegro,799.2,0,2
 Montenegro,2020-09-03,226,5165,146,104,0,Montenegro,,628000,Montenegro,822.45,0,24470,3896.5,21.11
 Montenegro,2020-09-04,227,5275,110,106,2,Montenegro,,628000,Montenegro,839.97,0,24470,3896.5,21.56
 Montenegro,2020-09-05,228,5422,147,107,1,Montenegro,,628000,Montenegro,863.38,0,24470,3896.5,22.16
+Montenegro,2020-09-06,229,5553,131,108,1,Montenegro,,628000,Montenegro,884.24,0,24470,3896.5,22.69
 Morocco,2020-03-02,41,1,1,0,0,Morocco,,36911000,Morocco,0,,,,
 Morocco,2020-03-03,42,1,0,0,0,Morocco,,36911000,Morocco,0,,,,
 Morocco,2020-03-04,43,1,0,0,0,Morocco,,36911000,Morocco,0,,,,
@@ -22292,6 +22411,7 @@ Morocco,2020-09-02,225,65453,1672,1216,32,Morocco,,36911000,Morocco,177.33,-4169
 Morocco,2020-09-03,226,66855,1402,1253,37,Morocco,,36911000,Morocco,181.12,86205,1978840,5361.11,3.38
 Morocco,2020-09-04,227,68605,1750,1292,39,Morocco,,36911000,Morocco,185.87,22284,2001124,5421.48,3.43
 Morocco,2020-09-05,228,70160,1555,1329,37,Morocco,,36911000,Morocco,190.08,0,2001124,5421.48,3.51
+Morocco,2020-09-06,229,72394,2234,1361,32,Morocco,,36911000,Morocco,196.13,45372,2046496,5544.41,3.54
 Mozambique,2020-03-22,61,1,1,0,0,Mozambique,,31255000,Mozambique,0,0,19,0.06,5.26
 Mozambique,2020-03-23,62,1,0,0,0,Mozambique,,31255000,Mozambique,0,0,19,0.06,5.26
 Mozambique,2020-03-24,63,3,2,0,0,Mozambique,,31255000,Mozambique,0.01,0,19,0.06,15.79
@@ -22460,6 +22580,7 @@ Mozambique,2020-09-02,225,4117,78,25,2,Mozambique,,31255000,Mozambique,13.17,0,9
 Mozambique,2020-09-03,226,4207,90,26,1,Mozambique,,31255000,Mozambique,13.46,4669,99365,317.92,4.23
 Mozambique,2020-09-04,227,4265,58,26,0,Mozambique,,31255000,Mozambique,13.65,1508,100873,322.74,4.23
 Mozambique,2020-09-05,228,4341,76,26,0,Mozambique,,31255000,Mozambique,13.89,0,100873,322.74,4.3
+Mozambique,2020-09-06,229,4444,103,27,1,Mozambique,,31255000,Mozambique,14.22,1583,102456,327.81,4.34
 Myanmar,2020-03-27,66,8,8,0,0,Myanmar,,54410000,Myanmar,0.01,0,300,0.55,2.67
 Myanmar,2020-03-28,67,8,0,0,0,Myanmar,,54410000,Myanmar,0.01,0,300,0.55,2.67
 Myanmar,2020-03-29,68,10,2,0,0,Myanmar,,54410000,Myanmar,0.02,0,300,0.55,3.33
@@ -22623,6 +22744,7 @@ Myanmar,2020-09-02,225,995,76,6,0,Myanmar,,54410000,Myanmar,1.83,6423,164266,301
 Myanmar,2020-09-03,226,1111,116,6,0,Myanmar,,54410000,Myanmar,2.04,2167,166433,305.89,0.67
 Myanmar,2020-09-04,227,1171,60,7,1,Myanmar,,54410000,Myanmar,2.15,0,166433,305.89,0.7
 Myanmar,2020-09-05,228,1319,148,8,1,Myanmar,,54410000,Myanmar,2.42,0,166433,305.89,0.79
+Myanmar,2020-09-06,229,1419,100,8,0,Myanmar,,54410000,Myanmar,2.61,0,166433,305.89,0.85
 Namibia,2020-03-14,53,2,2,0,0,Namibia,,2541000,Namibia,0.08,,,,
 Namibia,2020-03-15,54,2,0,0,0,Namibia,,2541000,Namibia,0.08,,,,
 Namibia,2020-03-16,55,2,0,0,0,Namibia,,2541000,Namibia,0.08,,,,
@@ -22799,6 +22921,7 @@ Namibia,2020-09-02,225,7844,152,82,1,Namibia,,2541000,Namibia,308.7,0,60065,2363
 Namibia,2020-09-03,226,8082,238,86,4,Namibia,,2541000,Namibia,318.06,4204,64269,2529.28,12.58
 Namibia,2020-09-04,227,8323,241,87,1,Namibia,,2541000,Namibia,327.55,0,64269,2529.28,12.95
 Namibia,2020-09-05,228,8514,191,87,0,Namibia,,2541000,Namibia,335.06,0,64269,2529.28,13.25
+Namibia,2020-09-06,229,8685,171,89,2,Namibia,,2541000,Namibia,341.79,4668,68937,2712.99,12.6
 Nepal,2020-01-25,4,1,1,0,0,Nepal,,29137000,Nepal,0,,,,
 Nepal,2020-01-26,5,1,0,0,0,Nepal,,29137000,Nepal,0,,,,
 Nepal,2020-01-27,6,1,0,0,0,Nepal,,29137000,Nepal,0,,,,
@@ -23024,6 +23147,7 @@ Nepal,2020-09-02,225,41649,1120,251,12,Nepal,,29137000,Nepal,142.94,12879,718439
 Nepal,2020-09-03,226,42877,1228,257,6,Nepal,,29137000,Nepal,147.16,13413,731852,2511.76,5.86
 Nepal,2020-09-04,227,44236,1359,271,14,Nepal,,29137000,Nepal,151.82,13638,745490,2558.57,5.93
 Nepal,2020-09-05,228,45277,1041,280,9,Nepal,,29137000,Nepal,155.39,0,745490,2558.57,6.07
+Nepal,2020-09-06,229,46257,980,289,9,Nepal,,29137000,Nepal,158.76,0,745490,2558.57,6.2
 Netherlands,2020-02-27,37,1,1,0,0,Netherlands,,17135000,Netherlands,0.01,,,,
 Netherlands,2020-02-28,38,1,0,0,0,Netherlands,,17135000,Netherlands,0.01,,,,
 Netherlands,2020-02-29,39,6,5,0,0,Netherlands,,17135000,Netherlands,0.04,,,,
@@ -23216,6 +23340,7 @@ Netherlands,2020-09-02,225,74660,858,6267,7,Netherlands,,17135000,Netherlands,43
 Netherlands,2020-09-03,226,75356,696,6268,1,Netherlands,,17135000,Netherlands,439.78,0,411972,2404.27,18.29
 Netherlands,2020-09-04,227,76173,817,6270,2,Netherlands,,17135000,Netherlands,444.55,0,411972,2404.27,18.49
 Netherlands,2020-09-05,228,76907,734,6275,5,Netherlands,,17135000,Netherlands,448.83,0,411972,2404.27,18.67
+Netherlands,2020-09-06,229,77857,950,6277,2,Netherlands,,17135000,Netherlands,454.37,0,411972,2404.27,18.9
 NewZealand,2020-02-28,38,1,1,0,0,New Zealand,,4822000,New Zealand,0.02,,,,
 NewZealand,2020-02-29,39,1,0,0,0,New Zealand,,4822000,New Zealand,0.02,,,,
 NewZealand,2020-03-01,40,1,0,0,0,New Zealand,,4822000,New Zealand,0.02,,,,
@@ -23407,6 +23532,7 @@ NewZealand,2020-09-02,225,1759,2,22,0,New Zealand,,4822000,New Zealand,36.48,109
 NewZealand,2020-09-03,226,1764,5,22,0,New Zealand,,4822000,New Zealand,36.58,10521,788081,16343.45,0.22
 NewZealand,2020-09-04,227,1767,3,24,2,New Zealand,,4822000,New Zealand,36.64,9909,797990,16548.94,0.22
 NewZealand,2020-09-05,228,1772,5,24,0,New Zealand,,4822000,New Zealand,36.75,0,797990,16548.94,0.22
+NewZealand,2020-09-06,229,1776,4,24,0,New Zealand,,4822000,New Zealand,36.83,16648,814638,16894.19,0.22
 Nicaragua,2020-03-19,58,1,1,0,0,Nicaragua,,6625000,Nicaragua,0.02,,,,
 Nicaragua,2020-03-20,59,1,0,0,0,Nicaragua,,6625000,Nicaragua,0.02,,,,
 Nicaragua,2020-03-21,60,2,1,0,0,Nicaragua,,6625000,Nicaragua,0.03,,,,
@@ -23578,6 +23704,7 @@ Nicaragua,2020-09-02,225,4668,0,141,0,Nicaragua,,6625000,Nicaragua,70.46,,,,
 Nicaragua,2020-09-03,226,4668,0,141,0,Nicaragua,,6625000,Nicaragua,70.46,,,,
 Nicaragua,2020-09-04,227,4668,0,141,0,Nicaragua,,6625000,Nicaragua,70.46,,,,
 Nicaragua,2020-09-05,228,4668,0,141,0,Nicaragua,,6625000,Nicaragua,70.46,,,,
+Nicaragua,2020-09-06,229,4668,0,141,0,Nicaragua,,6625000,Nicaragua,70.46,,,,
 Niger,2020-03-20,59,1,1,0,0,Niger,,24207000,Niger,0,,,,
 Niger,2020-03-21,60,1,0,0,0,Niger,,24207000,Niger,0,,,,
 Niger,2020-03-22,61,2,1,0,0,Niger,,24207000,Niger,0.01,,,,
@@ -23748,6 +23875,7 @@ Niger,2020-09-02,225,1176,0,69,0,Niger,,24207000,Niger,4.86,0,11644,48.1,10.1
 Niger,2020-09-03,226,1177,1,69,0,Niger,,24207000,Niger,4.86,0,11644,48.1,10.11
 Niger,2020-09-04,227,1177,0,69,0,Niger,,24207000,Niger,4.86,0,11644,48.1,10.11
 Niger,2020-09-05,228,1177,0,69,0,Niger,,24207000,Niger,4.86,0,11644,48.1,10.11
+Niger,2020-09-06,229,1177,0,69,0,Niger,,24207000,Niger,4.86,0,11644,48.1,10.11
 Nigeria,2020-02-28,38,1,1,0,0,Nigeria,,206140000,Nigeria,0,,,,
 Nigeria,2020-02-29,39,1,0,0,0,Nigeria,,206140000,Nigeria,0,1,1,0,100
 Nigeria,2020-03-01,40,1,0,0,0,Nigeria,,206140000,Nigeria,0,12,13,0.01,7.69
@@ -23939,6 +24067,7 @@ Nigeria,2020-09-02,225,54463,216,1027,4,Nigeria,,206140000,Nigeria,26.42,2569,40
 Nigeria,2020-09-03,226,54588,125,1048,21,Nigeria,,206140000,Nigeria,26.48,5161,411077,199.42,13.28
 Nigeria,2020-09-04,227,54743,155,1051,3,Nigeria,,206140000,Nigeria,26.56,2188,413265,200.48,13.25
 Nigeria,2020-09-05,228,54905,162,1054,3,Nigeria,,206140000,Nigeria,26.63,0,413265,200.48,13.29
+Nigeria,2020-09-06,229,55005,100,1057,3,Nigeria,,206140000,Nigeria,26.68,7278,420543,204.01,13.08
 Norway,2020-02-26,36,1,1,0,0,Norway,,5421000,Norway,0.02,,,,
 Norway,2020-02-27,37,1,0,0,0,Norway,,5421000,Norway,0.02,,,,
 Norway,2020-02-28,38,6,5,0,0,Norway,,5421000,Norway,0.11,,,,
@@ -24132,6 +24261,7 @@ Norway,2020-09-02,225,11034,163,264,0,Norway,,5421000,Norway,203.54,14377,745279
 Norway,2020-09-03,226,11120,86,264,0,Norway,,5421000,Norway,205.13,16640,761919,14054.95,1.46
 Norway,2020-09-04,227,11231,111,264,0,Norway,,5421000,Norway,207.18,15540,777459,14341.62,1.44
 Norway,2020-09-05,228,11296,65,264,0,Norway,,5421000,Norway,208.37,0,777459,14341.62,1.45
+Norway,2020-09-06,229,11388,92,264,0,Norway,,5421000,Norway,210.07,0,777459,14341.62,1.46
 Oman,2020-02-24,34,2,2,0,0,Oman,,5107000,Oman,0.04,,,,
 Oman,2020-02-25,35,2,0,0,0,Oman,,5107000,Oman,0.04,,,,
 Oman,2020-02-26,36,4,2,0,0,Oman,,5107000,Oman,0.08,,,,
@@ -24327,6 +24457,7 @@ Oman,2020-09-02,225,85928,0,689,0,Oman,,5107000,Oman,1682.55,0,308333,6037.46,27
 Oman,2020-09-03,226,86380,452,705,16,Oman,,5107000,Oman,1691.4,0,308333,6037.46,28.02
 Oman,2020-09-04,227,86380,0,705,0,Oman,,5107000,Oman,1691.4,0,308333,6037.46,28.02
 Oman,2020-09-05,228,86380,0,705,0,Oman,,5107000,Oman,1691.4,0,308333,6037.46,28.02
+Oman,2020-09-06,229,87072,692,728,23,Oman,,5107000,Oman,1704.95,0,308333,6037.46,28.24
 Pakistan,2020-02-25,35,2,2,0,0,Pakistan,,220892000,Pakistan,0,,,,
 Pakistan,2020-02-26,36,2,0,0,0,Pakistan,,220892000,Pakistan,0,,,,
 Pakistan,2020-02-27,37,2,0,0,0,Pakistan,,220892000,Pakistan,0,,,,
@@ -24521,6 +24652,7 @@ Pakistan,2020-09-02,225,297014,865,6328,30,Pakistan,,220892000,Pakistan,134.46,0
 Pakistan,2020-09-03,226,297512,498,6335,7,Pakistan,,220892000,Pakistan,134.69,65442,2707470,1225.7,10.99
 Pakistan,2020-09-04,227,298025,513,6340,5,Pakistan,,220892000,Pakistan,134.92,0,2707470,1225.7,11.01
 Pakistan,2020-09-05,228,298025,0,6340,0,Pakistan,,220892000,Pakistan,134.92,0,2707470,1225.7,11.01
+Pakistan,2020-09-06,229,298903,878,6345,5,Pakistan,,220892000,Pakistan,135.32,0,2707470,1225.7,11.04
 occupiedPalestinianterritory,2020-03-05,44,4,4,0,0,Occupied Palestinian Territory,,5101000,Palestine,0.08,,,,
 occupiedPalestinianterritory,2020-03-06,45,7,3,0,0,Occupied Palestinian Territory,,5101000,Palestine,0.14,,,,
 occupiedPalestinianterritory,2020-03-07,46,16,9,0,0,Occupied Palestinian Territory,,5101000,Palestine,0.31,,,,
@@ -24706,6 +24838,7 @@ occupiedPalestinianterritory,2020-09-02,225,23875,594,162,3,Occupied Palestinian
 occupiedPalestinianterritory,2020-09-03,226,24471,596,167,5,Occupied Palestinian Territory,,5101000,Palestine,479.73,297329,297329,5828.84,8.23
 occupiedPalestinianterritory,2020-09-04,227,25142,671,170,3,Occupied Palestinian Territory,,5101000,Palestine,492.88,0,297329,5828.84,8.46
 occupiedPalestinianterritory,2020-09-05,228,25575,433,177,7,Occupied Palestinian Territory,,5101000,Palestine,501.37,0,297329,5828.84,8.6
+occupiedPalestinianterritory,2020-09-06,229,26127,552,181,4,Occupied Palestinian Territory,,5101000,Palestine,512.19,9292,306621,6011,8.52
 Panama,2020-03-10,49,1,1,0,0,Panama,,4315000,Panama,0.02,121,121,2.8,0.83
 Panama,2020-03-11,50,8,7,1,1,Panama,,4315000,Panama,0.19,0,121,2.8,6.61
 Panama,2020-03-12,51,11,3,1,0,Panama,,4315000,Panama,0.25,0,121,2.8,9.09
@@ -24886,6 +25019,7 @@ Panama,2020-09-02,225,94084,532,2030,12,Panama,,4315000,Panama,2180.39,0,264046,
 Panama,2020-09-03,226,94914,830,2046,16,Panama,,4315000,Panama,2199.63,0,264046,6119.26,35.95
 Panama,2020-09-04,227,95596,682,2063,17,Panama,,4315000,Panama,2215.43,0,264046,6119.26,36.2
 Panama,2020-09-05,228,96305,709,2075,12,Panama,,4315000,Panama,2231.87,0,264046,6119.26,36.47
+Panama,2020-09-06,229,97043,738,2086,11,Panama,,4315000,Panama,2248.97,0,264046,6119.26,36.75
 PapuaNewGuinea,2020-03-20,59,1,1,0,0,Papua New Guinea,,8947000,Papua New Guinea,0.01,,,,
 PapuaNewGuinea,2020-03-21,60,1,0,0,0,Papua New Guinea,,8947000,Papua New Guinea,0.01,,,,
 PapuaNewGuinea,2020-03-22,61,1,0,0,0,Papua New Guinea,,8947000,Papua New Guinea,0.01,,,,
@@ -25056,6 +25190,7 @@ PapuaNewGuinea,2020-09-02,225,471,11,5,0,Papua New Guinea,,8947000,Papua New Gui
 PapuaNewGuinea,2020-09-03,226,471,0,5,0,Papua New Guinea,,8947000,Papua New Guinea,5.26,0,85,0.95,554.12
 PapuaNewGuinea,2020-09-04,227,479,8,5,0,Papua New Guinea,,8947000,Papua New Guinea,5.35,0,85,0.95,563.53
 PapuaNewGuinea,2020-09-05,228,488,9,5,0,Papua New Guinea,,8947000,Papua New Guinea,5.45,0,85,0.95,574.12
+PapuaNewGuinea,2020-09-06,229,497,9,5,0,Papua New Guinea,,8947000,Papua New Guinea,5.55,0,85,0.95,584.71
 Paraguay,2020-03-08,47,1,1,0,0,Paraguay,,7133000,Paraguay,0.01,,,,
 Paraguay,2020-03-09,48,1,0,0,0,Paraguay,,7133000,Paraguay,0.01,,,,
 Paraguay,2020-03-10,49,1,0,0,0,Paraguay,,7133000,Paraguay,0.01,,,,
@@ -25238,6 +25373,7 @@ Paraguay,2020-09-02,225,19138,800,358,10,Paraguay,,7133000,Paraguay,268.3,0,1182
 Paraguay,2020-09-03,226,19959,821,373,15,Paraguay,,7133000,Paraguay,279.81,0,118290,1658.35,16.87
 Paraguay,2020-09-04,227,20654,695,398,25,Paraguay,,7133000,Paraguay,289.56,0,118290,1658.35,17.46
 Paraguay,2020-09-05,228,21871,1217,412,14,Paraguay,,7133000,Paraguay,306.62,0,118290,1658.35,18.49
+Paraguay,2020-09-06,229,22486,615,435,23,Paraguay,,7133000,Paraguay,315.24,0,118290,1658.35,19.01
 Peru,2020-03-06,45,1,1,0,0,Peru,,32972000,Peru,0,48,155,0.47,0.65
 Peru,2020-03-07,46,1,0,0,0,Peru,,32972000,Peru,0,64,219,0.66,0.46
 Peru,2020-03-08,47,6,5,0,0,Peru,,32972000,Peru,0.02,0,219,0.66,2.74
@@ -25422,6 +25558,7 @@ Peru,2020-09-02,225,657129,5092,29068,124,Peru,,32972000,Peru,1992.99,17192,3233
 Peru,2020-09-03,226,657129,0,29068,0,Peru,,32972000,Peru,1992.99,0,3233034,9805.39,20.33
 Peru,2020-09-04,227,670145,13016,29405,337,Peru,,32972000,Peru,2032.47,53492,3286526,9967.63,20.39
 Peru,2020-09-05,228,676848,6703,29554,149,Peru,,32972000,Peru,2052.8,0,3286526,9967.63,20.59
+Peru,2020-09-06,229,683702,6854,29687,133,Peru,,32972000,Peru,2073.58,66909,3353435,10170.55,20.39
 Philippines,2020-01-30,9,1,1,0,0,Philippines,,109581000,Philippines,0,,,,
 Philippines,2020-01-31,10,1,0,0,0,Philippines,,109581000,Philippines,0,,,,
 Philippines,2020-02-01,11,1,0,0,0,Philippines,,109581000,Philippines,0,,,,
@@ -25642,6 +25779,7 @@ Philippines,2020-09-02,225,226440,2176,3623,26,Philippines,,109581000,Philippine
 Philippines,2020-09-03,226,228403,1963,3688,65,Philippines,,109581000,Philippines,208.43,4605,703584,642.07,32.46
 Philippines,2020-09-04,227,232072,3669,3737,49,Philippines,,109581000,Philippines,211.78,4605,708189,646.27,32.77
 Philippines,2020-09-05,228,234570,2498,3790,53,Philippines,,109581000,Philippines,214.06,0,708189,646.27,33.12
+Philippines,2020-09-06,229,237365,2795,3875,85,Philippines,,109581000,Philippines,216.61,4605,712794,650.47,33.3
 Poland,2020-03-04,43,1,1,0,0,Poland,,37847000,Poland,0,25,584,1.54,0.17
 Poland,2020-03-05,44,1,0,0,0,Poland,,37847000,Poland,0,92,676,1.79,0.15
 Poland,2020-03-06,45,5,4,0,0,Poland,,37847000,Poland,0.01,179,855,2.26,0.58
@@ -25828,6 +25966,7 @@ Poland,2020-09-02,225,68517,595,2078,20,Poland,,37847000,Poland,181.04,0,2436012
 Poland,2020-09-03,226,69129,612,2092,14,Poland,,37847000,Poland,182.65,0,2436012,6436.47,2.84
 Poland,2020-09-04,227,69820,691,2100,8,Poland,,37847000,Poland,184.48,0,2436012,6436.47,2.87
 Poland,2020-09-05,228,70387,567,2113,13,Poland,,37847000,Poland,185.98,0,2436012,6436.47,2.89
+Poland,2020-09-06,229,70824,437,2120,7,Poland,,37847000,Poland,187.13,0,2436012,6436.47,2.91
 Portugal,2020-03-02,41,2,2,0,0,Portugal,,10197000,Portugal,0.02,,,,
 Portugal,2020-03-03,42,2,0,0,0,Portugal,,10197000,Portugal,0.02,,,,
 Portugal,2020-03-04,43,5,3,0,0,Portugal,,10197000,Portugal,0.05,,,,
@@ -26016,6 +26155,7 @@ Portugal,2020-09-02,225,58633,390,1827,3,Portugal,,10197000,Portugal,575,15739,2
 Portugal,2020-09-03,226,59051,418,1829,2,Portugal,,10197000,Portugal,579.1,0,2058544,20187.74,2.87
 Portugal,2020-09-04,227,59457,406,1833,4,Portugal,,10197000,Portugal,583.08,33513,2092057,20516.4,2.84
 Portugal,2020-09-05,228,59943,486,1838,5,Portugal,,10197000,Portugal,587.85,0,2092057,20516.4,2.87
+Portugal,2020-09-06,229,60258,315,1840,2,Portugal,,10197000,Portugal,590.94,0,2092057,20516.4,2.88
 Qatar,2020-02-29,39,1,1,0,0,Qatar,,2881000,Qatar,0.03,,,,
 Qatar,2020-03-01,40,3,2,0,0,Qatar,,2881000,Qatar,0.1,,,,
 Qatar,2020-03-02,41,3,0,0,0,Qatar,,2881000,Qatar,0.1,,,,
@@ -26206,6 +26346,7 @@ Qatar,2020-09-02,225,119206,212,199,1,Qatar,,2881000,Qatar,4137.66,0,634745,2203
 Qatar,2020-09-03,226,119420,214,201,2,Qatar,,2881000,Qatar,4145.09,10159,644904,22384.73,18.52
 Qatar,2020-09-04,227,119637,217,201,0,Qatar,,2881000,Qatar,4152.62,5344,650248,22570.22,18.4
 Qatar,2020-09-05,228,119864,227,202,1,Qatar,,2881000,Qatar,4160.5,0,650248,22570.22,18.43
+Qatar,2020-09-06,229,120095,231,203,1,Qatar,,2881000,Qatar,4168.52,9760,660008,22908.99,18.2
 Romania,2020-02-26,36,1,1,0,0,Romania,,19238000,Romania,0.01,,,,
 Romania,2020-02-27,37,1,0,0,0,Romania,,19238000,Romania,0.01,,,,
 Romania,2020-02-28,38,3,2,0,0,Romania,,19238000,Romania,0.02,,,,
@@ -26399,6 +26540,7 @@ Romania,2020-09-02,225,89891,1298,3721,40,Romania,,19238000,Romania,467.26,26816
 Romania,2020-09-03,226,91256,1365,3765,44,Romania,,19238000,Romania,474.35,23975,1876063,9751.86,4.86
 Romania,2020-09-04,227,92595,1339,3812,47,Romania,,19238000,Romania,481.31,25177,1901240,9882.73,4.87
 Romania,2020-09-05,228,93864,1269,3850,38,Romania,,19238000,Romania,487.91,0,1901240,9882.73,4.94
+Romania,2020-09-06,229,95014,1150,3893,43,Romania,,19238000,Romania,493.89,37251,1938491,10076.36,4.9
 Russia,2020-01-31,10,2,2,0,0,Russia,,145934000,Russia,0,,,,
 Russia,2020-02-01,11,2,0,0,0,Russia,,145934000,Russia,0,,,,
 Russia,2020-02-02,12,2,0,0,0,Russia,,145934000,Russia,0,,,,
@@ -26618,6 +26760,7 @@ Russia,2020-09-02,225,1001965,4893,17365,115,Russia,,145934000,Russia,686.59,0,3
 Russia,2020-09-03,226,1006923,4958,17479,114,Russia,,145934000,Russia,689.99,0,32968759,22591.55,3.05
 Russia,2020-09-04,227,1011987,5064,17598,119,Russia,,145934000,Russia,693.46,0,32968759,22591.55,3.07
 Russia,2020-09-05,228,1017131,5144,17707,109,Russia,,145934000,Russia,696.98,0,32968759,22591.55,3.09
+Russia,2020-09-06,229,1022228,5097,17768,61,Russia,,145934000,Russia,700.47,0,32968759,22591.55,3.1
 Rwanda,2020-03-14,53,1,1,0,0,Rwanda,,12952000,Rwanda,0.01,,,,
 Rwanda,2020-03-15,54,1,0,0,0,Rwanda,,12952000,Rwanda,0.01,,,,
 Rwanda,2020-03-16,55,5,4,0,0,Rwanda,,12952000,Rwanda,0.04,,,,
@@ -26794,6 +26937,7 @@ Rwanda,2020-09-02,225,4218,76,17,1,Rwanda,,12952000,Rwanda,32.57,5622,415329,320
 Rwanda,2020-09-03,226,4255,37,18,1,Rwanda,,12952000,Rwanda,32.85,5792,421121,3251.4,1.01
 Rwanda,2020-09-04,227,4304,49,18,0,Rwanda,,12952000,Rwanda,33.23,5079,426200,3290.61,1.01
 Rwanda,2020-09-05,228,4349,45,18,0,Rwanda,,12952000,Rwanda,33.58,0,426200,3290.61,1.02
+Rwanda,2020-09-06,229,4374,25,19,1,Rwanda,,12952000,Rwanda,33.77,10212,436412,3369.46,1
 SouthSudan,2020-04-05,75,1,1,0,0,South Sudan,,8260490,S. Sudan,0.01,,,,
 SouthSudan,2020-04-06,76,1,0,0,0,South Sudan,,8260490,S. Sudan,0.01,,,,
 SouthSudan,2020-04-07,77,2,1,0,0,South Sudan,,8260490,S. Sudan,0.02,,,,
@@ -26948,6 +27092,7 @@ SouthSudan,2020-09-02,225,2532,5,47,0,South Sudan,,8260490,S. Sudan,30.65,0,1762
 SouthSudan,2020-09-03,226,2533,1,47,0,South Sudan,,8260490,S. Sudan,30.66,0,17627,213.39,14.37
 SouthSudan,2020-09-04,227,2536,3,47,0,South Sudan,,8260490,S. Sudan,30.7,0,17627,213.39,14.39
 SouthSudan,2020-09-05,228,2544,8,48,1,South Sudan,,8260490,S. Sudan,30.8,0,17627,213.39,14.43
+SouthSudan,2020-09-06,229,2544,0,48,0,South Sudan,,8260490,S. Sudan,30.8,0,17627,213.39,14.43
 SaintKittsandNevis,2020-03-25,64,2,2,0,0,Saint Kitts and Nevis,,53000,Saint Kitts and Nevis,3.77,,,,
 SaintKittsandNevis,2020-03-26,65,2,0,0,0,Saint Kitts and Nevis,,53000,Saint Kitts and Nevis,3.77,,,,
 SaintKittsandNevis,2020-03-27,66,2,0,0,0,Saint Kitts and Nevis,,53000,Saint Kitts and Nevis,3.77,,,,
@@ -27113,6 +27258,7 @@ SaintKittsandNevis,2020-09-02,225,17,0,0,0,Saint Kitts and Nevis,,53000,Saint Ki
 SaintKittsandNevis,2020-09-03,226,17,0,0,0,Saint Kitts and Nevis,,53000,Saint Kitts and Nevis,32.08,0,391,737.74,4.35
 SaintKittsandNevis,2020-09-04,227,17,0,0,0,Saint Kitts and Nevis,,53000,Saint Kitts and Nevis,32.08,0,391,737.74,4.35
 SaintKittsandNevis,2020-09-05,228,17,0,0,0,Saint Kitts and Nevis,,53000,Saint Kitts and Nevis,32.08,0,391,737.74,4.35
+SaintKittsandNevis,2020-09-06,229,17,0,0,0,Saint Kitts and Nevis,,53000,Saint Kitts and Nevis,32.08,0,391,737.74,4.35
 SaintLucia,2020-03-14,53,1,1,0,0,Saint Lucia,,184000,Saint Lucia,0.54,,,,
 SaintLucia,2020-03-15,54,2,1,0,0,Saint Lucia,,184000,Saint Lucia,1.09,,,,
 SaintLucia,2020-03-16,55,2,0,0,0,Saint Lucia,,184000,Saint Lucia,1.09,,,,
@@ -27289,6 +27435,7 @@ SaintLucia,2020-09-02,225,26,0,0,0,Saint Lucia,,184000,Saint Lucia,14.13,79,5730
 SaintLucia,2020-09-03,226,26,0,0,0,Saint Lucia,,184000,Saint Lucia,14.13,0,5730,3114.13,0.45
 SaintLucia,2020-09-04,227,26,0,0,0,Saint Lucia,,184000,Saint Lucia,14.13,105,5835,3171.2,0.45
 SaintLucia,2020-09-05,228,26,0,0,0,Saint Lucia,,184000,Saint Lucia,14.13,0,5835,3171.2,0.45
+SaintLucia,2020-09-06,229,26,0,0,0,Saint Lucia,,184000,Saint Lucia,14.13,142,5977,3248.37,0.44
 SaintVincentandtheGrenadines,2020-03-14,53,1,1,0,0,Saint Vincent and the Grenadines,,111000,Saint Vincent and the Grenadines,0.9,,,,
 SaintVincentandtheGrenadines,2020-03-15,54,1,0,0,0,Saint Vincent and the Grenadines,,111000,Saint Vincent and the Grenadines,0.9,,,,
 SaintVincentandtheGrenadines,2020-03-16,55,1,0,0,0,Saint Vincent and the Grenadines,,111000,Saint Vincent and the Grenadines,0.9,,,,
@@ -27464,7 +27611,8 @@ SaintVincentandtheGrenadines,2020-09-01,224,61,1,0,0,Saint Vincent and the Grena
 SaintVincentandtheGrenadines,2020-09-02,225,61,0,0,0,Saint Vincent and the Grenadines,,111000,Saint Vincent and the Grenadines,54.95,0,175,157.66,34.86
 SaintVincentandtheGrenadines,2020-09-03,226,61,0,0,0,Saint Vincent and the Grenadines,,111000,Saint Vincent and the Grenadines,54.95,0,175,157.66,34.86
 SaintVincentandtheGrenadines,2020-09-04,227,61,0,0,0,Saint Vincent and the Grenadines,,111000,Saint Vincent and the Grenadines,54.95,0,175,157.66,34.86
-SaintVincentandtheGrenadines,2020-09-05,228,61,0,0,0,Saint Vincent and the Grenadines,,111000,Saint Vincent and the Grenadines,54.95,0,209,188.29,29.19
+SaintVincentandtheGrenadines,2020-09-05,228,61,0,0,0,Saint Vincent and the Grenadines,,111000,Saint Vincent and the Grenadines,54.95,0,175,157.66,34.86
+SaintVincentandtheGrenadines,2020-09-06,229,61,0,0,0,Saint Vincent and the Grenadines,,111000,Saint Vincent and the Grenadines,54.95,0,175,157.66,34.86
 SanMarino,2020-02-27,37,1,1,0,0,San Marino,,34000,San Marino,2.94,,,,
 SanMarino,2020-02-28,38,1,0,0,0,San Marino,,34000,San Marino,2.94,,,,
 SanMarino,2020-02-29,39,1,0,0,0,San Marino,,34000,San Marino,2.94,,,,
@@ -27657,6 +27805,7 @@ SanMarino,2020-09-02,225,735,20,42,0,San Marino,,34000,San Marino,2161.76,0,2692
 SanMarino,2020-09-03,226,735,0,42,0,San Marino,,34000,San Marino,2161.76,0,26925,79191.18,2.73
 SanMarino,2020-09-04,227,735,0,42,0,San Marino,,34000,San Marino,2161.76,0,26925,79191.18,2.73
 SanMarino,2020-09-05,228,716,0,42,0,San Marino,,34000,San Marino,2105.88,0,26925,79191.18,2.66
+SanMarino,2020-09-06,229,716,0,42,0,San Marino,,34000,San Marino,2105.88,0,26925,79191.18,2.66
 SaoTomeandPrincipe,2020-04-06,76,4,4,0,0,Sao Tome and Principe,,219000,Sao Tome and Principe,1.83,,,,
 SaoTomeandPrincipe,2020-04-07,77,4,0,0,0,Sao Tome and Principe,,219000,Sao Tome and Principe,1.83,,,,
 SaoTomeandPrincipe,2020-04-08,78,4,0,0,0,Sao Tome and Principe,,219000,Sao Tome and Principe,1.83,,,,
@@ -27810,6 +27959,7 @@ SaoTomeandPrincipe,2020-09-02,225,896,0,15,0,Sao Tome and Principe,,219000,Sao T
 SaoTomeandPrincipe,2020-09-03,226,897,1,15,0,Sao Tome and Principe,,219000,Sao Tome and Principe,409.59,0,6026,2751.6,14.89
 SaoTomeandPrincipe,2020-09-04,227,897,0,15,0,Sao Tome and Principe,,219000,Sao Tome and Principe,409.59,0,6026,2751.6,14.89
 SaoTomeandPrincipe,2020-09-05,228,898,1,15,0,Sao Tome and Principe,,219000,Sao Tome and Principe,410.05,0,6026,2751.6,14.9
+SaoTomeandPrincipe,2020-09-06,229,898,0,15,0,Sao Tome and Principe,,219000,Sao Tome and Principe,410.05,0,6026,2751.6,14.9
 SaudiArabia,2020-03-02,41,1,1,0,0,Saudi Arabia,,34814000,Saudi Arabia,0,,,,
 SaudiArabia,2020-03-03,42,1,0,0,0,Saudi Arabia,,34814000,Saudi Arabia,0,,,,
 SaudiArabia,2020-03-04,43,1,0,0,0,Saudi Arabia,,34814000,Saudi Arabia,0,,,,
@@ -27998,6 +28148,7 @@ SaudiArabia,2020-09-02,225,317486,816,3956,27,Saudi Arabia,,34814000,Saudi Arabi
 SaudiArabia,2020-09-03,226,318319,833,3982,26,Saudi Arabia,,34814000,Saudi Arabia,914.34,0,4001103,11492.8,7.96
 SaudiArabia,2020-09-04,227,319141,822,4015,33,Saudi Arabia,,34814000,Saudi Arabia,916.7,0,4001103,11492.8,7.98
 SaudiArabia,2020-09-05,228,319932,791,4049,34,Saudi Arabia,,34814000,Saudi Arabia,918.98,0,4001103,11492.8,8
+SaudiArabia,2020-09-06,229,320688,756,4081,32,Saudi Arabia,,34814000,Saudi Arabia,921.15,0,4001103,11492.8,8.01
 Senegal,2020-03-02,41,1,1,0,0,Senegal,,16744000,Senegal,0.01,2,2,0.01,50
 Senegal,2020-03-03,42,2,1,0,0,Senegal,,16744000,Senegal,0.01,0,2,0.01,100
 Senegal,2020-03-04,43,4,2,0,0,Senegal,,16744000,Senegal,0.02,0,2,0.01,200
@@ -28186,6 +28337,7 @@ Senegal,2020-09-02,225,13743,88,287,3,Senegal,,16744000,Senegal,82.08,4788,15204
 Senegal,2020-09-03,226,13826,83,287,0,Senegal,,16744000,Senegal,82.57,0,152040,908.03,9.09
 Senegal,2020-09-04,227,13881,55,289,2,Senegal,,16744000,Senegal,82.9,0,152040,908.03,9.13
 Senegal,2020-09-05,228,13948,67,290,1,Senegal,,16744000,Senegal,83.3,0,152040,908.03,9.17
+Senegal,2020-09-06,229,13987,39,290,0,Senegal,,16744000,Senegal,83.53,3072,155112,926.37,9.02
 Serbia,2020-03-06,45,1,1,0,0,Serbia,,8737000,Serbia,0.01,11,67,0.77,1.49
 Serbia,2020-03-07,46,1,0,0,0,Serbia,,8737000,Serbia,0.01,24,91,1.04,1.1
 Serbia,2020-03-08,47,1,0,0,0,Serbia,,8737000,Serbia,0.01,3,94,1.08,1.06
@@ -28370,6 +28522,7 @@ Serbia,2020-09-02,225,31581,99,716,1,Serbia,,8737000,Serbia,361.46,8752,947298,1
 Serbia,2020-09-03,226,31676,95,718,2,Serbia,,8737000,Serbia,362.55,8432,955730,10938.88,3.31
 Serbia,2020-09-04,227,31772,96,721,3,Serbia,,8737000,Serbia,363.65,10833,966563,11062.87,3.29
 Serbia,2020-09-05,228,31849,77,723,2,Serbia,,8737000,Serbia,364.53,0,966563,11062.87,3.3
+Serbia,2020-09-06,229,31905,56,724,1,Serbia,,8737000,Serbia,365.17,12037,978600,11200.64,3.26
 Seychelles,2020-03-14,53,2,2,0,0,Seychelles,,98000,Seychelles,2.04,,,,
 Seychelles,2020-03-15,54,2,0,0,0,Seychelles,,98000,Seychelles,2.04,,,,
 Seychelles,2020-03-16,55,3,1,0,0,Seychelles,,98000,Seychelles,3.06,,,,
@@ -28546,6 +28699,7 @@ Seychelles,2020-09-02,225,136,0,0,0,Seychelles,,98000,Seychelles,138.78,0,3294,3
 Seychelles,2020-09-03,226,136,0,0,0,Seychelles,,98000,Seychelles,138.78,0,3294,3361.22,4.13
 Seychelles,2020-09-04,227,136,0,0,0,Seychelles,,98000,Seychelles,138.78,0,3294,3361.22,4.13
 Seychelles,2020-09-05,228,136,0,0,0,Seychelles,,98000,Seychelles,138.78,0,3294,3361.22,4.13
+Seychelles,2020-09-06,229,136,0,0,0,Seychelles,,98000,Seychelles,138.78,0,3294,3361.22,4.13
 SierraLeone,2020-03-31,70,1,1,0,0,Sierra Leone,,7977000,Sierra Leone,0.01,,,,
 SierraLeone,2020-04-01,71,2,1,0,0,Sierra Leone,,7977000,Sierra Leone,0.03,,,,
 SierraLeone,2020-04-02,72,2,0,0,0,Sierra Leone,,7977000,Sierra Leone,0.03,,,,
@@ -28705,6 +28859,7 @@ SierraLeone,2020-09-02,225,2029,1,71,0,Sierra Leone,,7977000,Sierra Leone,25.44,
 SierraLeone,2020-09-03,226,2035,6,71,0,Sierra Leone,,7977000,Sierra Leone,25.51,0,22384,280.61,9.09
 SierraLeone,2020-09-04,227,2041,6,71,0,Sierra Leone,,7977000,Sierra Leone,25.59,0,22384,280.61,9.12
 SierraLeone,2020-09-05,228,2041,0,71,0,Sierra Leone,,7977000,Sierra Leone,25.59,0,22384,280.61,9.12
+SierraLeone,2020-09-06,229,2054,13,71,0,Sierra Leone,,7977000,Sierra Leone,25.75,0,22384,280.61,9.18
 Singapore,2020-01-23,2,1,1,0,0,Singapore,,5850000,Singapore,0.02,,,,
 Singapore,2020-01-24,3,3,2,0,0,Singapore,,5850000,Singapore,0.05,,,,
 Singapore,2020-01-25,4,3,0,0,0,Singapore,,5850000,Singapore,0.05,,,,
@@ -28932,6 +29087,7 @@ Singapore,2020-09-02,225,56860,8,27,0,Singapore,,5850000,Singapore,971.97,0,2068
 Singapore,2020-09-03,226,56908,48,27,0,Singapore,,5850000,Singapore,972.79,0,2068284,35355.28,2.75
 Singapore,2020-09-04,227,56948,40,27,0,Singapore,,5850000,Singapore,973.47,0,2068284,35355.28,2.75
 Singapore,2020-09-05,228,56982,34,27,0,Singapore,,5850000,Singapore,974.05,0,2068284,35355.28,2.76
+Singapore,2020-09-06,229,57022,40,27,0,Singapore,,5850000,Singapore,974.74,0,2068284,35355.28,2.76
 Slovakia,2020-03-06,45,1,1,0,0,Slovakia,,5460000,Slovakia,0.02,33,339,6.21,0.29
 Slovakia,2020-03-07,46,1,0,0,0,Slovakia,,5460000,Slovakia,0.02,53,392,7.18,0.26
 Slovakia,2020-03-08,47,3,2,0,0,Slovakia,,5460000,Slovakia,0.05,104,496,9.08,0.6
@@ -29116,6 +29272,7 @@ Slovakia,2020-09-02,225,4042,53,33,0,Slovakia,,5460000,Slovakia,74.03,2428,34012
 Slovakia,2020-09-03,226,4163,121,37,4,Slovakia,,5460000,Slovakia,76.25,3519,343642,6293.81,1.21
 Slovakia,2020-09-04,227,4300,137,37,0,Slovakia,,5460000,Slovakia,78.75,4772,348414,6381.21,1.23
 Slovakia,2020-09-05,228,4526,226,37,0,Slovakia,,5460000,Slovakia,82.89,0,348414,6381.21,1.3
+Slovakia,2020-09-06,229,4614,88,37,0,Slovakia,,5460000,Slovakia,84.51,8409,356823,6535.22,1.29
 Slovenia,2020-03-05,44,2,2,0,0,Slovenia,,2079000,Slovenia,0.1,,,,
 Slovenia,2020-03-06,45,7,5,0,0,Slovenia,,2079000,Slovenia,0.34,,,,
 Slovenia,2020-03-07,46,7,0,0,0,Slovenia,,2079000,Slovenia,0.34,,,,
@@ -29300,7 +29457,8 @@ Slovenia,2020-09-01,224,2924,41,133,0,Slovenia,,2079000,Slovenia,140.64,1415,160
 Slovenia,2020-09-02,225,2979,55,134,1,Slovenia,,2079000,Slovenia,143.29,1608,161847,7784.85,1.84
 Slovenia,2020-09-03,226,3032,53,134,0,Slovenia,,2079000,Slovenia,145.84,1653,163500,7864.36,1.85
 Slovenia,2020-09-04,227,3079,47,134,0,Slovenia,,2079000,Slovenia,148.1,1733,165233,7947.72,1.86
-Slovenia,2020-09-05,228,3122,43,135,1,Slovenia,,2079000,Slovenia,150.17,0,1571467,75587.64,0.2
+Slovenia,2020-09-05,228,3122,43,135,1,Slovenia,,2079000,Slovenia,150.17,0,165233,7947.72,1.89
+Slovenia,2020-09-06,229,3165,43,135,0,Slovenia,,2079000,Slovenia,152.24,2920,168153,8088.17,1.88
 Somalia,2020-03-16,55,1,1,0,0,Somalia,,15893000,Somalia,0.01,,,,
 Somalia,2020-03-17,56,1,0,0,0,Somalia,,15893000,Somalia,0.01,,,,
 Somalia,2020-03-18,57,1,0,0,0,Somalia,,15893000,Somalia,0.01,,,,
@@ -29475,6 +29633,7 @@ Somalia,2020-09-02,225,3310,0,98,0,Somalia,,15893000,Somalia,20.83,0,19205,120.8
 Somalia,2020-09-03,226,3310,0,98,0,Somalia,,15893000,Somalia,20.83,0,19205,120.84,17.24
 Somalia,2020-09-04,227,3332,22,97,0,Somalia,,15893000,Somalia,20.97,0,19205,120.84,17.35
 Somalia,2020-09-05,228,3332,0,97,0,Somalia,,15893000,Somalia,20.97,0,19205,120.84,17.35
+Somalia,2020-09-06,229,3362,30,97,0,Somalia,,15893000,Somalia,21.15,0,19205,120.84,17.51
 SouthAfrica,2020-03-05,44,1,1,0,0,South Africa,,59309000,South Africa,0,,,,
 SouthAfrica,2020-03-06,45,1,0,0,0,South Africa,,59309000,South Africa,0,,,,
 SouthAfrica,2020-03-07,46,1,0,0,0,South Africa,,59309000,South Africa,0,,,,
@@ -29660,6 +29819,7 @@ SouthAfrica,2020-09-02,225,630595,2336,14389,126,South Africa,,59309000,South Af
 SouthAfrica,2020-09-03,226,633015,2420,14563,174,South Africa,,59309000,South Africa,1067.32,72229,3747101,6317.93,16.89
 SouthAfrica,2020-09-04,227,635078,2063,14678,115,South Africa,,59309000,South Africa,1070.8,0,3747101,6317.93,16.95
 SouthAfrica,2020-09-05,228,636884,1806,14779,101,South Africa,,59309000,South Africa,1073.84,0,3747101,6317.93,17
+SouthAfrica,2020-09-06,229,638517,1633,14889,110,South Africa,,59309000,South Africa,1076.59,36722,3783823,6379.85,16.87
 Spain,2020-02-01,11,1,1,0,0,Spain,,46755000,Spain,0,,,,
 Spain,2020-02-02,12,1,0,0,0,Spain,,46755000,Spain,0,,,,
 Spain,2020-02-03,13,1,0,0,0,Spain,,46755000,Spain,0,,,,
@@ -29878,6 +30038,7 @@ Spain,2020-09-02,225,479554,8581,29194,42,Spain,,46755000,Spain,1025.67,0,851744
 Spain,2020-09-03,226,488513,8959,29234,40,Spain,,46755000,Spain,1044.84,0,8517446,18217.19,5.74
 Spain,2020-09-04,227,498989,10476,29418,184,Spain,,46755000,Spain,1067.24,0,8517446,18217.19,5.86
 Spain,2020-09-05,228,498989,0,29418,0,Spain,,46755000,Spain,1067.24,0,8517446,18217.19,5.86
+Spain,2020-09-06,229,498989,0,29418,0,Spain,,46755000,Spain,1067.24,0,8517446,18217.19,5.86
 SriLanka,2020-01-27,6,1,1,0,0,Sri Lanka,,21413000,Sri Lanka,0,,,,
 SriLanka,2020-01-28,7,1,0,0,0,Sri Lanka,,21413000,Sri Lanka,0,,,,
 SriLanka,2020-01-29,8,1,0,0,0,Sri Lanka,,21413000,Sri Lanka,0,,,,
@@ -30101,6 +30262,7 @@ SriLanka,2020-09-02,225,3101,9,12,0,Sri Lanka,,21413000,Sri Lanka,14.48,0,2082,9
 SriLanka,2020-09-03,226,3111,10,12,0,Sri Lanka,,21413000,Sri Lanka,14.53,0,2082,9.72,149.42
 SriLanka,2020-09-04,227,3115,4,12,0,Sri Lanka,,21413000,Sri Lanka,14.55,0,2082,9.72,149.62
 SriLanka,2020-09-05,228,3121,6,12,0,Sri Lanka,,21413000,Sri Lanka,14.58,0,2082,9.72,149.9
+SriLanka,2020-09-06,229,3123,2,12,0,Sri Lanka,,21413000,Sri Lanka,14.58,0,2082,9.72,150
 Sudan,2020-03-13,52,1,1,1,1,Sudan,,43849000,Sudan,0,,,,
 Sudan,2020-03-14,53,1,0,1,0,Sudan,,43849000,Sudan,0,,,,
 Sudan,2020-03-15,54,1,0,1,0,Sudan,,43849000,Sudan,0,,,,
@@ -30278,6 +30440,7 @@ Sudan,2020-09-02,225,13189,0,823,0,Sudan,,43849000,Sudan,30.08,0,35411,80.76,37.
 Sudan,2020-09-03,226,13189,0,823,0,Sudan,,43849000,Sudan,30.08,0,35411,80.76,37.25
 Sudan,2020-09-04,227,13189,0,823,0,Sudan,,43849000,Sudan,30.08,0,35411,80.76,37.25
 Sudan,2020-09-05,228,13407,218,832,9,Sudan,,43849000,Sudan,30.58,0,35411,80.76,37.86
+Sudan,2020-09-06,229,13437,30,833,1,Sudan,,43849000,Sudan,30.64,0,35411,80.76,37.95
 Suriname,2020-03-14,53,1,1,0,0,Suriname,,587000,Suriname,0.17,,,,
 Suriname,2020-03-15,54,1,0,0,0,Suriname,,587000,Suriname,0.17,,,,
 Suriname,2020-03-16,55,1,0,0,0,Suriname,,587000,Suriname,0.17,,,,
@@ -30454,6 +30617,7 @@ Suriname,2020-09-02,225,4149,60,72,0,Suriname,,587000,Suriname,706.81,,,,
 Suriname,2020-09-03,226,4215,66,73,1,Suriname,,587000,Suriname,718.06,,,,
 Suriname,2020-09-04,227,4252,37,75,2,Suriname,,587000,Suriname,724.36,,,,
 Suriname,2020-09-05,228,4320,68,76,1,Suriname,,587000,Suriname,735.95,,,,
+Suriname,2020-09-06,229,4346,26,85,9,Suriname,,587000,Suriname,740.37,,,,
 Sweden,2020-02-01,11,1,1,0,0,Sweden,,10099000,Sweden,0.01,,,,
 Sweden,2020-02-02,12,1,0,0,0,Sweden,,10099000,Sweden,0.01,,,,
 Sweden,2020-02-03,13,1,0,0,0,Sweden,,10099000,Sweden,0.01,,,,
@@ -30672,6 +30836,7 @@ Sweden,2020-09-02,225,84532,11,5820,7,Sweden,,10099000,Sweden,837.03,0,783467,77
 Sweden,2020-09-03,226,84729,197,5832,12,Sweden,,10099000,Sweden,838.98,0,783467,7757.87,10.81
 Sweden,2020-09-04,227,84985,256,5835,3,Sweden,,10099000,Sweden,841.52,0,783467,7757.87,10.85
 Sweden,2020-09-05,228,84985,0,5835,0,Sweden,,10099000,Sweden,841.52,0,783467,7757.87,10.85
+Sweden,2020-09-06,229,84985,0,5835,0,Sweden,,10099000,Sweden,841.52,0,783467,7757.87,10.85
 Switzerland,2020-02-25,35,1,1,0,0,Switzerland,,8655000,Switzerland,0.01,,,,
 Switzerland,2020-02-26,36,1,0,0,0,Switzerland,,8655000,Switzerland,0.01,,,,
 Switzerland,2020-02-27,37,8,7,0,0,Switzerland,,8655000,Switzerland,0.09,,,,
@@ -30866,6 +31031,7 @@ Switzerland,2020-09-02,225,42763,370,2011,0,Switzerland,,8655000,Switzerland,494
 Switzerland,2020-09-03,226,43127,364,2013,2,Switzerland,,8655000,Switzerland,498.29,14911,1054652,12185.47,4.09
 Switzerland,2020-09-04,227,43532,405,2013,0,Switzerland,,8655000,Switzerland,502.97,16258,1070910,12373.31,4.06
 Switzerland,2020-09-05,228,43957,425,2013,0,Switzerland,,8655000,Switzerland,507.88,0,1070910,12373.31,4.1
+Switzerland,2020-09-06,229,44401,444,2013,0,Switzerland,,8655000,Switzerland,513.01,27630,1098540,12692.55,4.04
 SyrianArabRepublic,2020-03-22,61,1,1,0,0,Syrian Arab Republic,,17501000,Syria,0.01,,,,
 SyrianArabRepublic,2020-03-23,62,1,0,0,0,Syrian Arab Republic,,17501000,Syria,0.01,,,,
 SyrianArabRepublic,2020-03-24,63,1,0,0,0,Syrian Arab Republic,,17501000,Syria,0.01,,,,
@@ -31034,6 +31200,7 @@ SyrianArabRepublic,2020-09-02,225,2898,68,120,4,Syrian Arab Republic,,17501000,S
 SyrianArabRepublic,2020-09-03,226,2973,75,124,4,Syrian Arab Republic,,17501000,Syria,16.99,,,,
 SyrianArabRepublic,2020-09-04,227,3041,68,127,3,Syrian Arab Republic,,17501000,Syria,17.38,,,,
 SyrianArabRepublic,2020-09-05,228,3104,63,130,3,Syrian Arab Republic,,17501000,Syria,17.74,,,,
+SyrianArabRepublic,2020-09-06,229,3171,67,134,4,Syrian Arab Republic,,17501000,Syria,18.12,,,,
 Taiwan,2020-01-22,1,1,1,0,0,Taiwan,,23817000,Taiwan,0,44,56,0.24,1.79
 Taiwan,2020-01-23,2,1,0,0,0,Taiwan,,23817000,Taiwan,0,70,126,0.53,0.79
 Taiwan,2020-01-24,3,3,2,0,0,Taiwan,,23817000,Taiwan,0.01,57,183,0.77,1.64
@@ -31262,6 +31429,7 @@ Taiwan,2020-09-02,225,489,1,7,0,Taiwan,,23817000,Taiwan,2.05,0,85563,359.25,0.57
 Taiwan,2020-09-03,226,489,0,7,0,Taiwan,,23817000,Taiwan,2.05,0,85563,359.25,0.57
 Taiwan,2020-09-04,227,490,1,7,0,Taiwan,,23817000,Taiwan,2.06,0,85563,359.25,0.57
 Taiwan,2020-09-05,228,492,2,7,0,Taiwan,,23817000,Taiwan,2.07,0,85563,359.25,0.58
+Taiwan,2020-09-06,229,493,1,7,0,Taiwan,,23817000,Taiwan,2.07,0,85563,359.25,0.58
 Tajikistan,2020-04-30,100,15,15,0,0,Tajikistan,,9538000,Tajikistan,0.16,0,700,7.34,2.14
 Tajikistan,2020-05-01,101,15,0,0,0,Tajikistan,,9538000,Tajikistan,0.16,0,700,7.34,2.14
 Tajikistan,2020-05-02,102,76,61,2,2,Tajikistan,,9538000,Tajikistan,0.8,0,700,7.34,10.86
@@ -31391,6 +31559,7 @@ Tajikistan,2020-09-02,225,8654,35,69,1,Tajikistan,,9538000,Tajikistan,90.73,0,70
 Tajikistan,2020-09-03,226,8690,36,69,0,Tajikistan,,9538000,Tajikistan,91.11,0,700,7.34,1241.43
 Tajikistan,2020-09-04,227,8724,34,69,0,Tajikistan,,9538000,Tajikistan,91.47,0,700,7.34,1246.29
 Tajikistan,2020-09-05,228,8757,33,70,1,Tajikistan,,9538000,Tajikistan,91.81,0,700,7.34,1251
+Tajikistan,2020-09-06,229,8792,35,70,0,Tajikistan,,9538000,Tajikistan,92.18,0,700,7.34,1256
 Tanzania,2020-03-16,55,1,1,0,0,United Republic of Tanzania,,59734000,Tanzania,0,,,,
 Tanzania,2020-03-17,56,1,0,0,0,United Republic of Tanzania,,59734000,Tanzania,0,,,,
 Tanzania,2020-03-18,57,3,2,0,0,United Republic of Tanzania,,59734000,Tanzania,0.01,,,,
@@ -31565,6 +31734,7 @@ Tanzania,2020-09-02,225,509,0,21,0,United Republic of Tanzania,,59734000,Tanzani
 Tanzania,2020-09-03,226,509,0,21,0,United Republic of Tanzania,,59734000,Tanzania,0.85,0,3880,6.5,13.12
 Tanzania,2020-09-04,227,509,0,21,0,United Republic of Tanzania,,59734000,Tanzania,0.85,0,3880,6.5,13.12
 Tanzania,2020-09-05,228,509,0,21,0,United Republic of Tanzania,,59734000,Tanzania,0.85,0,3880,6.5,13.12
+Tanzania,2020-09-06,229,509,0,21,0,United Republic of Tanzania,,59734000,Tanzania,0.85,0,3880,6.5,13.12
 Thailand,2020-01-22,1,2,2,0,0,Thailand,,69800000,Thailand,0,,,,
 Thailand,2020-01-23,2,3,1,0,0,Thailand,,69800000,Thailand,0,,,,
 Thailand,2020-01-24,3,5,2,0,0,Thailand,,69800000,Thailand,0.01,,,,
@@ -31793,6 +31963,7 @@ Thailand,2020-09-02,225,3427,2,58,0,Thailand,,69800000,Thailand,4.91,1373,421343
 Thailand,2020-09-03,226,3431,4,58,0,Thailand,,69800000,Thailand,4.92,0,421343,603.64,0.81
 Thailand,2020-09-04,227,3431,0,58,0,Thailand,,69800000,Thailand,4.92,2009,423352,606.52,0.81
 Thailand,2020-09-05,228,3444,13,58,0,Thailand,,69800000,Thailand,4.93,0,423352,606.52,0.81
+Thailand,2020-09-06,229,3445,1,58,0,Thailand,,69800000,Thailand,4.94,1193,424545,608.23,0.81
 TheGambia,2020-03-17,56,1,1,0,0,The Gambia,,2417000,The Gambia,0.04,,,,
 TheGambia,2020-03-18,57,1,0,0,0,The Gambia,,2417000,The Gambia,0.04,,,,
 TheGambia,2020-03-19,58,1,0,0,0,The Gambia,,2417000,The Gambia,0.04,,,,
@@ -31966,6 +32137,7 @@ TheGambia,2020-09-02,225,3067,38,97,1,The Gambia,,2417000,The Gambia,126.89,309,
 TheGambia,2020-09-03,226,3101,34,99,2,The Gambia,,2417000,The Gambia,128.3,0,13663,565.29,22.7
 TheGambia,2020-09-04,227,3120,19,99,0,The Gambia,,2417000,The Gambia,129.09,271,13934,576.5,22.39
 TheGambia,2020-09-05,228,3150,30,99,0,The Gambia,,2417000,The Gambia,130.33,0,13934,576.5,22.61
+TheGambia,2020-09-06,229,3197,47,99,0,The Gambia,,2417000,The Gambia,132.27,278,14212,588,22.5
 EastTimor,2020-03-22,61,1,1,0,0,Timor-Leste,,1318000,Timor-Leste,0.08,,,,
 EastTimor,2020-03-23,62,1,0,0,0,Timor-Leste,,1318000,Timor-Leste,0.08,,,,
 EastTimor,2020-03-24,63,1,0,0,0,Timor-Leste,,1318000,Timor-Leste,0.08,,,,
@@ -32134,6 +32306,7 @@ EastTimor,2020-09-02,225,27,0,0,0,Timor-Leste,,1318000,Timor-Leste,2.05,,,,
 EastTimor,2020-09-03,226,27,0,0,0,Timor-Leste,,1318000,Timor-Leste,2.05,,,,
 EastTimor,2020-09-04,227,27,0,0,0,Timor-Leste,,1318000,Timor-Leste,2.05,,,,
 EastTimor,2020-09-05,228,27,0,0,0,Timor-Leste,,1318000,Timor-Leste,2.05,,,,
+EastTimor,2020-09-06,229,27,0,0,0,Timor-Leste,,1318000,Timor-Leste,2.05,,,,
 Togo,2020-03-06,45,1,1,0,0,Togo,,8279000,Togo,0.01,,,,
 Togo,2020-03-07,46,1,0,0,0,Togo,,8279000,Togo,0.01,,,,
 Togo,2020-03-08,47,1,0,0,0,Togo,,8279000,Togo,0.01,,,,
@@ -32318,6 +32491,7 @@ Togo,2020-09-02,225,1434,18,30,2,Togo,,8279000,Togo,17.32,961,66141,798.9,2.17
 Togo,2020-09-03,226,1443,9,31,1,Togo,,8279000,Togo,17.43,938,67079,810.23,2.15
 Togo,2020-09-04,227,1457,14,31,0,Togo,,8279000,Togo,17.6,705,67784,818.75,2.15
 Togo,2020-09-05,228,1477,20,32,1,Togo,,8279000,Togo,17.84,0,67784,818.75,2.18
+Togo,2020-09-06,229,1488,11,32,0,Togo,,8279000,Togo,17.97,2049,69833,843.5,2.13
 TrinidadandTobago,2020-03-14,53,2,2,0,0,Trinidad and Tobago,,1399000,Trinidad and Tobago,0.14,,,,
 TrinidadandTobago,2020-03-15,54,2,0,0,0,Trinidad and Tobago,,1399000,Trinidad and Tobago,0.14,,,,
 TrinidadandTobago,2020-03-16,55,4,2,0,0,Trinidad and Tobago,,1399000,Trinidad and Tobago,0.29,,,,
@@ -32494,6 +32668,7 @@ TrinidadandTobago,2020-09-02,225,1920,123,28,1,Trinidad and Tobago,,1399000,Trin
 TrinidadandTobago,2020-09-03,226,1984,64,29,1,Trinidad and Tobago,,1399000,Trinidad and Tobago,141.82,515,24449,1747.61,8.11
 TrinidadandTobago,2020-09-04,227,2040,56,31,2,Trinidad and Tobago,,1399000,Trinidad and Tobago,145.82,0,24449,1747.61,8.34
 TrinidadandTobago,2020-09-05,228,2230,190,33,2,Trinidad and Tobago,,1399000,Trinidad and Tobago,159.4,0,24449,1747.61,9.12
+TrinidadandTobago,2020-09-06,229,2250,20,34,1,Trinidad and Tobago,,1399000,Trinidad and Tobago,160.83,0,24449,1747.61,9.2
 Tunisia,2020-03-04,43,1,1,0,0,Tunisia,,11819000,Tunisia,0.01,,,,
 Tunisia,2020-03-05,44,1,0,0,0,Tunisia,,11819000,Tunisia,0.01,,,,
 Tunisia,2020-03-06,45,1,0,0,0,Tunisia,,11819000,Tunisia,0.01,,,,
@@ -32680,6 +32855,7 @@ Tunisia,2020-09-02,225,4196,233,81,1,Tunisia,,11819000,Tunisia,35.5,2355,146397,
 Tunisia,2020-09-03,226,4394,198,84,3,Tunisia,,11819000,Tunisia,37.18,1815,148212,1254.01,2.96
 Tunisia,2020-09-04,227,4542,148,87,3,Tunisia,,11819000,Tunisia,38.43,2583,150795,1275.87,3.01
 Tunisia,2020-09-05,228,4776,234,93,6,Tunisia,,11819000,Tunisia,40.41,0,150795,1275.87,3.17
+Tunisia,2020-09-06,229,5041,265,93,0,Tunisia,,11819000,Tunisia,42.65,5067,155862,1318.74,3.23
 Turkey,2020-03-11,50,1,1,0,0,Turkey,,84339000,Turkey,0,0,2900,3.44,0.03
 Turkey,2020-03-12,51,1,0,0,0,Turkey,,84339000,Turkey,0,0,2900,3.44,0.03
 Turkey,2020-03-13,52,5,4,0,0,Turkey,,84339000,Turkey,0.01,0,2900,3.44,0.17
@@ -32859,6 +33035,7 @@ Turkey,2020-09-02,225,273301,1596,6462,45,Turkey,,84339000,Turkey,324.05,0,72479
 Turkey,2020-09-03,226,274943,1642,6511,49,Turkey,,84339000,Turkey,326,218152,7466087,8852.47,3.68
 Turkey,2020-09-04,227,276555,1612,6564,53,Turkey,,84339000,Turkey,327.91,0,7466087,8852.47,3.7
 Turkey,2020-09-05,228,278228,1673,6620,56,Turkey,,84339000,Turkey,329.89,0,7466087,8852.47,3.73
+Turkey,2020-09-06,229,279806,1578,6673,53,Turkey,,84339000,Turkey,331.76,0,7466087,8852.47,3.75
 Uganda,2020-03-21,60,1,1,0,0,Uganda,,45741000,Uganda,0,,,,
 Uganda,2020-03-22,61,1,0,0,0,Uganda,,45741000,Uganda,0,,,,
 Uganda,2020-03-23,62,9,8,0,0,Uganda,,45741000,Uganda,0.02,35,35,0.08,25.71
@@ -33028,6 +33205,7 @@ Uganda,2020-09-02,225,3112,75,32,0,Uganda,,45741000,Uganda,6.8,7697,385882,843.6
 Uganda,2020-09-03,226,3288,176,33,1,Uganda,,45741000,Uganda,7.19,0,385882,843.62,0.85
 Uganda,2020-09-04,227,3353,65,35,2,Uganda,,45741000,Uganda,7.33,5453,391335,855.55,0.86
 Uganda,2020-09-05,228,3539,186,39,4,Uganda,,45741000,Uganda,7.74,0,391335,855.55,0.9
+Uganda,2020-09-06,229,3667,128,41,2,Uganda,,45741000,Uganda,8.02,13942,405277,886.03,0.9
 Ukraine,2020-03-03,42,1,1,0,0,Ukraine,,43734000,Ukraine,0,,,,
 Ukraine,2020-03-04,43,1,0,0,0,Ukraine,,43734000,Ukraine,0,,,,
 Ukraine,2020-03-05,44,1,0,0,0,Ukraine,,43734000,Ukraine,0,,,,
@@ -33215,6 +33393,7 @@ Ukraine,2020-09-02,225,128833,2554,2705,51,Ukraine,,43734000,Ukraine,294.58,4105
 Ukraine,2020-09-03,226,131300,2467,2759,54,Ukraine,,43734000,Ukraine,300.22,23990,1621697,3708.09,8.1
 Ukraine,2020-09-04,227,134069,2769,2812,53,Ukraine,,43734000,Ukraine,306.56,26390,1648087,3768.43,8.13
 Ukraine,2020-09-05,228,136966,2897,2863,51,Ukraine,,43734000,Ukraine,313.18,0,1648087,3768.43,8.31
+Ukraine,2020-09-06,229,139171,2205,2898,35,Ukraine,,43734000,Ukraine,318.22,45706,1693793,3872.94,8.22
 UnitedArabEmirates,2020-01-29,8,4,4,0,0,United Arab Emirates,,9890000,United Arab Emirates,0.04,,,,
 UnitedArabEmirates,2020-01-30,9,4,0,0,0,United Arab Emirates,,9890000,United Arab Emirates,0.04,,,,
 UnitedArabEmirates,2020-01-31,10,4,0,0,0,United Arab Emirates,,9890000,United Arab Emirates,0.04,,,,
@@ -33436,6 +33615,7 @@ UnitedArabEmirates,2020-09-02,225,71540,735,387,3,United Arab Emirates,,9890000,
 UnitedArabEmirates,2020-09-03,226,72154,614,387,0,United Arab Emirates,,9890000,United Arab Emirates,729.57,0,5387054,54469.71,1.34
 UnitedArabEmirates,2020-09-04,227,72766,612,387,0,United Arab Emirates,,9890000,United Arab Emirates,735.75,0,5387054,54469.71,1.35
 UnitedArabEmirates,2020-09-05,228,73471,705,388,1,United Arab Emirates,,9890000,United Arab Emirates,742.88,0,5387054,54469.71,1.36
+UnitedArabEmirates,2020-09-06,229,73984,513,388,0,United Arab Emirates,,9890000,United Arab Emirates,748.07,0,5387054,54469.71,1.37
 UnitedKingdom,2020-01-31,10,2,2,0,0,UK,,67886000,United Kingdom,0,,,,
 UnitedKingdom,2020-02-01,11,2,0,0,0,UK,,67886000,United Kingdom,0,,,,
 UnitedKingdom,2020-02-02,12,2,0,0,0,UK,,67886000,United Kingdom,0,,,,
@@ -33655,6 +33835,7 @@ UnitedKingdom,2020-09-02,225,340929,1514,41602,10,UK,,67886000,United Kingdom,50
 UnitedKingdom,2020-09-03,226,342708,1779,41616,14,UK,,67886000,United Kingdom,504.83,1346688,17619897,25955.13,1.95
 UnitedKingdom,2020-09-04,227,344686,1978,41626,10,UK,,67886000,United Kingdom,507.74,0,17619897,25955.13,1.96
 UnitedKingdom,2020-09-05,228,346513,1827,41638,12,UK,,67886000,United Kingdom,510.43,0,17619897,25955.13,1.97
+UnitedKingdom,2020-09-06,229,349500,2987,41640,2,UK,,67886000,United Kingdom,514.83,0,17619897,25955.13,1.98
 US,2020-01-22,1,1,1,0,0,USA,,331003000,United States,0,10,24,0.01,4.17
 US,2020-01-23,2,1,0,0,0,USA,,331003000,United States,0,36,60,0.02,1.67
 US,2020-01-24,3,2,1,0,0,USA,,331003000,United States,0,53,113,0.03,1.77
@@ -33883,6 +34064,7 @@ US,2020-09-02,225,6113510,39670,185720,1056,USA,,331003000,United States,1846.97
 US,2020-09-03,226,6150016,36506,186790,1070,USA,,331003000,United States,1857.99,644842,79092266,23894.73,7.78
 US,2020-09-04,227,6200518,50502,187755,965,USA,,331003000,United States,1873.25,724420,79816686,24113.58,7.77
 US,2020-09-05,228,6244970,44452,188538,783,USA,,331003000,United States,1886.68,0,79816686,24113.58,7.82
+US,2020-09-06,229,6276365,31395,188941,403,USA,,331003000,United States,1896.17,1704377,81521063,24628.5,7.7
 Uruguay,2020-03-13,52,4,4,0,0,Uruguay,,3474000,Uruguay,0.12,,,,
 Uruguay,2020-03-14,53,6,2,0,0,Uruguay,,3474000,Uruguay,0.17,,,,
 Uruguay,2020-03-15,54,8,2,0,0,Uruguay,,3474000,Uruguay,0.23,,,,
@@ -34060,6 +34242,7 @@ Uruguay,2020-09-02,225,1626,15,44,0,Uruguay,,3474000,Uruguay,46.8,0,147594,4248.
 Uruguay,2020-09-03,226,1636,10,44,0,Uruguay,,3474000,Uruguay,47.09,0,147594,4248.53,1.11
 Uruguay,2020-09-04,227,1653,17,45,1,Uruguay,,3474000,Uruguay,47.58,0,147594,4248.53,1.12
 Uruguay,2020-09-05,228,1669,16,45,0,Uruguay,,3474000,Uruguay,48.04,0,147594,4248.53,1.13
+Uruguay,2020-09-06,229,1679,10,45,0,Uruguay,,3474000,Uruguay,48.33,0,147594,4248.53,1.14
 Uzbekistan,2020-03-15,54,1,1,0,0,Uzbekistan,,33469000,Uzbekistan,0,,,,
 Uzbekistan,2020-03-16,55,6,5,0,0,Uzbekistan,,33469000,Uzbekistan,0.02,,,,
 Uzbekistan,2020-03-17,56,10,4,0,0,Uzbekistan,,33469000,Uzbekistan,0.03,,,,
@@ -34235,6 +34418,7 @@ Uzbekistan,2020-09-02,225,42437,310,327,4,Uzbekistan,,33469000,Uzbekistan,126.79
 Uzbekistan,2020-09-03,226,42688,251,331,4,Uzbekistan,,33469000,Uzbekistan,127.54,0,371000,1108.49,11.51
 Uzbekistan,2020-09-04,227,42998,310,338,7,Uzbekistan,,33469000,Uzbekistan,128.47,0,371000,1108.49,11.59
 Uzbekistan,2020-09-05,228,43293,295,343,5,Uzbekistan,,33469000,Uzbekistan,129.35,0,371000,1108.49,11.67
+Uzbekistan,2020-09-06,229,43587,294,347,4,Uzbekistan,,33469000,Uzbekistan,130.23,0,371000,1108.49,11.75
 Venezuela,2020-03-14,53,2,2,0,0,Venezuela,,28436000,Venezuela,0.01,,,,
 Venezuela,2020-03-15,54,10,8,0,0,Venezuela,,28436000,Venezuela,0.04,,,,
 Venezuela,2020-03-16,55,17,7,0,0,Venezuela,,28436000,Venezuela,0.06,,,,
@@ -34411,6 +34595,7 @@ Venezuela,2020-09-02,225,48883,1127,398,7,Venezuela,,28436000,Venezuela,171.91,0
 Venezuela,2020-09-03,226,49877,994,402,4,Venezuela,,28436000,Venezuela,175.4,0,1129176,3970.94,4.42
 Venezuela,2020-09-04,227,50973,1096,412,10,Venezuela,,28436000,Venezuela,179.26,0,1129176,3970.94,4.51
 Venezuela,2020-09-05,228,52165,1192,420,8,Venezuela,,28436000,Venezuela,183.45,0,1129176,3970.94,4.62
+Venezuela,2020-09-06,229,53289,1124,428,8,Venezuela,,28436000,Venezuela,187.4,0,1129176,3970.94,4.72
 Vietnam,2020-01-23,2,2,2,0,0,Vietnam,,97339000,Vietnam,0,,,,
 Vietnam,2020-01-24,3,2,0,0,0,Vietnam,,97339000,Vietnam,0,,,,
 Vietnam,2020-01-25,4,2,0,0,0,Vietnam,,97339000,Vietnam,0,,,,
@@ -34638,6 +34823,7 @@ Vietnam,2020-09-02,225,1046,2,34,0,Vietnam,,97339000,Vietnam,1.07,0,261004,268.1
 Vietnam,2020-09-03,226,1046,0,35,1,Vietnam,,97339000,Vietnam,1.07,0,261004,268.14,0.4
 Vietnam,2020-09-04,227,1049,3,35,0,Vietnam,,97339000,Vietnam,1.08,0,261004,268.14,0.4
 Vietnam,2020-09-05,228,1049,0,35,0,Vietnam,,97339000,Vietnam,1.08,0,261004,268.14,0.4
+Vietnam,2020-09-06,229,1049,0,35,0,Vietnam,,97339000,Vietnam,1.08,0,261004,268.14,0.4
 WesternSahara,2020-04-05,75,4,4,0,0,Western Sahara,,597000,W. Sahara,0.67,,,,
 WesternSahara,2020-04-06,76,4,0,0,0,Western Sahara,,597000,W. Sahara,0.67,,,,
 WesternSahara,2020-04-07,77,4,0,0,0,Western Sahara,,597000,W. Sahara,0.67,,,,
@@ -34791,7 +34977,8 @@ WesternSahara,2020-09-01,224,10,0,1,0,Western Sahara,,597000,W. Sahara,1.68,0,24
 WesternSahara,2020-09-02,225,10,0,1,0,Western Sahara,,597000,W. Sahara,1.68,0,246,41.21,4.07
 WesternSahara,2020-09-03,226,10,0,1,0,Western Sahara,,597000,W. Sahara,1.68,0,246,41.21,4.07
 WesternSahara,2020-09-04,227,10,0,1,0,Western Sahara,,597000,W. Sahara,1.68,0,246,41.21,4.07
-WesternSahara,2020-09-05,228,10,0,1,0,Western Sahara,,597000,W. Sahara,1.68,0,370,61.98,2.7
+WesternSahara,2020-09-05,228,10,0,1,0,Western Sahara,,597000,W. Sahara,1.68,0,246,41.21,4.07
+WesternSahara,2020-09-06,229,10,0,1,0,Western Sahara,,597000,W. Sahara,1.68,0,246,41.21,4.07
 Yemen,2020-04-10,80,1,1,0,0,Yemen,,29826000,Yemen,0,,,,
 Yemen,2020-04-11,81,1,0,0,0,Yemen,,29826000,Yemen,0,,,,
 Yemen,2020-04-12,82,1,0,0,0,Yemen,,29826000,Yemen,0,,,,
@@ -34941,6 +35128,7 @@ Yemen,2020-09-02,225,1976,14,571,1,Yemen,,29826000,Yemen,6.63,,,,
 Yemen,2020-09-03,226,1979,3,571,0,Yemen,,29826000,Yemen,6.64,,,,
 Yemen,2020-09-04,227,1983,4,572,1,Yemen,,29826000,Yemen,6.65,,,,
 Yemen,2020-09-05,228,1983,0,572,0,Yemen,,29826000,Yemen,6.65,,,,
+Yemen,2020-09-06,229,1987,4,572,0,Yemen,,29826000,Yemen,6.66,,,,
 Zambia,2020-03-18,57,2,2,0,0,Zambia,,18384000,Zambia,0.01,,,,
 Zambia,2020-03-19,58,2,0,0,0,Zambia,,18384000,Zambia,0.01,,,,
 Zambia,2020-03-20,59,2,0,0,0,Zambia,,18384000,Zambia,0.01,,,,
@@ -35113,6 +35301,7 @@ Zambia,2020-09-02,225,12415,34,292,2,Zambia,,18384000,Zambia,67.53,0,114401,622.
 Zambia,2020-09-03,226,12523,108,292,0,Zambia,,18384000,Zambia,68.12,4089,118490,644.53,10.57
 Zambia,2020-09-04,227,12639,116,292,0,Zambia,,18384000,Zambia,68.75,1077,119567,650.39,10.57
 Zambia,2020-09-05,228,12709,70,292,0,Zambia,,18384000,Zambia,69.13,0,119567,650.39,10.63
+Zambia,2020-09-06,229,12776,67,295,3,Zambia,,18384000,Zambia,69.5,2667,122234,664.89,10.45
 Zimbabwe,2020-03-20,59,1,1,0,0,Zimbabwe,,14863000,Zimbabwe,0.01,,,,
 Zimbabwe,2020-03-21,60,3,2,0,0,Zimbabwe,,14863000,Zimbabwe,0.02,,,,
 Zimbabwe,2020-03-22,61,3,0,0,0,Zimbabwe,,14863000,Zimbabwe,0.02,,,,
@@ -35282,4 +35471,5 @@ Zimbabwe,2020-09-01,224,6559,62,203,1,Zimbabwe,,14863000,Zimbabwe,44.13,0,63185,
 Zimbabwe,2020-09-02,225,6638,79,206,3,Zimbabwe,,14863000,Zimbabwe,44.66,0,63185,425.12,10.51
 Zimbabwe,2020-09-03,226,6678,40,206,0,Zimbabwe,,14863000,Zimbabwe,44.93,0,63185,425.12,10.57
 Zimbabwe,2020-09-04,227,6837,159,206,0,Zimbabwe,,14863000,Zimbabwe,46,0,63185,425.12,10.82
-Zimbabwe,2020-09-05,228,6837,0,206,0,Zimbabwe,,14863000,Zimbabwe,46,0,137808,927.19,4.96
+Zimbabwe,2020-09-05,228,6837,0,206,0,Zimbabwe,,14863000,Zimbabwe,46,0,63185,425.12,10.82
+Zimbabwe,2020-09-06,229,6837,0,206,0,Zimbabwe,,14863000,Zimbabwe,46,0,63185,425.12,10.82
