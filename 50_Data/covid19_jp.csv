@@ -213,7 +213,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-04,1560505,70896,1352,60400,8472,,,214,126216142,1,Japan,,
 2020-09-05,1577444,71495,1361,61442,8047,,,210,126216142,1,Japan,,
 2020-09-06,1590895,71946,1369,62063,7964,,,211,126216142,1,Japan,,
-2020-09-07,0,71964,1369,0,0,,,0,126216142,1,Japan,,
+2020-09-07,0,72043,1369,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -12250,7 +12250,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-06,175349,826,1,704,107,,,0,,1,Japan,Quarantine,
 2020-09-06,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-09-06,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-09-07,,1811,105,,,,,,5248552,2,Japan,Hokkaido,01
+2020-09-07,,1812,105,,,,,,5248552,2,Japan,Hokkaido,01
 2020-09-07,,35,1,,,,,,1246138,2,Japan,Aomori,02
 2020-09-07,,23,0,,,,,,1226430,2,Japan,Iwate,03
 2020-09-07,,242,2,,,,,,2303160,2,Japan,Miyagi,04
@@ -12262,7 +12262,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-07,,482,19,,,,,,1937626,2,Japan,Gunma,10
 2020-09-07,,4118,92,,,,,,7337330,2,Japan,Saitama,11
 2020-09-07,,3199,64,,,,,,6279026,2,Japan,Chiba,12
-2020-09-07,,21772,369,,,,,,13942856,2,Japan,Tokyo,13
+2020-09-07,,21849,369,,,,,,13942856,2,Japan,Tokyo,13
 2020-09-07,,5425,126,,,,,,9200166,2,Japan,Kanagawa,14
 2020-09-07,,146,0,,,,,,2222004,2,Japan,Niigata,15
 2020-09-07,,402,26,,,,,,1042998,2,Japan,Toyama,16
@@ -12292,7 +12292,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-07,,4802,69,,,,,,5110113,2,Japan,Fukuoka,40
 2020-09-07,,238,0,,,,,,814211,2,Japan,Saga,41
 2020-09-07,,234,3,,,,,,1325205,2,Japan,Nagasaki,42
-2020-09-07,,544,8,,,,,,1746740,2,Japan,Kumamoto,43
+2020-09-07,,545,8,,,,,,1746740,2,Japan,Kumamoto,43
 2020-09-07,,157,2,,,,,,1134431,2,Japan,Oita,44
 2020-09-07,,360,1,,,,,,1072077,2,Japan,Miyazaki,45
 2020-09-07,,371,11,,,,,,1599984,2,Japan,Kagoshima,46
