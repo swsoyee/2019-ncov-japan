@@ -214,7 +214,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-05,1577444,71483,1361,61442,8047,,,210,126216142,1,Japan,,
 2020-09-06,1590895,71934,1369,62063,7964,,,211,126216142,1,Japan,,
 2020-09-07,1595070,72228,1380,62523,7926,,,209,126216142,1,Japan,,
-2020-09-08,0,72454,1380,0,0,,,0,126216142,1,Japan,,
+2020-09-08,0,72468,1382,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -12317,7 +12317,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-08,,22019,372,,,,,,13942856,2,Japan,Tokyo,13
 2020-09-08,,5468,126,,,,,,9200166,2,Japan,Kanagawa,14
 2020-09-08,,145,0,,,,,,2222004,2,Japan,Niigata,15
-2020-09-08,,403,26,,,,,,1042998,2,Japan,Toyama,16
+2020-09-08,,407,26,,,,,,1042998,2,Japan,Toyama,16
 2020-09-08,,708,39,,,,,,1137181,2,Japan,Ishikawa,17
 2020-09-08,,244,8,,,,,,767742,2,Japan,Fukui,18
 2020-09-08,,176,5,,,,,,812056,2,Japan,Yamanashi,19
@@ -12330,7 +12330,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-08,,1583,25,,,,,,2583140,2,Japan,Kyoto,26
 2020-09-08,,9088,166,,,,,,8823453,2,Japan,Osaka,27
 2020-09-08,,2378,54,,,,,,5463609,2,Japan,Hyogo,28
-2020-09-08,,524,8,,,,,,1331330,2,Japan,Nara,29
+2020-09-08,,525,8,,,,,,1331330,2,Japan,Nara,29
 2020-09-08,,234,4,,,,,,923721,2,Japan,Wakayama,30
 2020-09-08,,22,0,,,,,,555663,2,Japan,Tottori,31
 2020-09-08,,137,0,,,,,,673891,2,Japan,Shimane,32
@@ -12348,7 +12348,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-08,,157,2,,,,,,1134431,2,Japan,Oita,44
 2020-09-08,,360,1,,,,,,1072077,2,Japan,Miyazaki,45
 2020-09-08,,371,11,,,,,,1599984,2,Japan,Kagoshima,46
-2020-09-08,,2229,36,,,,,,1454184,2,Japan,Okinawa,47
+2020-09-08,,2238,38,,,,,,1454184,2,Japan,Okinawa,47
 2020-09-08,,14,0,,,,,,,1,Japan,Charter Flight,
 2020-09-08,,831,1,,,,,,,1,Japan,Quarantine,
 2020-09-08,,712,13,,,,,,,1,Japan,Diamond Princess,
