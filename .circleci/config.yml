@@ -10,7 +10,7 @@ jobs:
       - run: ssh -p $SSH_PORT $SSH_USER@$SSH_HOST
   deployShinyio:
     docker:
-      - image: bobfujp/shiny:latest
+      - image: bobfujp/shiny:57d0b256e9145a7a36e67ad0f932e3f059c3c19c
     steps:
       - checkout
       - run:
