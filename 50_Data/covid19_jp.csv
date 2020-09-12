@@ -218,7 +218,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-09,1637723,73236,1412,64083,7215,,,202,126216142,1,Japan,,
 2020-09-10,1662091,73947,1419,64820,6959,,,198,126216142,1,Japan,,
 2020-09-11,1685711,74591,1428,65576,6884,,,191,126216142,1,Japan,,
-2020-09-12,0,74591,1428,0,0,,,0,126216142,1,Japan,,
+2020-09-12,0,74596,1428,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -12524,7 +12524,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-12,,3324,66,,,,,,6279026,2,Japan,Chiba,12
 2020-09-12,,22631,380,,,,,,13942856,2,Japan,Tokyo,13
 2020-09-12,,5817,126,,,,,,9200166,2,Japan,Kanagawa,14
-2020-09-12,,147,0,,,,,,2222004,2,Japan,Niigata,15
+2020-09-12,,148,0,,,,,,2222004,2,Japan,Niigata,15
 2020-09-12,,408,26,,,,,,1042998,2,Japan,Toyama,16
 2020-09-12,,724,42,,,,,,1137181,2,Japan,Ishikawa,17
 2020-09-12,,244,8,,,,,,767742,2,Japan,Fukui,18
@@ -12543,9 +12543,9 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-12,,23,0,,,,,,555663,2,Japan,Tottori,31
 2020-09-12,,137,0,,,,,,673891,2,Japan,Shimane,32
 2020-09-12,,145,1,,,,,,1891346,2,Japan,Okayama,33
-2020-09-12,,456,3,,,,,,2807987,2,Japan,Hiroshima,34
+2020-09-12,,458,3,,,,,,2807987,2,Japan,Hiroshima,34
 2020-09-12,,192,1,,,,,,1355495,2,Japan,Yamaguchi,35
-2020-09-12,,146,8,,,,,,728633,2,Japan,Tokushima,36
+2020-09-12,,147,8,,,,,,728633,2,Japan,Tokushima,36
 2020-09-12,,88,2,,,,,,956069,2,Japan,Kagawa,37
 2020-09-12,,114,6,,,,,,1338811,2,Japan,Ehime,38
 2020-09-12,,137,3,,,,,,697674,2,Japan,Kochi,39
@@ -12554,7 +12554,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-12,,234,3,,,,,,1325205,2,Japan,Nagasaki,42
 2020-09-12,,563,8,,,,,,1746740,2,Japan,Kumamoto,43
 2020-09-12,,158,2,,,,,,1134431,2,Japan,Oita,44
-2020-09-12,,361,1,,,,,,1072077,2,Japan,Miyazaki,45
+2020-09-12,,362,1,,,,,,1072077,2,Japan,Miyazaki,45
 2020-09-12,,372,11,,,,,,1599984,2,Japan,Kagoshima,46
 2020-09-12,,2269,41,,,,,,1454184,2,Japan,Okinawa,47
 2020-09-12,,14,0,,,,,,,1,Japan,Charter Flight,
