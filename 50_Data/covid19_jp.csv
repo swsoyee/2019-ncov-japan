@@ -219,7 +219,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-10,1662091,73947,1419,64820,6959,,,198,126216142,1,Japan,,
 2020-09-11,1685711,74589,1428,65576,6884,,,191,126216142,1,Japan,,
 2020-09-12,1703734,75237,1441,66269,6814,,,190,126216142,1,Japan,,
-2020-09-13,0,75246,1441,0,0,,,0,126216142,1,Japan,,
+2020-09-13,0,75258,1441,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -12562,7 +12562,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-12,183507,853,1,704,130,,,0,,1,Japan,Quarantine,
 2020-09-12,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-09-12,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-09-13,,1851,106,,,,,,5248552,2,Japan,Hokkaido,01
+2020-09-13,,1854,106,,,,,,5248552,2,Japan,Hokkaido,01
 2020-09-13,,35,1,,,,,,1246138,2,Japan,Aomori,02
 2020-09-13,,23,0,,,,,,1226430,2,Japan,Iwate,03
 2020-09-13,,302,2,,,,,,2303160,2,Japan,Miyagi,04
@@ -12572,7 +12572,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-13,,609,15,,,,,,2868041,2,Japan,Ibaraki,08
 2020-09-13,,338,1,,,,,,1942312,2,Japan,Tochigi,09
 2020-09-13,,541,19,,,,,,1937626,2,Japan,Gunma,10
-2020-09-13,,4260,96,,,,,,7337330,2,Japan,Saitama,11
+2020-09-13,,4261,96,,,,,,7337330,2,Japan,Saitama,11
 2020-09-13,,3370,67,,,,,,6279026,2,Japan,Chiba,12
 2020-09-13,,22857,382,,,,,,13942856,2,Japan,Tokyo,13
 2020-09-13,,5885,127,,,,,,9200166,2,Japan,Kanagawa,14
@@ -12589,7 +12589,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-13,,471,7,,,,,,1413959,2,Japan,Shiga,25
 2020-09-13,,1616,25,,,,,,2583140,2,Japan,Kyoto,26
 2020-09-13,,9527,177,,,,,,8823453,2,Japan,Osaka,27
-2020-09-13,,2462,55,,,,,,5463609,2,Japan,Hyogo,28
+2020-09-13,,2470,55,,,,,,5463609,2,Japan,Hyogo,28
 2020-09-13,,530,8,,,,,,1331330,2,Japan,Nara,29
 2020-09-13,,236,4,,,,,,923721,2,Japan,Wakayama,30
 2020-09-13,,31,0,,,,,,555663,2,Japan,Tottori,31
