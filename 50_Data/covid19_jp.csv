@@ -222,7 +222,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-13,1715960,75675,1447,66839,6892,,,180,126216142,1,Japan,,
 2020-09-14,1718055,75943,1455,67206,6962,,,185,126216142,1,Japan,,
 2020-09-15,1745311,76475,1468,67795,6673,,,174,126216142,1,Japan,,
-2020-09-16,0,76817,1472,0,0,,,0,126216142,1,Japan,,
+2020-09-16,0,76892,1472,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -12729,9 +12729,9 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-16,,369,1,,,,,,1942312,2,Japan,Tochigi,09
 2020-09-16,,567,19,,,,,,1937626,2,Japan,Gunma,10
 2020-09-16,,4344,96,,,,,,7337330,2,Japan,Saitama,11
-2020-09-16,,3433,67,,,,,,6279026,2,Japan,Chiba,12
+2020-09-16,,3458,67,,,,,,6279026,2,Japan,Chiba,12
 2020-09-16,,23437,386,,,,,,13942856,2,Japan,Tokyo,13
-2020-09-16,,6067,131,,,,,,9200166,2,Japan,Kanagawa,14
+2020-09-16,,6101,131,,,,,,9200166,2,Japan,Kanagawa,14
 2020-09-16,,153,0,,,,,,2222004,2,Japan,Niigata,15
 2020-09-16,,408,26,,,,,,1042998,2,Japan,Toyama,16
 2020-09-16,,736,44,,,,,,1137181,2,Japan,Ishikawa,17
@@ -12743,7 +12743,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-16,,4965,77,,,,,,7552873,2,Japan,Aichi,23
 2020-09-16,,459,5,,,,,,1779770,2,Japan,Mie,24
 2020-09-16,,474,7,,,,,,1413959,2,Japan,Shiga,25
-2020-09-16,,1641,25,,,,,,2583140,2,Japan,Kyoto,26
+2020-09-16,,1649,25,,,,,,2583140,2,Japan,Kyoto,26
 2020-09-16,,9725,186,,,,,,8823453,2,Japan,Osaka,27
 2020-09-16,,2522,55,,,,,,5463609,2,Japan,Hyogo,28
 2020-09-16,,535,9,,,,,,1331330,2,Japan,Nara,29
@@ -12766,6 +12766,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-16,,376,11,,,,,,1599984,2,Japan,Kagoshima,46
 2020-09-16,,2305,45,,,,,,1454184,2,Japan,Okinawa,47
 2020-09-16,,14,0,,,,,,,1,Japan,Charter Flight,
-2020-09-16,,861,1,,,,,,,1,Japan,Quarantine,
+2020-09-16,,869,1,,,,,,,1,Japan,Quarantine,
 2020-09-16,,712,13,,,,,,,1,Japan,Diamond Princess,
 2020-09-16,,149,0,,,,,,,1,Japan,Costa Atlantica,
