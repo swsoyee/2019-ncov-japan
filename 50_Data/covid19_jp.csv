@@ -224,7 +224,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-15,1745311,76470,1468,67795,6673,,,174,126216142,1,Japan,,
 2020-09-16,1766478,77021,1481,68503,6433,,,178,126216142,1,Japan,,
 2020-09-17,1786342,77512,1490,69223,6267,,,167,126216142,1,Japan,,
-2020-09-18,0,77887,1491,0,0,,,0,126216142,1,Japan,,
+2020-09-18,0,77891,1491,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -12825,7 +12825,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-18,,1905,106,,,,,,5248552,2,Japan,Hokkaido,01
 2020-09-18,,35,1,,,,,,1246138,2,Japan,Aomori,02
 2020-09-18,,23,0,,,,,,1226430,2,Japan,Iwate,03
-2020-09-18,,346,2,,,,,,2303160,2,Japan,Miyagi,04
+2020-09-18,,347,2,,,,,,2303160,2,Japan,Miyagi,04
 2020-09-18,,48,0,,,,,,965968,2,Japan,Akita,05
 2020-09-18,,78,1,,,,,,1077057,2,Japan,Yamagata,06
 2020-09-18,,218,2,,,,,,1847950,2,Japan,Fukushima,07
@@ -12836,7 +12836,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-18,,3541,68,,,,,,6279026,2,Japan,Chiba,12
 2020-09-18,,23828,389,,,,,,13942856,2,Japan,Tokyo,13
 2020-09-18,,6192,136,,,,,,9200166,2,Japan,Kanagawa,14
-2020-09-18,,159,0,,,,,,2222004,2,Japan,Niigata,15
+2020-09-18,,161,0,,,,,,2222004,2,Japan,Niigata,15
 2020-09-18,,410,26,,,,,,1042998,2,Japan,Toyama,16
 2020-09-18,,742,44,,,,,,1137181,2,Japan,Ishikawa,17
 2020-09-18,,244,9,,,,,,767742,2,Japan,Fukui,18
@@ -12861,7 +12861,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-18,,94,2,,,,,,956069,2,Japan,Kagawa,37
 2020-09-18,,114,6,,,,,,1338811,2,Japan,Ehime,38
 2020-09-18,,137,4,,,,,,697674,2,Japan,Kochi,39
-2020-09-18,,4964,88,,,,,,5110113,2,Japan,Fukuoka,40
+2020-09-18,,4965,88,,,,,,5110113,2,Japan,Fukuoka,40
 2020-09-18,,242,0,,,,,,814211,2,Japan,Saga,41
 2020-09-18,,236,3,,,,,,1325205,2,Japan,Nagasaki,42
 2020-09-18,,570,8,,,,,,1746740,2,Japan,Kumamoto,43
