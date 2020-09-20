@@ -226,7 +226,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-17,1786342,77512,1488,69223,6267,,,167,126216142,1,Japan,,
 2020-09-18,1811516,78084,1498,69865,6115,,,170,126216142,1,Japan,,
 2020-09-19,1831246,78685,1502,70436,6122,,,161,126216142,1,Japan,,
-2020-09-20,0,78895,1504,0,0,,,0,126216142,1,Japan,,
+2020-09-20,0,78905,1504,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -12926,7 +12926,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-19,195161,890,1,780,94,,,0,,1,Japan,Quarantine,
 2020-09-19,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-09-19,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-09-20,,1937,106,,,,,,5248552,2,Japan,Hokkaido,01
+2020-09-20,,1938,106,,,,,,5248552,2,Japan,Hokkaido,01
 2020-09-20,,35,1,,,,,,1246138,2,Japan,Aomori,02
 2020-09-20,,23,0,,,,,,1226430,2,Japan,Iwate,03
 2020-09-20,,366,2,,,,,,2303160,2,Japan,Miyagi,04
@@ -12936,7 +12936,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-20,,623,16,,,,,,2868041,2,Japan,Ibaraki,08
 2020-09-20,,385,1,,,,,,1942312,2,Japan,Tochigi,09
 2020-09-20,,644,19,,,,,,1937626,2,Japan,Gunma,10
-2020-09-20,,4413,99,,,,,,7337330,2,Japan,Saitama,11
+2020-09-20,,4417,99,,,,,,7337330,2,Japan,Saitama,11
 2020-09-20,,3590,68,,,,,,6279026,2,Japan,Chiba,12
 2020-09-20,,24208,390,,,,,,13942856,2,Japan,Tokyo,13
 2020-09-20,,6330,135,,,,,,9200166,2,Japan,Kanagawa,14
@@ -12948,7 +12948,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-20,,301,1,,,,,,2049023,2,Japan,Nagano,20
 2020-09-20,,597,10,,,,,,1988931,2,Japan,Gifu,21
 2020-09-20,,521,2,,,,,,3639226,2,Japan,Shizuoka,22
-2020-09-20,,5072,79,,,,,,7552873,2,Japan,Aichi,23
+2020-09-20,,5077,79,,,,,,7552873,2,Japan,Aichi,23
 2020-09-20,,463,5,,,,,,1779770,2,Japan,Mie,24
 2020-09-20,,477,7,,,,,,1413959,2,Japan,Shiga,25
 2020-09-20,,1672,25,,,,,,2583140,2,Japan,Kyoto,26
