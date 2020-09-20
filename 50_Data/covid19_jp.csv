@@ -226,7 +226,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-17,1786342,77512,1488,69223,6267,,,167,126216142,1,Japan,,
 2020-09-18,1811516,78084,1498,69865,6115,,,170,126216142,1,Japan,,
 2020-09-19,1831246,78685,1502,70436,6122,,,161,126216142,1,Japan,,
-2020-09-20,0,78905,1504,0,0,,,0,126216142,1,Japan,,
+2020-09-20,0,78921,1504,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -12949,7 +12949,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-20,,597,10,,,,,,1988931,2,Japan,Gifu,21
 2020-09-20,,521,2,,,,,,3639226,2,Japan,Shizuoka,22
 2020-09-20,,5077,79,,,,,,7552873,2,Japan,Aichi,23
-2020-09-20,,463,5,,,,,,1779770,2,Japan,Mie,24
+2020-09-20,,464,5,,,,,,1779770,2,Japan,Mie,24
 2020-09-20,,477,7,,,,,,1413959,2,Japan,Shiga,25
 2020-09-20,,1672,25,,,,,,2583140,2,Japan,Kyoto,26
 2020-09-20,,10001,192,,,,,,8823453,2,Japan,Osaka,27
@@ -12972,7 +12972,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-20,,158,2,,,,,,1134431,2,Japan,Oita,44
 2020-09-20,,365,1,,,,,,1072077,2,Japan,Miyazaki,45
 2020-09-20,,377,12,,,,,,1599984,2,Japan,Kagoshima,46
-2020-09-20,,2338,45,,,,,,1454184,2,Japan,Okinawa,47
+2020-09-20,,2353,45,,,,,,1454184,2,Japan,Okinawa,47
 2020-09-20,,14,0,,,,,,,1,Japan,Charter Flight,
 2020-09-20,,890,1,,,,,,,1,Japan,Quarantine,
 2020-09-20,,712,13,,,,,,,1,Japan,Diamond Princess,
