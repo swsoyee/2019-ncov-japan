@@ -235,7 +235,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-26,1938827,81717,1546,74132,5349,,,156,126216142,1,Japan,,
 2020-09-27,1951249,82202,1549,74588,5520,,,160,126216142,1,Japan,,
 2020-09-28,1957973,82503,1560,74970,5579,,,159,126216142,1,Japan,,
-2020-09-29,0,82771,1560,0,0,,,0,126216142,1,Japan,,
+2020-09-29,0,82797,1560,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -13394,7 +13394,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-28,210497,952,1,853,81,,,0,,1,Japan,Quarantine,
 2020-09-28,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-09-28,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-09-29,,2064,107,,,,,,5248552,2,Japan,Hokkaido,01
+2020-09-29,,2069,107,,,,,,5248552,2,Japan,Hokkaido,01
 2020-09-29,,36,1,,,,,,1246138,2,Japan,Aomori,02
 2020-09-29,,23,0,,,,,,1226430,2,Japan,Iwate,03
 2020-09-29,,397,2,,,,,,2303160,2,Japan,Miyagi,04
@@ -13407,7 +13407,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-29,,4597,100,,,,,,7337330,2,Japan,Saitama,11
 2020-09-29,,3812,70,,,,,,6279026,2,Japan,Chiba,12
 2020-09-29,,25547,406,,,,,,13942856,2,Japan,Tokyo,13
-2020-09-29,,6766,137,,,,,,9200166,2,Japan,Kanagawa,14
+2020-09-29,,6768,137,,,,,,9200166,2,Japan,Kanagawa,14
 2020-09-29,,170,0,,,,,,2222004,2,Japan,Niigata,15
 2020-09-29,,413,25,,,,,,1042998,2,Japan,Toyama,16
 2020-09-29,,776,47,,,,,,1137181,2,Japan,Ishikawa,17
@@ -13440,7 +13440,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-09-29,,158,2,,,,,,1134431,2,Japan,Oita,44
 2020-09-29,,365,1,,,,,,1072077,2,Japan,Miyazaki,45
 2020-09-29,,412,12,,,,,,1599984,2,Japan,Kagoshima,46
-2020-09-29,,2441,46,,,,,,1454184,2,Japan,Okinawa,47
+2020-09-29,,2460,46,,,,,,1454184,2,Japan,Okinawa,47
 2020-09-29,,14,0,,,,,,,1,Japan,Charter Flight,
 2020-09-29,,952,1,,,,,,,1,Japan,Quarantine,
 2020-09-29,,712,13,,,,,,,1,Japan,Diamond Princess,
