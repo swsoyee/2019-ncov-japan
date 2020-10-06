@@ -233,7 +233,7 @@ fwrite(x = data.table(contact), file = paste0(DATA_PATH, "Pref/Fukuoka/call.csv"
 # test <- signateDetail[都道府県コード == 47]
 
 # ====Get world data from FIND====
-coronavirus <- data.table(read.csv("https://raw.githubusercontent.com/dsbb-finddx/FIND_Cov_19_Tracker/update_data/input_data/coronavirus.csv"))
+coronavirus <- data.table(read.csv("https://raw.githubusercontent.com/dsbbfinddx/FINDCov19TrackerData/master/processed/coronavirus_cases.csv"))
 population <- data.table(read.csv("https://raw.githubusercontent.com/dsbb-finddx/FIND_Cov_19_Tracker/update_data/input_data/countries_codes_and_coordinates.csv"))
 
 coronavirus[population, population := i.population, on = c(jhu_ID = "jhu_ID")]
@@ -273,7 +273,7 @@ coronavirus[
 coronavirus[, casesPer100k := round(cases / population * 10^5, 2)]
 setnafill(coronavirus, type = "const", fill = 0, cols = c("casesPer100k"))
 
-coronavirusTest <- read.csv("https://raw.githubusercontent.com/dsbb-finddx/FIND_Cov_19_Tracker/master/input_data/coronavirus_tests.csv")
+coronavirusTest <- read.csv("https://raw.githubusercontent.com/dsbbfinddx/FINDCov19TrackerData/master/processed/coronavirus_tests.csv")
 coronavirusTest <- data.table(coronavirusTest)
 coronavirusTest[, country_name_id := country]
 
