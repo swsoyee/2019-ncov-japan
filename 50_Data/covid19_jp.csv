@@ -242,7 +242,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-03,2150084,85352,1598,77785,5365,,,137,126216142,1,Japan,,
 2020-10-04,2166131,85753,1599,78293,5411,,,133,126216142,1,Japan,,
 2020-10-05,2173035,86034,1603,78592,5495,,,131,126216142,1,Japan,,
-2020-10-06,0,86267,1603,0,0,,,0,126216142,1,Japan,,
+2020-10-06,0,86318,1603,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -13766,7 +13766,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-06,,78,1,,,,,,1077057,2,Japan,Yamagata,06
 2020-10-06,,272,4,,,,,,1847950,2,Japan,Fukushima,07
 2020-10-06,,677,17,,,,,,2868041,2,Japan,Ibaraki,08
-2020-10-06,,437,1,,,,,,1942312,2,Japan,Tochigi,09
+2020-10-06,,441,1,,,,,,1942312,2,Japan,Tochigi,09
 2020-10-06,,729,19,,,,,,1937626,2,Japan,Gunma,10
 2020-10-06,,4816,101,,,,,,7337330,2,Japan,Saitama,11
 2020-10-06,,4053,72,,,,,,6279026,2,Japan,Chiba,12
@@ -13780,7 +13780,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-06,,313,1,,,,,,2049023,2,Japan,Nagano,20
 2020-10-06,,630,10,,,,,,1988931,2,Japan,Gifu,21
 2020-10-06,,557,2,,,,,,3639226,2,Japan,Shizuoka,22
-2020-10-06,,5451,86,,,,,,7552873,2,Japan,Aichi,23
+2020-10-06,,5465,86,,,,,,7552873,2,Japan,Aichi,23
 2020-10-06,,525,7,,,,,,1779770,2,Japan,Mie,24
 2020-10-06,,506,8,,,,,,1413959,2,Japan,Shiga,25
 2020-10-06,,1791,26,,,,,,2583140,2,Japan,Kyoto,26
@@ -13800,11 +13800,11 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-06,,5042,99,,,,,,5110113,2,Japan,Fukuoka,40
 2020-10-06,,244,0,,,,,,814211,2,Japan,Saga,41
 2020-10-06,,238,3,,,,,,1325205,2,Japan,Nagasaki,42
-2020-10-06,,628,8,,,,,,1746740,2,Japan,Kumamoto,43
+2020-10-06,,634,8,,,,,,1746740,2,Japan,Kumamoto,43
 2020-10-06,,158,2,,,,,,1134431,2,Japan,Oita,44
 2020-10-06,,365,1,,,,,,1072077,2,Japan,Miyazaki,45
-2020-10-06,,435,12,,,,,,1599984,2,Japan,Kagoshima,46
-2020-10-06,,2607,47,,,,,,1454184,2,Japan,Okinawa,47
+2020-10-06,,440,12,,,,,,1599984,2,Japan,Kagoshima,46
+2020-10-06,,2629,47,,,,,,1454184,2,Japan,Okinawa,47
 2020-10-06,,14,0,,,,,,,1,Japan,Charter Flight,
 2020-10-06,,1012,1,,,,,,,1,Japan,Quarantine,
 2020-10-06,,712,13,,,,,,,1,Japan,Diamond Princess,
