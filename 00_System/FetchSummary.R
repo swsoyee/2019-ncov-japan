@@ -245,7 +245,8 @@
 #   "20201006" = "https://www.mhlw.go.jp/content/10906000/000679932.pdf",
 #   "20201007" = "https://www.mhlw.go.jp/content/10906000/000680529.pdf",
 #   "20201008" = "https://www.mhlw.go.jp/content/10906000/000680671.pdf",
-#   "20201009" = "https://www.mhlw.go.jp/content/10906000/000681170.pdf"
+#   "20201009" = "https://www.mhlw.go.jp/content/10906000/000681170.pdf",
+#   "20201010" = "https://www.mhlw.go.jp/content/10906000/000681517.pdf"
 # )
 # 
 # for (i in names(location)) {
