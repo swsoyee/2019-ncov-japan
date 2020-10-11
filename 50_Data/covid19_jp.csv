@@ -247,7 +247,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-08,2241629,87667,1618,80212,5157,,,143,126216142,1,Japan,,
 2020-10-09,2264683,88268,1624,80716,5266,,,141,126216142,1,Japan,,
 2020-10-10,2286070,88949,1627,81326,5230,,,147,126216142,1,Japan,,
-2020-10-11,0,88949,1627,0,0,,,0,126216142,1,Japan,,
+2020-10-11,0,88963,1627,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -14024,7 +14024,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-11,,484,2,,,,,,2303160,2,Japan,Miyagi,04
 2020-10-11,,55,0,,,,,,965968,2,Japan,Akita,05
 2020-10-11,,81,1,,,,,,1077057,2,Japan,Yamagata,06
-2020-10-11,,302,4,,,,,,1847950,2,Japan,Fukushima,07
+2020-10-11,,314,4,,,,,,1847950,2,Japan,Fukushima,07
 2020-10-11,,706,17,,,,,,2868041,2,Japan,Ibaraki,08
 2020-10-11,,444,1,,,,,,1942312,2,Japan,Tochigi,09
 2020-10-11,,755,19,,,,,,1937626,2,Japan,Gunma,10
@@ -14051,7 +14051,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-11,,35,0,,,,,,555663,2,Japan,Tottori,31
 2020-10-11,,140,0,,,,,,673891,2,Japan,Shimane,32
 2020-10-11,,162,1,,,,,,1891346,2,Japan,Okayama,33
-2020-10-11,,617,3,,,,,,2807987,2,Japan,Hiroshima,34
+2020-10-11,,619,3,,,,,,2807987,2,Japan,Hiroshima,34
 2020-10-11,,207,2,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-10-11,,149,9,,,,,,728633,2,Japan,Tokushima,36
 2020-10-11,,95,2,,,,,,956069,2,Japan,Kagawa,37
