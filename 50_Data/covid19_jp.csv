@@ -249,7 +249,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-10,2286070,88949,1627,81326,5230,,,147,126216142,1,Japan,,
 2020-10-11,2299045,89386,1629,81805,5414,,,145,126216142,1,Japan,,
 2020-10-12,2306033,89664,1633,82093,5570,,,146,126216142,1,Japan,,
-2020-10-13,0,89681,1633,0,0,,,0,126216142,1,Japan,,
+2020-10-13,0,89692,1634,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -14122,7 +14122,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-12,236851,1059,1,916,127,,,0,,1,Japan,Quarantine,
 2020-10-12,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-10-12,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-10-13,,2368,107,,,,,,5248552,2,Japan,Hokkaido,01
+2020-10-13,,2373,107,,,,,,5248552,2,Japan,Hokkaido,01
 2020-10-13,,39,1,,,,,,1246138,2,Japan,Aomori,02
 2020-10-13,,24,0,,,,,,1226430,2,Japan,Iwate,03
 2020-10-13,,491,2,,,,,,2303160,2,Japan,Miyagi,04
@@ -14133,7 +14133,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-13,,444,1,,,,,,1942312,2,Japan,Tochigi,09
 2020-10-13,,761,19,,,,,,1937626,2,Japan,Gunma,10
 2020-10-13,,5096,101,,,,,,7337330,2,Japan,Saitama,11
-2020-10-13,,4306,73,,,,,,6279026,2,Japan,Chiba,12
+2020-10-13,,4308,74,,,,,,6279026,2,Japan,Chiba,12
 2020-10-13,,27793,421,,,,,,13942856,2,Japan,Tokyo,13
 2020-10-13,,7529,151,,,,,,9200166,2,Japan,Kanagawa,14
 2020-10-13,,179,0,,,,,,2222004,2,Japan,Niigata,15
@@ -14150,11 +14150,11 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-13,,1863,27,,,,,,2583140,2,Japan,Kyoto,26
 2020-10-13,,11180,224,,,,,,8823453,2,Japan,Osaka,27
 2020-10-13,,2927,59,,,,,,5463609,2,Japan,Hyogo,28
-2020-10-13,,585,9,,,,,,1331330,2,Japan,Nara,29
+2020-10-13,,588,9,,,,,,1331330,2,Japan,Nara,29
 2020-10-13,,249,4,,,,,,923721,2,Japan,Wakayama,30
 2020-10-13,,35,0,,,,,,555663,2,Japan,Tottori,31
 2020-10-13,,140,0,,,,,,673891,2,Japan,Shimane,32
-2020-10-13,,162,1,,,,,,1891346,2,Japan,Okayama,33
+2020-10-13,,163,1,,,,,,1891346,2,Japan,Okayama,33
 2020-10-13,,634,3,,,,,,2807987,2,Japan,Hiroshima,34
 2020-10-13,,207,2,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-10-13,,149,9,,,,,,728633,2,Japan,Tokushima,36
