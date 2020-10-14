@@ -250,7 +250,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-11,2299045,89385,1629,81805,5414,,,145,126216142,1,Japan,,
 2020-10-12,2306033,89663,1633,82093,5570,,,146,126216142,1,Japan,,
 2020-10-13,2331011,90163,1637,82596,5377,,,148,126216142,1,Japan,,
-2020-10-14,0,90413,1638,0,0,,,0,126216142,1,Japan,,
+2020-10-14,0,90428,1638,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -14174,7 +14174,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-13,238594,1065,1,916,132,,,0,,1,Japan,Quarantine,
 2020-10-13,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-10-13,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-10-14,,2401,107,,,,,,5248552,2,Japan,Hokkaido,01
+2020-10-14,,2408,107,,,,,,5248552,2,Japan,Hokkaido,01
 2020-10-14,,39,1,,,,,,1246138,2,Japan,Aomori,02
 2020-10-14,,25,0,,,,,,1226430,2,Japan,Iwate,03
 2020-10-14,,499,2,,,,,,2303160,2,Japan,Miyagi,04
@@ -14184,10 +14184,10 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-14,,710,17,,,,,,2868041,2,Japan,Ibaraki,08
 2020-10-14,,444,1,,,,,,1942312,2,Japan,Tochigi,09
 2020-10-14,,763,19,,,,,,1937626,2,Japan,Gunma,10
-2020-10-14,,5126,101,,,,,,7337330,2,Japan,Saitama,11
+2020-10-14,,5127,101,,,,,,7337330,2,Japan,Saitama,11
 2020-10-14,,4330,74,,,,,,6279026,2,Japan,Chiba,12
 2020-10-14,,28136,423,,,,,,13942856,2,Japan,Tokyo,13
-2020-10-14,,7609,151,,,,,,9200166,2,Japan,Kanagawa,14
+2020-10-14,,7614,151,,,,,,9200166,2,Japan,Kanagawa,14
 2020-10-14,,179,0,,,,,,2222004,2,Japan,Niigata,15
 2020-10-14,,422,26,,,,,,1042998,2,Japan,Toyama,16
 2020-10-14,,782,47,,,,,,1137181,2,Japan,Ishikawa,17
@@ -14216,7 +14216,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-14,,5095,99,,,,,,5110113,2,Japan,Fukuoka,40
 2020-10-14,,247,0,,,,,,814211,2,Japan,Saga,41
 2020-10-14,,241,3,,,,,,1325205,2,Japan,Nagasaki,42
-2020-10-14,,713,8,,,,,,1746740,2,Japan,Kumamoto,43
+2020-10-14,,715,8,,,,,,1746740,2,Japan,Kumamoto,43
 2020-10-14,,158,2,,,,,,1134431,2,Japan,Oita,44
 2020-10-14,,366,1,,,,,,1072077,2,Japan,Miyazaki,45
 2020-10-14,,456,12,,,,,,1599984,2,Japan,Kagoshima,46
