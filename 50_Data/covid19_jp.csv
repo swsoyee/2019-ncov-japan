@@ -251,7 +251,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-12,2306033,89662,1633,82093,5570,,,146,126216142,1,Japan,,
 2020-10-13,2331011,90161,1637,82596,5377,,,148,126216142,1,Japan,,
 2020-10-14,2352231,90712,1646,83132,5296,,,150,126216142,1,Japan,,
-2020-10-15,0,91409,1647,0,0,,,0,126216142,1,Japan,,
+2020-10-15,0,91411,1649,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -14228,7 +14228,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-14,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
 2020-10-15,,2438,107,,,,,,5248552,2,Japan,Hokkaido,01
 2020-10-15,,49,1,,,,,,1246138,2,Japan,Aomori,02
-2020-10-15,,25,0,,,,,,1226430,2,Japan,Iwate,03
+2020-10-15,,26,0,,,,,,1226430,2,Japan,Iwate,03
 2020-10-15,,508,2,,,,,,2303160,2,Japan,Miyagi,04
 2020-10-15,,56,0,,,,,,965968,2,Japan,Akita,05
 2020-10-15,,81,1,,,,,,1077057,2,Japan,Yamagata,06
@@ -14238,7 +14238,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-15,,764,19,,,,,,1937626,2,Japan,Gunma,10
 2020-10-15,,5230,101,,,,,,7337330,2,Japan,Saitama,11
 2020-10-15,,4414,75,,,,,,6279026,2,Japan,Chiba,12
-2020-10-15,,28420,425,,,,,,13942856,2,Japan,Tokyo,13
+2020-10-15,,28420,427,,,,,,13942856,2,Japan,Tokyo,13
 2020-10-15,,7750,153,,,,,,9200166,2,Japan,Kanagawa,14
 2020-10-15,,180,0,,,,,,2222004,2,Japan,Niigata,15
 2020-10-15,,422,26,,,,,,1042998,2,Japan,Toyama,16
@@ -14262,7 +14262,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-15,,638,3,,,,,,2807987,2,Japan,Hiroshima,34
 2020-10-15,,207,2,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-10-15,,149,9,,,,,,728633,2,Japan,Tokushima,36
-2020-10-15,,97,2,,,,,,956069,2,Japan,Kagawa,37
+2020-10-15,,98,2,,,,,,956069,2,Japan,Kagawa,37
 2020-10-15,,115,6,,,,,,1338811,2,Japan,Ehime,38
 2020-10-15,,140,4,,,,,,697674,2,Japan,Kochi,39
 2020-10-15,,5112,99,,,,,,5110113,2,Japan,Fukuoka,40
