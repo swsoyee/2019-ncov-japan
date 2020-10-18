@@ -254,7 +254,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-15,2375927,91416,1649,83816,5188,,,146,126216142,1,Japan,,
 2020-10-16,2398408,92057,1664,84429,5310,,,148,126216142,1,Japan,,
 2020-10-17,2421043,92681,1670,85012,5346,,,148,126216142,1,Japan,,
-2020-10-18,0,92694,1670,0,0,,,0,126216142,1,Japan,,
+2020-10-18,0,92709,1670,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -14383,7 +14383,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-17,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-10-17,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
 2020-10-18,,2496,108,,,,,,5248552,2,Japan,Hokkaido,01
-2020-10-18,,100,1,,,,,,1246138,2,Japan,Aomori,02
+2020-10-18,,103,1,,,,,,1246138,2,Japan,Aomori,02
 2020-10-18,,26,0,,,,,,1226430,2,Japan,Iwate,03
 2020-10-18,,524,2,,,,,,2303160,2,Japan,Miyagi,04
 2020-10-18,,56,0,,,,,,965968,2,Japan,Akita,05
@@ -14409,7 +14409,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-18,,522,8,,,,,,1413959,2,Japan,Shiga,25
 2020-10-18,,1922,27,,,,,,2583140,2,Japan,Kyoto,26
 2020-10-18,,11464,227,,,,,,8823453,2,Japan,Osaka,27
-2020-10-18,,2996,61,,,,,,5463609,2,Japan,Hyogo,28
+2020-10-18,,3008,61,,,,,,5463609,2,Japan,Hyogo,28
 2020-10-18,,598,9,,,,,,1331330,2,Japan,Nara,29
 2020-10-18,,255,4,,,,,,923721,2,Japan,Wakayama,30
 2020-10-18,,35,0,,,,,,555663,2,Japan,Tottori,31
