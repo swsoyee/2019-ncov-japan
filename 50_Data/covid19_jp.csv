@@ -258,7 +258,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-19,2441150,93425,1676,85901,5498,,,144,126216142,1,Japan,,
 2020-10-20,2465513,93907,1679,86473,5285,,,143,126216142,1,Japan,,
 2020-10-21,2482485,94526,1686,87066,5137,,,150,126216142,1,Japan,,
-2020-10-22,0,94947,1687,0,0,,,0,126216142,1,Japan,,
+2020-10-22,0,95076,1691,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -14600,13 +14600,13 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-22,,735,18,,,,,,2868041,2,Japan,Ibaraki,08
 2020-10-22,,473,1,,,,,,1942312,2,Japan,Tochigi,09
 2020-10-22,,820,19,,,,,,1937626,2,Japan,Gunma,10
-2020-10-22,,5475,102,,,,,,7337330,2,Japan,Saitama,11
+2020-10-22,,5507,102,,,,,,7337330,2,Japan,Saitama,11
 2020-10-22,,4664,76,,,,,,6279026,2,Japan,Chiba,12
 2020-10-22,,29520,439,,,,,,13942856,2,Japan,Tokyo,13
 2020-10-22,,8105,155,,,,,,9200166,2,Japan,Kanagawa,14
 2020-10-22,,180,0,,,,,,2222004,2,Japan,Niigata,15
 2020-10-22,,422,26,,,,,,1042998,2,Japan,Toyama,16
-2020-10-22,,795,47,,,,,,1137181,2,Japan,Ishikawa,17
+2020-10-22,,796,48,,,,,,1137181,2,Japan,Ishikawa,17
 2020-10-22,,256,11,,,,,,767742,2,Japan,Fukui,18
 2020-10-22,,198,6,,,,,,812056,2,Japan,Yamanashi,19
 2020-10-22,,329,4,,,,,,2049023,2,Japan,Nagano,20
@@ -14615,8 +14615,8 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-22,,5770,91,,,,,,7552873,2,Japan,Aichi,23
 2020-10-22,,546,7,,,,,,1779770,2,Japan,Mie,24
 2020-10-22,,533,9,,,,,,1413959,2,Japan,Shiga,25
-2020-10-22,,1945,29,,,,,,2583140,2,Japan,Kyoto,26
-2020-10-22,,11702,229,,,,,,8823453,2,Japan,Osaka,27
+2020-10-22,,1958,30,,,,,,2583140,2,Japan,Kyoto,26
+2020-10-22,,11780,231,,,,,,8823453,2,Japan,Osaka,27
 2020-10-22,,3058,61,,,,,,5463609,2,Japan,Hyogo,28
 2020-10-22,,605,9,,,,,,1331330,2,Japan,Nara,29
 2020-10-22,,266,4,,,,,,923721,2,Japan,Wakayama,30
@@ -14638,6 +14638,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-22,,463,12,,,,,,1599984,2,Japan,Kagoshima,46
 2020-10-22,,3047,57,,,,,,1454184,2,Japan,Okinawa,47
 2020-10-22,,14,0,,,,,,,1,Japan,Charter Flight,
-2020-10-22,,1114,1,,,,,,,1,Japan,Quarantine,
+2020-10-22,,1119,1,,,,,,,1,Japan,Quarantine,
 2020-10-22,,712,13,,,,,,,1,Japan,Diamond Princess,
 2020-10-22,,149,0,,,,,,,1,Japan,Costa Atlantica,
