@@ -259,7 +259,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-20,2465513,93904,1679,86473,5285,,,143,126216142,1,Japan,,
 2020-10-21,2482485,94523,1686,87066,5137,,,150,126216142,1,Japan,,
 2020-10-22,2506396,95140,1697,87642,5137,,,150,126216142,1,Japan,,
-2020-10-23,0,95489,1698,0,0,,,0,126216142,1,Japan,,
+2020-10-23,0,95536,1698,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -14642,7 +14642,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-22,256307,1119,1,1003,100,,,0,,1,Japan,Quarantine,
 2020-10-22,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-10-22,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-10-23,,2680,108,,,,,,5248552,2,Japan,Hokkaido,01
+2020-10-23,,2681,108,,,,,,5248552,2,Japan,Hokkaido,01
 2020-10-23,,150,1,,,,,,1246138,2,Japan,Aomori,02
 2020-10-23,,26,0,,,,,,1226430,2,Japan,Iwate,03
 2020-10-23,,545,2,,,,,,2303160,2,Japan,Miyagi,04
@@ -14650,7 +14650,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-23,,84,1,,,,,,1077057,2,Japan,Yamagata,06
 2020-10-23,,379,6,,,,,,1847950,2,Japan,Fukushima,07
 2020-10-23,,735,18,,,,,,2868041,2,Japan,Ibaraki,08
-2020-10-23,,473,1,,,,,,1942312,2,Japan,Tochigi,09
+2020-10-23,,475,1,,,,,,1942312,2,Japan,Tochigi,09
 2020-10-23,,820,19,,,,,,1937626,2,Japan,Gunma,10
 2020-10-23,,5517,102,,,,,,7337330,2,Japan,Saitama,11
 2020-10-23,,4670,76,,,,,,6279026,2,Japan,Chiba,12
@@ -14661,10 +14661,10 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-23,,796,48,,,,,,1137181,2,Japan,Ishikawa,17
 2020-10-23,,256,11,,,,,,767742,2,Japan,Fukui,18
 2020-10-23,,199,6,,,,,,812056,2,Japan,Yamanashi,19
-2020-10-23,,329,4,,,,,,2049023,2,Japan,Nagano,20
+2020-10-23,,330,4,,,,,,2049023,2,Japan,Nagano,20
 2020-10-23,,660,10,,,,,,1988931,2,Japan,Gifu,21
 2020-10-23,,587,2,,,,,,3639226,2,Japan,Shizuoka,22
-2020-10-23,,5770,92,,,,,,7552873,2,Japan,Aichi,23
+2020-10-23,,5813,92,,,,,,7552873,2,Japan,Aichi,23
 2020-10-23,,547,7,,,,,,1779770,2,Japan,Mie,24
 2020-10-23,,533,9,,,,,,1413959,2,Japan,Shiga,25
 2020-10-23,,1958,30,,,,,,2583140,2,Japan,Kyoto,26
