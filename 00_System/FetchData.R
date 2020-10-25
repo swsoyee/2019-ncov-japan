@@ -232,294 +232,294 @@ fwrite(x = data.table(contact), file = paste0(DATA_PATH, "Pref/Fukuoka/call.csv"
 # jsonFile$patients
 # test <- signateDetail[都道府県コード == 47]
 
-# ====Get world data from FIND====
-coronavirus <- data.table(read.csv("https://raw.githubusercontent.com/dsbbfinddx/FINDCov19TrackerData/master/processed/coronavirus_cases.csv"))
-population <- data.table(read.csv("https://raw.githubusercontent.com/dsbb-finddx/FIND_Cov_19_Tracker/update_data/input_data/countries_codes_and_coordinates.csv"))
-
-coronavirus[population, population := i.population, on = c(jhu_ID = "jhu_ID")]
-
-country_name_converter <- list(
-  "United States" = "USA",
-  "China" = "Mainland China",
-  "Korea" = "Republic of Korea",
-  "Dem. Rep. Congo" = "Democratic Republic of the Congo",
-  "S. Sudan" = "South Sudan",
-  "Central African Rep." = "Central African Republic",
-  "Tanzania" = "United Republic of Tanzania",
-  "Iran" = "Iran (Islamic Republic of)",
-  "W. Sahara" = "Western Sahara",
-  "United Kingdom" = "UK",
-  "Dominican Rep." = "Dominican Republic",
-  "Lao PDR" = "Lao People's Democratic Republic",
-  "Guinea-Bissau" = "Guinea Bissau",
-  "Côte d'Ivoire" = "Cote d'Ivoire",
-  "Congo" = "Republic of the Congo",
-  "Syria" = "Syrian Arab Republic",
-  "Palestine" = "Occupied Palestinian Territory",
-  "Moldova" = "Republic of Moldova",
-  "Bosnia and Herz." = "Bosnia and Herzegovina",
-  "Macedonia" = "North Macedonia",
-  "Czech Rep." = "Czech Republic",
-  "Eq. Guinea" = "Equatorial Guinea",
-  "Bahamas" = "The Bahamas"
-)
-
-coronavirus[, country_name_id := country]
-coronavirus[
-  country %in% country_name_converter,
-  country_name_id := names(country_name_converter[match(country, country_name_converter)])
-]
-
-coronavirus[, casesPer100k := round(cases / population * 10^5, 2)]
-setnafill(coronavirus, type = "const", fill = 0, cols = c("casesPer100k"))
-
-coronavirusTest <- read.csv("https://raw.githubusercontent.com/dsbbfinddx/FINDCov19TrackerData/master/processed/coronavirus_tests.csv")
-coronavirusTest <- data.table(coronavirusTest)
-coronavirusTest[, country_name_id := country]
-
-# popId <- unique(population$jhu_ID)
-# testId <- unique(coronavirusTest$jhu_ID)
-convertJhuIdInTest <- list(
-  "SouthSudan" = "South Sudan",
-  "Tanzania" = "UnitedRepublicofTanzania",
-  "Laos" = "LaoPeople'sDemocraticRepublic"
-  # Scotland?
-)
-coronavirusTest[
-  jhu_ID %in% convertJhuIdInTest,
-  jhu_ID := names(convertJhuIdInTest[match(jhu_ID, convertJhuIdInTest)])
-]
-coronavirusTest[population, population := i.population, on = c(jhu_ID = "jhu_ID")]
-
-coronavirusTest[
-  country %in% country_name_converter,
-  country_name_id := names(country_name_converter[match(country, country_name_converter)])
-]
-
-coronavirusTest[, testsPer100k := round(tests_cumulative / population * 10^5, 2)]
-coronavirusTest[, `:=`(ind = NULL, X = NULL)]
-
-coronavirus <- coronavirus[coronavirusTest, `:=`(
-  new_tests = i.new_tests,
-  tests_cumulative = i.tests_cumulative
-),
-on = c(date = "date", country_name_id = "country_name_id")
-][order(country_name_id, date)]
-coronavirus[, tests_cumulative := tests_cumulative[1], by = .(country_name_id, cumsum(!is.na(tests_cumulative)))]
-coronavirus[, `:=`(
-  testsPer100k = round(tests_cumulative / population * 10^5, 2),
-  positiveRate = round(cases / tests_cumulative * 100, 2)
-)]
-
-fwrite(coronavirus, paste0(DATA_PATH, "FIND/worldSummary.csv"))
-
-coronavirus[, date := as.Date(as.character(date))]
-
-dateSpan <- 21
-
-createSparkLine <- function(bar, line, lightColor, darkColor) {
-  sparkline <- sapply(unique(as.character(coronavirus$country_name_id)), function(index) {
-    # 新規値
-    value <- tail(coronavirus[country_name_id == index][[bar]], n = dateSpan)
-    # 累計値
-    cumsumValue <- tail(coronavirus[country_name_id == index][[line]], n = dateSpan)
-    # 日付
-    date <- tail(coronavirus[country_name_id == index, date], n = dateSpan)
-    colorMapSetting <- rep(lightColor, length(value))
-    colorMapSetting[length(value)] <- darkColor
-    namesSetting <- as.list(date)
-    names(namesSetting) <- 0:(length(value) - 1)
-    # 新規
-    diff <- sparkline(
-      values = value,
-      type = "bar",
-      chartRangeMin = 0,
-      width = 80,
-      tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> New {{value}}",
-      tooltipValueLookups = list(
-        names = namesSetting
-      ),
-      colorMap = colorMapSetting
-    )
-    # 累計
-    cumsumSpk <- sparkline(
-      values = cumsumValue,
-      type = "line",
-      width = 80,
-      fillColor = F,
-      lineColor = darkColor,
-      tooltipFormat = "<span style='color: {{color}}'>&#9679;</span> Total {{y}}"
-    )
-    return(as.character(htmltools::as.tags(spk_composite(diff, cumsumSpk))))
-  })
-  return(sparkline)
-}
-
-testsSparkline <- createSparkLine(bar = "new_tests", line = "tests_cumulative", middleYellow, darkYellow)
-casesSparkline <- createSparkLine(bar = "new_cases", line = "cases", middleRed, darkRed)
-deathsSparkline <- createSparkLine(bar = "new_deaths", line = "deaths", middelNavy, darkNavy)
-positiveRatioSparkline <- sapply(unique(as.character(coronavirus$country_name_id)), function(index) {
-  value <- tail(coronavirus[country_name_id == index, .(round(new_cases/new_tests * 100, 2))], n = dateSpan)[[1]]
-  # 日付
-  date <- tail(coronavirus[country_name_id == index, date], n = dateSpan)
-  namesSetting <- as.list(date)
-  names(namesSetting) <- 0:(length(date) - 1)
-  
-  if (length(value) > 0) {
-    diff <- spk_chr(
-      values = value,
-      type = "line",
-      width = 80,
-      lineColor = darkRed,
-      fillColor = "#f2b3aa",
-      tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> Rate：{{y}}%",
-      tooltipValueLookups = list(
-        names = namesSetting
-      )
-    )
-  } else {
-    diff <- NA
-  }
-  return(diff)
-})
-
-coronavirusSummary <-
-  coronavirus[
-    date == max(date),
-    .(
-      Country = country,
-      Tests = tests_cumulative,
-      `Tests/100K pop` = testsPer100k,
-      Cases = cases,
-      `New Cases` = new_cases,
-      `Cases/100K pop` = casesPer100k,
-      Deaths = deaths,
-      `New Deaths` = new_deaths,
-      `Deaths/100K pop` = round(deaths / population * 10^5, 2),
-      country_name_id
-    )
-  ][order(-Cases)]
-
-coronavirusSummary[, `Test Trends` := lapply(country_name_id, function(x){
-  testsSparkline[which(x == names(testsSparkline))]
-})]
-coronavirusSummary[, `Cases Trends` := lapply(country_name_id, function(x){
-  casesSparkline[which(x == names(casesSparkline))]
-})]
-coronavirusSummary[, `Deaths Trends` := lapply(country_name_id, function(x){
-  deathsSparkline[which(x == names(deathsSparkline))]
-})]
-coronavirusSummary[, `Cases/Tests` := lapply(country_name_id, function(x){
-  positiveRatioSparkline[which(x == names(positiveRatioSparkline))]
-})]
-
-coronavirusSummary[, country_name_id := NULL]
-coronavirusSummary[, `Test Trends` := gsub("\\n", "", `Test Trends`)]
-coronavirusSummary[, `Cases Trends` := gsub("\\n", "", `Cases Trends`)]
-coronavirusSummary[, `Deaths Trends` := gsub("\\n", "", `Deaths Trends`)]
-coronavirusSummary[, `Cases/Tests` := gsub("\\n", "", `Cases/Tests`)]
-
-fwrite(coronavirusSummary, file = paste0(DATA_PATH, "FIND/worldSummaryTable.csv"), sep = "@", quote = F)
-
-# sketch_summary <- htmltools::withTags(table(
-#   class = "display",
-#   thead(
-#     tr(
-#       th(rowspan = 2, "Rank"),
-#       th(rowspan = 2, "Country"),
-#       th(colspan = 2, tagList(icon("vials"), "Tests")),
-#       th(colspan = 3, "Cases"),
-#       th(colspan = 3, "Deaths")
-#     ),
-#     tr(
-#       lapply(
-#         c(
-#           c("Total", "Per 100K pop"),
-#           rep(c("Total", "New", "Per 100K pop"), 2)
-#           ),
-#         th
+# # ====Get world data from FIND====
+# coronavirus <- data.table(read.csv("https://raw.githubusercontent.com/dsbbfinddx/FINDCov19TrackerData/master/processed/coronavirus_cases.csv"))
+# population <- data.table(read.csv("https://raw.githubusercontent.com/dsbb-finddx/FIND_Cov_19_Tracker/update_data/input_data/countries_codes_and_coordinates.csv"))
+# 
+# coronavirus[population, population := i.population, on = c(jhu_ID = "jhu_ID")]
+# 
+# country_name_converter <- list(
+#   "United States" = "USA",
+#   "China" = "Mainland China",
+#   "Korea" = "Republic of Korea",
+#   "Dem. Rep. Congo" = "Democratic Republic of the Congo",
+#   "S. Sudan" = "South Sudan",
+#   "Central African Rep." = "Central African Republic",
+#   "Tanzania" = "United Republic of Tanzania",
+#   "Iran" = "Iran (Islamic Republic of)",
+#   "W. Sahara" = "Western Sahara",
+#   "United Kingdom" = "UK",
+#   "Dominican Rep." = "Dominican Republic",
+#   "Lao PDR" = "Lao People's Democratic Republic",
+#   "Guinea-Bissau" = "Guinea Bissau",
+#   "Côte d'Ivoire" = "Cote d'Ivoire",
+#   "Congo" = "Republic of the Congo",
+#   "Syria" = "Syrian Arab Republic",
+#   "Palestine" = "Occupied Palestinian Territory",
+#   "Moldova" = "Republic of Moldova",
+#   "Bosnia and Herz." = "Bosnia and Herzegovina",
+#   "Macedonia" = "North Macedonia",
+#   "Czech Rep." = "Czech Republic",
+#   "Eq. Guinea" = "Equatorial Guinea",
+#   "Bahamas" = "The Bahamas"
+# )
+# 
+# coronavirus[, country_name_id := country]
+# coronavirus[
+#   country %in% country_name_converter,
+#   country_name_id := names(country_name_converter[match(country, country_name_converter)])
+# ]
+# 
+# coronavirus[, casesPer100k := round(cases / population * 10^5, 2)]
+# setnafill(coronavirus, type = "const", fill = 0, cols = c("casesPer100k"))
+# 
+# coronavirusTest <- read.csv("https://raw.githubusercontent.com/dsbbfinddx/FINDCov19TrackerData/master/processed/coronavirus_tests.csv")
+# coronavirusTest <- data.table(coronavirusTest)
+# coronavirusTest[, country_name_id := country]
+# 
+# # popId <- unique(population$jhu_ID)
+# # testId <- unique(coronavirusTest$jhu_ID)
+# convertJhuIdInTest <- list(
+#   "SouthSudan" = "South Sudan",
+#   "Tanzania" = "UnitedRepublicofTanzania",
+#   "Laos" = "LaoPeople'sDemocraticRepublic"
+#   # Scotland?
+# )
+# coronavirusTest[
+#   jhu_ID %in% convertJhuIdInTest,
+#   jhu_ID := names(convertJhuIdInTest[match(jhu_ID, convertJhuIdInTest)])
+# ]
+# coronavirusTest[population, population := i.population, on = c(jhu_ID = "jhu_ID")]
+# 
+# coronavirusTest[
+#   country %in% country_name_converter,
+#   country_name_id := names(country_name_converter[match(country, country_name_converter)])
+# ]
+# 
+# coronavirusTest[, testsPer100k := round(tests_cumulative / population * 10^5, 2)]
+# coronavirusTest[, `:=`(ind = NULL, X = NULL)]
+# 
+# coronavirus <- coronavirus[coronavirusTest, `:=`(
+#   new_tests = i.new_tests,
+#   tests_cumulative = i.tests_cumulative
+# ),
+# on = c(date = "date", country_name_id = "country_name_id")
+# ][order(country_name_id, date)]
+# coronavirus[, tests_cumulative := tests_cumulative[1], by = .(country_name_id, cumsum(!is.na(tests_cumulative)))]
+# coronavirus[, `:=`(
+#   testsPer100k = round(tests_cumulative / population * 10^5, 2),
+#   positiveRate = round(cases / tests_cumulative * 100, 2)
+# )]
+# 
+# fwrite(coronavirus, paste0(DATA_PATH, "FIND/worldSummary.csv"))
+# 
+# coronavirus[, date := as.Date(as.character(date))]
+# 
+# dateSpan <- 21
+# 
+# createSparkLine <- function(bar, line, lightColor, darkColor) {
+#   sparkline <- sapply(unique(as.character(coronavirus$country_name_id)), function(index) {
+#     # 新規値
+#     value <- tail(coronavirus[country_name_id == index][[bar]], n = dateSpan)
+#     # 累計値
+#     cumsumValue <- tail(coronavirus[country_name_id == index][[line]], n = dateSpan)
+#     # 日付
+#     date <- tail(coronavirus[country_name_id == index, date], n = dateSpan)
+#     colorMapSetting <- rep(lightColor, length(value))
+#     colorMapSetting[length(value)] <- darkColor
+#     namesSetting <- as.list(date)
+#     names(namesSetting) <- 0:(length(value) - 1)
+#     # 新規
+#     diff <- sparkline(
+#       values = value,
+#       type = "bar",
+#       chartRangeMin = 0,
+#       width = 80,
+#       tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> New {{value}}",
+#       tooltipValueLookups = list(
+#         names = namesSetting
+#       ),
+#       colorMap = colorMapSetting
+#     )
+#     # 累計
+#     cumsumSpk <- sparkline(
+#       values = cumsumValue,
+#       type = "line",
+#       width = 80,
+#       fillColor = F,
+#       lineColor = darkColor,
+#       tooltipFormat = "<span style='color: {{color}}'>&#9679;</span> Total {{y}}"
+#     )
+#     return(as.character(htmltools::as.tags(spk_composite(diff, cumsumSpk))))
+#   })
+#   return(sparkline)
+# }
+# 
+# testsSparkline <- createSparkLine(bar = "new_tests", line = "tests_cumulative", middleYellow, darkYellow)
+# casesSparkline <- createSparkLine(bar = "new_cases", line = "cases", middleRed, darkRed)
+# deathsSparkline <- createSparkLine(bar = "new_deaths", line = "deaths", middelNavy, darkNavy)
+# positiveRatioSparkline <- sapply(unique(as.character(coronavirus$country_name_id)), function(index) {
+#   value <- tail(coronavirus[country_name_id == index, .(round(new_cases/new_tests * 100, 2))], n = dateSpan)[[1]]
+#   # 日付
+#   date <- tail(coronavirus[country_name_id == index, date], n = dateSpan)
+#   namesSetting <- as.list(date)
+#   names(namesSetting) <- 0:(length(date) - 1)
+#   
+#   if (length(value) > 0) {
+#     diff <- spk_chr(
+#       values = value,
+#       type = "line",
+#       width = 80,
+#       lineColor = darkRed,
+#       fillColor = "#f2b3aa",
+#       tooltipFormat = "{{offset:names}}<br><span style='color: {{color}}'>&#9679;</span> Rate：{{y}}%",
+#       tooltipValueLookups = list(
+#         names = namesSetting
 #       )
 #     )
-#   )
-# ))
-#
-# datatable(
-#   coronavirusSummary,
-#   container = sketch_summary,
-#   escape = F,
-#   options = list(
-#     paging = F,
-#     scrollY = "540px"
-#   )
-# ) %>%
-#   formatRound(
-#     columns = c("Tests", "Cases", "New Cases", "Deaths", "New Deaths"),
-#     digits = 0
-#   ) %>%
-#   formatRound(
-#     columns = c("Tests/100K pop", "Cases/100K pop", "Deaths/100K pop"),
-#     digits = 0
-#   ) %>%
-#   formatStyle(
-#     columns = "Tests",
-#     color = do.call(
-#       styleInterval,
-#       generateColorStyle(data = coronavirusSummary$Tests, colors = c(lightYellow, darkYellow), by = 10^6),
-#     ),
-#     background = styleColorBar(c(0, max(coronavirusSummary$Tests, na.rm = T)), middleYellow, angle = -90),
-#     backgroundSize = "98% 18%",
-#     backgroundRepeat = "no-repeat",
-#     backgroundPosition = "bottom",
-#     fontWeight = "bold"
-#   ) %>%
-#   formatStyle(
-#     columns = "Cases",
-#     background = styleColorBar(c(0, max(coronavirusSummary$Cases, na.rm = T)), middleRed, angle = -90),
-#     color = do.call(
-#       styleInterval,
-#       generateColorStyle(data = coronavirusSummary$Cases, colors = c(lightRed, darkRed), by = 10^6),
-#     ),
-#     backgroundSize = "98% 18%",
-#     backgroundRepeat = "no-repeat",
-#     backgroundPosition = "bottom",
-#     fontWeight = "bold"
-#   ) %>%
-#   formatStyle(
-#     columns = "New Cases",
-#     color = do.call(
-#       styleInterval,
-#       generateColorStyle(data = coronavirusSummary$`New Cases`, colors = c(lightRed, darkRed), by = 100),
-#     ),
-#     fontWeight = "bold"
-#   ) %>%
-#   formatStyle(
-#     columns = "Deaths",
-#     background = styleColorBar(c(0, max(coronavirusSummary$Deaths, na.rm = T)), darkNavy, angle = -90),
-#     backgroundSize = "98% 18%",
-#     backgroundRepeat = "no-repeat",
-#     backgroundPosition = "bottom"
-#   ) %>%
-#   formatStyle(
-#     columns = c("Tests/100K pop"),
-#     backgroundColor = do.call(
-#       styleInterval,
-#       generateColorStyle(data = coronavirusSummary$`Tests/100K pop`, colors = c("#FFFFFF", darkYellow), by = 10^4)
-#     ),
-#     fontWeight = "bold"
-#   ) %>%
-#   formatStyle(
-#     columns = c("Cases/100K pop"),
-#     backgroundColor = do.call(
-#       styleInterval,
-#       generateColorStyle(data = coronavirusSummary$`Cases/100K pop`, colors = c("#FFFFFF", darkRed), by = 100)
-#     ),
-#     fontWeight = "bold"
-#   ) %>%
-#   formatStyle(
-#     columns = c("Deaths/100K pop"),
-#     backgroundColor = do.call(
-#       styleInterval,
-#       generateColorStyle(data = coronavirusSummary$`Deaths/100K pop`, colors = c("#FFFFFF", darkNavy), by = 1)
-#     ),
-#     fontWeight = "bold"
-#   )
+#   } else {
+#     diff <- NA
+#   }
+#   return(diff)
+# })
+# 
+# coronavirusSummary <-
+#   coronavirus[
+#     date == max(date),
+#     .(
+#       Country = country,
+#       Tests = tests_cumulative,
+#       `Tests/100K pop` = testsPer100k,
+#       Cases = cases,
+#       `New Cases` = new_cases,
+#       `Cases/100K pop` = casesPer100k,
+#       Deaths = deaths,
+#       `New Deaths` = new_deaths,
+#       `Deaths/100K pop` = round(deaths / population * 10^5, 2),
+#       country_name_id
+#     )
+#   ][order(-Cases)]
+# 
+# coronavirusSummary[, `Test Trends` := lapply(country_name_id, function(x){
+#   testsSparkline[which(x == names(testsSparkline))]
+# })]
+# coronavirusSummary[, `Cases Trends` := lapply(country_name_id, function(x){
+#   casesSparkline[which(x == names(casesSparkline))]
+# })]
+# coronavirusSummary[, `Deaths Trends` := lapply(country_name_id, function(x){
+#   deathsSparkline[which(x == names(deathsSparkline))]
+# })]
+# coronavirusSummary[, `Cases/Tests` := lapply(country_name_id, function(x){
+#   positiveRatioSparkline[which(x == names(positiveRatioSparkline))]
+# })]
+# 
+# coronavirusSummary[, country_name_id := NULL]
+# coronavirusSummary[, `Test Trends` := gsub("\\n", "", `Test Trends`)]
+# coronavirusSummary[, `Cases Trends` := gsub("\\n", "", `Cases Trends`)]
+# coronavirusSummary[, `Deaths Trends` := gsub("\\n", "", `Deaths Trends`)]
+# coronavirusSummary[, `Cases/Tests` := gsub("\\n", "", `Cases/Tests`)]
+# 
+# fwrite(coronavirusSummary, file = paste0(DATA_PATH, "FIND/worldSummaryTable.csv"), sep = "@", quote = F)
+# 
+# # sketch_summary <- htmltools::withTags(table(
+# #   class = "display",
+# #   thead(
+# #     tr(
+# #       th(rowspan = 2, "Rank"),
+# #       th(rowspan = 2, "Country"),
+# #       th(colspan = 2, tagList(icon("vials"), "Tests")),
+# #       th(colspan = 3, "Cases"),
+# #       th(colspan = 3, "Deaths")
+# #     ),
+# #     tr(
+# #       lapply(
+# #         c(
+# #           c("Total", "Per 100K pop"),
+# #           rep(c("Total", "New", "Per 100K pop"), 2)
+# #           ),
+# #         th
+# #       )
+# #     )
+# #   )
+# # ))
+# #
+# # datatable(
+# #   coronavirusSummary,
+# #   container = sketch_summary,
+# #   escape = F,
+# #   options = list(
+# #     paging = F,
+# #     scrollY = "540px"
+# #   )
+# # ) %>%
+# #   formatRound(
+# #     columns = c("Tests", "Cases", "New Cases", "Deaths", "New Deaths"),
+# #     digits = 0
+# #   ) %>%
+# #   formatRound(
+# #     columns = c("Tests/100K pop", "Cases/100K pop", "Deaths/100K pop"),
+# #     digits = 0
+# #   ) %>%
+# #   formatStyle(
+# #     columns = "Tests",
+# #     color = do.call(
+# #       styleInterval,
+# #       generateColorStyle(data = coronavirusSummary$Tests, colors = c(lightYellow, darkYellow), by = 10^6),
+# #     ),
+# #     background = styleColorBar(c(0, max(coronavirusSummary$Tests, na.rm = T)), middleYellow, angle = -90),
+# #     backgroundSize = "98% 18%",
+# #     backgroundRepeat = "no-repeat",
+# #     backgroundPosition = "bottom",
+# #     fontWeight = "bold"
+# #   ) %>%
+# #   formatStyle(
+# #     columns = "Cases",
+# #     background = styleColorBar(c(0, max(coronavirusSummary$Cases, na.rm = T)), middleRed, angle = -90),
+# #     color = do.call(
+# #       styleInterval,
+# #       generateColorStyle(data = coronavirusSummary$Cases, colors = c(lightRed, darkRed), by = 10^6),
+# #     ),
+# #     backgroundSize = "98% 18%",
+# #     backgroundRepeat = "no-repeat",
+# #     backgroundPosition = "bottom",
+# #     fontWeight = "bold"
+# #   ) %>%
+# #   formatStyle(
+# #     columns = "New Cases",
+# #     color = do.call(
+# #       styleInterval,
+# #       generateColorStyle(data = coronavirusSummary$`New Cases`, colors = c(lightRed, darkRed), by = 100),
+# #     ),
+# #     fontWeight = "bold"
+# #   ) %>%
+# #   formatStyle(
+# #     columns = "Deaths",
+# #     background = styleColorBar(c(0, max(coronavirusSummary$Deaths, na.rm = T)), darkNavy, angle = -90),
+# #     backgroundSize = "98% 18%",
+# #     backgroundRepeat = "no-repeat",
+# #     backgroundPosition = "bottom"
+# #   ) %>%
+# #   formatStyle(
+# #     columns = c("Tests/100K pop"),
+# #     backgroundColor = do.call(
+# #       styleInterval,
+# #       generateColorStyle(data = coronavirusSummary$`Tests/100K pop`, colors = c("#FFFFFF", darkYellow), by = 10^4)
+# #     ),
+# #     fontWeight = "bold"
+# #   ) %>%
+# #   formatStyle(
+# #     columns = c("Cases/100K pop"),
+# #     backgroundColor = do.call(
+# #       styleInterval,
+# #       generateColorStyle(data = coronavirusSummary$`Cases/100K pop`, colors = c("#FFFFFF", darkRed), by = 100)
+# #     ),
+# #     fontWeight = "bold"
+# #   ) %>%
+# #   formatStyle(
+# #     columns = c("Deaths/100K pop"),
+# #     backgroundColor = do.call(
+# #       styleInterval,
+# #       generateColorStyle(data = coronavirusSummary$`Deaths/100K pop`, colors = c("#FFFFFF", darkNavy), by = 1)
+# #     ),
+# #     fontWeight = "bold"
+# #   )
