@@ -32,7 +32,10 @@ jobs:
         with:
           commit_message: 🙆表示用データセット作成
           ref: ${{ github.head_ref }}
-      - name: Auto merge data update pull request
-        uses: "pascalgn/automerge-action@v0.12.0"
+  merge:
+    name: Auto merge data update pull request
+    runs-on: ubuntu-latest
+    step:
+      - uses: "pascalgn/automerge-action@v0.12.0"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
