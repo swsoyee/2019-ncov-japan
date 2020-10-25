@@ -35,7 +35,7 @@ jobs:
   merge:
     name: Auto merge data update pull request
     runs-on: ubuntu-latest
-    step:
+    steps:
       - uses: "pascalgn/automerge-action@v0.12.0"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
