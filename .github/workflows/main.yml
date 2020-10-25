@@ -14,8 +14,9 @@ jobs:
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
   generate:
+    needs: label
     name: Data Update
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
         with:
@@ -32,8 +33,12 @@ jobs:
         with:
           commit_message: 🙆表示用データセット作成
           ref: ${{ github.head_ref }}
-      - name: Auto merge data update pull request
-        uses: "pascalgn/automerge-action@v0.12.0"
+  merge:
+    needs: [label, generate]
+    name: Auto merge data update pull request
+    runs-on: ubuntu-latest
+    steps:
+      - uses: "pascalgn/automerge-action@v0.12.0"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          MERGE_LABELS: "data_update"
+          UPDATE_LABELS: "data_update"
