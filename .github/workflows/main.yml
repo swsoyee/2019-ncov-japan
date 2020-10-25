@@ -41,4 +41,5 @@ jobs:
       - uses: "pascalgn/automerge-action@v0.12.0"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          UPDATE_LABELS: "data_update"
+          MERGE_LABELS: "data_update"
+          MERGE_METHOD: "squash"
