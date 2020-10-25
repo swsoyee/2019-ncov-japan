@@ -261,7 +261,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-22,2506396,95139,1697,87642,5137,,,150,126216142,1,Japan,,
 2020-10-23,2531971,95887,1709,88220,5172,,,151,126216142,1,Japan,,
 2020-10-24,2557214,96619,1713,88762,5322,,,155,126216142,1,Japan,,
-2020-10-25,0,96694,1713,0,0,,,0,126216142,1,Japan,,
+2020-10-25,0,96821,1713,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -14746,7 +14746,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-24,260827,1137,1,1007,106,,,0,,1,Japan,Quarantine,
 2020-10-24,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-10-24,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-10-25,,2774,108,,,,,,5248552,2,Japan,Hokkaido,01
+2020-10-25,,2775,108,,,,,,5248552,2,Japan,Hokkaido,01
 2020-10-25,,176,1,,,,,,1246138,2,Japan,Aomori,02
 2020-10-25,,27,0,,,,,,1226430,2,Japan,Iwate,03
 2020-10-25,,572,2,,,,,,2303160,2,Japan,Miyagi,04
@@ -14758,7 +14758,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-25,,858,19,,,,,,1937626,2,Japan,Gunma,10
 2020-10-25,,5601,104,,,,,,7337330,2,Japan,Saitama,11
 2020-10-25,,4759,76,,,,,,6279026,2,Japan,Chiba,12
-2020-10-25,,29909,445,,,,,,13942856,2,Japan,Tokyo,13
+2020-10-25,,30033,445,,,,,,13942856,2,Japan,Tokyo,13
 2020-10-25,,8314,162,,,,,,9200166,2,Japan,Kanagawa,14
 2020-10-25,,181,0,,,,,,2222004,2,Japan,Niigata,15
 2020-10-25,,422,26,,,,,,1042998,2,Japan,Toyama,16
@@ -14784,7 +14784,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-25,,164,9,,,,,,728633,2,Japan,Tokushima,36
 2020-10-25,,102,2,,,,,,956069,2,Japan,Kagawa,37
 2020-10-25,,116,6,,,,,,1338811,2,Japan,Ehime,38
-2020-10-25,,140,4,,,,,,697674,2,Japan,Kochi,39
+2020-10-25,,142,4,,,,,,697674,2,Japan,Kochi,39
 2020-10-25,,5161,101,,,,,,5110113,2,Japan,Fukuoka,40
 2020-10-25,,252,0,,,,,,814211,2,Japan,Saga,41
 2020-10-25,,244,3,,,,,,1325205,2,Japan,Nagasaki,42
