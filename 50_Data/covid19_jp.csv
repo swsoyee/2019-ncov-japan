@@ -263,7 +263,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-24,2557214,96606,1713,88762,5322,,,155,126216142,1,Japan,,
 2020-10-25,2570425,97101,1719,89234,5542,,,159,126216142,1,Japan,,
 2020-10-26,2581456,97511,1727,89681,5601,,,162,126216142,1,Japan,,
-2020-10-27,0,97740,1729,0,0,,,0,126216142,1,Japan,,
+2020-10-27,0,97774,1729,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -14861,7 +14861,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-27,,477,1,,,,,,1942312,2,Japan,Tochigi,09
 2020-10-27,,870,19,,,,,,1937626,2,Japan,Gunma,10
 2020-10-27,,5649,105,,,,,,7337330,2,Japan,Saitama,11
-2020-10-27,,4820,77,,,,,,6279026,2,Japan,Chiba,12
+2020-10-27,,4828,77,,,,,,6279026,2,Japan,Chiba,12
 2020-10-27,,30285,450,,,,,,13942856,2,Japan,Tokyo,13
 2020-10-27,,8394,165,,,,,,9200166,2,Japan,Kanagawa,14
 2020-10-27,,182,0,,,,,,2222004,2,Japan,Niigata,15
@@ -14871,8 +14871,8 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-27,,202,6,,,,,,812056,2,Japan,Yamanashi,19
 2020-10-27,,334,4,,,,,,2049023,2,Japan,Nagano,20
 2020-10-27,,672,11,,,,,,1988931,2,Japan,Gifu,21
-2020-10-27,,603,2,,,,,,3639226,2,Japan,Shizuoka,22
-2020-10-27,,5908,92,,,,,,7552873,2,Japan,Aichi,23
+2020-10-27,,604,2,,,,,,3639226,2,Japan,Shizuoka,22
+2020-10-27,,5910,92,,,,,,7552873,2,Japan,Aichi,23
 2020-10-27,,547,7,,,,,,1779770,2,Japan,Mie,24
 2020-10-27,,539,9,,,,,,1413959,2,Japan,Shiga,25
 2020-10-27,,1981,30,,,,,,2583140,2,Japan,Kyoto,26
@@ -14896,7 +14896,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-27,,159,3,,,,,,1134431,2,Japan,Oita,44
 2020-10-27,,367,1,,,,,,1072077,2,Japan,Miyazaki,45
 2020-10-27,,463,12,,,,,,1599984,2,Japan,Kagoshima,46
-2020-10-27,,3191,58,,,,,,1454184,2,Japan,Okinawa,47
+2020-10-27,,3214,58,,,,,,1454184,2,Japan,Okinawa,47
 2020-10-27,,14,0,,,,,,,1,Japan,Charter Flight,
 2020-10-27,,1153,1,,,,,,,1,Japan,Quarantine,
 2020-10-27,,712,13,,,,,,,1,Japan,Diamond Princess,
