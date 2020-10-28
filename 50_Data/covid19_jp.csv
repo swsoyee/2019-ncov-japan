@@ -264,7 +264,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-25,2570425,97100,1719,89234,5542,,,159,126216142,1,Japan,,
 2020-10-26,2581456,97510,1727,89681,5601,,,162,126216142,1,Japan,,
 2020-10-27,2606199,98157,1732,90124,5600,,,165,126216142,1,Japan,,
-2020-10-28,0,98241,1733,0,0,,,0,126216142,1,Japan,,
+2020-10-28,0,98459,1733,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -14902,7 +14902,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-27,268572,1153,1,1041,101,,,0,,1,Japan,Quarantine,
 2020-10-27,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-10-27,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-10-28,,2897,109,,,,,,5248552,2,Japan,Hokkaido,01
+2020-10-28,,2900,109,,,,,,5248552,2,Japan,Hokkaido,01
 2020-10-28,,205,2,,,,,,1246138,2,Japan,Aomori,02
 2020-10-28,,27,0,,,,,,1226430,2,Japan,Iwate,03
 2020-10-28,,655,2,,,,,,2303160,2,Japan,Miyagi,04
@@ -14914,8 +14914,8 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-28,,874,19,,,,,,1937626,2,Japan,Gunma,10
 2020-10-28,,5678,105,,,,,,7337330,2,Japan,Saitama,11
 2020-10-28,,4867,78,,,,,,6279026,2,Japan,Chiba,12
-2020-10-28,,30285,451,,,,,,13942856,2,Japan,Tokyo,13
-2020-10-28,,8445,166,,,,,,9200166,2,Japan,Kanagawa,14
+2020-10-28,,30456,451,,,,,,13942856,2,Japan,Tokyo,13
+2020-10-28,,8466,166,,,,,,9200166,2,Japan,Kanagawa,14
 2020-10-28,,182,0,,,,,,2222004,2,Japan,Niigata,15
 2020-10-28,,422,26,,,,,,1042998,2,Japan,Toyama,16
 2020-10-28,,800,49,,,,,,1137181,2,Japan,Ishikawa,17
@@ -14929,7 +14929,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-28,,543,9,,,,,,1413959,2,Japan,Shiga,25
 2020-10-28,,1989,30,,,,,,2583140,2,Japan,Kyoto,26
 2020-10-28,,12231,235,,,,,,8823453,2,Japan,Osaka,27
-2020-10-28,,3165,62,,,,,,5463609,2,Japan,Hyogo,28
+2020-10-28,,3188,62,,,,,,5463609,2,Japan,Hyogo,28
 2020-10-28,,615,9,,,,,,1331330,2,Japan,Nara,29
 2020-10-28,,272,4,,,,,,923721,2,Japan,Wakayama,30
 2020-10-28,,38,0,,,,,,555663,2,Japan,Tottori,31
