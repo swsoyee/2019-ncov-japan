@@ -265,7 +265,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-26,2581456,97508,1727,89681,5601,,,162,126216142,1,Japan,,
 2020-10-27,2606199,98155,1732,90124,5600,,,165,126216142,1,Japan,,
 2020-10-28,2633603,98885,1737,90784,5542,,,166,126216142,1,Japan,,
-2020-10-29,0,99536,1744,0,0,,,0,126216142,1,Japan,,
+2020-10-29,0,99551,1744,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -14979,7 +14979,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-29,,6081,94,,,,,,7552873,2,Japan,Aichi,23
 2020-10-29,,548,7,,,,,,1779770,2,Japan,Mie,24
 2020-10-29,,546,9,,,,,,1413959,2,Japan,Shiga,25
-2020-10-29,,2003,30,,,,,,2583140,2,Japan,Kyoto,26
+2020-10-29,,2014,30,,,,,,2583140,2,Japan,Kyoto,26
 2020-10-29,,12348,236,,,,,,8823453,2,Japan,Osaka,27
 2020-10-29,,3203,63,,,,,,5463609,2,Japan,Hyogo,28
 2020-10-29,,619,9,,,,,,1331330,2,Japan,Nara,29
@@ -15002,6 +15002,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-29,,468,12,,,,,,1599984,2,Japan,Kagoshima,46
 2020-10-29,,3274,60,,,,,,1454184,2,Japan,Okinawa,47
 2020-10-29,,14,0,,,,,,,1,Japan,Charter Flight,
-2020-10-29,,1160,1,,,,,,,1,Japan,Quarantine,
+2020-10-29,,1164,1,,,,,,,1,Japan,Quarantine,
 2020-10-29,,712,13,,,,,,,1,Japan,Diamond Princess,
 2020-10-29,,149,0,,,,,,,1,Japan,Costa Atlantica,
