@@ -265,7 +265,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-26,2581456,97508,1727,89681,5601,,,162,126216142,1,Japan,,
 2020-10-27,2606199,98155,1732,90124,5600,,,165,126216142,1,Japan,,
 2020-10-28,2633603,98885,1737,90784,5542,,,166,126216142,1,Japan,,
-2020-10-29,0,98885,1737,0,0,,,0,126216142,1,Japan,,
+2020-10-29,0,98920,1738,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -14975,7 +14975,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-29,,208,6,,,,,,812056,2,Japan,Yamanashi,19
 2020-10-29,,335,4,,,,,,2049023,2,Japan,Nagano,20
 2020-10-29,,672,11,,,,,,1988931,2,Japan,Gifu,21
-2020-10-29,,619,2,,,,,,3639226,2,Japan,Shizuoka,22
+2020-10-29,,623,2,,,,,,3639226,2,Japan,Shizuoka,22
 2020-10-29,,5994,94,,,,,,7552873,2,Japan,Aichi,23
 2020-10-29,,547,7,,,,,,1779770,2,Japan,Mie,24
 2020-10-29,,546,9,,,,,,1413959,2,Japan,Shiga,25
@@ -14986,7 +14986,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-29,,273,4,,,,,,923721,2,Japan,Wakayama,30
 2020-10-29,,38,0,,,,,,555663,2,Japan,Tottori,31
 2020-10-29,,141,0,,,,,,673891,2,Japan,Shimane,32
-2020-10-29,,229,3,,,,,,1891346,2,Japan,Okayama,33
+2020-10-29,,260,4,,,,,,1891346,2,Japan,Okayama,33
 2020-10-29,,650,5,,,,,,2807987,2,Japan,Hiroshima,34
 2020-10-29,,211,2,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-10-29,,164,9,,,,,,728633,2,Japan,Tokushima,36
