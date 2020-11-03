@@ -270,7 +270,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-10-31,2706168,101335,1769,92455,6106,,,161,126216142,1,Japan,,
 2020-11-01,2721305,101949,1775,92939,6349,,,160,126216142,1,Japan,,
 2020-11-02,2730524,102438,1787,93360,6585,,,163,126216142,1,Japan,,
-2020-11-03,0,103118,1792,0,0,,,0,126216142,1,Japan,,
+2020-11-03,0,103137,1793,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -15224,7 +15224,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-03,,775,18,,,,,,2868041,2,Japan,Ibaraki,08
 2020-11-03,,492,1,,,,,,1942312,2,Japan,Tochigi,09
 2020-11-03,,905,20,,,,,,1937626,2,Japan,Gunma,10
-2020-11-03,,5941,107,,,,,,7337330,2,Japan,Saitama,11
+2020-11-03,,5941,108,,,,,,7337330,2,Japan,Saitama,11
 2020-11-03,,5103,81,,,,,,6279026,2,Japan,Chiba,12
 2020-11-03,,31502,459,,,,,,13942856,2,Japan,Tokyo,13
 2020-11-03,,8860,173,,,,,,9200166,2,Japan,Kanagawa,14
@@ -15239,7 +15239,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-03,,6406,96,,,,,,7552873,2,Japan,Aichi,23
 2020-11-03,,561,7,,,,,,1779770,2,Japan,Mie,24
 2020-11-03,,560,9,,,,,,1413959,2,Japan,Shiga,25
-2020-11-03,,2068,30,,,,,,2583140,2,Japan,Kyoto,26
+2020-11-03,,2079,30,,,,,,2583140,2,Japan,Kyoto,26
 2020-11-03,,12950,246,,,,,,8823453,2,Japan,Osaka,27
 2020-11-03,,3327,66,,,,,,5463609,2,Japan,Hyogo,28
 2020-11-03,,659,10,,,,,,1331330,2,Japan,Nara,29
@@ -15259,7 +15259,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-03,,813,8,,,,,,1746740,2,Japan,Kumamoto,43
 2020-11-03,,159,3,,,,,,1134431,2,Japan,Oita,44
 2020-11-03,,369,1,,,,,,1072077,2,Japan,Miyazaki,45
-2020-11-03,,475,13,,,,,,1599984,2,Japan,Kagoshima,46
+2020-11-03,,483,13,,,,,,1599984,2,Japan,Kagoshima,46
 2020-11-03,,3389,63,,,,,,1454184,2,Japan,Okinawa,47
 2020-11-03,,14,0,,,,,,,1,Japan,Charter Flight,
 2020-11-03,,1198,1,,,,,,,1,Japan,Quarantine,
