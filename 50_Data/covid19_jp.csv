@@ -271,7 +271,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-01,2721305,101949,1775,92939,6349,,,160,126216142,1,Japan,,
 2020-11-02,2730524,102438,1787,93360,6585,,,163,126216142,1,Japan,,
 2020-11-03,2755446,103304,1794,93816,6576,,,163,126216142,1,Japan,,
-2020-11-04,0,103750,1795,0,0,,,0,126216142,1,Japan,,
+2020-11-04,0,103796,1795,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -15267,7 +15267,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-03,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-11-03,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
 2020-11-04,,3424,112,,,,,,5248552,2,Japan,Hokkaido,01
-2020-11-04,,250,4,,,,,,1246138,2,Japan,Aomori,02
+2020-11-04,,256,4,,,,,,1246138,2,Japan,Aomori,02
 2020-11-04,,29,0,,,,,,1226430,2,Japan,Iwate,03
 2020-11-04,,804,2,,,,,,2303160,2,Japan,Miyagi,04
 2020-11-04,,61,0,,,,,,965968,2,Japan,Akita,05
@@ -15276,7 +15276,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-04,,775,18,,,,,,2868041,2,Japan,Ibaraki,08
 2020-11-04,,493,1,,,,,,1942312,2,Japan,Tochigi,09
 2020-11-04,,910,20,,,,,,1937626,2,Japan,Gunma,10
-2020-11-04,,5942,108,,,,,,7337330,2,Japan,Saitama,11
+2020-11-04,,5970,108,,,,,,7337330,2,Japan,Saitama,11
 2020-11-04,,5133,81,,,,,,6279026,2,Japan,Chiba,12
 2020-11-04,,31624,459,,,,,,13942856,2,Japan,Tokyo,13
 2020-11-04,,8904,173,,,,,,9200166,2,Japan,Kanagawa,14
@@ -15314,6 +15314,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-04,,483,13,,,,,,1599984,2,Japan,Kagoshima,46
 2020-11-04,,3405,63,,,,,,1454184,2,Japan,Okinawa,47
 2020-11-04,,14,0,,,,,,,1,Japan,Charter Flight,
-2020-11-04,,1202,1,,,,,,,1,Japan,Quarantine,
+2020-11-04,,1214,1,,,,,,,1,Japan,Quarantine,
 2020-11-04,,712,13,,,,,,,1,Japan,Diamond Princess,
 2020-11-04,,149,0,,,,,,,1,Japan,Costa Atlantica,
