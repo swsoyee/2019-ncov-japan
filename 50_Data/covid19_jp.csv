@@ -272,7 +272,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-02,2730524,102438,1787,93360,6585,,,163,126216142,1,Japan,,
 2020-11-03,2755446,103304,1794,93816,6576,,,163,126216142,1,Japan,,
 2020-11-04,2764092,103928,1798,94267,6737,,,165,126216142,1,Japan,,
-2020-11-05,0,104700,1800,0,0,,,0,126216142,1,Japan,,
+2020-11-05,0,104823,1801,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -15325,13 +15325,13 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-05,,61,0,,,,,,965968,2,Japan,Akita,05
 2020-11-05,,86,1,,,,,,1077057,2,Japan,Yamagata,06
 2020-11-05,,409,6,,,,,,1847950,2,Japan,Fukushima,07
-2020-11-05,,779,18,,,,,,2868041,2,Japan,Ibaraki,08
+2020-11-05,,789,18,,,,,,2868041,2,Japan,Ibaraki,08
 2020-11-05,,494,1,,,,,,1942312,2,Japan,Tochigi,09
 2020-11-05,,913,20,,,,,,1937626,2,Japan,Gunma,10
-2020-11-05,,5983,109,,,,,,7337330,2,Japan,Saitama,11
+2020-11-05,,6014,110,,,,,,7337330,2,Japan,Saitama,11
 2020-11-05,,5191,81,,,,,,6279026,2,Japan,Chiba,12
 2020-11-05,,31893,459,,,,,,13942856,2,Japan,Tokyo,13
-2020-11-05,,8939,173,,,,,,9200166,2,Japan,Kanagawa,14
+2020-11-05,,9013,173,,,,,,9200166,2,Japan,Kanagawa,14
 2020-11-05,,186,0,,,,,,2222004,2,Japan,Niigata,15
 2020-11-05,,424,26,,,,,,1042998,2,Japan,Toyama,16
 2020-11-05,,815,49,,,,,,1137181,2,Japan,Ishikawa,17
@@ -15357,7 +15357,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-05,,103,2,,,,,,956069,2,Japan,Kagawa,37
 2020-11-05,,116,6,,,,,,1338811,2,Japan,Ehime,38
 2020-11-05,,144,4,,,,,,697674,2,Japan,Kochi,39
-2020-11-05,,5229,103,,,,,,5110113,2,Japan,Fukuoka,40
+2020-11-05,,5232,103,,,,,,5110113,2,Japan,Fukuoka,40
 2020-11-05,,264,0,,,,,,814211,2,Japan,Saga,41
 2020-11-05,,246,3,,,,,,1325205,2,Japan,Nagasaki,42
 2020-11-05,,833,8,,,,,,1746740,2,Japan,Kumamoto,43
@@ -15366,6 +15366,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-05,,489,13,,,,,,1599984,2,Japan,Kagoshima,46
 2020-11-05,,3432,64,,,,,,1454184,2,Japan,Okinawa,47
 2020-11-05,,14,0,,,,,,,1,Japan,Charter Flight,
-2020-11-05,,1214,1,,,,,,,1,Japan,Quarantine,
+2020-11-05,,1219,1,,,,,,,1,Japan,Quarantine,
 2020-11-05,,712,13,,,,,,,1,Japan,Diamond Princess,
 2020-11-05,,149,0,,,,,,,1,Japan,Costa Atlantica,
