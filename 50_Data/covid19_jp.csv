@@ -275,7 +275,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-05,2787543,104973,1807,95091,6815,,,183,126216142,1,Japan,,
 2020-11-06,2818683,106114,1811,95742,7179,,,189,126216142,1,Japan,,
 2020-11-07,2846368,107445,1816,96445,7601,,,194,126216142,1,Japan,,
-2020-11-08,0,107917,1820,0,0,,,0,126216142,1,Japan,,
+2020-11-08,0,107926,1821,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -15487,7 +15487,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-08,,6197,111,,,,,,7337330,2,Japan,Saitama,11
 2020-11-08,,5297,82,,,,,,6279026,2,Japan,Chiba,12
 2020-11-08,,32618,461,,,,,,13942856,2,Japan,Tokyo,13
-2020-11-08,,9267,177,,,,,,9200166,2,Japan,Kanagawa,14
+2020-11-08,,9272,177,,,,,,9200166,2,Japan,Kanagawa,14
 2020-11-08,,188,0,,,,,,2222004,2,Japan,Niigata,15
 2020-11-08,,424,26,,,,,,1042998,2,Japan,Toyama,16
 2020-11-08,,822,49,,,,,,1137181,2,Japan,Ishikawa,17
@@ -15496,7 +15496,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-08,,370,6,,,,,,2049023,2,Japan,Nagano,20
 2020-11-08,,729,12,,,,,,1988931,2,Japan,Gifu,21
 2020-11-08,,749,2,,,,,,3639226,2,Japan,Shizuoka,22
-2020-11-08,,6736,97,,,,,,7552873,2,Japan,Aichi,23
+2020-11-08,,6737,98,,,,,,7552873,2,Japan,Aichi,23
 2020-11-08,,588,7,,,,,,1779770,2,Japan,Mie,24
 2020-11-08,,599,9,,,,,,1413959,2,Japan,Shiga,25
 2020-11-08,,2145,30,,,,,,2583140,2,Japan,Kyoto,26
@@ -15519,7 +15519,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-08,,850,9,,,,,,1746740,2,Japan,Kumamoto,43
 2020-11-08,,161,3,,,,,,1134431,2,Japan,Oita,44
 2020-11-08,,373,1,,,,,,1072077,2,Japan,Miyazaki,45
-2020-11-08,,523,13,,,,,,1599984,2,Japan,Kagoshima,46
+2020-11-08,,526,13,,,,,,1599984,2,Japan,Kagoshima,46
 2020-11-08,,3515,65,,,,,,1454184,2,Japan,Okinawa,47
 2020-11-08,,14,0,,,,,,,1,Japan,Charter Flight,
 2020-11-08,,1254,1,,,,,,,1,Japan,Quarantine,
