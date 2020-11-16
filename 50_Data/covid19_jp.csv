@@ -283,7 +283,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-13,2991064,115413,1884,100995,10376,,,231,126216142,1,Japan,,
 2020-11-14,3016345,117149,1887,101965,11056,,,234,126216142,1,Japan,,
 2020-11-15,3035324,118589,1894,102807,11903,,,243,126216142,1,Japan,,
-2020-11-16,0,119084,1897,0,0,,,0,126216142,1,Japan,,
+2020-11-16,0,119090,1897,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -15900,7 +15900,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-16,,967,18,,,,,,2868041,2,Japan,Ibaraki,08
 2020-11-16,,516,2,,,,,,1942312,2,Japan,Tochigi,09
 2020-11-16,,956,20,,,,,,1937626,2,Japan,Gunma,10
-2020-11-16,,6817,118,,,,,,7337330,2,Japan,Saitama,11
+2020-11-16,,6821,118,,,,,,7337330,2,Japan,Saitama,11
 2020-11-16,,5773,84,,,,,,6279026,2,Japan,Chiba,12
 2020-11-16,,34931,470,,,,,,13942856,2,Japan,Tokyo,13
 2020-11-16,,10151,182,,,,,,9200166,2,Japan,Kanagawa,14
@@ -15926,7 +15926,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-16,,695,5,,,,,,2807987,2,Japan,Hiroshima,34
 2020-11-16,,265,2,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-11-16,,171,9,,,,,,728633,2,Japan,Tokushima,36
-2020-11-16,,115,2,,,,,,956069,2,Japan,Kagawa,37
+2020-11-16,,116,2,,,,,,956069,2,Japan,Kagawa,37
 2020-11-16,,130,6,,,,,,1338811,2,Japan,Ehime,38
 2020-11-16,,144,4,,,,,,697674,2,Japan,Kochi,39
 2020-11-16,,5359,104,,,,,,5110113,2,Japan,Fukuoka,40
@@ -15935,7 +15935,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-16,,916,10,,,,,,1746740,2,Japan,Kumamoto,43
 2020-11-16,,168,3,,,,,,1134431,2,Japan,Oita,44
 2020-11-16,,374,1,,,,,,1072077,2,Japan,Miyazaki,45
-2020-11-16,,557,13,,,,,,1599984,2,Japan,Kagoshima,46
+2020-11-16,,558,13,,,,,,1599984,2,Japan,Kagoshima,46
 2020-11-16,,3765,66,,,,,,1454184,2,Japan,Okinawa,47
 2020-11-16,,14,0,,,,,,,1,Japan,Charter Flight,
 2020-11-16,,1357,1,,,,,,,1,Japan,Quarantine,
