@@ -284,7 +284,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-14,3016345,117149,1887,101965,11056,,,234,126216142,1,Japan,,
 2020-11-15,3035324,118589,1894,102807,11903,,,243,126216142,1,Japan,,
 2020-11-16,3045924,119538,1905,103645,12499,,,251,126216142,1,Japan,,
-2020-11-17,0,120340,1907,0,0,,,0,126216142,1,Japan,,
+2020-11-17,0,120391,1909,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -15942,7 +15942,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-16,305471,1361,1,1205,141,,,0,,1,Japan,Quarantine,
 2020-11-16,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-11-16,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-11-17,,5857,129,,,,,,5248552,2,Japan,Hokkaido,01
+2020-11-17,,5857,131,,,,,,5248552,2,Japan,Hokkaido,01
 2020-11-17,,280,6,,,,,,1246138,2,Japan,Aomori,02
 2020-11-17,,79,0,,,,,,1226430,2,Japan,Iwate,03
 2020-11-17,,995,8,,,,,,2303160,2,Japan,Miyagi,04
@@ -15953,7 +15953,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-17,,517,2,,,,,,1942312,2,Japan,Tochigi,09
 2020-11-17,,961,20,,,,,,1937626,2,Japan,Gunma,10
 2020-11-17,,6904,120,,,,,,7337330,2,Japan,Saitama,11
-2020-11-17,,5842,84,,,,,,6279026,2,Japan,Chiba,12
+2020-11-17,,5859,84,,,,,,6279026,2,Japan,Chiba,12
 2020-11-17,,35229,472,,,,,,13942856,2,Japan,Tokyo,13
 2020-11-17,,10256,182,,,,,,9200166,2,Japan,Kanagawa,14
 2020-11-17,,256,0,,,,,,2222004,2,Japan,Niigata,15
@@ -15984,11 +15984,11 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-17,,5367,104,,,,,,5110113,2,Japan,Fukuoka,40
 2020-11-17,,277,1,,,,,,814211,2,Japan,Saga,41
 2020-11-17,,252,3,,,,,,1325205,2,Japan,Nagasaki,42
-2020-11-17,,917,10,,,,,,1746740,2,Japan,Kumamoto,43
+2020-11-17,,927,10,,,,,,1746740,2,Japan,Kumamoto,43
 2020-11-17,,179,3,,,,,,1134431,2,Japan,Oita,44
 2020-11-17,,375,1,,,,,,1072077,2,Japan,Miyazaki,45
 2020-11-17,,558,13,,,,,,1599984,2,Japan,Kagoshima,46
-2020-11-17,,3765,66,,,,,,1454184,2,Japan,Okinawa,47
+2020-11-17,,3789,66,,,,,,1454184,2,Japan,Okinawa,47
 2020-11-17,,14,0,,,,,,,1,Japan,Charter Flight,
 2020-11-17,,1361,1,,,,,,,1,Japan,Quarantine,
 2020-11-17,,712,13,,,,,,,1,Japan,Diamond Princess,
