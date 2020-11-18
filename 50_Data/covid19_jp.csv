@@ -285,7 +285,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-15,3035324,118601,1894,102807,11903,,,243,126216142,1,Japan,,
 2020-11-16,3045924,119550,1905,103645,12499,,,251,126216142,1,Japan,,
 2020-11-17,3077699,121250,1919,104609,12698,,,272,126216142,1,Japan,,
-2020-11-18,0,121532,1920,0,0,,,0,126216142,1,Japan,,
+2020-11-18,0,122183,1920,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -15994,7 +15994,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-17,307137,1369,1,1216,134,,,0,,1,Japan,Quarantine,
 2020-11-17,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-11-17,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-11-18,,5859,131,,,,,,5248552,2,Japan,Hokkaido,01
+2020-11-18,,5995,131,,,,,,5248552,2,Japan,Hokkaido,01
 2020-11-18,,280,6,,,,,,1246138,2,Japan,Aomori,02
 2020-11-18,,89,0,,,,,,1226430,2,Japan,Iwate,03
 2020-11-18,,1027,8,,,,,,2303160,2,Japan,Miyagi,04
@@ -16006,7 +16006,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-18,,964,20,,,,,,1937626,2,Japan,Gunma,10
 2020-11-18,,6992,121,,,,,,7337330,2,Japan,Saitama,11
 2020-11-18,,5935,84,,,,,,6279026,2,Japan,Chiba,12
-2020-11-18,,35229,476,,,,,,13942856,2,Japan,Tokyo,13
+2020-11-18,,35722,476,,,,,,13942856,2,Japan,Tokyo,13
 2020-11-18,,10345,183,,,,,,9200166,2,Japan,Kanagawa,14
 2020-11-18,,272,0,,,,,,2222004,2,Japan,Niigata,15
 2020-11-18,,430,26,,,,,,1042998,2,Japan,Toyama,16
@@ -16026,8 +16026,8 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-18,,338,4,,,,,,923721,2,Japan,Wakayama,30
 2020-11-18,,52,0,,,,,,555663,2,Japan,Tottori,31
 2020-11-18,,142,0,,,,,,673891,2,Japan,Shimane,32
-2020-11-18,,409,11,,,,,,1891346,2,Japan,Okayama,33
-2020-11-18,,711,5,,,,,,2807987,2,Japan,Hiroshima,34
+2020-11-18,,428,11,,,,,,1891346,2,Japan,Okayama,33
+2020-11-18,,714,5,,,,,,2807987,2,Japan,Hiroshima,34
 2020-11-18,,283,2,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-11-18,,174,9,,,,,,728633,2,Japan,Tokushima,36
 2020-11-18,,123,2,,,,,,956069,2,Japan,Kagawa,37
