@@ -293,7 +293,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-23,3274654,134512,1995,112241,18019,,,331,126216142,1,Japan,,
 2020-11-24,3286323,135740,2014,113306,18513,,,345,126216142,1,Japan,,
 2020-11-25,3331392,137684,2035,114706,18517,,,376,126216142,1,Japan,,
-2020-11-26,0,137987,2043,0,0,,,0,126216142,1,Japan,,
+2020-11-26,0,138071,2043,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -16410,7 +16410,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-25,320340,1469,1,1316,129,,,0,,1,Japan,Quarantine,
 2020-11-25,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-11-25,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-11-26,,7878,171,,,,,,5248552,2,Japan,Hokkaido,01
+2020-11-26,,7883,171,,,,,,5248552,2,Japan,Hokkaido,01
 2020-11-26,,285,6,,,,,,1246138,2,Japan,Aomori,02
 2020-11-26,,162,1,,,,,,1226430,2,Japan,Iwate,03
 2020-11-26,,1147,9,,,,,,2303160,2,Japan,Miyagi,04
@@ -16426,7 +16426,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-26,,11632,189,,,,,,9200166,2,Japan,Kanagawa,14
 2020-11-26,,324,0,,,,,,2222004,2,Japan,Niigata,15
 2020-11-26,,450,26,,,,,,1042998,2,Japan,Toyama,16
-2020-11-26,,838,49,,,,,,1137181,2,Japan,Ishikawa,17
+2020-11-26,,843,49,,,,,,1137181,2,Japan,Ishikawa,17
 2020-11-26,,309,11,,,,,,767742,2,Japan,Fukui,18
 2020-11-26,,331,7,,,,,,812056,2,Japan,Yamanashi,19
 2020-11-26,,641,6,,,,,,2049023,2,Japan,Nagano,20
@@ -16456,7 +16456,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-26,,238,3,,,,,,1134431,2,Japan,Oita,44
 2020-11-26,,457,1,,,,,,1072077,2,Japan,Miyazaki,45
 2020-11-26,,607,13,,,,,,1599984,2,Japan,Kagoshima,46
-2020-11-26,,4054,68,,,,,,1454184,2,Japan,Okinawa,47
+2020-11-26,,4128,68,,,,,,1454184,2,Japan,Okinawa,47
 2020-11-26,,14,0,,,,,,,1,Japan,Charter Flight,
 2020-11-26,,1469,1,,,,,,,1,Japan,Quarantine,
 2020-11-26,,712,13,,,,,,,1,Japan,Diamond Princess,
