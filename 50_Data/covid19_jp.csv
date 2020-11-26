@@ -293,7 +293,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-23,3274654,134512,1995,112241,18019,,,331,126216142,1,Japan,,
 2020-11-24,3286323,135740,2014,113306,18513,,,345,126216142,1,Japan,,
 2020-11-25,3331392,137684,2035,114706,18517,,,376,126216142,1,Japan,,
-2020-11-26,0,139201,2043,0,0,,,0,126216142,1,Japan,,
+2020-11-26,0,139214,2043,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -16414,7 +16414,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-26,,285,6,,,,,,1246138,2,Japan,Aomori,02
 2020-11-26,,175,1,,,,,,1226430,2,Japan,Iwate,03
 2020-11-26,,1157,9,,,,,,2303160,2,Japan,Miyagi,04
-2020-11-26,,80,1,,,,,,965968,2,Japan,Akita,05
+2020-11-26,,81,1,,,,,,965968,2,Japan,Akita,05
 2020-11-26,,111,1,,,,,,1077057,2,Japan,Yamagata,06
 2020-11-26,,486,6,,,,,,1847950,2,Japan,Fukushima,07
 2020-11-26,,1347,19,,,,,,2868041,2,Japan,Ibaraki,08
@@ -16443,7 +16443,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-26,,57,0,,,,,,555663,2,Japan,Tottori,31
 2020-11-26,,144,0,,,,,,673891,2,Japan,Shimane,32
 2020-11-26,,543,11,,,,,,1891346,2,Japan,Okayama,33
-2020-11-26,,774,6,,,,,,2807987,2,Japan,Hiroshima,34
+2020-11-26,,776,6,,,,,,2807987,2,Japan,Hiroshima,34
 2020-11-26,,365,2,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-11-26,,180,9,,,,,,728633,2,Japan,Tokushima,36
 2020-11-26,,135,2,,,,,,956069,2,Japan,Kagawa,37
@@ -16452,7 +16452,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-26,,5570,107,,,,,,5110113,2,Japan,Fukuoka,40
 2020-11-26,,297,1,,,,,,814211,2,Japan,Saga,41
 2020-11-26,,265,3,,,,,,1325205,2,Japan,Nagasaki,42
-2020-11-26,,983,12,,,,,,1746740,2,Japan,Kumamoto,43
+2020-11-26,,993,12,,,,,,1746740,2,Japan,Kumamoto,43
 2020-11-26,,246,3,,,,,,1134431,2,Japan,Oita,44
 2020-11-26,,457,1,,,,,,1072077,2,Japan,Miyazaki,45
 2020-11-26,,611,13,,,,,,1599984,2,Japan,Kagoshima,46
