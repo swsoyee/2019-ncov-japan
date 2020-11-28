@@ -295,7 +295,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-25,3331392,137685,2035,114706,18517,,,376,126216142,1,Japan,,
 2020-11-26,3374063,140189,2064,116352,18692,,,410,126216142,1,Japan,,
 2020-11-27,3418520,142720,2095,118098,19227,,,435,126216142,1,Japan,,
-2020-11-28,0,144700,2099,0,0,,,0,126216142,1,Japan,,
+2020-11-28,0,144713,2099,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -16524,7 +16524,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-28,,1442,19,,,,,,2868041,2,Japan,Ibaraki,08
 2020-11-28,,619,2,,,,,,1942312,2,Japan,Tochigi,09
 2020-11-28,,1177,21,,,,,,1937626,2,Japan,Gunma,10
-2020-11-28,,8106,138,,,,,,7337330,2,Japan,Saitama,11
+2020-11-28,,8117,138,,,,,,7337330,2,Japan,Saitama,11
 2020-11-28,,6848,86,,,,,,6279026,2,Japan,Chiba,12
 2020-11-28,,40210,488,,,,,,13942856,2,Japan,Tokyo,13
 2020-11-28,,12319,194,,,,,,9200166,2,Japan,Kanagawa,14
@@ -16559,7 +16559,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-28,,1009,13,,,,,,1746740,2,Japan,Kumamoto,43
 2020-11-28,,273,3,,,,,,1134431,2,Japan,Oita,44
 2020-11-28,,483,1,,,,,,1072077,2,Japan,Miyazaki,45
-2020-11-28,,621,13,,,,,,1599984,2,Japan,Kagoshima,46
+2020-11-28,,623,13,,,,,,1599984,2,Japan,Kagoshima,46
 2020-11-28,,4244,68,,,,,,1454184,2,Japan,Okinawa,47
 2020-11-28,,14,0,,,,,,,1,Japan,Charter Flight,
 2020-11-28,,1509,1,,,,,,,1,Japan,Quarantine,
