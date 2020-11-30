@@ -1,4 +1,4 @@
-## 更新部分 =====
+# # 更新部分 =====
 # library(tabulizer)
 # library(gtools)
 # library(data.table)
@@ -7,7 +7,7 @@
 # locationList <- fread(file = "50_Data/MHLW/summaryUrlList.csv")
 # location <- as.list(locationList$link)
 # names(location) <- locationList$date
-#
+# 
 # for (i in names(location)) {
 #   if (!i %in% dataset$日付) {
 #     out <- tabulizer::extract_tables(location[i][[1]], method = "lattice")
