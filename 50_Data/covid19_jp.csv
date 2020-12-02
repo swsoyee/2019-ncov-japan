@@ -299,7 +299,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-11-29,3485979,147460,2125,121281,21130,,,462,126216142,1,Japan,,
 2020-11-30,3497954,148899,2151,123402,21052,,,472,126216142,1,Japan,,
 2020-12-01,3545916,150929,2192,125342,21056,,,493,126216142,1,Japan,,
-2020-12-02,0,151204,2197,0,0,,,0,126216142,1,Japan,,
+2020-12-02,0,151766,2197,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -16722,7 +16722,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-01,332210,1544,1,1367,156,,,0,,1,Japan,Quarantine,
 2020-12-01,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-12-01,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-12-02,,9118,210,,,,,,5248552,2,Japan,Hokkaido,01
+2020-12-02,,9165,210,,,,,,5248552,2,Japan,Hokkaido,01
 2020-12-02,,300,6,,,,,,1246138,2,Japan,Aomori,02
 2020-12-02,,204,4,,,,,,1226430,2,Japan,Iwate,03
 2020-12-02,,1221,10,,,,,,2303160,2,Japan,Miyagi,04
@@ -16734,7 +16734,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-02,,1239,22,,,,,,1937626,2,Japan,Gunma,10
 2020-12-02,,8527,143,,,,,,7337330,2,Japan,Saitama,11
 2020-12-02,,7066,89,,,,,,6279026,2,Japan,Chiba,12
-2020-12-02,,41311,494,,,,,,13942856,2,Japan,Tokyo,13
+2020-12-02,,41811,494,,,,,,13942856,2,Japan,Tokyo,13
 2020-12-02,,12708,198,,,,,,9200166,2,Japan,Kanagawa,14
 2020-12-02,,337,0,,,,,,2222004,2,Japan,Niigata,15
 2020-12-02,,460,26,,,,,,1042998,2,Japan,Toyama,16
@@ -16765,7 +16765,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-02,,317,2,,,,,,814211,2,Japan,Saga,41
 2020-12-02,,273,3,,,,,,1325205,2,Japan,Nagasaki,42
 2020-12-02,,1040,13,,,,,,1746740,2,Japan,Kumamoto,43
-2020-12-02,,309,3,,,,,,1134431,2,Japan,Oita,44
+2020-12-02,,324,3,,,,,,1134431,2,Japan,Oita,44
 2020-12-02,,520,1,,,,,,1072077,2,Japan,Miyazaki,45
 2020-12-02,,632,13,,,,,,1599984,2,Japan,Kagoshima,46
 2020-12-02,,4350,69,,,,,,1454184,2,Japan,Okinawa,47
