@@ -301,7 +301,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-01,3545916,150916,2192,125342,21056,,,493,126216142,1,Japan,,
 2020-12-02,3591597,153350,2224,127276,20742,,,488,126216142,1,Japan,,
 2020-12-03,3636512,155867,2260,129217,21180,,,497,126216142,1,Japan,,
-2020-12-04,0,157779,2287,0,0,,,0,126216142,1,Japan,,
+2020-12-04,0,157824,2287,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -16828,13 +16828,13 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-03,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
 2020-12-04,,9642,237,,,,,,5248552,2,Japan,Hokkaido,01
 2020-12-04,,321,6,,,,,,1246138,2,Japan,Aomori,02
-2020-12-04,,212,4,,,,,,1226430,2,Japan,Iwate,03
+2020-12-04,,213,4,,,,,,1226430,2,Japan,Iwate,03
 2020-12-04,,1272,10,,,,,,2303160,2,Japan,Miyagi,04
 2020-12-04,,87,1,,,,,,965968,2,Japan,Akita,05
 2020-12-04,,152,1,,,,,,1077057,2,Japan,Yamagata,06
 2020-12-04,,515,8,,,,,,1847950,2,Japan,Fukushima,07
 2020-12-04,,1777,23,,,,,,2868041,2,Japan,Ibaraki,08
-2020-12-04,,717,2,,,,,,1942312,2,Japan,Tochigi,09
+2020-12-04,,719,2,,,,,,1942312,2,Japan,Tochigi,09
 2020-12-04,,1341,22,,,,,,1937626,2,Japan,Gunma,10
 2020-12-04,,8988,152,,,,,,7337330,2,Japan,Saitama,11
 2020-12-04,,7298,90,,,,,,6279026,2,Japan,Chiba,12
@@ -16851,7 +16851,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-04,,10940,124,,,,,,7552873,2,Japan,Aichi,23
 2020-12-04,,919,9,,,,,,1779770,2,Japan,Mie,24
 2020-12-04,,808,11,,,,,,1413959,2,Japan,Shiga,25
-2020-12-04,,2736,39,,,,,,2583140,2,Japan,Kyoto,26
+2020-12-04,,2771,39,,,,,,2583140,2,Japan,Kyoto,26
 2020-12-04,,21404,341,,,,,,8823453,2,Japan,Osaka,27
 2020-12-04,,6169,91,,,,,,5463609,2,Japan,Hyogo,28
 2020-12-04,,1238,13,,,,,,1331330,2,Japan,Nara,29
@@ -16874,6 +16874,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-04,,653,13,,,,,,1599984,2,Japan,Kagoshima,46
 2020-12-04,,4491,72,,,,,,1454184,2,Japan,Okinawa,47
 2020-12-04,,14,0,,,,,,,1,Japan,Charter Flight,
-2020-12-04,,1569,1,,,,,,,1,Japan,Quarantine,
+2020-12-04,,1576,1,,,,,,,1,Japan,Quarantine,
 2020-12-04,,712,13,,,,,,,1,Japan,Diamond Princess,
 2020-12-04,,149,0,,,,,,,1,Japan,Costa Atlantica,
