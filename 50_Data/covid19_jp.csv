@@ -302,7 +302,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-02,3591597,153350,2224,127276,20742,,,488,126216142,1,Japan,,
 2020-12-03,3636512,155867,2260,129217,21180,,,497,126216142,1,Japan,,
 2020-12-04,3675244,158307,2305,131150,21704,,,505,126216142,1,Japan,,
-2020-12-05,0,159448,2310,0,0,,,0,126216142,1,Japan,,
+2020-12-05,0,159489,2310,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -16924,7 +16924,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-05,,378,3,,,,,,1134431,2,Japan,Oita,44
 2020-12-05,,544,1,,,,,,1072077,2,Japan,Miyazaki,45
 2020-12-05,,653,13,,,,,,1599984,2,Japan,Kagoshima,46
-2020-12-05,,4491,72,,,,,,1454184,2,Japan,Okinawa,47
+2020-12-05,,4532,72,,,,,,1454184,2,Japan,Okinawa,47
 2020-12-05,,14,0,,,,,,,1,Japan,Charter Flight,
 2020-12-05,,1576,1,,,,,,,1,Japan,Quarantine,
 2020-12-05,,712,13,,,,,,,1,Japan,Diamond Princess,
