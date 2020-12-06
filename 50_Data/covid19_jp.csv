@@ -303,7 +303,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-03,3636512,155865,2260,129217,21180,,,497,126216142,1,Japan,,
 2020-12-04,3675244,158305,2305,131150,21704,,,505,126216142,1,Japan,,
 2020-12-05,3715130,160813,2327,133416,21871,,,520,126216142,1,Japan,,
-2020-12-06,0,161597,2345,0,0,,,0,126216142,1,Japan,,
+2020-12-06,0,161688,2347,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -16930,7 +16930,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-05,338931,1593,1,1433,132,,,0,,1,Japan,Quarantine,
 2020-12-05,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-12-05,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-12-06,,9996,256,,,,,,5248552,2,Japan,Hokkaido,01
+2020-12-06,,10011,256,,,,,,5248552,2,Japan,Hokkaido,01
 2020-12-06,,328,6,,,,,,1246138,2,Japan,Aomori,02
 2020-12-06,,220,4,,,,,,1226430,2,Japan,Iwate,03
 2020-12-06,,1293,10,,,,,,2303160,2,Japan,Miyagi,04
@@ -16949,9 +16949,9 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-06,,872,50,,,,,,1137181,2,Japan,Ishikawa,17
 2020-12-06,,321,11,,,,,,767742,2,Japan,Fukui,18
 2020-12-06,,408,9,,,,,,812056,2,Japan,Yamanashi,19
-2020-12-06,,800,6,,,,,,2049023,2,Japan,Nagano,20
+2020-12-06,,803,6,,,,,,2049023,2,Japan,Nagano,20
 2020-12-06,,1226,14,,,,,,1988931,2,Japan,Gifu,21
-2020-12-06,,1917,14,,,,,,3639226,2,Japan,Shizuoka,22
+2020-12-06,,1946,14,,,,,,3639226,2,Japan,Shizuoka,22
 2020-12-06,,11160,129,,,,,,7552873,2,Japan,Aichi,23
 2020-12-06,,935,9,,,,,,1779770,2,Japan,Mie,24
 2020-12-06,,814,11,,,,,,1413959,2,Japan,Shiga,25
@@ -16971,12 +16971,12 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-06,,215,4,,,,,,697674,2,Japan,Kochi,39
 2020-12-06,,5998,109,,,,,,5110113,2,Japan,Fukuoka,40
 2020-12-06,,334,2,,,,,,814211,2,Japan,Saga,41
-2020-12-06,,273,3,,,,,,1325205,2,Japan,Nagasaki,42
-2020-12-06,,1082,13,,,,,,1746740,2,Japan,Kumamoto,43
+2020-12-06,,276,3,,,,,,1325205,2,Japan,Nagasaki,42
+2020-12-06,,1084,13,,,,,,1746740,2,Japan,Kumamoto,43
 2020-12-06,,397,3,,,,,,1134431,2,Japan,Oita,44
 2020-12-06,,556,1,,,,,,1072077,2,Japan,Miyazaki,45
 2020-12-06,,659,13,,,,,,1599984,2,Japan,Kagoshima,46
-2020-12-06,,4532,72,,,,,,1454184,2,Japan,Okinawa,47
+2020-12-06,,4571,74,,,,,,1454184,2,Japan,Okinawa,47
 2020-12-06,,14,0,,,,,,,1,Japan,Charter Flight,
 2020-12-06,,1593,1,,,,,,,1,Japan,Quarantine,
 2020-12-06,,712,13,,,,,,,1,Japan,Diamond Princess,
