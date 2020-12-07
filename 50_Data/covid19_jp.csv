@@ -304,7 +304,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-04,3675244,158305,2305,131150,21704,,,505,126216142,1,Japan,,
 2020-12-05,3715130,160813,2327,133416,21871,,,520,126216142,1,Japan,,
 2020-12-06,3740146,162838,2358,135253,22389,,,519,126216142,1,Japan,,
-2020-12-07,0,163099,2368,0,0,,,0,126216142,1,Japan,,
+2020-12-07,0,163476,2369,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -16982,7 +16982,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-06,341634,1610,1,1442,140,,,0,,1,Japan,Quarantine,
 2020-12-06,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-12-06,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-12-07,,10098,261,,,,,,5248552,2,Japan,Hokkaido,01
+2020-12-07,,10134,262,,,,,,5248552,2,Japan,Hokkaido,01
 2020-12-07,,341,6,,,,,,1246138,2,Japan,Aomori,02
 2020-12-07,,220,4,,,,,,1226430,2,Japan,Iwate,03
 2020-12-07,,1311,10,,,,,,2303160,2,Japan,Miyagi,04
@@ -16994,9 +16994,9 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-07,,1388,22,,,,,,1937626,2,Japan,Gunma,10
 2020-12-07,,9317,155,,,,,,7337330,2,Japan,Saitama,11
 2020-12-07,,7452,92,,,,,,6279026,2,Japan,Chiba,12
-2020-12-07,,43704,511,,,,,,13942856,2,Japan,Tokyo,13
-2020-12-07,,13635,216,,,,,,9200166,2,Japan,Kanagawa,14
-2020-12-07,,356,0,,,,,,2222004,2,Japan,Niigata,15
+2020-12-07,,44003,511,,,,,,13942856,2,Japan,Tokyo,13
+2020-12-07,,13641,216,,,,,,9200166,2,Japan,Kanagawa,14
+2020-12-07,,359,0,,,,,,2222004,2,Japan,Niigata,15
 2020-12-07,,462,26,,,,,,1042998,2,Japan,Toyama,16
 2020-12-07,,874,50,,,,,,1137181,2,Japan,Ishikawa,17
 2020-12-07,,322,11,,,,,,767742,2,Japan,Fukui,18
@@ -17010,7 +17010,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-07,,2858,39,,,,,,2583140,2,Japan,Kyoto,26
 2020-12-07,,22507,353,,,,,,8823453,2,Japan,Osaka,27
 2020-12-07,,6547,98,,,,,,5463609,2,Japan,Hyogo,28
-2020-12-07,,1278,13,,,,,,1331330,2,Japan,Nara,29
+2020-12-07,,1300,13,,,,,,1331330,2,Japan,Nara,29
 2020-12-07,,503,7,,,,,,923721,2,Japan,Wakayama,30
 2020-12-07,,63,0,,,,,,555663,2,Japan,Tottori,31
 2020-12-07,,158,0,,,,,,673891,2,Japan,Shimane,32
@@ -17025,7 +17025,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-07,,335,2,,,,,,814211,2,Japan,Saga,41
 2020-12-07,,276,3,,,,,,1325205,2,Japan,Nagasaki,42
 2020-12-07,,1091,13,,,,,,1746740,2,Japan,Kumamoto,43
-2020-12-07,,397,3,,,,,,1134431,2,Japan,Oita,44
+2020-12-07,,408,3,,,,,,1134431,2,Japan,Oita,44
 2020-12-07,,565,1,,,,,,1072077,2,Japan,Miyazaki,45
 2020-12-07,,673,13,,,,,,1599984,2,Japan,Kagoshima,46
 2020-12-07,,4571,74,,,,,,1454184,2,Japan,Okinawa,47
