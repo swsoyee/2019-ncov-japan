@@ -308,7 +308,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-08,3800689,166528,2444,138967,22339,,,536,126216142,1,Japan,,
 2020-12-09,3842524,169338,2486,140589,22550,,,555,126216142,1,Japan,,
 2020-12-10,3898969,172308,2512,142970,22815,,,543,126216142,1,Japan,,
-2020-12-11,0,172616,2518,0,0,,,0,126216142,1,Japan,,
+2020-12-11,0,173252,2520,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -17190,7 +17190,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-10,350491,1647,1,1497,132,,,0,,1,Japan,Quarantine,
 2020-12-10,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-12-10,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-12-11,,10889,298,,,,,,5248552,2,Japan,Hokkaido,01
+2020-12-11,,10901,300,,,,,,5248552,2,Japan,Hokkaido,01
 2020-12-11,,361,6,,,,,,1246138,2,Japan,Aomori,02
 2020-12-11,,230,8,,,,,,1226430,2,Japan,Iwate,03
 2020-12-11,,1417,12,,,,,,2303160,2,Japan,Miyagi,04
@@ -17202,7 +17202,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-11,,1526,24,,,,,,1937626,2,Japan,Gunma,10
 2020-12-11,,9912,167,,,,,,7337330,2,Japan,Saitama,11
 2020-12-11,,7826,95,,,,,,6279026,2,Japan,Chiba,12
-2020-12-11,,45529,530,,,,,,13942856,2,Japan,Tokyo,13
+2020-12-11,,46124,530,,,,,,13942856,2,Japan,Tokyo,13
 2020-12-11,,14306,220,,,,,,9200166,2,Japan,Kanagawa,14
 2020-12-11,,375,1,,,,,,2222004,2,Japan,Niigata,15
 2020-12-11,,464,26,,,,,,1042998,2,Japan,Toyama,16
@@ -17217,7 +17217,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-11,,847,11,,,,,,1413959,2,Japan,Shiga,25
 2020-12-11,,3076,40,,,,,,2583140,2,Japan,Kyoto,26
 2020-12-11,,23835,389,,,,,,8823453,2,Japan,Osaka,27
-2020-12-11,,7067,104,,,,,,5463609,2,Japan,Hyogo,28
+2020-12-11,,7096,104,,,,,,5463609,2,Japan,Hyogo,28
 2020-12-11,,1385,13,,,,,,1331330,2,Japan,Nara,29
 2020-12-11,,538,7,,,,,,923721,2,Japan,Wakayama,30
 2020-12-11,,67,0,,,,,,555663,2,Japan,Tottori,31
