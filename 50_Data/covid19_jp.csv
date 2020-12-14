@@ -311,7 +311,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-11,3945830,175094,2553,144974,23774,,,554,126216142,1,Japan,,
 2020-12-12,4001554,178133,2581,147482,23990,,,578,126216142,1,Japan,,
 2020-12-13,4032816,180521,2601,149239,25113,,,583,126216142,1,Japan,,
-2020-12-14,0,180521,2601,0,0,,,0,126216142,1,Japan,,
+2020-12-14,0,180537,2601,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -17352,7 +17352,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-14,,1527,12,,,,,,2303160,2,Japan,Miyagi,04
 2020-12-14,,91,1,,,,,,965968,2,Japan,Akita,05
 2020-12-14,,253,1,,,,,,1077057,2,Japan,Yamagata,06
-2020-12-14,,611,8,,,,,,1847950,2,Japan,Fukushima,07
+2020-12-14,,622,8,,,,,,1847950,2,Japan,Fukushima,07
 2020-12-14,,1987,28,,,,,,2868041,2,Japan,Ibaraki,08
 2020-12-14,,870,3,,,,,,1942312,2,Japan,Tochigi,09
 2020-12-14,,1652,26,,,,,,1937626,2,Japan,Gunma,10
@@ -17377,9 +17377,9 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-14,,1457,15,,,,,,1331330,2,Japan,Nara,29
 2020-12-14,,554,7,,,,,,923721,2,Japan,Wakayama,30
 2020-12-14,,67,0,,,,,,555663,2,Japan,Tottori,31
-2020-12-14,,166,0,,,,,,673891,2,Japan,Shimane,32
+2020-12-14,,168,0,,,,,,673891,2,Japan,Shimane,32
 2020-12-14,,777,11,,,,,,1891346,2,Japan,Okayama,33
-2020-12-14,,1609,8,,,,,,2807987,2,Japan,Hiroshima,34
+2020-12-14,,1611,8,,,,,,2807987,2,Japan,Hiroshima,34
 2020-12-14,,432,2,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-12-14,,187,9,,,,,,728633,2,Japan,Tokushima,36
 2020-12-14,,200,3,,,,,,956069,2,Japan,Kagawa,37
@@ -17388,7 +17388,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-14,,6601,110,,,,,,5110113,2,Japan,Fukuoka,40
 2020-12-14,,378,3,,,,,,814211,2,Japan,Saga,41
 2020-12-14,,321,3,,,,,,1325205,2,Japan,Nagasaki,42
-2020-12-14,,1255,13,,,,,,1746740,2,Japan,Kumamoto,43
+2020-12-14,,1256,13,,,,,,1746740,2,Japan,Kumamoto,43
 2020-12-14,,516,3,,,,,,1134431,2,Japan,Oita,44
 2020-12-14,,605,3,,,,,,1072077,2,Japan,Miyazaki,45
 2020-12-14,,823,13,,,,,,1599984,2,Japan,Kagoshima,46
