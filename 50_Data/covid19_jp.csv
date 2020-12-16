@@ -313,7 +313,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-13,4032816,180512,2601,149239,25113,,,583,126216142,1,Japan,,
 2020-12-14,4048710,182192,2648,150893,25672,,,588,126216142,1,Japan,,
 2020-12-15,4105648,184623,2701,153435,25230,,,592,126216142,1,Japan,,
-2020-12-16,0,184623,2701,0,0,,,0,126216142,1,Japan,,
+2020-12-16,0,184665,2701,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -17455,8 +17455,8 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-16,,315,12,,,,,,1226430,2,Japan,Iwate,03
 2020-12-16,,1580,12,,,,,,2303160,2,Japan,Miyagi,04
 2020-12-16,,91,1,,,,,,965968,2,Japan,Akita,05
-2020-12-16,,281,1,,,,,,1077057,2,Japan,Yamagata,06
-2020-12-16,,637,8,,,,,,1847950,2,Japan,Fukushima,07
+2020-12-16,,290,1,,,,,,1077057,2,Japan,Yamagata,06
+2020-12-16,,658,8,,,,,,1847950,2,Japan,Fukushima,07
 2020-12-16,,2030,32,,,,,,2868041,2,Japan,Ibaraki,08
 2020-12-16,,915,3,,,,,,1942312,2,Japan,Tochigi,09
 2020-12-16,,1708,28,,,,,,1937626,2,Japan,Gunma,10
@@ -17471,7 +17471,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-16,,453,9,,,,,,812056,2,Japan,Yamanashi,19
 2020-12-16,,991,7,,,,,,2049023,2,Japan,Nagano,20
 2020-12-16,,1543,21,,,,,,1988931,2,Japan,Gifu,21
-2020-12-16,,2232,22,,,,,,3639226,2,Japan,Shizuoka,22
+2020-12-16,,2242,22,,,,,,3639226,2,Japan,Shizuoka,22
 2020-12-16,,13038,147,,,,,,7552873,2,Japan,Aichi,23
 2020-12-16,,1077,13,,,,,,1779770,2,Japan,Mie,24
 2020-12-16,,877,11,,,,,,1413959,2,Japan,Shiga,25
@@ -17481,7 +17481,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-16,,1493,15,,,,,,1331330,2,Japan,Nara,29
 2020-12-16,,562,7,,,,,,923721,2,Japan,Wakayama,30
 2020-12-16,,68,0,,,,,,555663,2,Japan,Tottori,31
-2020-12-16,,168,0,,,,,,673891,2,Japan,Shimane,32
+2020-12-16,,170,0,,,,,,673891,2,Japan,Shimane,32
 2020-12-16,,825,11,,,,,,1891346,2,Japan,Okayama,33
 2020-12-16,,1790,11,,,,,,2807987,2,Japan,Hiroshima,34
 2020-12-16,,437,2,,,,,,1355495,2,Japan,Yamaguchi,35
