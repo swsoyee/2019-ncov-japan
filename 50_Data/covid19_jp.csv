@@ -314,7 +314,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-14,4048710,182192,2648,150893,25672,,,588,126216142,1,Japan,,
 2020-12-15,4105648,184623,2701,153435,25230,,,592,126216142,1,Japan,,
 2020-12-16,4153589,187614,2754,155436,25281,,,618,126216142,1,Japan,,
-2020-12-17,0,187713,2755,0,0,,,0,126216142,1,Japan,,
+2020-12-17,0,187729,2755,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -17518,7 +17518,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-17,,15676,229,,,,,,9200166,2,Japan,Kanagawa,14
 2020-12-17,,418,3,,,,,,2222004,2,Japan,Niigata,15
 2020-12-17,,480,26,,,,,,1042998,2,Japan,Toyama,16
-2020-12-17,,930,50,,,,,,1137181,2,Japan,Ishikawa,17
+2020-12-17,,938,50,,,,,,1137181,2,Japan,Ishikawa,17
 2020-12-17,,337,11,,,,,,767742,2,Japan,Fukui,18
 2020-12-17,,457,9,,,,,,812056,2,Japan,Yamanashi,19
 2020-12-17,,1006,7,,,,,,2049023,2,Japan,Nagano,20
@@ -17536,7 +17536,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-17,,174,0,,,,,,673891,2,Japan,Shimane,32
 2020-12-17,,872,12,,,,,,1891346,2,Japan,Okayama,33
 2020-12-17,,1889,12,,,,,,2807987,2,Japan,Hiroshima,34
-2020-12-17,,438,2,,,,,,1355495,2,Japan,Yamaguchi,35
+2020-12-17,,442,2,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-12-17,,188,9,,,,,,728633,2,Japan,Tokushima,36
 2020-12-17,,206,3,,,,,,956069,2,Japan,Kagawa,37
 2020-12-17,,372,9,,,,,,1338811,2,Japan,Ehime,38
@@ -17546,7 +17546,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-17,,345,3,,,,,,1325205,2,Japan,Nagasaki,42
 2020-12-17,,1342,13,,,,,,1746740,2,Japan,Kumamoto,43
 2020-12-17,,556,3,,,,,,1134431,2,Japan,Oita,44
-2020-12-17,,630,4,,,,,,1072077,2,Japan,Miyazaki,45
+2020-12-17,,634,4,,,,,,1072077,2,Japan,Miyazaki,45
 2020-12-17,,858,13,,,,,,1599984,2,Japan,Kagoshima,46
 2020-12-17,,4877,77,,,,,,1454184,2,Japan,Okinawa,47
 2020-12-17,,14,0,,,,,,,1,Japan,Charter Flight,
