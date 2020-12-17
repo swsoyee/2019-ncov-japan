@@ -314,7 +314,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-14,4048710,182192,2648,150893,25672,,,588,126216142,1,Japan,,
 2020-12-15,4105648,184623,2701,153435,25230,,,592,126216142,1,Japan,,
 2020-12-16,4153589,187614,2754,155436,25281,,,618,126216142,1,Japan,,
-2020-12-17,0,190632,2778,0,0,,,0,126216142,1,Japan,,
+2020-12-17,0,190812,2779,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -17511,7 +17511,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-17,,672,9,,,,,,1847950,2,Japan,Fukushima,07
 2020-12-17,,2081,34,,,,,,2868041,2,Japan,Ibaraki,08
 2020-12-17,,968,3,,,,,,1942312,2,Japan,Tochigi,09
-2020-12-17,,1771,28,,,,,,1937626,2,Japan,Gunma,10
+2020-12-17,,1819,28,,,,,,1937626,2,Japan,Gunma,10
 2020-12-17,,11086,176,,,,,,7337330,2,Japan,Saitama,11
 2020-12-17,,8643,104,,,,,,6279026,2,Japan,Chiba,12
 2020-12-17,,49490,557,,,,,,13942856,2,Japan,Tokyo,13
@@ -17535,13 +17535,13 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-17,,68,0,,,,,,555663,2,Japan,Tottori,31
 2020-12-17,,174,0,,,,,,673891,2,Japan,Shimane,32
 2020-12-17,,884,12,,,,,,1891346,2,Japan,Okayama,33
-2020-12-17,,1984,12,,,,,,2807987,2,Japan,Hiroshima,34
+2020-12-17,,2019,13,,,,,,2807987,2,Japan,Hiroshima,34
 2020-12-17,,442,2,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-12-17,,188,9,,,,,,728633,2,Japan,Tokushima,36
 2020-12-17,,206,3,,,,,,956069,2,Japan,Kagawa,37
 2020-12-17,,372,9,,,,,,1338811,2,Japan,Ehime,38
 2020-12-17,,455,5,,,,,,697674,2,Japan,Kochi,39
-2020-12-17,,6886,111,,,,,,5110113,2,Japan,Fukuoka,40
+2020-12-17,,6977,111,,,,,,5110113,2,Japan,Fukuoka,40
 2020-12-17,,400,3,,,,,,814211,2,Japan,Saga,41
 2020-12-17,,352,3,,,,,,1325205,2,Japan,Nagasaki,42
 2020-12-17,,1367,13,,,,,,1746740,2,Japan,Kumamoto,43
@@ -17550,6 +17550,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-17,,862,13,,,,,,1599984,2,Japan,Kagoshima,46
 2020-12-17,,4895,77,,,,,,1454184,2,Japan,Okinawa,47
 2020-12-17,,14,0,,,,,,,1,Japan,Charter Flight,
-2020-12-17,,1712,1,,,,,,,1,Japan,Quarantine,
+2020-12-17,,1718,1,,,,,,,1,Japan,Quarantine,
 2020-12-17,,712,13,,,,,,,1,Japan,Diamond Princess,
 2020-12-17,,149,0,,,,,,,1,Japan,Costa Atlantica,
