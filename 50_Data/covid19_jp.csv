@@ -316,7 +316,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-16,4153589,187607,2754,155436,25281,,,618,126216142,1,Japan,,
 2020-12-17,4209796,190815,2792,158066,25411,,,605,126216142,1,Japan,,
 2020-12-18,4274633,193651,2840,160661,25741,,,609,126216142,1,Japan,,
-2020-12-19,0,193686,2842,0,0,,,0,126216142,1,Japan,,
+2020-12-19,0,193738,2842,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -17620,7 +17620,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-19,,8792,104,,,,,,6279026,2,Japan,Chiba,12
 2020-12-19,,50154,561,,,,,,13942856,2,Japan,Tokyo,13
 2020-12-19,,16290,235,,,,,,9200166,2,Japan,Kanagawa,14
-2020-12-19,,428,3,,,,,,2222004,2,Japan,Niigata,15
+2020-12-19,,430,3,,,,,,2222004,2,Japan,Niigata,15
 2020-12-19,,487,26,,,,,,1042998,2,Japan,Toyama,16
 2020-12-19,,947,50,,,,,,1137181,2,Japan,Ishikawa,17
 2020-12-19,,337,11,,,,,,767742,2,Japan,Fukui,18
@@ -17638,7 +17638,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-19,,572,7,,,,,,923721,2,Japan,Wakayama,30
 2020-12-19,,68,0,,,,,,555663,2,Japan,Tottori,31
 2020-12-19,,179,0,,,,,,673891,2,Japan,Shimane,32
-2020-12-19,,910,12,,,,,,1891346,2,Japan,Okayama,33
+2020-12-19,,957,12,,,,,,1891346,2,Japan,Okayama,33
 2020-12-19,,2108,13,,,,,,2807987,2,Japan,Hiroshima,34
 2020-12-19,,450,2,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-12-19,,188,9,,,,,,728633,2,Japan,Tokushima,36
@@ -17647,7 +17647,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-19,,465,5,,,,,,697674,2,Japan,Kochi,39
 2020-12-19,,7114,111,,,,,,5110113,2,Japan,Fukuoka,40
 2020-12-19,,403,3,,,,,,814211,2,Japan,Saga,41
-2020-12-19,,370,3,,,,,,1325205,2,Japan,Nagasaki,42
+2020-12-19,,373,3,,,,,,1325205,2,Japan,Nagasaki,42
 2020-12-19,,1405,13,,,,,,1746740,2,Japan,Kumamoto,43
 2020-12-19,,559,4,,,,,,1134431,2,Japan,Oita,44
 2020-12-19,,646,4,,,,,,1072077,2,Japan,Miyazaki,45
