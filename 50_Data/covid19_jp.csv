@@ -323,7 +323,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-23,4473256,206866,3068,171955,27017,,,619,126216142,1,Japan,,
 2020-12-24,4547779,210604,3122,174721,27224,,,644,126216142,1,Japan,,
 2020-12-25,4611291,214436,3186,177656,28301,,,644,126216142,1,Japan,,
-2020-12-26,0,215707,3195,0,0,,,0,126216142,1,Japan,,
+2020-12-26,0,215794,3199,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -17970,7 +17970,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-25,388421,1837,1,1659,147,,,0,,1,Japan,Quarantine,
 2020-12-25,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-12-25,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2020-12-26,,12709,423,,,,,,5248552,2,Japan,Hokkaido,01
+2020-12-26,,12745,427,,,,,,5248552,2,Japan,Hokkaido,01
 2020-12-26,,414,6,,,,,,1246138,2,Japan,Aomori,02
 2020-12-26,,363,22,,,,,,1226430,2,Japan,Iwate,03
 2020-12-26,,1969,13,,,,,,2303160,2,Japan,Miyagi,04
@@ -17979,7 +17979,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-26,,865,17,,,,,,1847950,2,Japan,Fukushima,07
 2020-12-26,,2253,35,,,,,,2868041,2,Japan,Ibaraki,08
 2020-12-26,,1165,6,,,,,,1942312,2,Japan,Tochigi,09
-2020-12-26,,2097,35,,,,,,1937626,2,Japan,Gunma,10
+2020-12-26,,2134,35,,,,,,1937626,2,Japan,Gunma,10
 2020-12-26,,12760,192,,,,,,7337330,2,Japan,Saitama,11
 2020-12-26,,9896,112,,,,,,6279026,2,Japan,Chiba,12
 2020-12-26,,55851,597,,,,,,13942856,2,Japan,Tokyo,13
@@ -17989,7 +17989,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-26,,1022,50,,,,,,1137181,2,Japan,Ishikawa,17
 2020-12-26,,345,11,,,,,,767742,2,Japan,Fukui,18
 2020-12-26,,509,11,,,,,,812056,2,Japan,Yamanashi,19
-2020-12-26,,1091,13,,,,,,2049023,2,Japan,Nagano,20
+2020-12-26,,1105,13,,,,,,2049023,2,Japan,Nagano,20
 2020-12-26,,1932,28,,,,,,1988931,2,Japan,Gifu,21
 2020-12-26,,2527,37,,,,,,3639226,2,Japan,Shizuoka,22
 2020-12-26,,15187,188,,,,,,7552873,2,Japan,Aichi,23
