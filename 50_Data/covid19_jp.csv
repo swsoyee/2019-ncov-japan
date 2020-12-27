@@ -324,7 +324,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-24,4547779,210604,3122,174721,27224,,,644,126216142,1,Japan,,
 2020-12-25,4613939,214436,3186,177672,28295,,,644,126216142,1,Japan,,
 2020-12-26,4676504,218316,3233,180046,29413,,,654,126216142,1,Japan,,
-2020-12-27,0,218322,3233,0,0,,,0,126216142,1,Japan,,
+2020-12-27,0,218330,3233,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -18041,7 +18041,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-27,,1022,50,,,,,,1137181,2,Japan,Ishikawa,17
 2020-12-27,,345,11,,,,,,767742,2,Japan,Fukui,18
 2020-12-27,,512,11,,,,,,812056,2,Japan,Yamanashi,19
-2020-12-27,,1105,13,,,,,,2049023,2,Japan,Nagano,20
+2020-12-27,,1108,13,,,,,,2049023,2,Japan,Nagano,20
 2020-12-27,,1977,29,,,,,,1988931,2,Japan,Gifu,21
 2020-12-27,,2544,37,,,,,,3639226,2,Japan,Shizuoka,22
 2020-12-27,,15452,194,,,,,,7552873,2,Japan,Aichi,23
@@ -18053,7 +18053,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-27,,1804,21,,,,,,1331330,2,Japan,Nara,29
 2020-12-27,,594,7,,,,,,923721,2,Japan,Wakayama,30
 2020-12-27,,87,0,,,,,,555663,2,Japan,Tottori,31
-2020-12-27,,200,0,,,,,,673891,2,Japan,Shimane,32
+2020-12-27,,202,0,,,,,,673891,2,Japan,Shimane,32
 2020-12-27,,1244,13,,,,,,1891346,2,Japan,Okayama,33
 2020-12-27,,2917,21,,,,,,2807987,2,Japan,Hiroshima,34
 2020-12-27,,513,3,,,,,,1355495,2,Japan,Yamaguchi,35
@@ -18064,7 +18064,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-27,,8133,117,,,,,,5110113,2,Japan,Fukuoka,40
 2020-12-27,,441,3,,,,,,814211,2,Japan,Saga,41
 2020-12-27,,537,3,,,,,,1325205,2,Japan,Nagasaki,42
-2020-12-27,,1675,16,,,,,,1746740,2,Japan,Kumamoto,43
+2020-12-27,,1678,16,,,,,,1746740,2,Japan,Kumamoto,43
 2020-12-27,,617,5,,,,,,1134431,2,Japan,Oita,44
 2020-12-27,,706,5,,,,,,1072077,2,Japan,Miyazaki,45
 2020-12-27,,946,13,,,,,,1599984,2,Japan,Kagoshima,46
