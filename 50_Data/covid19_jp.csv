@@ -325,7 +325,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-25,4613939,214435,3186,177672,28295,,,644,126216142,1,Japan,,
 2020-12-26,4676504,218315,3233,180046,29413,,,654,126216142,1,Japan,,
 2020-12-27,4711851,221263,3273,182500,30505,,,659,126216142,1,Japan,,
-2020-12-28,0,222287,3289,0,0,,,0,126216142,1,Japan,,
+2020-12-28,0,222299,3290,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -18079,7 +18079,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-28,,379,22,,,,,,1226430,2,Japan,Iwate,03
 2020-12-28,,2064,14,,,,,,2303160,2,Japan,Miyagi,04
 2020-12-28,,122,1,,,,,,965968,2,Japan,Akita,05
-2020-12-28,,369,5,,,,,,1077057,2,Japan,Yamagata,06
+2020-12-28,,369,6,,,,,,1077057,2,Japan,Yamagata,06
 2020-12-28,,896,19,,,,,,1847950,2,Japan,Fukushima,07
 2020-12-28,,2307,35,,,,,,2868041,2,Japan,Ibaraki,08
 2020-12-28,,1235,6,,,,,,1942312,2,Japan,Tochigi,09
@@ -18097,7 +18097,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-28,,2022,31,,,,,,1988931,2,Japan,Gifu,21
 2020-12-28,,2580,38,,,,,,3639226,2,Japan,Shizuoka,22
 2020-12-28,,15790,195,,,,,,7552873,2,Japan,Aichi,23
-2020-12-28,,1218,16,,,,,,1779770,2,Japan,Mie,24
+2020-12-28,,1228,16,,,,,,1779770,2,Japan,Mie,24
 2020-12-28,,1087,11,,,,,,1413959,2,Japan,Shiga,25
 2020-12-28,,4455,47,,,,,,2583140,2,Japan,Kyoto,26
 2020-12-28,,28927,544,,,,,,8823453,2,Japan,Osaka,27
@@ -18119,7 +18119,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-28,,1706,16,,,,,,1746740,2,Japan,Kumamoto,43
 2020-12-28,,639,5,,,,,,1134431,2,Japan,Oita,44
 2020-12-28,,723,5,,,,,,1072077,2,Japan,Miyazaki,45
-2020-12-28,,966,13,,,,,,1599984,2,Japan,Kagoshima,46
+2020-12-28,,968,13,,,,,,1599984,2,Japan,Kagoshima,46
 2020-12-28,,5217,81,,,,,,1454184,2,Japan,Okinawa,47
 2020-12-28,,14,0,,,,,,,1,Japan,Charter Flight,
 2020-12-28,,1857,1,,,,,,,1,Japan,Quarantine,
