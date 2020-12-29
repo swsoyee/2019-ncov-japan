@@ -326,7 +326,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-26,4676504,218314,3233,180046,29413,,,654,126216142,1,Japan,,
 2020-12-27,4711851,221258,3273,182500,30505,,,659,126216142,1,Japan,,
 2020-12-28,4725966,223658,3324,184556,31244,,,661,126216142,1,Japan,,
-2020-12-29,0,225862,3347,0,0,,,0,126216142,1,Japan,,
+2020-12-29,0,225992,3350,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -18127,7 +18127,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-28,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2020-12-28,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
 2020-12-29,,13107,445,,,,,,5248552,2,Japan,Hokkaido,01
-2020-12-29,,438,7,,,,,,1246138,2,Japan,Aomori,02
+2020-12-29,,453,8,,,,,,1246138,2,Japan,Aomori,02
 2020-12-29,,380,23,,,,,,1226430,2,Japan,Iwate,03
 2020-12-29,,2131,14,,,,,,2303160,2,Japan,Miyagi,04
 2020-12-29,,129,1,,,,,,965968,2,Japan,Akita,05
@@ -18139,7 +18139,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-29,,13420,199,,,,,,7337330,2,Japan,Saitama,11
 2020-12-29,,10593,115,,,,,,6279026,2,Japan,Chiba,12
 2020-12-29,,57896,613,,,,,,13942856,2,Japan,Tokyo,13
-2020-12-29,,19861,260,,,,,,9200166,2,Japan,Kanagawa,14
+2020-12-29,,19923,262,,,,,,9200166,2,Japan,Kanagawa,14
 2020-12-29,,520,3,,,,,,2222004,2,Japan,Niigata,15
 2020-12-29,,548,26,,,,,,1042998,2,Japan,Toyama,16
 2020-12-29,,1050,50,,,,,,1137181,2,Japan,Ishikawa,17
@@ -18159,7 +18159,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-29,,101,0,,,,,,555663,2,Japan,Tottori,31
 2020-12-29,,208,0,,,,,,673891,2,Japan,Shimane,32
 2020-12-29,,1307,14,,,,,,1891346,2,Japan,Okayama,33
-2020-12-29,,3071,26,,,,,,2807987,2,Japan,Hiroshima,34
+2020-12-29,,3124,26,,,,,,2807987,2,Japan,Hiroshima,34
 2020-12-29,,558,3,,,,,,1355495,2,Japan,Yamaguchi,35
 2020-12-29,,195,9,,,,,,728633,2,Japan,Tokushima,36
 2020-12-29,,296,3,,,,,,956069,2,Japan,Kagawa,37
