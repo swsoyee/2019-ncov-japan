@@ -331,7 +331,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2020-12-31,4851937,235631,3491,191351,34166,,,681,126216142,1,Japan,,
 2021-01-01,4893318,238877,3541,193422,36186,,,716,126216142,1,Japan,,
 2021-01-02,4919897,241937,3572,196117,37324,,,711,126216142,1,Japan,,
-2021-01-03,0,242417,3595,0,0,,,0,126216142,1,Japan,,
+2021-01-03,0,242547,3596,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -18406,7 +18406,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-03,,359,12,,,,,,767742,2,Japan,Fukui,18
 2021-01-03,,575,11,,,,,,812056,2,Japan,Yamanashi,19
 2021-01-03,,1242,16,,,,,,2049023,2,Japan,Nagano,20
-2021-01-03,,2383,37,,,,,,1988931,2,Japan,Gifu,21
+2021-01-03,,2441,37,,,,,,1988931,2,Japan,Gifu,21
 2021-01-03,,2787,41,,,,,,3639226,2,Japan,Shizuoka,22
 2021-01-03,,16909,221,,,,,,7552873,2,Japan,Aichi,23
 2021-01-03,,1303,19,,,,,,1779770,2,Japan,Mie,24
@@ -18419,7 +18419,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-03,,123,0,,,,,,555663,2,Japan,Tottori,31
 2021-01-03,,214,0,,,,,,673891,2,Japan,Shimane,32
 2021-01-03,,1439,15,,,,,,1891346,2,Japan,Okayama,33
-2021-01-03,,3476,42,,,,,,2807987,2,Japan,Hiroshima,34
+2021-01-03,,3518,43,,,,,,2807987,2,Japan,Hiroshima,34
 2021-01-03,,594,3,,,,,,1355495,2,Japan,Yamaguchi,35
 2021-01-03,,199,9,,,,,,728633,2,Japan,Tokushima,36
 2021-01-03,,311,3,,,,,,956069,2,Japan,Kagawa,37
@@ -18427,7 +18427,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-03,,676,8,,,,,,697674,2,Japan,Kochi,39
 2021-01-03,,9223,119,,,,,,5110113,2,Japan,Fukuoka,40
 2021-01-03,,472,3,,,,,,814211,2,Japan,Saga,41
-2021-01-03,,703,4,,,,,,1325205,2,Japan,Nagasaki,42
+2021-01-03,,733,4,,,,,,1325205,2,Japan,Nagasaki,42
 2021-01-03,,1932,18,,,,,,1746740,2,Japan,Kumamoto,43
 2021-01-03,,720,6,,,,,,1134431,2,Japan,Oita,44
 2021-01-03,,843,9,,,,,,1072077,2,Japan,Miyazaki,45
