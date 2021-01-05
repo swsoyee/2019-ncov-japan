@@ -333,7 +333,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-02,4919897,241933,3571,196117,37324,,,711,126216142,1,Japan,,
 2021-01-03,4930035,245090,3631,198195,38159,,,714,126216142,1,Japan,,
 2021-01-04,4953004,248412,3679,200380,38871,,,731,126216142,1,Japan,,
-2021-01-05,0,249012,3692,0,0,,,0,126216142,1,Japan,,
+2021-01-05,0,249026,3692,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -18522,7 +18522,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-05,,661,7,,,,,,923721,2,Japan,Wakayama,30
 2021-01-05,,133,0,,,,,,555663,2,Japan,Tottori,31
 2021-01-05,,215,0,,,,,,673891,2,Japan,Shimane,32
-2021-01-05,,1511,15,,,,,,1891346,2,Japan,Okayama,33
+2021-01-05,,1523,15,,,,,,1891346,2,Japan,Okayama,33
 2021-01-05,,3594,45,,,,,,2807987,2,Japan,Hiroshima,34
 2021-01-05,,638,3,,,,,,1355495,2,Japan,Yamaguchi,35
 2021-01-05,,206,9,,,,,,728633,2,Japan,Tokushima,36
@@ -18531,7 +18531,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-05,,689,9,,,,,,697674,2,Japan,Kochi,39
 2021-01-05,,9454,122,,,,,,5110113,2,Japan,Fukuoka,40
 2021-01-05,,498,3,,,,,,814211,2,Japan,Saga,41
-2021-01-05,,810,5,,,,,,1325205,2,Japan,Nagasaki,42
+2021-01-05,,812,5,,,,,,1325205,2,Japan,Nagasaki,42
 2021-01-05,,1986,22,,,,,,1746740,2,Japan,Kumamoto,43
 2021-01-05,,730,6,,,,,,1134431,2,Japan,Oita,44
 2021-01-05,,912,9,,,,,,1072077,2,Japan,Miyazaki,45
