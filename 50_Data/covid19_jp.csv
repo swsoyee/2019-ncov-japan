@@ -334,7 +334,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-03,4930035,245090,3631,198195,38159,,,714,126216142,1,Japan,,
 2021-01-04,4953004,248412,3679,200380,38871,,,731,126216142,1,Japan,,
 2021-01-05,5039832,253324,3755,203312,40052,,,771,126216142,1,Japan,,
-2021-01-06,0,259074,3789,0,0,,,0,126216142,1,Japan,,
+2021-01-06,0,259261,3789,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -18552,7 +18552,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-06,,2730,39,,,,,,2868041,2,Japan,Ibaraki,08
 2021-01-06,,1974,7,,,,,,1942312,2,Japan,Tochigi,09
 2021-01-06,,2551,48,,,,,,1937626,2,Japan,Gunma,10
-2021-01-06,,15783,228,,,,,,7337330,2,Japan,Saitama,11
+2021-01-06,,15935,228,,,,,,7337330,2,Japan,Saitama,11
 2021-01-06,,12433,128,,,,,,6279026,2,Japan,Chiba,12
 2021-01-06,,66343,648,,,,,,13942856,2,Japan,Tokyo,13
 2021-01-06,,24094,298,,,,,,9200166,2,Japan,Kanagawa,14
@@ -18560,7 +18560,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-06,,635,26,,,,,,1042998,2,Japan,Toyama,16
 2021-01-06,,1151,51,,,,,,1137181,2,Japan,Ishikawa,17
 2021-01-06,,376,12,,,,,,767742,2,Japan,Fukui,18
-2021-01-06,,616,11,,,,,,812056,2,Japan,Yamanashi,19
+2021-01-06,,628,11,,,,,,812056,2,Japan,Yamanashi,19
 2021-01-06,,1354,18,,,,,,2049023,2,Japan,Nagano,20
 2021-01-06,,2693,42,,,,,,1988931,2,Japan,Gifu,21
 2021-01-06,,2942,44,,,,,,3639226,2,Japan,Shizuoka,22
@@ -18587,7 +18587,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-06,,2095,25,,,,,,1746740,2,Japan,Kumamoto,43
 2021-01-06,,772,6,,,,,,1134431,2,Japan,Oita,44
 2021-01-06,,993,9,,,,,,1072077,2,Japan,Miyazaki,45
-2021-01-06,,1107,14,,,,,,1599984,2,Japan,Kagoshima,46
+2021-01-06,,1130,14,,,,,,1599984,2,Japan,Kagoshima,46
 2021-01-06,,5609,84,,,,,,1454184,2,Japan,Okinawa,47
 2021-01-06,,14,0,,,,,,,1,Japan,Charter Flight,
 2021-01-06,,1976,1,,,,,,,1,Japan,Quarantine,
