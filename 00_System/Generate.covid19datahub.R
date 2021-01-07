@@ -1,6 +1,5 @@
 library(tidyverse)
 library(lubridate)
-library(jpndistrict)
 
 # =====データ読み込み=====
 # 都道府県別新規感染者数
@@ -32,6 +31,7 @@ data <- data %>% mutate(
 )
 
 # 英語の都道府県名を追加する
+jpnprefs <- read_delim(file = "50_Data/Collection/jpnprefs.csv", delim = ",")
 prefectures <- jpnprefs %>% mutate(name_ja = str_remove(prefecture, "県|都$|府"),
                                    administrative_area_level_2 = str_remove(prefecture_en, "-.+")) %>%
   select(jis_code, name_ja, administrative_area_level_2)
