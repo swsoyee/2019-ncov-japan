@@ -344,7 +344,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-13,5531305,303905,4275,228936,63073,,,900,126216142,1,Japan,,
 2021-01-14,5615256,310510,4341,233419,63779,,,920,126216142,1,Japan,,
 2021-01-15,5718894,317643,4352,238324,65250,,,934,126216142,1,Japan,,
-2021-01-16,0,319736,4365,0,0,,,0,126216142,1,Japan,,
+2021-01-16,0,320143,4366,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -19062,7 +19062,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-15,436832,2061,1,1907,132,,,0,,1,Japan,Quarantine,
 2021-01-15,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2021-01-15,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2021-01-16,,15463,533,,,,,,5248552,2,Japan,Hokkaido,01
+2021-01-16,,15654,534,,,,,,5248552,2,Japan,Hokkaido,01
 2021-01-16,,622,8,,,,,,1246138,2,Japan,Aomori,02
 2021-01-16,,457,25,,,,,,1226430,2,Japan,Iwate,03
 2021-01-16,,2865,17,,,,,,2303160,2,Japan,Miyagi,04
@@ -19083,7 +19083,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-16,,823,11,,,,,,812056,2,Japan,Yamanashi,19
 2021-01-16,,1876,21,,,,,,2049023,2,Japan,Nagano,20
 2021-01-16,,3365,52,,,,,,1988931,2,Japan,Gifu,21
-2021-01-16,,3743,62,,,,,,3639226,2,Japan,Shizuoka,22
+2021-01-16,,3829,62,,,,,,3639226,2,Japan,Shizuoka,22
 2021-01-16,,20734,305,,,,,,7552873,2,Japan,Aichi,23
 2021-01-16,,1708,23,,,,,,1779770,2,Japan,Mie,24
 2021-01-16,,1698,17,,,,,,1413959,2,Japan,Shiga,25
@@ -19108,7 +19108,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-16,,916,10,,,,,,1134431,2,Japan,Oita,44
 2021-01-16,,1472,11,,,,,,1072077,2,Japan,Miyazaki,45
 2021-01-16,,1332,14,,,,,,1599984,2,Japan,Kagoshima,46
-2021-01-16,,6178,86,,,,,,1454184,2,Japan,Okinawa,47
+2021-01-16,,6308,86,,,,,,1454184,2,Japan,Okinawa,47
 2021-01-16,,14,0,,,,,,,1,Japan,Charter Flight,
 2021-01-16,,2061,1,,,,,,,1,Japan,Quarantine,
 2021-01-16,,712,13,,,,,,,1,Japan,Diamond Princess,
