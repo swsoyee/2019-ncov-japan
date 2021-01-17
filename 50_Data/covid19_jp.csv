@@ -345,7 +345,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-14,5615256,310510,4341,233419,63779,,,920,126216142,1,Japan,,
 2021-01-15,5718894,317642,4419,238324,65250,,,934,126216142,1,Japan,,
 2021-01-16,5792647,324654,4475,243821,66761,,,965,126216142,1,Japan,,
-2021-01-17,0,324698,4477,0,0,,,0,126216142,1,Japan,,
+2021-01-17,0,324754,4479,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -19114,7 +19114,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-16,439975,2073,1,1917,133,,,0,,1,Japan,Quarantine,
 2021-01-16,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2021-01-16,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2021-01-17,,15654,534,,,,,,5248552,2,Japan,Hokkaido,01
+2021-01-17,,15654,535,,,,,,5248552,2,Japan,Hokkaido,01
 2021-01-17,,635,8,,,,,,1246138,2,Japan,Aomori,02
 2021-01-17,,457,25,,,,,,1226430,2,Japan,Iwate,03
 2021-01-17,,2909,19,,,,,,2303160,2,Japan,Miyagi,04
@@ -19130,7 +19130,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-17,,32384,353,,,,,,9200166,2,Japan,Kanagawa,14
 2021-01-17,,761,5,,,,,,2222004,2,Japan,Niigata,15
 2021-01-17,,796,26,,,,,,1042998,2,Japan,Toyama,16
-2021-01-17,,1310,53,,,,,,1137181,2,Japan,Ishikawa,17
+2021-01-17,,1326,54,,,,,,1137181,2,Japan,Ishikawa,17
 2021-01-17,,447,12,,,,,,767742,2,Japan,Fukui,18
 2021-01-17,,833,11,,,,,,812056,2,Japan,Yamanashi,19
 2021-01-17,,1937,21,,,,,,2049023,2,Japan,Nagano,20
@@ -19148,10 +19148,10 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-17,,235,0,,,,,,673891,2,Japan,Shimane,32
 2021-01-17,,2036,16,,,,,,1891346,2,Japan,Okayama,33
 2021-01-17,,4351,71,,,,,,2807987,2,Japan,Hiroshima,34
-2021-01-17,,813,5,,,,,,1355495,2,Japan,Yamaguchi,35
-2021-01-17,,287,9,,,,,,728633,2,Japan,Tokushima,36
-2021-01-17,,520,5,,,,,,956069,2,Japan,Kagawa,37
-2021-01-17,,800,14,,,,,,1338811,2,Japan,Ehime,38
+2021-01-17,,830,5,,,,,,1355495,2,Japan,Yamaguchi,35
+2021-01-17,,291,9,,,,,,728633,2,Japan,Tokushima,36
+2021-01-17,,528,5,,,,,,956069,2,Japan,Kagawa,37
+2021-01-17,,811,14,,,,,,1338811,2,Japan,Ehime,38
 2021-01-17,,765,12,,,,,,697674,2,Japan,Kochi,39
 2021-01-17,,13096,139,,,,,,5110113,2,Japan,Fukuoka,40
 2021-01-17,,749,3,,,,,,814211,2,Japan,Saga,41
