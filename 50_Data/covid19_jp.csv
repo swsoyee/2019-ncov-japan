@@ -346,7 +346,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-15,5718894,317642,4419,238324,65250,,,934,126216142,1,Japan,,
 2021-01-16,5792647,324654,4475,243821,66761,,,965,126216142,1,Japan,,
 2021-01-17,5841014,330413,4524,248344,68447,,,972,126216142,1,Japan,,
-2021-01-18,0,330544,4525,0,0,,,0,126216142,1,Japan,,
+2021-01-18,0,330556,4527,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -19166,7 +19166,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-17,443680,2081,1,1936,126,,,0,,1,Japan,Quarantine,
 2021-01-17,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2021-01-17,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2021-01-18,,15778,538,,,,,,5248552,2,Japan,Hokkaido,01
+2021-01-18,,15778,539,,,,,,5248552,2,Japan,Hokkaido,01
 2021-01-18,,643,8,,,,,,1246138,2,Japan,Aomori,02
 2021-01-18,,467,25,,,,,,1226430,2,Japan,Iwate,03
 2021-01-18,,2949,20,,,,,,2303160,2,Japan,Miyagi,04
@@ -19182,7 +19182,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-18,,33179,356,,,,,,9200166,2,Japan,Kanagawa,14
 2021-01-18,,767,5,,,,,,2222004,2,Japan,Niigata,15
 2021-01-18,,802,27,,,,,,1042998,2,Japan,Toyama,16
-2021-01-18,,1326,54,,,,,,1137181,2,Japan,Ishikawa,17
+2021-01-18,,1338,54,,,,,,1137181,2,Japan,Ishikawa,17
 2021-01-18,,454,13,,,,,,767742,2,Japan,Fukui,18
 2021-01-18,,841,11,,,,,,812056,2,Japan,Yamanashi,19
 2021-01-18,,1989,21,,,,,,2049023,2,Japan,Nagano,20
@@ -19199,7 +19199,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-01-18,,177,2,,,,,,555663,2,Japan,Tottori,31
 2021-01-18,,235,0,,,,,,673891,2,Japan,Shimane,32
 2021-01-18,,2070,16,,,,,,1891346,2,Japan,Okayama,33
-2021-01-18,,4388,71,,,,,,2807987,2,Japan,Hiroshima,34
+2021-01-18,,4388,72,,,,,,2807987,2,Japan,Hiroshima,34
 2021-01-18,,918,5,,,,,,1355495,2,Japan,Yamaguchi,35
 2021-01-18,,297,9,,,,,,728633,2,Japan,Tokushima,36
 2021-01-18,,537,5,,,,,,956069,2,Japan,Kagawa,37
