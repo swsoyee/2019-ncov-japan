@@ -8,10 +8,16 @@ shinyUI(
   dashboardPagePlus(
     skin = "red",
     title = i18n$t("新　型　コ　ロ　ナ　ウ　イ　ル　ス　感　染　速　報"),
+    collapse_sidebar = TRUE,
     header = dashboardHeaderPlus(
       title = paste0("🦠　", i18n$t("新　型　コ　ロ　ナ　ウ　イ　ル　ス　感　染　速　報")),
       titleWidth = 600,
-      enable_rightsidebar = F
+      enable_rightsidebar = F,
+      left_menu = tagList(
+        tags$span(
+          "COVID-19 BULLETIN BOARD",
+          style = 'font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#fff;line-height:34px;font-size:20px;font-weight:300;overflow:hidden;')
+      )
     ),
     # TODO 言語設定の追加
     sidebar = dashboardSidebar(sidebarMenu(
