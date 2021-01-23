@@ -215,13 +215,13 @@ fwrite(x = dt, file = paste0(DATA_PATH, "Pref/", "Ibaraki", "/", "summary.csv"))
 # fwrite(x = dt, file = paste0(DATA_PATH, "Pref/Kanagawa/summary.csv"))
 
 # ====福岡====
-patientUrl <- "https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/c27769a2-8634-47aa-9714-7e21c4038dd4/download/400009_pref_fukuoka_covid19_patients.csv"
+patientUrl <- "https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/e6c7a8d7-32e2-4dd9-8a3a-c71dec4ec87c/download/400009_pref_fukuoka_covid19_patients.csv"
 patient <- read.csv(file(patientUrl))
 fwrite(x = data.table(patient), file = paste0(DATA_PATH, "Pref/Fukuoka/patients.csv"))
-testUrl <- "https://ckan.open-governmentdata.org/dataset/ef64c68a-d89e-4b1b-a53f-d2535ebfa3a1/resource/aab43191-40d0-4a6a-9724-a9030a596009/download/400009_pref_fukuoka_covid19_exam.csv"
+testUrl <- "https://ckan.open-governmentdata.org/dataset/ef64c68a-d89e-4b1b-a53f-d2535ebfa3a1/resource/ff65f541-506d-4eaa-863e-1db8c7a0f05a/download/400009_pref_fukuoka_covid19_exam.csv"
 test <- read.csv(file(testUrl))
 fwrite(x = data.table(test), file = paste0(DATA_PATH, "Pref/Fukuoka/test.csv"))
-contactUrl <- "https://ckan.open-governmentdata.org/dataset/f08d93ce-119a-4e0f-bd23-2a5f00d1d944/resource/b99a3d57-64e0-4cfa-b701-53713cca7df2/download/400009_pref_fukuoka_covid19_kikokusyasessyokusya.csv"
+contactUrl <- "https://ckan.open-governmentdata.org/dataset/f08d93ce-119a-4e0f-bd23-2a5f00d1d944/resource/09ba2388-bf32-4b74-817c-11c20acc4636/download/400009_pref_fukuoka_covid19_kikokusyasessyokusya.csv"
 contact <- read.csv(file(contactUrl))
 fwrite(x = data.table(contact), file = paste0(DATA_PATH, "Pref/Fukuoka/call.csv"))
 # ====大分====
