@@ -3,7 +3,10 @@ output$renderCalendar <- renderUI({
     if (is.null(input$regionPicker)) {
       tags$p("未選択です。地域を選択してください。")
     } else {
-      echarts4rOutput("confirmedCalendar", height = "130px")
+      tagList(
+        echarts4rOutput("confirmedCalendar", height = "130px"),
+        calendarDateRangePicker("confirmCalendarDateRange")
+      )
     }
   } else {
     tagList(tags$p("開発中"))
@@ -21,7 +24,7 @@ output$callCenterCanlendar <- renderEcharts4r({
   dt %>%
     e_charts(date) %>%
     e_calendar(
-      range = c("2020-02-01", "2020-07-30"),
+      range = input$callCenterCalendarDateRange,
       top = 25,
       left = 25,
       cellSize = 15,

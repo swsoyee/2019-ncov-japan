@@ -102,7 +102,7 @@ output$pcrCalendar <- renderEcharts4r({
   dt %>%
     e_charts(日付) %>%
     e_calendar(
-      range = c("2020-02-01", "2020-07-30"),
+      range = input$pcrCalendarDateRange,
       top = 25,
       left = 25,
       cellSize = 15,

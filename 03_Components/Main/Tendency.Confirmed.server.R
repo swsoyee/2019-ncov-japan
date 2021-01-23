@@ -264,7 +264,7 @@ output$confirmedCalendar <- renderEcharts4r({
     dt %>%
       e_charts(date) %>%
       e_calendar(
-        range = c("2020-02-01", "2020-07-30"),
+        range = input$confirmCalendarDateRange,
         top = 25,
         left = 25,
         cellSize = 15,

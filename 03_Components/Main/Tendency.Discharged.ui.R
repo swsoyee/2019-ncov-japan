@@ -21,7 +21,8 @@ tabPanel(
         tags$hr(),
         tags$b(i18n$t("回復者数（日次）"))
       ),
-      echarts4rOutput("curedCalendar", height = "130px") %>% withSpinner()
+      echarts4rOutput("curedCalendar", height = "130px") %>% withSpinner(),
+      calendarDateRangePicker("curedCalendarDateRange")
     )
   )
 )

@@ -27,7 +27,8 @@ tabPanel(
         tags$hr(),
         tags$b(i18n$t("相談を受けた件数（日次）"))
       ),
-      echarts4rOutput("callCenterCanlendar", height = "130px") %>% withSpinner()
+      echarts4rOutput("callCenterCanlendar", height = "130px") %>% withSpinner(),
+      calendarDateRangePicker("callCenterCalendarDateRange")
     )
   )
 )
