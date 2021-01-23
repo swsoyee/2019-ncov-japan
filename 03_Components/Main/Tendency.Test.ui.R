@@ -73,7 +73,8 @@ tabPanel(
         tags$hr(),
         tags$b(i18n$t("PCR検査人数（日次）"))
       ),
-      echarts4rOutput("pcrCalendar", height = "130px") %>% withSpinner()
+      echarts4rOutput("pcrCalendar", height = "130px") %>% withSpinner(),
+      calendarDateRangePicker("pcrCalendarDateRange")
     )
   )
 )
