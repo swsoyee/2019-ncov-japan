@@ -70,3 +70,17 @@ generateColorStyle <- function(data, colors, by) {
   colorPanel <- colorRampPalette(colors)(length(breaks) + 1)
   return(list(cuts = breaks, values = colorPanel))
 }
+
+calendarDateRangePicker <- function(inputId) {
+  dateRangeInput(
+    inputId,
+    label = "",
+    start = Sys.Date() - 120,
+    end = Sys.Date(),
+    min = "2020-01-01",
+    max = Sys.Date(),
+    separator = " - ",
+    format = i18n$t("yyyy年m月d日"),
+    language = i18n$translation_language
+  )
+}
