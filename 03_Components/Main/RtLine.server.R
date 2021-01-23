@@ -4,7 +4,7 @@ output$RtLine <- renderEcharts4r({
     # parameters
     mean_si <- input$RtLineMeanSi
     std_si <- input$RtLineStdSi
-    selectedPref <- c("東京", "千葉")
+    selectedPref <- input$regionRtLinePicker
 
     incid <- as.incidence(rowSums(byDate[, selectedPref, with = FALSE]),
       dates = byDate$date

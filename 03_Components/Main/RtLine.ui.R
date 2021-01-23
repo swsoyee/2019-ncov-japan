@@ -5,6 +5,21 @@ tabPanel(
     style = "margin-top:10px;",
     column(
       width = 8,
+      pickerInput(
+        inputId = "regionRtLinePicker",
+        label = i18n$t("地域選択"),
+        choices = regionName[6:length(regionName)],
+        selected = regionName[6:length(regionName)][1],
+        options = list(
+          `actions-box` = TRUE,
+          size = 10,
+          `deselect-all-text` = i18n$t("クリア"),
+          `select-all-text` = i18n$t("全部"),
+          `live-search` = T
+        ),
+        multiple = T,
+        width = "100%"
+      ),
       echarts4rOutput(
         outputId = "RtLine",
         height = "400px"
