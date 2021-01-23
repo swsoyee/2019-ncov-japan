@@ -51,8 +51,8 @@ fluidPage(
           echarts4rOutput("FukuokaInfectedRoute") %>% withSpinner()
         ),
         column(
-          width = 6,
-          echarts4rOutput("FukuokaResidentialTreeMap") %>% withSpinner()
+          width = 6 # ,
+          # echarts4rOutput("FukuokaResidentialTreeMap") %>% withSpinner()
         )
       ),
       footer = tags$small(icon("lightbulb"), i18n$t("凡例クリックすると表示・非表示の切替ができます。"))
