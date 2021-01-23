@@ -239,7 +239,7 @@ names(provinceSelector) <- sapply(provinceCode$`name-ja`, i18n$t)
 positiveDetail <- fread(paste0(DATA_PATH, "positiveDetail.csv"))
 
 # 市レベルの感染者数
-confirmedCityTreemapData <- fread(paste0(DATA_PATH, "Kenmo/confirmedNumberByCity.", languageSetting, ".csv"))
+# confirmedCityTreemapData <- fread(paste0(DATA_PATH, "Kenmo/confirmedNumberByCity.", languageSetting, ".csv"))
 
 # 詳細データ
 detail <- fread(paste0(DATA_PATH, "detail.csv"),
