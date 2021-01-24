@@ -1,5 +1,5 @@
 fluidRow(
-  boxPlus(
+  box(
     width = 12, closable = F,
     title = tagList(icon("chart-line"), i18n$t("COVID-19 重症患者状況　日本COVID-19対策ECMOnet集計")),
     tags$p(i18n$t("このページは、"), 
