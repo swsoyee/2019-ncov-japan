@@ -2,17 +2,16 @@ fluidRow(
   column(
     width = 5,
     style = "padding:0px;",
-    widgetUserBox(
-      title = i18n$t("新型コロナウイルス"),
-      subtitle = i18n$t("Coronavirus disease 2019 (COVID-19)"),
+    userBox(
+      title = userDescription(
+        title = i18n$t("新型コロナウイルス"),
+        subtitle = i18n$t("Coronavirus disease 2019 (COVID-19)"),
+        image = "ncov.jpeg",
+        backgroundImage = "ncov_back.jpg"
+      ),
       width = 12,
-      type = NULL,
-      src = "ncov.jpeg",
-      color = "purple",
-      collapsible = F,
-      background = T,
-      footer_padding = F,
-      backgroundUrl = "ncov_back.jpg",
+      closable = FALSE,
+      collapsible = FALSE,
       # tags$p(dashboardLabel(status = 'danger',  # APIアクセスできなかった
       #                       style = 'square',
       #                       paste(sep = ' | ', lang[[langCode]][71], # ページ閲覧数
@@ -29,8 +28,10 @@ fluidRow(
         tags$img(src = "https://img.shields.io/github/stars/swsoyee/2019-ncov-japan?style=social", style="float:right;")
       ),
       # 発熱や上気道症状を引き起こすウイルス...
-      tags$p(i18n$t("「新型コロナウイルス（SARS-CoV2）」はコロナウイルスのひとつです。コロナウイルスには、一般の風邪の原因となるウイルスや、「重症急性呼吸器症候群（ＳＡＲＳ）」や2012年以降発生している「中東呼吸器症候群（ＭＥＲＳ）」ウイルスが含まれます。")),
-      tagList(
+      footer = tagList(
+        tags$p(
+          i18n$t("「新型コロナウイルス（SARS-CoV2）」はコロナウイルスのひとつです。コロナウイルスには、一般の風邪の原因となるウイルスや、「重症急性呼吸器症候群（ＳＡＲＳ）」や2012年以降発生している「中東呼吸器症候群（ＭＥＲＳ）」ウイルスが含まれます。")
+        ),
         tags$small(
           tags$a(
             href = lang[[langCode]][21], # https://www.mhlw.go.jp/stf/...
@@ -93,12 +94,16 @@ fluidRow(
     fluidRow(column(
       width = 12,
       style = "padding:0px;",
-      boxPlus(
+      box(
         width = 12,
+        headerBorder = FALSE,
+        footer = NULL,
+        title = tagList(
         actionButton(
           inputId = "twitterShare",
           label = "Twitter",
           icon = icon("twitter"),
+          style = "background-color:#1DA1F2;color:white;",
           onclick = sprintf("window.open('%s')", twitterUrl)
         ),
         ifelse(languageSetting != "ja", tagList(actionButton(
@@ -125,6 +130,7 @@ fluidRow(
             "https://covid-2019.live/en"
           )
         )), "")
+        )
       )
     ))
   )

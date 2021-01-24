@@ -1,14 +1,16 @@
 fluidPage(
   fluidRow(
     column(
-      width = 6, style = "padding:0px;",
-      widgetUserBox(
-        title = i18n$t("福岡県"),
-        subtitle = i18n$t("九州地方"),
+      width = 5, style = "padding:0px;",
+      userBox(
+        title = userDescription(
+          title = i18n$t("福岡県"),
+          subtitle = i18n$t("九州地方"),
+          type = 2,
+          image = "Pref/fukuoka.png"
+        ),
         width = 12,
-        # src = 'Pref/aomori.png',
-        type = 2,
-        color = "aqua-active",
+        status = "navy",
         collapsible = F,
         sprintf(
           i18n$t("こちらは%sの発生状況をまとめたページです。厚労省のまとめより早く状況を把握できますが、県の集計時間は厚労省の発表時間と完全に一致していないため、タイムラグによる数値の違いが生じる可能性もありますので、予めご注意ください。また、速報では陰性から再び陽性になった人は再計算に含めていないため、自治体発表の陽性者数と数値が異なる場合があります。"),
@@ -26,12 +28,12 @@ fluidPage(
       )
     ),
     column(
-      width = 6,
+      width = 7,
       uiOutput("FukuokaValueBoxes") %>% withSpinner(proxy.height = "200px")
     )
   ),
   fluidRow(
-    boxPlus(
+    box(
       width = 12,
       closable = F,
       title = tagList(icon("chart-line"), sprintf(i18n$t("%sの発生状況"), i18n$t("福岡県"))),
@@ -59,7 +61,7 @@ fluidPage(
     )
   ),
   fluidRow(
-    boxPlus(
+    box(
       width = 12,
       closable = F,
       collapsed = T,
@@ -71,7 +73,7 @@ fluidPage(
       fluidRow(
         column(
           width = 8,
-          echarts4rOutput('FukuokaCluster', height = "600px") %>% withSpinner(proxy.height = "600px"),
+          echarts4rOutput("FukuokaCluster", height = "600px") %>% withSpinner(proxy.height = "600px"),
           tagList(
             helpText(
               icon("id-card"), "番号：公表日は三週間以内の感染者のみ番号を表示しています。また、番号のボーダーの太さは公表日（直近一週間、二週間、三週間）を示しています。太いほど時間が近い。"
@@ -86,7 +88,7 @@ fluidPage(
           width = 4,
           uiOutput("fukuokaProfile") %>% withSpinner()
         )
-      )#,
+      ) # ,
       # fluidRow(
       #   column(
       #     width = 12,

@@ -13,7 +13,7 @@ fluidPage(
     encoding = "UTF-8"
   )$value,
   fluidRow(
-    boxPlus(
+    box(
       title = tagList(
         icon("map-marked-alt"),
         i18n$t("各都道府県の状況")

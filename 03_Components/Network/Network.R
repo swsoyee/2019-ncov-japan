@@ -131,37 +131,35 @@ output$profile <- renderUI({
         statusBadge <- dashboardLabel(profile[9], status = "info")
       }
 
-      boxPlus(
+      box(
         title = tagList(icon("id-card"), i18n$t("公開された感染者情報")),
         width = 12,
         closable = F,
         boxProfile(
-          title = profile[1], 
-          src = ifelse(profile[4] == '男性', 'Icon/male.png', 'Icon/female.png'),
+          title = profile[1],
+          src = ifelse(profile[4] == "男性", "Icon/male.png", "Icon/female.png"),
           subtitle = tagList(gender, statusBadge),
-          boxProfileItemList(
-            bordered = TRUE,
-            boxProfileItem(
-              title = tagList(icon("user-clock"), i18n$t("年代")),
-              description = age
-            ),
-            boxProfileItem(
-              title = tagList(icon("bullhorn"), i18n$t("公表日")),
-              description = confirmedDate
-            ),
-            boxProfileItem(
-              title = tagList(icon("user-tie"), i18n$t("職業")),
-              description = job
-            ),
-            boxProfileItem(
-              title = tagList(icon("home"), i18n$t("居住地")),
-              description = profile[10]
-            ),
-            boxProfileItem(
-              title = tagList(icon("external-link-alt"), i18n$t("情報源")),
-              description = outerLinkTags
-            ),
-          )
+          bordered = TRUE,
+          boxProfileItem(
+            title = tagList(icon("user-clock"), i18n$t("年代")),
+            description = age
+          ),
+          boxProfileItem(
+            title = tagList(icon("bullhorn"), i18n$t("公表日")),
+            description = confirmedDate
+          ),
+          boxProfileItem(
+            title = tagList(icon("user-tie"), i18n$t("職業")),
+            description = job
+          ),
+          boxProfileItem(
+            title = tagList(icon("home"), i18n$t("居住地")),
+            description = profile[10]
+          ),
+          boxProfileItem(
+            title = tagList(icon("external-link-alt"), i18n$t("情報源")),
+            description = outerLinkTags
+          ),
         ),
         footer = tagList(
           tags$b(icon("handshake"), i18n$t("濃厚接触者状況")),
@@ -176,7 +174,7 @@ output$profile <- renderUI({
       )
     }
   } else {
-    boxPlus(
+    box(
       title = tagList(icon("id-card"), i18n$t("公開された感染者情報")),
       width = 12,
       closable = F,

@@ -1,5 +1,5 @@
 fluidRow(
-  boxPlus(
+  box(
     width = 12,
     closable = F,
     title = tagList(icon("globe"), "World Map"),
@@ -50,7 +50,7 @@ fluidRow(
       )
     )
   ),
-  boxPlus(
+  box(
     width = 12,
     closable = F,
     title = "Summary",

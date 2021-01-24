@@ -5,121 +5,122 @@ source(
 )
 
 shinyUI(
-  dashboardPagePlus(
+  dashboardPage(
     skin = "red",
     title = i18n$t("新　型　コ　ロ　ナ　ウ　イ　ル　ス　感　染　速　報"),
-    collapse_sidebar = TRUE,
-    header = dashboardHeaderPlus(
+    header = dashboardHeader(
       title = paste0("🦠　", i18n$t("新　型　コ　ロ　ナ　ウ　イ　ル　ス　感　染　速　報")),
       titleWidth = 600,
-      enable_rightsidebar = F,
-      left_menu = tagList(
+      leftUi = tagList(
         tags$span(
           "COVID-19 BULLETIN BOARD",
-          style = 'font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#fff;line-height:34px;font-size:20px;font-weight:300;overflow:hidden;')
+          style = 'font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#fff;line-height:34px;font-size:20px;font-weight:300;overflow:hidden;'
+        )
       )
     ),
-    # TODO 言語設定の追加
-    sidebar = dashboardSidebar(sidebarMenu(
-      id = "sideBarTab",
-      menuItem(
-        i18n$t("感染速報"),
-        tabName = "japan",
-        icon = icon("tachometer-alt"),
-        badgeLabel = i18n$t("実況中"),
-        badgeColor = "red"
-      ),
-      menuItem(
-        i18n$t("感染ルート"),
-        tabName = "route",
-        icon = icon("project-diagram"),
-        badgeLabel = i18n$t("開発中"),
-        badgeColor = "black"
-      ),
-      menuItem(
-        i18n$t("自治体状況"),
-        tabName = "prefStatus",
-        icon = icon("city"),
-        menuSubItem(
-          text = i18n$t("北海道"),
-          tabName = "hokkaido"#,
-          # icon = icon("fish")
+    sidebar = dashboardSidebar(
+      collapsed = TRUE,
+      sidebarMenu(
+        id = "sideBarTab",
+        menuItem(
+          i18n$t("感染速報"),
+          tabName = "japan",
+          icon = icon("tachometer-alt"),
+          badgeLabel = i18n$t("実況中"),
+          badgeColor = "red"
         ),
-        # menuSubItem(
-        #   text = i18n$t("青森県"),
-        #   tabName = "aomori"#,
-        #   # icon = icon("apple-alt")
-        # ),
-        # menuSubItem(
-        #   text = i18n$t("岩手県"),
-        #   tabName = "iwate" # ,
-        #   # icon = icon('apple-alt')
-        # ),
-        # menuSubItem(
-        #   text = i18n$t("宮城県"),
-        #   tabName = "miyagi" # ,
-        #   # icon = icon('apple-alt')
-        # ),
-        menuSubItem(
-          text = i18n$t("茨城県"),
-          tabName = "ibaraki" # ,
-          # icon = icon('apple-alt')
+        menuItem(
+          i18n$t("感染ルート"),
+          tabName = "route",
+          icon = icon("project-diagram"),
+          badgeLabel = i18n$t("開発中"),
+          badgeColor = "black"
         ),
-        # menuSubItem(
-        #   text = i18n$t("神奈川県"),
-        #   tabName = "kanagawa" # ,
-        #   # icon = icon('apple-alt')
+        menuItem(
+          i18n$t("自治体状況"),
+          tabName = "prefStatus",
+          icon = icon("city"),
+          menuSubItem(
+            text = i18n$t("北海道"),
+            tabName = "hokkaido" # ,
+            # icon = icon("fish")
+          ),
+          # menuSubItem(
+          #   text = i18n$t("青森県"),
+          #   tabName = "aomori"#,
+          #   # icon = icon("apple-alt")
+          # ),
+          # menuSubItem(
+          #   text = i18n$t("岩手県"),
+          #   tabName = "iwate" # ,
+          #   # icon = icon('apple-alt')
+          # ),
+          # menuSubItem(
+          #   text = i18n$t("宮城県"),
+          #   tabName = "miyagi" # ,
+          #   # icon = icon('apple-alt')
+          # ),
+          menuSubItem(
+            text = i18n$t("茨城県"),
+            tabName = "ibaraki" # ,
+            # icon = icon('apple-alt')
+          ),
+          # menuSubItem(
+          #   text = i18n$t("神奈川県"),
+          #   tabName = "kanagawa" # ,
+          #   # icon = icon('apple-alt')
+          # ),
+          menuSubItem(
+            text = i18n$t("福岡県"),
+            tabName = "fukuoka" # ,
+            # icon = icon('apple-alt')
+          )
+        ),
+        menuItem(
+          i18n$t("事例マップ"),
+          tabName = "caseMap",
+          icon = icon("map-marked-alt"),
+          badgeLabel = i18n$t("破棄"),
+          badgeColor = "black"
+        ),
+        # menuItem(
+        #   "ECMOnet",
+        #   tabName = "ecmo",
+        #   icon = icon("hospital")
         # ),
-        menuSubItem(
-          text = i18n$t("福岡県"),
-          tabName = "fukuoka" # ,
-          # icon = icon('apple-alt')
+        menuItem(
+          i18n$t("状況分析"),
+          tabName = "academic",
+          icon = icon("eye"),
+          badgeLabel = "V 0.1",
+          badgeColor = "black"
+        ),
+        menuItem(
+          # Google
+          i18n$t("自粛効果"),
+          tabName = "google",
+          icon = icon("google"),
+          badgeLabel = "V 0.1",
+          badgeColor = "black"
+        ),
+        menuItem(
+          # Google
+          "World",
+          tabName = "world",
+          icon = icon("globe"),
+          badgeLabel = "V 0.1",
+          badgeColor = "black"
+        ),
+        menuItem(
+          i18n$t("サイトについて"),
+          tabName = "about",
+          icon = icon("readme"),
+          badgeLabel = i18n$t("開発中"),
+          badgeColor = "black"
         )
-      ),
-      menuItem(
-        i18n$t("事例マップ"),
-        tabName = "caseMap",
-        icon = icon("map-marked-alt"),
-        badgeLabel = i18n$t("破棄"),
-        badgeColor = "black"
-      ),
-      # menuItem(
-      #   "ECMOnet",
-      #   tabName = "ecmo",
-      #   icon = icon("hospital")
-      # ),
-      menuItem(
-        i18n$t("状況分析"),
-        tabName = "academic",
-        icon = icon("eye"),
-        badgeLabel = "V 0.1",
-        badgeColor = "black"
-      ),
-      menuItem(
-        # Google
-        i18n$t("自粛効果"),
-        tabName = "google",
-        icon = icon("google"),
-        badgeLabel = "V 0.1",
-        badgeColor = "black"
-      ),
-      menuItem(
-        # Google
-        "World",
-        tabName = "world",
-        icon = icon("globe"),
-        badgeLabel = "V 0.1",
-        badgeColor = "black"
-      ),
-      menuItem(
-        i18n$t("サイトについて"),
-        tabName = "about",
-        icon = icon("readme"),
-        badgeLabel = i18n$t("開発中"),
-        badgeColor = "black"
       )
-    )),
-    dashboardBody(
+    ),
+    body = dashboardBody(
       tags$head(
         tags$link(rel = "icon", href = "favicon.ico"),
         tags$meta(name = "twitter:card", content = "summary_large_image"),
@@ -246,7 +247,7 @@ shinyUI(
           fluidRow(
             column(
               width = 12,
-              boxPlus(
+              box(
                 width = 12,
                 collapsible = F,
                 fluidRow(
@@ -264,9 +265,9 @@ shinyUI(
       )
     ),
     footer = dashboardFooter(
-      left_text = tagList(userPost(
+      left = tagList(userPost(
         id = 1,
-        src = "profile.png",
+        image = "profile.png",
         author = tagList(
           tags$small("Developed by"),
           "Su Wei"
@@ -274,7 +275,7 @@ shinyUI(
         collapsible = F,
         description = "Front-End Engineer | ex-Bioinformatician"
       )),
-      right_text = tagList(
+      right = tagList(
         tags$div(
           style = "font-size:22px;letter-spacing: .3rem;",
           tags$a(href = "https://github.com/swsoyee/2019-ncov-japan", icon("github")),

@@ -1,5 +1,5 @@
 Component.ComfirmedPyramid <- function() {
-  boxPlus(
+  box(
     title = tagList(icon("venus-mars"), i18n$t("歳代・性別")),
     width = 4,
     enable_label = T,
