@@ -1,5 +1,5 @@
 Component.SymptomsProgression <- function() {
-  boxPlus(
+  box(
     title = tagList(icon("hospital"), i18n$t("症状の進行")),
     width = 8,
     closable = F,

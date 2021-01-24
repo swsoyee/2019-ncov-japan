@@ -1,6 +1,6 @@
 fluidPage(
   fluidRow(
-    boxPlus(
+    box(
       width = 12,
       closable = T,
       enable_label = T,
@@ -20,7 +20,7 @@ fluidPage(
     )
   ),
   fluidRow(
-    boxPlus(
+    box(
       width = 12,
       closable = F,
       enable_label = T,
@@ -125,7 +125,7 @@ fluidPage(
     )
   ),
   fluidRow(
-    boxPlus(
+    box(
       width = 8,
       title = tagList(icon("project-diagram"), i18n$t("感染経路")),
       enable_label = T,

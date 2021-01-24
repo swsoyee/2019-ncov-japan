@@ -1,6 +1,6 @@
 Component.Notification <- function(status = "info", context = "") {
   return(fluidRow(
-    boxPlus(
+    box(
       width = 12,
       closable = T,
       enable_label = T,

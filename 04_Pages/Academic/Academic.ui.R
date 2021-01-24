@@ -1,5 +1,5 @@
 fluidRow(
-  boxPlus(
+  box(
     title = "マップから見る発生・対応状況",
     width = 12,
     closable = F,

@@ -1,5 +1,5 @@
 fluidRow(
-  boxPlus(
+  box(
     title = tagList(icon("google"), i18n$t("コミュニティモビリティレポート")),
     width = 12,
     closable = F,

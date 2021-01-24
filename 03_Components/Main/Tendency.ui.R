@@ -1,5 +1,5 @@
 Component.Tendency <- function() {
-  boxPlus(
+  box(
     # 国内状況推移
     title = tagList(icon("chart-line"), i18n$t("国内状況推移")),
     closable = F,
