@@ -46,6 +46,10 @@ observeEvent(input$switchTableVersion, {
           i18n$t("現在患者数：厚労省のデータをもとにして計算しているため、速報部分の感染者数が含まれていません。")
         ),
         helpText(
+          icon("question-circle"),
+          i18n$t("10万対発生数：10万人口対直近1週間の新規感染者数。記号は一日前の該当数値の比較結果を示されています。")
+        ),
+        helpText(
           icon("street-view"),
           i18n$t("感染密度 (km)：『何km四方の土地（可住地面積）に感染者が１人いるか』という指標。")
         )
@@ -252,7 +256,7 @@ output$confirmedByPrefTable <- renderDataTable({
       i18n$t("感染推移"),
       i18n$t("現在患者数"),
       i18n$t("倍加日数"),
-      i18n$t("百万人あたり"),
+      i18n$t("10万対発生数※"),
       i18n$t("カテゴリ"),
       i18n$t("感染密度(km)")
     ),
@@ -313,10 +317,19 @@ output$confirmedByPrefTable <- renderDataTable({
             "
              function(data, type, row, meta) {
                 const split = data.split('|');
-                return Number(split[1]).toLocaleString();;
+                return Number(split[1]).toLocaleString();
             }"
           ),
           targets = 3
+        ),
+        list(
+          render = JS(
+            "function(data, type, row, meta) {
+                const split = data.split('|');
+                return split[1];
+            }"
+          ),
+          targets = 7
         )
       ),
       fnDrawCallback = htmlwidgets::JS("
@@ -384,10 +397,9 @@ output$confirmedByPrefTable <- renderDataTable({
       fontWeight = "bold"
     ) %>%
     formatStyle(
-      columns = "perMillion",
-      backgroundColor = do.call(
-        styleInterval,
-        generateColorStyle(data = dt$perMillion, colors = c("#FFFFFF", darkRed), by = 50)
+      columns = "perHundredThousand",
+      backgroundColor = htmlwidgets::JS(
+        "isNaN(parseFloat(value.match(/\\|(.+?) /)[1])) ? '' : value.match(/\\|(.+?) /)[1] <= 0 ? \"rgba(0,0,0,0)\" : value.match(/\\|(.+?) /)[1] <= 5 ? \"#F3E3E1\" : value.match(/\\|(.+?) /)[1] <= 10 ? \"#E8C7C3\" : value.match(/\\|(.+?) /)[1] <= 15 ? \"#DDABA5\" : value.match(/\\|(.+?) /)[1] <= 20 ? \"#D18F87\" : value.match(/\\|(.+?) /)[1] <= 25 ? \"#C67369\" : value.match(/\\|(.+?) /)[1] <= 30 ? \"#BB574B\" : \"#B03C2D\""
       ),
       fontWeight = "bold"
     ) %>%

@@ -276,11 +276,27 @@ mergeDt <- data.table(
   doubleTimeDay = doubleTimeDay
 )
 
+latestOneWeekIndex <- (nrow(byDate) - 7):(nrow(byDate) - 1)
+latestOneWeekYesterdayIndex <- latestOneWeekIndex - 1
+latestOneWeekConfirmed <- colSums(byDate[latestOneWeekIndex, 2:ncol(byDate)])
+latestOneWeekYesterdayConfirmed <- colSums(byDate[latestOneWeekYesterdayIndex, 2:ncol(byDate)])
+latestOneWeekDiff <- ifelse(
+  latestOneWeekConfirmed > latestOneWeekYesterdayConfirmed,
+  " <i style='color:#DD4B39;' class=\"fa fa-caret-up\"></i>",
+  " <i style='color:#00a65a;' class=\"fa fa-caret-down\"></i>"
+)
+
 mergeDt <- merge(mergeDt, totalDischarged, all.x = T, sort = F)
 signateSub <- provinceAttr[, .(都道府県略称, 人口)]
 colnames(signateSub) <- c("region", "population")
 mergeDt <- merge(mergeDt, signateSub, all.x = T, sort = F)
-mergeDt[, perMillion := round(count / (population / 1000000), 0)]
+mergeDt[, perHundredThousand := paste0(
+  sprintf("%02d", rank(round(latestOneWeekConfirmed / (population / 100000), 1), ties.method = "first")),
+  "|",
+  round(latestOneWeekConfirmed / (population / 100000), 1), 
+  latestOneWeekDiff
+  )]
+mergeDt$perHundredThousand[48:51] <- "99|0 <i style='color:#001f3f;' class=\"fa fa-lock\"></i>"
 mergeDt[, perMillionDeath := round(death / (population / 1000000), 0)]
 
 for (i in mergeDt$region) {
