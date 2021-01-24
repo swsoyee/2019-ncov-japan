@@ -2077,7 +2077,7 @@
       "en": "Infection / 100,000*"
     },
     {
-      "ja": "10万対発生数：10万人工対直近1週間の新規感染者数。記号は一日前の該当数値の比較結果を示されています。",
+      "ja": "10万対発生数：10万人口対直近1週間の新規感染者数。記号は一日前の該当数値の比較結果を示されています。",
       "cn": "每10万确诊数：每10万人口的最近1周内新确诊人数。符号表示与一天前的该数值进行比较的结果",
       "en": "Infection / 100,000: New cases per 100,000 population in the last week. Symbols indicate comparisons with the corresponding figures from a day earlier."
     }
