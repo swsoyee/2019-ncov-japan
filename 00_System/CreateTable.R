@@ -280,16 +280,23 @@ latestOneWeekIndex <- (nrow(byDate) - 7):(nrow(byDate) - 1)
 latestOneWeekYesterdayIndex <- latestOneWeekIndex - 1
 latestOneWeekConfirmed <- colSums(byDate[latestOneWeekIndex, 2:ncol(byDate)])
 latestOneWeekYesterdayConfirmed <- colSums(byDate[latestOneWeekYesterdayIndex, 2:ncol(byDate)])
-latestOneWeekDiff <- ifelse(
-  latestOneWeekConfirmed > latestOneWeekYesterdayConfirmed,
-  " <i style='color:#DD4B39;' class=\"fa fa-caret-up\"></i>",
-  " <i style='color:#00a65a;' class=\"fa fa-caret-down\"></i>"
-)
 
 mergeDt <- merge(mergeDt, totalDischarged, all.x = T, sort = F)
 signateSub <- provinceAttr[, .(都道府県略称, 人口)]
 colnames(signateSub) <- c("region", "population")
 mergeDt <- merge(mergeDt, signateSub, all.x = T, sort = F)
+
+latestOneWeekDiff <- (latestOneWeekConfirmed / (mergeDt$population / 100000)) - (latestOneWeekYesterdayConfirmed / (mergeDt$population / 100000))
+diff2Icon <- function(x){
+  if (is.na(x)) return (NA)
+  if (x >= 1) return(" <i style='color:#DD4B39;' class=\"fa fa-angle-double-up\"></i>")
+  if (x <= 1 && x > 0) return(" <i style='color:#DD4B39;' class=\"fa fa-angle-up\"></i>")
+  if (x == 0) return(" <i style='color:#001f3f;' class=\"fa fa-lock\"></i>")
+  if (x < 0 && x >= -1) return(" <i style='color:#00a65a;' class=\"fa fa-angle-down\"></i>")
+  if (x < -1) return(" <i style='color:#00a65a;' class=\"fa fa-angle-double-down\"></i>")
+}
+latestOneWeekDiff <- lapply(latestOneWeekDiff, diff2Icon)
+
 mergeDt[, perHundredThousand := paste0(
   sprintf("%02d", rank(round(latestOneWeekConfirmed / (population / 100000), 1), ties.method = "first")),
   "|",
