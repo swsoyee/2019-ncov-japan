@@ -31,14 +31,14 @@ output$RtLine <- renderEcharts4r({
         serie = `Mean(R)`,
         itemStyle = list(color = darkNavy),
         symbolSize = 0,
-        name = "実行再生産数"
+        name = i18n$t("実効再生産数")
       ) %>%
       e_bar(
         serie = Incidence,
         y_index = 1,
         itemStyle = list(color = lightRed),
         barCategoryGap = "10%",
-        name = "症例数"
+        name = i18n$t("症例数")
       ) %>%
       e_band(
         min = `Quantile.0.05(R)`,
@@ -59,7 +59,7 @@ output$RtLine <- renderEcharts4r({
         top = "15%"
       ) %>%
       e_y_axis(
-        name = "実行再生産数",
+        name = i18n$t("実効再生産数"),
         nameLocation = "middle",
         splitLine =
           list(lineStyle = list(opacity = 0.4)),
@@ -68,7 +68,7 @@ output$RtLine <- renderEcharts4r({
         axisTick = list(show = F)
       ) %>%
       e_y_axis(
-        name = "症例数",
+        name = i18n$t("症例数"),
         nameGap = 10,
         splitLine = list(show = F),
         z = 999,
@@ -86,13 +86,13 @@ output$RtLine <- renderEcharts4r({
       ) %>%
       e_title(
         text = sprintf(
-          "実行再生産数：%s±%s（%s）",
+          i18n$t("実効再生産数：%s±%s（%s）"),
           tail(dt$`Mean(R)`, 1)[[1]],
           tail(dt$`Std(R)`, 1)[[1]],
           tail(dt$dates, 1)[[1]]
         ),
         subtext = sprintf(
-          "発症間隔：%s±%s",
+          i18n$t("発症間隔：%s±%s"),
           mean_si, std_si
         )
       )

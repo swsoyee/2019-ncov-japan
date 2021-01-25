@@ -22,17 +22,15 @@ tabPanel(
       ),
       echarts4rOutput(
         outputId = "RtLine",
-        height = "400px"
+        height = "500px"
       ) %>%
-        withSpinner(
-          proxy.height = "400px"
-        )
+        withSpinner()
     ),
     column(
       width = 4,
       pickerInput(
         inputId = "presetRtLineOption",
-        label = "プリセット",
+        label = i18n$t("プリセット"),
         choices = list(
           "Hiroshi Nishiura et al.," = "nishiura",
           "Sheikh Taslim Ali et al.," = "ali"
@@ -43,7 +41,7 @@ tabPanel(
       ),
       sliderInput(
         inputId = "RtLineMeanSi",
-        label = "発症間隔平均値",
+        label = i18n$t("発症間隔平均値"),
         min = 2,
         value = 4.8,
         max = 21,
@@ -51,7 +49,7 @@ tabPanel(
       ),
       sliderInput(
         inputId = "RtLineStdSi",
-        label = "発症間隔標準偏差",
+        label = i18n$t("発症間隔標準偏差"),
         min = 0,
         value = 2.3,
         max = 10,
@@ -61,7 +59,7 @@ tabPanel(
         width = "100%",
         inputId = "generateRtLine",
         style = paste0("color: #fff; background-color: ", middleRed),
-        label = "作成",
+        label = i18n$t("作成"),
         icon = icon("play")
       )
     )

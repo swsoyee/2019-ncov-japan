@@ -2080,6 +2080,46 @@
       "ja": "10万対発生数：10万人口対直近1週間の新規感染者数。記号は一日前の該当数値の比較結果を示されています。",
       "cn": "每10万确诊数：每10万人口的最近1周内新确诊人数。符号表示与一天前的该数值进行比较的结果",
       "en": "Infection / 100,000: New cases per 100,000 population in the last week. Symbols indicate comparisons with the corresponding figures from a day earlier."
+    },
+    {
+      "ja": "実効再生産数",
+      "cn": "有效传染数",
+      "en": "Effective Reproductive Number"
+    },
+    {
+      "ja": "実効再生産数：%s±%s（%s）",
+      "cn": "有效传染数：%s±%s（%s）",
+      "en": "Effective Reproductive Number: %s±%s (%s)"
+    },
+    {
+      "ja": "症例数",
+      "cn": "发病数",
+      "en": "Incidence"
+    },
+    {
+      "ja": "発症間隔：%s±%s",
+      "cn": "世代间隔：%s±%s",
+      "en": "Serial interval: %s±%s"
+    },
+    {
+      "ja": "プリセット",
+      "cn": "预设",
+      "en": "Preset"
+    },
+    {
+      "ja": "発症間隔平均値",
+      "cn": "世代间隔平均值",
+      "en": "Serial interval (Mean)"
+    },
+    {
+      "ja": "発症間隔標準偏差",
+      "cn": "世代间隔标准差",
+      "en": "Serial interval (Standard Deviation)"
+    },
+    {
+      "ja": "作成",
+      "cn": "绘制",
+      "en": "Generate"
     }
   ]
 }
