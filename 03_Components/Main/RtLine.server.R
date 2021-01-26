@@ -14,7 +14,8 @@ output$RtLine <- renderEcharts4r({
       method = "parametric_si",
       config = make_config(list(
         mean_si = mean_si,
-        std_si = std_si
+        std_si = std_si,
+        t_end = max(byDate$date)
       ))
     )))
     dt <- as.data.table(res$R)
@@ -22,8 +23,8 @@ output$RtLine <- renderEcharts4r({
     dt[, (cols) := lapply(.SD, function(x) {
       return(round(x, 2))
     }), .SDcols = cols]
-    dt$dates <- res$dates[res$R$t_start]
-    dt$Incidence <- res$I[res$R$t_start]
+    dt$dates <- res$dates[res$R$t_end]
+    dt$Incidence <- res$I[res$R$t_end]
 
     dt %>%
       e_chart(dates) %>%

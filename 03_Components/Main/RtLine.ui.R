@@ -32,8 +32,8 @@ tabPanel(
         inputId = "presetRtLineOption",
         label = i18n$t("プリセット"),
         choices = list(
-          "Hiroshi Nishiura et al.," = "nishiura",
-          "Sheikh Taslim Ali et al.," = "ali"
+          "Hiroshi Nishiura et al., 2020" = "nishiura",
+          "Sheikh Taslim Ali et al., 2020" = "ali"
         ),
         options = list(
           style = "btn-danger"
