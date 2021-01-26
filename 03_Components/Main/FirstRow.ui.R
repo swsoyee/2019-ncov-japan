@@ -25,7 +25,10 @@ fluidRow(
       #        ),
       tags$p(
         tags$img(src = "https://img.shields.io/badge/dynamic/json?url=https://cdn.covid-2019.live/static/stats.json&label=PV&query=$.result.totals.pageviews.all&color=orange&style=flat-square"),
-        tags$img(src = "https://img.shields.io/github/stars/swsoyee/2019-ncov-japan?style=social", style="float:right;")
+        tags$a(
+          href = "https://github.com/swsoyee/2019-ncov-japan",
+          tags$img(src = "https://img.shields.io/github/stars/swsoyee/2019-ncov-japan?style=social", style="float:right;")
+        )
       ),
       # 発熱や上気道症状を引き起こすウイルス...
       footer = tagList(
