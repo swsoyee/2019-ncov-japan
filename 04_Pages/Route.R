@@ -25,8 +25,7 @@ fluidPage(
       closable = F,
       enable_label = T,
       collapsible = T,
-      label_status = "warning",
-      label_text = "Beta 0.2",
+      label = boxLabel("Archived", status = "danger"),
       title = tagList(icon("connectdevelop"), i18n$t("クラスターネットワーク")),
       footer = tags$small(
         icon("database"),
@@ -128,6 +127,7 @@ fluidPage(
     box(
       width = 8,
       title = tagList(icon("project-diagram"), i18n$t("感染経路")),
+      label = boxLabel("Archived", status = "danger"),
       enable_label = T,
       collapsible = T,
       closable = F,

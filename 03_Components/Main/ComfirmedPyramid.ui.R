@@ -5,10 +5,7 @@ Component.ComfirmedPyramid <- function() {
     enable_label = T,
     collapsible = T,
     collapsed = T,
-    # 集計時間：
-    # label_text = paste(lang[[langCode]][123], max(as.Date(
-    #   positiveDetail$発表日
-    # ), na.rm = T)),
+    label = boxLabel("Archived", status = "danger"),
     uiOutput("ageGenderOption"),
     echarts4rOutput("genderBar"),
     closable = F,

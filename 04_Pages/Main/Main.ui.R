@@ -78,7 +78,7 @@ fluidPage(
         encoding = "UTF-8"
       )$value,
       footer = tags$small(paste(
-        i18n$t("更新時刻"), UPDATE_DATETIME, i18n$t("開発＆調整中")
+        i18n$t("更新時刻"), UPDATE_DATETIME
       ))
     ),
   ),
@@ -96,12 +96,12 @@ fluidPage(
       actionButton(
         width = "100%",
         inputId = "gotoRoutePage",
-        style = paste0("color: #fff; background-color: ", middleRed),
+        style = paste0("color: #fff; background-color: ", middleYellow),
         label = tagList(
           i18n$t("感染ルート・クラスターへ"),
           dashboardLabel(
-            "Beta 0.2",
-            status = "warning"
+            "Archived",
+            status = "danger"
           )
         ),
         icon = icon("connectdevelop")
