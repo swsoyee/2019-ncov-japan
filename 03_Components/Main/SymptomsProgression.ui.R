@@ -5,6 +5,7 @@ Component.SymptomsProgression <- function() {
     closable = F,
     collapsible = T,
     collapsed = T,
+    label = boxLabel("Archived", status = "danger"),
     dateInput(
       inputId = "selectProcessDay",
       label = i18n$t("日付選択"),

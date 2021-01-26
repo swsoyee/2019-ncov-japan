@@ -33,54 +33,54 @@ shinyUI(
           i18n$t("感染ルート"),
           tabName = "route",
           icon = icon("project-diagram"),
-          badgeLabel = i18n$t("開発中"),
+          badgeLabel = "Archived",
           badgeColor = "black"
         ),
-        menuItem(
-          i18n$t("自治体状況"),
-          tabName = "prefStatus",
-          icon = icon("city"),
-          menuSubItem(
-            text = i18n$t("北海道"),
-            tabName = "hokkaido" # ,
-            # icon = icon("fish")
-          ),
-          # menuSubItem(
-          #   text = i18n$t("青森県"),
-          #   tabName = "aomori"#,
-          #   # icon = icon("apple-alt")
-          # ),
-          # menuSubItem(
-          #   text = i18n$t("岩手県"),
-          #   tabName = "iwate" # ,
-          #   # icon = icon('apple-alt')
-          # ),
-          # menuSubItem(
-          #   text = i18n$t("宮城県"),
-          #   tabName = "miyagi" # ,
-          #   # icon = icon('apple-alt')
-          # ),
-          menuSubItem(
-            text = i18n$t("茨城県"),
-            tabName = "ibaraki" # ,
-            # icon = icon('apple-alt')
-          ),
-          # menuSubItem(
-          #   text = i18n$t("神奈川県"),
-          #   tabName = "kanagawa" # ,
-          #   # icon = icon('apple-alt')
-          # ),
-          menuSubItem(
-            text = i18n$t("福岡県"),
-            tabName = "fukuoka" # ,
-            # icon = icon('apple-alt')
-          )
-        ),
+        # menuItem(
+        #   i18n$t("自治体状況"),
+        #   tabName = "prefStatus",
+        #   icon = icon("city"),
+        #   menuSubItem(
+        #     text = i18n$t("北海道"),
+        #     tabName = "hokkaido" # ,
+        #     # icon = icon("fish")
+        #   ),
+        #   # menuSubItem(
+        #   #   text = i18n$t("青森県"),
+        #   #   tabName = "aomori"#,
+        #   #   # icon = icon("apple-alt")
+        #   # ),
+        #   # menuSubItem(
+        #   #   text = i18n$t("岩手県"),
+        #   #   tabName = "iwate" # ,
+        #   #   # icon = icon('apple-alt')
+        #   # ),
+        #   # menuSubItem(
+        #   #   text = i18n$t("宮城県"),
+        #   #   tabName = "miyagi" # ,
+        #   #   # icon = icon('apple-alt')
+        #   # ),
+        #   menuSubItem(
+        #     text = i18n$t("茨城県"),
+        #     tabName = "ibaraki" # ,
+        #     # icon = icon('apple-alt')
+        #   ),
+        #   # menuSubItem(
+        #   #   text = i18n$t("神奈川県"),
+        #   #   tabName = "kanagawa" # ,
+        #   #   # icon = icon('apple-alt')
+        #   # ),
+        #   menuSubItem(
+        #     text = i18n$t("福岡県"),
+        #     tabName = "fukuoka" # ,
+        #     # icon = icon('apple-alt')
+        #   )
+        # ),
         menuItem(
           i18n$t("事例マップ"),
           tabName = "caseMap",
           icon = icon("map-marked-alt"),
-          badgeLabel = i18n$t("破棄"),
+          badgeLabel = "Archived",
           badgeColor = "black"
         ),
         # menuItem(
@@ -88,29 +88,29 @@ shinyUI(
         #   tabName = "ecmo",
         #   icon = icon("hospital")
         # ),
-        menuItem(
-          i18n$t("状況分析"),
-          tabName = "academic",
-          icon = icon("eye"),
-          badgeLabel = "V 0.1",
-          badgeColor = "black"
-        ),
+        # menuItem(
+        #   i18n$t("状況分析"),
+        #   tabName = "academic",
+        #   icon = icon("eye"),
+        #   badgeLabel = "V 0.1",
+        #   badgeColor = "black"
+        # ),
         menuItem(
           # Google
           i18n$t("自粛効果"),
           tabName = "google",
           icon = icon("google"),
-          badgeLabel = "V 0.1",
+          badgeLabel = "Archived",
           badgeColor = "black"
         ),
-        menuItem(
-          # Google
-          "World",
-          tabName = "world",
-          icon = icon("globe"),
-          badgeLabel = "V 0.1",
-          badgeColor = "black"
-        ),
+        # menuItem(
+        #   # World
+        #   "World",
+        #   tabName = "world",
+        #   icon = icon("globe"),
+        #   badgeLabel = "V 0.1",
+        #   badgeColor = "black"
+        # ),
         menuItem(
           i18n$t("サイトについて"),
           tabName = "about",
@@ -146,62 +146,62 @@ shinyUI(
             encoding = "UTF-8"
           )$value
         ),
-        tabItem(
-          tabName = "hokkaido",
-          source(
-            file = paste0(PAGE_PATH, "Pref/Hokkaido-UI.R"),
-            local = T,
-            encoding = "UTF-8"
-          )$value
-        ),
-        tabItem(
-          tabName = "aomori",
-          source(
-            file = paste0(PAGE_PATH, "Pref/Aomori-UI.R"),
-            local = T,
-            encoding = "UTF-8"
-          )$value
-        ),
-        tabItem(
-          tabName = "iwate",
-          source(
-            file = paste0(PAGE_PATH, "Pref/Iwate-UI.R"),
-            local = T,
-            encoding = "UTF-8"
-          )$value
-        ),
-        tabItem(
-          tabName = "miyagi",
-          source(
-            file = paste0(PAGE_PATH, "Pref/Miyagi-UI.R"),
-            local = T,
-            encoding = "UTF-8"
-          )$value
-        ),
-        tabItem(
-          tabName = "ibaraki",
-          source(
-            file = paste0(PAGE_PATH, "Pref/Ibaraki-UI.R"),
-            local = T,
-            encoding = "UTF-8"
-          )$value
-        ),
-        tabItem(
-          tabName = "kanagawa",
-          source(
-            file = paste0(PAGE_PATH, "Pref/Kanagawa-UI.R"),
-            local = T,
-            encoding = "UTF-8"
-          )$value
-        ),
-        tabItem(
-          tabName = "fukuoka",
-          source(
-            file = paste0(PAGE_PATH, "Pref/Fukuoka-UI.R"),
-            local = T,
-            encoding = "UTF-8"
-          )$value
-        ),
+        # tabItem(
+        #   tabName = "hokkaido",
+        #   source(
+        #     file = paste0(PAGE_PATH, "Pref/Hokkaido-UI.R"),
+        #     local = T,
+        #     encoding = "UTF-8"
+        #   )$value
+        # ),
+        # tabItem(
+        #   tabName = "aomori",
+        #   source(
+        #     file = paste0(PAGE_PATH, "Pref/Aomori-UI.R"),
+        #     local = T,
+        #     encoding = "UTF-8"
+        #   )$value
+        # ),
+        # tabItem(
+        #   tabName = "iwate",
+        #   source(
+        #     file = paste0(PAGE_PATH, "Pref/Iwate-UI.R"),
+        #     local = T,
+        #     encoding = "UTF-8"
+        #   )$value
+        # ),
+        # tabItem(
+        #   tabName = "miyagi",
+        #   source(
+        #     file = paste0(PAGE_PATH, "Pref/Miyagi-UI.R"),
+        #     local = T,
+        #     encoding = "UTF-8"
+        #   )$value
+        # ),
+        # tabItem(
+        #   tabName = "ibaraki",
+        #   source(
+        #     file = paste0(PAGE_PATH, "Pref/Ibaraki-UI.R"),
+        #     local = T,
+        #     encoding = "UTF-8"
+        #   )$value
+        # ),
+        # tabItem(
+        #   tabName = "kanagawa",
+        #   source(
+        #     file = paste0(PAGE_PATH, "Pref/Kanagawa-UI.R"),
+        #     local = T,
+        #     encoding = "UTF-8"
+        #   )$value
+        # ),
+        # tabItem(
+        #   tabName = "fukuoka",
+        #   source(
+        #     file = paste0(PAGE_PATH, "Pref/Fukuoka-UI.R"),
+        #     local = T,
+        #     encoding = "UTF-8"
+        #   )$value
+        # ),
         tabItem(
           tabName = "caseMap",
           source(
@@ -218,14 +218,14 @@ shinyUI(
         #     encoding = "UTF-8"
         #   )$value
         # ),
-        tabItem(
-          tabName = "academic",
-          source(
-            file = paste0(PAGE_PATH, "/Academic/Academic.ui.R"),
-            local = T,
-            encoding = "UTF-8"
-          )$value
-        ),
+        # tabItem(
+        #   tabName = "academic",
+        #   source(
+        #     file = paste0(PAGE_PATH, "/Academic/Academic.ui.R"),
+        #     local = T,
+        #     encoding = "UTF-8"
+        #   )$value
+        # ),
         tabItem(
           tabName = "google",
           source(
@@ -234,14 +234,14 @@ shinyUI(
             encoding = "UTF-8"
           )$value
         ),
-        tabItem(
-          tabName = "world",
-          source(
-            file = paste0(PAGE_PATH, "/World/World.ui.R"),
-            local = T,
-            encoding = "UTF-8"
-          )$value
-        ),
+        # tabItem(
+        #   tabName = "world",
+        #   source(
+        #     file = paste0(PAGE_PATH, "/World/World.ui.R"),
+        #     local = T,
+        #     encoding = "UTF-8"
+        #   )$value
+        # ),
         tabItem(
           tabName = "about",
           fluidRow(
