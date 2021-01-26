@@ -8,6 +8,7 @@ shinyUI(
   dashboardPage(
     skin = "red",
     title = i18n$t("新　型　コ　ロ　ナ　ウ　イ　ル　ス　感　染　速　報"),
+    options = list(sidebarExpandOnHover = TRUE),
     header = dashboardHeader(
       title = paste0("🦠　", i18n$t("新　型　コ　ロ　ナ　ウ　イ　ル　ス　感　染　速　報")),
       titleWidth = 600,
@@ -16,7 +17,8 @@ shinyUI(
           "COVID-19 BULLETIN BOARD",
           style = 'font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#fff;line-height:34px;font-size:20px;font-weight:300;overflow:hidden;'
         )
-      )
+      ),
+      userOutput("user")
     ),
     sidebar = dashboardSidebar(
       collapsed = TRUE,
@@ -265,24 +267,8 @@ shinyUI(
       )
     ),
     footer = dashboardFooter(
-      left = tagList(userPost(
-        id = 1,
-        image = "profile.png",
-        author = tagList(
-          tags$small("Developed by"),
-          "Su Wei"
-        ),
-        collapsible = F,
-        description = "Front-End Engineer | ex-Bioinformatician"
-      )),
-      right = tagList(
-        tags$div(
-          style = "font-size:22px;letter-spacing: .3rem;",
-          tags$a(href = "https://github.com/swsoyee/2019-ncov-japan", icon("github")),
-          tags$a(href = "https://twitter.com/swsoyee", icon("twitter")),
-          tags$a(href = "https://www.linkedin.com/in/infinityloop/", icon("linkedin"))
-        )
-      )
+      left = "Developed By Su Wei",
+      right = "Copyright © 2020-2021, All Rights Reserved."
     )
   )
 )
