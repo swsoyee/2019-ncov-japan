@@ -8,9 +8,10 @@ tabPanel(
       fluidRow(
         tags$br(),
         column(
-          width = 4,
+          width = 6,
           radioGroupButtons(
-            inputId = "selectTendencyConfirmedMode",
+            inputId = "selectTendencyConfirmedMode", 
+            justified = TRUE,
             label = i18n$t("表示モード"), 
             choiceNames = c(i18n$t("一般"), i18n$t("片対数"), i18n$t("両対数")),
             choiceValues = c("一般", "片対数", "両対数"),
@@ -28,12 +29,10 @@ tabPanel(
       width = 4,
       tags$br(),
       tags$b(i18n$t("感染")),
-      echarts4rOutput("confirmedBar", height = "20px") %>% withSpinner(),
-      uiOutput("todayConfirmed"),
+      uiOutput("todayConfirmed", style="line-height:25px;"),
       tags$br(),
       tags$b(i18n$t("死亡")),
-      echarts4rOutput("deathBar", height = "20px") %>% withSpinner(),
-      uiOutput("todayDeath"),
+      uiOutput("todayDeath", style="line-height:25px;"),
       tags$hr(),
       tags$b(i18n$t("感染新規数（日次）")),
       uiOutput("renderCalendar")
