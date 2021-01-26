@@ -43,7 +43,10 @@ output$comparePrefP1 <- renderEcharts4r({
       left = "15%",
       top = "15%"
     ) %>%
-    e_datazoom(startValue = "2020-04-01", show = F) %>%
+    e_datazoom(
+      startValue = Sys.Date() - 30,
+      show = FALSE
+    ) %>%
     e_grid(bottom = "4%", top = "18%") %>%
     e_group(paste0("compare_", pref))
 })
@@ -68,6 +71,7 @@ output$comparePrefP2 <- renderEcharts4r({
       陽性率,
       name = i18n$t("陽性率"),
       itemStyle = list(color = darkRed),
+      symbolSize = 0,
       y_index = 1
     ) %>%
     e_title(text = i18n$t("検査人数・陽性者数（厚労省）")) %>%
@@ -84,7 +88,10 @@ output$comparePrefP2 <- renderEcharts4r({
       left = "15%",
       top = "15%"
     ) %>%
-    e_datazoom(startValue = "2020-04-01", show = F) %>%
+    e_datazoom(
+      startValue = Sys.Date() - 30,
+      show = FALSE
+    ) %>%
     e_grid(bottom = "4%", top = "18%") %>%
     e_group(paste0("compare_", pref))
 })
@@ -127,7 +134,9 @@ output$comparePrefP3 <- renderEcharts4r({
       left = "15%",
       top = "15%"
     ) %>%
-    e_datazoom(startValue = "2020-04-01") %>%
+    e_datazoom(
+      startValue =  Sys.Date() - 30,
+    ) %>%
     e_grid(top = "18%") %>%
     e_group(paste0("compare_", pref)) %>%
     e_connect_group(paste0("compare_", pref))
