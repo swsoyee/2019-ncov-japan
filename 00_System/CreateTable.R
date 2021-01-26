@@ -276,7 +276,7 @@ mergeDt <- data.table(
   doubleTimeDay = doubleTimeDay
 )
 
-latestOneWeekIndex <- (nrow(byDate) - 7):(nrow(byDate) - 1)
+latestOneWeekIndex <- (nrow(byDate) - 6):nrow(byDate)
 latestOneWeekYesterdayIndex <- latestOneWeekIndex - 1
 latestOneWeekConfirmed <- colSums(byDate[latestOneWeekIndex, 2:ncol(byDate)])
 latestOneWeekYesterdayConfirmed <- colSums(byDate[latestOneWeekYesterdayIndex, 2:ncol(byDate)])
