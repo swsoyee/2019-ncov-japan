@@ -8,16 +8,16 @@ jobs:
           fingerprints:
             - "5f:ca:3d:34:ff:30:1d:cb:ad:2f:e8:0d:e2:1a:3a:02"
       - run: ssh -p $SSH_PORT $SSH_USER@$SSH_HOST
-  deployShinyio:
-    docker:
-      - image: bobfujp/shiny:57d0b256e9145a7a36e67ad0f932e3f059c3c19c
-    steps:
-      - checkout
-      - run:
-          name: deployToShinyIo
-          command: |
-            PWD=$(pwd)
-            /usr/bin/R -e "rsconnect::setAccountInfo(name=\"infinityloop\", token=\"$R_TOKEN\", secret=\"$R_SECRET\"); setwd(\"$PWD\"); rsconnect::deployApp(forceUpdate=TRUE)"
+  # deployShinyio:
+  #   docker:
+  #     - image: bobfujp/shiny:57d0b256e9145a7a36e67ad0f932e3f059c3c19c
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: deployToShinyIo
+  #         command: |
+  #           PWD=$(pwd)
+  #           /usr/bin/R -e "rsconnect::setAccountInfo(name=\"infinityloop\", token=\"$R_TOKEN\", secret=\"$R_SECRET\"); setwd(\"$PWD\"); rsconnect::deployApp(forceUpdate=TRUE)"
   deploystg:
     docker:
       - image: boxboat/kubectl:1.15.12
