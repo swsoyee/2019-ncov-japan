@@ -18,7 +18,11 @@ fluidPage(
         icon("map-marked-alt"),
         i18n$t("各都道府県の状況")
       ),
-      closable = F,
+      closable = F, 
+      label = dashboardLabel(
+        i18n$t("実況中"), 
+        status = "info"
+      ),
       collapsible = T,
       width = 12,
       tabsetPanel(

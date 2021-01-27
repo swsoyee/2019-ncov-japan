@@ -6,8 +6,10 @@ Component.Tendency <- function() {
     collapsible = T,
     collapsed = F,
     enable_label = T,
-    label_text = tagList(i18n$t("もっと見る"), icon("hand-point-right")),
-    label_status = "warning",
+    label = dashboardLabel(
+      i18n$t("実況中"), 
+      status = "info"
+    ),
     footer = tags$small(icon("lightbulb"), i18n$t("凡例クリックすると表示・非表示の切替ができます。")),
     width = 12,
     tabsetPanel(
