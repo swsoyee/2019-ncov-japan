@@ -44,7 +44,7 @@ workflows:
           filters:
             branches:
               only: master
-      - deployShinyio:
-          filters:
-            branches:
-              only: master
+      # - deployShinyio:
+      #     filters:
+      #       branches:
+      #         only: master
