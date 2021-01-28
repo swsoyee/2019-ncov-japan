@@ -35,6 +35,7 @@ Due to the complexity of the data, differences in aggregation time periods or st
 
 - Data collection, Visualization development: [@swsoyee](https://github.com/swsoyee)  
 - Server setting, O & M: [@Bob-Fu](https://github.com/Bob-FU)  
+- Academic Advisor: Dr Zoie SY Wong, [Twitter: @zoiesywong](https://twitter.com/zoiesywong) / [Github: @zoiewong](https://github.com/zoiewong)
 
 ### Contributors
 

@@ -33,8 +33,9 @@
 
 ### 项目主创
 
-- 数据搜集、基于`shiny`的可视化开发：[@swsoyee](https://github.com/swsoyee)  
+- 数据搜集、基于 `shiny` 的可视化开发：[@swsoyee](https://github.com/swsoyee)  
 - 搭建服务器、线上网站运维：[@Bob-Fu](https://github.com/Bob-FU)  
+- 学术顾问：黄穗儿博士，[Twitter: @zoiesywong](https://twitter.com/zoiesywong) / [Github: @zoiewong](https://github.com/zoiewong)
 
 ### 贡献者
 
