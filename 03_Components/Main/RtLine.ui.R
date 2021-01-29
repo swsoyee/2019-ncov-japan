@@ -22,7 +22,7 @@ tabPanel(
       ),
       echarts4rOutput(
         outputId = "RtLine",
-        height = "500px"
+        height = "400px"
       ) %>%
         withSpinner()
     ),
@@ -37,6 +37,12 @@ tabPanel(
         ),
         options = list(
           style = "btn-danger"
+        ),
+        choicesOpt = list(
+          content = c(
+            "Hiroshi Nishiura et al., 2020 <sup>[2]</sup>",
+            "Sheikh Taslim Ali et al., 2020 <sup>[3]</sup>"
+          )
         )
       ),
       sliderInput(
@@ -61,6 +67,40 @@ tabPanel(
         style = paste0("color: #fff; background-color: ", middleRed),
         label = i18n$t("作成"),
         icon = icon("play")
+      )
+    )
+  ),
+  fluidRow(
+    socialBox(
+      width = 12,
+      title = tagList(icon("graduation-cap"), i18n$t("参考文献")),
+      headerBorder = FALSE,
+      boxComment(
+        title = tags$a(
+          href = "https://academic.oup.com/aje/article/178/9/1505/89262",
+          "1. A new framework and software to estimate time-varying reproduction numbers during epidemics.")
+        ,
+        date = "American journal of epidemiology 178.9 (2013): 1505-1512.",
+        image = "paper_cover/aje178_9.cover.gif",
+        "Anne Cori, Neil M. Ferguson, Christophe Fraser, and Simon Cauchemez"  
+      ),
+      boxComment(
+        title = tags$a(
+          href = "https://www.ijidonline.com/article/S1201-9712(20)30119-3/fulltext",
+          "2. Serial interval of novel coronavirus (COVID-19) infections."
+        ),
+        date = "International journal of infectious diseases 93 (2020): 284-286.",
+        image = "paper_cover/gr1.jpg",
+        "Nishiura, Hiroshi, Natalie M. Linton, and Andrei R. Akhmetzhanov."  
+      ),
+      boxComment(
+        title = tags$a(
+          href = "https://science.sciencemag.org/content/369/6507/1106",
+          "3. Serial interval of SARS-CoV-2 was shortened over time by nonpharmaceutical interventions."
+        ),
+        date = "Science 369.6507 (2020): 1106-1109.",
+        image = "paper_cover/F1.medium.gif",
+        "Sheikh Taslim Ali, Lin Wang, Eric H. Y. Lau, Xiao-Ke Xu, Zhanwei Du, Ye Wu, Gabriel M. Leung, and Benjamin J. Cowling"
       )
     )
   )
