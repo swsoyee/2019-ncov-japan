@@ -2,7 +2,7 @@ output$todayConfirmed <- renderUI({
   if (length(HAS_TODAY_CONFIRMED) > 0) {
     elements <- list()
     for (i in 1:length(HAS_TODAY_CONFIRMED)) {
-      elements[[i]] <- boxLabel(
+      elements[[i]] <- suppressWarnings(boxLabel(
         paste(
           i18n$t(names(HAS_TODAY_CONFIRMED[i])),
           "+",
@@ -10,7 +10,7 @@ output$todayConfirmed <- renderUI({
         ),
         status = "danger", 
         style = "square"
-      )
+      ))
     }
     tagList(tags$b(i18n$t("本日新規")), elements)
   } else {
@@ -29,13 +29,13 @@ output$todayDeath <- renderUI({
   if (length(HAS_TODAY_DEATH) > 0) {
     elements <- list()
     for (i in 1:length(HAS_TODAY_DEATH)) {
-      elements[[i]] <- boxLabel(paste(
+      elements[[i]] <- suppressWarnings(boxLabel(paste(
         i18n$t(names(HAS_TODAY_DEATH[i])),
         "+",
         HAS_TODAY_DEATH[i]
       ),
       status = "primary", style = "square"
-      )
+      ))
     }
     tagList(tags$b(i18n$t("本日新規")), elements)
   } else {

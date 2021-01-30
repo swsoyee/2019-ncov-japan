@@ -2125,6 +2125,36 @@
       "ja": "参考文献",
       "cn": "参考文献",
       "en": "References"
+    },
+    {
+      "ja": "プロジェクトスポンサー",
+      "cn": "项目赞助者",
+      "en": "Project Sponser"
+    },
+    {
+      "ja": "プロジェクトメンバー",
+      "cn": "项目成员",
+      "en": "Project Member"
+    },
+    {
+      "ja": "設立者・開発",
+      "cn": "创始人 / 开发",
+      "en": "Founder / Developer"
+    },
+    {
+      "ja": "インフラ",
+      "cn": "运维",
+      "en": "Operator"
+    },
+    {
+      "ja": "学術指導",
+      "cn": "学术顾问",
+      "en": "Academic Advisor"
+    },
+    {
+      "ja": "データ",
+      "cn": "数据",
+      "en": "Data"
     }
   ]
 }
