@@ -51,7 +51,7 @@ observeEvent(input$switchTableVersion, {
         ),
         helpText(
           icon("street-view"),
-          i18n$t("感染密度 (km)：『何km四方の土地（可住地面積）に感染者が１人いるか』という指標。")
+          i18n$t("実効再生産数：「すでに感染が広がっている状況において、1人の感染者が次に平均で何人にうつすか」を示す指標。")
         )
       )
     })
@@ -242,11 +242,6 @@ output$confirmedByPrefTable <- renderDataTable({
   columnName <- c("today", "doubleTimeDay")
   dt[, (columnName) := replace(.SD, .SD == 0, NA), .SDcols = columnName]
 
-  breaksPerArea <-
-    seq(0, ceiling(max(dt$perArea[!is.infinite(dt$perArea)], na.rm = T)))
-  colorsPerArea <-
-    colorRampPalette(c(darkYellow, "#FFFFFF"))(length(breaksPerArea) + 1)
-
   datatable(
     data = dt[, c(1, 3, 4, 6, 25, 11, 13, 15, 16), with = F],
     colnames = c(
@@ -258,10 +253,9 @@ output$confirmedByPrefTable <- renderDataTable({
       i18n$t("倍加日数"),
       i18n$t("10万対発生数※"),
       i18n$t("カテゴリ"),
-      i18n$t("感染密度(km)")
+      i18n$t("実効再生産数")
     ),
     escape = F,
-    # caption = i18n$t("感染密度 (km)：『何km四方の土地（可住地面積）に感染者が１人いるか』という指標。"),
     # extensions = c("Responsive"),
     extensions = c("RowGroup", "Buttons"),
     callback = htmlwidgets::JS(paste0(
@@ -329,7 +323,7 @@ output$confirmedByPrefTable <- renderDataTable({
                 return split[1];
             }"
           ),
-          targets = 7
+          targets = c(7, 9)
         )
       ),
       fnDrawCallback = htmlwidgets::JS("
@@ -404,8 +398,10 @@ output$confirmedByPrefTable <- renderDataTable({
       fontWeight = "bold"
     ) %>%
     formatStyle(
-      columns = "perArea",
-      backgroundColor = styleInterval(breaksPerArea, colorsPerArea),
+      columns = "Rt",
+      backgroundColor = htmlwidgets::JS(
+        "isNaN(parseFloat(value.match(/\\|(.+?) /)[1])) ? '' : value.match(/\\|(.+?) /)[1] <= 0.3 ? \"rgba(0,0,0,0)\" : value.match(/\\|(.+?) /)[1] <= 0.6 ? \"#F8BF76\" : value.match(/\\|(.+?) /)[1] <= 0.9 ? \"#F39C11\" : value.match(/\\|(.+?) /)[1] < 1 ? \"#DB8B0A\" : \"#B03C2D\""
+      ),
       fontWeight = "bold"
     )
 })
