@@ -2,6 +2,49 @@ fluidRow(
   column(
     width = 12,
     box(
+      title = i18n$t("プロジェクトメンバー"),
+      icon = icon("users"),
+      width = 6,
+      userList(
+        userListItem(
+          image = "Icon/wei_su.jpg",
+          title = tags$a(
+            href = "https://twitter.com/swsoyee",
+            icon("twitter"),
+            tags$b("Wei_Su")
+          ),
+          subtitle = i18n$t("設立者・開発")
+        ),
+        userListItem(
+          image = "Icon/anonymous.jpeg",
+          title = tags$a(
+            href = "https://github.com/Bob-FU",
+            icon("github"),
+            tags$b("Bob-Fu")
+          ),
+          subtitle = i18n$t("インフラ")
+        ),
+        userListItem(
+          image = "Icon/zoie.jpg",
+          title = tags$a(
+            href = "https://twitter.com/zoiesywong",
+            icon("twitter"),
+            tags$b("Zoie, PhD")
+          ),
+          subtitle = i18n$t("学術指導")
+        ),
+        userListItem(
+          image = "Icon/emckk.png",
+          title = tags$a(
+            href = "https://github.com/emc-kk",
+            icon("github"),
+            tags$b("emckk")
+          ),
+          subtitle = i18n$t("データ")
+        )
+      )
+    ),
+    box(
       title = i18n$t("プロジェクトスポンサー"),
       icon = icon("hand-holding-usd"),
       width = 6,

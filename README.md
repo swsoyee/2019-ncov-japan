@@ -35,7 +35,7 @@
 
 - データ収集、`shiny` を利用した可視化開発：[@swsoyee](https://github.com/swsoyee)  
 - インフラ、サーバーのメンテナンス：[@Bob-Fu](https://github.com/Bob-FU)  
-- 指導教員：ウォンスイー准教授、[Twitter: @zoiesywong](https://twitter.com/zoiesywong) / [Github: @zoiewong](https://github.com/zoiewong)
+- 学術指導：ウォンスイー准教授、[Twitter: @zoiesywong](https://twitter.com/zoiesywong) / [Github: @zoiewong](https://github.com/zoiewong)
 
 ### 貢献者
 

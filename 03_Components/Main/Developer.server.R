@@ -1,7 +1,7 @@
 output$user <- renderUser({
   dashboardUser(
     name = "Su Wei",
-    image = "profile.png",
+    image = "Icon/wei_su.jpg",
     title = "Developer",
     subtitle = "Front-End Engineer | ex-Bioinformatician",
     fluidRow(
