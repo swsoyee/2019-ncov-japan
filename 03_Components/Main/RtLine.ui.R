@@ -1,6 +1,10 @@
 # 実効再生産数
 tabPanel(
-  title = tagList(icon("chart-line"), i18n$t("実効再生産数")),
+  title = tagList(
+    icon("chart-line"), 
+    i18n$t("実効再生産数"),
+    boxLabel("New", status = "warning")
+  ),
   fluidRow(
     style = "margin-top:10px;",
     column(
