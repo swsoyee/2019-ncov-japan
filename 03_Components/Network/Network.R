@@ -122,13 +122,13 @@ output$profile <- renderUI({
       # ステータス
       statusBadge <- ""
       if (profile[9] == "罹患中") {
-        statusBadge <- dashboardLabel(i18n$t("罹患中"), status = "warning")
+        statusBadge <- boxLabel(i18n$t("罹患中"), status = "warning")
       } else if (profile[9] == "回復") {
-        statusBadge <- dashboardLabel(i18n$t("回復"), status = "success")
+        statusBadge <- boxLabel(i18n$t("回復"), status = "success")
       } else if (profile[9] == "死亡") {
-        statusBadge <- dashboardLabel(i18n$t("死亡"), status = "primary")
+        statusBadge <- boxLabel(i18n$t("死亡"), status = "primary")
       } else {
-        statusBadge <- dashboardLabel(profile[9], status = "info")
+        statusBadge <- boxLabel(profile[9], status = "info")
       }
 
       box(

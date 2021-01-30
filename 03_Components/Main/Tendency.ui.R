@@ -6,7 +6,7 @@ Component.Tendency <- function() {
     collapsible = T,
     collapsed = F,
     enable_label = T,
-    label = dashboardLabel(
+    label = boxLabel(
       i18n$t("実況中"), 
       status = "info"
     ),

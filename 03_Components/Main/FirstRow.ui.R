@@ -12,12 +12,12 @@ fluidRow(
       width = 12,
       closable = FALSE,
       collapsible = FALSE,
-      # tags$p(dashboardLabel(status = 'danger',  # APIアクセスできなかった
+      # tags$p(boxLabel(status = 'danger',  # APIアクセスできなかった
       #                       style = 'square',
       #                       paste(sep = ' | ', lang[[langCode]][71], # ページ閲覧数
       #                             statics$result$totals$pageviews$all)
       #                       ),
-      #        dashboardLabel(status = 'success',
+      #        boxLabel(status = 'success',
       #                       style = 'square',
       #                       paste(sep = ' | ', lang[[langCode]][72], # 閲覧者数
       #                             statics$result$totals$uniques)

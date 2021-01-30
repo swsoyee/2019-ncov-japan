@@ -19,7 +19,7 @@ fluidPage(
         i18n$t("各都道府県の状況")
       ),
       closable = F, 
-      label = dashboardLabel(
+      label = boxLabel(
         i18n$t("実況中"), 
         status = "info"
       ),
@@ -103,7 +103,7 @@ fluidPage(
         style = paste0("color: #fff; background-color: ", middleYellow),
         label = tagList(
           i18n$t("感染ルート・クラスターへ"),
-          dashboardLabel(
+          boxLabel(
             "Archived",
             status = "danger"
           )

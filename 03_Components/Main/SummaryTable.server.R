@@ -98,7 +98,7 @@ observeEvent(input$switchTableVersion, {
           ),
           accordionItem(
             id = 2,
-            title = tagList(i18n$t("2. 5月9日からの集計について"), dashboardLabel(status = "warning", i18n$t("必読"))),
+            title = tagList(i18n$t("2. 5月9日からの集計について"), boxLabel(status = "warning", i18n$t("必読"))),
             tags$ol(
               tags$li(
                 icon("exclamation-triangle"),
