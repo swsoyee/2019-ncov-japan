@@ -2129,7 +2129,17 @@
     {
       "ja": "プロジェクトスポンサー",
       "cn": "项目赞助者",
-      "en": "Project Sponser"
+      "en": "Project Sponsor"
+    },
+    {
+      "ja": "スポンサー",
+      "cn": "赞助",
+      "en": "Sponsor"
+    },
+    {
+      "ja": "コメント",
+      "cn": "意见反馈",
+      "en": "Feedback"
     },
     {
       "ja": "プロジェクトメンバー",

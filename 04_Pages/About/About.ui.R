@@ -39,7 +39,17 @@ fluidRow(
     box(
       title = i18n$t("プロジェクトスポンサー"),
       icon = icon("hand-holding-usd"),
-      width = 6,
+      width = 6, 
+      label = tags$a(
+        href = "https://github.com/sponsors/swsoyee", 
+        suppressWarnings(boxLabel(
+          text = tagList(
+            icon("heart"),
+            "Sponsor"
+          ), 
+          status = "danger"
+        )
+      )),
       userList(
         UserListItemWrappter(
           image = "Icon/yukinobu_nishio.jpg",
