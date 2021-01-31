@@ -24,7 +24,7 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
       - name: Install Package Dependencies
         run: |-
-          Rscript -e "install.packages(c('data.table', 'sparkline', 'purrr', 'jsonlite', 'reshape2', 'tidyverse', 'lubridate', 'remotes'))"
+          Rscript -e "install.packages(c('data.table', 'sparkline', 'purrr', 'jsonlite', 'reshape2', 'tidyverse', 'lubridate', 'EpiEstim', 'incidence', 'remotes'))"
       - name: Run Script
         run: |
           Rscript -e 'source("00_System/CreateTable.R")'
