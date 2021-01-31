@@ -46,13 +46,6 @@ darkBlue <- "#00A7D0"
 
 
 # ====各都道府県のサマリーテーブル====
-# ランキングカラムを作成
-# cumDt <- cumsum(byDate[, c(2:48, 50)])
-# rankDt <- data.table(t(apply(-cumDt, 1, function(x){rank(x, ties.method = 'min')})))
-# rankDt[, colnames(rankDt) := shift(.SD, fill = 0) - .SD, .SDcols = colnames(rankDt)]
-#
-# rankDt[rankDt == 0] <- '-'
-# rankDt[, colnames(rankDt) := ifelse(.SD > 0, paste0('+', .SD), .SD), .SDcols = colnames(rankDt)]
 
 print("新規なし継続日数カラム作成")
 zeroContinuousDay <- stack(lapply(byDate[, 2:ncol(byDate)], function(region) {
@@ -276,31 +269,20 @@ mergeDt <- data.table(
   doubleTimeDay = doubleTimeDay
 )
 
-latestOneWeekIndex <- (nrow(byDate) - 6):nrow(byDate)
-latestOneWeekYesterdayIndex <- latestOneWeekIndex - 1
-latestOneWeekConfirmed <- colSums(byDate[latestOneWeekIndex, 2:ncol(byDate)])
-latestOneWeekYesterdayConfirmed <- colSums(byDate[latestOneWeekYesterdayIndex, 2:ncol(byDate)])
-
 mergeDt <- merge(mergeDt, totalDischarged, all.x = T, sort = F)
 signateSub <- provinceAttr[, .(都道府県略称, 人口)]
 colnames(signateSub) <- c("region", "population")
 mergeDt <- merge(mergeDt, signateSub, all.x = T, sort = F)
 
-latestOneWeekDiff <- (latestOneWeekConfirmed / (mergeDt$population / 100000)) - (latestOneWeekYesterdayConfirmed / (mergeDt$population / 100000))
-diff2Icon <- function(x){
-  if (is.na(x)) return (NA)
-  if (x >= 1) return(" <i style='color:#DD4B39;' class=\"fa fa-angle-double-up\"></i>")
-  if (x <= 1 && x > 0) return(" <i style='color:#DD4B39;' class=\"fa fa-angle-up\"></i>")
-  if (x == 0) return(" <i style='color:#001f3f;' class=\"fa fa-lock\"></i>")
-  if (x < 0 && x >= -1) return(" <i style='color:#00a65a;' class=\"fa fa-angle-down\"></i>")
-  if (x < -1) return(" <i style='color:#00a65a;' class=\"fa fa-angle-double-down\"></i>")
-}
+source(file = "00_System/CreatePerMillion.R")
+byDateConfirmed <- getLatestWeekValue(byDate)
+latestOneWeekDiff <- (byDateConfirmed$today / (mergeDt$population / 100000)) - (byDateConfirmed$yesterday / (mergeDt$population / 100000))
 latestOneWeekDiff <- lapply(latestOneWeekDiff, diff2Icon)
 
 mergeDt[, perHundredThousand := paste0(
-  sprintf("%02d", rank(round(latestOneWeekConfirmed / (population / 100000), 1), ties.method = "first")),
+  sprintf("%02d", rank(round(byDateConfirmed$today / (population / 100000), 1), ties.method = "first")),
   "|",
-  round(latestOneWeekConfirmed / (population / 100000), 1), 
+  round(byDateConfirmed$today / (population / 100000), 1), 
   latestOneWeekDiff
   )]
 mergeDt$perHundredThousand[48:51] <- "99|0 <i style='color:#001f3f;' class=\"fa fa-lock\"></i>"
