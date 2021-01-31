@@ -6,40 +6,32 @@ fluidRow(
       icon = icon("users"),
       width = 6,
       userList(
-        userListItem(
+        UserListItemWrappter(
           image = "Icon/wei_su.jpg",
-          title = tags$a(
-            href = "https://twitter.com/swsoyee",
-            icon("twitter"),
-            tags$b("Wei_Su")
-          ),
+          href = "https://twitter.com/swsoyee",
+          icon = "twitter",
+          title = "Wei_Su",
           subtitle = i18n$t("設立者・開発")
         ),
-        userListItem(
+        UserListItemWrappter(
           image = "Icon/anonymous.jpeg",
-          title = tags$a(
-            href = "https://github.com/Bob-FU",
-            icon("github"),
-            tags$b("Bob-Fu")
-          ),
+          href = "https://github.com/Bob-FU",
+          icon = "github",
+          title = "Bob-Fu",
           subtitle = i18n$t("インフラ")
         ),
-        userListItem(
+        UserListItemWrappter(
           image = "Icon/zoie.jpg",
-          title = tags$a(
-            href = "https://twitter.com/zoiesywong",
-            icon("twitter"),
-            tags$b("Zoie, PhD")
-          ),
+          href = "https://twitter.com/zoiesywong",
+          icon = "twitter",
+          title = "Zoie, PhD",
           subtitle = i18n$t("学術指導")
         ),
-        userListItem(
+        UserListItemWrappter(
           image = "Icon/emckk.png",
-          title = tags$a(
-            href = "https://github.com/emc-kk",
-            icon("github"),
-            tags$b("emckk")
-          ),
+          href = "https://github.com/emc-kk",
+          icon = "github",
+          title = "emckk",
           subtitle = i18n$t("データ")
         )
       )
@@ -49,34 +41,28 @@ fluidRow(
       icon = icon("hand-holding-usd"),
       width = 6,
       userList(
-        userListItem(
+        UserListItemWrappter(
           image = "Icon/yukinobu_nishio.jpg",
-          title = tags$a(
-            href = "https://twitter.com/yukinobunishio",
-            icon("twitter"),
-            tags$b("YukinobuNISHIO")
-          ),
+          href = "https://twitter.com/yukinobunishio",
+          icon = "twitter",
+          title = "YukinobuNISHIO",
           subtitle = sprintf("~ %s", as.Date("20210106", format = "%Y%m%d"))
         ),
-        userListItem(
+        UserListItemWrappter(
           image = "Icon/uryu_shinya.jpg",
-          title = tags$a(
-            href = "https://twitter.com/u_ribo",
-            icon("twitter"),
-            tags$b("Uryu Shinya")
-          ),
+          href = "https://twitter.com/u_ribo",
+          icon = "twitter",
+          title = "Uryu Shinya",
           subtitle = sprintf("~ %s", as.Date("20201102", format = "%Y%m%d"))
         ),
-        userListItem(
+        UserListItemWrappter(
           image = "Icon/marchhare31.png",
-          title = tags$a(
-            href = "https://github.com/marchhare31",
-            icon("github"),
-            tags$b("marchhare31")
-          ),
+          href = "https://github.com/marchhare31",
+          icon = "github",
+          title = "marchhare31",
           subtitle = sprintf("~ %s", as.Date("20201103", format = "%Y%m%d"))
         ),
-        userListItem(
+        UserListItemWrappter(
           image = "Icon/anonymous.jpeg",
           title = "Anonymous",
           subtitle = sprintf("~ %s", as.Date("20201102", format = "%Y%m%d"))
