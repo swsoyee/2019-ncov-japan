@@ -7,7 +7,7 @@ Component.MainValueBox <-
            icon,
            color) {
     valueBox(
-      width = 6,
+      width = 3,
       value = tagList(
         countup(mainValue),
         tags$small(paste0("| ", mainValueSub),

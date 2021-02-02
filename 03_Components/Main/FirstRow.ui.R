@@ -1,140 +1,84 @@
 fluidRow(
-  column(
-    width = 5,
-    style = "padding:0px;",
-    userBox(
-      title = userDescription(
-        title = i18n$t("新型コロナウイルス"),
-        subtitle = i18n$t("Coronavirus disease 2019 (COVID-19)"),
-        image = "ncov.jpeg",
-        backgroundImage = "ncov_back.jpg"
-      ),
-      width = 12,
-      closable = FALSE,
-      collapsible = FALSE,
-      # tags$p(boxLabel(status = 'danger',  # APIアクセスできなかった
-      #                       style = 'square',
-      #                       paste(sep = ' | ', lang[[langCode]][71], # ページ閲覧数
-      #                             statics$result$totals$pageviews$all)
-      #                       ),
-      #        boxLabel(status = 'success',
-      #                       style = 'square',
-      #                       paste(sep = ' | ', lang[[langCode]][72], # 閲覧者数
-      #                             statics$result$totals$uniques)
-      #        )
-      #        ),
-      tags$p(
-        tags$img(src = "https://img.shields.io/badge/dynamic/json?url=https://cdn.covid-2019.live/static/stats.json&label=PV&query=$.result.totals.pageviews.all&color=orange&style=flat-square"),
-        tags$a(
-          href = "https://github.com/swsoyee/2019-ncov-japan",
-          tags$img(src = "https://img.shields.io/github/stars/swsoyee/2019-ncov-japan?style=social", style="float:right;")
-        )
-      ),
-      # 発熱や上気道症状を引き起こすウイルス...
-      footer = tagList(
-        tags$p(
-          i18n$t("「新型コロナウイルス（SARS-CoV2）」はコロナウイルスのひとつです。コロナウイルスには、一般の風邪の原因となるウイルスや、「重症急性呼吸器症候群（ＳＡＲＳ）」や2012年以降発生している「中東呼吸器症候群（ＭＥＲＳ）」ウイルスが含まれます。")
-        ),
-        tags$small(
-          tags$a(
-            href = lang[[langCode]][21], # https://www.mhlw.go.jp/stf/...
-            icon("external-link-alt"),
-            i18n$t("「新型コロナウイルス」はどのようなウイルスですか（厚生労働省）")
-          ),
-          tags$a(
-            href = lang[[langCode]][59], # https://phil.cdc.gov/Details.aspx?pid=2871
-            icon("image"),
-            i18n$t("背景画像")
-          )
-        )
-      )
-    )
+  Component.MainValueBox(
+    mainValue = sum(mhlwSummary[日付 == max(日付)]$検査人数),
+    mainValueSub = getFileUpdateTime(mhlwSummaryPath),
+    sparklineName = "pcrSparkLine",
+    diffNumber = (sum(mhlwSummary[日付 == max(日付)]$検査人数) - sum(mhlwSummary[日付 == max(日付) - 1]$検査人数, na.rm = T)),
+    text = i18n$t("検査人数"),
+    icon = "vials",
+    color = "yellow"
   ),
-  column(
-    width = 7,
-    fluidRow(
-      Component.MainValueBox(
-        mainValue = sum(mhlwSummary[日付 == max(日付)]$検査人数),
-        mainValueSub = getFileUpdateTime(mhlwSummaryPath),
-        sparklineName = "pcrSparkLine",
-        diffNumber = (sum(mhlwSummary[日付 == max(日付)]$検査人数) - sum(mhlwSummary[日付 == max(日付) - 1]$検査人数, na.rm = T)),
-        text = i18n$t("検査人数"),
-        icon = "vials",
-        color = "yellow"
-      ),
-      Component.MainValueBox(
-        mainValue = TOTAL_JAPAN,
-        mainValueSub = LATEST_UPDATE,
-        sparklineName = "confirmedSparkLine",
-        diffNumber = TOTAL_JAPAN_DIFF,
-        text = i18n$t("感染者数"),
-        icon = "procedures",
-        color = "red"
-      )
-    ),
-    fluidRow(
-      Component.MainValueBox(
-        mainValue = sum(mhlwSummary[日付 == max(日付)]$退院者),
-        # 退院者 / (PCR 陽性者 - クルーズ船帰国の40名 - 死亡者)
-        mainValueSub = paste0(round(sum(mhlwSummary[日付 == max(日付)]$退院者) /
-          (sum(mhlwSummary[日付 == max(日付)]$陽性者) - 40 - sum(mhlwSummary[日付 == max(日付)]$死亡者, na.rm = T)) * 100, 2), "%"),
-        sparklineName = "dischargeSparkLine",
-        diffNumber = (sum(mhlwSummary[日付 == max(日付)]$退院者) - sum(mhlwSummary[日付 == max(日付) - 1]$退院者, na.rm = T)),
-        text = i18n$t("回復者数"),
-        icon = "user-shield",
-        color = "green"
-      ),
-      Component.MainValueBox(
-        mainValue = DEATH_JAPAN,
-        mainValueSub = paste0(round(100 * DEATH_JAPAN / TOTAL_JAPAN, 2), "%"),
-        sparklineName = "deathSparkLine",
-        diffNumber = DEATH_JAPAN_DIFF,
-        text = i18n$t("死亡者数"),
-        icon = "bible",
-        color = "navy"
-      )
-    ),
-    fluidRow(column(
-      width = 12,
-      style = "padding:0px;",
-      box(
-        width = 12,
-        headerBorder = FALSE,
-        footer = NULL,
-        title = tagList(
-        actionButton(
-          inputId = "twitterShare",
-          label = "Twitter",
-          icon = icon("twitter"),
-          style = "background-color:#1DA1F2;color:white;",
-          onclick = sprintf("window.open('%s')", twitterUrl)
-        ),
-        ifelse(languageSetting != "ja", tagList(actionButton(
-          inputId = "japaneseVersion",
-          label = "🇯🇵日本語",
-          onclick = sprintf(
-            "window.open('%s')",
-            "https://covid-2019.live/"
-          )
-        )), ""),
-        ifelse(languageSetting != "cn", tagList(actionButton(
-          inputId = "chineseVersion",
-          label = "🇨🇳中文",
-          onclick = sprintf(
-            "window.open('%s')",
-            "https://covid-2019.live/cn"
-          )
-        )), ""),
-        ifelse(languageSetting != "en", tagList(actionButton(
-          inputId = "englishVersion",
-          label = "🇺🇸English",
-          onclick = sprintf(
-            "window.open('%s')",
-            "https://covid-2019.live/en"
-          )
-        )), "")
-        )
-      )
-    ))
+  Component.MainValueBox(
+    mainValue = TOTAL_JAPAN,
+    mainValueSub = LATEST_UPDATE,
+    sparklineName = "confirmedSparkLine",
+    diffNumber = TOTAL_JAPAN_DIFF,
+    text = i18n$t("感染者数"),
+    icon = "procedures",
+    color = "red"
+  ),
+  Component.MainValueBox(
+    mainValue = sum(mhlwSummary[日付 == max(日付)]$退院者),
+    # 退院者 / (PCR 陽性者 - クルーズ船帰国の40名 - 死亡者)
+    mainValueSub = paste0(round(sum(mhlwSummary[日付 == max(日付)]$退院者) /
+      (sum(mhlwSummary[日付 == max(日付)]$陽性者) - 40 - sum(mhlwSummary[日付 == max(日付)]$死亡者, na.rm = T)) * 100, 2), "%"),
+    sparklineName = "dischargeSparkLine",
+    diffNumber = (sum(mhlwSummary[日付 == max(日付)]$退院者) - sum(mhlwSummary[日付 == max(日付) - 1]$退院者, na.rm = T)),
+    text = i18n$t("回復者数"),
+    icon = "user-shield",
+    color = "green"
+  ),
+  Component.MainValueBox(
+    mainValue = DEATH_JAPAN,
+    mainValueSub = paste0(round(100 * DEATH_JAPAN / TOTAL_JAPAN, 2), "%"),
+    sparklineName = "deathSparkLine",
+    diffNumber = DEATH_JAPAN_DIFF,
+    text = i18n$t("死亡者数"),
+    icon = "bible",
+    color = "navy"
   )
 )
+#     fluidRow(column(
+#       width = 12,
+#       style = "padding:0px;",
+#       box(
+#         width = 12,
+#         headerBorder = FALSE,
+#         footer = NULL,
+#         title = tagList(
+#         actionButton(
+#           inputId = "twitterShare",
+#           label = "Twitter",
+#           icon = icon("twitter"),
+#           style = "background-color:#1DA1F2;color:white;",
+#           onclick = sprintf("window.open('%s')", twitterUrl)
+#         ),
+#         ifelse(languageSetting != "ja", tagList(actionButton(
+#           inputId = "japaneseVersion",
+#           label = "🇯🇵日本語",
+#           onclick = sprintf(
+#             "window.open('%s')",
+#             "https://covid-2019.live/"
+#           )
+#         )), ""),
+#         ifelse(languageSetting != "cn", tagList(actionButton(
+#           inputId = "chineseVersion",
+#           label = "🇨🇳中文",
+#           onclick = sprintf(
+#             "window.open('%s')",
+#             "https://covid-2019.live/cn"
+#           )
+#         )), ""),
+#         ifelse(languageSetting != "en", tagList(actionButton(
+#           inputId = "englishVersion",
+#           label = "🇺🇸English",
+#           onclick = sprintf(
+#             "window.open('%s')",
+#             "https://covid-2019.live/en"
+#           )
+#         )), "")
+#         )
+#       )
+#     ))
+#   )
+# )
