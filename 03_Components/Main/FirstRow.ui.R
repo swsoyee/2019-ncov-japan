@@ -38,23 +38,3 @@ fluidRow(
     color = "navy"
   )
 )
-#     fluidRow(column(
-#       width = 12,
-#       style = "padding:0px;",
-#       box(
-#         width = 12,
-#         headerBorder = FALSE,
-#         footer = NULL,
-#         title = tagList(
-#         actionButton(
-#           inputId = "twitterShare",
-#           label = "Twitter",
-#           icon = icon("twitter"),
-#           style = "background-color:#1DA1F2;color:white;",
-#           onclick = sprintf("window.open('%s')", twitterUrl)
-#         )
-#         )
-#       )
-#     ))
-#   )
-# )

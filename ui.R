@@ -12,6 +12,7 @@ shinyUI(
     header = dashboardHeader(
       title = paste0("🦠　", i18n$t("新型コロナウイルス感染速報")),
       titleWidth = 350,
+      controlbarIcon = icon("share-alt-square"),
       leftUi = tagList(
         dropdownBlock(
           id = "language-setting",
@@ -50,6 +51,22 @@ shinyUI(
         )
       ),
       userOutput("user")
+    ),
+    controlbar = dashboardControlbar(
+      id = "shareInSocial",
+      controlbarMenu(
+        id = "shareInSocailMenu",
+        controlbarItem(
+          i18n$t("状況をシェア"),
+          actionButton(
+            inputId = "twitterShare",
+            label = "Twitter",
+            icon = icon("twitter"),
+            style = "background-color:#1DA1F2;color:white;",
+            onclick = sprintf("window.open('%s')", twitterUrl)
+          )
+        )
+      )
     ),
     sidebar = dashboardSidebar(
       collapsed = TRUE,
