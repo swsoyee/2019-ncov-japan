@@ -2,9 +2,14 @@
   "languages": ["ja", "cn", "en"],
   "translation": [
     {
-      "ja": "新　型　コ　ロ　ナ　ウ　イ　ル　ス　感　染　速　報",
-      "cn": "新　型　冠　状　病　毒　疫　情　速　报",
-      "en": "C O V I D - 1 9　B U L L E T I N　B O A R D"
+      "ja": "新型コロナウイルス感染速報",
+      "cn": "新型冠状病毒疫情速报",
+      "en": "COVID-19 BULLETIN BOARD"
+    },
+    {
+      "ja": "言語",
+      "cn": "语言",
+      "en": "Language"
     },
     {
       "ja": "実況中",

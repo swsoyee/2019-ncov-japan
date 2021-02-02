@@ -7,15 +7,46 @@ source(
 shinyUI(
   dashboardPage(
     skin = "red",
-    title = i18n$t("新　型　コ　ロ　ナ　ウ　イ　ル　ス　感　染　速　報"),
+    title = i18n$t("新型コロナウイルス感染速報"),
     options = list(sidebarExpandOnHover = TRUE),
     header = dashboardHeader(
-      title = paste0("🦠　", i18n$t("新　型　コ　ロ　ナ　ウ　イ　ル　ス　感　染　速　報")),
-      titleWidth = 600,
+      title = paste0("🦠　", i18n$t("新型コロナウイルス感染速報")),
+      titleWidth = 350,
       leftUi = tagList(
-        tags$span(
-          "COVID-19 BULLETIN BOARD",
-          style = 'font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#fff;line-height:34px;font-size:20px;font-weight:300;overflow:hidden;'
+        dropdownBlock(
+          id = "language-setting",
+          title = i18n$t("言語"),
+          icon = icon("language"),
+          actionButton(
+            inputId = "japaneseVersion",
+            label = "日本語",
+            style = "background-color:#FFFFFF;color:#BC002D;width:100%",
+            onclick = sprintf(
+              "window.open('%s')",
+              "https://covid-2019.live/"
+            ),
+            disabled = i18n$translation_language != "ja"
+          ),
+          actionButton(
+            inputId = "chineseVersion",
+            label = "中文",
+            style = "background-color:#df2407;color:#ffdf00;width:100%",
+            onclick = sprintf(
+              "window.open('%s')",
+              "https://covid-2019.live/cn"
+            ),
+            disabled = i18n$translation_language != "cn"
+          ),
+          actionButton(
+            inputId = "englishVersion",
+            label = "English",
+            style = "background-color:#3C3B6E;color:#FFFFFF;width:100%",
+            onclick = sprintf(
+              "window.open('%s')",
+              "https://covid-2019.live/en"
+            ),
+            disabled = i18n$translation_language != "en"
+          )
         )
       ),
       userOutput("user")

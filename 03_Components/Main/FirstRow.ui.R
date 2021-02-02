@@ -52,31 +52,7 @@ fluidRow(
 #           icon = icon("twitter"),
 #           style = "background-color:#1DA1F2;color:white;",
 #           onclick = sprintf("window.open('%s')", twitterUrl)
-#         ),
-#         ifelse(languageSetting != "ja", tagList(actionButton(
-#           inputId = "japaneseVersion",
-#           label = "🇯🇵日本語",
-#           onclick = sprintf(
-#             "window.open('%s')",
-#             "https://covid-2019.live/"
-#           )
-#         )), ""),
-#         ifelse(languageSetting != "cn", tagList(actionButton(
-#           inputId = "chineseVersion",
-#           label = "🇨🇳中文",
-#           onclick = sprintf(
-#             "window.open('%s')",
-#             "https://covid-2019.live/cn"
-#           )
-#         )), ""),
-#         ifelse(languageSetting != "en", tagList(actionButton(
-#           inputId = "englishVersion",
-#           label = "🇺🇸English",
-#           onclick = sprintf(
-#             "window.open('%s')",
-#             "https://covid-2019.live/en"
-#           )
-#         )), "")
+#         )
 #         )
 #       )
 #     ))
