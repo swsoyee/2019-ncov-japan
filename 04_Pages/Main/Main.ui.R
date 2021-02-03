@@ -12,6 +12,13 @@ fluidPage(
     local = T,
     encoding = "UTF-8"
   )$value,
+  if (envSetting == "dev") {
+    source(
+      file = paste0(COMPONENT_PATH, "/CurrentStatus/CurrentBox.ui.R"),
+      local = T,
+      encoding = "UTF-8"
+    )$value
+  },
   fluidRow(
     box(
       title = tagList(

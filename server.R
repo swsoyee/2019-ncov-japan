@@ -25,6 +25,9 @@ shinyServer(function(input, output, session) {
     local = TRUE,
     encoding = "UTF-8"
   )
+  if (envSetting == "dev") {
+    source(file = paste0(COMPONENT_PATH, "/CurrentStatus/CurrentActive.server.R"), local = T, encoding = "UTF-8")
+  }
   # 数値ボックスコンポーネント
   source(
     file = paste0(COMPONENT_PATH, "ValueBox.R"),
