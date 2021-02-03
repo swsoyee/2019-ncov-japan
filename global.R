@@ -30,6 +30,8 @@ source(file = paste0(COMPONENT_PATH, "/Main/SymptomsProgression.ui.R"), local = 
 source(file = paste0(COMPONENT_PATH, "/Main/ComfirmedPyramid.ui.R"), local = T, encoding = "UTF-8")
 source(file = paste0(COMPONENT_PATH, "/Main/Tendency.ui.R"), local = T, encoding = "UTF-8")
 
+# envSetting <- "dev"
+envSetting <- "production"
 # ====
 # データの読み込み
 # ====
