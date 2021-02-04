@@ -382,6 +382,11 @@ output$confirmedByPrefTable <- renderDataTable({
       ),
       fontWeight = "bold"
     ) %>%
+    formatCurrency(
+      columns = "active",
+      currency = paste(as.character(icon("caret-up")), " "),
+      digits = 0
+    ) %>%
     formatStyle(
       columns = "doubleTimeDay",
       color = do.call(

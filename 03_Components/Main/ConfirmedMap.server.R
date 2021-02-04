@@ -132,12 +132,13 @@ output$echartsSimpleMap <- renderEcharts4r({
     ) %>%
     e_visual_map_(
       input$selectMapBottomButton,
-      top = "20%",
+      top = "25%",
       left = "0%",
-      inRange = list(color = c("#DADADA", "#FFCEAB", "#FF9D57", "#FF781E", "#EA5432", "#C02B11", "#8C0B00")),
+      inRange = list(color = c("#DADADA", "#FFCEAB", "#FF9D57", "#FF781E", "#EA5432", "#C02B11", "#8C0B00", "#000000")),
       type = "piecewise",
       splitList = list(
-        list(min = 1000),
+        list(min = 3000),
+        list(min = 1000, max = 3000),
         list(min = 500, max = 1000),
         list(min = 100, max = 500),
         list(min = 50, max = 100),
@@ -167,7 +168,7 @@ output$echartsSimpleMap <- renderEcharts4r({
     )
 
   # 本日増加分をプロット
-  if (input$selectMapBottomButton %in% c("total", "active")) {
+  if (input$selectMapBottomButton %in% c("active")) {
     newToday <- dt[diff > 0]
     for (i in 1:nrow(newToday)) {
       map <- map %>%
@@ -175,14 +176,15 @@ output$echartsSimpleMap <- renderEcharts4r({
           data = list(
             name = newToday[i]$ja,
             coord = c(newToday[i]$lng, newToday[i]$lat),
-            symbolSize = c(7, newToday[i]$diff)
+            symbolSize = c(7, newToday[i]$diff / 2)
           ),
           symbol = "triangle",
           symbolOffset = c(0, "-50%"),
           itemStyle = list(
             color = "#520e05",
             shadowColor = "white",
-            shadowBlur = 0
+            shadowBlur = 0,
+            opacity = 0.75
           )
         )
     }
