@@ -236,7 +236,6 @@ output$confirmedLine <- renderEcharts4r({
       e_tooltip(trigger = "axis") %>%
       e_datazoom(
         minValueSpan = 604800000, #3600 * 24 * 1000 * 7,
-        bottom = "0%",
         startValue = max(dt$date, na.rm = T) - 28
       )
   }

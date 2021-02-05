@@ -116,7 +116,6 @@ output$recoveredLine <- renderEcharts4r({
     e_tooltip(trigger = "axis") %>%
     e_datazoom(
       minValueSpan = 3600 * 24 * 1000 * 7,
-      bottom = "0%",
       startValue = max(dataset$日付, na.rm = T) - 28
     )
 })
