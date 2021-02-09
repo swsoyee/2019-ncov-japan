@@ -39,6 +39,12 @@ fluidPage(
           local = T,
           encoding = "UTF-8"
         )$value,
+        # 実効再生産数
+        source(
+          file = paste0(COMPONENT_PATH, "/Main/RtLine.ui.R"), 
+          local = TRUE,
+          encoding = "UTF-8"
+        )$value,
         # 各都道府県の比較
         source(
           file = paste0(COMPONENT_PATH, "/Main/ComparePref.ui.R"),
@@ -69,17 +75,12 @@ fluidPage(
               uiOutput("confirmedHeatmapDoublingTimeOptions")
             )
           )
-        ),
+        )# ,
         # # 市レベルの感染者数
         # tabPanel(
         #   title = tagList(icon("grip-horizontal"), i18n$t("市区町村の感染者数")),
         #   echarts4rOutput("confirmedCityTreemap", height = "600px") %>% withSpinner()
         # )
-        source(
-          file = paste0(COMPONENT_PATH, "/Main/RtLine.ui.R"), 
-          local = TRUE,
-          encoding = "UTF-8"
-          )$value
       ),
       tags$hr(),
       # 各カテゴリの合計と増加分表示の説明ブロック

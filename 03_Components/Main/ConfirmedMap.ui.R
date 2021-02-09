@@ -100,7 +100,7 @@ tabPanel(
                   inputId = "tableShowSetting",
                   label = tagList(icon("object-group"), i18n$t("グルーピング表示")),
                   status = "danger",
-                  value = T
+                  value = FALSE
                 ),
                 circle = F,
                 right = T,

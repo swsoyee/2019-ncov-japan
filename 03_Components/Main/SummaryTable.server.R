@@ -160,6 +160,9 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     options = list(
       paging = F,
       rowGroup = list(dataSrc = 8),
+      order = list(
+        list(5, "desc")
+      ),
       fixedHeader = T,
       dom = "t",
       scrollY = "540px",
@@ -278,6 +281,9 @@ output$confirmedByPrefTable <- renderDataTable({
       ),
       scrollY = "540px",
       scrollX = T,
+      order = list(
+        list(3, "desc")
+      ),
       columnDefs = list(
         list(
           className = "dt-left",
@@ -455,6 +461,9 @@ output$testByPrefTable <- renderDataTable({
       ),
       scrollY = "540px",
       scrollX = T,
+      order = list(
+        list(2, "desc")
+      ),
       columnDefs = list(
         list(
           width = "45px",
