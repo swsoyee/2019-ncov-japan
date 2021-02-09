@@ -36,49 +36,49 @@ fluidRow(
         )
       )
     ),
-    box(
-      title = i18n$t("プロジェクトスポンサー"),
-      icon = icon("hand-holding-usd"),
-      width = 6, 
-      label = tags$a(
-        href = "https://github.com/sponsors/swsoyee", 
-        suppressWarnings(boxLabel(
-          text = tagList(
-            icon("heart"),
-            "Sponsor"
-          ), 
-          status = "danger"
-        )
-      )),
-      userList(
-        UserListItemWrappter(
-          image = "Icon/yukinobu_nishio.jpg",
-          href = "https://twitter.com/yukinobunishio",
-          icon = "twitter",
-          title = "YukinobuNISHIO",
-          subtitle = sprintf("~ %s", as.Date("20210106", format = "%Y%m%d"))
-        ),
-        UserListItemWrappter(
-          image = "Icon/uryu_shinya.jpg",
-          href = "https://twitter.com/u_ribo",
-          icon = "twitter",
-          title = "Uryu Shinya",
-          subtitle = sprintf("~ %s", as.Date("20201102", format = "%Y%m%d"))
-        ),
-        UserListItemWrappter(
-          image = "Icon/marchhare31.png",
-          href = "https://github.com/marchhare31",
-          icon = "github",
-          title = "marchhare31",
-          subtitle = sprintf("~ %s", as.Date("20201103", format = "%Y%m%d"))
-        ),
-        UserListItemWrappter(
-          image = "Icon/anonymous.jpeg",
-          title = "Anonymous",
-          subtitle = sprintf("~ %s", as.Date("20201102", format = "%Y%m%d"))
-        )
-      )
-    ),
+    # box(
+    #   title = i18n$t("プロジェクトスポンサー"),
+    #   icon = icon("hand-holding-usd"),
+    #   width = 6, 
+    #   label = tags$a(
+    #     href = "https://github.com/sponsors/swsoyee", 
+    #     suppressWarnings(boxLabel(
+    #       text = tagList(
+    #         icon("heart"),
+    #         "Sponsor"
+    #       ), 
+    #       status = "danger"
+    #     )
+    #   )),
+    #   userList(
+    #     UserListItemWrappter(
+    #       image = "Icon/yukinobu_nishio.jpg",
+    #       href = "https://twitter.com/yukinobunishio",
+    #       icon = "twitter",
+    #       title = "YukinobuNISHIO",
+    #       subtitle = sprintf("~ %s", as.Date("20210106", format = "%Y%m%d"))
+    #     ),
+    #     UserListItemWrappter(
+    #       image = "Icon/uryu_shinya.jpg",
+    #       href = "https://twitter.com/u_ribo",
+    #       icon = "twitter",
+    #       title = "Uryu Shinya",
+    #       subtitle = sprintf("~ %s", as.Date("20201102", format = "%Y%m%d"))
+    #     ),
+    #     UserListItemWrappter(
+    #       image = "Icon/marchhare31.png",
+    #       href = "https://github.com/marchhare31",
+    #       icon = "github",
+    #       title = "marchhare31",
+    #       subtitle = sprintf("~ %s", as.Date("20201103", format = "%Y%m%d"))
+    #     ),
+    #     UserListItemWrappter(
+    #       image = "Icon/anonymous.jpeg",
+    #       title = "Anonymous",
+    #       subtitle = sprintf("~ %s", as.Date("20201102", format = "%Y%m%d"))
+    #     )
+    #   )
+    # ),
     box(
       width = 12,
       collapsible = F,
