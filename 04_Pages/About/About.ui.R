@@ -28,7 +28,7 @@ fluidRow(
           subtitle = i18n$t("学術指導")
         ),
         UserListItemWrappter(
-          image = "Icon/emckk.png",
+          image = "Icon/kato.jpg",
           href = "https://github.com/emc-kk",
           icon = "github",
           title = "emckk",
