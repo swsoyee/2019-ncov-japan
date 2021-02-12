@@ -371,7 +371,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-02-09,7301609,408197,6604,368590,31583,,,759,126216142,1,Japan,,
 2021-02-10,7380588,410081,6725,372260,29243,,,736,126216142,1,Japan,,
 2021-02-11,7447270,411774,6803,375246,27932,,,713,126216142,1,Japan,,
-2021-02-12,0,411876,6811,0,0,,,0,126216142,1,Japan,,
+2021-02-12,0,412274,6811,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -20466,7 +20466,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-02-11,494671,2182,2,2125,43,,,0,,1,Japan,Quarantine,
 2021-02-11,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2021-02-11,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2021-02-12,,18282,631,,,,,,5248552,2,Japan,Hokkaido,01
+2021-02-12,,18357,631,,,,,,5248552,2,Japan,Hokkaido,01
 2021-02-12,,794,15,,,,,,1246138,2,Japan,Aomori,02
 2021-02-12,,519,29,,,,,,1226430,2,Japan,Iwate,03
 2021-02-12,,3489,23,,,,,,2303160,2,Japan,Miyagi,04
@@ -20478,7 +20478,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-02-12,,4212,79,,,,,,1937626,2,Japan,Gunma,10
 2021-02-12,,27341,451,,,,,,7337330,2,Japan,Saitama,11
 2021-02-12,,24245,329,,,,,,6279026,2,Japan,Chiba,12
-2021-02-12,,105458,1099,,,,,,13942856,2,Japan,Tokyo,13
+2021-02-12,,105765,1099,,,,,,13942856,2,Japan,Tokyo,13
 2021-02-12,,42889,593,,,,,,9200166,2,Japan,Kanagawa,14
 2021-02-12,,986,13,,,,,,2222004,2,Japan,Niigata,15
 2021-02-12,,886,27,,,,,,1042998,2,Japan,Toyama,16
@@ -20512,7 +20512,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-02-12,,1249,18,,,,,,1134431,2,Japan,Oita,44
 2021-02-12,,1907,20,,,,,,1072077,2,Japan,Miyazaki,45
 2021-02-12,,1689,19,,,,,,1599984,2,Japan,Kagoshima,46
-2021-02-12,,7941,97,,,,,,1454184,2,Japan,Okinawa,47
+2021-02-12,,7957,97,,,,,,1454184,2,Japan,Okinawa,47
 2021-02-12,,14,0,,,,,,,1,Japan,Charter Flight,
 2021-02-12,,2182,2,,,,,,,1,Japan,Quarantine,
 2021-02-12,,712,13,,,,,,,1,Japan,Diamond Princess,
