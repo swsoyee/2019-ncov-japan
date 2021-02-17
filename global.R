@@ -320,6 +320,7 @@ darkBlue <- "#00A7D0"
 options(spinner.color = middleRed)
 
 GLOBAL_VALUE <- reactiveValues(
+  vaccine = NULL,
   signateDetail = NULL,
   signateDetail.ageGenderData = fread(file = paste0(DATA_PATH, "Generated/genderAgeData.csv")),
   signateLink = NULL,

@@ -32,6 +32,12 @@ Component.Tendency <- function() {
         local = T,
         encoding = "UTF-8"
       )$value,
+      # ワクチン
+      source(
+        file = paste0(COMPONENT_PATH, "/VaccineLinePlot/VaccineLinePlot.ui.R"),
+        local = TRUE,
+        encoding = "UTF-8"
+      )$value,
       # コールセンターの対応
       source(
         file = paste0(COMPONENT_PATH, "/Main/Tendency.CallCenter.ui.R"),
