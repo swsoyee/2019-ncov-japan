@@ -20,8 +20,8 @@ output$vaccineLine <- renderEcharts4r({
         )
       ) %>%
       e_bar(
-        first, 
-        name = "１回目", 
+        first,
+        name = "１回目",
         itemStyle = list(
           color = lightGreen
         ),
@@ -49,6 +49,10 @@ output$vaccineLine <- renderEcharts4r({
         bottom = "18%"
       ) %>%
       e_x_axis(
+        minInterval = 3600 * 24 * 1000,
+        axisLabel = list(
+          formatter = "{yyyy}-{MM}-{dd}"
+        ),
         splitLine = list(
           lineStyle = list(opacity = 0.2)
         )
@@ -74,7 +78,7 @@ output$vaccineLine <- renderEcharts4r({
       ) %>%
       e_tooltip(trigger = "axis") %>%
       e_datazoom(
-        minValueSpan = 604800000, #3600 * 24 * 1000 * 7,
+        minValueSpan = 604800000, # 3600 * 24 * 1000 * 7,
         startValue = max(vaccine$date, na.rm = T) - 28
       )
   }

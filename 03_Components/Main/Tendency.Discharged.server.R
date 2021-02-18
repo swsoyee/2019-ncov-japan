@@ -88,6 +88,9 @@ output$recoveredLine <- renderEcharts4r({
     ) %>%
     e_x_axis(
       splitLine = list(show = F),
+      axisLabel = list(
+          formatter = "{yyyy}-{MM}-{dd}"
+        ),
       splitLine = list(lineStyle = list(opacity = 0.2))
     ) %>%
     e_y_axis(

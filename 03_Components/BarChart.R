@@ -131,7 +131,12 @@ output$callCenter <- renderEcharts4r({
       xAxis = "2020-02-19", itemStyle = list(color = lightBlue),
       label = list(formatter = i18n$t("2/19正午\nメール対応"))
     )) %>%
-    e_x_axis(splitLine = list(show = F)) %>%
+    e_x_axis(
+      splitLine = list(show = FALSE),
+      axisLabel = list(
+        formatter = "{yyyy}-{MM}-{dd}"
+      )
+    ) %>%
     e_y_axis(splitLine = list(show = F), axisLabel = list(inside = T), axisTick = list(show = F), z = 999) %>%
     e_y_axis(splitLine = list(show = F), index = 1, axisTick = list(show = F), z = 999) %>%
     e_tooltip(trigger = "axis") %>%

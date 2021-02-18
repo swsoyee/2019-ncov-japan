@@ -43,7 +43,16 @@ output$pcrLine <- renderEcharts4r({
       z = 2, barGap = "-100%"
     ) %>%
     e_line(ma, name = sprintf(i18n$t("%s日移動平均"), input$testDaySpan), y_index = 1, symbol = "none", smooth = T, itemStyle = list(color = darkRed)) %>%
-    e_x_axis(splitLine = list(lineStyle = list(opacity = 0.2))) %>%
+    e_x_axis(
+      splitLine = list(
+        lineStyle = list(
+          opacity = 0.2
+        )
+      ),
+      axisLabel = list(
+        formatter = "{yyyy}-{MM}-{dd}"
+      )
+    ) %>%
     e_y_axis(
       name = i18n$t("検査人数"),
       nameGap = 10,

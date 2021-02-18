@@ -198,7 +198,16 @@ output$confirmedLine <- renderEcharts4r({
         right = "15%",
         bottom = "18%"
       ) %>%
-      e_x_axis(splitLine = list(lineStyle = list(opacity = 0.2))) %>%
+      e_x_axis(
+        splitLine = list(
+          lineStyle = list(
+            opacity = 0.2
+          )
+        ),
+        axisLabel = list(
+          formatter = "{yyyy}-{MM}-{dd}"
+        )
+      ) %>%
       e_y_axis(
         name = i18n$t("陽性者数"),
         nameGap = 10,
