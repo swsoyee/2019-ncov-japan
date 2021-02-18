@@ -87,10 +87,10 @@ output$vaccineLine <- renderEcharts4r({
 output$vaccineTotal <- renderUI({
   if (!is.null(GLOBAL_VALUE$vaccine)) {
     vaccine <- GLOBAL_VALUE$vaccine
-    diff <- tail(vaccine$total, n = 2)
+    diff <- tail(vaccine$total, n = 1)
     descriptionBlock(
-      number = diff[2] - diff[1],
-      numberIcon = getChangeIconWrapper(diff[2] - diff[1]),
+      number = diff,
+      numberIcon = getChangeIconWrapper(diff),
       header = sum(vaccine$total),
       numberColor = "olive",
       rightBorder = TRUE,
