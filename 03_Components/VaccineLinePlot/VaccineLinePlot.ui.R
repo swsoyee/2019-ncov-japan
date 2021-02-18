@@ -14,6 +14,12 @@ tabPanel(
     column(
       width = 4,
       tags$br(),
+      tags$p("今までに接種が行われた新型コロナワクチンの接種回数や施設数などの情報をお届けします。"),
+      fluidRow(
+        column(width = 6, uiOutput("vaccineTotal")),
+        column(width = 6, uiOutput("vaccineFacility"))
+      ),
+      uiOutput("vaccineProgress"),
       tags$b("注意事項"),
       tags$li("土日祝日の数については、次の平日に合わせて計上しています。"),
       tags$li("各施設が17時時点の実績をワクチン接種円滑化システム（V-SYS）を通して報告したものを集計しています。"),

@@ -83,3 +83,48 @@ output$vaccineLine <- renderEcharts4r({
       )
   }
 })
+
+output$vaccineTotal <- renderUI({
+  if (!is.null(GLOBAL_VALUE$vaccine)) {
+    vaccine <- GLOBAL_VALUE$vaccine
+    diff <- tail(vaccine$total, n = 2)
+    descriptionBlock(
+      number = diff[2] - diff[1],
+      numberIcon = getChangeIconWrapper(diff[2] - diff[1]),
+      header = sum(vaccine$total),
+      numberColor = "olive",
+      rightBorder = TRUE,
+      text = "合計接種回数"
+    )
+  }
+})
+
+output$vaccineFacility <- renderUI({
+  if (!is.null(GLOBAL_VALUE$vaccine)) {
+    vaccine <- GLOBAL_VALUE$vaccine
+    diff <- tail(vaccine$facility, n = 2)
+    descriptionBlock(
+      number = diff[2] - diff[1],
+      numberIcon = getChangeIconWrapper(diff[2] - diff[1]),
+      header = tail(vaccine$facility, n = 1),
+      numberColor = "black",
+      rightBorder = FALSE,
+      text = "合計施設数"
+    )
+  }
+})
+
+output$vaccineProgress <- renderUI({
+  if (!is.null(GLOBAL_VALUE$vaccine)) {
+    vaccine <- GLOBAL_VALUE$vaccine
+    progressBar(
+      id = "vaccineProgress",
+      value = sum(vaccine$second),
+      total = sum(vaccine$first),
+      display_pct = TRUE,
+      striped = TRUE,
+      status = "success",
+      title = "２回目 / １回目"
+    )
+  }
+})
