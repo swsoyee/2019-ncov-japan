@@ -38,6 +38,7 @@ output$vaccineLine <- renderEcharts4r({
       e_line(
         facility,
         name = "施設数",
+        y_index = 1,
         itemStyle = list(
           color = lightNavy
         )
