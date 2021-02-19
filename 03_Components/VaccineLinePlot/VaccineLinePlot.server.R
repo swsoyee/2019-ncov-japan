@@ -150,7 +150,7 @@ output$vaccineTwitterShare <- renderUI({
         "%sまで、新型コロナウイルスワクチンの合計接種数は%s、",
         "うち１回目の接種は%s回、２回目のは%s回。",
         "接種実績のある施設数は%s箇所です。",
-        "詳しくは「新型コロナウイルス感染速報まで」",
+        "詳しくは「新型コロナウイルス感染速報」まで",
         "&url=https://covid-2019.live/&hashtags=新型コロナ,新型コロナワクチン"
       ),
       tail(vaccine$date, n = 1),
