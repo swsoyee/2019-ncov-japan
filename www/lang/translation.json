@@ -2180,6 +2180,11 @@
       "ja": "実効再生産数：「すでに感染が広がっている状況において、1人の感染者が次に平均で何人にうつすか」を示す指標。",
       "cn": "有效传染数：在疫情已经扩大时，用于描述“每一名患者平均能传染多少人”的指标",
       "en": "Effective Reproductive Number: The average number of new infections caused by a single infected individual at time t in the partially susceptible population."
+    },
+    {
+      "ja": "データソース：NewsDigest",
+      "cn": "数据来源：データソース：NewsDigest",
+      "en": "Data source: データソース：NewsDigest"
     }
   ]
 }

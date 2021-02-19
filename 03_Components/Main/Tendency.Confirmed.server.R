@@ -196,7 +196,7 @@ output$confirmedLine <- renderEcharts4r({
       e_grid(
         left = "3%",
         right = "15%",
-        bottom = "18%"
+        top = "18%"
       ) %>%
       e_x_axis(
         splitLine = list(
@@ -214,18 +214,22 @@ output$confirmedLine <- renderEcharts4r({
         nameTextStyle = list(padding = c(0, 0, 0, 50)),
         splitLine = list(lineStyle = list(opacity = 0.2)),
         z = 999,
-        axisLabel = list(inside = T),
-        axisTick = list(show = F)
+        axisLabel = list(inside = TRUE),
+        axisTick = list(show = FALSE)
       ) %>%
       e_y_axis(
         name = i18n$t("移動平均新規数"),
         nameGap = 10,
-        splitLine = list(show = F),
+        splitLine = list(show = FALSE),
         z = 999,
         index = 1,
-        axisTick = list(show = F)
+        axisTick = list(show = FALSE)
       ) %>%
-      e_title(text = i18n$t("日次新規・累積陽性者の推移")) %>%
+      e_title(
+        text = i18n$t("日次新規・累積陽性者の推移"),
+        subtext = i18n$t("データソース：NewsDigest"),
+        sublink = "https://newsdigest.jp/pages/coronavirus/"
+      ) %>%
       e_legend_unselect(
         name = i18n$t("累積")
       ) %>%
