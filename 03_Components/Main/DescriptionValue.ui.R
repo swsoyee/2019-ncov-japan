@@ -11,10 +11,10 @@ fluidRow(
     width = 1,
     id = "domesticPCR",
     descriptionBlock(
-      number = sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$検査人数) - sum(mhlwSummary[日付 == (max(日付) - 1) & 分類 %in% 0:2]$検査人数),
+      number = countup(sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$検査人数) - sum(mhlwSummary[日付 == (max(日付) - 1) & 分類 %in% 0:2]$検査人数)),
       numberColor = "yellow",
       numberIcon = getChangeIconWrapper(sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$検査人数) - sum(mhlwSummary[日付 == (max(日付) - 1) & 分類 %in% 0:2]$検査人数)),
-      header = sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$検査人数),
+      header = countup(sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$検査人数)),
       rightBorder = F,
       text = i18n$t("検査人数")
     )
@@ -39,10 +39,10 @@ fluidRow(
     width = 1,
     id = "domesticConfirmed",
     descriptionBlock(
-      number = TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF + tail(byDate$伊客船, n = 1),
+      number = countup(TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF + tail(byDate$伊客船, n = 1)),
       numberColor = "red",
       numberIcon = getChangeIconWrapper(TOTAL_DOMESITC_DIFF + TOTAL_OFFICER_DIFF + TOTAL_FLIGHT_DIFF + tail(byDate$伊客船, n = 1)),
-      header = paste(TOTAL_DOMESITC + TOTAL_OFFICER + TOTAL_FLIGHT + sum(byDate$伊客船)),
+      header = countup(paste(TOTAL_DOMESITC + TOTAL_OFFICER + TOTAL_FLIGHT + sum(byDate$伊客船))),
       rightBorder = F,
       text = i18n$t("感染者")
     )
@@ -60,11 +60,11 @@ fluidRow(
     width = 1,
     id = "domesticDischarged",
     descriptionBlock(
-      number = sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$退院者) - sum(mhlwSummary[日付 == max(日付) -1 & 分類 %in% 0:2]$退院者),
+      number = countup(sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$退院者) - sum(mhlwSummary[日付 == max(日付) -1 & 分類 %in% 0:2]$退院者)),
       numberColor = "green",
       numberIcon = getChangeIconWrapper(
         sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$退院者) - sum(mhlwSummary[日付 == max(日付) -1 & 分類 %in% 0:2]$退院者)),
-      header = sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$退院者),
+      header = countup(sum(mhlwSummary[日付 == max(日付) & 分類 %in% 0:2]$退院者)),
       rightBorder = F,
       text = i18n$t("回復者")
     )
@@ -84,10 +84,10 @@ fluidRow(
   column(
     width = 1,
     descriptionBlock(
-      number = DEATH_DOMESITC_DIFF + DEATH_OFFICER_DIFF,
+      number = countup(DEATH_DOMESITC_DIFF + DEATH_OFFICER_DIFF),
       numberColor = "black",
       numberIcon = getChangeIconWrapper(DEATH_DOMESITC_DIFF + DEATH_OFFICER_DIFF),
-      header = paste(DEATH_DOMESITC + DEATH_OFFICER, ""),
+      header = countup(paste(DEATH_DOMESITC + DEATH_OFFICER, "")),
       rightBorder = F,
       text = i18n$t("死亡者")
     )
@@ -111,10 +111,10 @@ fluidRow(
     id = "shipPCRValue",
     # クルーズ船
     descriptionBlock(
-      number = mhlwSummary[日付 == max(日付) & 分類 %in% 3]$検査人数 - mhlwSummary[日付 == max(日付) - 1 & 分類 %in% 3]$検査人数,
+      number = countup(mhlwSummary[日付 == max(日付) & 分類 %in% 3]$検査人数 - mhlwSummary[日付 == max(日付) - 1 & 分類 %in% 3]$検査人数),
       numberColor = "yellow",
       numberIcon = getChangeIconWrapper(mhlwSummary[日付 == max(日付) & 分類 %in% 3]$検査人数 - mhlwSummary[日付 == max(日付) - 1 & 分類 %in% 3]$検査人数),
-      header = mhlwSummary[日付 == max(日付) & 分類 %in% 3]$検査人数,
+      header = countup(mhlwSummary[日付 == max(日付) & 分類 %in% 3]$検査人数),
       rightBorder = F,
       text = i18n$t("検査人数")
     )
@@ -135,10 +135,10 @@ fluidRow(
     width = 1,
     id = "shipConfirmedValue",
     descriptionBlock(
-      number = TOTAL_SHIP_DIFF,
+      number = countup(TOTAL_SHIP_DIFF),
       numberColor = "red",
       numberIcon = getChangeIconWrapper(TOTAL_SHIP_DIFF),
-      header = TOTAL_SHIP,
+      header = countup(TOTAL_SHIP),
       rightBorder = F,
       text = i18n$t("感染者")
     )
@@ -152,10 +152,10 @@ fluidRow(
     width = 1,
     id = "shipDischargedValue",
     descriptionBlock(
-      number = mhlwSummary[日付 == max(日付) & 分類 %in% 3]$退院者 - mhlwSummary[日付 == max(日付) - 1 & 分類 %in% 3]$退院者,
+      number = countup(mhlwSummary[日付 == max(日付) & 分類 %in% 3]$退院者 - mhlwSummary[日付 == max(日付) - 1 & 分類 %in% 3]$退院者),
       numberColor = "green",
       numberIcon = getChangeIconWrapper(mhlwSummary[日付 == max(日付) & 分類 %in% 3]$退院者 - mhlwSummary[日付 == max(日付) - 1 & 分類 %in% 3]$退院者),
-      header =  mhlwSummary[日付 == max(日付) & 分類 %in% 3]$退院者,
+      header =  countup(mhlwSummary[日付 == max(日付) & 分類 %in% 3]$退院者),
       rightBorder = F,
       text = i18n$t("回復者")
     )
@@ -169,10 +169,10 @@ fluidRow(
     width = 1,
     id = "shipDeathValue",
     descriptionBlock(
-      number = DEATH_SHIP_DIFF,
+      number = countup(DEATH_SHIP_DIFF),
       numberColor = "black",
       numberIcon = getChangeIconWrapper(DEATH_SHIP_DIFF),
-      header = paste(DEATH_SHIP, ""),
+      header = countup(paste(DEATH_SHIP, "")),
       rightBorder = F,
       text = i18n$t("死亡者")
     )

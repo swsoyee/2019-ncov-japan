@@ -390,7 +390,7 @@ output$confirmedByPrefTable <- renderDataTable({
     ) %>%
     formatCurrency(
       columns = "active",
-      currency = paste(as.character(icon("caret-up")), " "),
+      currency = "",
       digits = 0
     ) %>%
     formatStyle(
