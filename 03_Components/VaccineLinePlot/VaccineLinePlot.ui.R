@@ -23,7 +23,26 @@ tabPanel(
       tags$b("注意事項"),
       tags$li("土日祝日の数については、次の平日に合わせて計上しています。"),
       tags$li("各施設が17時時点の実績をワクチン接種円滑化システム（V-SYS）を通して報告したものを集計しています。"),
-      tags$li("施設数は当該日付までに接種実績のある施設数です。")
+      tags$li("施設数は当該日付までに接種実績のある施設数です。"),
+      tags$hr(),
+      fluidRow(
+        column(
+          width = 6,
+          actionButton(
+            inputId = "vaccineDatadownload",
+            label = "データをダウンロード",
+            icon = icon("download"),
+            onclick = sprintf(
+              "window.open('%s')",
+              "https://github.com/swsoyee/2019-ncov-japan/blob/master/50_Data/MHLW/vaccine.csv"
+            )
+          )
+        ),
+        column(
+          width = 6,
+          uiOutput("vaccineTwitterShare")
+        )
+      )
     )
   )
 )

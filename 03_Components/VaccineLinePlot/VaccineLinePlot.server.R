@@ -45,8 +45,7 @@ output$vaccineLine <- renderEcharts4r({
       ) %>%
       e_grid(
         left = "3%",
-        right = "15%",
-        bottom = "18%"
+        top = "18%"
       ) %>%
       e_x_axis(
         minInterval = 3600 * 24 * 1000,
@@ -66,8 +65,21 @@ output$vaccineLine <- renderEcharts4r({
         axisLabel = list(inside = T),
         axisTick = list(show = F)
       ) %>%
+      e_y_axis(
+        name = "施設数",
+        nameGap = 10,
+        splitLine = list(show = FALSE),
+        z = 999,
+        index = 1,
+        axisTick = list(show = FALSE)
+      ) %>%
       e_title(
-        text = "先行接種の接種実績"
+        text = "先行接種の接種実績",
+        subtext = sprintf(
+          "ソース：厚生労働省（最終更新日：%s）",
+          tail(vaccine$date, n = 1)
+        ),
+        sublink = "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/vaccine_sesshujisseki.html"
       ) %>%
       e_legend(
         type = "scroll",
@@ -125,6 +137,38 @@ output$vaccineProgress <- renderUI({
       striped = TRUE,
       status = "success",
       title = "２回目 / １回目"
+    )
+  }
+})
+
+output$vaccineTwitterShare <- renderUI({
+  vaccine <- GLOBAL_VALUE$vaccine
+  if (!is.null(vaccine)) {
+    vaccineTwitterShareUrl <- sprintf(
+      paste0(
+        "https://twitter.com/intent/tweet?text=",
+        "%sまで、新型コロナウイルスワクチンの合計接種数は%s、",
+        "うち１回目の接種は%s回、２回目のは%s回。",
+        "接種実績のある施設数は%s箇所です。",
+        "詳しくは「新型コロナウイルス感染速報まで」",
+        "&url=https://covid-2019.live/&hashtags=新型コロナ,新型コロナワクチン"
+      ),
+      tail(vaccine$date, n = 1),
+      sum(vaccine$total),
+      sum(vaccine$first),
+      sum(vaccine$second),
+      tail(vaccine$facility, n = 1)
+    )
+
+    actionButton(
+      inputId = "vaccineTwitterShare",
+      label = "現状をシェア",
+      icon = icon("twitter"),
+      style = "background-color:#1DA1F2;color:white;",
+      onclick = sprintf(
+        "window.open('%s')",
+        vaccineTwitterShareUrl
+      )
     )
   }
 })
