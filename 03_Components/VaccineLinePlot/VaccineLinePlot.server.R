@@ -101,9 +101,9 @@ output$vaccineTotal <- renderUI({
     vaccine <- GLOBAL_VALUE$vaccine
     diff <- tail(vaccine$total, n = 1)
     descriptionBlock(
-      number = diff,
+      number = countup(diff),
       numberIcon = getChangeIconWrapper(diff),
-      header = sum(vaccine$total),
+      header = countup(sum(vaccine$total)),
       numberColor = "olive",
       rightBorder = TRUE,
       text = "合計接種回数"
@@ -116,9 +116,9 @@ output$vaccineFacility <- renderUI({
     vaccine <- GLOBAL_VALUE$vaccine
     diff <- tail(vaccine$facility, n = 2)
     descriptionBlock(
-      number = diff[2] - diff[1],
+      number = countup(diff[2] - diff[1]),
       numberIcon = getChangeIconWrapper(diff[2] - diff[1]),
-      header = tail(vaccine$facility, n = 1),
+      header = countup(tail(vaccine$facility, n = 1)),
       numberColor = "black",
       rightBorder = FALSE,
       text = "合計施設数"
