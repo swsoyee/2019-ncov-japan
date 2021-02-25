@@ -16,7 +16,7 @@ jobs:
   generate:
     needs: label
     name: Data Update
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
         with:
