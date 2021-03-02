@@ -47,7 +47,23 @@ createRegionIncidence <- function(data, region) {
   incid
 }
 
+continuousZero <- function(data) {
+  count <- 0
+  for (index in seq(length(data))) {
+    if (data[index] == 0) {
+      count <- count + 1
+    } else {
+      count <- 0
+    }
+  }
+  count
+}
+
 createEstimatedResultFromIncid <- function(incid, mean_si, std_si) {
+  # handling ending date
+  continuous <- continuousZero(incid$counts)
+  index <- length(incid$counts) - continuous
+  
   res <- suppressMessages(
     suppressWarnings(
       EpiEstim::estimate_R(incid,
@@ -71,6 +87,10 @@ createEstimatedResultFromIncid <- function(incid, mean_si, std_si) {
   dt$dates <- res$dates[res$R$t_end]
   dt$Incidence <- res$I[res$R$t_end]
 
+  if (continuous > 7) {
+    dt <- dt[1:(index + 1)]
+    dt[nrow(dt), 3] <- 0
+  }
   dt
 }
 
