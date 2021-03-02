@@ -10,6 +10,10 @@ output$RtLine <- renderEcharts4r({
       dates = byDate$date
     )
 
+    # handling ending date
+    continuous <- continuousZero(incid$counts)
+    index <- length(incid$counts) - continuous
+
     res <- suppressMessages(suppressWarnings(estimate_R(incid,
       method = "parametric_si",
       config = make_config(list(
@@ -25,6 +29,13 @@ output$RtLine <- renderEcharts4r({
     }), .SDcols = cols]
     dt$dates <- res$dates[res$R$t_end]
     dt$Incidence <- res$I[res$R$t_end]
+
+    if (continuous > 7) {
+      dt[index:nrow(dt), 3] <- 0
+      dt[index:nrow(dt), 4] <- 0
+      dt[index:nrow(dt), 6] <- 0
+      dt[index:nrow(dt), 10] <- 0
+    }
 
     dt %>%
       e_chart(dates) %>%

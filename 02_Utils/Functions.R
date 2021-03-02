@@ -84,3 +84,15 @@ calendarDateRangePicker <- function(inputId) {
     language = i18n$translation_language
   )
 }
+
+continuousZero <- function(data) {
+  count <- 0
+  for (index in seq(length(data))) {
+    if (data[index] == 0) {
+      count <- count + 1
+    } else {
+      count <- 0
+    }
+  }
+  count
+}
