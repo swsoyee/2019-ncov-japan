@@ -390,7 +390,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-02-28,8234982,432560,7896,409055,14363,,,434,126216142,1,Japan,,
 2021-03-01,8256602,433257,7947,410365,14054,,,436,126216142,1,Japan,,
 2021-03-02,8319692,434144,8012,411911,13188,,,413,126216142,1,Japan,,
-2021-03-03,0,434250,8020,0,0,,,0,126216142,1,Japan,,
+2021-03-03,0,434648,8023,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -21454,7 +21454,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-02,524148,2250,2,2183,54,,,0,,1,Japan,Quarantine,
 2021-03-02,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2021-03-02,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2021-03-03,,19103,684,,,,,,5248552,2,Japan,Hokkaido,01
+2021-03-03,,19163,687,,,,,,5248552,2,Japan,Hokkaido,01
 2021-03-03,,817,20,,,,,,1246138,2,Japan,Aomori,02
 2021-03-03,,554,30,,,,,,1226430,2,Japan,Iwate,03
 2021-03-03,,3653,25,,,,,,2303160,2,Japan,Miyagi,04
@@ -21466,7 +21466,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-03,,4544,85,,,,,,1937626,2,Japan,Gunma,10
 2021-03-03,,29505,582,,,,,,7337330,2,Japan,Saitama,11
 2021-03-03,,26593,461,,,,,,6279026,2,Japan,Chiba,12
-2021-03-03,,112029,1400,,,,,,13942856,2,Japan,Tokyo,13
+2021-03-03,,112345,1400,,,,,,13942856,2,Japan,Tokyo,13
 2021-03-03,,45027,690,,,,,,9200166,2,Japan,Kanagawa,14
 2021-03-03,,1092,15,,,,,,2222004,2,Japan,Niigata,15
 2021-03-03,,905,28,,,,,,1042998,2,Japan,Toyama,16
@@ -21475,7 +21475,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-03,,933,17,,,,,,812056,2,Japan,Yamanashi,19
 2021-03-03,,2364,41,,,,,,2049023,2,Japan,Nagano,20
 2021-03-03,,4634,111,,,,,,1988931,2,Japan,Gifu,21
-2021-03-03,,5168,93,,,,,,3639226,2,Japan,Shizuoka,22
+2021-03-03,,5189,93,,,,,,3639226,2,Japan,Shizuoka,22
 2021-03-03,,25930,526,,,,,,7552873,2,Japan,Aichi,23
 2021-03-03,,2531,54,,,,,,1779770,2,Japan,Mie,24
 2021-03-03,,2480,47,,,,,,1413959,2,Japan,Shiga,25
@@ -21497,7 +21497,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-03,,1065,8,,,,,,814211,2,Japan,Saga,41
 2021-03-03,,1612,36,,,,,,1325205,2,Japan,Nagasaki,42
 2021-03-03,,3444,72,,,,,,1746740,2,Japan,Kumamoto,43
-2021-03-03,,1294,21,,,,,,1134431,2,Japan,Oita,44
+2021-03-03,,1295,21,,,,,,1134431,2,Japan,Oita,44
 2021-03-03,,1949,21,,,,,,1072077,2,Japan,Miyazaki,45
 2021-03-03,,1762,27,,,,,,1599984,2,Japan,Kagoshima,46
 2021-03-03,,8211,120,,,,,,1454184,2,Japan,Okinawa,47
