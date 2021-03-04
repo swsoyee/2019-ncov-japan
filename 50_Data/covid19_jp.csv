@@ -391,7 +391,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-01,8256602,433256,7947,410365,14054,,,436,126216142,1,Japan,,
 2021-03-02,8319692,434143,8012,411911,13188,,,413,126216142,1,Japan,,
 2021-03-03,8403376,435386,8075,413114,12789,,,407,126216142,1,Japan,,
-2021-03-04,0,435980,8089,0,0,,,0,126216142,1,Japan,,
+2021-03-04,0,435995,8090,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -21514,7 +21514,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-04,,543,15,,,,,,1077057,2,Japan,Yamagata,06
 2021-03-04,,2041,76,,,,,,1847950,2,Japan,Fukushima,07
 2021-03-04,,5860,115,,,,,,2868041,2,Japan,Ibaraki,08
-2021-03-04,,4120,67,,,,,,1942312,2,Japan,Tochigi,09
+2021-03-04,,4131,67,,,,,,1942312,2,Japan,Tochigi,09
 2021-03-04,,4565,86,,,,,,1937626,2,Japan,Gunma,10
 2021-03-04,,29603,590,,,,,,7337330,2,Japan,Saitama,11
 2021-03-04,,26757,464,,,,,,6279026,2,Japan,Chiba,12
@@ -21539,7 +21539,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-04,,210,2,,,,,,555663,2,Japan,Tottori,31
 2021-03-04,,284,0,,,,,,673891,2,Japan,Shimane,32
 2021-03-04,,2505,33,,,,,,1891346,2,Japan,Okayama,33
-2021-03-04,,5029,102,,,,,,2807987,2,Japan,Hiroshima,34
+2021-03-04,,5031,103,,,,,,2807987,2,Japan,Hiroshima,34
 2021-03-04,,1382,40,,,,,,1355495,2,Japan,Yamaguchi,35
 2021-03-04,,457,16,,,,,,728633,2,Japan,Tokushima,36
 2021-03-04,,753,18,,,,,,956069,2,Japan,Kagawa,37
@@ -21548,7 +21548,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-04,,18100,303,,,,,,5110113,2,Japan,Fukuoka,40
 2021-03-04,,1067,8,,,,,,814211,2,Japan,Saga,41
 2021-03-04,,1612,37,,,,,,1325205,2,Japan,Nagasaki,42
-2021-03-04,,3447,72,,,,,,1746740,2,Japan,Kumamoto,43
+2021-03-04,,3449,72,,,,,,1746740,2,Japan,Kumamoto,43
 2021-03-04,,1296,21,,,,,,1134431,2,Japan,Oita,44
 2021-03-04,,1949,21,,,,,,1072077,2,Japan,Miyazaki,45
 2021-03-04,,1762,27,,,,,,1599984,2,Japan,Kagoshima,46
