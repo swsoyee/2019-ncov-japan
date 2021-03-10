@@ -397,7 +397,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-07,8586151,439815,8262,418050,12211,,,373,126216142,1,Japan,,
 2021-03-08,8602569,440415,8307,419017,12213,,,380,126216142,1,Japan,,
 2021-03-09,8673101,441543,8365,420068,11791,,,381,126216142,1,Japan,,
-2021-03-10,0,441640,8365,0,0,,,0,126216142,1,Japan,,
+2021-03-10,0,442073,8366,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -21818,7 +21818,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-09,537672,2270,2,2199,57,,,0,,1,Japan,Quarantine,
 2021-03-09,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2021-03-09,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2021-03-10,,19549,696,,,,,,5248552,2,Japan,Hokkaido,01
+2021-03-10,,19614,697,,,,,,5248552,2,Japan,Hokkaido,01
 2021-03-10,,822,20,,,,,,1246138,2,Japan,Aomori,02
 2021-03-10,,555,30,,,,,,1226430,2,Japan,Iwate,03
 2021-03-10,,3854,25,,,,,,2303160,2,Japan,Miyagi,04
@@ -21830,7 +21830,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-10,,4632,88,,,,,,1937626,2,Japan,Gunma,10
 2021-03-10,,30224,637,,,,,,7337330,2,Japan,Saitama,11
 2021-03-10,,27375,489,,,,,,6279026,2,Japan,Chiba,12
-2021-03-10,,113861,1500,,,,,,13942856,2,Japan,Tokyo,13
+2021-03-10,,114201,1500,,,,,,13942856,2,Japan,Tokyo,13
 2021-03-10,,45825,722,,,,,,9200166,2,Japan,Kanagawa,14
 2021-03-10,,1152,16,,,,,,2222004,2,Japan,Niigata,15
 2021-03-10,,909,28,,,,,,1042998,2,Japan,Toyama,16
@@ -21864,7 +21864,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-10,,1297,22,,,,,,1134431,2,Japan,Oita,44
 2021-03-10,,1949,21,,,,,,1072077,2,Japan,Miyazaki,45
 2021-03-10,,1762,27,,,,,,1599984,2,Japan,Kagoshima,46
-2021-03-10,,8348,120,,,,,,1454184,2,Japan,Okinawa,47
+2021-03-10,,8376,120,,,,,,1454184,2,Japan,Okinawa,47
 2021-03-10,,14,0,,,,,,,1,Japan,Charter Flight,
 2021-03-10,,2270,2,,,,,,,1,Japan,Quarantine,
 2021-03-10,,712,13,,,,,,,1,Japan,Diamond Princess,
