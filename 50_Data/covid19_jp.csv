@@ -413,7 +413,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-23,9374845,459008,8922,435189,13215,,,320,126216142,1,Japan,,
 2021-03-24,9429113,460926,8943,436252,13407,,,328,126216142,1,Japan,,
 2021-03-25,9490701,462842,8970,437542,13916,,,325,126216142,1,Japan,,
-2021-03-26,0,463630,8971,0,0,,,0,126216142,1,Japan,,
+2021-03-26,0,463707,8973,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -22650,7 +22650,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-25,573331,2357,2,2258,83,,,0,,1,Japan,Quarantine,
 2021-03-25,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2021-03-25,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2021-03-26,,20556,740,,,,,,5248552,2,Japan,Hokkaido,01
+2021-03-26,,20625,742,,,,,,5248552,2,Japan,Hokkaido,01
 2021-03-26,,921,20,,,,,,1246138,2,Japan,Aomori,02
 2021-03-26,,601,30,,,,,,1226430,2,Japan,Iwate,03
 2021-03-26,,5221,27,,,,,,2303160,2,Japan,Miyagi,04
@@ -22682,7 +22682,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-26,,1228,18,,,,,,923721,2,Japan,Wakayama,30
 2021-03-26,,211,2,,,,,,555663,2,Japan,Tottori,31
 2021-03-26,,286,0,,,,,,673891,2,Japan,Shimane,32
-2021-03-26,,2636,35,,,,,,1891346,2,Japan,Okayama,33
+2021-03-26,,2641,35,,,,,,1891346,2,Japan,Okayama,33
 2021-03-26,,5095,106,,,,,,2807987,2,Japan,Hiroshima,34
 2021-03-26,,1400,43,,,,,,1355495,2,Japan,Yamaguchi,35
 2021-03-26,,504,18,,,,,,728633,2,Japan,Tokushima,36
@@ -22691,7 +22691,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-26,,914,19,,,,,,697674,2,Japan,Kochi,39
 2021-03-26,,18815,329,,,,,,5110113,2,Japan,Fukuoka,40
 2021-03-26,,1162,11,,,,,,814211,2,Japan,Saga,41
-2021-03-26,,1622,38,,,,,,1325205,2,Japan,Nagasaki,42
+2021-03-26,,1625,38,,,,,,1325205,2,Japan,Nagasaki,42
 2021-03-26,,3493,74,,,,,,1746740,2,Japan,Kumamoto,43
 2021-03-26,,1304,22,,,,,,1134431,2,Japan,Oita,44
 2021-03-26,,1949,22,,,,,,1072077,2,Japan,Miyazaki,45
