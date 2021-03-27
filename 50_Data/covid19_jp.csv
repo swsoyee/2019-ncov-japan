@@ -414,7 +414,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-24,9429113,460926,8943,436252,13407,,,328,126216142,1,Japan,,
 2021-03-25,9490701,462841,8970,437542,13916,,,325,126216142,1,Japan,,
 2021-03-26,9555049,464868,9003,438721,14656,,,323,126216142,1,Japan,,
-2021-03-27,0,465837,9004,0,0,,,0,126216142,1,Japan,,
+2021-03-27,0,465894,9004,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -22709,7 +22709,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-27,,278,6,,,,,,965968,2,Japan,Akita,05
 2021-03-27,,831,16,,,,,,1077057,2,Japan,Yamagata,06
 2021-03-27,,2440,110,,,,,,1847950,2,Japan,Fukushima,07
-2021-03-27,,6567,126,,,,,,2868041,2,Japan,Ibaraki,08
+2021-03-27,,6600,126,,,,,,2868041,2,Japan,Ibaraki,08
 2021-03-27,,4504,70,,,,,,1942312,2,Japan,Tochigi,09
 2021-03-27,,4928,99,,,,,,1937626,2,Japan,Gunma,10
 2021-03-27,,32225,695,,,,,,7337330,2,Japan,Saitama,11
@@ -22722,7 +22722,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-27,,568,25,,,,,,767742,2,Japan,Fukui,18
 2021-03-27,,951,18,,,,,,812056,2,Japan,Yamanashi,19
 2021-03-27,,2679,41,,,,,,2049023,2,Japan,Nagano,20
-2021-03-27,,4779,123,,,,,,1988931,2,Japan,Gifu,21
+2021-03-27,,4796,123,,,,,,1988931,2,Japan,Gifu,21
 2021-03-27,,5628,115,,,,,,3639226,2,Japan,Shizuoka,22
 2021-03-27,,27030,573,,,,,,7552873,2,Japan,Aichi,23
 2021-03-27,,2675,68,,,,,,1779770,2,Japan,Mie,24
@@ -22735,7 +22735,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-27,,211,2,,,,,,555663,2,Japan,Tottori,31
 2021-03-27,,286,0,,,,,,673891,2,Japan,Shimane,32
 2021-03-27,,2641,35,,,,,,1891346,2,Japan,Okayama,33
-2021-03-27,,5101,106,,,,,,2807987,2,Japan,Hiroshima,34
+2021-03-27,,5108,106,,,,,,2807987,2,Japan,Hiroshima,34
 2021-03-27,,1403,43,,,,,,1355495,2,Japan,Yamaguchi,35
 2021-03-27,,514,18,,,,,,728633,2,Japan,Tokushima,36
 2021-03-27,,782,18,,,,,,956069,2,Japan,Kagawa,37
