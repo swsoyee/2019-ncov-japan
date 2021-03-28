@@ -415,7 +415,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-25,9490701,462840,8970,437542,13916,,,325,126216142,1,Japan,,
 2021-03-26,9555049,464867,9003,438721,14656,,,323,126216142,1,Japan,,
 2021-03-27,9624077,466938,9035,440057,15322,,,331,126216142,1,Japan,,
-2021-03-28,0,468713,9063,0,0,,,0,126216142,1,Japan,,
+2021-03-28,0,468722,9063,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -22772,7 +22772,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-28,,934,28,,,,,,1042998,2,Japan,Toyama,16
 2021-03-28,,1901,64,,,,,,1137181,2,Japan,Ishikawa,17
 2021-03-28,,570,25,,,,,,767742,2,Japan,Fukui,18
-2021-03-28,,951,18,,,,,,812056,2,Japan,Yamanashi,19
+2021-03-28,,955,18,,,,,,812056,2,Japan,Yamanashi,19
 2021-03-28,,2711,41,,,,,,2049023,2,Japan,Nagano,20
 2021-03-28,,4808,123,,,,,,1988931,2,Japan,Gifu,21
 2021-03-28,,5645,115,,,,,,3639226,2,Japan,Shizuoka,22
@@ -22802,6 +22802,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-28,,1812,28,,,,,,1599984,2,Japan,Kagoshima,46
 2021-03-28,,9237,127,,,,,,1454184,2,Japan,Okinawa,47
 2021-03-28,,14,0,,,,,,,1,Japan,Charter Flight,
-2021-03-28,,2374,3,,,,,,,1,Japan,Quarantine,
+2021-03-28,,2379,3,,,,,,,1,Japan,Quarantine,
 2021-03-28,,712,13,,,,,,,1,Japan,Diamond Princess,
 2021-03-28,,149,0,,,,,,,1,Japan,Costa Atlantica,
