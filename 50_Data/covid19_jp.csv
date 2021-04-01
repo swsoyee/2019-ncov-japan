@@ -419,7 +419,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-03-29,9684920,470063,9093,442219,16832,,,342,126216142,1,Japan,,
 2021-03-30,9762131,472150,9126,443463,17153,,,368,126216142,1,Japan,,
 2021-03-31,9804825,474990,9175,444845,17642,,,382,126216142,1,Japan,,
-2021-04-01,0,477396,9188,0,0,,,0,126216142,1,Japan,,
+2021-04-01,0,477408,9188,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -22995,7 +22995,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-04-01,,260,2,,,,,,555663,2,Japan,Tottori,31
 2021-04-01,,288,0,,,,,,673891,2,Japan,Shimane,32
 2021-04-01,,2702,35,,,,,,1891346,2,Japan,Okayama,33
-2021-04-01,,5165,106,,,,,,2807987,2,Japan,Hiroshima,34
+2021-04-01,,5175,106,,,,,,2807987,2,Japan,Hiroshima,34
 2021-04-01,,1418,43,,,,,,1355495,2,Japan,Yamaguchi,35
 2021-04-01,,546,18,,,,,,728633,2,Japan,Tokushima,36
 2021-04-01,,849,19,,,,,,956069,2,Japan,Kagawa,37
@@ -23007,7 +23007,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-04-01,,3510,74,,,,,,1746740,2,Japan,Kumamoto,43
 2021-04-01,,1314,22,,,,,,1134431,2,Japan,Oita,44
 2021-04-01,,1962,22,,,,,,1072077,2,Japan,Miyazaki,45
-2021-04-01,,1830,28,,,,,,1599984,2,Japan,Kagoshima,46
+2021-04-01,,1832,28,,,,,,1599984,2,Japan,Kagoshima,46
 2021-04-01,,9569,128,,,,,,1454184,2,Japan,Okinawa,47
 2021-04-01,,14,0,,,,,,,1,Japan,Charter Flight,
 2021-04-01,,2402,3,,,,,,,1,Japan,Quarantine,
