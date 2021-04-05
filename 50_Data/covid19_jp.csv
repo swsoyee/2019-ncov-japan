@@ -423,7 +423,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-04-02,9941638,480351,9215,447513,20216,,,394,126216142,1,Japan,,
 2021-04-03,10005007,483124,9223,448922,21524,,,408,126216142,1,Japan,,
 2021-04-04,10049113,485594,9235,450465,22619,,,431,126216142,1,Japan,,
-2021-04-05,0,486309,9235,0,0,,,0,126216142,1,Japan,,
+2021-04-05,0,486347,9237,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -23190,7 +23190,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-04-05,,619,25,,,,,,767742,2,Japan,Fukui,18
 2021-04-05,,982,19,,,,,,812056,2,Japan,Yamanashi,19
 2021-04-05,,2957,41,,,,,,2049023,2,Japan,Nagano,20
-2021-04-05,,4905,127,,,,,,1988931,2,Japan,Gifu,21
+2021-04-05,,4905,128,,,,,,1988931,2,Japan,Gifu,21
 2021-04-05,,5839,118,,,,,,3639226,2,Japan,Shizuoka,22
 2021-04-05,,27873,590,,,,,,7552873,2,Japan,Aichi,23
 2021-04-05,,2843,71,,,,,,1779770,2,Japan,Mie,24
@@ -23208,7 +23208,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-04-05,,593,19,,,,,,728633,2,Japan,Tokushima,36
 2021-04-05,,914,19,,,,,,956069,2,Japan,Kagawa,37
 2021-04-05,,1518,24,,,,,,1338811,2,Japan,Ehime,38
-2021-04-05,,923,19,,,,,,697674,2,Japan,Kochi,39
+2021-04-05,,961,19,,,,,,697674,2,Japan,Kochi,39
 2021-04-05,,19107,333,,,,,,5110113,2,Japan,Fukuoka,40
 2021-04-05,,1216,13,,,,,,814211,2,Japan,Saga,41
 2021-04-05,,1645,39,,,,,,1325205,2,Japan,Nagasaki,42
@@ -23216,7 +23216,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-04-05,,1323,22,,,,,,1134431,2,Japan,Oita,44
 2021-04-05,,1965,22,,,,,,1072077,2,Japan,Miyazaki,45
 2021-04-05,,1855,28,,,,,,1599984,2,Japan,Kagoshima,46
-2021-04-05,,9934,128,,,,,,1454184,2,Japan,Okinawa,47
+2021-04-05,,9934,129,,,,,,1454184,2,Japan,Okinawa,47
 2021-04-05,,14,0,,,,,,,1,Japan,Charter Flight,
 2021-04-05,,2449,3,,,,,,,1,Japan,Quarantine,
 2021-04-05,,712,13,,,,,,,1,Japan,Diamond Princess,
