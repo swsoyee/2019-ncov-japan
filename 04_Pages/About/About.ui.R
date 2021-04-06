@@ -14,7 +14,7 @@ fluidRow(
           subtitle = i18n$t("設立者・開発")
         ),
         UserListItemWrappter(
-          image = "Icon/wei_fu.png",
+          image = "Icon/wei.png",
           href = "https://github.com/Bob-FU",
           icon = "github",
           title = "Bob-Fu",
