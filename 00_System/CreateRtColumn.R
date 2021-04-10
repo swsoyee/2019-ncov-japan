@@ -41,7 +41,7 @@ createRegionIncidence <- function(data, region) {
 
   incid <- incidence::as.incidence(
     rowSums(data[, region, with = FALSE]),
-    dates = byDate$date
+    dates = data$date
   )
 
   incid

@@ -311,7 +311,7 @@ for (i in seq(nrow(mergeDt))) {
 
 # Rt value
 source(file = "00_System/CreateRtColumn.R")
-mergeDt$Rt <- createRtColumn(byDate)$display
+mergeDt$Rt <- createRtColumn(byDate[1:(nrow(byDate)-1)])$display
 
 pcrByRegionToday[, `:=` (dischargedDiff = NULL)]
 mergeDt <- merge(mergeDt, pcrByRegionToday, by.x = "region", by.y = "都道府県名", all.x = T, no.dups = T, sort = F)
