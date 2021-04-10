@@ -36,8 +36,8 @@ output$RtLine <- renderEcharts4r({
       dt[index:nrow(dt), 6] <- 0
       dt[index:nrow(dt), 10] <- 0
     }
-
-    dt %>%
+    # Remove today and draw the graphic
+    dt[1:(nrow(dt)-1)] %>%
       e_chart(dates) %>%
       e_line(
         serie = `Mean(R)`,
