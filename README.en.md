@@ -29,6 +29,12 @@ The data used on this site are all public data sets, mainly divided into the fol
 
 Due to the complexity of the data, differences in aggregation time periods or standard issues, there are more or less minor differences in values. Statistical standards vary from media to media, so it is normal for values to vary from site to site. Therefore, all charts and values on this site are for reference only. Please be aware that this website and its management team are not responsible for any problems arising from the secondary use of the contents and materials published on this website.
 
+## Message from the Team
+
+Since COVID-19 was reported to the World Health Organization in December of 2019, the pandemic has spread globally, causing an unprecedented social, behavioral, and economic impact across the world. In Japan, the first COVID-19 case was identified on 15 Jan 2020 and subsequently the disease has since transmitted across different prefectures to the entire country.  
+In response to this public health emergency, this COVID-19 dashboard has been made available to the Japanese population since 1 February 2020.  Featuring multi-dimensional data visualization tools, this platform allows the general public to easily understand the evolution of the pandemic. As of 1 year of this site’s operation, it has already attracted more than 20 million visits (98% of them were initiated from Japan locally).  
+We believe that being able to efficiently inform the public about COVID-19 case situation allows the public to be vigilant, and that plays an essential role in containing and controlling the pandemic (WHO prevention guide). As efforts toward mass vaccination unfold, there are hopeful signs of an improvement in the situation. In the meantime, our site will continue to serve as essential disease communication tool and information hub until the pandemic ends.
+
 ## Member
 
 ### Project Creators
