@@ -172,6 +172,8 @@ output$confirmedLine <- renderEcharts4r({
       ma_5 = round(frollmean(difference, n = 5, fill = 0), 2),
       ma_7 = round(frollmean(difference, n = 7, fill = 0), 2)
     )]
+    # Remove today
+    dt[nrow(dt), `:=`(ma_3 = NA, ma_5 = NA, ma_7 = NA)]
 
     dt %>%
       e_charts(date) %>%
