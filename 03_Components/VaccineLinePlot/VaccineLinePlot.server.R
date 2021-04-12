@@ -35,6 +35,14 @@ output$vaccineLine <- renderEcharts4r({
         ),
         stack = 1
       ) %>%
+      e_bar(
+        elderly,
+        name = "高齢者",
+        itemStyle = list(
+          color = superDarkGreen
+        ),
+        stack = 1
+      ) %>%
       e_line(
         facility,
         name = "施設数",
@@ -99,11 +107,11 @@ output$vaccineLine <- renderEcharts4r({
 output$vaccineTotal <- renderUI({
   if (!is.null(GLOBAL_VALUE$vaccine)) {
     vaccine <- GLOBAL_VALUE$vaccine
-    diff <- tail(vaccine$total, n = 1)
+    diff <- tail(vaccine$total, n = 1) + tail(vaccine$elderly, n = 1)
     descriptionBlock(
       number = countup(diff),
       numberIcon = getChangeIconWrapper(diff),
-      header = countup(sum(vaccine$total)),
+      header = countup(sum(vaccine$total) + sum(vaccine$elderly)),
       numberColor = "olive",
       rightBorder = TRUE,
       text = "合計接種回数"
