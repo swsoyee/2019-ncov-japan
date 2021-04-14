@@ -432,7 +432,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-04-11,10430419,506957,9408,463560,29715,,,520,126216142,1,Japan,,
 2021-04-12,10454733,509065,9432,465672,30467,,,563,126216142,1,Japan,,
 2021-04-13,10529634,512518,9477,468574,30038,,,596,126216142,1,Japan,,
-2021-04-14,0,513913,9479,0,0,,,0,126216142,1,Japan,,
+2021-04-14,0,514027,9481,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -23638,7 +23638,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-04-13,612234,2537,3,2359,153,,,0,,1,Japan,Quarantine,
 2021-04-13,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2021-04-13,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2021-04-14,,21838,783,,,,,,5248552,2,Japan,Hokkaido,01
+2021-04-14,,21915,785,,,,,,5248552,2,Japan,Hokkaido,01
 2021-04-14,,1196,20,,,,,,1246138,2,Japan,Aomori,02
 2021-04-14,,765,31,,,,,,1226430,2,Japan,Iwate,03
 2021-04-14,,7270,44,,,,,,2303160,2,Japan,Miyagi,04
@@ -23670,7 +23670,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-04-14,,1589,19,,,,,,923721,2,Japan,Wakayama,30
 2021-04-14,,311,2,,,,,,555663,2,Japan,Tottori,31
 2021-04-14,,294,0,,,,,,673891,2,Japan,Shimane,32
-2021-04-14,,2990,35,,,,,,1891346,2,Japan,Okayama,33
+2021-04-14,,3022,35,,,,,,1891346,2,Japan,Okayama,33
 2021-04-14,,5295,107,,,,,,2807987,2,Japan,Hiroshima,34
 2021-04-14,,1470,43,,,,,,1355495,2,Japan,Yamaguchi,35
 2021-04-14,,761,24,,,,,,728633,2,Japan,Tokushima,36
@@ -23681,7 +23681,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-04-14,,1285,13,,,,,,814211,2,Japan,Saga,41
 2021-04-14,,1673,39,,,,,,1325205,2,Japan,Nagasaki,42
 2021-04-14,,3550,74,,,,,,1746740,2,Japan,Kumamoto,43
-2021-04-14,,1353,22,,,,,,1134431,2,Japan,Oita,44
+2021-04-14,,1358,22,,,,,,1134431,2,Japan,Oita,44
 2021-04-14,,2021,22,,,,,,1072077,2,Japan,Miyazaki,45
 2021-04-14,,1926,28,,,,,,1599984,2,Japan,Kagoshima,46
 2021-04-14,,10859,130,,,,,,1454184,2,Japan,Okinawa,47
