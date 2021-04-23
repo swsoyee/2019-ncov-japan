@@ -441,7 +441,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-04-20,11005643,542058,9723,485823,40877,,,769,126216142,1,Japan,,
 2021-04-21,11079602,547349,9772,488741,42054,,,791,126216142,1,Japan,,
 2021-04-22,11177177,552848,9814,491441,44187,,,805,126216142,1,Japan,,
-2021-04-23,0,554673,9820,0,0,,,0,126216142,1,Japan,,
+2021-04-23,0,554863,9825,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -24106,7 +24106,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-04-22,625962,2634,3,2469,139,,,0,,1,Japan,Quarantine,
 2021-04-22,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2021-04-22,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2021-04-23,,22782,821,,,,,,5248552,2,Japan,Hokkaido,01
+2021-04-23,,22939,826,,,,,,5248552,2,Japan,Hokkaido,01
 2021-04-23,,1408,20,,,,,,1246138,2,Japan,Aomori,02
 2021-04-23,,811,31,,,,,,1226430,2,Japan,Iwate,03
 2021-04-23,,7807,54,,,,,,2303160,2,Japan,Miyagi,04
@@ -24127,7 +24127,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-04-23,,1106,19,,,,,,812056,2,Japan,Yamanashi,19
 2021-04-23,,3635,54,,,,,,2049023,2,Japan,Nagano,20
 2021-04-23,,5374,129,,,,,,1988931,2,Japan,Gifu,21
-2021-04-23,,6238,121,,,,,,3639226,2,Japan,Shizuoka,22
+2021-04-23,,6266,121,,,,,,3639226,2,Japan,Shizuoka,22
 2021-04-23,,31119,616,,,,,,7552873,2,Japan,Aichi,23
 2021-04-23,,3341,75,,,,,,1779770,2,Japan,Mie,24
 2021-04-23,,3363,61,,,,,,1413959,2,Japan,Shiga,25
@@ -24144,7 +24144,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-04-23,,1068,29,,,,,,728633,2,Japan,Tokushima,36
 2021-04-23,,1136,20,,,,,,956069,2,Japan,Kagawa,37
 2021-04-23,,2132,29,,,,,,1338811,2,Japan,Ehime,38
-2021-04-23,,975,19,,,,,,697674,2,Japan,Kochi,39
+2021-04-23,,980,19,,,,,,697674,2,Japan,Kochi,39
 2021-04-23,,20978,345,,,,,,5110113,2,Japan,Fukuoka,40
 2021-04-23,,1449,13,,,,,,814211,2,Japan,Saga,41
 2021-04-23,,1886,40,,,,,,1325205,2,Japan,Nagasaki,42
