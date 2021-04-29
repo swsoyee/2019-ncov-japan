@@ -44,3 +44,4 @@
 # 
 # fwrite(dataset, "50_Data/MHLW/summary.csv")
 # source(file = "00_System/FetchData.R")
+# source(file = "00_System/FetchVaccine.R")
