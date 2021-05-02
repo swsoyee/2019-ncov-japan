@@ -450,7 +450,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-04-29,11702186,588118,10203,515309,54200,,,951,126216142,1,Japan,,
 2021-04-30,11795944,592799,10242,518818,56281,,,978,126216142,1,Japan,,
 2021-05-01,11897791,598783,10325,522967,57235,,,1020,126216142,1,Japan,,
-2021-05-02,0,603817,10434,0,0,,,0,126216142,1,Japan,,
+2021-05-02,0,604192,10436,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -24575,7 +24575,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-05-01,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2021-05-01,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
 2021-05-02,,24609,867,,,,,,5248552,2,Japan,Hokkaido,01
-2021-05-02,,1620,22,,,,,,1246138,2,Japan,Aomori,02
+2021-05-02,,1620,23,,,,,,1246138,2,Japan,Aomori,02
 2021-05-02,,970,32,,,,,,1226430,2,Japan,Iwate,03
 2021-05-02,,8118,69,,,,,,2303160,2,Japan,Miyagi,04
 2021-05-02,,489,9,,,,,,965968,2,Japan,Akita,05
@@ -24584,7 +24584,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-05-02,,8271,135,,,,,,2868041,2,Japan,Ibaraki,08
 2021-05-02,,5402,71,,,,,,1942312,2,Japan,Tochigi,09
 2021-05-02,,6172,104,,,,,,1937626,2,Japan,Gunma,10
-2021-05-02,,38034,744,,,,,,7337330,2,Japan,Saitama,11
+2021-05-02,,38324,744,,,,,,7337330,2,Japan,Saitama,11
 2021-05-02,,33470,624,,,,,,6279026,2,Japan,Chiba,12
 2021-05-02,,141005,1897,,,,,,13942856,2,Japan,Tokyo,13
 2021-05-02,,54049,822,,,,,,9200166,2,Japan,Kanagawa,14
@@ -24607,7 +24607,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-05-02,,374,2,,,,,,555663,2,Japan,Tottori,31
 2021-05-02,,356,0,,,,,,673891,2,Japan,Shimane,32
 2021-05-02,,4135,45,,,,,,1891346,2,Japan,Okayama,33
-2021-05-02,,6075,110,,,,,,2807987,2,Japan,Hiroshima,34
+2021-05-02,,6160,110,,,,,,2807987,2,Japan,Hiroshima,34
 2021-05-02,,1881,46,,,,,,1355495,2,Japan,Yamaguchi,35
 2021-05-02,,1339,44,,,,,,728633,2,Japan,Tokushima,36
 2021-05-02,,1310,22,,,,,,956069,2,Japan,Kagawa,37
@@ -24616,7 +24616,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-05-02,,23732,354,,,,,,5110113,2,Japan,Fukuoka,40
 2021-05-02,,1656,13,,,,,,814211,2,Japan,Saga,41
 2021-05-02,,2140,41,,,,,,1325205,2,Japan,Nagasaki,42
-2021-05-02,,4260,79,,,,,,1746740,2,Japan,Kumamoto,43
+2021-05-02,,4260,80,,,,,,1746740,2,Japan,Kumamoto,43
 2021-05-02,,1950,26,,,,,,1134431,2,Japan,Oita,44
 2021-05-02,,2270,22,,,,,,1072077,2,Japan,Miyazaki,45
 2021-05-02,,2183,28,,,,,,1599984,2,Japan,Kagoshima,46
