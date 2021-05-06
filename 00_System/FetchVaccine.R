@@ -31,26 +31,15 @@ for (item in definition) {
   # Extract table from PDF
   data <- tabulizer::extract_tables(item$url)
   data <- data.table(data[[1]])[3:.N, ]
-  if (item$category == "elderly") {
-    pre_data <- data[, .(
-      prefecture = V1,
-      total = V3,
-      first = V5,
-      second = V7,
-      category = item$category,
-      date = date_new
-    )]
-  }
-  if (item$category == "medical") {
-    pre_data <- data[, .(
-      prefecture = V1,
-      total = V2,
-      first = V3,
-      second = V4,
-      category = item$category,
-      date = date_new
-    )]
-  }
+
+  pre_data <- data[, .(
+    prefecture = V1,
+    total = V2,
+    first = V3,
+    second = V4,
+    category = item$category,
+    date = date_new
+  )]
 
   pre_data[, c("code", "prefecture") := tstrsplit(prefecture, " ", fixed = TRUE)]
 
