@@ -1,6 +1,8 @@
 library(data.table)
 library(tabulizer)
 
+#### Update vaccine data by prefecture ####
+
 # Define data path
 data_path <- "50_Data/MHLW/vaccineByRegion.csv"
 
@@ -53,3 +55,48 @@ for (item in definition) {
 }
 
 fwrite(vaccineByRegion, file = data_path)
+
+#### Update vaccine by date ####
+
+data_path <- "50_Data/MHLW/vaccine.csv"
+
+# Read exist data
+vaccine <- fread(data_path)
+vaccine$date <- as.character(vaccine$date)
+
+# Define origion
+definition <- list(
+  list(
+    category = "medical",
+    url = "https://www.kantei.go.jp/jp/content/IRYO-vaccination_data.pdf"
+  ),
+  list(
+    category = "elderly",
+    url = "https://www.kantei.go.jp/jp/content/KOREI-vaccination_data.pdf"
+  )
+)
+
+for (item in definition) {
+  # Extract table
+  data <- tabulizer::extract_tables(item$url)
+  data <- data.table(data[[1]])[3:.N, ]
+  data <- data[, .(V2, V5, V6)]
+  colnames(data) <- c(
+    "date",
+    paste0(item$category, "_first"),
+    paste0(item$category, "_second")
+  )
+
+  # Handle columns
+  data$date <- format(as.Date(data$date), "%Y%m%d")
+  cols <- c(paste0(item$category, "_first"), paste0(item$category, "_second"))
+  data[, (cols) := lapply(.SD, function(x) {
+    return(as.numeric(gsub(",", "", x)))
+  }), .SDcols = cols]
+
+  # Update data
+  n <- names(data)
+  vaccine[data, on = .(date), (n) := mget(paste0("i.", n))]
+}
+
+fwrite(vaccine, file = data_path)
