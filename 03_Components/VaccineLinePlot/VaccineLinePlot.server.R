@@ -6,9 +6,10 @@ observeEvent(input$linePlot, {
   }
 })
 
-output$vaccineLine <- renderEcharts4r({
+output$vaccine_line_plot <- renderEcharts4r({
   if (!is.null(GLOBAL_VALUE$vaccine)) {
     vaccine <- GLOBAL_VALUE$vaccine
+    vaccine$total <- rowSums(vaccine[, 2:5])
     vaccine %>%
       e_chart(x = date) %>%
       e_bar(
@@ -20,36 +21,36 @@ output$vaccineLine <- renderEcharts4r({
         )
       ) %>%
       e_bar(
-        first,
-        name = "１回目",
+        medical_first,
+        name = "医療従事者（１回目）",
         itemStyle = list(
           color = lightGreen
         ),
         stack = 1
       ) %>%
       e_bar(
-        second,
-        name = "２回目",
+        medical_second,
+        name = "医療従事者（２回目）",
         itemStyle = list(
           color = darkGreen
         ),
         stack = 1
       ) %>%
       e_bar(
-        elderly,
-        name = "高齢者",
+        elderly_first,
+        name = "高齢者（１回目）",
         itemStyle = list(
           color = superDarkGreen
         ),
         stack = 1
       ) %>%
-      e_line(
-        facility,
-        name = "施設数",
-        y_index = 1,
+      e_bar(
+        elderly_second,
+        name = "高齢者（２回目）",
         itemStyle = list(
-          color = lightNavy
-        )
+          color = superDarkGreen2
+        ),
+        stack = 1
       ) %>%
       e_grid(
         left = "3%",
@@ -72,14 +73,6 @@ output$vaccineLine <- renderEcharts4r({
         z = 999,
         axisLabel = list(inside = T),
         axisTick = list(show = F)
-      ) %>%
-      e_y_axis(
-        name = "施設数",
-        nameGap = 10,
-        splitLine = list(show = FALSE),
-        z = 999,
-        index = 1,
-        axisTick = list(show = FALSE)
       ) %>%
       e_title(
         text = "先行接種の接種実績",
@@ -104,43 +97,47 @@ output$vaccineLine <- renderEcharts4r({
   }
 })
 
-output$vaccineTotal <- renderUI({
+output$vaccine_medical_total <- renderUI({
   if (!is.null(GLOBAL_VALUE$vaccine)) {
     vaccine <- GLOBAL_VALUE$vaccine
-    diff <- tail(vaccine$total, n = 1) + tail(vaccine$elderly, n = 1)
+    # Calculate number by date
+    total_number_by_date <- rowSums(vaccine[, 2:3])
+    diff <- tail(total_number_by_date, n = 1)
     descriptionBlock(
       number = countup(diff),
       numberIcon = getChangeIconWrapper(diff),
-      header = countup(sum(vaccine$total) + sum(vaccine$elderly)),
+      header = countup(sum(total_number_by_date)),
       numberColor = "olive",
       rightBorder = TRUE,
-      text = "合計接種回数"
+      text = "医療従事者等"
     )
   }
 })
 
-output$vaccineFacility <- renderUI({
+output$vaccine_elderly_total <- renderUI({
   if (!is.null(GLOBAL_VALUE$vaccine)) {
     vaccine <- GLOBAL_VALUE$vaccine
-    diff <- tail(vaccine$facility, n = 2)
+    # Calculate number by date
+    total_number_by_date <- rowSums(vaccine[, 4:5])
+    diff <- tail(total_number_by_date, n = 1)
     descriptionBlock(
-      number = countup(diff[2] - diff[1]),
-      numberIcon = getChangeIconWrapper(diff[2] - diff[1]),
-      header = countup(tail(vaccine$facility, n = 1)),
+      number = countup(diff),
+      numberIcon = getChangeIconWrapper(diff),
+      header = countup(sum(total_number_by_date)),
       numberColor = "black",
       rightBorder = FALSE,
-      text = "合計施設数"
+      text = "高齢者等"
     )
   }
 })
 
-output$vaccineProgress <- renderUI({
+output$vaccine_progress <- renderUI({
   if (!is.null(GLOBAL_VALUE$vaccine)) {
     vaccine <- GLOBAL_VALUE$vaccine
     progressBar(
-      id = "vaccineProgress",
-      value = sum(vaccine$second),
-      total = sum(vaccine$first),
+      id = "vaccine_progress",
+      value = sum(vaccine$medical_second + vaccine$elderly_second),
+      total = sum(vaccine$medical_first + vaccine$elderly_first),
       display_pct = TRUE,
       striped = TRUE,
       status = "success",
@@ -152,20 +149,22 @@ output$vaccineProgress <- renderUI({
 output$vaccineTwitterShare <- renderUI({
   vaccine <- GLOBAL_VALUE$vaccine
   if (!is.null(vaccine)) {
+    total_first <- sum(colSums(vaccine[, .(medical_first, elderly_first)]))
+    total_second <- sum(colSums(vaccine[, .(medical_second, elderly_second)]))
     vaccineTwitterShareUrl <- sprintf(
       paste0(
         "https://twitter.com/intent/tweet?text=",
         "%sまで、新型コロナウイルスワクチンの合計接種数は%s、",
         "うち１回目の接種は%s回、２回目のは%s回。",
-        "接種実績のある施設数は%s箇所です。",
+        "接種した人の２回接種完成率は%s%%25。",
         "詳しくは「新型コロナウイルス感染速報」まで",
         "&url=https://covid-2019.live/&hashtags=新型コロナ,新型コロナワクチン"
       ),
       tail(vaccine$date, n = 1),
-      sum(vaccine$total),
-      sum(vaccine$first),
-      sum(vaccine$second),
-      tail(vaccine$facility, n = 1)
+      prettyNum(sum(colSums(vaccine[, 2:5])), big.mark = ","),
+      prettyNum(total_first, big.mark = ","),
+      prettyNum(total_second, big.mark = ","),
+      round(total_second / total_first * 100, 2)
     )
 
     actionButton(
