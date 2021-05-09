@@ -172,6 +172,7 @@ shinyUI(
     ),
     body = dashboardBody(
       tags$head(
+        includeHTML(("01_Settings/google-analytics.html")),
         tags$link(rel = "icon", href = "favicon.ico"),
         tags$meta(name = "twitter:card", content = "summary_large_image"),
         # tags$meta(property = 'og:url', content = 'https://covid-2019.live/'),
