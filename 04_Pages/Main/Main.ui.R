@@ -34,6 +34,7 @@ fluidPage(
       width = 12,
       tabsetPanel(
         # 感染マップ、都道府県の情況のテーブル
+        id = "main_tabset",
         source(
           file = paste0(COMPONENT_PATH, "/Main/ConfirmedMap.ui.R"),
           local = T,

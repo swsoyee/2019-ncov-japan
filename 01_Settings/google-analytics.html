@@ -6,4 +6,11 @@
   gtag('js', new Date());
 
   gtag('config', 'G-ESFZW18YZT');
+
+  $(document).on("click", "[data-value=rt_line]", function(){
+    gtag('event', 'view_item', {
+      'event_category' : 'engagement',
+      'event_label' : 'effective_reproductive_number_tab'
+    });
+  })
 </script>

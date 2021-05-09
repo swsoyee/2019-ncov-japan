@@ -5,6 +5,7 @@ tabPanel(
     i18n$t("実効再生産数"),
     boxLabel("New", status = "warning")
   ),
+  value = "rt_line",
   fluidRow(
     style = "margin-top:10px;",
     column(
