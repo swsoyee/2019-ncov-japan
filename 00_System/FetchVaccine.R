@@ -80,12 +80,8 @@ for (item in definition) {
   # Extract table
   data <- tabulizer::extract_tables(item$url)
   data <- data.table(data[[1]])[3:.N, ]
-  if (item$category == "medical") {
-    data <- data[, .(V2, V5, V6)]
-  }
-  if (item$category == "elderly") {
-    data <- data[, .(V1, V4, V5)]
-  }
+  data <- data[, .(V1, V4, V5)]
+
   colnames(data) <- c(
     "date",
     paste0(item$category, "_first"),
