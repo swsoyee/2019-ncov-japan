@@ -395,3 +395,14 @@ fwrite(x = mapDt, file = paste0(DATA_PATH, "result.map.csv"))
 # ====COVID DATA HUB====
 source(file = "00_System/Generate.covid19datahub.R")
 
+# ====Value for display====
+vaccine <- fread("50_Data/MHLW/vaccine.csv")
+vaccine_complete <- sum(vaccine[, .(medical_second + elderly_second)])
+
+average_7_vaccine <- round(mean(tail(vaccine[, .(medical_second + elderly_second)], n = 7)$V1))
+
+data_for_display <- data.frame(
+  key = c("vaccine_complete", "average_7_vaccine"),
+  value = c(vaccine_complete, average_7_vaccine)
+)
+fwrite(x = data_for_display, "50_Data/data_for_display.csv")

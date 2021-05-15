@@ -59,6 +59,9 @@ byDate$date <- lapply(byDate[, 1], function(x) {
 # マップ用データ読み込み
 mapData <- fread(paste0(DATA_PATH, "result.map.csv"), header = T)
 
+# Value data for display
+global_value_for_display <- fread(paste0(DATA_PATH, "/data_for_display.csv"))
+
 # 死亡データ
 death <- fread(paste0(DATA_PATH, "death.csv"))
 death[is.na(death)] <- 0
