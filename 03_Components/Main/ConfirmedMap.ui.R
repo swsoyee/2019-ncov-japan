@@ -46,9 +46,32 @@ tabPanel(
         status = "danger",
         display_pct = T
       ),
+      progressBar(
+        id = "vaccine_complete_ratio",
+        value = global_value_for_display[key == "vaccine_complete"]$value,
+        total = sum(prefecture_master$人口),
+        title = tagList(
+          icon("syringe"),
+          i18n$t("２回目接種済率")
+        ),
+        striped = TRUE,
+        status = "success",
+        display_pct = TRUE
+      ),
+      helpText(
+        sprintf(
+          i18n$t("2021/2/17 接種開始日から %s 日を経ち、２回目接種完了率は %s。直近７日の平均毎日の接種完了数は %s、あと約 %s 日で目標の %s に達成できる。"),
+          as.numeric(Sys.Date() - as.Date("2021-02-17")),
+          paste0(round(global_value_for_display[key == "vaccine_complete"]$value / sum(prefecture_master$人口) * 100, 2), "%"),
+          global_value_for_display[key == "average_7_vaccine"]$value,
+          # sum(prefecture_master$人口) * 0.6
+          round((75729685 - global_value_for_display[key == "vaccine_complete"]$value) / global_value_for_display[key == "average_7_vaccine"]$value),
+          "60 %"
+        )
+      ),
       bsTooltip(
         id = "activePatients",
-        placement = "top",
+        placement = "right",
         title = i18n$t("分母には死亡者、チャーター便で帰国したクルーズ船の乗客40名は含まれていません。")
       ),
       progressBar(

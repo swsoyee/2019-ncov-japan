@@ -59,6 +59,9 @@ byDate$date <- lapply(byDate[, 1], function(x) {
 # マップ用データ読み込み
 mapData <- fread(paste0(DATA_PATH, "result.map.csv"), header = T)
 
+# Value data for display
+global_value_for_display <- fread(paste0(DATA_PATH, "/data_for_display.csv"))
+
 # 死亡データ
 death <- fread(paste0(DATA_PATH, "death.csv"))
 death[is.na(death)] <- 0
@@ -121,6 +124,9 @@ mhlwSummary$日付 <- as.Date(as.character(mhlwSummary$日付), "%Y%m%d")
 mhlwSummary <- mhlwSummary[order(都道府県名, 日付)]
 setnafill(mhlwSummary, type = "locf", cols = c("陽性者", "退院者", "検査人数"))
 
+# 都道府県マスターデータ
+prefecture_master <- fread(paste0(DATA_PATH, "Signate/prefMaster.csv"))
+vaccine_by_region <- fread(paste0(DATA_PATH, "MHLW/vaccineByRegion.csv"))
 # ====総数基礎集計====
 
 # 確認

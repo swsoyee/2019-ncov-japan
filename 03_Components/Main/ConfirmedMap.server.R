@@ -72,10 +72,10 @@ output$selectMapBottomButton <- renderUI({
       justified = T,
       choiceNames = c(
         paste(icon("creative-commons-sampling-plus"), i18n$t("現在")),
-        paste(icon("signal"), i18n$t("累積")),
+        paste(icon("syringe"), i18n$t("接種")),
         paste(icon("ambulance"), i18n$t("重症"))
       ),
-      choiceValues = c("active", "total", "severe"),
+      choiceValues = c("active", "vaccine_ratio", "severe"),
       status = "danger"
     )
   } else {
@@ -84,13 +84,41 @@ output$selectMapBottomButton <- renderUI({
 })
 
 simpleMapDataset <- reactive({
-  dt <- merge(x = mapData[, .SD[.N], by = ja],
-              y = mapData[, .SD[.N-1], by = ja],
-              by = c("ja", "full_ja", "en", "lat", "lng", "regions"), no.dups = T, sort = F)
-  dt[mhlwSummary[日付 == max(日付)], `:=` (total = count.x, 
-                                       severe = i.重症者, 
-                                       active = i.陽性者 - i.退院者 - ifelse(is.na(i.死亡者), 0, i.死亡者),
-                                       diff = (count.x - count.y)), on = c(ja = "都道府県名")]
+  dt <- merge(
+    x = mapData[, .SD[.N], by = ja],
+    y = mapData[, .SD[.N - 1], by = ja],
+    by = c("ja", "full_ja", "en", "lat", "lng", "regions"), no.dups = T, sort = F
+  )
+  dt[mhlwSummary[日付 == max(日付)], `:=`(
+    total = count.x,
+    severe = i.重症者,
+    active = i.陽性者 - i.退院者 - ifelse(is.na(i.死亡者), 0, i.死亡者),
+    diff = (count.x - count.y)
+  ), on = c(ja = "都道府県名")]
+  
+  # join vaccine by prefecture dataset
+  elderly <- vaccine_by_region[category == "elderly"][date == max(date)]
+  medical <- vaccine_by_region[category == "medical"][date == max(date)]
+  vaccine <- medical[elderly, .(
+    prefecture = prefecture,
+    first_medical = first,
+    second_medical = second,
+    first_elderly = i.first,
+    second_elderly = i.second,
+    date_medical = date,
+    date_elderly = i.date
+  ), on = c(code = "code")]
+  dt <- dt[vaccine, on = c(full_ja = "prefecture")]
+  
+  # join population
+  dt <- dt[prefecture_master[, .(都道府県, population = 人口)],
+    on = c(full_ja = "都道府県")
+  ]
+  
+  # vaccine ratio
+  dt[, vaccine_ratio := round((second_medical + second_elderly) / population * 100, 2)]
+  
+  # set NA to 0
   setnafill(dt, fill = 0, cols = "severe")
   dt
 })
@@ -108,6 +136,61 @@ output$echartsSimpleMap <- renderEcharts4r({
   }
   
   dt[, translatedRegionName := convertRegionName(full_ja, languageSetting)]
+  
+  if (input$selectMapBottomButton %in% c("vaccine_ratio")) {
+    subText <- sprintf(
+      i18n$t("データ更新日：\n\n医療従事者等（%s）\n高齢者等（%s）"),
+      as.Date(as.character(unique(dt$date_medical)), format = "%Y%m%d"),
+      as.Date(as.character(unique(dt$date_elderly)), format = "%Y%m%d")
+    )
+    color_in_range <- c("#DADADA", "#3fcc8d", middleGreen, darkGreen, superDarkGreen, superDarkGreen2)
+    split_list <- list(
+      list(min = 1.5, label = "> 1.5 %"),
+      list(min = 1, max = 1.5, label = "1 % ~ 1.5 %"),
+      list(min = 0.8, max = 1, label = "0.8 % ~ 1 %"),
+      list(min = 0.5, max = 0.8, label = "0.5 % ~ 0.8 %"),
+      list(min = 0, max = 0.5, label = "0 % ~ 0.5 %"),
+      list(value = 0, label = "0")
+    )
+    formatter <- htmlwidgets::JS(paste0(
+      "function(params) {
+        if(params.value) {
+          return(`<b>${params.name}</b><br>", i18n$t("２回目接種済率："), "${params.value} %`)
+        } else {
+          return('');
+        }
+      }
+    "))
+    title_text <- i18n$t("２回目接種済マップ")
+  } else {
+    color_in_range <- c("#DADADA", "#FFCEAB", "#FF9D57", "#FF781E", "#EA5432", "#C02B11", "#8C0B00", "#000000")
+    split_list <- list(
+      list(min = 3000),
+      list(min = 1000, max = 3000),
+      list(min = 500, max = 1000),
+      list(min = 100, max = 500),
+      list(min = 50, max = 100),
+      list(min = 10, max = 50),
+      list(min = 1, max = 10),
+      list(value = 0)
+    )
+    formatter <- htmlwidgets::JS(paste0(
+      "function(params) {
+                if(params.value) {
+                  return(`${params.name}<br>",
+      switch(input$selectMapBottomButton,
+        active = i18n$t("現在感染者数："),
+        total = i18n$t("累積感染者数："),
+        severe = i18n$t("現在重症者数：")
+      ), "${params.value}`)
+                } else {
+                  return('');
+                }
+              }
+            "
+    ))
+    title_text <- i18n$t("リアルタイム感染者数マップ")
+  }
 
   map <- dt %>%
     e_charts(translatedRegionName) %>%
@@ -134,36 +217,15 @@ output$echartsSimpleMap <- renderEcharts4r({
       input$selectMapBottomButton,
       top = "25%",
       left = "0%",
-      inRange = list(color = c("#DADADA", "#FFCEAB", "#FF9D57", "#FF781E", "#EA5432", "#C02B11", "#8C0B00", "#000000")),
+      inRange = list(color = color_in_range),
       type = "piecewise",
-      splitList = list(
-        list(min = 3000),
-        list(min = 1000, max = 3000),
-        list(min = 500, max = 1000),
-        list(min = 100, max = 500),
-        list(min = 50, max = 100),
-        list(min = 10, max = 50),
-        list(min = 1, max = 10),
-        list(value = 0)
-      )
+      splitList = split_list
     ) %>%
     e_color(background = "#FFFFFF") %>%
     e_mark_point(serie = dt[diff > 0]$en) %>%
-    e_tooltip(formatter = htmlwidgets::JS(paste0('
-      function(params) {
-        if(params.value) {
-          return(`${params.name}<br>', 
-          switch(input$selectMapBottomButton, 
-            active = i18n$t("現在感染者数："),
-            total = i18n$t("累積感染者数："),
-            severe = i18n$t("現在重症者数：")), '${params.value}`)
-        } else {
-          return("");
-        }
-      }
-    '))) %>%
+    e_tooltip(formatter = formatter) %>%
     e_title(
-      text = i18n$t("リアルタイム感染者数マップ"),
+      text = title_text,
       subtext = subText
     )
 
