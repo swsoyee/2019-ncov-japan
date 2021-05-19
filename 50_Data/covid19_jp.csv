@@ -467,7 +467,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-05-16,13084423,684532,11523,589795,73562,,,1223,126216142,1,Japan,,
 2021-05-17,13122469,688212,11645,594915,73388,,,1227,126216142,1,Japan,,
 2021-05-18,13220299,693442,11861,602099,70709,,,1235,126216142,1,Japan,,
-2021-05-19,0,698304,11937,0,0,,,0,126216142,1,Japan,,
+2021-05-19,0,698528,11940,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -25459,7 +25459,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-05-18,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2021-05-18,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
 2021-05-19,,31837,964,,,,,,5248552,2,Japan,Hokkaido,01
-2021-05-19,,2009,27,,,,,,1246138,2,Japan,Aomori,02
+2021-05-19,,2033,27,,,,,,1246138,2,Japan,Aomori,02
 2021-05-19,,1275,42,,,,,,1226430,2,Japan,Iwate,03
 2021-05-19,,8641,80,,,,,,2303160,2,Japan,Miyagi,04
 2021-05-19,,715,11,,,,,,965968,2,Japan,Akita,05
@@ -25468,7 +25468,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-05-19,,9184,139,,,,,,2868041,2,Japan,Ibaraki,08
 2021-05-19,,5947,74,,,,,,1942312,2,Japan,Tochigi,09
 2021-05-19,,7361,121,,,,,,1937626,2,Japan,Gunma,10
-2021-05-19,,41871,766,,,,,,7337330,2,Japan,Saitama,11
+2021-05-19,,42063,769,,,,,,7337330,2,Japan,Saitama,11
 2021-05-19,,35819,658,,,,,,6279026,2,Japan,Chiba,12
 2021-05-19,,154156,1969,,,,,,13942856,2,Japan,Tokyo,13
 2021-05-19,,58579,861,,,,,,9200166,2,Japan,Kanagawa,14
@@ -25506,6 +25506,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-05-19,,2986,28,,,,,,1599984,2,Japan,Kagoshima,46
 2021-05-19,,14282,146,,,,,,1454184,2,Japan,Okinawa,47
 2021-05-19,,14,0,,,,,,,1,Japan,Charter Flight,
-2021-05-19,,2881,4,,,,,,,1,Japan,Quarantine,
+2021-05-19,,2889,4,,,,,,,1,Japan,Quarantine,
 2021-05-19,,712,13,,,,,,,1,Japan,Diamond Princess,
 2021-05-19,,149,0,,,,,,,1,Japan,Costa Atlantica,
