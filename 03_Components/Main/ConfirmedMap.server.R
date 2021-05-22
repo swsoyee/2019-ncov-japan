@@ -129,8 +129,13 @@ output$echartsSimpleMap <- renderEcharts4r({
   todayTotalIncreaseNumber <- sum(dt$diff, na.rm = T)
   subText <- i18n$t("各都道府県からの新規報告なし")
   if (todayTotalIncreaseNumber > 0) {
-    subText <- paste0(sprintf(i18n$t("発表がある%s都道府県合計新規%s人, 合計%s人\n\n"),
-      sum(dt$diff > 0), todayTotalIncreaseNumber, sum(dt$count.x, na.rm = T)),
+    subText <- paste0(
+      sprintf(
+        i18n$t("発表がある%s都道府県合計新規%s人, 合計%s人\n\n"),
+        sum(dt$diff > 0), 
+        prettyNum(todayTotalIncreaseNumber, big.mark = ","),
+        prettyNum(sum(dt$count.x, na.rm = T), big.mark = ",")
+      ),
       i18n$t("※こちらの合計値には空港検疫、チャーター便、\n　クルーズ関連の事例などは含まれていない。")
     )
   }
@@ -165,9 +170,9 @@ output$echartsSimpleMap <- renderEcharts4r({
   } else {
     color_in_range <- c("#DADADA", "#FFCEAB", "#FF9D57", "#FF781E", "#EA5432", "#C02B11", "#8C0B00", "#000000")
     split_list <- list(
-      list(min = 3000),
-      list(min = 1000, max = 3000),
-      list(min = 500, max = 1000),
+      list(min = 3000, label = "> 3,000"),
+      list(min = 1000, max = 3000, label = "1,000 - 3,000"),
+      list(min = 500, max = 1000, label = "500 - 1,000"),
       list(min = 100, max = 500),
       list(min = 50, max = 100),
       list(min = 10, max = 50),
