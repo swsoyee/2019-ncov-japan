@@ -470,7 +470,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-05-19,13307674,699248,11957,608692,68363,,,1293,126216142,1,Japan,,
 2021-05-20,13458167,704968,12063,615098,66925,,,1288,126216142,1,Japan,,
 2021-05-21,13556976,710219,12176,621334,66809,,,1294,126216142,1,Japan,,
-2021-05-22,0,712739,12200,0,0,,,0,126216142,1,Japan,,
+2021-05-22,0,712824,12207,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -25614,10 +25614,10 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-05-21,677707,2902,4,2797,88,,,0,,1,Japan,Quarantine,
 2021-05-21,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2021-05-21,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2021-05-22,,33901,985,,,,,,5248552,2,Japan,Hokkaido,01
+2021-05-22,,33901,990,,,,,,5248552,2,Japan,Hokkaido,01
 2021-05-22,,2128,28,,,,,,1246138,2,Japan,Aomori,02
 2021-05-22,,1332,43,,,,,,1226430,2,Japan,Iwate,03
-2021-05-22,,8698,82,,,,,,2303160,2,Japan,Miyagi,04
+2021-05-22,,8719,82,,,,,,2303160,2,Japan,Miyagi,04
 2021-05-22,,737,11,,,,,,965968,2,Japan,Akita,05
 2021-05-22,,1852,37,,,,,,1077057,2,Japan,Yamagata,06
 2021-05-22,,4425,133,,,,,,1847950,2,Japan,Fukushima,07
@@ -25637,7 +25637,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-05-22,,8056,150,,,,,,1988931,2,Japan,Gifu,21
 2021-05-22,,7868,132,,,,,,3639226,2,Japan,Shizuoka,22
 2021-05-22,,43521,704,,,,,,7552873,2,Japan,Aichi,23
-2021-05-22,,4645,101,,,,,,1779770,2,Japan,Mie,24
+2021-05-22,,4673,101,,,,,,1779770,2,Japan,Mie,24
 2021-05-22,,4724,74,,,,,,1413959,2,Japan,Shiga,25
 2021-05-22,,15256,200,,,,,,2583140,2,Japan,Kyoto,26
 2021-05-22,,97058,2090,,,,,,8823453,2,Japan,Osaka,27
@@ -25648,8 +25648,8 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-05-22,,492,0,,,,,,673891,2,Japan,Shimane,32
 2021-05-22,,6846,86,,,,,,1891346,2,Japan,Okayama,33
 2021-05-22,,9431,117,,,,,,2807987,2,Japan,Hiroshima,34
-2021-05-22,,2673,56,,,,,,1355495,2,Japan,Yamaguchi,35
-2021-05-22,,1613,59,,,,,,728633,2,Japan,Tokushima,36
+2021-05-22,,2673,57,,,,,,1355495,2,Japan,Yamaguchi,35
+2021-05-22,,1613,60,,,,,,728633,2,Japan,Tokushima,36
 2021-05-22,,1921,24,,,,,,956069,2,Japan,Kagawa,37
 2021-05-22,,2666,71,,,,,,1338811,2,Japan,Ehime,38
 2021-05-22,,1242,20,,,,,,697674,2,Japan,Kochi,39
@@ -25659,7 +25659,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-05-22,,5833,90,,,,,,1746740,2,Japan,Kumamoto,43
 2021-05-22,,3137,37,,,,,,1134431,2,Japan,Oita,44
 2021-05-22,,2952,25,,,,,,1072077,2,Japan,Miyazaki,45
-2021-05-22,,3072,28,,,,,,1599984,2,Japan,Kagoshima,46
+2021-05-22,,3108,28,,,,,,1599984,2,Japan,Kagoshima,46
 2021-05-22,,14918,148,,,,,,1454184,2,Japan,Okinawa,47
 2021-05-22,,14,0,,,,,,,1,Japan,Charter Flight,
 2021-05-22,,2902,4,,,,,,,1,Japan,Quarantine,
