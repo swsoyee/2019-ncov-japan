@@ -3,6 +3,8 @@ library(sparkline)
 
 # ====準備部分====
 source(file = "01_Settings/Path.R", local = T, encoding = "UTF-8")
+source(file = "01_Settings/color.R", local = TRUE, encoding = "UTF-8")
+
 # 感染者ソーステーブルを取得
 byDate <- fread(paste0(DATA_PATH, "byDate.csv"), header = T)
 byDate[is.na(byDate)] <- 0
@@ -25,25 +27,6 @@ provinceAttr[, 都道府県略称 := 都道府県]
 provinceAttr[, 都道府県略称 := gsub("県", "", 都道府県略称)]
 provinceAttr[, 都道府県略称 := gsub("府", "", 都道府県略称)]
 provinceAttr[, 都道府県略称 := gsub("東京都", "東京", 都道府県略称)]
-# 色設定
-lightRed <- "#F56954"
-middleRed <- "#DD4B39"
-darkRed <- "#B03C2D"
-lightYellow <- "#F8BF76"
-middleYellow <- "#F39C11"
-darkYellow <- "#DB8B0A"
-lightGreen <- "#00A65A"
-middleGreen <- "#01A65A"
-darkGreen <- "#088448"
-superDarkGreen <- "#046938"
-superDarkGreen2 <- "#023D20"
-lightNavy <- "#5A6E82"
-middelNavy <- "#001F3F"
-darkNavy <- "#001934"
-lightGrey <- "#F5F5F5"
-lightBlue <- "#7BD6F5"
-middleBlue <- "#00C0EF"
-darkBlue <- "#00A7D0"
 
 
 # ====各都道府県のサマリーテーブル====
