@@ -200,6 +200,11 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
       ),
       fontWeight = "bold"
     ) %>%
+    formatCurrency(
+      columns = "totalDischarged",
+      currency = "",
+      digits = 0
+    ) %>%
     formatStyle(
       columns = "death",
       color = do.call(
@@ -208,6 +213,11 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
       ),
       fontWeight = "bold"
     ) %>%
+    formatCurrency(
+      columns = "death",
+      currency = "",
+      digits = 0
+    ) %>%
     formatStyle(
       columns = "perMillionDeath",
       backgroundColor = do.call(
@@ -215,6 +225,11 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
         generateColorStyle(data = dt$perMillionDeath, colors = c("#FFFFFF", "#6B7989"), by = 1)
       ),
       fontWeight = "bold"
+    ) %>%
+    formatCurrency(
+      columns = "perMillionDeath",
+      currency = "",
+      digits = 0
     ) %>%
     formatStyle(
       columns = "zeroContinuousDay",
@@ -524,6 +539,11 @@ output$testByPrefTable <- renderDataTable({
     formatCurrency(
       columns = "前日比",
       currency = paste(as.character(icon("caret-up")), " "),
+      digits = 0
+    ) %>%
+    formatCurrency(
+      columns = "週間平均移動",
+      currency = "",
       digits = 0
     ) %>%
     formatString(
