@@ -39,7 +39,7 @@ for (item in definition) {
       prefecture = V1,
       total = V2,
       first = V3,
-      second = V5,
+      second = V4,
       category = item$category,
       date = date_new
     )]
