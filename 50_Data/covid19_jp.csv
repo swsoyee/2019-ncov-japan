@@ -474,7 +474,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-05-23,13744292,719245,12321,633847,64845,,,1304,126216142,1,Japan,,
 2021-05-24,13781400,721956,12406,639557,64058,,,1300,126216142,1,Japan,,
 2021-05-25,13875603,725857,12511,644851,61627,,,1294,126216142,1,Japan,,
-2021-05-26,0,726531,12536,0,0,,,0,126216142,1,Japan,,
+2021-05-26,0,726626,12537,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -25824,7 +25824,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-05-25,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
 2021-05-26,,35329,1025,,,,,,5248552,2,Japan,Hokkaido,01
 2021-05-26,,2212,28,,,,,,1246138,2,Japan,Aomori,02
-2021-05-26,,1365,43,,,,,,1226430,2,Japan,Iwate,03
+2021-05-26,,1380,43,,,,,,1226430,2,Japan,Iwate,03
 2021-05-26,,8755,82,,,,,,2303160,2,Japan,Miyagi,04
 2021-05-26,,747,12,,,,,,965968,2,Japan,Akita,05
 2021-05-26,,1921,39,,,,,,1077057,2,Japan,Yamagata,06
@@ -25843,7 +25843,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-05-26,,1483,19,,,,,,812056,2,Japan,Yamanashi,19
 2021-05-26,,4671,76,,,,,,2049023,2,Japan,Nagano,20
 2021-05-26,,8248,153,,,,,,1988931,2,Japan,Gifu,21
-2021-05-26,,8089,135,,,,,,3639226,2,Japan,Shizuoka,22
+2021-05-26,,8127,135,,,,,,3639226,2,Japan,Shizuoka,22
 2021-05-26,,45225,730,,,,,,7552873,2,Japan,Aichi,23
 2021-05-26,,4741,103,,,,,,1779770,2,Japan,Mie,24
 2021-05-26,,4855,76,,,,,,1413959,2,Japan,Shiga,25
@@ -25854,7 +25854,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-05-26,,2574,40,,,,,,923721,2,Japan,Wakayama,30
 2021-05-26,,462,2,,,,,,555663,2,Japan,Tottori,31
 2021-05-26,,520,0,,,,,,673891,2,Japan,Shimane,32
-2021-05-26,,7068,96,,,,,,1891346,2,Japan,Okayama,33
+2021-05-26,,7110,97,,,,,,1891346,2,Japan,Okayama,33
 2021-05-26,,10120,123,,,,,,2807987,2,Japan,Hiroshima,34
 2021-05-26,,2822,58,,,,,,1355495,2,Japan,Yamaguchi,35
 2021-05-26,,1625,61,,,,,,728633,2,Japan,Tokushima,36
