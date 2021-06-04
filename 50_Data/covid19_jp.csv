@@ -483,7 +483,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-06-01,14453145,749104,13160,680125,51590,,,1323,126216142,1,Japan,,
 2021-06-02,14522247,752138,13273,684553,49471,,,1284,126216142,1,Japan,,
 2021-06-03,14600561,754968,13384,690064,46968,,,1227,126216142,1,Japan,,
-2021-06-04,0,757452,13452,0,0,,,0,126216142,1,Japan,,
+2021-06-04,0,757461,13452,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -26338,6 +26338,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-06-04,,3435,30,,,,,,1599984,2,Japan,Kagoshima,46
 2021-06-04,,18048,153,,,,,,1454184,2,Japan,Okinawa,47
 2021-06-04,,14,0,,,,,,,1,Japan,Charter Flight,
-2021-06-04,,2980,4,,,,,,,1,Japan,Quarantine,
+2021-06-04,,2989,4,,,,,,,1,Japan,Quarantine,
 2021-06-04,,712,13,,,,,,,1,Japan,Diamond Princess,
 2021-06-04,,149,0,,,,,,,1,Japan,Costa Atlantica,
