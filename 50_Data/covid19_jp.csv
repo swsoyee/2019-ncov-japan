@@ -484,7 +484,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-06-02,14522247,752138,13273,684553,49471,,,1284,126216142,1,Japan,,
 2021-06-03,14600561,754968,13384,690064,46968,,,1227,126216142,1,Japan,,
 2021-06-04,14778824,757561,13470,694363,45491,,,1198,126216142,1,Japan,,
-2021-06-05,0,758176,13495,0,0,,,0,126216142,1,Japan,,
+2021-06-05,0,758480,13499,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -26342,7 +26342,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-06-04,705460,2989,4,2894,72,,,0,,1,Japan,Quarantine,
 2021-06-04,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2021-06-04,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2021-06-05,,39221,1176,,,,,,5248552,2,Japan,Hokkaido,01
+2021-06-05,,39221,1179,,,,,,5248552,2,Japan,Hokkaido,01
 2021-06-05,,2406,30,,,,,,1246138,2,Japan,Aomori,02
 2021-06-05,,1481,45,,,,,,1226430,2,Japan,Iwate,03
 2021-06-05,,8949,83,,,,,,2303160,2,Japan,Miyagi,04
@@ -26362,7 +26362,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-06-05,,1053,34,,,,,,767742,2,Japan,Fukui,18
 2021-06-05,,1590,19,,,,,,812056,2,Japan,Yamanashi,19
 2021-06-05,,4849,85,,,,,,2049023,2,Japan,Nagano,20
-2021-06-05,,8859,167,,,,,,1988931,2,Japan,Gifu,21
+2021-06-05,,8902,168,,,,,,1988931,2,Japan,Gifu,21
 2021-06-05,,8601,139,,,,,,3639226,2,Japan,Shizuoka,22
 2021-06-05,,48382,832,,,,,,7552873,2,Japan,Aichi,23
 2021-06-05,,4997,107,,,,,,1779770,2,Japan,Mie,24
@@ -26388,7 +26388,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-06-05,,3432,55,,,,,,1134431,2,Japan,Oita,44
 2021-06-05,,3038,26,,,,,,1072077,2,Japan,Miyazaki,45
 2021-06-05,,3435,30,,,,,,1599984,2,Japan,Kagoshima,46
-2021-06-05,,18048,153,,,,,,1454184,2,Japan,Okinawa,47
+2021-06-05,,18309,153,,,,,,1454184,2,Japan,Okinawa,47
 2021-06-05,,14,0,,,,,,,1,Japan,Charter Flight,
 2021-06-05,,2989,4,,,,,,,1,Japan,Quarantine,
 2021-06-05,,712,13,,,,,,,1,Japan,Diamond Princess,
