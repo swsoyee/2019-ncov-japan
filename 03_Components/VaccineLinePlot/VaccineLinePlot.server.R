@@ -2,6 +2,13 @@ observeEvent(input$linePlot, {
   if ((input$linePlot == "vaccine") && is.null(GLOBAL_VALUE$vaccine)) {
     vaccine <- fread(file = "50_Data/MHLW/vaccine.csv")
     vaccine$date <- as.Date(as.character(vaccine$date), format = "%Y%m%d")
+    vaccine$total <- rowSums(vaccine[, 2:ncol(vaccine)])
+    vaccine[, `:=` (
+      medical_first = medical_first_pfizer + medical_first_moderna,
+      medical_second = medical_second_pfizer + medical_second_moderna,
+      elderly_first = elderly_first_pfizer + elderly_first_moderna,
+      elderly_second = elderly_second_pfizer + elderly_second_moderna
+    )]
     GLOBAL_VALUE$vaccine <- vaccine
   }
 })
@@ -9,7 +16,6 @@ observeEvent(input$linePlot, {
 output$vaccine_line_plot <- renderEcharts4r({
   if (!is.null(GLOBAL_VALUE$vaccine)) {
     vaccine <- GLOBAL_VALUE$vaccine
-    vaccine$total <- rowSums(vaccine[, 2:5])
     vaccine %>%
       e_chart(x = date) %>%
       e_bar(
@@ -101,7 +107,7 @@ output$vaccine_medical_total <- renderUI({
   if (!is.null(GLOBAL_VALUE$vaccine)) {
     vaccine <- GLOBAL_VALUE$vaccine
     # Calculate number by date
-    total_number_by_date <- rowSums(vaccine[, 2:3])
+    total_number_by_date <- vaccine[, medical_first + medical_second]
     diff <- tail(total_number_by_date, n = 1)
     descriptionBlock(
       number = countup(diff),
@@ -118,7 +124,7 @@ output$vaccine_elderly_total <- renderUI({
   if (!is.null(GLOBAL_VALUE$vaccine)) {
     vaccine <- GLOBAL_VALUE$vaccine
     # Calculate number by date
-    total_number_by_date <- rowSums(vaccine[, 4:5])
+    total_number_by_date <- vaccine[, elderly_first + elderly_second]
     diff <- tail(total_number_by_date, n = 1)
     descriptionBlock(
       number = countup(diff),
@@ -161,7 +167,7 @@ output$vaccineTwitterShare <- renderUI({
         "&url=https://covid-2019.live/&hashtags=新型コロナ,新型コロナワクチン"
       ),
       tail(vaccine$date, n = 1),
-      prettyNum(sum(colSums(vaccine[, 2:5])), big.mark = ","),
+      prettyNum(sum(vaccine$total), big.mark = ","),
       prettyNum(total_first, big.mark = ","),
       prettyNum(total_second, big.mark = ","),
       round(total_second / total_first * 100, 2)

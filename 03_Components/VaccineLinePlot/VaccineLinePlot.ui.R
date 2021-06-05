@@ -14,7 +14,7 @@ tabPanel(
     column(
       width = 4,
       tags$br(),
-      tags$p("今までに接種が行われた新型コロナワクチンの接種回数や施設数などの情報をお届けします。"),
+      tags$p("今までに接種が行われた新型コロナワクチンの接種回数などの情報をお届けします。"),
       fluidRow(
         column(width = 6, uiOutput("vaccine_medical_total")),
         column(width = 6, uiOutput("vaccine_elderly_total"))

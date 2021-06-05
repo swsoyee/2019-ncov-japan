@@ -80,29 +80,34 @@ vaccine$date <- as.character(vaccine$date)
 definition <- list(
   list(
     category = "medical",
-    url = "https://www.kantei.go.jp/jp/content/IRYO-vaccination_data.pdf"
+    url = "https://www.kantei.go.jp/jp/content/IRYO-vaccination_data2.pdf"
   ),
   list(
     category = "elderly",
-    url = "https://www.kantei.go.jp/jp/content/KOREI-vaccination_data.pdf"
+    url = "https://www.kantei.go.jp/jp/content/KOREI-vaccination_data2.pdf"
   )
 )
 
 for (item in definition) {
   # Extract table
   data <- tabulizer::extract_tables(item$url)
-  data <- data.table(data[[1]])[3:.N, ]
-  data <- data[, .(V1, V4, V5)]
+  data <- data.table(data[[1]])[4:.N, ]
+  data <- data[, .(V1, V4, V5, V6, V7)]
 
+  cols <- c(
+    paste0(item$category, "_first_pfizer"),
+    paste0(item$category, "_first_moderna"),
+    paste0(item$category, "_second_pfizer"),
+    paste0(item$category, "_second_moderna")
+  )
+  
   colnames(data) <- c(
     "date",
-    paste0(item$category, "_first"),
-    paste0(item$category, "_second")
+    cols
   )
 
   # Handle columns
   data$date <- format(as.Date(data$date), "%Y%m%d")
-  cols <- c(paste0(item$category, "_first"), paste0(item$category, "_second"))
   data[, (cols) := lapply(.SD, function(x) {
     return(as.numeric(gsub(",", "", x)))
   }), .SDcols = cols]
@@ -111,5 +116,7 @@ for (item in definition) {
   n <- names(data)
   vaccine[data, on = .(date), (n) := mget(paste0("i.", n))]
 }
+
+for (i in names(vaccine)) vaccine[is.na(get(i)), (i):=0]
 
 fwrite(vaccine, file = data_path)

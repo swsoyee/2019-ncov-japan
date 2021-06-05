@@ -380,6 +380,11 @@ source(file = "00_System/Generate.covid19datahub.R")
 
 # ====Value for display====
 vaccine <- fread("50_Data/MHLW/vaccine.csv")
+vaccine[, `:=` (
+  medical_second = medical_second_pfizer + medical_second_moderna,
+  elderly_second = elderly_second_pfizer + elderly_second_moderna
+)]
+
 vaccine_complete <- sum(vaccine[, .(medical_second + elderly_second)])
 
 average_7_vaccine <- round(mean(tail(vaccine[, .(medical_second + elderly_second)], n = 7)$V1))

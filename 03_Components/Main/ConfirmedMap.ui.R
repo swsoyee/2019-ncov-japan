@@ -60,7 +60,7 @@ tabPanel(
       ),
       helpText(
         sprintf(
-          i18n$t("2021/2/17 接種開始日から %s 日を経ち、２回目接種完了率は %s。直近７日の平均毎日の接種完了人数は %s、あと約 %s 日で目標の %s に達成できる。"),
+          i18n$t("2021/2/17 接種開始日から %s 日を経ち、２回目接種完了率は %s。直近７日の２回目まで完了した平均毎日の接種完了人数は %s、あと約 %s 日で目標の %s に達成できる。"),
           as.numeric(Sys.Date() - as.Date("2021-02-17")),
           paste0(round(global_value_for_display[key == "vaccine_complete"]$value / sum(prefecture_master$人口) * 100, 2), "%"),
           prettyNum(global_value_for_display[key == "average_7_vaccine"]$value, big.mark = ","),
