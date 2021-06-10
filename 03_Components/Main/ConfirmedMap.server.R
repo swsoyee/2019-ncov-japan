@@ -150,11 +150,11 @@ output$echartsSimpleMap <- renderEcharts4r({
     )
     color_in_range <- c("#DADADA", "#3fcc8d", middleGreen, darkGreen, superDarkGreen, superDarkGreen2)
     split_list <- list(
-      list(min = 4.0, label = "> 4.0 %"),
+      list(min = 6.0, label = "> 6.0 %"),
+      list(min = 5.0, max = 6.0, label = "5.0 % ~ 6.0 %"),
+      list(min = 4.0, max = 5.0, label = "4.0 % ~ 5.0 %"),
       list(min = 3.0, max = 4.0, label = "3.0 % ~ 4.0 %"),
-      list(min = 2.0, max = 3.0, label = "2.0 % ~ 3.0 %"),
-      list(min = 1.0, max = 2.0, label = "1.0 % ~ 2.0 %"),
-      list(min = 0.0, max = 1.0, label = "0.0 % ~ 1.0 %"),
+      list(min = 0.0, max = 3.0, label = "0.0 % ~ 3.0 %"),
       list(value = 0, label = "0")
     )
     formatter <- htmlwidgets::JS(paste0(
