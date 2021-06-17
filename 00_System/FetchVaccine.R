@@ -90,7 +90,7 @@ definition <- list(
 
 for (item in definition) {
   # Extract table
-  data <- tabulizer::extract_tables(item$url)
+  data <- tabulizer::extract_tables(item$url, method = "lattice")
   data <- data.table(data[[1]])[4:.N, ]
   data <- data[, .(V1, V4, V5, V6, V7)]
 
