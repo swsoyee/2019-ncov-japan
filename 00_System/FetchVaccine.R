@@ -90,9 +90,16 @@ definition <- list(
 
 for (item in definition) {
   # Extract table
-  data <- tabulizer::extract_tables(item$url, method = "lattice")
-  data <- data.table(data[[1]])[4:.N, ]
-  data <- data[, .(V1, V4, V5, V6, V7)]
+  data <- tabulizer::extract_tables(item$url)
+  if (item$category == "medical") {
+    data <- data.table(data[[1]])[4:.N, ]
+    data <- data[, .(V1, V4, V5, V6, V7)]
+  } else {
+    data <- data.table(data[[1]])[5:.N, ]
+    data[, c("V1", "week", "total") := tstrsplit(V2, " ", fixed = TRUE)]
+    data[, c("V4", "V5") := tstrsplit(V4, " ", fixed = TRUE)]
+    data <- data[, .(V1, V3, V4, V5, V6)]
+  }
 
   cols <- c(
     paste0(item$category, "_first_pfizer"),
