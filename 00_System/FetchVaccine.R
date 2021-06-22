@@ -17,7 +17,7 @@ definition <- list(
   ),
   list(
     category = "elderly",
-    url = "https://www.kantei.go.jp/jp/content/KOREI-kenbetsu-vaccination_data.pdf"
+    url = "https://www.kantei.go.jp/jp/content/KOREI-kenbetsu-vaccination_data2.pdf"
   )
 )
 
@@ -80,25 +80,23 @@ vaccine$date <- as.character(vaccine$date)
 definition <- list(
   list(
     category = "medical",
-    url = "https://www.kantei.go.jp/jp/content/IRYO-vaccination_data2.pdf"
+    url = "https://www.kantei.go.jp/jp/content/IRYO-vaccination_data3.pdf"
   ),
   list(
     category = "elderly",
-    url = "https://www.kantei.go.jp/jp/content/KOREI-vaccination_data2.pdf"
+    url = "https://www.kantei.go.jp/jp/content/KOREI-vaccination_data3.pdf"
   )
 )
 
 for (item in definition) {
   # Extract table
   data <- tabulizer::extract_tables(item$url)
+  data <- data.table(data[[1]])[5:.N, ]
   if (item$category == "medical") {
-    data <- data.table(data[[1]])[4:.N, ]
-    data <- data[, .(V1, V4, V5, V6, V7)]
-  } else {
-    data <- data.table(data[[1]])[5:.N, ]
     data[, c("V1", "week", "total") := tstrsplit(V2, " ", fixed = TRUE)]
-    data[, c("V4", "V5") := tstrsplit(V4, " ", fixed = TRUE)]
     data <- data[, .(V1, V3, V4, V5, V6)]
+  } else {
+    data <- data[, .(V1, V4, V5, V6, V7)]
   }
 
   cols <- c(
