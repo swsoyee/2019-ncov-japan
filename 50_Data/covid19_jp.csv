@@ -502,7 +502,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-06-20,15815670,784959,14425,748202,20343,,,714,126216142,1,Japan,,
 2021-06-21,15849376,785827,14460,749905,19866,,,721,126216142,1,Japan,,
 2021-06-22,15902304,787264,14504,752042,18814,,,697,126216142,1,Japan,,
-2021-06-23,0,787430,14508,0,0,,,0,126216142,1,Japan,,
+2021-06-23,0,787572,14520,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -27278,10 +27278,10 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-06-22,747185,3078,5,2966,92,,,0,,1,Japan,Quarantine,
 2021-06-22,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2021-06-22,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2021-06-23,,40969,1358,,,,,,5248552,2,Japan,Hokkaido,01
+2021-06-23,,41018,1369,,,,,,5248552,2,Japan,Hokkaido,01
 2021-06-23,,2453,31,,,,,,1246138,2,Japan,Aomori,02
 2021-06-23,,1643,46,,,,,,1226430,2,Japan,Iwate,03
-2021-06-23,,9075,86,,,,,,2303160,2,Japan,Miyagi,04
+2021-06-23,,9085,87,,,,,,2303160,2,Japan,Miyagi,04
 2021-06-23,,782,20,,,,,,965968,2,Japan,Akita,05
 2021-06-23,,2020,47,,,,,,1077057,2,Japan,Yamagata,06
 2021-06-23,,4803,161,,,,,,1847950,2,Japan,Fukushima,07
@@ -27298,7 +27298,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-06-23,,1180,34,,,,,,767742,2,Japan,Fukui,18
 2021-06-23,,2012,20,,,,,,812056,2,Japan,Yamanashi,19
 2021-06-23,,4985,91,,,,,,2049023,2,Japan,Nagano,20
-2021-06-23,,9203,185,,,,,,1988931,2,Japan,Gifu,21
+2021-06-23,,9214,185,,,,,,1988931,2,Japan,Gifu,21
 2021-06-23,,9104,148,,,,,,3639226,2,Japan,Shizuoka,22
 2021-06-23,,50581,943,,,,,,7552873,2,Japan,Aichi,23
 2021-06-23,,5179,110,,,,,,1779770,2,Japan,Mie,24
@@ -27324,7 +27324,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-06-23,,3487,62,,,,,,1134431,2,Japan,Oita,44
 2021-06-23,,3061,27,,,,,,1072077,2,Japan,Miyazaki,45
 2021-06-23,,3641,38,,,,,,1599984,2,Japan,Kagoshima,46
-2021-06-23,,20249,171,,,,,,1454184,2,Japan,Okinawa,47
+2021-06-23,,20321,171,,,,,,1454184,2,Japan,Okinawa,47
 2021-06-23,,14,0,,,,,,,1,Japan,Charter Flight,
 2021-06-23,,3078,5,,,,,,,1,Japan,Quarantine,
 2021-06-23,,712,13,,,,,,,1,Japan,Diamond Princess,
