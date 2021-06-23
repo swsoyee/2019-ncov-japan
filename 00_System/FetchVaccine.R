@@ -91,11 +91,12 @@ definition <- list(
 for (item in definition) {
   # Extract table
   data <- tabulizer::extract_tables(item$url)
-  data <- data.table(data[[1]])[5:.N, ]
   if (item$category == "medical") {
-    data[, c("V1", "week", "total") := tstrsplit(V2, " ", fixed = TRUE)]
-    data <- data[, .(V1, V3, V4, V5, V6)]
+    data <- data.table(data[[1]])[4:.N, ]
+    # data[, c("V1", "week", "total") := tstrsplit(V2, " ", fixed = TRUE)]
+    data <- data[, .(V1, V4, V5, V6, V7)]
   } else {
+    data <- data.table(data[[1]])[5:.N, ]
     data <- data[, .(V1, V4, V5, V6, V7)]
   }
 
