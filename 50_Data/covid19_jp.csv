@@ -505,7 +505,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-06-23,15956332,789009,14562,753922,18210,,,646,126216142,1,Japan,,
 2021-06-24,16020381,790682,14604,755897,17996,,,629,126216142,1,Japan,,
 2021-06-25,16082802,792390,14635,757487,18004,,,590,126216142,1,Japan,,
-2021-06-26,0,794009,14664,0,0,,,0,126216142,1,Japan,,
+2021-06-26,0,794023,14664,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -27482,6 +27482,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-06-26,,3653,38,,,,,,1599984,2,Japan,Kagoshima,46
 2021-06-26,,20539,179,,,,,,1454184,2,Japan,Okinawa,47
 2021-06-26,,14,0,,,,,,,1,Japan,Charter Flight,
-2021-06-26,,3092,5,,,,,,,1,Japan,Quarantine,
+2021-06-26,,3106,5,,,,,,,1,Japan,Quarantine,
 2021-06-26,,712,13,,,,,,,1,Japan,Diamond Princess,
 2021-06-26,,149,0,,,,,,,1,Japan,Costa Atlantica,
