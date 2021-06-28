@@ -13,7 +13,7 @@ vaccineByRegion <- fread(data_path)
 definition <- list(
   list(
     category = "medical",
-    url = "https://www.kantei.go.jp/jp/content/IRYO-kenbetsu-vaccination_data.pdf"
+    url = "https://www.kantei.go.jp/jp/content/IRYO-kenbetsu-vaccination_data2.pdf"
   ),
   list(
     category = "elderly",
