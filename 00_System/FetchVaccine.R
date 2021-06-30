@@ -100,7 +100,9 @@ for (item in definition) {
     data <- data[, .(V1, V3, V4, V5, V6)]
   } else {
     data <- data.table(data[[1]])[5:.N, ]
-    data <- data[, .(V1, V4, V5, V6, V7)]
+    data[, c("V1", "week") := tstrsplit(V1, " ", fixed = TRUE)]
+    data[, c("m_first", "p_second") := tstrsplit(V5, " ", fixed = TRUE)]
+    data <- data[, .(V1, V4, m_first, p_second, V6)]
   }
 
   cols <- c(
