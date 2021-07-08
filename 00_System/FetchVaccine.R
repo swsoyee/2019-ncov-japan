@@ -80,12 +80,12 @@ vaccine$date <- as.character(vaccine$date)
 definition <- list(
   list(
     category = "medical",
-    url = "https://www.kantei.go.jp/jp/content/vaccination_data.pdf",
+    url = "https://www.kantei.go.jp/jp/content/vaccination_data5.pdf",
     page = 3
   ),
   list(
     category = "elderly",
-    url = "https://www.kantei.go.jp/jp/content/vaccination_data.pdf",
+    url = "https://www.kantei.go.jp/jp/content/vaccination_data5.pdf",
     page = 2
   )
 )
