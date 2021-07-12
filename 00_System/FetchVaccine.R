@@ -13,17 +13,19 @@ vaccineByRegion <- fread(data_path)
 definition <- list(
   list(
     category = "medical",
-    url = "https://www.kantei.go.jp/jp/content/IRYO-kenbetsu-vaccination_data2.pdf"
+    url = "https://www.kantei.go.jp/jp/content/kenbetsu-vaccination_data2.pdf",
+    page = 3
   ),
   list(
     category = "elderly",
-    url = "https://www.kantei.go.jp/jp/content/KOREI-kenbetsu-vaccination_data2.pdf"
+    url = "https://www.kantei.go.jp/jp/content/kenbetsu-vaccination_data2.pdf",
+    page = 2
   )
 )
 
 for (item in definition) {
   # Extract update date in PDF file
-  date <- strsplit(tabulizer::extract_text(item$url), split = "\n")[[1]][2]
+  date <- strsplit(tabulizer::extract_text(item$url, pages = item$page), split = "\n")[[1]][2]
   date <- paste0(format(Sys.Date(), "%Y"), "年", gsub("（(.*)時点）", "\\1", date))
   date_new <- format(as.Date(date, format = "%Y年%m月%d日"), "%Y%m%d")
 
