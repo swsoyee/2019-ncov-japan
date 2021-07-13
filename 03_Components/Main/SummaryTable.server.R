@@ -192,14 +192,14 @@ output$dischargeAndDeathByPrefTable <- renderDataTable({
     )
   ) %>%
     spk_add_deps() %>%
-    formatStyle(
-      columns = "totalDischarged",
-      color = do.call(
-        styleInterval,
-        generateColorStyle(data = dt$totalDischarged, colors = c(lightGreen, darkGreen), by = 100)
-      ),
-      fontWeight = "bold"
-    ) %>%
+    # formatStyle(
+    #   columns = "totalDischarged",
+    #   color = do.call(
+    #     styleInterval,
+    #     generateColorStyle(data = dt$totalDischarged, colors = c(lightGreen, darkGreen), by = 100)
+    #   ),
+    #   fontWeight = "bold"
+    # ) %>%
     formatCurrency(
       columns = "totalDischarged",
       currency = "",
