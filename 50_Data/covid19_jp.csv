@@ -539,7 +539,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-07-27,18013366,882709,15153,819856,38967,,,514,126216142,1,Japan,,
 2021-07-28,18109091,892286,15161,823626,42438,,,522,126216142,1,Japan,,
 2021-07-29,18198588,902975,15175,827121,47991,,,539,126216142,1,Japan,,
-2021-07-30,0,913192,15183,0,0,,,0,126216142,1,Japan,,
+2021-07-30,0,913717,15183,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -29220,7 +29220,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-07-30,,2260,38,,,,,,1042998,2,Japan,Toyama,16
 2021-07-30,,5015,118,,,,,,1137181,2,Japan,Ishikawa,17
 2021-07-30,,1577,36,,,,,,767742,2,Japan,Fukui,18
-2021-07-30,,2346,21,,,,,,812056,2,Japan,Yamanashi,19
+2021-07-30,,2377,21,,,,,,812056,2,Japan,Yamanashi,19
 2021-07-30,,5253,94,,,,,,2049023,2,Japan,Nagano,20
 2021-07-30,,9567,188,,,,,,1988931,2,Japan,Gifu,21
 2021-07-30,,10716,155,,,,,,3639226,2,Japan,Shizuoka,22
@@ -29241,7 +29241,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-07-30,,2229,32,,,,,,956069,2,Japan,Kagawa,37
 2021-07-30,,2906,77,,,,,,1338811,2,Japan,Ehime,38
 2021-07-30,,2073,29,,,,,,697674,2,Japan,Kochi,39
-2021-07-30,,38313,532,,,,,,5110113,2,Japan,Fukuoka,40
+2021-07-30,,38791,532,,,,,,5110113,2,Japan,Fukuoka,40
 2021-07-30,,2719,24,,,,,,814211,2,Japan,Saga,41
 2021-07-30,,3443,69,,,,,,1325205,2,Japan,Nagasaki,42
 2021-07-30,,6912,121,,,,,,1746740,2,Japan,Kumamoto,43
@@ -29250,6 +29250,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-07-30,,3947,39,,,,,,1599984,2,Japan,Kagoshima,46
 2021-07-30,,24315,236,,,,,,1454184,2,Japan,Okinawa,47
 2021-07-30,,14,0,,,,,,,1,Japan,Charter Flight,
-2021-07-30,,3476,7,,,,,,,1,Japan,Quarantine,
+2021-07-30,,3492,7,,,,,,,1,Japan,Quarantine,
 2021-07-30,,712,13,,,,,,,1,Japan,Diamond Princess,
 2021-07-30,,149,0,,,,,,,1,Japan,Costa Atlantica,
