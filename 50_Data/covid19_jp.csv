@@ -544,7 +544,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-08-01,18473804,936217,15198,838997,69362,,,691,126216142,1,Japan,,
 2021-08-02,18513613,944605,15209,842533,75824,,,704,126216142,1,Japan,,
 2021-08-03,18623176,956618,15219,847616,79754,,,754,126216142,1,Japan,,
-2021-08-04,0,958876,15220,0,0,,,0,126216142,1,Japan,,
+2021-08-04,0,959238,15220,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -29483,7 +29483,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-08-04,,2543,21,,,,,,812056,2,Japan,Yamanashi,19
 2021-08-04,,5414,94,,,,,,2049023,2,Japan,Nagano,20
 2021-08-04,,9683,188,,,,,,1988931,2,Japan,Gifu,21
-2021-08-04,,11210,157,,,,,,3639226,2,Japan,Shizuoka,22
+2021-08-04,,11412,157,,,,,,3639226,2,Japan,Shizuoka,22
 2021-08-04,,54646,1009,,,,,,7552873,2,Japan,Aichi,23
 2021-08-04,,5957,114,,,,,,1779770,2,Japan,Mie,24
 2021-08-04,,6200,93,,,,,,1413959,2,Japan,Shiga,25
@@ -29494,7 +29494,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-08-04,,3077,49,,,,,,923721,2,Japan,Wakayama,30
 2021-08-04,,872,2,,,,,,555663,2,Japan,Tottori,31
 2021-08-04,,763,2,,,,,,673891,2,Japan,Shimane,32
-2021-08-04,,8406,127,,,,,,1891346,2,Japan,Okayama,33
+2021-08-04,,8537,127,,,,,,1891346,2,Japan,Okayama,33
 2021-08-04,,12295,179,,,,,,2807987,2,Japan,Hiroshima,34
 2021-08-04,,3342,80,,,,,,1355495,2,Japan,Yamaguchi,35
 2021-08-04,,1822,63,,,,,,728633,2,Japan,Tokushima,36
@@ -29506,7 +29506,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-08-04,,3578,69,,,,,,1325205,2,Japan,Nagasaki,42
 2021-08-04,,7204,121,,,,,,1746740,2,Japan,Kumamoto,43
 2021-08-04,,3760,64,,,,,,1134431,2,Japan,Oita,44
-2021-08-04,,3292,27,,,,,,1072077,2,Japan,Miyazaki,45
+2021-08-04,,3321,27,,,,,,1072077,2,Japan,Miyazaki,45
 2021-08-04,,4064,39,,,,,,1599984,2,Japan,Kagoshima,46
 2021-08-04,,26400,237,,,,,,1454184,2,Japan,Okinawa,47
 2021-08-04,,14,0,,,,,,,1,Japan,Charter Flight,
