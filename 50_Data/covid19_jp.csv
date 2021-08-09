@@ -549,7 +549,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-08-06,18930208,1001696,15261,864546,102733,,,1020,126216142,1,Japan,,
 2021-08-07,19045727,1017441,15275,873299,109877,,,1068,126216142,1,Japan,,
 2021-08-08,19120237,1031912,15285,881373,117219,,,1138,126216142,1,Japan,,
-2021-08-09,0,1040475,15294,0,0,,,0,126216142,1,Japan,,
+2021-08-09,0,1040552,15294,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -29755,7 +29755,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-08-09,,1005,3,,,,,,555663,2,Japan,Tottori,31
 2021-08-09,,810,2,,,,,,673891,2,Japan,Shimane,32
 2021-08-09,,9022,127,,,,,,1891346,2,Japan,Okayama,33
-2021-08-09,,12833,180,,,,,,2807987,2,Japan,Hiroshima,34
+2021-08-09,,12898,180,,,,,,2807987,2,Japan,Hiroshima,34
 2021-08-09,,3455,80,,,,,,1355495,2,Japan,Yamaguchi,35
 2021-08-09,,1863,63,,,,,,728633,2,Japan,Tokushima,36
 2021-08-09,,2599,32,,,,,,956069,2,Japan,Kagawa,37
@@ -29770,6 +29770,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-08-09,,4487,40,,,,,,1599984,2,Japan,Kagoshima,46
 2021-08-09,,29066,240,,,,,,1454184,2,Japan,Okinawa,47
 2021-08-09,,14,0,,,,,,,1,Japan,Charter Flight,
-2021-08-09,,3599,7,,,,,,,1,Japan,Quarantine,
+2021-08-09,,3611,7,,,,,,,1,Japan,Quarantine,
 2021-08-09,,712,13,,,,,,,1,Japan,Diamond Princess,
 2021-08-09,,149,0,,,,,,,1,Japan,Costa Atlantica,
