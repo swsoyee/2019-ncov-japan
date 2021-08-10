@@ -25,7 +25,8 @@ definition <- list(
 
 for (item in definition) {
   # Extract update date in PDF file
-  date <- strsplit(tabulizer::extract_text(item$url, pages = item$page), split = "\n")[[1]][2]
+  index <- ifelse(item$category == "elderly", 63, 2)
+  date <- strsplit(tabulizer::extract_text(item$url, pages = item$page), split = "\n")[[1]][index]
   date <- paste0(format(Sys.Date(), "%Y"), "年", gsub("（(.*)時点）", "\\1", date))
   date_new <- format(as.Date(date, format = "%Y年%m月%d日"), "%Y%m%d")
 
@@ -33,18 +34,27 @@ for (item in definition) {
   vaccineByRegion <- vaccineByRegion[!(category == item$category & date == date_new)]
 
   # Extract table from PDF
-  data <- tabulizer::extract_tables(item$url)
-  data <- data.table(data[[1]])[3:.N, ]
+  data <- tabulizer::extract_tables(item$url, pages = item$page)
+  data <- data.table(data[[1]])[4:.N, ]
 
   if (item$category == "elderly") {
     pre_data <- data[, .(
       prefecture = V1,
       total = V2,
-      first = V3,
-      second = V4,
+      first_cal = V4,
+      second_cal = V6,
       category = item$category,
       date = date_new
-    )]
+    )][4:.N, ]
+    pre_data[, c("first_p", "second_p") := tstrsplit(first_cal, " ", fixed = TRUE)]
+    pre_data[, c("total_m", "first_m", "second_m") := tstrsplit(second_cal, " ", fixed = TRUE)]
+    cols <- c("first_p", "second_p", "first_m", "second_m")
+    pre_data[, (cols) := lapply(.SD, function(x) {
+      return(as.numeric(gsub(",", "", x)))
+    }), .SDcols = cols]
+    pre_data[, first := (first_p + first_m)]
+    pre_data[, second := (second_p + second_m)]
+    pre_data <- pre_data[, .(prefecture, total, first, second, category, date)]
   }
   if (item$category == "medical") {
     pre_data <- data[, .(
