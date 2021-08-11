@@ -551,7 +551,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-08-08,19120237,1031843,15285,881373,117219,,,1138,126216142,1,Japan,,
 2021-08-09,19164730,1043910,15296,889661,123229,,,1190,126216142,1,Japan,,
 2021-08-10,19196748,1054482,15315,898849,126445,,,1230,126216142,1,Japan,,
-2021-08-11,0,1054915,15315,0,0,,,0,126216142,1,Japan,,
+2021-08-11,0,1055096,15315,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -29827,7 +29827,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-08-10,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2021-08-10,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
 2021-08-11,,47296,1429,,,,,,5248552,2,Japan,Hokkaido,01
-2021-08-11,,2909,32,,,,,,1246138,2,Japan,Aomori,02
+2021-08-11,,2968,32,,,,,,1246138,2,Japan,Aomori,02
 2021-08-11,,2205,47,,,,,,1226430,2,Japan,Iwate,03
 2021-08-11,,10705,91,,,,,,2303160,2,Japan,Miyagi,04
 2021-08-11,,1101,21,,,,,,965968,2,Japan,Akita,05
@@ -29842,7 +29842,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-08-11,,100484,1014,,,,,,9200166,2,Japan,Kanagawa,14
 2021-08-11,,4755,54,,,,,,2222004,2,Japan,Niigata,15
 2021-08-11,,2649,38,,,,,,1042998,2,Japan,Toyama,16
-2021-08-11,,5836,119,,,,,,1137181,2,Japan,Ishikawa,17
+2021-08-11,,5911,119,,,,,,1137181,2,Japan,Ishikawa,17
 2021-08-11,,1917,36,,,,,,767742,2,Japan,Fukui,18
 2021-08-11,,2930,21,,,,,,812056,2,Japan,Yamanashi,19
 2021-08-11,,5770,94,,,,,,2049023,2,Japan,Nagano,20
@@ -29860,7 +29860,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-08-11,,839,2,,,,,,673891,2,Japan,Shimane,32
 2021-08-11,,9086,127,,,,,,1891346,2,Japan,Okayama,33
 2021-08-11,,12956,180,,,,,,2807987,2,Japan,Hiroshima,34
-2021-08-11,,3487,80,,,,,,1355495,2,Japan,Yamaguchi,35
+2021-08-11,,3534,80,,,,,,1355495,2,Japan,Yamaguchi,35
 2021-08-11,,1876,63,,,,,,728633,2,Japan,Tokushima,36
 2021-08-11,,2702,32,,,,,,956069,2,Japan,Kagawa,37
 2021-08-11,,3317,77,,,,,,1338811,2,Japan,Ehime,38
