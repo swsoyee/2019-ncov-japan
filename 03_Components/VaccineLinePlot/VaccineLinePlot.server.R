@@ -4,10 +4,10 @@ observeEvent(input$linePlot, {
     vaccine$date <- as.Date(as.character(vaccine$date), format = "%Y%m%d")
     vaccine$total <- rowSums(vaccine[, 2:ncol(vaccine)])
     vaccine[, `:=` (
-      medical_first = medical_first_pfizer + medical_first_moderna,
-      medical_second = medical_second_pfizer + medical_second_moderna,
-      elderly_first = elderly_first_pfizer + elderly_first_moderna,
-      elderly_second = elderly_second_pfizer + elderly_second_moderna
+      medical_first = medical_first_pfizer + medical_first_moderna + medical_first_astrazeneca,
+      medical_second = medical_second_pfizer + medical_second_moderna + medical_second_astrazeneca,
+      elderly_first = elderly_first_pfizer + elderly_first_moderna + elderly_first_astrazeneca,
+      elderly_second = elderly_second_pfizer + elderly_second_moderna + elderly_second_astrazeneca
     )]
     GLOBAL_VALUE$vaccine <- vaccine
   }
@@ -44,7 +44,7 @@ output$vaccine_line_plot <- renderEcharts4r({
       ) %>%
       e_bar(
         elderly_first,
-        name = "高齢者（１回目）",
+        name = "一般接種（１回目）",
         itemStyle = list(
           color = superDarkGreen
         ),
@@ -52,7 +52,7 @@ output$vaccine_line_plot <- renderEcharts4r({
       ) %>%
       e_bar(
         elderly_second,
-        name = "高齢者（２回目）",
+        name = "一般接種（２回目）",
         itemStyle = list(
           color = superDarkGreen2
         ),
@@ -132,7 +132,7 @@ output$vaccine_elderly_total <- renderUI({
       header = countup(sum(total_number_by_date)),
       numberColor = "black",
       rightBorder = FALSE,
-      text = "高齢者等"
+      text = "一般接種"
     )
   }
 })

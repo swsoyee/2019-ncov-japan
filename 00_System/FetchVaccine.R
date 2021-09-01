@@ -111,20 +111,22 @@ for (item in definition) {
     ## Sometime using this pattern
     data <- data.table(data[[1]])[5:.N, ]
     data[, c("V1", "week", "total") := tstrsplit(V2, " ", fixed = TRUE)]
-    data <- data[, .(V1, V3, V4, V5, V6)]
+    data <- data[, .(V1, V5, V6, 0, V7, V8, 0)]
   } else {
     data <- data.table(data[[1]])[5:.N, ]
     # data[, c("V1", "week") := tstrsplit(V1, " ", fixed = TRUE)]
     # data[, c("m_first", "p_second") := tstrsplit(V5, " ", fixed = TRUE)]
     # data <- data[, .(V1, V4, m_first, p_second, V6)]
-    data <- data[, .(V1, V4, V5, V6, V7)]
+    data <- data[, .(V1, V4, V5, V6, V7, V8, V9)]
   }
 
   cols <- c(
     paste0(item$category, "_first_pfizer"),
     paste0(item$category, "_first_moderna"),
+    paste0(item$category, "_first_astrazeneca"),
     paste0(item$category, "_second_pfizer"),
-    paste0(item$category, "_second_moderna")
+    paste0(item$category, "_second_moderna"),
+    paste0(item$category, "_second_astrazeneca")
   )
   
   colnames(data) <- c(
