@@ -99,6 +99,11 @@ definition <- list(
     category = "elderly",
     url = "https://www.kantei.go.jp/jp/content/vaccination_data5.pdf",
     page = 2
+  ),
+  list(
+    category = "worker",
+    url = "https://www.kantei.go.jp/jp/content/vaccination_data5.pdf",
+    page = 4
   )
 )
 
@@ -112,12 +117,17 @@ for (item in definition) {
     data <- data.table(data[[1]])[5:.N, ]
     data[, c("V1", "week", "total") := tstrsplit(V2, " ", fixed = TRUE)]
     data <- data[, .(V1, V5, V6, 0, V7, V8, 0)]
-  } else {
+  } 
+  if (item$category == "elderly") {
     data <- data.table(data[[1]])[5:.N, ]
     # data[, c("V1", "week") := tstrsplit(V1, " ", fixed = TRUE)]
     # data[, c("m_first", "p_second") := tstrsplit(V5, " ", fixed = TRUE)]
     # data <- data[, .(V1, V4, m_first, p_second, V6)]
     data <- data[, .(V1, V4, V5, V6, V7, V8, V9)]
+  }
+  if (item$category == "worker") {
+    data <- data.table(data[[1]])[3:.N, ]
+    data <- data[, .(V1, 0, V6, 0, 0, V7, 0)]
   }
 
   cols <- c(
