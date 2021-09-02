@@ -6,8 +6,12 @@ observeEvent(input$linePlot, {
     vaccine[, `:=` (
       medical_first = medical_first_pfizer + medical_first_moderna + medical_first_astrazeneca,
       medical_second = medical_second_pfizer + medical_second_moderna + medical_second_astrazeneca,
-      elderly_first = elderly_first_pfizer + elderly_first_moderna + elderly_first_astrazeneca,
-      elderly_second = elderly_second_pfizer + elderly_second_moderna + elderly_second_astrazeneca
+      elderly_first = (elderly_first_pfizer + elderly_first_moderna + elderly_first_astrazeneca)
+        + (worker_first_pfizer + worker_first_moderna + worker_first_astrazeneca)
+        - (duplicate_first_pfizer + duplicate_first_moderna + duplicate_first_astrazeneca),
+      elderly_second = (elderly_second_pfizer + elderly_second_moderna + elderly_second_astrazeneca)
+        + (worker_second_pfizer + worker_second_moderna + worker_second_astrazeneca)
+        - (duplicate_second_pfizer + duplicate_second_moderna + duplicate_second_astrazeneca)
     )]
     GLOBAL_VALUE$vaccine <- vaccine
   }
@@ -18,14 +22,6 @@ output$vaccine_line_plot <- renderEcharts4r({
     vaccine <- GLOBAL_VALUE$vaccine
     vaccine %>%
       e_chart(x = date) %>%
-      e_bar(
-        total,
-        name = "合計",
-        barGap = "-100%",
-        itemStyle = list(
-          color = darkBlue
-        )
-      ) %>%
       e_bar(
         medical_first,
         name = "医療従事者（１回目）",
