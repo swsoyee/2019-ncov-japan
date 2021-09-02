@@ -161,6 +161,14 @@ for (item in definition) {
 
   # Update data
   n <- names(data)
+  if (item$category == "worker") {
+    worker_first_moderna_first_day <- data[.N][["worker_first_moderna"]]
+    worker_second_moderna_first_day <- data[.N][["worker_second_moderna"]]
+    data[order(date), worker_first_moderna := worker_first_moderna - shift(worker_first_moderna)]
+    data[order(date), worker_second_moderna := worker_second_moderna - shift(worker_second_moderna)]
+    data[.N, worker_first_moderna := worker_first_moderna_first_day]
+    data[.N, worker_second_moderna := worker_second_moderna_first_day]
+  }
   if (item$category == "duplicate") {
     duplicate_first_moderna_first_day <- data[.N][["duplicate_first_moderna"]]
     duplicate_second_moderna_first_day <- data[.N][["duplicate_second_moderna"]]
