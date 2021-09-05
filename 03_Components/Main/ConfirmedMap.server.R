@@ -144,7 +144,7 @@ output$echartsSimpleMap <- renderEcharts4r({
   
   if (input$selectMapBottomButton %in% c("vaccine_ratio")) {
     subText <- sprintf(
-      i18n$t("データ更新日：\n\n医療従事者等（%s）\n高齢者等（%s）"),
+      i18n$t("データ更新日：\n\n医療従事者等（%s）\n一般接種（高齢者含む）（%s）"),
       as.Date(as.character(unique(dt$date_medical)), format = "%Y%m%d"),
       as.Date(as.character(unique(dt$date_elderly)), format = "%Y%m%d")
     )

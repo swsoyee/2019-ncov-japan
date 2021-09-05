@@ -11,11 +11,12 @@ vaccineByRegion <- fread(data_path)
 
 # Define origion
 definition <- list(
-  list(
-    category = "medical",
-    url = "https://www.kantei.go.jp/jp/content/kenbetsu-vaccination_data2.pdf",
-    page = 3
-  ),
+  # 医療従事者等は、令和３年７月30日で集計を終了。
+  # list(
+  #   category = "medical",
+  #   url = "https://www.kantei.go.jp/jp/content/kenbetsu-vaccination_data2.pdf",
+  #   page = 3
+  # ),
   list(
     category = "elderly",
     url = "https://www.kantei.go.jp/jp/content/kenbetsu-vaccination_data2.pdf",
@@ -25,7 +26,9 @@ definition <- list(
 
 for (item in definition) {
   # Extract update date in PDF file
-  index <- ifelse(item$category == "elderly", 63, 2)
+  index <- ifelse(item$category == "elderly", 69, 2)
+  row_start <- 5
+
   date <- strsplit(tabulizer::extract_text(item$url, pages = item$page), split = "\n")[[1]][index]
   date <- paste0(format(Sys.Date(), "%Y"), "年", gsub("（(.*)時点）", "\\1", date))
   date_new <- format(as.Date(date, format = "%Y年%m月%d日"), "%Y%m%d")
@@ -35,25 +38,27 @@ for (item in definition) {
 
   # Extract table from PDF
   data <- tabulizer::extract_tables(item$url, pages = item$page)
-  data <- data.table(data[[1]])[4:.N, ]
+  data <- data.table(data[[1]])[row_start:.N, ]
 
   if (item$category == "elderly") {
     pre_data <- data[, .(
       prefecture = V1,
       total = V2,
-      first_cal = V4,
-      second_cal = V6,
+      first_p = V4,
+      second_p = V5,
+      first_m = V7,
+      second_m = V8,
+      first_a = V10,
+      second_a = V11,
       category = item$category,
       date = date_new
-    )][4:.N, ]
-    pre_data[, c("first_p", "second_p") := tstrsplit(first_cal, " ", fixed = TRUE)]
-    pre_data[, c("total_m", "first_m", "second_m") := tstrsplit(second_cal, " ", fixed = TRUE)]
-    cols <- c("first_p", "second_p", "first_m", "second_m")
+    )]
+    cols <- c("total", "first_p", "second_p", "first_m", "second_m", "first_a", "second_a")
     pre_data[, (cols) := lapply(.SD, function(x) {
       return(as.numeric(gsub(",", "", x)))
     }), .SDcols = cols]
-    pre_data[, first := (first_p + first_m)]
-    pre_data[, second := (second_p + second_m)]
+    pre_data[, first := (first_p + first_m + first_a)]
+    pre_data[, second := (second_p + second_m + second_a)]
     pre_data <- pre_data[, .(prefecture, total, first, second, category, date)]
   }
   if (item$category == "medical") {
@@ -68,6 +73,7 @@ for (item in definition) {
   }
 
   pre_data[, c("code", "prefecture") := tstrsplit(prefecture, " ", fixed = TRUE)]
+  pre_data[, code := as.numeric(code)]
 
   cols <- c("total", "first", "second")
   pre_data[, (cols) := lapply(.SD, function(x) {
@@ -122,7 +128,7 @@ for (item in definition) {
     data <- data.table(data[[1]])[5:.N, ]
     data[, c("V1", "week", "total") := tstrsplit(V2, " ", fixed = TRUE)]
     data <- data[, .(V1, V5, V6, 0, V7, V8, 0)]
-  } 
+  }
   if (item$category == "elderly") {
     data <- data.table(data[[1]])[5:.N, ]
     # data[, c("V1", "week") := tstrsplit(V1, " ", fixed = TRUE)]
@@ -147,7 +153,7 @@ for (item in definition) {
     paste0(item$category, "_second_moderna"),
     paste0(item$category, "_second_astrazeneca")
   )
-  
+
   colnames(data) <- c(
     "date",
     cols
@@ -180,6 +186,6 @@ for (item in definition) {
   vaccine[data, on = .(date), (n) := mget(paste0("i.", n))]
 }
 
-for (i in names(vaccine)) vaccine[is.na(get(i)), (i):=0]
+for (i in names(vaccine)) vaccine[is.na(get(i)), (i) := 0]
 
 fwrite(vaccine, file = data_path)
