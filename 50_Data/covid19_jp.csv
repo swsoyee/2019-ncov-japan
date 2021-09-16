@@ -587,7 +587,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-09-13,23306327,1644473,16853,1494850,123929,,,1975,126216142,1,Japan,,
 2021-09-14,23428435,1650747,16909,1511530,112321,,,1905,126216142,1,Japan,,
 2021-09-15,23529970,1657550,16982,1525238,104191,,,1834,126216142,1,Japan,,
-2021-09-16,0,1658315,16984,0,0,,,0,126216142,1,Japan,,
+2021-09-16,0,1658606,16986,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -31701,7 +31701,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-09-16,,59307,1464,,,,,,5248552,2,Japan,Hokkaido,01
 2021-09-16,,5269,33,,,,,,1246138,2,Japan,Aomori,02
 2021-09-16,,3439,50,,,,,,1226430,2,Japan,Iwate,03
-2021-09-16,,15859,108,,,,,,2303160,2,Japan,Miyagi,04
+2021-09-16,,15873,108,,,,,,2303160,2,Japan,Miyagi,04
 2021-09-16,,1793,26,,,,,,965968,2,Japan,Akita,05
 2021-09-16,,3450,55,,,,,,1077057,2,Japan,Yamagata,06
 2021-09-16,,9323,173,,,,,,1847950,2,Japan,Fukushima,07
@@ -31713,7 +31713,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-09-16,,368950,2712,,,,,,13942856,2,Japan,Tokyo,13
 2021-09-16,,163633,1208,,,,,,9200166,2,Japan,Kanagawa,14
 2021-09-16,,7504,58,,,,,,2222004,2,Japan,Niigata,15
-2021-09-16,,4712,48,,,,,,1042998,2,Japan,Toyama,16
+2021-09-16,,4716,48,,,,,,1042998,2,Japan,Toyama,16
 2021-09-16,,7694,123,,,,,,1137181,2,Japan,Ishikawa,17
 2021-09-16,,2899,36,,,,,,767742,2,Japan,Fukui,18
 2021-09-16,,4940,29,,,,,,812056,2,Japan,Yamanashi,19
@@ -31730,7 +31730,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-09-16,,5088,59,,,,,,923721,2,Japan,Wakayama,30
 2021-09-16,,1625,5,,,,,,555663,2,Japan,Tottori,31
 2021-09-16,,1530,2,,,,,,673891,2,Japan,Shimane,32
-2021-09-16,,14841,135,,,,,,1891346,2,Japan,Okayama,33
+2021-09-16,,14885,135,,,,,,1891346,2,Japan,Okayama,33
 2021-09-16,,20939,191,,,,,,2807987,2,Japan,Hiroshima,34
 2021-09-16,,5455,88,,,,,,1355495,2,Japan,Yamaguchi,35
 2021-09-16,,3157,64,,,,,,728633,2,Japan,Tokushima,36
@@ -31744,7 +31744,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-09-16,,7858,75,,,,,,1134431,2,Japan,Oita,44
 2021-09-16,,5997,39,,,,,,1072077,2,Japan,Miyazaki,45
 2021-09-16,,8928,59,,,,,,1599984,2,Japan,Kagoshima,46
-2021-09-16,,47996,276,,,,,,1454184,2,Japan,Okinawa,47
+2021-09-16,,48225,278,,,,,,1454184,2,Japan,Okinawa,47
 2021-09-16,,14,0,,,,,,,1,Japan,Charter Flight,
 2021-09-16,,4080,7,,,,,,,1,Japan,Quarantine,
 2021-09-16,,712,13,,,,,,,1,Japan,Diamond Princess,
