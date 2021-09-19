@@ -10,7 +10,7 @@
 # 
 # for (i in names(location)) {
 #   if (!i %in% dataset$日付) {
-#     out <- tabulizer::extract_tables(location[i][[1]], method = "lattice")
+#     out <- tabulizer::extract_tables(location[i][[1]], pages = 2, method = "lattice")
 # 
 #     dt <- data.table(out[[ifelse(length(out) > 1, 2, 1)]])
 #     # 沖縄処理
