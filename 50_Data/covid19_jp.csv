@@ -590,7 +590,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-09-16,23638872,1663241,17045,1539284,96735,,,1743,126216142,1,Japan,,
 2021-09-17,23738142,1668331,17109,1551195,90745,,,1615,126216142,1,Japan,,
 2021-09-18,23909407,1673029,17172,1563492,84010,,,1559,126216142,1,Japan,,
-2021-09-19,0,1673350,17174,0,0,,,0,126216142,1,Japan,,
+2021-09-19,0,1673389,17174,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -31856,7 +31856,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-09-18,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
 2021-09-19,,59464,1465,,,,,,5248552,2,Japan,Hokkaido,01
 2021-09-19,,5420,33,,,,,,1246138,2,Japan,Aomori,02
-2021-09-19,,3456,51,,,,,,1226430,2,Japan,Iwate,03
+2021-09-19,,3463,51,,,,,,1226430,2,Japan,Iwate,03
 2021-09-19,,15968,113,,,,,,2303160,2,Japan,Miyagi,04
 2021-09-19,,1809,26,,,,,,965968,2,Japan,Akita,05
 2021-09-19,,3458,55,,,,,,1077057,2,Japan,Yamagata,06
@@ -31869,7 +31869,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-09-19,,371425,2781,,,,,,13942856,2,Japan,Tokyo,13
 2021-09-19,,165167,1224,,,,,,9200166,2,Japan,Kanagawa,14
 2021-09-19,,7609,58,,,,,,2222004,2,Japan,Niigata,15
-2021-09-19,,4732,48,,,,,,1042998,2,Japan,Toyama,16
+2021-09-19,,4741,48,,,,,,1042998,2,Japan,Toyama,16
 2021-09-19,,7740,123,,,,,,1137181,2,Japan,Ishikawa,17
 2021-09-19,,2935,36,,,,,,767742,2,Japan,Fukui,18
 2021-09-19,,4969,29,,,,,,812056,2,Japan,Yamanashi,19
@@ -31886,7 +31886,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-09-19,,5138,59,,,,,,923721,2,Japan,Wakayama,30
 2021-09-19,,1632,5,,,,,,555663,2,Japan,Tottori,31
 2021-09-19,,1546,2,,,,,,673891,2,Japan,Shimane,32
-2021-09-19,,14947,135,,,,,,1891346,2,Japan,Okayama,33
+2021-09-19,,14970,135,,,,,,1891346,2,Japan,Okayama,33
 2021-09-19,,21146,191,,,,,,2807987,2,Japan,Hiroshima,34
 2021-09-19,,5486,88,,,,,,1355495,2,Japan,Yamaguchi,35
 2021-09-19,,3189,64,,,,,,728633,2,Japan,Tokushima,36
