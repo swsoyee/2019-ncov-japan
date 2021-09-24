@@ -595,7 +595,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-09-21,24041060,1680399,17283,1593449,65287,,,1429,126216142,1,Japan,,
 2021-09-22,24129368,1683642,17337,1603017,58294,,,1383,126216142,1,Japan,,
 2021-09-23,24224696,1687245,17386,1612216,51785,,,1273,126216142,1,Japan,,
-2021-09-24,0,1687469,17389,0,0,,,0,126216142,1,Japan,,
+2021-09-24,0,1687541,17389,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -32114,7 +32114,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-09-23,1037232,4148,7,4011,114,,,0,,1,Japan,Quarantine,
 2021-09-23,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2021-09-23,,149,0,149,0,,,,,1,Japan,Costa Atlantica,
-2021-09-24,,59758,1466,,,,,,5248552,2,Japan,Hokkaido,01
+2021-09-24,,59820,1466,,,,,,5248552,2,Japan,Hokkaido,01
 2021-09-24,,5537,35,,,,,,1246138,2,Japan,Aomori,02
 2021-09-24,,3474,52,,,,,,1226430,2,Japan,Iwate,03
 2021-09-24,,16072,115,,,,,,2303160,2,Japan,Miyagi,04
@@ -32129,7 +32129,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-09-24,,373613,2838,,,,,,13942856,2,Japan,Tokyo,13
 2021-09-24,,166437,1239,,,,,,9200166,2,Japan,Kanagawa,14
 2021-09-24,,7721,58,,,,,,2222004,2,Japan,Niigata,15
-2021-09-24,,4763,48,,,,,,1042998,2,Japan,Toyama,16
+2021-09-24,,4768,48,,,,,,1042998,2,Japan,Toyama,16
 2021-09-24,,7789,123,,,,,,1137181,2,Japan,Ishikawa,17
 2021-09-24,,3004,36,,,,,,767742,2,Japan,Fukui,18
 2021-09-24,,5027,29,,,,,,812056,2,Japan,Yamanashi,19
@@ -32155,7 +32155,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-09-24,,4078,31,,,,,,697674,2,Japan,Kochi,39
 2021-09-24,,73337,602,,,,,,5110113,2,Japan,Fukuoka,40
 2021-09-24,,5687,29,,,,,,814211,2,Japan,Saga,41
-2021-09-24,,5940,71,,,,,,1325205,2,Japan,Nagasaki,42
+2021-09-24,,5945,71,,,,,,1325205,2,Japan,Nagasaki,42
 2021-09-24,,14146,133,,,,,,1746740,2,Japan,Kumamoto,43
 2021-09-24,,7982,79,,,,,,1134431,2,Japan,Oita,44
 2021-09-24,,6081,40,,,,,,1072077,2,Japan,Miyazaki,45
