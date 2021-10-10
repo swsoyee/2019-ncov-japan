@@ -611,7 +611,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-10-07,25190326,1707792,17860,1673459,14263,,,595,126216142,1,Japan,,
 2021-10-08,25252386,1708619,17906,1675789,12948,,,526,126216142,1,Japan,,
 2021-10-09,25322667,1709395,17930,1677619,12035,,,501,126216142,1,Japan,,
-2021-10-10,0,1709469,17931,0,0,,,0,126216142,1,Japan,,
+2021-10-10,0,1709506,17931,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -32946,10 +32946,10 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-10-09,1080888,4305,7,4152,129,,,0,,1,Japan,Quarantine,
 2021-10-09,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2021-10-09,0,149,0,149,0,,,0,,1,Japan,Costa Atlantica,
-2021-10-10,,60218,1469,,,,,,5248552,2,Japan,Hokkaido,01
+2021-10-10,,60235,1469,,,,,,5248552,2,Japan,Hokkaido,01
 2021-10-10,,5767,38,,,,,,1246138,2,Japan,Aomori,02
 2021-10-10,,3486,53,,,,,,1226430,2,Japan,Iwate,03
-2021-10-10,,16241,117,,,,,,2303160,2,Japan,Miyagi,04
+2021-10-10,,16242,117,,,,,,2303160,2,Japan,Miyagi,04
 2021-10-10,,1889,27,,,,,,965968,2,Japan,Akita,05
 2021-10-10,,3511,56,,,,,,1077057,2,Japan,Yamagata,06
 2021-10-10,,9463,174,,,,,,1847950,2,Japan,Fukushima,07
@@ -32978,7 +32978,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-10-10,,5277,62,,,,,,923721,2,Japan,Wakayama,30
 2021-10-10,,1651,5,,,,,,555663,2,Japan,Tottori,31
 2021-10-10,,1632,4,,,,,,673891,2,Japan,Shimane,32
-2021-10-10,,15174,136,,,,,,1891346,2,Japan,Okayama,33
+2021-10-10,,15177,136,,,,,,1891346,2,Japan,Okayama,33
 2021-10-10,,21778,199,,,,,,2807987,2,Japan,Hiroshima,34
 2021-10-10,,5630,90,,,,,,1355495,2,Japan,Yamaguchi,35
 2021-10-10,,3277,65,,,,,,728633,2,Japan,Tokushima,36
@@ -32989,10 +32989,10 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-10-10,,5787,29,,,,,,814211,2,Japan,Saga,41
 2021-10-10,,6042,72,,,,,,1325205,2,Japan,Nagasaki,42
 2021-10-10,,14310,135,,,,,,1746740,2,Japan,Kumamoto,43
-2021-10-10,,8169,84,,,,,,1134431,2,Japan,Oita,44
+2021-10-10,,8171,84,,,,,,1134431,2,Japan,Oita,44
 2021-10-10,,6129,41,,,,,,1072077,2,Japan,Miyazaki,45
 2021-10-10,,9075,65,,,,,,1599984,2,Japan,Kagoshima,46
-2021-10-10,,49858,341,,,,,,1454184,2,Japan,Okinawa,47
+2021-10-10,,49872,341,,,,,,1454184,2,Japan,Okinawa,47
 2021-10-10,,14,0,,,,,,,1,Japan,Charter Flight,
 2021-10-10,,4305,7,,,,,,,1,Japan,Quarantine,
 2021-10-10,,712,13,,,,,,,1,Japan,Diamond Princess,
