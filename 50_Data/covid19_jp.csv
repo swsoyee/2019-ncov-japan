@@ -642,7 +642,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-11-07,26786668,1723110,18309,1701827,2186,,,100,126216142,1,Japan,,
 2021-11-08,26806898,1723217,18312,1701999,2204,,,101,126216142,1,Japan,,
 2021-11-09,26863887,1723421,18315,1702232,2099,,,99,126216142,1,Japan,,
-2021-11-10,0,1723450,18315,0,0,,,0,126216142,1,Japan,,
+2021-11-10,0,1723474,18315,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -34558,7 +34558,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-11-09,1167176,4504,8,4402,76,,,0,,1,Japan,Quarantine,
 2021-11-09,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2021-11-09,0,149,0,149,0,,,0,,1,Japan,Costa Atlantica,
-2021-11-10,,60646,1472,,,,,,5248552,2,Japan,Hokkaido,01
+2021-11-10,,60654,1472,,,,,,5248552,2,Japan,Hokkaido,01
 2021-11-10,,5896,38,,,,,,1246138,2,Japan,Aomori,02
 2021-11-10,,3486,53,,,,,,1226430,2,Japan,Iwate,03
 2021-11-10,,16274,118,,,,,,2303160,2,Japan,Miyagi,04
@@ -34579,7 +34579,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-11-10,,5148,29,,,,,,812056,2,Japan,Yamanashi,19
 2021-11-10,,8881,97,,,,,,2049023,2,Japan,Nagano,20
 2021-11-10,,18871,218,,,,,,1988931,2,Japan,Gifu,21
-2021-11-10,,26762,209,,,,,,3639226,2,Japan,Shizuoka,22
+2021-11-10,,26764,209,,,,,,3639226,2,Japan,Shizuoka,22
 2021-11-10,,106452,1156,,,,,,7552873,2,Japan,Aichi,23
 2021-11-10,,14782,163,,,,,,1779770,2,Japan,Mie,24
 2021-11-10,,12410,104,,,,,,1413959,2,Japan,Shiga,25
@@ -34590,7 +34590,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-11-10,,5296,62,,,,,,923721,2,Japan,Wakayama,30
 2021-11-10,,1668,5,,,,,,555663,2,Japan,Tottori,31
 2021-11-10,,1731,5,,,,,,673891,2,Japan,Shimane,32
-2021-11-10,,15402,136,,,,,,1891346,2,Japan,Okayama,33
+2021-11-10,,15416,136,,,,,,1891346,2,Japan,Okayama,33
 2021-11-10,,22088,202,,,,,,2807987,2,Japan,Hiroshima,34
 2021-11-10,,5756,93,,,,,,1355495,2,Japan,Yamaguchi,35
 2021-11-10,,3289,65,,,,,,728633,2,Japan,Tokushima,36
