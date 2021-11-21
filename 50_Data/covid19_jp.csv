@@ -653,7 +653,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-11-18,27333495,1724945,18341,1705677,1597,,,76,126216142,1,Japan,,
 2021-11-19,27387016,1725104,18341,1705863,1577,,,62,126216142,1,Japan,,
 2021-11-20,27448895,1725214,18346,1706116,1552,,,62,126216142,1,Japan,,
-2021-11-21,0,1725230,18346,0,0,,,0,126216142,1,Japan,,
+2021-11-21,0,1725261,18346,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -35130,7 +35130,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-11-20,1197777,4570,8,4478,68,,,0,,1,Japan,Quarantine,
 2021-11-20,3618,712,13,659,,,,0,,1,Japan,Diamond Princess,
 2021-11-20,0,149,0,149,0,,,0,,1,Japan,Costa Atlantica,
-2021-11-21,,60835,1472,,,,,,5248552,2,Japan,Hokkaido,01
+2021-11-21,,60860,1472,,,,,,5248552,2,Japan,Hokkaido,01
 2021-11-21,,5897,38,,,,,,1246138,2,Japan,Aomori,02
 2021-11-21,,3487,53,,,,,,1226430,2,Japan,Iwate,03
 2021-11-21,,16276,118,,,,,,2303160,2,Japan,Miyagi,04
@@ -35162,7 +35162,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2021-11-21,,5299,62,,,,,,923721,2,Japan,Wakayama,30
 2021-11-21,,1669,5,,,,,,555663,2,Japan,Tottori,31
 2021-11-21,,1731,5,,,,,,673891,2,Japan,Shimane,32
-2021-11-21,,15506,136,,,,,,1891346,2,Japan,Okayama,33
+2021-11-21,,15512,136,,,,,,1891346,2,Japan,Okayama,33
 2021-11-21,,22124,202,,,,,,2807987,2,Japan,Hiroshima,34
 2021-11-21,,5773,93,,,,,,1355495,2,Japan,Yamaguchi,35
 2021-11-21,,3291,66,,,,,,728633,2,Japan,Tokushima,36
