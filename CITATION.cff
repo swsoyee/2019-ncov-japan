@@ -1,0 +1,57 @@
+cff-version: 1.2.0
+message: "If you use this software or dataset, please cite it using the metadata from this file."
+authors:
+  - family-names: Su
+    given-names: Wei
+    email: swsoyee@gmail.com
+    affiliation: Yahoo Japan Corporation
+    orcid: 'https://orcid.org/0000-0002-9302-5332'
+  - family-names: Fu
+    given-names: Wei
+    email: wfu@yahoo-corp.jp
+    affiliation: Yahoo Japan Corporation
+    orcid: 'https://orcid.org/0000-0002-2601-4510'
+  - family-names: Kato
+    given-names: Kojuro
+    email: kojuro-kato@keio.jp
+    affiliation: Faculty of Economics, Keio University
+    orcid: 'https://orcid.org/0000-0002-9302-5332'
+  - family-names: Wong
+    given-names: Zoie Shui-Yee
+    email: zoiesywong@gmail.com
+    affiliation: Graduate School of Public Health, St. Luke's International University
+    orcid: 'https://orcid.org/0000-0003-4499-9779'
+title: "COVID-19 BULLETIN BOARD"
+url: "https://github.com/swsoyee/2019-ncov-japan"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Su
+      given-names: Wei
+      email: swsoyee@gmail.com
+      affiliation: Yahoo Japan Corporation
+      orcid: 'https://orcid.org/0000-0002-9302-5332'
+    - family-names: Fu
+      given-names: Wei
+      email: wfu@yahoo-corp.jp
+      affiliation: Yahoo Japan Corporation
+      orcid: 'https://orcid.org/0000-0002-2601-4510'
+    - family-names: Kato
+      given-names: Kojuro
+      email: kojuro-kato@keio.jp
+      affiliation: Faculty of Economics, Keio University
+      orcid: 'https://orcid.org/0000-0002-9302-5332'
+    - family-names: Wong
+      given-names: Zoie Shui-Yee
+      email: zoiesywong@gmail.com
+      affiliation: Graduate School of Public Health, St. Luke's International University
+      orcid: 'https://orcid.org/0000-0003-4499-9779'
+  doi: "10.3233/SHTI210629"
+  journal: "Studies in Health Technology and Informatics"
+  month: 11
+  start: 21
+  end: 25
+  title: "“Japan LIVE Dashboard” for COVID-19: A Scalable Solution to Monitor Real-Time and Regional-Level Epidemic Case Data"
+  issue: 1
+  volume: 286
+  year: 2021
