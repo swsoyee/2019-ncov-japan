@@ -2,9 +2,8 @@
 
 ![language](https://img.shields.io/github/languages/top/swsoyee/2019-ncov-japan?style=flat-square&logo=r)
 ![last commit](https://img.shields.io/github/last-commit/swsoyee/2019-ncov-japan?style=flat-square)
-![page views](https://img.shields.io/badge/dynamic/json?url=https://cdn.covid-2019.live/static/stats.json&label=PV&query=$.result.totals.pageviews.all&color=orange&style=flat-square)
 [![eRum2020::CovidR](https://badgen.net/https/runkit.io/erum2020-covidr/badge/branches/master/bulletin-board-japan?cache=300)](https://milano-r.github.io/erum2020-covidr-contest/bulletin-board-japan.html)
-[![DOI](https://zenodo.org/badge/237152814.svg)](https://zenodo.org/badge/latestdoi/237152814)
+[![DOI](https://img.shields.io/badge/DOI-10.3233%2FSHTI210629-blue)](https://doi.org/10.3233/SHTI210629)
 
 `🇯🇵日本語` | [`🇨🇳中文`](https://github.com/swsoyee/2019-ncov-japan/blob/master/README.cn.md) | [`🇺🇸English`](https://github.com/swsoyee/2019-ncov-japan/blob/master/README.en.md)
 
@@ -52,3 +51,7 @@ We believe that being able to efficiently inform the public about COVID-19 case 
 
 協力できる有志がいれば、お気軽にご連絡ください。Rのことがわからなくても貢献できることは必ずありますmm。  
 > 例えば日本語の文言の修正、データセットの収集など。
+
+### [引用](./CITATION.cff)
+
+Su, W., Fu, W., Kato, K., & Wong, Z. S. (2021). “Japan LIVE Dashboard” for COVID-19: A Scalable Solution to Monitor Real-Time and Regional-Level Epidemic Case Data. Studies in Health Technology and Informatics, 286(1), 21–25. https://doi.org/10.3233/SHTI210629
