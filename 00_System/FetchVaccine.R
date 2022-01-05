@@ -142,7 +142,7 @@ for (item in definition) {
   }
   if (item$category == "duplicate") {
     data <- data.table(data[[1]])[3:.N, ]
-    data <- data[, .(V1, 0, V6, 0, 0, V7, 0)]
+    data <- data[, .(V1, 0, V5, 0, 0, V6, 0)]
   }
 
   cols <- c(
