@@ -717,7 +717,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-01-21,31341574,2074906,18479,1768182,219663,,,404,126216142,1,Japan,,
 2022-01-22,31577517,2129481,18496,1781111,255578,,,424,126216142,1,Japan,,
 2022-01-23,31743913,2179516,18510,1796311,293577,,,430,126216142,1,Japan,,
-2022-01-24,0,2194588,18510,0,0,,,0,126216142,1,Japan,,
+2022-01-24,0,2195589,18510,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -38477,7 +38477,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-01-24,,9913,140,,,,,,1137181,2,Japan,Ishikawa,17
 2022-01-24,,4361,38,,,,,,767742,2,Japan,Fukui,18
 2022-01-24,,6823,29,,,,,,812056,2,Japan,Yamanashi,19
-2022-01-24,,13409,97,,,,,,2049023,2,Japan,Nagano,20
+2022-01-24,,13843,97,,,,,,2049023,2,Japan,Nagano,20
 2022-01-24,,23818,220,,,,,,1988931,2,Japan,Gifu,21
 2022-01-24,,36704,210,,,,,,3639226,2,Japan,Shizuoka,22
 2022-01-24,,135691,1170,,,,,,7552873,2,Japan,Aichi,23
@@ -38492,7 +38492,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-01-24,,3561,5,,,,,,673891,2,Japan,Shimane,32
 2022-01-24,,20441,136,,,,,,1891346,2,Japan,Okayama,33
 2022-01-24,,39704,217,,,,,,2807987,2,Japan,Hiroshima,34
-2022-01-24,,10232,95,,,,,,1355495,2,Japan,Yamaguchi,35
+2022-01-24,,10525,95,,,,,,1355495,2,Japan,Yamaguchi,35
 2022-01-24,,3907,66,,,,,,728633,2,Japan,Tokushima,36
 2022-01-24,,6317,38,,,,,,956069,2,Japan,Kagawa,37
 2022-01-24,,8268,82,,,,,,1338811,2,Japan,Ehime,38
@@ -38503,7 +38503,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-01-24,,21451,139,,,,,,1746740,2,Japan,Kumamoto,43
 2022-01-24,,10855,84,,,,,,1134431,2,Japan,Oita,44
 2022-01-24,,8521,41,,,,,,1072077,2,Japan,Miyazaki,45
-2022-01-24,,12463,66,,,,,,1599984,2,Japan,Kagoshima,46
+2022-01-24,,12737,66,,,,,,1599984,2,Japan,Kagoshima,46
 2022-01-24,,75920,399,,,,,,1454184,2,Japan,Okinawa,47
 2022-01-24,,14,0,,,,,,,1,Japan,Charter Flight,
 2022-01-24,,8852,8,,,,,,,1,Japan,Quarantine,
