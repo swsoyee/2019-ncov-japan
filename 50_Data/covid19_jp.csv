@@ -721,7 +721,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-01-25,32079534,2286891,18570,1838494,347164,,,444,126216142,1,Japan,,
 2022-01-26,32304895,2358523,18604,1863930,378899,,,470,126216142,1,Japan,,
 2022-01-27,32593866,2437454,18651,1891479,419008,,,537,126216142,1,Japan,,
-2022-01-28,0,2447833,18652,0,0,,,0,126216142,1,Japan,,
+2022-01-28,0,2450885,18653,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -38673,7 +38673,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-01-28,,3373,27,,,,,,965968,2,Japan,Akita,05
 2022-01-28,,5072,56,,,,,,1077057,2,Japan,Yamagata,06
 2022-01-28,,12112,176,,,,,,1847950,2,Japan,Fukushima,07
-2022-01-28,,32289,223,,,,,,2868041,2,Japan,Ibaraki,08
+2022-01-28,,33272,223,,,,,,2868041,2,Japan,Ibaraki,08
 2022-01-28,,21803,123,,,,,,1942312,2,Japan,Tochigi,09
 2022-01-28,,27182,186,,,,,,1937626,2,Japan,Gunma,10
 2022-01-28,,152037,1063,,,,,,7337330,2,Japan,Saitama,11
@@ -38689,7 +38689,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-01-28,,26967,222,,,,,,1988931,2,Japan,Gifu,21
 2022-01-28,,42777,211,,,,,,3639226,2,Japan,Shizuoka,22
 2022-01-28,,149634,1181,,,,,,7552873,2,Japan,Aichi,23
-2022-01-28,,19972,170,,,,,,1779770,2,Japan,Mie,24
+2022-01-28,,20643,170,,,,,,1779770,2,Japan,Mie,24
 2022-01-28,,19950,106,,,,,,1413959,2,Japan,Shiga,25
 2022-01-28,,55682,297,,,,,,2583140,2,Japan,Kyoto,26
 2022-01-28,,295619,3100,,,,,,8823453,2,Japan,Osaka,27
@@ -38703,7 +38703,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-01-28,,11770,95,,,,,,1355495,2,Japan,Yamaguchi,35
 2022-01-28,,4409,67,,,,,,728633,2,Japan,Tokushima,36
 2022-01-28,,7580,40,,,,,,956069,2,Japan,Kagawa,37
-2022-01-28,,9218,84,,,,,,1338811,2,Japan,Ehime,38
+2022-01-28,,9543,85,,,,,,1338811,2,Japan,Ehime,38
 2022-01-28,,5520,35,,,,,,697674,2,Japan,Kochi,39
 2022-01-28,,107897,639,,,,,,5110113,2,Japan,Fukuoka,40
 2022-01-28,,9856,33,,,,,,814211,2,Japan,Saga,41
@@ -38712,7 +38712,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-01-28,,12323,85,,,,,,1134431,2,Japan,Oita,44
 2022-01-28,,9956,41,,,,,,1072077,2,Japan,Miyazaki,45
 2022-01-28,,14391,70,,,,,,1599984,2,Japan,Kagoshima,46
-2022-01-28,,79451,399,,,,,,1454184,2,Japan,Okinawa,47
+2022-01-28,,80524,399,,,,,,1454184,2,Japan,Okinawa,47
 2022-01-28,,14,0,,,,,,,1,Japan,Charter Flight,
 2022-01-28,,9363,8,,,,,,,1,Japan,Quarantine,
 2022-01-28,,712,13,,,,,,,1,Japan,Diamond Princess,
