@@ -19,7 +19,7 @@ definition <- list(
   # ),
   list(
     category = "elderly",
-    url = "https://www.kantei.go.jp/jp/content/kenbetsu-vaccination_data2.pdf",
+    url = "https://www.kantei.go.jp/jp/content/000099047.pdf",
     page = 2
   )
 )
@@ -98,22 +98,22 @@ vaccine$date <- as.character(vaccine$date)
 definition <- list(
   list(
     category = "medical",
-    url = "https://www.kantei.go.jp/jp/content/vaccination_data5.pdf",
+    url = "https://www.kantei.go.jp/jp/content/000099045.pdf",
     page = 4
   ),
   list(
     category = "elderly",
-    url = "https://www.kantei.go.jp/jp/content/vaccination_data5.pdf",
+    url = "https://www.kantei.go.jp/jp/content/000099045.pdf",
     page = 2
   ),
   list(
     category = "worker",
-    url = "https://www.kantei.go.jp/jp/content/vaccination_data5.pdf",
+    url = "https://www.kantei.go.jp/jp/content/000099045.pdf",
     page = 5
   ),
   list(
     category = "duplicate",
-    url = "https://www.kantei.go.jp/jp/content/vaccination_data5.pdf",
+    url = "https://www.kantei.go.jp/jp/content/000099045.pdf",
     page = 6
   )
 )
