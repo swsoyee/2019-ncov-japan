@@ -20,7 +20,7 @@ definition <- list(
   list(
     category = "elderly",
     url = "https://www.kantei.go.jp/jp/content/kenbetsu-vaccination_data2.pdf",
-    page = 2
+    page = 3
   )
 )
 
