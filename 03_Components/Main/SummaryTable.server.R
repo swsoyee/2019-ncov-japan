@@ -309,7 +309,7 @@ output$confirmedByPrefTable <- renderDataTable({
           targets = c(3:7, 9)
         ),
         list(
-          width = "30px",
+          width = "40px",
           className = "dt-right",
           targets = 2
         ),
