@@ -759,7 +759,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-03-04,39532650,5285846,24635,4496977,665305,,,1419,126216142,1,Japan,,
 2022-03-05,39747311,5349518,24819,4575992,655416,,,1399,126216142,1,Japan,,
 2022-03-06,39872476,5403487,24951,4650103,643171,,,1362,126216142,1,Japan,,
-2022-03-07,0,5430051,25043,0,0,,,0,126216142,1,Japan,,
+2022-03-07,0,5430115,25045,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -40650,7 +40650,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-03-07,,12954,70,,,,,,1077057,2,Japan,Yamagata,06
 2022-03-07,,26491,188,,,,,,1847950,2,Japan,Fukushima,07
 2022-03-07,,81805,310,,,,,,2868041,2,Japan,Ibaraki,08
-2022-03-07,,49492,206,,,,,,1942312,2,Japan,Tochigi,09
+2022-03-07,,49492,208,,,,,,1942312,2,Japan,Tochigi,09
 2022-03-07,,56008,259,,,,,,1937626,2,Japan,Gunma,10
 2022-03-07,,340585,1218,,,,,,7337330,2,Japan,Saitama,11
 2022-03-07,,292716,1432,,,,,,6279026,2,Japan,Chiba,12
@@ -40690,6 +40690,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-03-07,,33874,133,,,,,,1599984,2,Japan,Kagoshima,46
 2022-03-07,,105134,429,,,,,,1454184,2,Japan,Okinawa,47
 2022-03-07,,14,0,,,,,,,1,Japan,Charter Flight,
-2022-03-07,,11846,8,,,,,,,1,Japan,Quarantine,
+2022-03-07,,11910,8,,,,,,,1,Japan,Quarantine,
 2022-03-07,,712,13,,,,,,,1,Japan,Diamond Princess,
 2022-03-07,,149,0,,,,,,,1,Japan,Costa Atlantica,
