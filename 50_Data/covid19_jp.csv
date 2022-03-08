@@ -760,7 +760,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-03-05,39747311,5349470,24819,4575992,655416,,,1399,126216142,1,Japan,,
 2022-03-06,39872476,5403439,24951,4650103,643171,,,1362,126216142,1,Japan,,
 2022-03-07,39948387,5440522,25072,4709129,638790,,,1354,126216142,1,Japan,,
-2022-03-08,0,5446863,25087,0,0,,,0,126216142,1,Japan,,
+2022-03-08,0,5449412,25096,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -40715,7 +40715,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-03-08,,18337,54,,,,,,812056,2,Japan,Yamanashi,19
 2022-03-08,,33411,156,,,,,,2049023,2,Japan,Nagano,20
 2022-03-08,,57129,290,,,,,,1988931,2,Japan,Gifu,21
-2022-03-08,,97539,348,,,,,,3639226,2,Japan,Shizuoka,22
+2022-03-08,,98866,352,,,,,,3639226,2,Japan,Shizuoka,22
 2022-03-08,,349091,1751,,,,,,7552873,2,Japan,Aichi,23
 2022-03-08,,44806,253,,,,,,1779770,2,Japan,Mie,24
 2022-03-08,,54577,154,,,,,,1413959,2,Japan,Shiga,25
@@ -40728,7 +40728,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-03-08,,7197,8,,,,,,673891,2,Japan,Shimane,32
 2022-03-08,,52959,211,,,,,,1891346,2,Japan,Okayama,33
 2022-03-08,,78920,414,,,,,,2807987,2,Japan,Hiroshima,34
-2022-03-08,,22972,140,,,,,,1355495,2,Japan,Yamaguchi,35
+2022-03-08,,23370,144,,,,,,1355495,2,Japan,Yamaguchi,35
 2022-03-08,,12853,76,,,,,,728633,2,Japan,Tokushima,36
 2022-03-08,,21624,85,,,,,,956069,2,Japan,Kagawa,37
 2022-03-08,,19088,120,,,,,,1338811,2,Japan,Ehime,38
@@ -40740,7 +40740,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-03-08,,26243,109,,,,,,1134431,2,Japan,Oita,44
 2022-03-08,,20025,99,,,,,,1072077,2,Japan,Miyazaki,45
 2022-03-08,,33874,133,,,,,,1599984,2,Japan,Kagoshima,46
-2022-03-08,,105134,429,,,,,,1454184,2,Japan,Okinawa,47
+2022-03-08,,105958,430,,,,,,1454184,2,Japan,Okinawa,47
 2022-03-08,,14,0,,,,,,,1,Japan,Charter Flight,
 2022-03-08,,11910,8,,,,,,,1,Japan,Quarantine,
 2022-03-08,,712,13,,,,,,,1,Japan,Diamond Princess,
