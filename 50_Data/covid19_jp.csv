@@ -770,7 +770,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-03-15,41189103,5864236,26466,5223918,542907,,,1170,126216142,1,Japan,,
 2022-03-16,41334038,5922158,26629,5281377,529706,,,1140,126216142,1,Japan,,
 2022-03-17,0,5975735,26800,0,0,,,0,126216142,1,Japan,,
-2022-03-18,0,6013476,26906,0,0,,,0,126216142,1,Japan,,
+2022-03-18,0,6015541,26910,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -41221,7 +41221,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-03-18,,13329,43,,,,,,965968,2,Japan,Akita,05
 2022-03-18,,15497,76,,,,,,1077057,2,Japan,Yamagata,06
 2022-03-18,,30967,189,,,,,,1847950,2,Japan,Fukushima,07
-2022-03-18,,96671,352,,,,,,2868041,2,Japan,Ibaraki,08
+2022-03-18,,98471,356,,,,,,2868041,2,Japan,Ibaraki,08
 2022-03-18,,55486,227,,,,,,1942312,2,Japan,Tochigi,09
 2022-03-18,,62922,275,,,,,,1937626,2,Japan,Gunma,10
 2022-03-18,,380709,1281,,,,,,7337330,2,Japan,Saitama,11
@@ -41232,7 +41232,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-03-18,,24896,71,,,,,,1042998,2,Japan,Toyama,16
 2022-03-18,,31635,180,,,,,,1137181,2,Japan,Ishikawa,17
 2022-03-18,,19186,41,,,,,,767742,2,Japan,Fukui,18
-2022-03-18,,20578,61,,,,,,812056,2,Japan,Yamanashi,19
+2022-03-18,,20769,61,,,,,,812056,2,Japan,Yamanashi,19
 2022-03-18,,37997,159,,,,,,2049023,2,Japan,Nagano,20
 2022-03-18,,62127,304,,,,,,1988931,2,Japan,Gifu,21
 2022-03-18,,110967,371,,,,,,3639226,2,Japan,Shizuoka,22
@@ -41262,6 +41262,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-03-18,,37757,158,,,,,,1599984,2,Japan,Kagoshima,46
 2022-03-18,,112302,437,,,,,,1454184,2,Japan,Okinawa,47
 2022-03-18,,14,0,,,,,,,1,Japan,Charter Flight,
-2022-03-18,,12645,8,,,,,,,1,Japan,Quarantine,
+2022-03-18,,12719,8,,,,,,,1,Japan,Quarantine,
 2022-03-18,,712,13,,,,,,,1,Japan,Diamond Princess,
 2022-03-18,,149,0,,,,,,,1,Japan,Costa Atlantica,
