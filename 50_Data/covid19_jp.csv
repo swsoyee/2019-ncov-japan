@@ -779,7 +779,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-03-24,42379614,6248073,27503,5724795,421340,,,891,126216142,1,Japan,,
 2022-03-25,42527466,6295544,27618,5767315,425767,,,733,126216142,1,Japan,,
 2022-03-26,0,6342882,27719,0,0,,,0,126216142,1,Japan,,
-2022-03-27,0,6380232,27769,0,0,,,0,126216142,1,Japan,,
+2022-03-27,0,6386239,27780,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -41692,7 +41692,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-03-27,,109105,371,,,,,,2868041,2,Japan,Ibaraki,08
 2022-03-27,,60066,239,,,,,,1942312,2,Japan,Tochigi,09
 2022-03-27,,67570,280,,,,,,1937626,2,Japan,Gunma,10
-2022-03-27,,410334,1347,,,,,,7337330,2,Japan,Saitama,11
+2022-03-27,,414273,1355,,,,,,7337330,2,Japan,Saitama,11
 2022-03-27,,347322,1642,,,,,,6279026,2,Japan,Chiba,12
 2022-03-27,,1220749,4141,,,,,,13942856,2,Japan,Tokyo,13
 2022-03-27,,586906,1997,,,,,,9200166,2,Japan,Kanagawa,14
@@ -41721,7 +41721,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-03-27,,28390,107,,,,,,956069,2,Japan,Kagawa,37
 2022-03-27,,23830,127,,,,,,1338811,2,Japan,Ehime,38
 2022-03-27,,16492,98,,,,,,697674,2,Japan,Kochi,39
-2022-03-27,,291810,1113,,,,,,5110113,2,Japan,Fukuoka,40
+2022-03-27,,293751,1116,,,,,,5110113,2,Japan,Fukuoka,40
 2022-03-27,,30662,79,,,,,,814211,2,Japan,Saga,41
 2022-03-27,,33421,115,,,,,,1325205,2,Japan,Nagasaki,42
 2022-03-27,,62716,271,,,,,,1746740,2,Japan,Kumamoto,43
@@ -41730,6 +41730,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-03-27,,41456,167,,,,,,1599984,2,Japan,Kagoshima,46
 2022-03-27,,118843,438,,,,,,1454184,2,Japan,Okinawa,47
 2022-03-27,,14,0,,,,,,,1,Japan,Charter Flight,
-2022-03-27,,13456,8,,,,,,,1,Japan,Quarantine,
+2022-03-27,,13583,8,,,,,,,1,Japan,Quarantine,
 2022-03-27,,712,13,,,,,,,1,Japan,Diamond Princess,
 2022-03-27,,149,0,,,,,,,1,Japan,Costa Atlantica,
