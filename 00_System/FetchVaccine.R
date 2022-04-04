@@ -99,22 +99,22 @@ definition <- list(
   list(
     category = "medical",
     url = "https://www.kantei.go.jp/jp/content/vaccination_data5.pdf",
-    page = 4
+    page = 6
   ),
   list(
     category = "elderly",
     url = "https://www.kantei.go.jp/jp/content/vaccination_data5.pdf",
-    page = 2
+    page = 4
   ),
   list(
     category = "worker",
     url = "https://www.kantei.go.jp/jp/content/vaccination_data5.pdf",
-    page = 5
+    page = 7
   ),
   list(
     category = "duplicate",
     url = "https://www.kantei.go.jp/jp/content/vaccination_data5.pdf",
-    page = 6
+    page = 8
   )
 )
 
