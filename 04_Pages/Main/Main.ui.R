@@ -20,6 +20,7 @@ fluidPage(
     )$value
   },
   fluidRow(
+    uiOutput("surveyBtn"),
     box(
       title = tagList(
         icon("map-marked-alt"),

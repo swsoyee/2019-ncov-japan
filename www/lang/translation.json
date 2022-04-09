@@ -2185,6 +2185,11 @@
       "ja": "データソース：NewsDigest",
       "cn": "数据来源：データソース：NewsDigest",
       "en": "Data source: データソース：NewsDigest"
+    },
+    {
+      "ja": "COVID-19情報に関するアンケートに協力しませんか？",
+      "cn": "不知您是否愿意帮助我们完成一份关于COVID-19信息的调查问卷？",
+      "en": "Would you like to cooperate in a survey about COVID-19?"
     }
   ]
 }

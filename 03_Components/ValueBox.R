@@ -75,3 +75,26 @@ output$saveArea <- renderUI({
     ) # なし
   }
 })
+
+output$surveyBtn <- renderUI({
+  print(languageSetting)
+  column(
+      width = 12,
+      actionButton(
+        width = "100%",
+        inputId = "survey",
+        style = paste0("color: #fff; background-color: ", middleGreen),
+        label = i18n$t("COVID-19情報に関するアンケートに協力しませんか？"),
+        icon = icon("check-double"),
+        onclick = paste0("window.open('",
+          ifelse(
+            languageSetting != "ja",
+            "https://www.surveymonkey.com/r/UnderstandingtheJapaneseonlinecommunity_COVID19_ENG",
+            "https://www.surveymonkey.com/r/UnderstandingtheJapaneseonlinecommunity_COVID19_JAP"
+          ), "', '_blank')"
+        )
+      ),
+      tags$br(),
+      tags$br()
+    )
+})
