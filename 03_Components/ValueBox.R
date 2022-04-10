@@ -77,7 +77,6 @@ output$saveArea <- renderUI({
 })
 
 output$surveyBtn <- renderUI({
-  print(languageSetting)
   column(
       width = 12,
       actionButton(
