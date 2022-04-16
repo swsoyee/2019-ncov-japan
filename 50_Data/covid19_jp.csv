@@ -799,7 +799,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-04-13,45004065,7191030,28840,6587794,487294,,,468,126216142,1,Japan,,
 2022-04-14,45176528,7246323,28892,6638762,489446,,,467,126216142,1,Japan,,
 2022-04-15,0,7296091,28954,0,0,,,0,126216142,1,Japan,,
-2022-04-16,0,7300534,28968,0,0,,,0,126216142,1,Japan,,
+2022-04-16,0,7304218,28973,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -42722,7 +42722,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-04-15,,15487,8,,,,,,,1,Japan,Quarantine,
 2022-04-15,,712,13,,,,,,,1,Japan,Diamond Princess,
 2022-04-15,,149,0,,,,,,,1,Japan,Costa Atlantica,
-2022-04-16,,254940,1960,,,,,,5248552,2,Japan,Hokkaido,01
+2022-04-16,,257397,1964,,,,,,5248552,2,Japan,Hokkaido,01
 2022-04-16,,43271,93,,,,,,1246138,2,Japan,Aomori,02
 2022-04-16,,23308,82,,,,,,1226430,2,Japan,Iwate,03
 2022-04-16,,66648,180,,,,,,2303160,2,Japan,Miyagi,04
@@ -42742,7 +42742,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-04-16,,24471,45,,,,,,767742,2,Japan,Fukui,18
 2022-04-16,,26683,64,,,,,,812056,2,Japan,Yamanashi,19
 2022-04-16,,53907,169,,,,,,2049023,2,Japan,Nagano,20
-2022-04-16,,76656,320,,,,,,1988931,2,Japan,Gifu,21
+2022-04-16,,77274,320,,,,,,1988931,2,Japan,Gifu,21
 2022-04-16,,137051,389,,,,,,3639226,2,Japan,Shizuoka,22
 2022-04-16,,453566,1996,,,,,,7552873,2,Japan,Aichi,23
 2022-04-16,,64579,281,,,,,,1779770,2,Japan,Mie,24
@@ -42754,7 +42754,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-04-16,,32490,113,,,,,,923721,2,Japan,Wakayama,30
 2022-04-16,,10772,14,,,,,,555663,2,Japan,Tottori,31
 2022-04-16,,11561,11,,,,,,673891,2,Japan,Shimane,32
-2022-04-16,,71748,229,,,,,,1891346,2,Japan,Okayama,33
+2022-04-16,,72357,230,,,,,,1891346,2,Japan,Okayama,33
 2022-04-16,,112739,459,,,,,,2807987,2,Japan,Hiroshima,34
 2022-04-16,,33658,170,,,,,,1355495,2,Japan,Yamaguchi,35
 2022-04-16,,17750,79,,,,,,728633,2,Japan,Tokushima,36
