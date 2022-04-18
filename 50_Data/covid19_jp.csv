@@ -801,7 +801,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-04-15,45528128,7296076,28953,6734719,498103,,,222,126216142,1,Japan,,
 2022-04-16,45537645,7343674,29002,6734841,498036,,,222,126216142,1,Japan,,
 2022-04-17,0,7382965,29028,0,0,,,0,126216142,1,Japan,,
-2022-04-18,0,7396878,29041,0,0,,,0,126216142,1,Japan,,
+2022-04-18,0,7397645,29042,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -42827,7 +42827,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-04-17,,712,13,,,,,,,1,Japan,Diamond Princess,
 2022-04-17,,149,0,,,,,,,1,Japan,Costa Atlantica,
 2022-04-18,,261275,1970,,,,,,5248552,2,Japan,Hokkaido,01
-2022-04-18,,43980,93,,,,,,1246138,2,Japan,Aomori,02
+2022-04-18,,44133,93,,,,,,1246138,2,Japan,Aomori,02
 2022-04-18,,23836,83,,,,,,1226430,2,Japan,Iwate,03
 2022-04-18,,67630,180,,,,,,2303160,2,Japan,Miyagi,04
 2022-04-18,,21611,52,,,,,,965968,2,Japan,Akita,05
@@ -42859,7 +42859,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-04-18,,10941,14,,,,,,555663,2,Japan,Tottori,31
 2022-04-18,,11787,12,,,,,,673891,2,Japan,Shimane,32
 2022-04-18,,73271,231,,,,,,1891346,2,Japan,Okayama,33
-2022-04-18,,114975,457,,,,,,2807987,2,Japan,Hiroshima,34
+2022-04-18,,115589,458,,,,,,2807987,2,Japan,Hiroshima,34
 2022-04-18,,34176,171,,,,,,1355495,2,Japan,Yamaguchi,35
 2022-04-18,,17871,79,,,,,,728633,2,Japan,Tokushima,36
 2022-04-18,,35355,116,,,,,,956069,2,Japan,Kagawa,37
