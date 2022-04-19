@@ -802,7 +802,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-04-16,45537645,7343671,29002,6734841,498036,,,222,126216142,1,Japan,,
 2022-04-17,45651163,7382962,29028,6782166,494217,,,219,126216142,1,Japan,,
 2022-04-18,0,7407220,29055,0,0,,,0,126216142,1,Japan,,
-2022-04-19,0,7448402,29099,0,0,,,0,126216142,1,Japan,,
+2022-04-19,0,7448454,29107,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -42899,7 +42899,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-04-19,,27207,66,,,,,,812056,2,Japan,Yamanashi,19
 2022-04-19,,56536,169,,,,,,2049023,2,Japan,Nagano,20
 2022-04-19,,78672,320,,,,,,1988931,2,Japan,Gifu,21
-2022-04-19,,139019,389,,,,,,3639226,2,Japan,Shizuoka,22
+2022-04-19,,139019,391,,,,,,3639226,2,Japan,Shizuoka,22
 2022-04-19,,461120,2004,,,,,,7552873,2,Japan,Aichi,23
 2022-04-19,,66377,281,,,,,,1779770,2,Japan,Mie,24
 2022-04-19,,77165,204,,,,,,1413959,2,Japan,Shiga,25
@@ -42916,8 +42916,8 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-04-19,,17941,79,,,,,,728633,2,Japan,Tokushima,36
 2022-04-19,,35738,116,,,,,,956069,2,Japan,Kagawa,37
 2022-04-19,,30376,134,,,,,,1338811,2,Japan,Ehime,38
-2022-04-19,,19754,103,,,,,,697674,2,Japan,Kochi,39
-2022-04-19,,346007,1177,,,,,,5110113,2,Japan,Fukuoka,40
+2022-04-19,,19754,104,,,,,,697674,2,Japan,Kochi,39
+2022-04-19,,346007,1182,,,,,,5110113,2,Japan,Fukuoka,40
 2022-04-19,,40044,95,,,,,,814211,2,Japan,Saga,41
 2022-04-19,,41338,119,,,,,,1325205,2,Japan,Nagasaki,42
 2022-04-19,,75981,276,,,,,,1746740,2,Japan,Kumamoto,43
@@ -42926,6 +42926,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-04-19,,56314,173,,,,,,1599984,2,Japan,Kagoshima,46
 2022-04-19,,145767,443,,,,,,1454184,2,Japan,Okinawa,47
 2022-04-19,,14,0,,,,,,,1,Japan,Charter Flight,
-2022-04-19,,15713,8,,,,,,,1,Japan,Quarantine,
+2022-04-19,,15765,8,,,,,,,1,Japan,Quarantine,
 2022-04-19,,712,13,,,,,,,1,Japan,Diamond Princess,
 2022-04-19,,149,0,,,,,,,1,Japan,Costa Atlantica,
