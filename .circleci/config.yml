@@ -43,7 +43,8 @@ workflows:
       - deploy:
           filters:
             branches:
-              only: master
+      #       only: master
+              only: temporary-suspended
       # - deployShinyio:
       #     filters:
       #       branches:
