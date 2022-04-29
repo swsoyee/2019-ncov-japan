@@ -51,6 +51,7 @@
     ];
 
     const result = [];
+    const today = new Date().toJSON().slice(0,10).replace(/-/g,'');
     setTimeout(function() {
         $('div.content--items>ul.content--list.grid--col-single>li>a').each((index, item) => {
             const url = `https://www3.nhk.or.jp${$(item).attr('href').split('?')[0]}`;
@@ -61,10 +62,14 @@
                 if ( region === '空港' ) {
                     result.push(["00000", time, title, url, '検疫職員', '日本'].join(','));
                 } else {
-                    result.push(["00000", time, title, url, region, '日本'].join(','));
+                    if (time == today) {
+                        result.push(["00000", time, title, url, region, '日本'].join(','));
+                    }
                 }
             }
         })
+        result.push(["00000", today, "新型コロナウイルス感染症の患者等の発生について（検疫）", "", "検疫職員", "日本"].join(','))
+        result.push(["00000", today, "新型コロナウイルス感染症（変異株）の患者等の発生について（検疫）", "", "検疫職員", "日本"].join(','))
         navigator.clipboard.writeText(result.join('\n')).then(function() {
             console.log('Copying to clipboard was successful!');
         }, function(err) {
