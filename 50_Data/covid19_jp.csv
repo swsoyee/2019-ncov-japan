@@ -821,7 +821,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-05-05,49116838,8007501,29726,7592046,336170,,,166,126216142,1,Japan,,
 2022-05-06,49164883,8029128,29762,7624086,324618,,,170,126216142,1,Japan,,
 2022-05-07,0,8068456,29791,0,0,,,0,126216142,1,Japan,,
-2022-05-08,0,8110867,29812,0,0,,,0,126216142,1,Japan,,
+2022-05-08,0,8110990,29817,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -43876,7 +43876,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-05-08,,147412,424,,,,,,2868041,2,Japan,Ibaraki,08
 2022-05-08,,83720,266,,,,,,1942312,2,Japan,Tochigi,09
 2022-05-08,,87150,309,,,,,,1937626,2,Japan,Gunma,10
-2022-05-08,,521702,1479,,,,,,7337330,2,Japan,Saitama,11
+2022-05-08,,521702,1482,,,,,,7337330,2,Japan,Saitama,11
 2022-05-08,,428461,1753,,,,,,6279026,2,Japan,Chiba,12
 2022-05-08,,1464085,4368,,,,,,13942856,2,Japan,Tokyo,13
 2022-05-08,,714396,2148,,,,,,9200166,2,Japan,Kanagawa,14
@@ -43905,7 +43905,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-05-08,,41323,122,,,,,,956069,2,Japan,Kagawa,37
 2022-05-08,,34880,137,,,,,,1338811,2,Japan,Ehime,38
 2022-05-08,,22802,107,,,,,,697674,2,Japan,Kochi,39
-2022-05-08,,383914,1222,,,,,,5110113,2,Japan,Fukuoka,40
+2022-05-08,,383914,1224,,,,,,5110113,2,Japan,Fukuoka,40
 2022-05-08,,46834,105,,,,,,814211,2,Japan,Saga,41
 2022-05-08,,49845,123,,,,,,1325205,2,Japan,Nagasaki,42
 2022-05-08,,85605,284,,,,,,1746740,2,Japan,Kumamoto,43
@@ -43914,6 +43914,6 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-05-08,,69229,186,,,,,,1599984,2,Japan,Kagoshima,46
 2022-05-08,,173422,448,,,,,,1454184,2,Japan,Okinawa,47
 2022-05-08,,14,0,,,,,,,1,Japan,Charter Flight,
-2022-05-08,,16936,8,,,,,,,1,Japan,Quarantine,
+2022-05-08,,17059,8,,,,,,,1,Japan,Quarantine,
 2022-05-08,,712,13,,,,,,,1,Japan,Diamond Princess,
 2022-05-08,,149,0,,,,,,,1,Japan,Costa Atlantica,
