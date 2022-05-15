@@ -828,7 +828,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-05-12,50042864,8269250,29974,7860330,305654,,,159,126216142,1,Japan,,
 2022-05-13,50186542,8308896,30010,7886448,319492,,,156,126216142,1,Japan,,
 2022-05-14,0,8348312,30040,0,0,,,0,126216142,1,Japan,,
-2022-05-15,0,8357136,30041,0,0,,,0,126216142,1,Japan,,
+2022-05-15,0,8360313,30044,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -44230,7 +44230,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-05-14,,17635,8,,,,,,,1,Japan,Quarantine,
 2022-05-14,,712,13,,,,,,,1,Japan,Diamond Princess,
 2022-05-14,,149,0,,,,,,,1,Japan,Costa Atlantica,
-2022-05-15,,326952,2020,,,,,,5248552,2,Japan,Hokkaido,01
+2022-05-15,,329440,2023,,,,,,5248552,2,Japan,Hokkaido,01
 2022-05-15,,53191,100,,,,,,1246138,2,Japan,Aomori,02
 2022-05-15,,31373,86,,,,,,1226430,2,Japan,Iwate,03
 2022-05-15,,79963,193,,,,,,2303160,2,Japan,Miyagi,04
@@ -44244,7 +44244,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-05-15,,435359,1764,,,,,,6279026,2,Japan,Chiba,12
 2022-05-15,,1488435,4393,,,,,,13942856,2,Japan,Tokyo,13
 2022-05-15,,726528,2162,,,,,,9200166,2,Japan,Kanagawa,14
-2022-05-15,,66154,91,,,,,,2222004,2,Japan,Niigata,15
+2022-05-15,,66568,91,,,,,,2222004,2,Japan,Niigata,15
 2022-05-15,,34604,93,,,,,,1042998,2,Japan,Toyama,16
 2022-05-15,,49478,193,,,,,,1137181,2,Japan,Ishikawa,17
 2022-05-15,,31127,45,,,,,,767742,2,Japan,Fukui,18
@@ -44264,7 +44264,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-05-15,,15577,15,,,,,,673891,2,Japan,Shimane,32
 2022-05-15,,89640,243,,,,,,1891346,2,Japan,Okayama,33
 2022-05-15,,140852,476,,,,,,2807987,2,Japan,Hiroshima,34
-2022-05-15,,39949,175,,,,,,1355495,2,Japan,Yamaguchi,35
+2022-05-15,,40224,175,,,,,,1355495,2,Japan,Yamaguchi,35
 2022-05-15,,20309,80,,,,,,728633,2,Japan,Tokushima,36
 2022-05-15,,43929,123,,,,,,956069,2,Japan,Kagawa,37
 2022-05-15,,36450,137,,,,,,1338811,2,Japan,Ehime,38
