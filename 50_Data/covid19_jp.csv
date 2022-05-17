@@ -830,7 +830,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-05-14,50342629,8348302,30039,7920286,328785,,,153,126216142,1,Japan,,
 2022-05-15,50455796,8383310,30064,7946666,339625,,,139,126216142,1,Japan,,
 2022-05-16,0,8405094,30090,0,0,,,0,126216142,1,Japan,,
-2022-05-17,0,8410741,30095,0,0,,,0,126216142,1,Japan,,
+2022-05-17,0,8417445,30100,0,0,,,0,126216142,1,Japan,,
 2020-01-15,,0,0,,,,,,5248552,2,Japan,Hokkaido,01
 2020-01-15,,0,0,,,,,,1246138,2,Japan,Aomori,02
 2020-01-15,,0,0,,,,,,1226430,2,Japan,Iwate,03
@@ -44334,7 +44334,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-05-16,,17856,8,,,,,,,1,Japan,Quarantine,
 2022-05-16,,712,13,,,,,,,1,Japan,Diamond Princess,
 2022-05-16,,149,0,,,,,,,1,Japan,Costa Atlantica,
-2022-05-17,,331461,2029,,,,,,5248552,2,Japan,Hokkaido,01
+2022-05-17,,333365,2034,,,,,,5248552,2,Japan,Hokkaido,01
 2022-05-17,,53649,101,,,,,,1246138,2,Japan,Aomori,02
 2022-05-17,,31787,86,,,,,,1226430,2,Japan,Iwate,03
 2022-05-17,,80594,193,,,,,,2303160,2,Japan,Miyagi,04
@@ -44354,8 +44354,8 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-05-17,,31841,45,,,,,,767742,2,Japan,Fukui,18
 2022-05-17,,30728,68,,,,,,812056,2,Japan,Yamanashi,19
 2022-05-17,,68006,186,,,,,,2049023,2,Japan,Nagano,20
-2022-05-17,,91982,326,,,,,,1988931,2,Japan,Gifu,21
-2022-05-17,,158652,404,,,,,,3639226,2,Japan,Shizuoka,22
+2022-05-17,,92819,326,,,,,,1988931,2,Japan,Gifu,21
+2022-05-17,,159608,404,,,,,,3639226,2,Japan,Shizuoka,22
 2022-05-17,,513865,2038,,,,,,7552873,2,Japan,Aichi,23
 2022-05-17,,76980,287,,,,,,1779770,2,Japan,Mie,24
 2022-05-17,,85867,217,,,,,,1413959,2,Japan,Shiga,25
@@ -44366,9 +44366,9 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-05-17,,39395,117,,,,,,923721,2,Japan,Wakayama,30
 2022-05-17,,13899,16,,,,,,555663,2,Japan,Tottori,31
 2022-05-17,,15788,15,,,,,,673891,2,Japan,Shimane,32
-2022-05-17,,90011,245,,,,,,1891346,2,Japan,Okayama,33
+2022-05-17,,90507,245,,,,,,1891346,2,Japan,Okayama,33
 2022-05-17,,142962,477,,,,,,2807987,2,Japan,Hiroshima,34
-2022-05-17,,40405,175,,,,,,1355495,2,Japan,Yamaguchi,35
+2022-05-17,,40743,175,,,,,,1355495,2,Japan,Yamaguchi,35
 2022-05-17,,20533,80,,,,,,728633,2,Japan,Tokushima,36
 2022-05-17,,44497,123,,,,,,956069,2,Japan,Kagawa,37
 2022-05-17,,36833,138,,,,,,1338811,2,Japan,Ehime,38
@@ -44380,7 +44380,7 @@ date,tests,confirmed,deaths,recovered,hosp,vent,icu,severe,population,administra
 2022-05-17,,49715,159,,,,,,1134431,2,Japan,Oita,44
 2022-05-17,,46842,139,,,,,,1072077,2,Japan,Miyazaki,45
 2022-05-17,,74280,187,,,,,,1599984,2,Japan,Kagoshima,46
-2022-05-17,,189570,455,,,,,,1454184,2,Japan,Okinawa,47
+2022-05-17,,191743,455,,,,,,1454184,2,Japan,Okinawa,47
 2022-05-17,,14,0,,,,,,,1,Japan,Charter Flight,
 2022-05-17,,17856,8,,,,,,,1,Japan,Quarantine,
 2022-05-17,,712,13,,,,,,,1,Japan,Diamond Princess,
