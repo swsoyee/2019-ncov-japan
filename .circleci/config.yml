@@ -2,7 +2,7 @@ version: 2
 jobs:
   deploy:
     machine:
-      image: ubuntu-1604:202007-01
+      image: ubuntu:22.04
       enabled: true
     steps:
       - add_ssh_keys:
