@@ -84,7 +84,7 @@ for (item in definition) {
   vaccineByRegion <- rbind(vaccineByRegion, pre_data)
 }
 
-fwrite(vaccineByRegion, file = data_path)
+# fwrite(vaccineByRegion, file = data_path)
 
 #### Update vaccine by date ####
 
