@@ -11,13 +11,11 @@ The project is a website for real-time visualization of the COVID-19 epidemic in
 
 ## Online Access Links
 
-1. [🇺🇸English Version](https://covid-2019.live/en)
-2. [🇨🇳中文版](https://covid-2019.live/cn)
-3. [🇯🇵日本語バージョン](https://covid-2019.live)
+Online access site has been shutdown due to the policy changing of Covid-19 case number monitoring of Japan government.
 
 ## Snapshot
 
-![index](https://cdn.covid-2019.live/static/capture.jpg)
+![index](resources/en_screenshot.png)
 
 ## About the data
 

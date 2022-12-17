@@ -11,13 +11,11 @@
 
 ## オンラインアクセスリンク
 
-1. [🇯🇵日本語バージョン](https://covid-2019.live)
-2. [🇨🇳中文版](https://covid-2019.live/cn)
-3. [🇺🇸English Version](https://covid-2019.live/en)
+新型コロナ“感染者の全数把握簡略化”開始によって、正確な感染者数を把握するのが難しくなるため、令和4年12月17日をもってオンラインサイトを閉鎖しました。
 
 ## スクリーンショット
 
-![index](https://cdn.covid-2019.live/static/capture.jpg)
+![index](resources/jp_screenshot.png)
 
 ### サイトのデータについて
 
