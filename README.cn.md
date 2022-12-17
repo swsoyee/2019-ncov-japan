@@ -15,7 +15,7 @@
 
 ## 网站截屏
 
-![index](resources/cp_screenshot.png)
+![index](resources/cn_screenshot.png)
 
 ## 关于本站的数据
 
