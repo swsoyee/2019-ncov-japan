@@ -8,7 +8,7 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "5f:ca:3d:34:ff:30:1d:cb:ad:2f:e8:0d:e2:1a:3a:02"
-      - run: ssh -p $SSH_PORT $SSH_USER@$SSH_HOST
+      - run: exit
   # deployShinyio:
   #   docker:
   #     - image: bobfujp/shiny:57d0b256e9145a7a36e67ad0f932e3f059c3c19c
@@ -24,12 +24,7 @@ jobs:
       - image: boxboat/kubectl:1.15.12
     steps:
       - run: |
-          export PWD=$(pwd)
-          export K8S_DEPLOYMENT_NAME=`echo $CIRCLE_BRANCH | tr "[:upper:]" "[:lower:]"`
-          echo $OKTETO_SECERT | base64 -d > "$PWD/config"
-          wget -O ~/deployment.yaml "$STG_GIST_URL"
-          sed -i -e "s/{{BRA_NAME}}/$K8S_DEPLOYMENT_NAME/; s/{{HASH_TAG}}/$CIRCLE_SHA1/; s/{{BRA_NAME_REAL}}/$CIRCLE_BRANCH/" ~/deployment.yaml
-          kubectl --kubeconfig="$PWD/config" apply -f ~/deployment.yaml
+          exit
 
 workflows:
   version: 2
