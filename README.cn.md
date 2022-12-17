@@ -15,7 +15,7 @@
 
 ## 网站截屏
 
-![index](https://cdn.covid-2019.live/static/capture.jpg)
+![index](resources/cp_screenshot.png)
 
 ## 关于本站的数据
 

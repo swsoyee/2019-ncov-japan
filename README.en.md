@@ -15,7 +15,7 @@ Online access site has been shutdown due to the policy changing of Covid-19 case
 
 ## Snapshot
 
-![index](https://cdn.covid-2019.live/static/capture.jpg)
+![index](resources/en_screenshot.png)
 
 ## About the data
 
